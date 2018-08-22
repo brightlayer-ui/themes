@@ -1,0 +1,28 @@
+{
+  "name": "@pxblue/themes",
+  "version": "1.0.0",
+  "description": "PXBlue themes for Eaton applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pxblue/themes.git"
+  },
+  "keywords": [
+    "PXBlue",
+    "themes",
+    "Eaton",
+    "Power",
+    "Xpert",
+    "quality",
+    "lighting"
+  ],
+  "author": "px-blue <pxblue@eaton.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pxblue/themes/issues"
+  },
+  "homepage": "https://github.com/pxblue/themes#readme"
+}
