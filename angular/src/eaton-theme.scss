@@ -1,0 +1,52 @@
+@import '~@angular/material/_theming.scss';
+@import './eaton-palette.scss';
+@import url('~typeface-open-sans/index.css');
+@import url('~typeface-roboto-mono/index.css');
+
+
+@include mat-core();
+
+$app-primary: mat-palette($eaton-blue);
+$app-accent:  mat-palette($eaton-blue, 200);
+$app-warn: mat-palette($eaton-red, A700);
+$app-theme:   mat-light-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
+
+.eaton{
+  @include angular-material-theme($app-theme);
+  .mat-card{
+    background-color: white;
+  }
+}
+
+
+$dark-primary: mat-palette($eaton-black, 700);
+$dark-accent:  mat-palette($eaton-blue, 500);
+$dark-warn: mat-palette($eaton-red, A700);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+  background-color: #333d43;
+}
+
+
+$red-primary: mat-palette($eaton-red, 500);
+$red-accent: mat-palette($eaton-black, 500);
+$red-warn: mat-palette($eaton-red, A700);
+$red-theme: mat-light-theme($red-primary, $red-accent, $red-warn);
+
+.red-theme{
+  @include angular-material-theme($red-theme);
+  .mat-card{
+    background-color: white;
+  }
+}
+
+$dark-theme-red:   mat-dark-theme($dark-primary, $red-primary, $dark-warn);
+
+.dark-theme-red {
+  @include angular-material-theme($dark-theme-red);
+  background-color: #333d43;
+}
