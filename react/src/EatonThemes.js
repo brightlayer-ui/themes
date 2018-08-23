@@ -1,28 +1,10 @@
-import * as EatonColors from './EatonColors.js';
+import * as EatonColors from './EatonColors';
 
 const typography = {
   typography:{
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
-    //htmlFontSize: '10px',
-    // body1:{
-    //   //fontWeight: 800
-    // },
-    // button:{
-    //   //fontStyle: 'italic',
-    //   //fontWeight: 700,
-    //   //textTransform: "lowercase"
-    // }
+    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
   }
 };
-
-// const text = {
-//     //primary: "#424e54",
-//     //secondary: "#424e54",
-//     //disabled: "",
-//     //hint: "",
-//     //icon: "",
-//     //divider: "#424e54"
-// };
 
 const darkText = {
     primary: "#ffffff",
@@ -37,8 +19,7 @@ const input = {
   bottomLine:"#424e54",
   helperText:"#424e54",
   labelText:"#424e54",
-  inputText:"#424e54",
-  //disabled:"rgba(0, 0, 0, .42)"
+  inputText:"#424e54"
 };
 
 const darkInput = {
@@ -52,21 +33,14 @@ const darkInput = {
 
 const background = {
     default: "#eef0f0",
-    paper: "#ffffff",
-    //appBar: "#909090",
-    //contentFrame: "606060"
+    paper: "#ffffff"
 };
 
 const darkBackground = {
   default: "#424e54",
   paper: "#333d43",
-  appBar: "#1f1f1f",
-  //contentFrame: "606060"
+  appBar: "#1f1f1f"
 };
-
-// const spacing = {
-//   //unit: 30
-// };
 
 const action = {
   active:"rgba(0, 0, 0, .6)",
@@ -83,19 +57,14 @@ export const blue =
 	  primary: EatonColors.blue,
 	  secondary: EatonColors.lightBlue,
     error: EatonColors.red,
-    background:{...background},
-    action: {...action//,
-      //active: EatonColors.blue['500'],
-      //disabled: 'rgba(0,0,0,.25)'
-    },
-    line: {
-      stepper: EatonColors.blue['500']
-    },
-    input: {...input},
-    //text:{...text}
+    background: background,
+    action: action,
+    line: {stepper: EatonColors.blue['500']},
+    input: input
   },
-  ...typography,
-  // spacing:{...spacing},
+  typography:{
+    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
+  },
   direction: "ltr"
 };
 
@@ -105,19 +74,14 @@ export const red =
 	  primary: EatonColors.red,
 	  secondary: EatonColors.black,
     error: EatonColors.red,
-    background:{...background},
-    action: {...action//,
-      //active: EatonColors.blue['500'],
-      //disabled: 'rgba(0,0,0,.25)'
-    },
-    line: {
-      stepper: EatonColors.red['500']
-    },
-    input: {...input},
-    //text:{...text}
+    background: background,
+    action: action,
+    line: {stepper: EatonColors.red['500']},
+    input: input
   },
-  ...typography,
-  // spacing:{...spacing},
+  typography:{
+    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
+  },
   direction: "ltr"
 };
 
@@ -127,19 +91,14 @@ export const blueDark =
 	  primary: EatonColors.black,
 	  secondary: EatonColors.blue,
     error: EatonColors.red,
-    background:{...darkBackground},
-    action: {...darkAction//,
-      //active: EatonColors.blue['500'],
-      //disabled: 'rgba(0,0,0,.25)'
-    },
-    line: {
-      stepper: EatonColors.black['500']
-    },
-    input: {...darkInput},
-    text:{...darkText}
+    background: darkBackground,
+    action: action,
+    line: {stepper: EatonColors.black['500']},
+    input: input
   },
-  ...typography,
-  // spacing:{...spacing},
+  typography:{
+    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
+  },
   direction: "ltr"
 };
 
@@ -149,18 +108,13 @@ export const redDark =
 	  primary: EatonColors.black,
 	  secondary: EatonColors.red,
     error: EatonColors.red,
-    background:{...darkBackground},
-    action: {...darkAction//,
-      //active: EatonColors.blue['500'],
-      //disabled: 'rgba(0,0,0,.25)'
-    },
-    line: {
-      stepper: EatonColors.black['500']
-    },
-    input: {...darkInput},
-    text:{...darkText}
+    background: darkBackground,
+    action: action,
+    line: {stepper: EatonColors.black['500']},
+    input: input
   },
-  ...typography,
-  // spacing:{...spacing},
+  typography:{
+    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
+  },
   direction: "ltr"
 };

@@ -9,12 +9,6 @@ export const blue = {
     700: '#0068b3',
     800: '#005eab',
     900: '#004b9e',
-    // These light accent colors don't fly well in react
-    // replacing them with the other shades from the main palette
-    // A100: '#f0f5fd',
-    // A200: '#c2dafe',
-    // A400: '#95c0fe',
-    // A700: '#67a5ff',
     A100: '#4da3d4',
     A200: '#007bc1',
     A400: '#0068b3',
@@ -33,12 +27,6 @@ export const lightBlue = {
     700: '#0075ee',
     800: '#006bec',
     900: '#0058e8',
-    // These white accent colors don't fly well in react
-    // replacing them with the other shades from the main palette
-    // A100: '#ffffff',
-    // A200: '#dce7ff',
-    // A400: '#a9c4ff',
-    // A700: '#90b3ff',
     A100: '#4dacf6',
     A200: '#0088f2',
     A400: '#0075ee',
@@ -75,12 +63,6 @@ export const red = {
     700: '#bd2e2f',
     800: '#b72727',
     900: '#ab1a1a',
-    // These light accent colors don't fly well in react
-    // replacing them with the other shades from the main palette
-    // A100: '#fdd3d3',
-    // A200: '#fd9d9e',
-    // A400: '#fe6868',
-    // A700: '#ff3333',
     A100: '#da7777',
     A200: '#ca3c3d',
     A400: '#bd2e2f',
@@ -148,17 +130,11 @@ export const black = {
     200: '#a1a7aa',
     300: '#7b8387',
     400: '#5e696e',
-    500: '#1d2529',//'#424e54',
+    500: '#1d2529',
     600: '#3c474d',
     700: '#333d43',
     800: '#2b353a',
     900: '#1d2529',
-    // These blue accent colors don't fly well in react
-    // replacing them with the other shades from the main palette
-    // A100: '#72c7ff',
-    // A200: '#80bde0',
-    // A400: '#268fca',
-    // A700: '#007bc1',
     A100: '#7b8387',
     A200: '#424e54',
     A400: '#333d43',
