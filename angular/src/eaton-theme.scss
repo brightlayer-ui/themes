@@ -1,7 +1,7 @@
 @import '~@angular/material/_theming.scss';
 @import './eaton-palette.scss';
-require url('~typeface-open-sans/index.css');
-require url('~typeface-roboto-mono/index.css');
+@import '~typeface-open-sans/index.css');
+@import '~typeface-roboto-mono/index.css');
 
 $custom-typography: mat-typography-config(
     $font-family: 'OpenSans'
