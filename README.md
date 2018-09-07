@@ -21,7 +21,7 @@ Depending on the framework that you are using, PX Blue themes are applied in dif
 ### Angular w/ Angular Material
 ```
 // in styles.scss or your top-level sass file
-import '~apxblue/themes/angular/src/eaton-theme'
+import '~@pxblue/themes/angular/src/eaton-theme'
 ```
 
 
@@ -44,7 +44,7 @@ import {
 ### NativeScript
 ```
 // in styles.scss or your top-level sass file
-import '~apxblue/themes/nativescript/src/eaton-theme'
+import '~@pxblue/themes/nativescript/src/eaton-theme'
 ```
 
 ### React Native
