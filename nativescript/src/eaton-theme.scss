@@ -1,0 +1,260 @@
+// Cusotmized Color Variables
+@import 'pxblue-variables';
+
+.fa {
+  font-family: "FontAwesome";
+}
+.mat{
+  font-family: "Material Icons", "MaterialIcons-Regular";
+}
+// Common page class
+.page-content {
+  .page-placeholder {
+    color: $text-color;
+    font-size: $page-content-placeholder-font-size;
+    vertical-align: center;
+    horizontal-align: center;
+  }
+
+  .page-icon {
+    font-size: 72;
+    vertical-align: top;
+    horizontal-align: center;
+    color: $text-color;
+    margin-top: 20;
+  }
+}
+
+//Action bar
+ActionBar .action-bar-title {
+} 
+
+.action-bar {
+  color: white;
+  background-color: #007bc1;
+}
+.primary-bg{
+  color: $white;
+  background-color: #007bc1;
+}
+
+.page {
+  background-color: #f8f8f8;
+}
+
+.tab-view {
+  tab-background-color: #f8f8f8;
+}
+
+.list-group, .list-group-item {
+  background-color: #f8f8f8;
+}
+
+.page label, .tab-view label {
+  color: #1d2529;
+}
+
+.segmented-bar {
+  selected-background-color: #007bc1;
+}
+
+.segmented-bar {
+  color: #007bc1;
+}
+
+.segmented-bar {
+  background-color: #eef0f0;
+}
+
+.switch[checked=true] {
+  color: #ffffff;
+  background-color: #007bc1;
+}
+
+.activity-indicator {
+  color: #007bc1;
+}
+
+.slider {
+  color: #ffffff;
+  background-color: #007bc1;
+}
+
+.progress {
+  color: #007bc1;
+}
+
+.img-circle {
+  border-radius: 20;
+}
+
+.list-group-item-heading {
+  font-size: 16;
+}
+
+.list-group-item-text {
+  font-size: 14;
+}
+
+.img-rounded {
+  border-radius: 5;
+}
+
+.body {
+  font-size: 14;
+}
+
+.h1 {
+  font-size: 36;
+}
+
+.h2 {
+  font-size: 30;
+}
+
+.h3 {
+  font-size: 24;
+}
+
+.h4 {
+  font-size: 18;
+}
+
+.h5 {
+  font-size: 14;
+}
+
+.h6 {
+  font-size: 12;
+}
+
+.page label.text-primary, .tab-view label.text-primary {
+  color: #007bc1;
+}
+
+.page label.bg-primary, .tab-view label.bg-primary {
+  background-color: #007bc1;
+}
+
+.page label.text-danger, .tab-view label.text-danger {
+  color: #ff3333;
+}
+
+.page label.bg-danger, .tab-view label.bg-danger {
+  background-color: #ff3333;
+}
+
+.page label.text-muted, .tab-view label.text-muted {
+  color: #b9bfc2;
+}
+
+.btn {
+  color: #007bc1;
+}
+
+.btn-primary {
+  background-color: #007bc1;
+}
+
+.btn-primary {
+  border-color: #007bc1;
+}
+
+.btn-primary {
+  color: #ffffff;
+}
+
+.btn-outline {
+  border-color: #007bc1;
+}
+
+.btn-outline {
+  background-color: transparent;
+}
+
+.btn-outline {
+  border-width: 1;
+}
+
+.btn-outline {
+  color: #007bc1;
+}
+
+.btn[isEnabled=false] {
+  background-color: #b9bfc2;
+}
+
+.btn[isEnabled=false] {
+  border-color: #b9bfc2;
+}
+
+.btn[isEnabled=false] {
+  color: #ffffff;
+}
+
+.btn-rounded-sm {
+  border-radius: 4;
+}
+
+.btn-rounded-lg {
+  border-radius: 20;
+}
+
+.label {
+  font-size: 16;
+}
+
+.input {
+  font-size: 14;
+}
+
+.input-rounded {
+  border-radius: 30;
+}
+
+.tab-view {
+  selected-tab-text-color: #ffffff;
+}
+
+.tab-view {
+  tab-text-color: #ffffff;
+}
+
+.tab-view {
+  tab-background-color: #007bc1;
+}
+
+.tab-view {
+  android-selected-tab-highlight-color: #ffffff;
+}
+
+.sidedrawer-header {
+  background-color: #007bc1;
+}
+
+.sidedrawer-header-brand {
+  color: #ffffff;
+}
+
+.sidedrawer-content {
+  background-color: #eef0f0;
+}
+
+.sidedrawer-list-item {
+  color: #1d2529;
+}
+
+.sidedrawer-list-item.active {
+  background-color: #eef0f0;
+}
+
+.sidedrawer-list-item.active {
+  color: #1d2529;
+}
+
+.alarm{
+    color: #ff3333;
+}
+.alarmBorder{
+    background-color: #ff3333;
+}
