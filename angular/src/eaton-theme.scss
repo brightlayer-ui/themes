@@ -5,7 +5,7 @@
 
 $custom-typography: mat-typography-config(
     $font-family: 'OpenSans'
-)
+);
 @include mat-core($custom-typography);
 
 $app-primary: mat-palette($eaton-blue);
