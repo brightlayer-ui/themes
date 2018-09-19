@@ -12,6 +12,7 @@ yarn.lock
 # production
 /build
 /react/dist
+/react-native/dist
 
 # misc
 .DS_Store

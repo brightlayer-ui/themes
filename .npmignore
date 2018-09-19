@@ -7,7 +7,10 @@ yarn.lock
 
 # production
 /build
+
+# src folders
 /react/src
+/react-native/src
 
 # misc
 .DS_Store

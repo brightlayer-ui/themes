@@ -1,8 +1,14 @@
 {
-    "name": "react-native-theme",
-    "version": "2.2.0",
-    "private": true,
-    "dependencies": {},
-    "scripts": {}
+  "name": "react-native-theme",
+  "version": "2.2.0",
+  "description": "React Native colors for PX Blue applications",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --presets babel-preset-env --out-dir dist"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
 }
-  

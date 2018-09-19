@@ -166,13 +166,13 @@ export const yellow = {
 
 export default Colors = {
     blue: blue,
-    lightBlue = lightBlue,
-    green = green,
-    red = red,
-    orange = orange,
-    gold = gold,
-    purple = purple,
-    black = black,
-    gray = gray,
-    yellow = yellow
+    lightBlue: lightBlue,
+    green: green,
+    red: red,
+    orange: orange,
+    gold: gold,
+    purple: purple,
+    black: black,
+    gray: gray,
+    yellow: yellow
 }
