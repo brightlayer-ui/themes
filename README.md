@@ -34,7 +34,7 @@ import {
 import {
     EatonThemes,
     EatonColors
-} from '@pxblue/themes/react/src';
+} from '@pxblue/themes/react';
 ...
 <MuiThemeProvider theme={createMuiTheme(EatonThemes.blue)}>
     <App />
