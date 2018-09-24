@@ -1,12 +1,5 @@
 @import '~@angular/material/_theming.scss';
 @import './eaton-palette.scss';
-@import url('~typeface-open-sans/index.css');
-@import url('~typeface-roboto-mono/index.css');
-
-$custom-typography: mat-typography-config(
-    $font-family: 'OpenSans'
-);
-@include mat-core($custom-typography);
 
 $app-primary: mat-palette($eaton-blue);
 $app-accent:  mat-palette($eaton-blue, 200);
