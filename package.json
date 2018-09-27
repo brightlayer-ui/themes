@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/pxblue/themes/issues"
   },
-  "homepage": "https://github.com/pxblue/themes#readme"
+  "homepage": "https://github.com/pxblue/themes#readme",
+  "dependencies": {
+    "@pxblue/colors": "^1.0.1"
+  }
 }

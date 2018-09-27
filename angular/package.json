@@ -2,7 +2,9 @@
     "name": "angular-theme",
     "version": "2.2.0",
     "private": true,
-    "dependencies": {},
+    "dependencies": {
+        "@pxblue/colors": "^1.0.1"
+    },
     "scripts": {}
 }
   
