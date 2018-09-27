@@ -1,5 +1,5 @@
 @import '~@angular/material/_theming.scss';
-@import './eaton-palette.scss';
+@import '~@pxblue/colors/ui/palette.scss';
 
 $app-primary: mat-palette($eaton-blue);
 $app-accent:  mat-palette($eaton-blue, 200);

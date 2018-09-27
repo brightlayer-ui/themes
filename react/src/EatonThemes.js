@@ -1,4 +1,4 @@
-import * as EatonColors from './EatonColors';
+import * as EatonColors from '@pxblue/colors/ui/palette';
 
 const typography = {
   typography:{
