@@ -1,2 +1,5 @@
 # NativeScript Theme Readme
-Here is how to use the NativeScript theme
+```
+// in styles.scss or your top-level sass file
+import '~@pxblue/themes/nativescript/theme.scss'
+```

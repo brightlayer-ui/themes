@@ -4,7 +4,11 @@
   "description": "PXBlue themes for Eaton applications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:react": "cd ../react && babel src --presets babel-preset-env --out-dir dist && cd ..",
+    "build:react-native": "cd react-native && babel src --presets babel-preset-env --out-dir dist && cd ..",
+    "build:all": "npm run build:react && npm run build:react-native",
+    "publish:full": "npm run build:all && npm version patch && npm publish"
   },
   "repository": {
     "type": "git",

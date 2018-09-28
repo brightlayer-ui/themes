@@ -1,3 +1,1 @@
-import * as EatonThemes from './EatonThemes';
-
-export {EatonThemes};
+export * from './theme';

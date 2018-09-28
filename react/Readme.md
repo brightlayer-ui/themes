@@ -1,8 +1,12 @@
-# React Theme Readme
-
-## Publishing to npm
-make sure to run:
+# React Theme
 ```
-yarn build
+import { 
+    MuiThemeProvider, 
+    createMuiTheme 
+} from '@material-ui/core/styles';
+import * as PXBlueThemes from '@pxblue/themes/react';
+...
+<MuiThemeProvider theme={createMuiTheme(PXBlueThemes.blue)}>
+    <App />
+</MuiThemeProvider>
 ```
-before publishing to npm. This will transpile the src directory with babel and create a dist directory which is what gets published to npm. If you forget this step, you will publish a new version with the same old code (or no code).

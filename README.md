@@ -55,3 +55,31 @@ import Colors from '@pxblue/themes/react-native'
 ...
 <Text style={{color: Colors.blue['500']}}>Hello World!</Text>
 ```
+## Publishing
+To publish this packages to npm, you must be authenticated to npm in your terminal as px-blue. Type the following to see if you are authenticated:
+```
+npm whoami
+```
+If you are not, you will need to log in:
+```
+npm adduser px-blue
+```
+You'll be prompted to enter the password and then you'll be ready to publish.
+
+To transpile all of the downstream packages, run one of the following in the root directory:
+```
+npm run build:all
+yarn build:all
+```
+
+You can then version the packages and publish:
+```
+npm version <type>
+npm publish
+```
+
+If you would like to transpile all downstream packages, apply a patch version, and publish, you can do so with a single command:
+```
+npm run publish:full
+yarn publish:full
+```

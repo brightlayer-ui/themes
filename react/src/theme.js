@@ -1,4 +1,4 @@
-import * as EatonColors from '@pxblue/colors/ui/palette';
+import * as ThemeColors from '@pxblue/colors/index.js';
 
 const typography = {
   typography:{
@@ -54,12 +54,12 @@ const darkAction = {
 export const blue = 
 {
 	palette:{
-	  primary: EatonColors.blue,
-	  secondary: EatonColors.lightBlue,
-    error: EatonColors.red,
+	  primary: ThemeColors.blue,
+	  secondary: ThemeColors.lightBlue,
+    error: ThemeColors.red,
     background: background,
     action: action,
-    line: {stepper: EatonColors.blue['500']},
+    line: {stepper: ThemeColors.blue['500']},
     input: input
   },
   typography:{
@@ -71,12 +71,12 @@ export const blue =
 export const red = 
 {
 	palette:{
-	  primary: EatonColors.red,
-	  secondary: EatonColors.black,
-    error: EatonColors.red,
+	  primary: ThemeColors.red,
+	  secondary: ThemeColors.black,
+    error: ThemeColors.red,
     background: background,
     action: action,
-    line: {stepper: EatonColors.red['500']},
+    line: {stepper: ThemeColors.red['500']},
     input: input
   },
   typography:{
@@ -88,12 +88,12 @@ export const red =
 export const blueDark = 
 {
 	palette:{
-	  primary: EatonColors.black,
-	  secondary: EatonColors.blue,
-    error: EatonColors.red,
+	  primary: ThemeColors.black,
+	  secondary: ThemeColors.blue,
+    error: ThemeColors.red,
     background: darkBackground,
     action: action,
-    line: {stepper: EatonColors.black['500']},
+    line: {stepper: ThemeColors.black['500']},
     input: input
   },
   typography:{
@@ -105,12 +105,12 @@ export const blueDark =
 export const redDark = 
 {
 	palette:{
-	  primary: EatonColors.black,
-	  secondary: EatonColors.red,
-    error: EatonColors.red,
+	  primary: ThemeColors.black,
+	  secondary: ThemeColors.red,
+    error: ThemeColors.red,
     background: darkBackground,
     action: action,
-    line: {stepper: EatonColors.black['500']},
+    line: {stepper: ThemeColors.black['500']},
     input: input
   },
   typography:{
