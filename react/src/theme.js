@@ -1,4 +1,4 @@
-import * as ThemeColors from '@pxblue/colors/index.js';
+import * as ThemeColors from '@pxblue/colors';
 
 const typography = {
   typography:{
