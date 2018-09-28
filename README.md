@@ -21,7 +21,7 @@ Depending on the framework that you are using, PX Blue themes are applied in dif
 ### Angular w/ Angular Material
 ```
 // in styles.scss or your top-level sass file
-import '~@pxblue/themes/angular/src/eaton-theme'
+import '~@pxblue/themes/angular/theme.scss'
 ```
 
 
@@ -31,12 +31,9 @@ import {
     MuiThemeProvider, 
     createMuiTheme 
 } from '@material-ui/core/styles';
-import {
-    EatonThemes,
-    EatonColors
-} from '@pxblue/themes/react';
+import * as PXBThemes from '@pxblue/themes/react';
 ...
-<MuiThemeProvider theme={createMuiTheme(EatonThemes.blue)}>
+<MuiThemeProvider theme={createMuiTheme(PXBThemes.blue)}>
     <App />
 </MuiThemeProvider>
 ```
@@ -44,14 +41,14 @@ import {
 ### NativeScript
 ```
 // in styles.scss or your top-level sass file
-import '~@pxblue/themes/nativescript/src/eaton-theme'
+import '~@pxblue/themes/nativescript/theme.scss'
 ```
 
 ### React Native
 The React Native theme provides a color palette but not a comprehensive automatic styling system. You will need to manually apply the appropriate colors to various elements in your application.
 
 ```
-import Colors from '@pxblue/themes/react-native'
+import * as Colors from '@pxblue/themes/react-native'
 ...
 <Text style={{color: Colors.blue['500']}}>Hello World!</Text>
 ```
