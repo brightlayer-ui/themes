@@ -1,6 +1,6 @@
 {
   "name": "@pxblue/themes",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "PXBlue themes for Eaton applications",
   "main": "index.js",
   "scripts": {
