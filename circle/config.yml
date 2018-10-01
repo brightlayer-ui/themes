@@ -1,7 +1,0 @@
-version: 2
-jobs:
-  build:
-    docker: 
-      - image: node:7.4.0
-    steps:
-      - checkout
