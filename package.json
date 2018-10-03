@@ -31,5 +31,8 @@
   "homepage": "https://github.com/pxblue/themes#readme",
   "dependencies": {
     "@pxblue/colors": "^1.0.1"
+  },
+  "peerDependencies": {
+    "typeface-open-sans": "^0.0.54"
   }
 }
