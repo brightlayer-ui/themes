@@ -1,12 +1,12 @@
 {
   "name": "@pxblue/themes",
-  "version": "1.0.16",
+  "version": "1.0.20",
   "description": "PXBlue themes for Eaton applications",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:react": "cd react && npm install && babel src --presets babel-preset-env --out-dir dist && cd ..",
-    "build:react-native": "cd react-native && npm install && babel src --presets babel-preset-env --out-dir dist && cd ..",
+    "build:react": "cd react && npm run build && cd ..",
+    "build:react-native": "cd react-native && npm run build && cd ..",
     "build:all": "npm run build:react && npm run build:react-native",
     "publish:full": "npm run build:all && npm version patch && npm publish"
   },
@@ -24,12 +24,13 @@
     "lighting"
   ],
   "author": "px-blue <pxblue@eaton.com>",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/pxblue/themes/issues"
   },
   "homepage": "https://github.com/pxblue/themes#readme",
   "dependencies": {
-    "@pxblue/colors": "^1.0.1"
+    "@pxblue/colors": "^1.0.1",
+    "typeface-open-sans": "^0.0.54"
   }
 }
