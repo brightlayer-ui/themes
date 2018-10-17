@@ -24,10 +24,10 @@ const darkText = {
 };
 
 const input = {
-  bottomLine:"#424e54",
-  helperText:"#424e54",
-  labelText:"#424e54",
-  inputText:"#424e54"
+  bottomLine: ThemeColors.black['500'],
+  helperText: ThemeColors.black['500'],
+  labelText: ThemeColors.black['500'],
+  inputText: ThemeColors.black['500']
 };
 
 const darkInput = {
@@ -40,14 +40,14 @@ const darkInput = {
 
 
 const background = {
-    default: "#eef0f0",
+    default:  ThemeColors.gray['50'],
     paper: "#ffffff"
 };
 
 const darkBackground = {
-  default: "#424e54",
-  paper: "#333d43",
-  appBar: "#1f1f1f"
+  default:  ThemeColors.black['500'],
+  paper:  ThemeColors.black['700'],
+  appBar:  ThemeColors.black['900']
 };
 
 const action = {
