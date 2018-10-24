@@ -1,57 +1,61 @@
 /**
 Copyright (c) 2018-present, Eaton
- 
+
 All rights reserved.
- 
+
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
+
 @import '~@angular/material/_theming.scss';
 @import '~@pxblue/colors/palette.scss';
-
-$custom-typography: mat-typography-config($font-family: 'Open Sans, Arial, Helvetica, sans-serif;');
+$custom-typography: mat-typography-config( $font-family: '"Open Sans", Arial, Helvetica, sans-serif;', $display-4 : mat-typography-level(6rem, 1, 300), $display-3 : mat-typography-level(3.75rem, 1, 300), $display-2 : mat-typography-level(3rem, 1.04, 400), $display-1 : mat-typography-level(2.125rem, 1.17, 400), $headline : mat-typography-level(1.5rem, 1.33, 400), $title : mat-typography-level(1.25rem, 1.6, 500), $subheading-2 : mat-typography-level(1rem, 1.75, 400), $subheading-1 : mat-typography-level(.875rem, 1.57, 500), $body-2 : mat-typography-level(0.875rem, 1.71429, 500), $body-1 : mat-typography-level(0.875rem, 1.46429, 400), $caption : mat-typography-level(.75rem, 1.35, 400), $button : mat-typography-level(0.875rem, 1, 500), $input : mat-typography-level(inherit, 1.125, 400));
 @include mat-core($custom-typography);
-
 $app-primary: mat-palette($pxb-blue);
-$app-accent:  mat-palette($pxb-blue, 200);
+$app-accent : mat-palette($pxb-blue, 200);
 $app-warn: mat-palette($pxb-red, A700);
-$app-theme:   mat-light-theme($app-primary, $app-accent, $app-warn);
-
+$app-theme : mat-light-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);
-
-.eaton{
-  @include angular-material-theme($app-theme);
-  .mat-card{
-    background-color: white;
-  }
+.eaton {
+    @include angular-material-theme($app-theme);
+    .mat-card {
+        background-color: white;
+    }
+    body {
+        margin: 0 !important;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin-bottom: .5em !important;
+    }
 }
-
 
 $dark-primary: mat-palette($pxb-black, 700);
-$dark-accent:  mat-palette($pxb-blue, 500);
+$dark-accent : mat-palette($pxb-blue, 500);
 $dark-warn: mat-palette($pxb-red, A700);
-$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-
+$dark-theme : mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .dark-theme {
-  @include angular-material-theme($dark-theme);
-  background-color: #333d43;
+    @include angular-material-theme($dark-theme);
+    background-color: #333d43;
 }
-
 
 $red-primary: mat-palette($pxb-red, 500);
 $red-accent: mat-palette($pxb-black, 500);
 $red-warn: mat-palette($pxb-red, A700);
 $red-theme: mat-light-theme($red-primary, $red-accent, $red-warn);
-
-.red-theme{
-  @include angular-material-theme($red-theme);
-  .mat-card{
-    background-color: white;
-  }
+.red-theme {
+    @include angular-material-theme($red-theme);
+    .mat-card {
+        background-color: white;
+    }
 }
 
-$dark-theme-red:   mat-dark-theme($dark-primary, $red-primary, $dark-warn);
-
+$dark-theme-red : mat-dark-theme($dark-primary, $red-primary, $dark-warn);
 .dark-theme-red {
-  @include angular-material-theme($dark-theme-red);
-  background-color: #333d43;
+    @include angular-material-theme($dark-theme-red);
+    background-color: #333d43;
 }
