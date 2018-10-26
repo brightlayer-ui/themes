@@ -4,15 +4,13 @@
 /node_modules
 **/**/node_modules
 package-lock.json
-yarn.lock
+**/**/yarn.lock
 
 # testing
 /coverage
 
 # production
 /build
-/react/dist
-/react-native/dist
 
 # misc
 .DS_Store

@@ -10,7 +10,8 @@ import * as ThemeColors from '@pxblue/colors';
 
 const typography = {
   typography:{
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
+    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
+    useNextVariants: true
   }
 };
 

@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:react": "cd react && npm run build && cd ..",
-    "build:react-native": "cd react-native && npm run build && cd ..",
-    "build:all": "npm run build:react && npm run build:react-native",
-    "publish:full": "npm run build:all && npm version patch && npm publish"
+    "build:react": "cd react && yarn build && cd ..",
+    "build:react-native": "cd react-native && yarn build && cd ..",
+    "build:all": "yarn build:react && yarn build:react-native",
+    "publish:full": "yarn build:all && npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
