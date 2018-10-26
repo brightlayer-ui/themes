@@ -12,10 +12,8 @@ var ThemeColors = _interopRequireWildcard(_colors);
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var typography = {
-  typography: {
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
-    useNextVariants: true
-  }
+  fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
+  useNextVariants: true
 }; /**
    Copyright (c) 2018-present, Eaton
     
@@ -78,9 +76,7 @@ var blue = exports.blue = {
     line: { stepper: ThemeColors.blue['500'] },
     input: input
   },
-  typography: {
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
-  },
+  typography: typography,
   direction: "ltr"
 };
 
@@ -94,9 +90,7 @@ var red = exports.red = {
     line: { stepper: ThemeColors.red['500'] },
     input: input
   },
-  typography: {
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
-  },
+  typography: typography,
   direction: "ltr"
 };
 
@@ -110,9 +104,7 @@ var blueDark = exports.blueDark = {
     line: { stepper: ThemeColors.black['500'] },
     input: input
   },
-  typography: {
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
-  },
+  typography: typography,
   direction: "ltr"
 };
 
@@ -126,8 +118,6 @@ var redDark = exports.redDark = {
     line: { stepper: ThemeColors.black['500'] },
     input: input
   },
-  typography: {
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
-  },
+  typography: typography,
   direction: "ltr"
 };

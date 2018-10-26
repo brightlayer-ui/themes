@@ -9,10 +9,8 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 import * as ThemeColors from '@pxblue/colors';
 
 const typography = {
-  typography:{
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
-    useNextVariants: true
-  }
+  fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
+  useNextVariants: true
 };
 
 const darkText = {
@@ -71,9 +69,7 @@ export const blue =
     line: {stepper: ThemeColors.blue['500']},
     input: input
   },
-  typography:{
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
-  },
+  typography: typography,
   direction: "ltr"
 };
 
@@ -88,9 +84,7 @@ export const red =
     line: {stepper: ThemeColors.red['500']},
     input: input
   },
-  typography:{
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
-  },
+  typography: typography,
   direction: "ltr"
 };
 
@@ -105,9 +99,7 @@ export const blueDark =
     line: {stepper: ThemeColors.black['500']},
     input: input
   },
-  typography:{
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
-  },
+  typography: typography,
   direction: "ltr"
 };
 
@@ -122,8 +114,6 @@ export const redDark =
     line: {stepper: ThemeColors.black['500']},
     input: input
   },
-  typography:{
-    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif'
-  },
+  typography: typography,
   direction: "ltr"
 };
