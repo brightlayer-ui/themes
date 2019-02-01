@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    docker: 
+      - image: circleci/node:8.11-browsers
+    steps:
+      - checkout
+      - run: 
+          name: Install Dependencies
+          command: |
+            yarn
+            cd react && yarn
+            cd ../react-native && yarn
+            cd ..
+      - run:
+          name: Build Package
+          command: yarn build:all
+      - run:
+          name: Verify Artifacts
+          command: yarn test
