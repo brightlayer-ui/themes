@@ -4,7 +4,7 @@
   "description": "PXBlue themes for Eaton applications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./buildTest.sh",
     "build:react": "cd react && yarn build && cd ..",
     "build:react-native": "cd react-native && yarn build && cd ..",
     "build:all": "yarn build:react && yarn build:react-native",
