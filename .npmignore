@@ -11,6 +11,7 @@
 # src folders
 /react/src
 /react-native/src
+/.circleci
 
 # misc
 .DS_Store
