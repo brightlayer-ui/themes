@@ -1,0 +1,40 @@
+@mixin reasonable-margins($selector: '.mat-typography') {
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+    .mat-h1, .mat-headline, #{$selector} h1 {
+        margin: 0 0 0.35em;
+    }
+    .mat-h2, .mat-title, #{$selector} h2 {
+        margin: 0 0 0.35em;
+    }
+    .mat-h3, .mat-subheading-2, #{$selector} h3 {
+        margin: 0 0 0.35em;
+    }
+    .mat-h4, .mat-subheading-1, #{$selector} h4 {
+        margin: 0 0 0.35em;
+    }
+    .mat-h5, #{$selector} h5 {
+        margin: 0 0 0.35em;
+    }
+    .mat-h6, #{$selector} h6 {
+        margin: 0 0 0.35em;
+    }
+    .mat-display-4, #{$selector} .mat-display-4 {
+        margin: 0 0 0.35em;
+    }
+    .mat-display-3, #{$selector} .mat-display-3 {
+        margin: 0 0 0.35em;
+    }
+    .mat-display-2, #{$selector} .mat-display-2 {
+        margin: 0 0 0.35em;
+    }
+    .mat-display-1, #{$selector} .mat-display-1 {
+        margin: 0 0 0.35em;
+    }
+  }
+
+  @mixin bodyfont(){
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  }
