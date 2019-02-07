@@ -21,6 +21,8 @@ Thumbs.db
 .env.test.local
 .env.production.local
 
+buildTest.sh
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
