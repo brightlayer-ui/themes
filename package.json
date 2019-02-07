@@ -1,6 +1,6 @@
 {
   "name": "@pxblue/themes",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "PXBlue themes for Eaton applications",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "build:react": "cd react && yarn build && cd ..",
     "build:react-native": "cd react-native && yarn build && cd ..",
     "build:all": "yarn build:react && yarn build:react-native",
-    "publish:full": "yarn build:all && npm version patch && npm publish"
+    "publish:full": "yarn build:all && npm version patch && npm publish",
+    "prepublish": "yarn test"
   },
   "repository": {
     "type": "git",
