@@ -1,0 +1,61 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.darkAction = exports.action = exports.darkBackground = exports.background = exports.darkInput = exports.input = exports.darkText = exports.typography = undefined;
+
+var _colors = require('@pxblue/colors');
+
+var ThemeColors = _interopRequireWildcard(_colors);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var typography = exports.typography = {
+    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
+    useNextVariants: true
+}; /**
+   Copyright (c) 2018-present, Eaton
+    
+   All rights reserved.
+    
+   This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
+   **/
+
+var darkText = exports.darkText = {
+    primary: "#ffffff",
+    secondary: "#ffffff",
+    disabled: "rgba(255,255,255,.25)",
+    hint: "#ffffff",
+    icon: "#ffffff",
+    divider: "rgba(255,255,255,.05)"
+};
+var input = exports.input = {
+    bottomLine: ThemeColors.black['500'],
+    helperText: ThemeColors.black['500'],
+    labelText: ThemeColors.black['500'],
+    inputText: ThemeColors.black['500']
+};
+var darkInput = exports.darkInput = {
+    bottomLine: ThemeColors.black['500'],
+    helperText: ThemeColors.black['500'],
+    labelText: ThemeColors.black['500'],
+    inputText: ThemeColors.black['500']
+};
+var background = exports.background = {
+    default: ThemeColors.gray['50'],
+    paper: "#ffffff"
+};
+var darkBackground = exports.darkBackground = {
+    default: '#182022',
+    paper: '#0b0e0f',
+    appBar: '#13181b'
+};
+var action = exports.action = {
+    active: "rgba(0, 0, 0, .6)",
+    disabled: "rgba(0, 0, 0, .25)"
+};
+var darkAction = exports.darkAction = {
+    active: ThemeColors.gray['50'] //"rgba(255, 255, 255, 0.6)",
+    //disabled: "rgba(255, 255, 255, 0.25)"
+};
