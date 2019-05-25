@@ -32,13 +32,6 @@ export const darkTheme =
   typography: typography,
   direction: "ltr",
   overrides:{
-    // BUTTON OVERRIDES
-    MuiButton:{
-      outlined:{
-        borderColor: ThemeColors.black['100']
-      }
-    },
-
     // APP BAR OVERRIDES
     MuiAppBar:{
       colorDefault:{
@@ -53,31 +46,18 @@ export const darkTheme =
         backgroundColor: ThemeColors.black['A100']
       }
     },
-
-    // TABS OVERRIDES
-    MuiTabs:{
-      indicator:{
-        backgroundColor: ThemeColors.blue['500']
+    
+    // BACKDROP OVERRIDES
+    MuiBackdrop:{
+      root:{
+        backgroundColor: 'rgba(0, 0, 0, 0.3)'
       }
     },
 
-    // TABLE OVERRIDES
-    MuiTableRow:{
-      root:{
-        color: ThemeColors.gray['100'],
-        "&$selected":{
-          backgroundColor: ThemeColors.black['A400']
-        }
-      }      
-    },
-    MuiTableHead:{
-      root:{
-        background: ThemeColors.black['A200']
-      }
-    },
-    MuiTableCell:{
-      head:{
-        fontWeight: 600
+    // BUTTON OVERRIDES
+    MuiButton:{
+      outlined:{
+        borderColor: ThemeColors.black['100']
       }
     },
 
@@ -88,20 +68,6 @@ export const darkTheme =
       },
       paperAnchorBottom:{
         backgroundColor: ThemeColors.black['900']
-      }
-    },
-
-    // SNACKBAR OVERRIDES
-    MuiSnackbar:{
-      root:{
-        backgroundColor: ThemeColors.black['A700'],
-        color: ThemeColors.white['50']
-      }
-    },
-    MuiSnackbarContent:{
-      root:{
-        backgroundColor: ThemeColors.black['A700'],
-        color: ThemeColors.white['50']
       }
     },
 
@@ -137,8 +103,48 @@ export const darkTheme =
               fill: ThemeColors.white['50'],
             }
          }
-      },
+      }
+    },
 
+    // SNACKBAR OVERRIDES
+    MuiSnackbar:{
+      root:{
+        backgroundColor: ThemeColors.black['A700'],
+        color: ThemeColors.white['50']
+      }
+    },
+    MuiSnackbarContent:{
+      root:{
+        backgroundColor: ThemeColors.black['A700'],
+        color: ThemeColors.white['50']
+      }
+    },
+
+    // TABLE OVERRIDES
+    MuiTableCell:{
+      head:{
+        fontWeight: 600
+      }
+    },
+    MuiTableHead:{
+      root:{
+        background: ThemeColors.black['A200']
+      }
+    },
+    MuiTableRow:{
+      root:{
+        color: ThemeColors.gray['100'],
+        "&$selected":{
+          backgroundColor: ThemeColors.black['A400']
+        }
+      }      
+    },
+
+    // TABS OVERRIDES
+    MuiTabs:{
+      indicator:{
+        backgroundColor: ThemeColors.blue['500']
+      }
     }
   }
 };
