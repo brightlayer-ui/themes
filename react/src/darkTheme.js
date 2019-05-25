@@ -9,7 +9,6 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 import * as ThemeColors from '@pxblue/colors';
 import { typography, darkInput, darkBackground, darkAction } from './constants';
 
-
 export const darkTheme = 
 {
 	palette:{
@@ -19,10 +18,10 @@ export const darkTheme =
     grey: ThemeColors.gray,
     background: darkBackground,
     text: {
-      primary: ThemeColors.gray['100'],
-      secondary: ThemeColors.black['100'],
-      icon: ThemeColors.gray['100'],
-      hint: ThemeColors.gray['100'],
+      primary: ThemeColors.gray['300'],
+      secondary: ThemeColors.black['300'],
+      icon: ThemeColors.gray['300'],
+      hint: ThemeColors.gray['300'],
       //disabled: ThemeColors.gray['500']
     },
     action: darkAction,
@@ -35,50 +34,87 @@ export const darkTheme =
   overrides:{
     // BUTTON OVERRIDES
     MuiButton:{
-      containedPrimary:{
-        backgroundColor: ThemeColors.blue['400']
-      },
-      outlinedPrimary:{
-        borderColor: ThemeColors.blue['400'],
-        color: ThemeColors.blue['400']
+      outlined:{
+        borderColor: ThemeColors.black['100']
       }
     },
 
     // APP BAR OVERRIDES
     MuiAppBar:{
       colorDefault:{
-        color: ThemeColors.gray['100'],
-        backgroundColor: '#13181b',//ThemeColors.black['900']
+        color: ThemeColors.black['100'],
+        backgroundColor: ThemeColors.black['A200']//'#13181b',//ThemeColors.black['900']
+      },
+      colorPrimary:{
+        color: ThemeColors.black['50'],
+        backgroundColor: ThemeColors.black['A700']
       },
       colorSecondary:{
+        backgroundColor: ThemeColors.black['A100']
+      }
+    },
+
+    // TABS OVERRIDES
+    MuiTabs:{
+      indicator:{
+        backgroundColor: ThemeColors.blue['500']
+      }
+    },
+
+    // TABLE OVERRIDES
+    MuiTableRow:{
+      root:{
+        color: ThemeColors.gray['100'],
+        "&$selected":{
+          backgroundColor: ThemeColors.black['A400']
+        }
+      }      
+    },
+    MuiTableHead:{
+      root:{
+        background: ThemeColors.black['A200']
+      }
+    },
+    MuiTableCell:{
+      head:{
+        fontWeight: 600
+      }
+    },
+
+    // DRAWER OVERRIDES
+    MuiDrawer:{
+      paper:{
+        backgroundColor: ThemeColors.black['A400']
+      },
+      paperAnchorBottom:{
         backgroundColor: ThemeColors.black['900']
       }
     },
 
-    MuiTableRow:{
+    // SNACKBAR OVERRIDES
+    MuiSnackbar:{
       root:{
-        '&.striped:nth-of-type(even)': {
-          backgroundColor: ThemeColors.black['900'],
-        }
+        backgroundColor: ThemeColors.black['A700'],
+        color: ThemeColors.white['50']
+      }
+    },
+    MuiSnackbarContent:{
+      root:{
+        backgroundColor: ThemeColors.black['A700'],
+        color: ThemeColors.white['50']
       }
     },
 
-    MuiTableHead:{
-      root:{
-        background: ThemeColors.black['900']
-      }
-    },
-
-    //LIST ITEM OVERRIDES
+    //LIST ITEM OVERRIDES (plus nav drawer)
     MuiListItem:{
       root:{
-        color: ThemeColors.gray['50'],
+        color: ThemeColors.gray['300'],
         '&:hover':{
-          backgroundColor: ThemeColors.black['900']//'rgba(255, 255, 255, 0.07)'
+          backgroundColor: ThemeColors.black['A200']
          },
          // OVERRIDES FOR ACTIVE ROUTE IN SIDE NAVIGATION
          '&.routeActive':{
-            color: ThemeColors.blue['100'],
+            color: ThemeColors.white['50'],
             position: 'relative',
             '&:hover': {
               backgroundColor: 'transparent'
@@ -91,14 +127,14 @@ export const darkTheme =
               width: 'calc(100% - 8px)',
               left: 0,
               top: 0,
-              backgroundColor: ThemeColors.black['900'],
+              backgroundColor: ThemeColors.blue['500'],
               borderRadius: '0px 24px 24px 0px'
             },
             '&.drawerOpen:hover:before':{
-              backgroundColor: ThemeColors.black['700'],
+              backgroundColor: ThemeColors.blue['700'],
             },
             '& svg':{
-              fill: ThemeColors.blue['100']
+              fill: ThemeColors.white['50'],
             }
          }
       },
