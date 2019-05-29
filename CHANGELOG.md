@@ -8,4 +8,4 @@ Breaking Changes:
 * Removed deprecated NativeScript themes
 * Removed deprecated Red/Red Dark themes
 
-> **NOTE**: In order to use the dark themes, you must be using at least version 2.0.1 of [@pxblue/colors](https://www.npmjs.com/package/@pxblue/colors).
+> **NOTE**: In order to use the dark themes, you must be using at least version 1.0.13 of [@pxblue/colors](https://www.npmjs.com/package/@pxblue/colors).
