@@ -9,7 +9,7 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 import * as ThemeColors from '@pxblue/colors';
 import { typography, darkInput, darkBackground, darkAction } from './constants';
 
-export const darkTheme = 
+export const blueDarkTheme = 
 {
 	palette:{
 	  primary: ThemeColors.blue,
