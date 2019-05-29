@@ -23,11 +23,11 @@ var typography = exports.typography = {
    **/
 
 var darkText = exports.darkText = {
-    primary: "#ffffff",
-    secondary: "#ffffff",
+    primary: ThemeColors.white['50'],
+    secondary: ThemeColors.white['50'],
     disabled: "rgba(255,255,255,.25)",
-    hint: "#ffffff",
-    icon: "#ffffff",
+    hint: ThemeColors.white['50'],
+    icon: ThemeColors.white['50'],
     divider: "rgba(255,255,255,.05)"
 };
 var input = exports.input = {
@@ -44,18 +44,17 @@ var darkInput = exports.darkInput = {
 };
 var background = exports.background = {
     default: ThemeColors.gray['50'],
-    paper: "#ffffff"
+    paper: ThemeColors.white['50']
 };
 var darkBackground = exports.darkBackground = {
-    default: '#182022',
-    paper: '#0b0e0f',
-    appBar: '#13181b'
+    default: ThemeColors.black['A200'],
+    paper: ThemeColors.black['900'],
+    appBar: ThemeColors.black['200']
 };
 var action = exports.action = {
     active: "rgba(0, 0, 0, .6)",
     disabled: "rgba(0, 0, 0, .25)"
 };
 var darkAction = exports.darkAction = {
-    active: ThemeColors.gray['50'] //"rgba(255, 255, 255, 0.6)",
-    //disabled: "rgba(255, 255, 255, 0.25)"
+    active: ThemeColors.gray['300']
 };

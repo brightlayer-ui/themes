@@ -6,10 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _darkTheme = require('./darkTheme');
 
-Object.defineProperty(exports, 'dark', {
+Object.defineProperty(exports, 'blueDark', {
   enumerable: true,
   get: function get() {
-    return _darkTheme.darkTheme;
+    return _darkTheme.blueDarkTheme;
   }
 });
 
@@ -19,14 +19,5 @@ Object.defineProperty(exports, 'blue', {
   enumerable: true,
   get: function get() {
     return _blueTheme.blueTheme;
-  }
-});
-
-var _redTheme = require('./redTheme');
-
-Object.defineProperty(exports, 'red', {
-  enumerable: true,
-  get: function get() {
-    return _redTheme.redTheme;
   }
 });

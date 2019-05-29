@@ -38,11 +38,53 @@ var blueTheme = exports.blueTheme = {
     MuiAppBar: {
       colorDefault: {
         color: ThemeColors.black['500'],
-        backgroundColor: ThemeColors.gray['100'] //ThemeColors.black['900']
+        backgroundColor: ThemeColors.gray['50']
       },
       colorSecondary: {
-        backgroundColor: ThemeColors.gray['200']
+        backgroundColor: ThemeColors.blue['700']
       }
+    },
+
+    // TABS OVERRIDES
+    MuiTabs: {
+      indicator: {
+        backgroundColor: ThemeColors.white['50']
+      }
+    },
+
+    //LIST ITEM OVERRIDES (plus nav drawer)
+    MuiListItem: {
+      root: {
+        color: ThemeColors.black['500'],
+        '&:hover': {
+          backgroundColor: 'rgba(0, 0, 0, 0.08)'
+        },
+        // OVERRIDES FOR ACTIVE ROUTE IN SIDE NAVIGATION
+        '&.routeActive': {
+          position: 'relative',
+          '&:hover': {
+            backgroundColor: 'transparent'
+          },
+          '&:before': {
+            content: '""',
+            zIndex: -1,
+            position: 'absolute',
+            height: '100%',
+            width: 'calc(100% - 8px)',
+            left: 0,
+            top: 0,
+            backgroundColor: ThemeColors.blue['50'],
+            borderRadius: '0px 24px 24px 0px'
+          },
+          '&.drawerOpen:hover:before': {
+            backgroundColor: ThemeColors.blue['100']
+          },
+          '& svg': {
+            fill: ThemeColors.blue['500']
+          }
+        }
+      }
+
     }
   }
 };
