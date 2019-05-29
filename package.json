@@ -7,8 +7,7 @@
     "test": "./buildTest.sh",
     "build:react": "cd react && yarn build && cd ..",
     "build:all": "yarn build:react",
-    "publish:full": "yarn build:all && npm version patch && npm publish",
-    "prepublish": "yarn test"
+    "publish:full": "yarn build:all && npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
