@@ -73,7 +73,7 @@ $pxb-blue-dark-theme : mat-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-acc
     @include angular-material-theme($pxb-blue-dark-theme);
     @include reasonable-margins();
     @include bodyfont();
-    // background-color: #333d43;
+    @include darktheme();
 }
 
 // Red Theme
