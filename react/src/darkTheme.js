@@ -54,12 +54,28 @@ export const darkTheme =
       }
     },
 
+
     // BUTTON OVERRIDES
     MuiButton:{
       outlined:{
         borderColor: ThemeColors.black['100']
+      },
+      contained:{
+        backgroundColor: ThemeColors.black['500'],
+        color: ThemeColors.white['50'],
+        '&:hover':{
+          backgroundColor: ThemeColors.black['300'],
+        }
       }
     },
+
+    // CHIP OVERRIDES
+    MuiChip:{
+      root:{
+        backgroundColor: ThemeColors.black['500']
+      }
+    },
+
 
     // DRAWER OVERRIDES
     MuiDrawer:{
@@ -70,6 +86,25 @@ export const darkTheme =
         backgroundColor: ThemeColors.black['900']
       }
     },
+
+    // FAB OVERRIDES
+    MuiFab:{
+      root:{
+        backgroundColor: ThemeColors.black['500'],
+        color: ThemeColors.white['50'],
+        '&:hover':{
+          backgroundColor: ThemeColors.black['300'],
+        }
+      }
+    },
+
+    // ICON BUTTON OVERRIDES
+    MuiIconButton:{
+      root:{
+        color: ThemeColors.black['500'],
+      }
+    },
+
 
     //LIST ITEM OVERRIDES (plus nav drawer)
     MuiListItem:{
@@ -119,6 +154,7 @@ export const darkTheme =
         color: ThemeColors.white['50']
       }
     },
+
 
     // TABLE OVERRIDES
     MuiTableCell:{
