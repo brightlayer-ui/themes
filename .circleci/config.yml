@@ -10,7 +10,6 @@ jobs:
           command: |
             yarn
             cd react && yarn
-            cd ../react-native && yarn
             cd ..
       - run:
           name: Build Package
