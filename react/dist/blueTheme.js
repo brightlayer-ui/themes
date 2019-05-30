@@ -24,7 +24,7 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 var blueTheme = exports.blueTheme = {
   palette: {
     primary: ThemeColors.blue,
-    secondary: ThemeColors.gray,
+    secondary: ThemeColors.lightBlue,
     error: ThemeColors.red,
     background: _constants.background,
     action: _constants.action,

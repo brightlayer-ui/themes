@@ -4,12 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _darkTheme = require('./darkTheme');
+var _blueDarkTheme = require('./blueDarkTheme');
 
 Object.defineProperty(exports, 'blueDark', {
   enumerable: true,
   get: function get() {
-    return _darkTheme.blueDarkTheme;
+    return _blueDarkTheme.blueDarkTheme;
   }
 });
 
