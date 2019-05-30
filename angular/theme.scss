@@ -11,6 +11,7 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 @import './margins';
 @import './fonts';
 @import './darkTheme';
+@import './blueTheme';
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config( 
     $font-family: '"Open Sans", Arial, Helvetica, sans-serif;', 
@@ -55,6 +56,7 @@ $pxb-blue-theme : mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue
     @include angular-material-theme($pxb-blue-theme);
     @include reasonable-margins();
     @include bodyfont();
+    @include bluetheme();
 }
 
 // Blue Dark Theme
