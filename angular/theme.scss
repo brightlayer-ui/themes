@@ -9,7 +9,8 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 @import '~@angular/material/_theming.scss';
 @import '~@pxblue/colors/palette.scss';
 @import './margins';
-
+@import './fonts';
+@import './darkTheme';
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config( 
     $font-family: '"Open Sans", Arial, Helvetica, sans-serif;', 
@@ -37,43 +38,36 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 
-/* FUTURE: material should be the default theme (without a class required). .pxb-blue class should wrap the blue
-theme and be required on a top level element to apply the theme. This will be a breaking change for existing users
-and will need to be documented and released as a new major version.
-*/
-
 // Material default theme colors
 $material-theme-primary: mat-palette($mat-indigo, 700, 300, 900);
 $material-theme-accent: mat-palette($mat-light-blue);
 $material-theme-warn: mat-palette($mat-deep-orange, A200);
 $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent, $material-theme-warn);
-.material-default{
     @include angular-material-theme($material-theme);
-}
+
 
 // Blue Theme
 $pxb-blue-primary: mat-palette($pxb-blue);
 $pxb-blue-accent : mat-palette($pxb-lightBlue, 500);
 $pxb-blue-warn: mat-palette($pxb-red, A700);
 $pxb-blue-theme : mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-warn);
-// .pxb-blue{
+.pxb-blue{
     @include angular-material-theme($pxb-blue-theme);
     @include reasonable-margins();
-    body { // this body tag should be removed when the .pxb-blue class rule is restored (see FUTURE above)
-        @include bodyfont();
-    }
-// }
+    @include bodyfont();
+}
 
 // Blue Dark Theme
-$pxb-blue-dark-primary: mat-palette($pxb-black, 700);
-$pxb-blue-dark-accent : mat-palette($pxb-blue, 500);
+$pxb-blue-dark-primary: mat-palette($pxb-blue, 500);
+$pxb-blue-dark-accent : mat-palette($pxb-lightBlue, 500);
 $pxb-blue-dark-warn: mat-palette($pxb-red, A700);
 $pxb-blue-dark-theme : mat-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-accent, $pxb-blue-dark-warn);
 .pxb-blue-dark{
     @include angular-material-theme($pxb-blue-dark-theme);
     @include reasonable-margins();
     @include bodyfont();
-    // background-color: #333d43;
+    @include darktheme($pxb-blue-dark-primary, $pxb-blue-dark-accent);
+  
 }
 
 // Red Theme
