@@ -9,6 +9,8 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 @import '~@angular/material/_theming.scss';
 @import '~@pxblue/colors/palette.scss';
 @import './margins';
+@import './fonts';
+@import './darkTheme';
 
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config( 
