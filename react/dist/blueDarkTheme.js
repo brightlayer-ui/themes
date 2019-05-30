@@ -24,17 +24,11 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 var blueDarkTheme = exports.blueDarkTheme = {
   palette: {
     primary: ThemeColors.blue,
-    secondary: ThemeColors.gray,
+    secondary: ThemeColors.lightBlue,
     error: ThemeColors.red,
     grey: ThemeColors.gray,
     background: _constants.darkBackground,
-    text: {
-      primary: ThemeColors.gray['300'],
-      secondary: ThemeColors.black['300'],
-      icon: ThemeColors.gray['300'],
-      hint: ThemeColors.gray['300']
-      //disabled: ThemeColors.gray['500']
-    },
+    text: _constants.darkText,
     action: _constants.darkAction,
     line: { stepper: ThemeColors.black['500'] },
     input: _constants.darkInput,
@@ -47,7 +41,7 @@ var blueDarkTheme = exports.blueDarkTheme = {
     MuiAppBar: {
       colorDefault: {
         color: ThemeColors.black['100'],
-        backgroundColor: ThemeColors.black['A200'] //'#13181b',//ThemeColors.black['900']
+        backgroundColor: ThemeColors.black['A200']
       },
       colorPrimary: {
         color: ThemeColors.black['50'],
@@ -150,12 +144,6 @@ var blueDarkTheme = exports.blueDarkTheme = {
     },
 
     // SNACKBAR OVERRIDES
-    MuiSnackbar: {
-      root: {
-        backgroundColor: ThemeColors.black['A700'],
-        color: ThemeColors.white['50']
-      }
-    },
     MuiSnackbarContent: {
       root: {
         backgroundColor: ThemeColors.black['A700'],
