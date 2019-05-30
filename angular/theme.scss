@@ -12,6 +12,7 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 @import './fonts';
 @import './darkTheme';
 @import './blueTheme';
+
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config( 
     $font-family: '"Open Sans", Arial, Helvetica, sans-serif;', 
@@ -70,27 +71,4 @@ $pxb-blue-dark-theme : mat-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-acc
     @include bodyfont();
     @include darktheme($pxb-blue-dark-primary, $pxb-blue-dark-accent);
   
-}
-
-// Red Theme
-$pxb-red-primary: mat-palette($pxb-red);
-$pxb-red-accent : mat-palette($pxb-black, 500);
-$pxb-red-warn: mat-palette($pxb-red, A700);
-$pxb-red-theme : mat-light-theme($pxb-red-primary, $pxb-red-accent, $pxb-red-warn);
-.pxb-red{
-    @include angular-material-theme($pxb-red-theme);
-    @include reasonable-margins();
-    @include bodyfont();
-}
-
-// Red Dark Theme
-$pxb-red-dark-primary: mat-palette($pxb-black, 700);
-$pxb-red-dark-accent : mat-palette($pxb-red, 500);
-$pxb-red-dark-warn: mat-palette($pxb-red, A700);
-$pxb-red-dark-theme : mat-dark-theme($pxb-red-dark-primary, $pxb-red-dark-accent, $pxb-red-dark-warn);
-.pxb-red-dark{
-    @include angular-material-theme($pxb-red-dark-theme);
-    @include reasonable-margins();
-    @include bodyfont();
-    // background-color: #333d43;
 }
