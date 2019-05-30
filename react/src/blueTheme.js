@@ -13,7 +13,7 @@ export const blueTheme =
 {
 	palette:{
 	  primary: ThemeColors.blue,
-	  secondary: ThemeColors.gray,
+	  secondary: ThemeColors.lightBlue,
     error: ThemeColors.red,
     background: background,
     action: action,

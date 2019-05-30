@@ -13,12 +13,12 @@ export const typography = {
   useNextVariants: true
 };
 export const darkText = {
-    primary: ThemeColors.white['50'],
-    secondary: ThemeColors.white['50'],
-    disabled: "rgba(255,255,255,.25)",
-    hint: ThemeColors.white['50'],
-    icon: ThemeColors.white['50'],
-    divider: "rgba(255,255,255,.05)"
+  primary: ThemeColors.gray['300'],
+  secondary: ThemeColors.black['300'],
+  icon: ThemeColors.gray['300'],
+  hint: ThemeColors.gray['300'],
+  //divider: "rgba(255,255,255,.05)",
+  //disabled: ThemeColors.gray['500']
 };
 export const input = {
   bottomLine: ThemeColors.black['500'],

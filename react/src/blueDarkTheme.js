@@ -7,23 +7,17 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 **/
 
 import * as ThemeColors from '@pxblue/colors';
-import { typography, darkInput, darkBackground, darkAction } from './constants';
+import { typography, darkInput, darkText, darkBackground, darkAction } from './constants';
 
 export const blueDarkTheme = 
 {
 	palette:{
 	  primary: ThemeColors.blue,
-	  secondary: ThemeColors.gray,
+	  secondary: ThemeColors.lightBlue,
     error: ThemeColors.red,
     grey: ThemeColors.gray,
     background: darkBackground,
-    text: {
-      primary: ThemeColors.gray['300'],
-      secondary: ThemeColors.black['300'],
-      icon: ThemeColors.gray['300'],
-      hint: ThemeColors.gray['300'],
-      //disabled: ThemeColors.gray['500']
-    },
+    text: darkText,
     action: darkAction,
     line: {stepper: ThemeColors.black['500']},
     input: darkInput,
@@ -36,7 +30,7 @@ export const blueDarkTheme =
     MuiAppBar:{
       colorDefault:{
         color: ThemeColors.black['100'],
-        backgroundColor: ThemeColors.black['A200']//'#13181b',//ThemeColors.black['900']
+        backgroundColor: ThemeColors.black['A200']
       },
       colorPrimary:{
         color: ThemeColors.black['50'],
@@ -142,12 +136,6 @@ export const blueDarkTheme =
     },
 
     // SNACKBAR OVERRIDES
-    MuiSnackbar:{
-      root:{
-        backgroundColor: ThemeColors.black['A700'],
-        color: ThemeColors.white['50']
-      }
-    },
     MuiSnackbarContent:{
       root:{
         backgroundColor: ThemeColors.black['A700'],
