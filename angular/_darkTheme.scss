@@ -1,5 +1,5 @@
 @import '~@pxblue/colors/palette.scss';
-@mixin darktheme(){
+@mixin darktheme($primary,$accent){
 
     /* Side navigation*/
         .mat-drawer{
@@ -42,7 +42,7 @@
 
     /* tabbar link*/
         .mat-tab-group.mat-primary.mat-background-primary .mat-ink-bar{
-            background-color: map-get($pxb-blue, 500);
+            background-color: map-get($primary, 500);
         }
         .mat-tab-group .mat-ink-bar{
             background-color: map-get($pxb-white, 50);
@@ -51,12 +51,12 @@
     /* button*/
         .mat-stroked-button:not([disabled]){
             border-color:#c6cacc;
-                &.mat-primary{
-                    border-color:map-get($pxb-blue, 500);
-                }
-                &.mat-accent{
-                    border-color:map-get($pxb-lightBlue, 500);
-                }
+            &.mat-primary{
+                border-color:map-get($primary, 500);
+            }
+            &.mat-accent{
+                border-color:map-get($accent, 500);
+            }
         }
 
      /*default button*/
