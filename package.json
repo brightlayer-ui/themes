@@ -1,15 +1,13 @@
 {
   "name": "@pxblue/themes",
-  "version": "1.0.26",
+  "version": "2.0.0",
   "description": "PXBlue themes for Eaton applications",
   "main": "index.js",
   "scripts": {
     "test": "./buildTest.sh",
     "build:react": "cd react && yarn build && cd ..",
-    "build:react-native": "cd react-native && yarn build && cd ..",
-    "build:all": "yarn build:react && yarn build:react-native",
-    "publish:full": "yarn build:all && npm version patch && npm publish",
-    "prepublish": "yarn test"
+    "build:all": "yarn build:react",
+    "publish:full": "yarn build:all && npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
@@ -31,7 +29,7 @@
   },
   "homepage": "https://github.com/pxblue/themes#readme",
   "dependencies": {
-    "@pxblue/colors": "^1.0.1",
+    "@pxblue/colors": "^1.0.13",
     "typeface-open-sans": "^0.0.54"
   }
 }

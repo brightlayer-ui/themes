@@ -10,7 +10,6 @@
 
 # src folders
 /react/src
-/react-native/src
 /.circleci
 
 # misc
