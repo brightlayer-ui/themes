@@ -1,4 +1,7 @@
 ## v2.0.2
+* Adds anti-aliasing style rules to Angular theme to match default React behavior
+
+## v2.0.2
 This update has introduced an updated Dark theme for PX Blue applications. 
 
 Breaking Changes:
