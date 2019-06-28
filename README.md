@@ -19,8 +19,18 @@ yarn add @pxblue/themes
 Depending on the framework that you are using, PX Blue themes are applied in different ways.
 
 ### Angular w/ Angular Material
+In order to use the PX Blue themes and font (Open Sans), you will need to modify your angular.json file "styles" entries (there is one under "build" and one under "test") to include the PX Blue themes and Open Sans reference:
 ```
-// in styles.scss or your top-level sass file
+"styles": [
+    "src/styles.scss",
+    "./node_modules/@pxblue/themes/angular/theme.js",
+    "./node_modules/typeface-open-sans"
+],
+```
+
+Alternatively, you can also import the theme file in your top-level SCSS file.
+```
+// in styles.scss or your top-level scss file
 import '~@pxblue/themes/angular/theme.scss'
 ```
 
@@ -33,15 +43,6 @@ You can then apply the theme to your application by adding the proper class to y
 <app-root class="pxb-blue-dark">
 ```
 > If you do not specify a theme class, your application will use the default Material theme.
-
-In order to use the PX Blue theme font (Open Sans), you will also need to modify your angular.json file "styles" entries (there is one under "build" and one under "test") to include the Open Sans reference:
-```
-"styles": [
-    "src/styles.scss",
-    "./node_modules/typeface-open-sans"
-],
-```
-
 
 ### React w/ Material UI
 ```
