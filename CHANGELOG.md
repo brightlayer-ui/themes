@@ -1,3 +1,6 @@
+## v2.1.0
+Updated error/warn color for Angular theme
+
 ## v2.0.2
 * Adds anti-aliasing style rules to Angular theme to match default React behavior
 

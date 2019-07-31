@@ -51,7 +51,7 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
 // Blue Theme
 $pxb-blue-primary: mat-palette($pxb-blue);
 $pxb-blue-accent : mat-palette($pxb-lightBlue, 500);
-$pxb-blue-warn: mat-palette($pxb-red, A700);
+$pxb-blue-warn: mat-palette($pxb-red, 500);
 $pxb-blue-theme : mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-warn);
 .pxb-blue{
     @include angular-material-theme($pxb-blue-theme);
@@ -63,7 +63,7 @@ $pxb-blue-theme : mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue
 // Blue Dark Theme
 $pxb-blue-dark-primary: mat-palette($pxb-blue, 500);
 $pxb-blue-dark-accent : mat-palette($pxb-lightBlue, 500);
-$pxb-blue-dark-warn: mat-palette($pxb-red, A700);
+$pxb-blue-dark-warn: mat-palette($pxb-red, 500);
 $pxb-blue-dark-theme : mat-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-accent, $pxb-blue-dark-warn);
 .pxb-blue-dark{
     @include angular-material-theme($pxb-blue-dark-theme);
