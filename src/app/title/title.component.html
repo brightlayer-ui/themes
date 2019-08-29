@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" id="topBar">
+    <button fxShow.gt-xs="false" type="button" aria-label="Toggle sidenav" mat-icon-button (click)="onMenuClicked()"
+            style="margin-left:-4px; margin-right: 12px">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="width:100%">
+        <h6 class="example-app-name">{{title}}</h6>
+        <button mat-stroked-button color="link" (click)="openLoginDialog()">
+            <mat-icon>person</mat-icon> LOG IN</button>
+    </div>
+</mat-toolbar>

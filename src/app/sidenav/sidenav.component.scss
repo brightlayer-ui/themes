@@ -1,0 +1,89 @@
+.app-container{
+    height: 100%;
+    width: 100%;
+}
+.sidenav{
+    max-width: 90%;
+    transition: width 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    &.mobile{
+        width: 0px !important;
+        &.open{
+            width: 350px !important;
+        }
+    }
+    &:not(.mobile){
+        width: 64px !important;
+        &.open{
+            width: 350px !important;
+        }
+        .mat-list-item{
+            white-space: nowrap;
+        }
+    }
+}
+
+.nav-content{
+    transition: margin 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    &.mobile{
+        margin-left: auto !important;
+    }
+    &:not(.mobile){
+        margin-left: 64px !important;
+        &.open{
+            margin-left: 350px !important;
+        }
+    }
+}
+
+.navWrapper{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+section{
+    flex: 0 0 auto;
+}
+[matListIcon]{
+    margin-right: 16px;
+}
+[matSubheader]{
+    white-space: nowrap;
+}
+.primaryLink{
+    position: relative;
+    color: #007bc1;
+    background-color: transparent;
+    &:hover, &:focus, &:active{
+        background-color: transparent;
+    }
+    [matListItemContent]{
+        background-color: blue;
+    }
+}
+.primaryLink::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 8px);
+    min-width: 90px;
+    left: 0;
+    top: 0;
+    background-color: #e0eff8;
+    border-radius: 0px 24px 24px 0px;
+}
+
+.fab2{
+    width: 200px;
+    height: 54px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    position: fixed;
+    bottom: 15px;
+    right: 30px;
+}
+.fab2 > span.mat-button-wrapper {
+    padding: 0;
+}

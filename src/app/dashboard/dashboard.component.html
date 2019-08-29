@@ -1,0 +1,33 @@
+<app-title></app-title>
+<div style="padding:20px">
+
+      <mat-grid-list #grid [cols]="cols"  gutterSize="12px" rowHeight="270px" >
+        <mat-grid-tile *ngFor="let device of deviceList">
+          <mat-card class="padding0">
+              <mat-list class="padding0">
+                <pxb-hero-banner [divider]="true">
+                    <pxb-hero label="Grade" value="{{device.heroValue}}"  units="/100" size="36">
+                      <span [style.color]="gradeInterpretColor(device.heroValue)"   primary>{{interpretIcon(device.heroValue)}} </span>
+                    </pxb-hero>
+                    <pxb-hero label="Load">
+                      <pie-progress  [style.color]="interpretColor(100 - device.loadValue)" percent="{{device.loadValue}}" size="36" primary></pie-progress>
+                      <pxb-channel-value value="{{device.loadValue}}" units="%"></pxb-channel-value>
+                    </pxb-hero>
+                    <pxb-hero label="Battery" value="{{device.battery}}"  units="%">
+                      <battery-progress  [style.color]="interpretColor(device.battery)"  percent="{{device.battery}}" size="36" primary></battery-progress>
+                    </pxb-hero>
+                </pxb-hero-banner>
+                  <mat-list-item *ngFor="let list of device.channels">
+                      <div style="width: 100%; display:flex; justify-content: space-between">
+                        <mat-icon>{{list.icon}}</mat-icon>
+                        <span class="list-label" style="margin-bottom:0">{{list.label}}</span>
+                        <div class="list-value">
+                          <pxb-channel-value value="{{list.value}}" units="{{list.unit}}"></pxb-channel-value>
+                    </div>
+                  </div>
+                 </mat-list-item>
+              </mat-list>
+          </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

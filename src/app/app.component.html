@@ -1,0 +1,26 @@
+<app-sidenav>
+    <router-outlet></router-outlet>
+    <div>
+        <button mat-fab class="fab fab1" color="primary" (click)="toggleTheme()">
+            <i class="material-icons">flip_to_back</i>  toggle theme
+        </button>
+        <button mat-stroked-button class="fab fab2" color="link">{{isDark ? 'Blue Dark Theme' : 'Blue Theme'}}</button>
+    </div>
+</app-sidenav>
+
+<div class="notice" *ngIf="showNotice">
+    <div fxLayout="row" fxLayoutAlign="end" style="margin-top:10px; margin-bottom:55px">
+        <button mat-icon-button (click)="showNotice=false">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <h1>
+        THEME DEMO ONLY
+    </h1>
+    <p>
+        This example is intended to demonstrate the effects of different PX Blue themes on various components.
+        The data, icons, behaviors, etc. are not representative of a production application and many areas of
+        the demo are non-functional/non-interactive.
+    </p>
+</div>
+
