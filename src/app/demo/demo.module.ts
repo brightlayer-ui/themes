@@ -46,8 +46,7 @@ import {NavigationService} from "../services/navigation.service";
         NavigationService,
     ],
     exports: [
-        SidenavComponent,
-        SharedModule,
+        SidenavComponent
     ]
 })
 export class DemoModule {
