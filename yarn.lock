@@ -316,13 +316,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@netbasal/ngx-content-loader@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@netbasal/ngx-content-loader/-/ngx-content-loader-3.0.0.tgz#398b72388fb8e9861bf6e36ec1f8f6330d209d8f"
-  integrity sha512-NOVmB6vmWzdpaHFBHw8DLEsDarr/CiEhPdo5Vjl9KffPFOphM+9ZNYKJ3y8uonJw64WAjkL2WR06ToKDrA2Dug==
-  dependencies:
-    tslib "^1.9.0"
-
 "@ngtools/webpack@8.2.2":
   version "8.2.2"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.2.2.tgz#61ba246ba4aff5e03daa0abea76947647b0da25e"
