@@ -30,7 +30,7 @@ export class OverviewComponent {
     }
 
     openSnackbar(): void {
-        this.snackbar.openFromComponent(DeleteSnackbarComponent, {duration: 600000});
+        this.snackbar.openFromComponent(DeleteSnackbarComponent, {duration: 6000});
     }
 }
 
