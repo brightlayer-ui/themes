@@ -336,7 +336,7 @@
 
 "@pxblue/angular-components@1.1.1":
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-1.1.1.tgz#fc4d82928265a1b26bde0f3abde5397bbccc360b"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-demo/-/angular-demo-1.1.1.tgz#fc4d82928265a1b26bde0f3abde5397bbccc360b"
   integrity sha512-68lAK8uzHnJckFpiH8XkMD1qCdy6nfqETb2BZiF48suyq451XYD2BuD9Mt/IlOKYjwkrMJKcFTNrYQQIMK1pSA==
 
 "@pxblue/colors@1.0.13", "@pxblue/colors@^1.0.13":

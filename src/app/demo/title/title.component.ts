@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {NavigationService} from '../shared/navigation.service';
+import {NavigationService} from '../../services/navigation.service';
 import {MatDialog} from '@angular/material';
-import {LoginComponent} from '../login/login.component';
+import {LoginDialogComponent} from '../login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-title',
@@ -26,7 +26,7 @@ export class TitleComponent implements OnInit {
     }
 
     openLoginDialog(): void {
-        this.dialog.open(LoginComponent, {
+        this.dialog.open(LoginDialogComponent, {
             maxHeight: 'unset'
         });
     }

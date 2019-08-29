@@ -12,12 +12,12 @@ export class AppComponent {
 
     constructor(private renderer: Renderer2) {}
 
-      toggleTheme() {
-          this.isDark = !this.isDark;
-          if (this.isDark) {
-              this.renderer.addClass(document.body, 'pxb-blue-dark');
-          } else {
-              this.renderer.removeClass(document.body, 'pxb-blue-dark');
-          }
-      }
+    toggleTheme() {
+        this.isDark = !this.isDark;
+        if (this.isDark) {
+          this.renderer.addClass(document.body, 'pxb-blue-dark');
+        } else {
+          this.renderer.removeClass(document.body, 'pxb-blue-dark');
+        }
+    }
 }

@@ -1,9 +1,9 @@
-import { Component, OnDestroy, ChangeDetectorRef , OnInit} from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, ChangeDetectorRef , OnInit} from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as PXBColors from '@pxblue/colors';
-import {NavigationService} from '../shared/navigation.service';
-import { ActivatedRoute }    from '@angular/router';
+import {NavigationService} from '../../services/navigation.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',

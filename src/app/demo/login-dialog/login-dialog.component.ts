@@ -6,15 +6,15 @@ const EMAIL_REGEX =  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-z
 
 @Component({
     selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss']
+    templateUrl: './login-dialog.component.html',
+    styleUrls: ['./login-dialog.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginDialogComponent implements OnInit {
 
     loginForm: FormGroup;
 
     constructor(private fb: FormBuilder,
-                public dialogRef: MatDialogRef<LoginComponent>) {
+                public dialogRef: MatDialogRef<LoginDialogComponent>) {
 
     }
 
@@ -24,5 +24,9 @@ export class LoginComponent implements OnInit {
             password: ['', Validators.compose([Validators.required])],
             remember: [true]
         });
+    }
+
+    login(): void {
+        this.dialogRef.close();
     }
 }

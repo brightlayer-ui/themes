@@ -1,4 +1,4 @@
-@import './../title/title.component.scss';
+@import '../title/title.component.scss';
 
 ::ng-deep #drawer-container {
     height: calc(100% - #{$topBarHeight});
