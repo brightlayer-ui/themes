@@ -18,7 +18,8 @@ import {MaterialModule} from "./material.module";
         HeroModule,
         NgProgressIconsModule,
         MaterialModule,
-        ReactiveFormsModule],
+        ReactiveFormsModule
+    ],
 })
 export class SharedModule {
 }
