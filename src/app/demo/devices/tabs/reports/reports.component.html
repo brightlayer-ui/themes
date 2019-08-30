@@ -1,6 +1,7 @@
 <mat-vertical-stepper [linear]="false" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Select Date</ng-template>
             <mat-form-field>
                 <input matInput [matDatepicker]="picker" placeholder="Choose a date">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
