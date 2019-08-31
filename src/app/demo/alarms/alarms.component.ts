@@ -8,7 +8,20 @@ import * as Colors from '@pxblue/colors';
 })
 export class AlarmsComponent {
 
-    color = Colors.red['500'];
+    alarmHistory: AlarmHistory[] = [
+        new AlarmHistory('Today', [
+            new Device('Lighting - PDU 200', 'Eaton'),
+            new Device('UPS 5400', 'Eaton')
+        ]),
+        new AlarmHistory('Past Week', [
+            new Device('Lighting - PDU 400', 'Ephesus'),
+            new Device('UPS 5400', 'Eaton')
+        ]),
+        new AlarmHistory('Last 30 Days', [
+            new Device('Generator 200', 'Eaton')
+        ])
+    ];
+
     sideDrawerContent: SideDrawerContent[] = [
         new SideDrawerContent('Cleared', 'No'),
         new SideDrawerContent('Acknowledged', 'No'),
@@ -20,11 +33,19 @@ export class AlarmsComponent {
 
     getColor(data: string): string {
         if (data === 'No') {
-            return this.color;
+            return Colors.red['500'];;
         }
     }
 }
 
 class SideDrawerContent {
     constructor(public data1: string, public data2: string) {}
+}
+
+class AlarmHistory {
+    constructor(public time: string, public devices: Device[]) {}
+}
+
+class Device {
+    constructor(public name: string, manufacturer: string) {}
 }

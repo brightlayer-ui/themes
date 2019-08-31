@@ -3,8 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
     selector: 'app-reports',
-    templateUrl: './reports.component.html',
-    styleUrls: ['./reports.component.scss']
+    templateUrl: './reports.component.html'
 })
 export class ReportsComponent {
 

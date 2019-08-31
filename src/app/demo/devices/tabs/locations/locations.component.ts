@@ -3,8 +3,7 @@ import {MatBottomSheet, MatBottomSheetRef} from '@angular/material';
 
 @Component({
   selector: 'app-locations',
-  templateUrl: './locations.component.html',
-  styleUrls: ['./locations.component.scss']
+  templateUrl: './locations.component.html'
 })
 export class LocationsComponent {
 

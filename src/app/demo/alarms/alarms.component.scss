@@ -1,6 +1,6 @@
 @import '../title/title.component.scss';
 
-::ng-deep #drawer-container {
+#drawer-container {
     height: calc(100% - #{$topBarHeight});
 }
 .accordion {
