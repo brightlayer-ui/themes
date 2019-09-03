@@ -33,7 +33,7 @@ export class AlarmsComponent {
 
     getColor(data: string): string {
         if (data === 'No') {
-            return Colors.red['500'];;
+            return Colors.red['500'];
         }
     }
 }
@@ -47,5 +47,5 @@ class AlarmHistory {
 }
 
 class Device {
-    constructor(public name: string, manufacturer: string) {}
+    constructor(public name: string, public manufacturer: string) {}
 }
