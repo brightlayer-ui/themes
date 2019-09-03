@@ -25,17 +25,9 @@ export class LocationsComponent {
 @Component({
     selector: 'app-location-bottom-sheet',
     template: `<mat-nav-list>
-        <mat-list-item (click)="openLink($event)">
-            <span mat-line>Example 1</span>
-            <span mat-line>Example 1 subtext</span>
-        </mat-list-item>
-        <mat-list-item (click)="openLink($event)">
-            <span mat-line>Example 2</span>
-            <span mat-line>Example 2 subtext</span>
-        </mat-list-item>
-        <mat-list-item (click)="openLink($event)">
-            <span mat-line>Example 3</span>
-            <span mat-line>Example 3 subtext</span>
+        <mat-list-item (click)="openLink($event)" style="text-align:center">
+            <span mat-line>Lighting - PDU 200</span>
+            <span mat-line>ETN 42.00</span>
         </mat-list-item>
     </mat-nav-list>`,
 })
