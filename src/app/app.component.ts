@@ -11,11 +11,21 @@ export class AppComponent implements OnInit {
 
     themeIndex = 0;
     themes = ['pxb-blue', 'pxb-blue-dark'];
+    userFacingThemeName: string;
 
     constructor(private renderer: Renderer2) {}
 
     ngOnInit(): void {
         this.applyTheme(this.themes[0]);
+        this.userFacingThemeName = this.getUserFacingThemeName();
+    }
+
+    getUserFacingThemeName(): string {
+        if (this.themeIndex === 0) {
+            return 'Blue Theme';
+        } else if (this.themeIndex === 1) {
+            return 'Blue Dark Theme';
+        }
     }
 
     toggleTheme() {
@@ -30,6 +40,7 @@ export class AppComponent implements OnInit {
 
         this.removeTheme(currentTheme);
         this.applyTheme(newTheme);
+        this.userFacingThemeName = this.getUserFacingThemeName();
     }
 
     private applyTheme(theme: string): void {
