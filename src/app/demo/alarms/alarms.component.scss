@@ -1,8 +1,13 @@
-@import '../title/title.component.scss';
-
-#drawer-container {
-    height: calc(100% - #{$topBarHeight});
+.page-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+.drawer-container {
+    height: 100%;
+}
+
 .accordion {
     padding: 10px 16px 10px 16px;
     margin-left:auto;
