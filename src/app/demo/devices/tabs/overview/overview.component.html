@@ -4,7 +4,7 @@
         <mat-icon>add_circle_outline</mat-icon> ADD</button>
     <button mat-stroked-button color="primary" (click)="openSnackbar()">
         <mat-icon>delete</mat-icon> DELETE</button>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" id="overview-table">
+    <table mat-table [dataSource]="dataSource" id="overview-table">
 
         <ng-container matColumnDef="checkbox">
             <th mat-header-cell *matHeaderCellDef></th>
