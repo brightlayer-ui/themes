@@ -2,19 +2,20 @@
     height: 100%;
     width: 100%;
 }
+
 .sidenav{
     max-width: 90%;
     transition: width 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
     &.mobile{
-        width: 0px !important;
+        width: 0px;
         &.open{
-            width: 350px !important;
+            width: 350px;
         }
     }
     &:not(.mobile){
-        width: 64px !important;
+        width: 64px;
         &.open{
-            width: 350px !important;
+            width: 350px;
         }
         .mat-list-item{
             white-space: nowrap;
@@ -25,12 +26,12 @@
 .nav-content{
     transition: margin 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
     &.mobile{
-        margin-left: auto !important;
+        margin-left: auto;
     }
     &:not(.mobile){
-        margin-left: 64px !important;
+        margin-left: 64px;
         &.open{
-            margin-left: 350px !important;
+            margin-left: 350px;
         }
     }
 }
@@ -42,15 +43,19 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+
 section{
     flex: 0 0 auto;
 }
+
 [matListIcon]{
     margin-right: 16px;
 }
+
 [matSubheader]{
     white-space: nowrap;
 }
+
 .primaryLink{
     position: relative;
     color: #007bc1;
@@ -58,10 +63,8 @@ section{
     &:hover, &:focus, &:active{
         background-color: transparent;
     }
-    [matListItemContent]{
-        background-color: blue;
-    }
 }
+
 .primaryLink::before{
     content: '';
     z-index: -1;

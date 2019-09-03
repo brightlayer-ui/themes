@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, ViewEncapsulation} from '@angular/core';
 import {NavigationService} from '../../services/navigation.service';
 import {MediaMatcher} from '@angular/cdk/layout';
 
@@ -8,9 +8,11 @@ import {MediaMatcher} from '@angular/cdk/layout';
   styleUrls: ['./sidenav.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class SidenavComponent {
-    mobileQuery: MediaQueryList;
+export class SidenavComponent implements OnDestroy {
+
     private _mobileQueryListener: () => void;
+
+    mobileQuery: MediaQueryList;
     hovering = false; // is the navigation menu hovered over
     hasLeft = true; // used for handling hover behavior on nav menu
     open = false; // is the nav menu open
@@ -20,8 +22,7 @@ export class SidenavComponent {
     constructor(
         private _navigationService: NavigationService,
         changeDetectorRef: ChangeDetectorRef,
-        media: MediaMatcher
-    ) {
+        media: MediaMatcher) {
         this.mobileQuery = media.matchMedia('(max-width: 600px)');
         this._mobileQueryListener = () => {
             if (this.mobileQuery.matches) {
@@ -38,26 +39,29 @@ export class SidenavComponent {
         );
     }
 
+    ngOnDestroy(): void {
+        this.mobileQuery.removeListener(this._mobileQueryListener);
+    }
+
     toggleDesktopMenu() {
         this._navigationService.toggleMenu();
     }
+
     leave() {
         this.hovering = false;
         this.hasLeft = true;
     }
+
     enter() {
         if (this.hasLeft) {
             this.hovering = true;
         }
         this.hasLeft = false;
     }
+
     closeNav() {
-        if (this.mobileQuery.matches) {this.open = false; }
+        this.open = false;
         this.hovering = false;
         this.hasLeft = false;
-    }
-
-    ngOnDestroy(): void {
-        this.mobileQuery.removeListener(this._mobileQueryListener);
     }
 }
