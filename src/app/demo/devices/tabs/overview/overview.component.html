@@ -1,10 +1,10 @@
-<div id="overview-container">
+<div class="overview-container">
 
     <button mat-raised-button color="primary" (click)="openAddDialog()">
         <mat-icon>add_circle_outline</mat-icon> ADD</button>
     <button mat-stroked-button color="primary" (click)="openSnackbar()">
         <mat-icon>delete</mat-icon> DELETE</button>
-    <table mat-table [dataSource]="dataSource" id="overview-table">
+    <table mat-table [dataSource]="dataSource" class="overview-table">
 
         <ng-container matColumnDef="checkbox">
             <th mat-header-cell *matHeaderCellDef></th>
