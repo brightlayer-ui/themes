@@ -9,45 +9,46 @@ export class AppComponent implements OnInit {
 
     showNotice = true;
 
-    themeIndex = 0;
-    themes = ['pxb-blue', 'pxb-blue-dark'];
-    userFacingThemeName: string;
+    currentTheme: Theme;
+    themes = [
+        new Theme('pxb-blue', 'Blue Theme'),
+        new Theme('pxb-blue-dark', 'Blue Dark Theme')
+    ];
 
     constructor(private renderer: Renderer2) {}
 
     ngOnInit(): void {
         this.applyTheme(this.themes[0]);
-        this.userFacingThemeName = this.getUserFacingThemeName();
-    }
-
-    getUserFacingThemeName(): string {
-        if (this.themeIndex === 0) {
-            return 'Blue Theme';
-        } else if (this.themeIndex === 1) {
-            return 'Blue Dark Theme';
-        }
     }
 
     toggleTheme() {
-        const currentTheme = this.themes[this.themeIndex];
-        this.themeIndex++;
-
-        if (this.themeIndex === this.themes.length) {
-            this.themeIndex = 0;
+        let themeIndex = 0;
+        for (let theme of this.themes) {
+            themeIndex++;
+            if (theme === this.currentTheme) {
+                break;
+            }
         }
 
-        const newTheme = this.themes[this.themeIndex];
+        if (themeIndex === this.themes.length) {
+            themeIndex = 0;
+        }
 
-        this.removeTheme(currentTheme);
-        this.applyTheme(newTheme);
-        this.userFacingThemeName = this.getUserFacingThemeName();
+        this.removeTheme(this.currentTheme);
+        this.applyTheme(this.themes[themeIndex]);
     }
 
-    private applyTheme(theme: string): void {
-        this.renderer.addClass(document.body, theme);
+    private applyTheme(theme: Theme): void {
+        this.renderer.addClass(document.body, theme.className);
+        this.currentTheme = theme;
     }
 
-    private removeTheme(theme: string): void {
-        this.renderer.removeClass(document.body, theme);
+    private removeTheme(theme: Theme): void {
+        this.renderer.removeClass(document.body, theme.className);
+        this.currentTheme = undefined;
     }
+}
+
+class Theme {
+    constructor(public className: string, public themeName: string) {}
 }

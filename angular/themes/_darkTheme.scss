@@ -1,42 +1,42 @@
-@import '~@pxblue/colors/palette.scss';
+@import '../node_modules/@pxblue/colors/palette';
 @mixin darktheme($primary,$accent){
 
     /* Side navigation*/
         .mat-drawer{
-            background-color: map-get($pxb-black, A700); 
+            background-color: map-get($pxb-black, A700);
         }
         .mat-nav-list .mat-list-item:hover{
             background-color: map-get($pxb-black, A200);
         }
         .mat-drawer-container{
-            background-color: map-get($pxb-black, A400);  
+            background-color: map-get($pxb-black, A400);
         }
-        
+
     /* toolbar*/
         .mat-toolbar {
              background-color: map-get($pxb-black, A200);
              color: map-get($pxb-black, 100);
-         
+
             &.mat-primary{
-                background-color: map-get($pxb-black, A700); 
+                background-color: map-get($pxb-black, A700);
                 color:map-get($pxb-black, 50);
             }
             &.mat-accent{
-                background-color: map-get($pxb-black, A100); 
+                background-color: map-get($pxb-black, A100);
                 color:map-get($pxb-black, 50);
-            } 
+            }
         }
 
     /*tab bar*/
         .mat-tab-group{
             .mat-tab-header{
-                background-color: map-get($pxb-black, A200); 
+                background-color: map-get($pxb-black, A200);
             }
             &.mat-primary .mat-tab-header {
-                background-color: map-get($pxb-black, A700); 
+                background-color: map-get($pxb-black, A700);
             }
             &.mat-accent .mat-tab-header{
-                background-color: map-get($pxb-black, A100); 
+                background-color: map-get($pxb-black, A100);
             }
          }
 
@@ -66,26 +66,26 @@
 
     /*list item*/
         .mat-list-item-content{
-            color:map-get($pxb-gray, 300) ; 
+            color:map-get($pxb-gray, 300) ;
         }
 
     /*Body*/
         .mat-drawer-content{
-            background-color: map-get($pxb-black, A200);  
-            color: map-get($pxb-gray, 300); 
+            background-color: map-get($pxb-black, A200);
+            color: map-get($pxb-gray, 300);
         }
 
     /* for the input forms fields */
         .mat-form-field-appearance-fill .mat-form-field-flex{
-            background-color:map-get($pxb-black, 800);  
+            background-color:map-get($pxb-black, 800);
         }
-        .mat-form-field-appearance-legacy .mat-form-field-label, 
+        .mat-form-field-appearance-legacy .mat-form-field-label,
         .mat-form-field-label,
         .mat-form-field-appearance-standard .mat-form-field-label{
             color: map-get($pxb-gray, 300);
-        } 
+        }
 
-    /* selection option*/ 
+    /* selection option*/
         .mat-option.mat-selected:not(.mat-option-disabled){
             color: map-get($pxb-gray, 300);
         }
@@ -101,7 +101,7 @@
             background-color: map-get($pxb-black, 900);
             .mat-option{
                 color: map-get($pxb-gray, 300);
-            }    
+            }
         }
 
     /* expansion panel*/
@@ -120,7 +120,7 @@
             background-color: map-get($pxb-black, 900);
             .mat-list-item-content{
                 color: map-get($pxb-gray, 300);
-            }  
+            }
         }
 
     /* modal */
@@ -147,7 +147,7 @@
         .mat-chip.mat-standard-chip{
             background-color: map-get($pxb-black, 500);
         }
-    
+
     /* Expansion Panel*/
         .mat-expansion-panel {
             background-color: map-get($pxb-black, 900);
@@ -166,11 +166,10 @@
         .mat-cell{
             color: map-get($pxb-gray, 300);
         }
-        
+
     /* paginator*/
         .mat-paginator{
             background-color: map-get($pxb-black, A200);
             color: map-get($pxb-gray, 300);
         }
 }
-    

@@ -3,6 +3,11 @@
   "version": "2.1.0",
   "description": "PXBlue themes for Eaton applications",
   "scripts": {
+      "ng": "ng",
+      "start": "ng serve --configuration es5",
+      "build": "ng build",
+      "test": "ng test",
+      "lint": "ng lint"
   },
   "repository": {
     "type": "git",
