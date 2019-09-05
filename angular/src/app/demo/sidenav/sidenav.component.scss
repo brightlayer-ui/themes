@@ -1,3 +1,5 @@
+@import "~@pxblue/colors/palette.scss";
+
 .app-container{
     height: 100%;
     width: 100%;
@@ -78,3 +80,36 @@ section{
 }
 
 /* PXB THEME OVERRIDES BELOW THIS LINE */
+
+.pxb-blue-dark {
+    .desktop-toolbar {
+        background-color: #0b0e10;
+    }
+    .primaryLink {
+        &::before {
+            background-color: map-get($pxb-blue, 500);
+        }
+        &:hover {
+            background-color: unset!important;
+        }
+        .mat-list-item-content {
+            color: white;
+        }
+    }
+}
+
+.pxb-blue {
+    .desktop-toolbar {
+        background-color: white;
+    }
+    .mat-list-item-content {
+        color: map-get($pxb-gray, 600);
+    }
+    .primaryLink .mat-list-item-content {
+        color: map-get($pxb-blue, 500);
+    }
+    .primaryLink {
+        background-color:unset!important;
+    }
+}
+

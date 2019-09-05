@@ -5,10 +5,10 @@
         <mat-nav-list fxLayout="column" fxFlexFill style="padding-top:0; overflow-x:hidden">
             <!-- Mobile Toolbar -->
             <mat-toolbar style="background-color:#007bc1; color:white; min-height:150px;" *ngIf="mobileQuery.matches && !goingMobile">
-                <mat-toolbar-row style="height:72px; margin-left: 18px; margin-bottom: 42px; margin-top:50px">
-                    <mat-icon style="font-size:72px; transform:rotate(42deg);">offline_bolt</mat-icon>
+                <mat-toolbar-row style="height:75px; margin-left: 20px; margin-bottom: 40px; margin-top:50px">
+                    <mat-icon style="font-size:75px; transform:rotate(42deg);">offline_bolt</mat-icon>
                 </mat-toolbar-row>
-                <mat-toolbar-row style="height:4px;">
+                <mat-toolbar-row style="height:5px;">
                     <small>PX Blue</small>
                 </mat-toolbar-row>
                 <mat-toolbar-row style="height:35px;">
@@ -17,7 +17,7 @@
             </mat-toolbar>
 
             <!-- Desktop Toolbar -->
-            <mat-toolbar style="background-color:white" *ngIf="!mobileQuery.matches || goingMobile">
+            <mat-toolbar *ngIf="!mobileQuery.matches || goingMobile" class="desktop-toolbar">
                 <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleDesktopMenu()" style="margin-left:-4px; margin-right: 12px">
                     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
