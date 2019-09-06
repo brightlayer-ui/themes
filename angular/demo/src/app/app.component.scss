@@ -1,3 +1,5 @@
+@import "~@pxblue/colors/palette.scss";
+
 .fab {
     width: 200px;
     height: 55px;
@@ -31,7 +33,6 @@
         transform: translate(0%, -50%);
     }
 };
-@import "~@pxblue/colors/palette.scss";
 
 .notice {
     color: map-get($pxb-white, 500);
@@ -52,7 +53,7 @@
         margin-right: 10px;
     }
     .notice-content {
-        padding: 0 75px 25px 75px;
+        padding: 50px 25px 65px 25px;
     }
 }
 

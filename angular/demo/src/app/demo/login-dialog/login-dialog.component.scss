@@ -1,3 +1,5 @@
+@import "~@pxblue/colors/palette.scss";
+
 form{
     max-width: 250px;
     margin: auto;
@@ -38,10 +40,10 @@ mat-form-field{
     }
 }
 .links{
-    color:#4da3d4;
+    color: map-get($pxb-blue, 500);
 }
 .links:visited {
-    color: #4da3d4;
+    color: map-get($pxb-blue, 500);
 }
 
 .bolt {

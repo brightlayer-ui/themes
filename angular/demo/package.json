@@ -1,34 +1,14 @@
 {
-  "name": "@pxblue/themes",
-  "version": "2.1.0",
-  "description": "PXBlue themes for Eaton applications",
-  "scripts": {
-      "ng": "ng",
-      "start": "ng serve --configuration es5",
-      "build": "ng build",
-      "test": "ng test",
-      "lint": "ng lint"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pxblue/themes.git"
-  },
-  "keywords": [
-    "PXBlue",
-    "themes",
-    "Eaton",
-    "Power",
-    "Xpert",
-    "quality",
-    "lighting"
-  ],
-  "author": "px-blue <pxblue@eaton.com>",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/pxblue/themes/issues"
-  },
-  "homepage": "https://github.com/pxblue/themes#readme",
-    "private": true,
+    "name": "angular-theme",
+    "version": "2.1.0",
+    "description": "Angular themes for Eaton applications",
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve --configuration es5",
+        "build": "ng build",
+        "test": "ng test",
+        "lint": "ng lint"
+    },
     "dependencies": {
         "@angular/animations": "~8.2.0",
         "@angular/cdk": "8.1.3",

@@ -2,7 +2,7 @@
 <div mat-dialog-content>
     <div class="container">
         <mat-icon color="primary" class="logo">person</mat-icon>
-        <form [formGroup]="loginForm" [style.marginBottom.px]="10">
+        <form [formGroup]="loginForm" [style.marginBottom.px]="30">
             <mat-form-field>
                 <input matInput placeholder="Email Address" formControlName="email" type="email" required>
             </mat-form-field>
@@ -14,7 +14,6 @@
                 <mat-checkbox class="text-center mat-typography" formControlName="remember">Remember Me</mat-checkbox>
             </div>
         </form>
-        <br/>
         <div fxLayout="row" fxLayoutAlign="center center">
             <mat-icon color="primary" class="bolt">offline_bolt</mat-icon>
         </div>
