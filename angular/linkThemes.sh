@@ -9,27 +9,25 @@ BGREEN='\033[1;32m' #BOLD
 GRAY='\033[1;30m'
 NC='\033[0m' # No Color
 
-echo -e "${BLUE}Building components...${NC}"
-yarn build
-
 
 echo -en "${BLUE}Creating new folder in node_modules...${NC}"
 rm -rf "./demo/node_modules/@pxblue/themes"
 mkdir "./demo/node_modules/@pxblue/themes"
 mkdir "./demo/node_modules/@pxblue/themes/angular"
+mkdir -p "./demo/node_modules/@pxblue/themes/node_modules/@angular/material"
+mkdir -p "./demo/node_modules/@pxblue/themes/node_modules/@pxblue/colors"
 echo -e "${GREEN}Done${NC}"
 
-echo -en "${BLUE}Copying build output into node_modules...${NC}";
-cp -r ./package.json ./demo/node_modules/@pxblue/themes/angular/package.json
-cp -r ./dist ./demo/node_modules/@pxblue/themes/angular/dist
+echo -en "${BLUE}Copying angular themes into node_modules...${NC}";
+cp -r ./demo/package.json ./demo/node_modules/@pxblue/themes/angular/package.json
+cp -r ./_blueTheme.scss ./demo/node_modules/@pxblue/themes/angular/_blueTheme.scss
+cp -r ./_darkTheme.scss ./demo/node_modules/@pxblue/themes/angular/_darkTheme.scss
+cp -r ./_fonts.scss ./demo/node_modules/@pxblue/themes/angular/_fonts.scss
+cp -r ./_margins.scss ./demo/node_modules/@pxblue/themes/angular/_margins.scss
+cp -r ./theme.scss ./demo/node_modules/@pxblue/themes/angular/theme.scss
+cp -r ./demo/node_modules/@angular/material/_theming.scss ./demo/node_modules/@pxblue/themes/node_modules/@angular/material/_theming.scss
+cp -r ./demo/node_modules/@pxblue/colors/palette.scss ./demo/node_modules/@pxblue/themes/node_modules/@pxblue/colors/palette.scss
+
 echo -e "${GREEN}Done${NC}"
 
-echo -en "\r\n${BRED}Linking Components: ${NC}"
-if [ ! -f ./demo/node_modules/@pxblue/themes/angular/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
-if [ ! -s ./demo/node_modules/@pxblue/themes/angular/dist ];
-    then
-        if [ ! -f ./demo/node_modules/@pxblue/themes/angular/dist/index.js ];
-        then echo -e "${BRED}Not Linked${NC}" && exit 1;
-        fi;
-fi
 echo -e "${GRAY}Complete${NC}\r\n"
