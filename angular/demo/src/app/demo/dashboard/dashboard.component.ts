@@ -15,10 +15,11 @@ export class DashboardComponent {
 
     constructor(private breakpointObserver: BreakpointObserver) {
 
+
         this.breakpointSubscription = this.breakpointObserver.observe([
-                '(max-width: 849.99px)',
-                '(max-width: 1099.99px)',
-                '(max-width: 1399.99px)'])
+                '(max-width: 599.99px)',
+                '(max-width: 1278px)',
+                '(max-width: 1920px)'])
             .subscribe(result => {
                 const small = Object.keys(result.breakpoints)[0];
                 const medium = Object.keys(result.breakpoints)[1];
