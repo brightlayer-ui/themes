@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@pxblue/colors@^1.0.1":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@pxblue/colors/-/colors-1.0.10.tgz#64670d03e9ecab700f52540013408e06a4c35fa4"
-  integrity sha512-Cz6M/0adR5BBz42uy5zuOK9+Skv7aZTCSc+kQb5xrnkkF6Vt2Mld+8Lgy5s9j1WxvDvDVMMq+6aGEZRFRMEWbw==
+"@pxblue/colors@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@pxblue/colors/-/colors-1.0.13.tgz#1ed76734267f77dd4b390836f61d01439fc35132"
+  integrity sha512-tneNNYclHmNNIbo6J7XXEumoJZLBXqeO2LFufWxRvIs5yeVVfaJN3zWREl1oo5KP67aDixYgEKB7LH0oeTL+lQ==
 
 typeface-open-sans@^0.0.54:
   version "0.0.54"
