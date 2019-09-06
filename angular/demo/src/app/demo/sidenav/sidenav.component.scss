@@ -59,7 +59,7 @@ section{
 
 .primaryLink{
     position: relative;
-    color: #007bc1;
+    color: map-get($pxb-blue, 500);
     background-color: transparent;
     &:hover, &:focus, &:active{
         background-color: transparent;
@@ -75,7 +75,7 @@ section{
     min-width: 90px;
     left: 0;
     top: 0;
-    background-color: #e0eff8;
+    background-color: map-get($pxb-blue, 50);
     border-radius: 0px 24px 24px 0px;
 }
 
@@ -83,7 +83,7 @@ section{
 
 .pxb-blue-dark {
     .desktop-toolbar {
-        background-color: #0b0e10;
+        background-color: map-get($pxb-black, 900);
     }
     .primaryLink {
         &::before {
@@ -93,14 +93,14 @@ section{
             background-color: unset!important;
         }
         .mat-list-item-content {
-            color: white;
+            color: map-get($pxb-white, 50);
         }
     }
 }
 
 .pxb-blue {
     .desktop-toolbar {
-        background-color: white;
+        background-color: map-get($pxb-white, 50);
     }
     .mat-list-item-content {
         color: map-get($pxb-gray, 600);
