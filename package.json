@@ -1,6 +1,7 @@
 {
   "name": "@pxblue/themes",
   "version": "2.1.0",
+  "author": "px-blue <pxblue@eaton.com>",
   "description": "PXBlue themes for Eaton applications",
   "main": "index.js",
   "scripts": {
@@ -22,7 +23,7 @@
     "quality",
     "lighting"
   ],
-  "author": "px-blue <pxblue@eaton.com>",
+
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/pxblue/themes/issues"
