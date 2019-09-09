@@ -14,8 +14,6 @@ echo -en "${BLUE}Creating new folder in node_modules...${NC}"
 rm -rf "./demo/node_modules/@pxblue/themes"
 mkdir "./demo/node_modules/@pxblue/themes"
 mkdir "./demo/node_modules/@pxblue/themes/angular"
-mkdir -p "./demo/node_modules/@pxblue/themes/node_modules/@angular/material"
-mkdir -p "./demo/node_modules/@pxblue/themes/node_modules/@pxblue/colors"
 echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying angular themes into node_modules...${NC}";
@@ -25,8 +23,6 @@ cp -r ./_darkTheme.scss ./demo/node_modules/@pxblue/themes/angular/_darkTheme.sc
 cp -r ./_fonts.scss ./demo/node_modules/@pxblue/themes/angular/_fonts.scss
 cp -r ./_margins.scss ./demo/node_modules/@pxblue/themes/angular/_margins.scss
 cp -r ./theme.scss ./demo/node_modules/@pxblue/themes/angular/theme.scss
-cp -r ./demo/node_modules/@angular/material/_theming.scss ./demo/node_modules/@pxblue/themes/node_modules/@angular/material/_theming.scss
-cp -r ./demo/node_modules/@pxblue/colors/palette.scss ./demo/node_modules/@pxblue/themes/node_modules/@pxblue/colors/palette.scss
 
 echo -e "${GREEN}Done${NC}"
 
