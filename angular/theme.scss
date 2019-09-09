@@ -6,12 +6,12 @@ All rights reserved.
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
 
-@import '../node_modules/@angular/material/theming';
-@import '../node_modules/@pxblue/colors/palette';
-@import 'margins';
-@import 'fonts';
-@import 'darkTheme';
-@import 'blueTheme';
+@import '~@angular/material/_theming.scss';
+@import '~@pxblue/colors/palette.scss';
+@import './margins';
+@import './fonts';
+@import './darkTheme';
+@import './blueTheme';
 
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config(
