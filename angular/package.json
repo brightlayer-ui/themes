@@ -7,6 +7,7 @@
         "@pxblue/colors": "^1.0.1"
     },
     "scripts": {
-        "start": "cd demo && ng serve --configuration es5"
+        "start": "cd demo && yarn && cd .. && yarn link:angular && cd demo && yarn start",
+        "link:angular": "bash ./linkThemes.sh"
     }
 }

@@ -1,5 +1,7 @@
 {
     "name": "@pxblue/themes",
+    "author": "PX Blue <pxblue@eaton.com>",
+    "license": "BSD-3-Clause",
     "version": "2.1.0",
     "description": "PXBlue themes for Eaton applications",
     "main": "index.js",
@@ -7,7 +9,11 @@
         "test": "./buildTest.sh",
         "build:react": "cd react && yarn build && cd ..",
         "build:all": "yarn build:react",
-        "publish:full": "yarn build:all && npm version patch && npm publish"
+        "publish:full": "yarn build:all && npm version patch && npm publish",
+        "link:angular": "cd angular && yarn link:angular",
+        "start:angular": "cd angular && yarn start",
+        "link:react": "cd react && yarn link:react",
+        "start:react": "cd react && yarn start"
     },
     "repository": {
         "type": "git",
@@ -22,8 +28,6 @@
         "quality",
         "lighting"
     ],
-    "author": "px-blue <pxblue@eaton.com>",
-    "license": "BSD-3-Clause",
     "bugs": {
         "url": "https://github.com/pxblue/themes/issues"
     },
