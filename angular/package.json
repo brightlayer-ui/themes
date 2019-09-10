@@ -7,7 +7,7 @@
         "@pxblue/colors": "^1.0.1"
     },
     "scripts": {
-        "start": "cd demo && yarn && cd .. && yarn link:angular && cd demo && yarn start",
+        "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start",
         "link:themes": "bash ./linkThemes.sh"
     }
 }

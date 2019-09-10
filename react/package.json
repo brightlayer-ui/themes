@@ -10,8 +10,7 @@
     "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start"
   },
   "dependencies": {
-    "@pxblue/colors": "^1.0.1",
-    "react-app-polyfill": "^1.0.2"
+    "@pxblue/colors": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
