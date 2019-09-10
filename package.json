@@ -1,35 +1,39 @@
 {
-  "name": "@pxblue/themes",
-  "version": "2.1.0",
-  "description": "PXBlue themes for Eaton applications",
-  "main": "index.js",
-  "scripts": {
-    "test": "./buildTest.sh",
-    "build:react": "cd react && yarn build && cd ..",
-    "build:all": "yarn build:react",
-    "publish:full": "yarn build:all && npm version patch && npm publish"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pxblue/themes.git"
-  },
-  "keywords": [
-    "PXBlue",
-    "themes",
-    "Eaton",
-    "Power",
-    "Xpert",
-    "quality",
-    "lighting"
-  ],
-  "author": "px-blue <pxblue@eaton.com>",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/pxblue/themes/issues"
-  },
-  "homepage": "https://github.com/pxblue/themes#readme",
-  "dependencies": {
-    "@pxblue/colors": "^1.0.13",
-    "typeface-open-sans": "^0.0.54"
-  }
+    "name": "@pxblue/themes",
+    "author": "PX Blue <pxblue@eaton.com>",
+    "license": "BSD-3-Clause",
+    "version": "2.1.0",
+    "description": "PXBlue themes for Eaton applications",
+    "main": "index.js",
+    "scripts": {
+        "test": "./buildTest.sh",
+        "build:react": "cd react && yarn build && cd ..",
+        "build:all": "yarn build:react",
+        "publish:full": "yarn build:all && npm version patch && npm publish",
+        "link:angular": "cd angular && yarn link:angular",
+        "start:angular": "cd angular && yarn start",
+        "link:react": "cd react && yarn link:react",
+        "start:react": "cd react && yarn start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pxblue/themes.git"
+    },
+    "keywords": [
+        "PXBlue",
+        "themes",
+        "Eaton",
+        "Power",
+        "Xpert",
+        "quality",
+        "lighting"
+    ],
+    "bugs": {
+        "url": "https://github.com/pxblue/themes/issues"
+    },
+    "homepage": "https://github.com/pxblue/themes#readme",
+    "dependencies": {
+        "@pxblue/colors": "^1.0.13",
+        "typeface-open-sans": "^0.0.54"
+    }
 }

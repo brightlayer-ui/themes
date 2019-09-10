@@ -18,6 +18,8 @@ Thumbs.db
 .env.development.local
 .env.test.local
 .env.production.local
+.idea/
+.icon/
 
 npm-debug.log*
 yarn-debug.log*

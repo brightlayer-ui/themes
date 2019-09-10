@@ -1,0 +1,33 @@
+.page-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer-container {
+    height: 100%;
+}
+
+.accordion {
+    padding: 10px 16px 10px 16px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.checkbox {
+    height:unset;
+}
+
+.list-item-detail {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+     box-shadow: none;
+ }
+
+.mat-expansion-panel {
+    background-color:unset;
+}

@@ -1,0 +1,15 @@
+<mat-list>
+    <mat-list-item *ngFor="let data of locationData">
+        <mat-icon matListIcon matBadge="{{data.numDevices}}" matBadgeColor="primary">folder</mat-icon>
+        <h3 matLine> {{data.location}} </h3>
+
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+            <mat-icon>more_horiz</mat-icon>
+        </button>
+    </mat-list-item>
+</mat-list>
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item (click)="openBottomSheet()"> More information</button>
+    <button mat-menu-item (click)="openBottomSheet()">Inspect</button>
+    <button mat-menu-item (click)="openBottomSheet()">Help</button>
+</mat-menu>
