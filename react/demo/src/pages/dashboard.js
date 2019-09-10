@@ -9,7 +9,6 @@ const deviceConstants = AppConstants.dashboardData;
 
 class Dashboard extends React.Component {
   render() {
-    const { classes } = this.props;
     return (
       <React.Fragment>
         <div style={{ padding: '16px' }}>

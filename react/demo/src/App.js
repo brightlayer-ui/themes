@@ -10,14 +10,12 @@ import Chip from '@material-ui/core/Chip';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Fab from '@material-ui/core/Fab';
-import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Snackbar from '@material-ui/core/Snackbar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
@@ -27,7 +25,6 @@ import BoltIcon from '@material-ui/icons/OfflineBolt';
 import AlarmsIcon from '@material-ui/icons/NotificationImportant';
 import FlipIcon from '@material-ui/icons/FlipToBack';
 import MenuIcon from '@material-ui/icons/Menu';
-import MoveToInboxIcon from '@material-ui/icons/MoveToInbox';
 import PersonIcon from '@material-ui/icons/Person';
 import SettingsIcon from '@material-ui/icons/Settings';
 import Close from '@material-ui/icons/Close';
@@ -42,7 +39,6 @@ import Main from './router/main';
 import styles from './styles/styleClasses';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import * as Colors from '@pxblue/colors';
 import * as PXBThemes from '@pxblue/themes/react';
 import './style.css';
 
@@ -132,7 +128,7 @@ class App extends React.Component {
           variant="extended"
           onClick={() => this.toggleTheme()}
         >
-          <FlipIcon style={{ marginRight: 6 }} />
+          <FlipIcon style={{ marginRight: 5 }} />
           Toggle Theme
 
         </Fab>
@@ -232,7 +228,6 @@ class App extends React.Component {
 
   // returns the layout for the panel of main application pages
   getPrimaryNavigation() {
-    const { classes } = this.props;
     return (
       <List>
         {this.NavigationListItem({

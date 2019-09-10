@@ -1,7 +1,7 @@
 {
   "name": "@pxblue/themes",
   "version": "2.1.0",
-  "author": "px-blue <pxblue@eaton.com>",
+  "author": "PX Blue <pxblue@eaton.com>",
   "description": "PXBlue themes for Eaton applications",
   "main": "index.js",
   "scripts": {

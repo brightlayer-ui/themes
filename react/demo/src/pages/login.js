@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 // Material-UI components
 import Button from '@material-ui/core/Button';
@@ -10,7 +9,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
 
 import { withStyles } from '@material-ui/core/styles';
 import ProductLogo from '../components/productLogo';

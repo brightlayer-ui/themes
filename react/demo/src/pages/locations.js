@@ -3,7 +3,6 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Badge from '@material-ui/core/Badge';
 import Button from '@material-ui/core/Button';
-import DialogActions from '@material-ui/core/DialogActions';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
@@ -34,7 +33,6 @@ const styles = theme => ({
 });
 
 const locationData = AppConstants.locationData;
-const deviceData = AppConstants.deviceData;
 
 class Locations extends React.Component {
 

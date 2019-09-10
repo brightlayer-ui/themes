@@ -1,6 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
 import PersonIcon from '@material-ui/icons/Person';
 
 import { withStyles } from '@material-ui/core/styles';

@@ -94,7 +94,7 @@ const styles = theme => ({
     top: '50%',
     transform: 'translate(-100%, -50%)',
     width: '100%',
-    animation: `\$slideIn 1200ms ${theme.transitions.easing.easeInOut} 1000ms`,
+    animation: `$slideIn 1200ms ${theme.transitions.easing.easeInOut} 1000ms`,
     animationFillMode: 'forwards'
   },
   subheader: {
