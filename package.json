@@ -10,9 +10,9 @@
         "build:react": "cd react && yarn build && cd ..",
         "build:all": "yarn build:react",
         "publish:full": "yarn build:all && npm version patch && npm publish",
-        "link:angular": "cd angular && yarn link:angular",
+        "link:angular": "cd angular && yarn link:themes",
         "start:angular": "cd angular && yarn start",
-        "link:react": "cd react && yarn link:react",
+        "link:react": "cd react && yarn link:themes",
         "start:react": "cd react && yarn start"
     },
     "repository": {

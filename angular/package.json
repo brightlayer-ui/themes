@@ -8,6 +8,6 @@
     },
     "scripts": {
         "start": "cd demo && yarn && cd .. && yarn link:angular && cd demo && yarn start",
-        "link:angular": "bash ./linkThemes.sh"
+        "link:themes": "bash ./linkThemes.sh"
     }
 }
