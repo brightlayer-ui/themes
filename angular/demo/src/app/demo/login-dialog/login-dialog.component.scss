@@ -1,0 +1,55 @@
+@import "~@pxblue/colors/palette.scss";
+
+form{
+    max-width: 250px;
+    margin: auto;
+}
+mat-form-field{
+    display: block;
+}
+.text-center{
+    text-align: center;
+}
+.logo{
+    max-width: 250px;
+    margin: auto;
+    width: 100%;
+    display: block;
+    text-align:center;
+    font-size: 120px;
+    height: 120px;
+}
+.container{
+    max-width: 600px;
+    margin: auto;
+    box-sizing: border-box;
+    width:100%;
+    @media (min-width:600px){
+        width: 500px;
+    }
+}
+.badge-logo{
+    width: 60px;
+    margin: 0 auto 10px;
+    display: block;
+}
+@media (max-width:599px){
+    .login{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+.links{
+    color: map-get($pxb-blue, 500);
+}
+.links:visited {
+    color: map-get($pxb-blue, 500);
+}
+
+.bolt {
+    height:64px;
+    font-size: 64px;
+    transform: rotate(42deg);
+    margin-bottom:20px;
+    margin-top: -30px; // TODO: Fix this.
+}
