@@ -1,0 +1,51 @@
+
+<div class="page-container">
+    <app-title></app-title>
+    <mat-drawer-container class="drawer-container">
+     <mat-drawer-content>
+         <div style="min-width:200px">
+            <mat-accordion [multi]="true" [displayMode]="'flat'">
+                <div class="accordion">
+                    <mat-expansion-panel *ngFor="let day of alarmHistory" [expanded]="true">
+                        <mat-expansion-panel-header [expandedHeight]="'48px'" [collapsedHeight]="'48px'">
+                            <mat-panel-title>{{day.time}}</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-divider></mat-divider>
+                        <mat-list>
+                            <mat-list-item *ngFor="let device of day.devices">
+                                <mat-checkbox matListIcon style="height:unset"></mat-checkbox>
+                                <h3 matLine>{{device.name}}</h3>
+                                <p matLine>{{device.manufacturer}}</p>
+                                <button mat-stroked-button color="primary" style="min-width:unset">ACKNOWLEDGE</button>
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-expansion-panel>
+                </div>
+             </mat-accordion>
+        </div>
+    </mat-drawer-content>
+
+     <mat-drawer mode="side" position="end" opened>
+         <div style="width:325px">
+             <mat-toolbar style="background-color:transparent">
+                 <mat-list-item >
+                     <div class="mat-subheading-2" style="margin-bottom:2px">Lighting - PDU 100</div>
+                     <div class="mat-body-2" style="line-height:.6rem">Device 360</div>
+                 </mat-list-item>
+             </mat-toolbar>
+             <mat-divider></mat-divider>
+             <mat-list>
+                 <ng-container *ngFor="let item of sideDrawerContent">
+                     <mat-list-item>
+                         <div class="list-item-detail">
+                             <span>{{item.data1}}</span>
+                             <span [style.color]="getColor(item.data2)">{{item.data2}}</span>
+                         </div>
+                     </mat-list-item>
+                     <mat-divider></mat-divider>
+                 </ng-container>
+            </mat-list>
+         </div>
+     </mat-drawer>
+    </mat-drawer-container>
+</div>

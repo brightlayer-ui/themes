@@ -23,3 +23,6 @@ You can then apply the theme to your application by adding the proper class to y
 <app-root class="pxb-blue-dark">
 ```
 > If you do not specify a theme class, your application will use the default Material theme.
+
+## Demo
+[View on Stackblitz](https://stackblitz.com/github/pxblue/themes/tree/master/angular/demo)

@@ -1,0 +1,115 @@
+@import "~@pxblue/colors/palette.scss";
+
+.app-container{
+    height: 100%;
+    width: 100%;
+}
+.sidenav{
+    max-width: 90%;
+    transition: width 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    &.mobile{
+        width: 0px !important;
+        &.open{
+            width: 350px !important;
+        }
+    }
+    &:not(.mobile){
+        width: 64px !important;
+        &.open{
+            width: 350px !important;
+        }
+        .mat-list-item{
+            white-space: nowrap;
+        }
+    }
+}
+
+.nav-content{
+    transition: margin 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    &.mobile{
+        margin-left: auto !important;
+    }
+    &:not(.mobile){
+        margin-left: 64px !important;
+        &.open{
+            margin-left: 350px !important;
+        }
+    }
+}
+
+.navWrapper{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+section{
+    flex: 0 0 auto;
+}
+
+[matListIcon]{
+    margin-right: 16px;
+}
+
+[matSubheader]{
+    white-space: nowrap;
+}
+
+.primaryLink{
+    position: relative;
+    color: map-get($pxb-blue, 500);
+    background-color: transparent;
+    &:hover, &:focus, &:active{
+        background-color: transparent;
+    }
+}
+
+.primaryLink::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 8px);
+    min-width: 90px;
+    left: 0;
+    top: 0;
+    background-color: map-get($pxb-blue, 50);
+    border-radius: 0px 24px 24px 0px;
+}
+
+/* PXB THEME OVERRIDES BELOW THIS LINE */
+
+.pxb-blue-dark {
+    .desktop-toolbar {
+        background-color: map-get($pxb-black, 900);
+    }
+    .primaryLink {
+        &::before {
+            background-color: map-get($pxb-blue, 500);
+        }
+        &:hover {
+            background-color: unset!important;
+        }
+        .mat-list-item-content {
+            color: map-get($pxb-white, 50);
+        }
+    }
+}
+
+.pxb-blue {
+    .desktop-toolbar {
+        background-color: map-get($pxb-white, 50);
+    }
+    .mat-list-item-content {
+        color: map-get($pxb-gray, 600);
+    }
+    .primaryLink .mat-list-item-content {
+        color: map-get($pxb-blue, 500);
+    }
+    .primaryLink {
+        background-color:unset!important;
+    }
+}
+

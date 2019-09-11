@@ -12,6 +12,10 @@
 /react/src
 /.circleci
 
+# Demos
+/react/demo/
+/angular/demo
+
 # misc
 .DS_Store
 Thumbs.db

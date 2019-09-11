@@ -1,0 +1,18 @@
+.panelCard {
+    display: flex;
+    padding: 0 24px 0 24px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 800px;
+    margin:auto;
+    margin-top: 10px;
+}
+
+mat-accordion {
+    width: 100%;
+}
+
+.inline {
+    display: flex;
+    justify-content: space-between;
+}
