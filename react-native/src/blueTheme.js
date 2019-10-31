@@ -52,3 +52,48 @@ export const blueTheme =
     giant: 34
   }
 };
+
+export const expoBlueTheme =
+{
+  roundness: 4,
+  fonts: {
+    extraBold: {
+      fontFamily: 'open-sans-extrabold',
+      fontWeight: '800'
+    },
+    bold: {
+      fontFamily: 'open-sans-bold',
+      fontWeight: '700'
+    },
+    semiBold: {
+      fontFamily: 'open-sans-semibold',
+      fontWeight: '600'
+    },
+    regular: {
+      fontFamily: 'open-sans-regular',
+      fontWeight: '400'
+    },
+    light: {
+      fontFamily: 'open-sans-light',
+      fontWeight: '300'
+    }
+  },
+  colors: {
+    primary: blue[500],
+    background: gray[50],
+    surface: white[50],
+    accent: lightBlue[500],
+    error: red[500],
+    text: gray[500],
+    onPrimary: white[50]
+  },
+  sizes: {
+    tiny: 10,
+    extraSmall: 12,
+    small: 14,
+    medium: 16,
+    large: 20,
+    extraLarge: 24,
+    giant: 34
+  }
+};
