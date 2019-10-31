@@ -12,3 +12,9 @@ Object.defineProperty(exports, 'blue', {
     return _blueTheme.blueTheme;
   }
 });
+Object.defineProperty(exports, 'expoBlue', {
+  enumerable: true,
+  get: function get() {
+    return _blueTheme.expoBlueTheme;
+  }
+});
