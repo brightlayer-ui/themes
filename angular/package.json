@@ -1,6 +1,7 @@
 {
     "name": "angular-theme",
     "version": "2.2.0",
+    "license": "BSD-3-Clause",
     "description": "Angular themes for PX Blue applications",
     "dependencies": {
         "@angular/material": "8.1.3",
