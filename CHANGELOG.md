@@ -1,4 +1,4 @@
-## v2.2.1
+## v2.2.3
 * Introduces new theme for React Native applications using the @pxblue/react-native-components library.
 
 ## v2.1.0
