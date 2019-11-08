@@ -2,7 +2,7 @@
     "name": "@pxblue/themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "2.2.1",
+    "version": "2.2.1-beta.1",
     "description": "PXBlue themes for Eaton applications",
     "main": "index.js",
     "scripts": {

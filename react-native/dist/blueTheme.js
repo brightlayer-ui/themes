@@ -11,23 +11,23 @@ var blueTheme = exports.blueTheme = {
   roundness: 4,
   fonts: {
     extraBold: {
-      fontFamily: 'Open Sans',
+      fontFamily: 'OpenSans-ExtraBold',
       fontWeight: '800'
     },
     bold: {
-      fontFamily: 'Open Sans',
+      fontFamily: 'OpenSans-Bold',
       fontWeight: '700'
     },
     semiBold: {
-      fontFamily: 'Open Sans',
+      fontFamily: 'OpenSans-SemiBold',
       fontWeight: '600'
     },
     regular: {
-      fontFamily: 'Open Sans',
+      fontFamily: 'OpenSans-Regular',
       fontWeight: '400'
     },
     light: {
-      fontFamily: 'Open Sans',
+      fontFamily: 'OpenSans-Light',
       fontWeight: '300'
     }
   },
