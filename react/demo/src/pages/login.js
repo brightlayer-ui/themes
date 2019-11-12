@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 // Material-UI components
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -162,4 +161,4 @@ class Login extends React.Component {
     );
   }
 }
-export default withRouter(withStyles(styles)(Login));
+export default withStyles(styles)(Login);
