@@ -65,8 +65,23 @@ require('typeface-open-sans');
 </MuiThemeProvider>
 ```
 
+### React Native w/ @pxblue/react-native-components
+```
+import { ThemeProvider } from '@pxblue/react-native-components';
+import * as PXBThemes from '@pxblue/themes/react-native';
+...
+<ThemeProvider theme={PXBThemes.blue}>
+    <App />
+</ThemeProvider>
+```
+
+> **NOTE:** Using the PX Blue React Native theme requires that you add the Open Sans font to your application. You can learn how to do this by reading the instructions for [Vanilla React Native](https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e) or [Expo](https://docs.expo.io/versions/latest/guides/using-custom-fonts/). 
+
+> When using Expo, you will need to specify the name for each font weight you load using the format `OpenSans-<Weight>`, e.g., OpenSans-SemiBold. Refer to one of our React Native demos for reference.
+
 ## Demos
-| Framework           | Live Examples  |
-| ---------------- |------------------|
-| Angular | [View on Stackblitz](https://stackblitz.com/github/pxblue/themes/tree/master/angular/demo)
-| React | [View on Code Sandbox](https://codesandbox.io/s/github/pxblue/themes/tree/master/react/demo)
+| Framework        | Live Examples                                                                                |
+|------------------|----------------------------------------------------------------------------------------------|
+| Angular          | [View on Stackblitz](https://stackblitz.com/github/pxblue/themes/tree/master/angular/demo)   |
+| React            | [View on Code Sandbox](https://codesandbox.io/s/github/pxblue/themes/tree/master/react/demo) |
+| React Native     | Coming Soon                                                                                  |

@@ -2,18 +2,21 @@
     "name": "@pxblue/themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "2.1.0",
+    "version": "2.2.3",
     "description": "PXBlue themes for Eaton applications",
     "main": "index.js",
     "scripts": {
         "test": "./buildTest.sh",
         "build:react": "cd react && yarn build && cd ..",
-        "build:all": "yarn build:react",
+        "build:react-native": "cd react-native && yarn build && cd ..",
+        "build:all": "yarn build:react && yarn build:react-native",
         "publish:full": "yarn build:all && npm version patch && npm publish",
         "link:angular": "cd angular && yarn link:themes",
         "start:angular": "cd angular && yarn start",
         "link:react": "cd react && yarn link:themes",
-        "start:react": "cd react && yarn start"
+        "start:react": "cd react && yarn start",
+        "link:react-native": "cd react && yarn link:themes",
+        "start:react-native": "cd react && yarn start"
     },
     "repository": {
         "type": "git",
@@ -35,5 +38,18 @@
     "dependencies": {
         "@pxblue/colors": "^1.0.13",
         "typeface-open-sans": "^0.0.54"
-    }
+    },
+    "files": [
+        "package.json",
+        "README.md",
+        "LICENSE",
+        "CHANGELOG.md",
+        "index.js",
+        "angular/Readme.md",
+        "angular/*.scss",
+        "react/Readme.md",
+        "react/dist",
+        "react-native/Readme.md",
+        "react-native/dist"
+    ]
 }
