@@ -77,7 +77,6 @@ exports.blueDarkTheme = {
             }
         },
         // FAB OVERRIDES
-        //@ts-ignore, MuiFab is missing in Overrides declaration, is this a valid property?
         MuiFab: {
             root: {
                 backgroundColor: ThemeColors.black['500'],
