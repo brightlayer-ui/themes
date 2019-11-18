@@ -1,15 +1,17 @@
 /**
 Copyright (c) 2018-present, Eaton
- 
+
 All rights reserved.
- 
+
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
 
+
+// @ts-ignore
 import * as ThemeColors from '@pxblue/colors';
 import { typography, darkInput, darkText, darkBackground, darkAction } from './constants';
 
-export const blueDarkTheme = 
+export const blueDarkTheme =
 {
 	palette:{
 	  primary: ThemeColors.blue,
@@ -40,7 +42,7 @@ export const blueDarkTheme =
         backgroundColor: ThemeColors.black['A100']
       }
     },
-    
+
     // BACKDROP OVERRIDES
     MuiBackdrop:{
       root:{
@@ -161,7 +163,7 @@ export const blueDarkTheme =
         "&$selected":{
           backgroundColor: ThemeColors.black['A400']
         }
-      }      
+      }
     },
 
     // TABS OVERRIDES

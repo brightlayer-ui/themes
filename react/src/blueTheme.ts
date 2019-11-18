@@ -1,15 +1,17 @@
 /**
 Copyright (c) 2018-present, Eaton
- 
+
 All rights reserved.
- 
+
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
 
+
+// @ts-ignore
 import * as ThemeColors from '@pxblue/colors';
 import { typography, input, background, action } from './constants';
 
-export const blueTheme = 
+export const blueTheme =
 {
 	palette:{
 	  primary: ThemeColors.blue,
