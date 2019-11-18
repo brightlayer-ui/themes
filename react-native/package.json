@@ -12,5 +12,8 @@
   },
   "dependencies": {
     "@pxblue/colors": "^1.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.2"
   }
 }
