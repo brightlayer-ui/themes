@@ -1,15 +1,16 @@
 "use strict";
 /**
-Copyright (c) 2018-present, Eaton
+ Copyright (c) 2018-present, Eaton
 
-All rights reserved.
+ All rights reserved.
 
-This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
-**/
+ This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
+ **/
 Object.defineProperty(exports, "__esModule", { value: true });
 // @ts-ignore
 var ThemeColors = require("@pxblue/colors");
 var constants_1 = require("./constants");
+// @ts-ignore
 exports.blueDarkTheme = {
     palette: {
         primary: ThemeColors.blue,
@@ -19,6 +20,7 @@ exports.blueDarkTheme = {
         background: constants_1.darkBackground,
         text: constants_1.darkText,
         action: constants_1.darkAction,
+        // @ts-ignore
         line: { stepper: ThemeColors.black['500'] },
         input: constants_1.darkInput,
         type: 'dark'
@@ -75,6 +77,7 @@ exports.blueDarkTheme = {
             }
         },
         // FAB OVERRIDES
+        //@ts-ignore, MuiFab is missing in Overrides declaration, is this a valid property?
         MuiFab: {
             root: {
                 backgroundColor: ThemeColors.black['500'],

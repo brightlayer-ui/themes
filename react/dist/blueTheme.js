@@ -1,11 +1,11 @@
 "use strict";
 /**
-Copyright (c) 2018-present, Eaton
+ Copyright (c) 2018-present, Eaton
 
-All rights reserved.
+ All rights reserved.
 
-This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
-**/
+ This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
+ **/
 Object.defineProperty(exports, "__esModule", { value: true });
 // @ts-ignore
 var ThemeColors = require("@pxblue/colors");
@@ -17,6 +17,7 @@ exports.blueTheme = {
         error: ThemeColors.red,
         background: constants_1.background,
         action: constants_1.action,
+        // @ts-ignore
         line: { stepper: ThemeColors.blue['500'] },
         input: constants_1.input
     },
