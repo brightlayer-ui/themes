@@ -11,6 +11,7 @@
     "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start"
   },
   "dependencies": {
+    "@material-ui/core": "3.2.2",
     "@pxblue/colors": "^1.0.1"
   },
   "devDependencies": {
