@@ -7,10 +7,11 @@
  **/
 
 
-import {ThemeOptions} from "@material-ui/core/styles/createMuiTheme";
 // @ts-ignore
 import * as ThemeColors from '@pxblue/colors';
 import {action, background, input, typography} from './constants';
+// @ts-ignore
+import { ThemeOptions } from 'material-ui';
 
 export const blueTheme: ThemeOptions =
     {

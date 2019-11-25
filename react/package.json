@@ -1,20 +1,20 @@
 {
-  "name": "react-theme",
-  "version": "2.2.0",
-  "license": "BSD-3-Clause",
-  "description": "React themes for PX Blue applications",
-  "main": "./dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "yarn && tsc",
-    "link:themes": "bash ./linkThemes.sh",
-    "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start"
-  },
-  "dependencies": {
-    "@material-ui/core": "^4.0.0",
-    "@pxblue/colors": "^1.0.1"
-  },
-  "devDependencies": {
-    "typescript": "^3.7.2"
-  }
+    "name": "react-theme",
+    "version": "2.2.0",
+    "license": "BSD-3-Clause",
+    "description": "React themes for PX Blue applications",
+    "main": "./dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "yarn && tsc",
+        "link:themes": "bash ./linkThemes.sh",
+        "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start"
+    },
+    "dependencies": {
+        "@pxblue/colors": "^1.0.1",
+        "@types/material-ui": "^0.21.7"
+    },
+    "devDependencies": {
+        "typescript": "^3.7.2"
+    }
 }
