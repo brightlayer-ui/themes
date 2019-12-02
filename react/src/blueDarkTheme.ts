@@ -7,14 +7,13 @@
  **/
 
 
+
+import { typography, darkInput, darkText, darkBackground, darkAction } from './constants';
+import {ThemeOptions} from "@material-ui/core/styles/createMuiTheme";
+
 // @ts-ignore
 import * as ThemeColors from '@pxblue/colors';
-import { typography, darkInput, darkText, darkBackground, darkAction } from './constants';
-// @ts-ignore
-import { ThemeOptions } from 'material-ui';
 
-
-// @ts-ignore
 export const blueDarkTheme: ThemeOptions =
     {
         palette:{
