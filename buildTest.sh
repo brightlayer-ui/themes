@@ -44,6 +44,21 @@ if [ ! -f react/dist/blueDarkTheme.js ]; then echo -e "${RED}Not Found${NC}" && 
 echo -ne "  index: "
 if [ ! -f react/dist/index.js ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
 
+echo "Checking Theme (React-Native)"
+echo "Checking for required files..."
+echo -ne "  package.json: "
+if [ ! -f react-native/package.json ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -ne "  readme: "
+if [ ! -f react-native/Readme.md ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -ne "  blue theme: "
+if [ ! -f react-native/dist/blueTheme.js ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -ne "  blue theme type declaration: "
+if [ ! -f react-native/dist/blueTheme.d.ts ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -ne "  index: "
+if [ ! -f react-native/dist/index.js ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -ne "  index type declaration: "
+if [ ! -f react-native/dist/index.d.ts ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+
 echo -e "\r\n${GREEN}-----------------------------------"
 echo -e "Theme packages successfully created"
 echo -e "-----------------------------------${NC}\r\n\r\n"

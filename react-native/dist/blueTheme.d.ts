@@ -5,7 +5,7 @@ All rights reserved.
 
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
-export declare const blueTheme: {
+export declare type PXBlueTheme = {
     roundness: number;
     fonts: {
         extraBold: {
@@ -25,13 +25,13 @@ export declare const blueTheme: {
         };
     };
     colors: {
-        primary: any;
-        background: any;
-        surface: any;
-        accent: any;
-        error: any;
-        text: any;
-        onPrimary: any;
+        primary: string;
+        background: string;
+        surface: string;
+        accent: string;
+        error: string;
+        text: string;
+        onPrimary: string;
     };
     sizes: {
         tiny: number;
@@ -43,3 +43,4 @@ export declare const blueTheme: {
         giant: number;
     };
 };
+export declare const blueTheme: PXBlueTheme;

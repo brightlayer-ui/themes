@@ -36,7 +36,7 @@
     },
     "homepage": "https://github.com/pxblue/themes#readme",
     "dependencies": {
-        "@pxblue/colors": "^1.0.13",
+        "@pxblue/colors": "^2.0.0",
         "typeface-open-sans": "^0.0.54"
     },
     "files": [

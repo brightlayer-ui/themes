@@ -6,10 +6,48 @@ All rights reserved.
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
 
-//@ts-ignore
 import {blue, red, gray, lightBlue, white} from '@pxblue/colors';
 
-export const blueTheme =
+export type PXBlueTheme = {
+  roundness: number,
+  fonts: {
+    extraBold: {
+      fontFamily: string
+    },
+    bold: {
+      fontFamily: string
+    },
+    semiBold: {
+      fontFamily: string
+    },
+    regular: {
+      fontFamily: string
+    },
+    light: {
+      fontFamily: string
+    }
+  },
+  colors: {
+    primary: string,
+    background: string,
+    surface: string,
+    accent: string,
+    error: string,
+    text: string,
+    onPrimary: string
+  },
+  sizes: {
+    tiny: number,
+    extraSmall: number,
+    small: number,
+    medium: number,
+    large: number,
+    extraLarge: number,
+    giant: number
+  }
+}
+
+export const blueTheme: PXBlueTheme =
 {
   roundness: 4,
   fonts: {
