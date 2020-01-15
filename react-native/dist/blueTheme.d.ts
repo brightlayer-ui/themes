@@ -5,24 +5,19 @@ All rights reserved.
 
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
+import { TextStyle } from 'react-native';
+declare type Font = {
+    fontFamily: string;
+    fontWeight: TextStyle['fontWeight'];
+};
 export declare type PXBlueTheme = {
     roundness: number;
     fonts: {
-        extraBold: {
-            fontFamily: string;
-        };
-        bold: {
-            fontFamily: string;
-        };
-        semiBold: {
-            fontFamily: string;
-        };
-        regular: {
-            fontFamily: string;
-        };
-        light: {
-            fontFamily: string;
-        };
+        extraBold: Partial<Font>;
+        bold: Partial<Font>;
+        semiBold: Partial<Font>;
+        regular: Partial<Font>;
+        light: Partial<Font>;
     };
     colors: {
         primary: string;
@@ -44,3 +39,4 @@ export declare type PXBlueTheme = {
     };
 };
 export declare const blueTheme: PXBlueTheme;
+export {};

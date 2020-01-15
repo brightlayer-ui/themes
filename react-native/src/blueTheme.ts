@@ -7,25 +7,21 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 **/
 
 import {blue, red, gray, lightBlue, white} from '@pxblue/colors';
+import { TextStyle } from 'react-native';
+
+type Font = {
+  fontFamily: string;
+  fontWeight: TextStyle['fontWeight'];
+}
 
 export type PXBlueTheme = {
   roundness: number,
   fonts: {
-    extraBold: {
-      fontFamily: string
-    },
-    bold: {
-      fontFamily: string
-    },
-    semiBold: {
-      fontFamily: string
-    },
-    regular: {
-      fontFamily: string
-    },
-    light: {
-      fontFamily: string
-    }
+    extraBold: Partial<Font>,
+    bold: Partial<Font>,
+    semiBold: Partial<Font>,
+    regular: Partial<Font>,
+    light: Partial<Font>,
   },
   colors: {
     primary: string,
