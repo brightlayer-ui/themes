@@ -8,7 +8,7 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 **/
 Object.defineProperty(exports, "__esModule", { value: true });
 var RThemes = require("./react/dist");
-var RNThemes = require("./react-native/dist");
+var dist_1 = require("./react-native/dist");
 exports.ReactThemes = {
     // @ts-ignore
     blue: RThemes.blue,
@@ -16,5 +16,5 @@ exports.ReactThemes = {
     blueDark: RThemes.blueDark
 };
 exports.ReactNativeThemes = {
-    blue: RNThemes.blue
+    blue: dist_1.blue
 };

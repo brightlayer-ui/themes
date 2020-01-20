@@ -5,8 +5,8 @@ All rights reserved.
 
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
+import { PXBlueReactNativeTheme } from './react-native/dist';
 import { ThemeOptions as PXBlueReactTheme } from "@material-ui/core/styles/createMuiTheme";
-import { Theme as PXBlueReactNativeTheme } from '@pxblue/react-native-components/core/theme';
 declare type ReactThemesType = {
     blue: PXBlueReactTheme;
     blueDark: PXBlueReactTheme;

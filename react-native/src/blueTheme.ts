@@ -7,9 +7,43 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 **/
 
 import {blue, red, gray, lightBlue, white} from '@pxblue/colors';
-import { Theme as PXBlueTheme } from '@pxblue/react-native-components/core/theme';
+import { TextStyle } from 'react-native';
 
-export const blueTheme: PXBlueTheme =
+type Font = {
+    fontFamily: string;
+    fontWeight: TextStyle['fontWeight'];
+};
+
+export type PXBlueReactNativeTheme = {
+    roundness: number;
+    colors: {
+        primary: string;
+        background: string;
+        surface: string;
+        accent: string;
+        error: string;
+        text: string;
+        onPrimary: string;
+    };
+    fonts: {
+        extraBold: Partial<Font>;
+        bold: Partial<Font>;
+        semiBold: Partial<Font>;
+        regular: Partial<Font>;
+        light: Partial<Font>;
+    };
+    sizes: {
+        tiny: number;
+        extraSmall: number;
+        small: number;
+        medium: number;
+        large: number;
+        extraLarge: number;
+        giant: number;
+    }
+};
+
+export const blueTheme: PXBlueReactNativeTheme =
 {
   roundness: 4,
   fonts: {

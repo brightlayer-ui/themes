@@ -11,13 +11,10 @@
     "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start"
   },
   "dependencies": {
-    "@pxblue/colors": "^2.0.0"
+    "@pxblue/colors": "^2.0.0",
+    "@types/react-native": "^0.60.2"
   },
   "devDependencies": {
-    "typescript": "^3.7.2",
-    "@pxblue/react-native-components": "^2.0.2"
-  },
-  "peerDependencies": {
-    "@pxblue/react-native-components": "^2.0.2"
+    "typescript": "^3.7.2"
   }
 }

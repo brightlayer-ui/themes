@@ -42,8 +42,7 @@
     },
     "devDependencies": {
         "typescript": "^3.7.2",
-        "@material-ui/core": ">=3.0.0",
-        "@pxblue/react-native-components": "^2.0.2"
+        "@material-ui/core": ">=3.0.0"
     },
     "files": [
         "package.json",
