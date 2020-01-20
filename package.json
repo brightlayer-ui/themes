@@ -4,7 +4,7 @@
     "license": "BSD-3-Clause",
     "version": "3.0.0",
     "description": "PXBlue themes for Eaton applications",
-    "main": "dist/index.js",
+    "main": "index.js",
     "scripts": {
         "test": "./buildTest.sh",
         "build:index": "yarn && tsc",
@@ -41,14 +41,16 @@
         "typeface-open-sans": "^0.0.54"
     },
     "devDependencies": {
-        "typescript": "^3.7.2"
+        "typescript": "^3.7.2",
+        "@material-ui/core": ">=3.0.0",
+        "@pxblue/react-native-components": "^2.0.2"
     },
     "files": [
         "package.json",
         "README.md",
         "LICENSE",
         "CHANGELOG.md",
-        "dist/index.js",
+        "index.js",
         "angular/Readme.md",
         "angular/*.scss",
         "react/Readme.md",
