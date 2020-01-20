@@ -48,7 +48,7 @@
         "README.md",
         "LICENSE",
         "CHANGELOG.md",
-        "index.js",
+        "dist/index.js",
         "angular/Readme.md",
         "angular/*.scss",
         "react/Readme.md",
