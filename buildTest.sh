@@ -47,6 +47,8 @@ echo -ne "  blue dark theme: "
 if [ ! -f react/dist/blueDarkTheme.js ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
 echo -ne "  index: "
 if [ ! -f react/dist/index.js ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -ne "  index type declaration: "
+if [ ! -f react/dist/index.d.ts ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
 
 echo "Checking Theme (React-Native)"
 echo "Checking for required files..."
