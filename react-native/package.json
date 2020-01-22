@@ -1,5 +1,5 @@
 {
-  "name": "react-theme",
+  "name": "react-native-theme",
   "version": "2.2.0",
   "license": "BSD-3-Clause",
   "description": "React themes for PX Blue applications",
@@ -11,7 +11,8 @@
     "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start"
   },
   "dependencies": {
-    "@pxblue/colors": "^1.0.1"
+    "@pxblue/colors": "^2.0.0",
+    "@types/react-native": "^0.60.2"
   },
   "devDependencies": {
     "typescript": "^3.7.2"

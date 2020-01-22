@@ -1,5 +1,8 @@
+## v3.0.1
+* Our React Native theme has been converted to TypeScript to provide strong typing for TypeScript projects. These themes will continue to work as usual for JS projects.
+
 ## v3.0.0
-* Our React and React Native themes have been converted to TypeScript to provide strong typing for TypeScript projects. These themes will continue to work as usual for JS projects.
+* Our React theme has been converted to TypeScript to provide strong typing for TypeScript projects. These themes will continue to work as usual for JS projects.
 
 ## v2.2.3
 * Introduces new theme for React Native applications using the @pxblue/react-native-components library.

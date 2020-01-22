@@ -2,14 +2,15 @@
     "name": "@pxblue/themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "description": "PXBlue themes for Eaton applications",
     "main": "index.js",
     "scripts": {
         "test": "./buildTest.sh",
+        "build:index": "yarn && tsc",
         "build:react": "cd react && yarn build && cd ..",
         "build:react-native": "cd react-native && yarn build && cd ..",
-        "build:all": "yarn build:react && yarn build:react-native",
+        "build:all": "yarn build:react && yarn build:react-native && yarn build:index",
         "publish:full": "yarn build:all && npm version patch && npm publish",
         "link:angular": "cd angular && yarn link:themes",
         "start:angular": "cd angular && yarn start",
@@ -36,8 +37,12 @@
     },
     "homepage": "https://github.com/pxblue/themes#readme",
     "dependencies": {
-        "@pxblue/colors": "^1.0.13",
+        "@pxblue/colors": "^2.0.0",
         "typeface-open-sans": "^0.0.54"
+    },
+    "devDependencies": {
+        "typescript": "^3.7.2",
+        "@material-ui/core": ">=3.0.0"
     },
     "files": [
         "package.json",

@@ -11,7 +11,6 @@
 import { typography, darkInput, darkText, darkBackground, darkAction } from './constants';
 import {ThemeOptions} from "@material-ui/core/styles/createMuiTheme";
 
-// @ts-ignore
 import * as ThemeColors from '@pxblue/colors';
 
 export const blueDarkTheme: ThemeOptions =

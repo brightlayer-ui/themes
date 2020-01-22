@@ -8,7 +8,6 @@
  **/
 Object.defineProperty(exports, "__esModule", { value: true });
 var constants_1 = require("./constants");
-// @ts-ignore
 var ThemeColors = require("@pxblue/colors");
 exports.blueTheme = {
     palette: {

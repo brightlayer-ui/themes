@@ -6,10 +6,44 @@ All rights reserved.
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
 
-//@ts-ignore
 import {blue, red, gray, lightBlue, white} from '@pxblue/colors';
+import { TextStyle } from 'react-native';
 
-export const blueTheme =
+type Font = {
+    fontFamily: string;
+    fontWeight: TextStyle['fontWeight'];
+};
+
+export type PXBlueReactNativeTheme = {
+    roundness: number;
+    colors: {
+        primary: string;
+        background: string;
+        surface: string;
+        accent: string;
+        error: string;
+        text: string;
+        onPrimary: string;
+    };
+    fonts: {
+        extraBold: Partial<Font>;
+        bold: Partial<Font>;
+        semiBold: Partial<Font>;
+        regular: Partial<Font>;
+        light: Partial<Font>;
+    };
+    sizes: {
+        tiny: number;
+        extraSmall: number;
+        small: number;
+        medium: number;
+        large: number;
+        extraLarge: number;
+        giant: number;
+    }
+};
+
+export const blueTheme: PXBlueReactNativeTheme =
 {
   roundness: 4,
   fonts: {
