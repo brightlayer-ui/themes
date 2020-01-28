@@ -2,7 +2,7 @@
     "name": "@pxblue/themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "description": "PXBlue themes for Eaton applications",
     "main": "index.js",
     "scripts": {
@@ -50,6 +50,7 @@
         "LICENSE",
         "CHANGELOG.md",
         "index.js",
+        "index.d.ts",
         "angular/Readme.md",
         "angular/*.scss",
         "react/Readme.md",
