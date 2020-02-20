@@ -1,0 +1,29 @@
+{
+  "name": "@pxblue/storybook-theme",
+  "version": "0.0.1",
+  "description": "Theme used within Storybook component demos",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pxblue/storybook-theme"
+  },
+  "keywords": [
+    "storybook",
+    "theme",
+    "pxblue"
+  ],
+  "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@pxblue/colors": "^2.0.0",
+    "@storybook/theming": "^5.3.13"
+  },
+  "peerDependencies": {
+    "@pxblue/colors": "^2.0.0",
+    "@storybook/theming": "^5.3.13"
+  }
+}
