@@ -7,8 +7,7 @@
     "scripts": {
         "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start",
         "link:themes": "bash ./scripts/linkThemes.sh",
-        "test": "bash ./scripts/buildTest.sh",
-        "prepublish": "yarn test"
+        "test": "bash ./scripts/buildTest.sh"
     },
     "repository": {
         "type": "git",

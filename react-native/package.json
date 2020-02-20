@@ -9,8 +9,7 @@
     "start": "echo \"Error: no demo yet\" && exit 1",
     "build": "yarn && tsc",
     "link:themes": "bash ./scripts/linkThemes.sh",
-    "test": "bash ./scripts/buildTest.sh",
-    "prepublish": "yarn test"
+    "test": "bash ./scripts/buildTest.sh"
   },
   "repository": {
     "type": "git",

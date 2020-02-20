@@ -9,6 +9,12 @@ export declare const typography: {
     fontFamily: string;
     useNextVariants: boolean;
 };
+export declare const text: {
+    primary: string;
+    secondary: string;
+    icon: string;
+    hint: string;
+};
 export declare const darkText: {
     primary: string;
     secondary: string;

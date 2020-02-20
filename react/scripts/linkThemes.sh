@@ -14,8 +14,7 @@ yarn build
 
 
 echo -en "${BLUE}Creating new folder in node_modules...${NC}"
-rm -rf "./demo/node_modules/@pxblue/themes"
-mkdir "./demo/node_modules/@pxblue/themes"
+rm -rf "./demo/node_modules/@pxblue/react-themes"
 mkdir "./demo/node_modules/@pxblue/react-themes"
 echo -e "${GREEN}Done${NC}"
 

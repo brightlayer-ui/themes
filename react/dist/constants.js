@@ -12,6 +12,12 @@ exports.typography = {
     fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
     useNextVariants: true
 };
+exports.text = {
+    primary: ThemeColors.black['500'],
+    secondary: ThemeColors.black['300'],
+    icon: ThemeColors.black['500'],
+    hint: ThemeColors.black['500'],
+};
 exports.darkText = {
     primary: ThemeColors.gray['300'],
     secondary: ThemeColors.black['300'],
