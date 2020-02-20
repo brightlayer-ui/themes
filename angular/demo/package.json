@@ -4,7 +4,7 @@
     "description": "Angular themes for Eaton applications",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve --configuration es5",
+        "start": "ng serve --configuration es5 --open",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint"
