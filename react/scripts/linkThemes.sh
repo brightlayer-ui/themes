@@ -16,19 +16,19 @@ yarn build
 echo -en "${BLUE}Creating new folder in node_modules...${NC}"
 rm -rf "./demo/node_modules/@pxblue/themes"
 mkdir "./demo/node_modules/@pxblue/themes"
-mkdir "./demo/node_modules/@pxblue/themes/react"
+mkdir "./demo/node_modules/@pxblue/react-themes"
 echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying build output into node_modules...${NC}";
-cp -r ./package.json ./demo/node_modules/@pxblue/themes/react/package.json
-cp -r ./dist ./demo/node_modules/@pxblue/themes/react/dist
+cp -r ./package.json ./demo/node_modules/@pxblue/react-themes/package.json
+cp -r ./dist ./demo/node_modules/@pxblue/react-themes/dist
 echo -e "${GREEN}Done${NC}"
 
 echo -en "\r\n${BRED}Linking Components: ${NC}"
-if [ ! -f ./demo/node_modules/@pxblue/themes/react/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
-if [ ! -s ./demo/node_modules/@pxblue/themes/react/dist ]; 
+if [ ! -f ./demo/node_modules/@pxblue/react-themes/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
+if [ ! -s ./demo/node_modules/@pxblue/react-themes/dist ]; 
     then 
-        if [ ! -f ./demo/node_modules/@pxblue/themes/react/dist/index.js ];
+        if [ ! -f ./demo/node_modules/@pxblue/react-themes/dist/index.js ];
         then echo -e "${BRED}Not Linked${NC}" && exit 1; 
         fi;
 fi
