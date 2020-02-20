@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  verify-outputs:
+  build:
     docker: 
       - image: circleci/node:12.6-browsers
     steps:
