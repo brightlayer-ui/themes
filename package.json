@@ -31,7 +31,8 @@
     "dependencies": {
         "@pxblue/angular-themes": "^4.0.0",
         "@pxblue/react-themes": "^4.0.0",
-        "@pxblue/react-native-themes": "^4.0.0"
+        "@pxblue/react-native-themes": "^4.0.0",
+        "typeface-open-sans": "^0.0.75"
     },
     "files": [
         "package.json",

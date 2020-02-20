@@ -27,7 +27,8 @@
         "Angular"
     ],
     "dependencies": {
-        "@pxblue/colors": "^2.0.0"
+        "@pxblue/colors": "^2.0.0",
+        "typeface-open-sans": "^0.0.75"
     },
     "files": [
         "package.json",
