@@ -56,6 +56,9 @@ export const blueDarkTheme: ThemeOptions =
 
             // BUTTON OVERRIDES
             MuiButton:{
+                root:{
+                    textTransform: 'none'
+                },
                 outlined:{
                     borderColor: ThemeColors.black['100']
                 },
@@ -89,6 +92,7 @@ export const blueDarkTheme: ThemeOptions =
             // FAB OVERRIDES
             MuiFab:{
                 root:{
+                    textTransform: 'none',
                     backgroundColor: ThemeColors.black['500'],
                     color: ThemeColors.white['50'],
                     '&:hover':{

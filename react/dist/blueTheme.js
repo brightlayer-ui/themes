@@ -34,10 +34,16 @@ exports.blueTheme = {
                 backgroundColor: ThemeColors.blue['700']
             }
         },
-        // TABS OVERRIDES
-        MuiTabs: {
-            indicator: {
-                backgroundColor: ThemeColors.white['50']
+        // BUTTON OVERRIDES
+        MuiButton: {
+            root: {
+                textTransform: 'none'
+            }
+        },
+        // BUTTON OVERRIDES
+        MuiFab: {
+            root: {
+                textTransform: 'none'
             }
         },
         // LIST ITEM OVERRIDES
@@ -45,6 +51,12 @@ exports.blueTheme = {
             root: {
                 color: ThemeColors.black['500'],
             },
+        },
+        // TABS OVERRIDES
+        MuiTabs: {
+            indicator: {
+                backgroundColor: ThemeColors.white['50']
+            }
         },
     }
 };

@@ -39,10 +39,17 @@ export const blueTheme: ThemeOptions =
                 }
             },
 
-            // TABS OVERRIDES
-            MuiTabs:{
-                indicator:{
-                    backgroundColor: ThemeColors.white['50']
+            // BUTTON OVERRIDES
+            MuiButton:{
+                root:{
+                    textTransform: 'none'
+                }
+            },
+
+            // BUTTON OVERRIDES
+            MuiFab:{
+                root:{
+                    textTransform: 'none'
                 }
             },
 
@@ -52,6 +59,13 @@ export const blueTheme: ThemeOptions =
                     color: ThemeColors.black['500'],
                 },
 
+            },
+
+            // TABS OVERRIDES
+            MuiTabs:{
+                indicator:{
+                    backgroundColor: ThemeColors.white['50']
+                }
             },
         }
     };

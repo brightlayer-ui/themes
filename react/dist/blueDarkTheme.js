@@ -48,6 +48,9 @@ exports.blueDarkTheme = {
         },
         // BUTTON OVERRIDES
         MuiButton: {
+            root: {
+                textTransform: 'none'
+            },
             outlined: {
                 borderColor: ThemeColors.black['100']
             },
@@ -77,6 +80,7 @@ exports.blueDarkTheme = {
         // FAB OVERRIDES
         MuiFab: {
             root: {
+                textTransform: 'none',
                 backgroundColor: ThemeColors.black['500'],
                 color: ThemeColors.white['50'],
                 '&:hover': {
