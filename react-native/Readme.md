@@ -1,7 +1,25 @@
-# React Native Theme
+# PX Blue themes for React Native applications
+This package provides theming support for Eaton applications using the PX Blue design system. It includes resources for developers using [@pxblue/react-native-components](https://www.npmjs.com/package/@pxblue/react-native-components). This package presently comes with two theme options: a Blue theme (standard) and a default Material theme.
+
+For other frameworks, check out our related packages:
+* [@pxblue/angular-themes](https://www.npmjs.com/package/@pxblue/angular-themes)
+* [@pxblue/react-themes](https://www.npmjs.com/package/@pxblue/react-themes)
+
+## Installation
+Install with npm
+```
+npm install --save @pxblue/react-native-themes
+```
+or yarn
+```
+yarn add @pxblue/react-native-themes
+```
+
+# Usage
+To use these themes in your application, simply wrap the app in a `ThemeProvider` and pass in your desired theme (`blue`). Omitting the `theme` prop will default to the Material theme:
 ```
 import { ThemeProvider } from '@pxblue/react-native-components';
-import * as PXBThemes from '@pxblue/themes/react-native';
+import * as PXBThemes from '@pxblue/react-native-themes';
 ...
 // Default Theme
 <ThemeProvider theme={PXBThemes.blue}>

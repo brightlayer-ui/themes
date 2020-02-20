@@ -1,14 +1,39 @@
 {
-    "name": "angular-theme",
-    "version": "2.2.0",
+    "name": "@pxblue/angular-themes",
+    "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
+    "version": "4.0.0",
     "description": "Angular themes for PX Blue applications",
-    "dependencies": {
-        "@angular/material": "8.1.3",
-        "@pxblue/colors": "^1.0.1"
-    },
     "scripts": {
         "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start",
-        "link:themes": "bash ./linkThemes.sh"
-    }
+        "link:themes": "bash ./scripts/linkThemes.sh",
+        "test": "bash ./scripts/buildTest.sh",
+        "prepublish": "yarn test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pxblue/themes.git"
+    },
+    "bugs": {
+        "url": "https://github.com/pxblue/themes/issues"
+    },
+    "homepage": "https://github.com/pxblue/themes/tree/master/angular",
+    "keywords": [
+        "PXBlue",
+        "themes",
+        "Eaton",
+        "Power",
+        "Xpert",
+        "Angular"
+    ],
+    "dependencies": {
+        "@pxblue/colors": "^2.0.0"
+    },
+    "files": [
+        "package.json",
+        "README.md",
+        "LICENSE",
+        "CHANGELOG.md",
+        "*.scss"
+    ]
 }
