@@ -19,10 +19,10 @@ yarn add @pxblue/react-native-themes
 ## Usage
 Depending on the framework that you are using, PX Blue themes are applied in different ways. Please follow the instructions for your chosen framework for integrating the themes into your application:
 
--[Angular](https://github.com/pxblue/themes/tree/master/angular)
--[React](https://github.com/pxblue/themes/tree/master/react)
--[React-Native](https://github.com/pxblue/themes/tree/master/react-native)
--[Storybook](https://github.com/pxblue/themes/tree/master/storybook)
+- [Angular](https://github.com/pxblue/themes/tree/master/angular)
+- [React](https://github.com/pxblue/themes/tree/master/react)
+- [React-Native](https://github.com/pxblue/themes/tree/master/react-native)
+- [Storybook](https://github.com/pxblue/themes/tree/master/storybook)
 
 ## Demos
 | Framework        | Live Examples                                                                                |
