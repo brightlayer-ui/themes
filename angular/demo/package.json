@@ -4,7 +4,7 @@
     "description": "Angular themes for Eaton applications",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve --configuration es5",
+        "start": "ng serve --configuration es5 --open",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint"
@@ -24,7 +24,7 @@
         "@pxblue/angular-components": "1.1.1",
         "@pxblue/colors": "1.0.13",
         "@pxblue/ng-progress-icons": "1.1.4",
-        "@pxblue/themes": "2.1.0",
+        "@pxblue/angular-themes": "latest",
         "core-js": "^2.0.0",
         "rxjs": "~6.4.0",
         "tslib": "^1.10.0",

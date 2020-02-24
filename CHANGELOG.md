@@ -1,3 +1,9 @@
+## v4.0.0
+This package is now deprecated. Themes have been broken out into separate NPM packages. Please update to the package specific to your framework:
+* [@pxblue/angular-themes](https://www.npmjs.com/package/@pxblue/angular-themes)
+* [@pxblue/react-themes](https://www.npmjs.com/package/@pxblue/react-themes)
+* [@pxblue/react-native-themes](https://www.npmjs.com/package/@pxblue/react-native-themes)
+
 ## v3.0.1
 * Our React Native theme has been converted to TypeScript to provide strong typing for TypeScript projects. These themes will continue to work as usual for JS projects.
 

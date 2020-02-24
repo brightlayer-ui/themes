@@ -12,13 +12,17 @@ export const typography = {
   fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
   useNextVariants: true
 };
+export const text = {
+  primary: ThemeColors.black['500'],
+  secondary: ThemeColors.black['300'],
+  icon: ThemeColors.black['500'],
+  hint: ThemeColors.black['500'],
+};
 export const darkText = {
   primary: ThemeColors.gray['300'],
   secondary: ThemeColors.black['300'],
   icon: ThemeColors.gray['300'],
   hint: ThemeColors.gray['300'],
-  //divider: "rgba(255,255,255,.05)",
-  //disabled: ThemeColors.gray['500']
 };
 export const input = {
   bottomLine: ThemeColors.black['500'],

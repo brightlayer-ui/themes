@@ -48,6 +48,9 @@ exports.blueDarkTheme = {
         },
         // BUTTON OVERRIDES
         MuiButton: {
+            root: {
+                textTransform: 'none'
+            },
             outlined: {
                 borderColor: ThemeColors.black['100']
             },
@@ -77,6 +80,7 @@ exports.blueDarkTheme = {
         // FAB OVERRIDES
         MuiFab: {
             root: {
+                textTransform: 'none',
                 backgroundColor: ThemeColors.black['500'],
                 color: ThemeColors.white['50'],
                 '&:hover': {
@@ -84,44 +88,10 @@ exports.blueDarkTheme = {
                 }
             }
         },
-        // ICON BUTTON OVERRIDES
-        MuiIconButton: {
-            root: {
-                color: ThemeColors.black['500'],
-            }
-        },
         //LIST ITEM OVERRIDES (plus nav drawer)
         MuiListItem: {
             root: {
                 color: ThemeColors.gray['300'],
-                '&:hover': {
-                    backgroundColor: ThemeColors.black['A200']
-                },
-                // OVERRIDES FOR ACTIVE ROUTE IN SIDE NAVIGATION
-                '&.routeActive': {
-                    color: ThemeColors.white['50'],
-                    position: 'relative',
-                    '&:hover': {
-                        backgroundColor: 'transparent'
-                    },
-                    '&:before': {
-                        content: '""',
-                        zIndex: -1,
-                        position: 'absolute',
-                        height: '100%',
-                        width: 'calc(100% - 8px)',
-                        left: 0,
-                        top: 0,
-                        backgroundColor: ThemeColors.blue['500'],
-                        borderRadius: '0px 24px 24px 0px'
-                    },
-                    '&.drawerOpen:hover:before': {
-                        backgroundColor: ThemeColors.blue['700'],
-                    },
-                    '& svg': {
-                        fill: ThemeColors.white['50'],
-                    }
-                }
             }
         },
         // SNACKBAR OVERRIDES

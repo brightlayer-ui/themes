@@ -39,7 +39,7 @@ import Main from './router/main';
 import styles from './styles/styleClasses';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import * as PXBThemes from '@pxblue/themes/react';
+import * as PXBThemes from '@pxblue/react-themes';
 import './style.css';
 
 // NavLink for components in app (Button, Nav Drawer, etc.)

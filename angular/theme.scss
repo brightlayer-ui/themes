@@ -57,7 +57,7 @@ $pxb-blue-theme : mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue
     @include angular-material-theme($pxb-blue-theme);
     @include reasonable-margins();
     @include bodyfont();
-    @include bluetheme();
+    @include bluetheme($pxb-blue-primary, $pxb-blue-accent);
 }
 
 // Blue Dark Theme

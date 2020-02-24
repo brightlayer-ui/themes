@@ -15,6 +15,7 @@ exports.blueTheme = {
         secondary: ThemeColors.lightBlue,
         error: ThemeColors.red,
         background: constants_1.background,
+        text: constants_1.text,
         action: constants_1.action,
         // @ts-ignore
         line: { stepper: ThemeColors.blue['500'] },
@@ -33,44 +34,29 @@ exports.blueTheme = {
                 backgroundColor: ThemeColors.blue['700']
             }
         },
+        // BUTTON OVERRIDES
+        MuiButton: {
+            root: {
+                textTransform: 'none'
+            }
+        },
+        // BUTTON OVERRIDES
+        MuiFab: {
+            root: {
+                textTransform: 'none'
+            }
+        },
+        // LIST ITEM OVERRIDES
+        MuiListItem: {
+            root: {
+                color: ThemeColors.black['500'],
+            },
+        },
         // TABS OVERRIDES
         MuiTabs: {
             indicator: {
                 backgroundColor: ThemeColors.white['50']
             }
         },
-        //LIST ITEM OVERRIDES (plus nav drawer)
-        MuiListItem: {
-            root: {
-                color: ThemeColors.black['500'],
-                '&:hover': {
-                    backgroundColor: 'rgba(0, 0, 0, 0.08)'
-                },
-                // OVERRIDES FOR ACTIVE ROUTE IN SIDE NAVIGATION
-                '&.routeActive': {
-                    position: 'relative',
-                    '&:hover': {
-                        backgroundColor: 'transparent'
-                    },
-                    '&:before': {
-                        content: '""',
-                        zIndex: -1,
-                        position: 'absolute',
-                        height: '100%',
-                        width: 'calc(100% - 8px)',
-                        left: 0,
-                        top: 0,
-                        backgroundColor: ThemeColors.blue['50'],
-                        borderRadius: '0px 24px 24px 0px'
-                    },
-                    '&.drawerOpen:hover:before': {
-                        backgroundColor: ThemeColors.blue['100'],
-                    },
-                    '& svg': {
-                        fill: ThemeColors.blue['500']
-                    }
-                }
-            },
-        }
     }
 };
