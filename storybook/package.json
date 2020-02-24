@@ -2,7 +2,7 @@
   "name": "@pxblue/storybook-themes",
   "author": "PX Blue <pxblue@eaton.com>",
   "license": "BSD-3-Clause",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Storybook theme for PX Blue documentation",
   "main": "index.js",
   "types": "index.d.ts",
