@@ -11,7 +11,7 @@
     "@pxblue/icons-mui": "1.0.18",
     "@pxblue/react-components": "1.0.1",
     "@pxblue/react-progress-icons": "1.0.7",
-    "@pxblue/themes": "^2.1.0",
+    "@pxblue/react-themes": "latest",
     "prop-types": "15.7.2",
     "react": "^16.9.0",
     "react-app-polyfill": "^1.0.2",

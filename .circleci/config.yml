@@ -2,14 +2,11 @@ version: 2
 jobs:
   build:
     docker: 
-      - image: circleci/node:8.11-browsers
+      - image: circleci/node:12.6-browsers
     steps:
       - checkout
       - run: 
-          name: Install Dependencies
-          command: yarn && cd react && yarn && cd ..
-      - run:
-          name: Build Package
+          name: Build All
           command: yarn build:all
       - run:
           name: Verify Artifacts

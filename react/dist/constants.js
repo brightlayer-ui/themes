@@ -7,11 +7,16 @@ All rights reserved.
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
 Object.defineProperty(exports, "__esModule", { value: true });
-// @ts-ignore
 var ThemeColors = require("@pxblue/colors");
 exports.typography = {
     fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
     useNextVariants: true
+};
+exports.text = {
+    primary: ThemeColors.black['500'],
+    secondary: ThemeColors.black['300'],
+    icon: ThemeColors.black['500'],
+    hint: ThemeColors.black['500'],
 };
 exports.darkText = {
     primary: ThemeColors.gray['300'],

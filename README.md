@@ -1,83 +1,28 @@
 # PX Blue themes for Eaton applications
-This package provides theming support for Eaton applications using the PX Blue design system. It includes resources for developers using:
+These packages provide theming support for Eaton applications using the PX Blue design system. It includes resources for developers using:
 * Angular w/ [Angular Material](https://www.npmjs.com/package/@angular/material)
 * React w/ [Material UI](https://www.npmjs.com/package/@material-ui/core)
+* React Native w/ [@pxblue/react-native-components](https://www.npmjs.com/package/@pxblue/react-native-components)
 
-The PX Blue themes package comes with two theme options: a Blue theme (standard) and a Dark theme.
+The PX Blue theme packages come with two theme options: a Blue theme (standard) and a Dark theme (not yet available for React Native).
 
 ## Installation
-Install with npm
+Previously, these themes were published together as @pxblue/themes, but they have since been separated into distinct packages for each framework for better versioning and dependency management. Get started by installing the appropriate package for your chosen framework:
+
 ```
-npm install --save @pxblue/themes
+yarn add @pxblue/angular-themes
+yarn add @pxblue/react-themes
+yarn add @pxblue/react-native-themes
 ```
-or yarn
-```
-yarn add @pxblue/themes
-```
+>**NOTE**: We also have a theme package for theming storybook documentation applications in a PX Blue style (@pxblue/storybook-themes).
 
 ## Usage
-Depending on the framework that you are using, PX Blue themes are applied in different ways.
+Depending on the framework that you are using, PX Blue themes are applied in different ways. Please follow the instructions for your chosen framework for integrating the themes into your application:
 
-### Angular w/ Angular Material
-In order to use the PX Blue themes and font (Open Sans), you will need to modify your angular.json file "styles" entries (there is one under "build" and one under "test") to include the PX Blue themes and Open Sans reference:
-```
-"styles": [
-    "src/styles.scss",
-    "./node_modules/@pxblue/themes/angular/theme.scss",
-    "./node_modules/typeface-open-sans"
-],
-```
-
-Alternatively, you can also import the theme file in your top-level SCSS file.
-```
-// in styles.scss or your top-level scss file
-import '~@pxblue/themes/angular/theme.scss'
-```
-
-You can then apply the theme to your application by adding the proper class to your application's top-level element:
-```
-// Default Theme
-<app-root class="pxb-blue">
-
-// Dark Theme
-<app-root class="pxb-blue-dark">
-```
-> If you do not specify a theme class, your application will use the default Material theme.
-
-### React w/ Material UI
-```
-import { 
-    MuiThemeProvider, 
-    createMuiTheme 
-} from '@material-ui/core/styles';
-import * as PXBThemes from '@pxblue/themes/react';
-require('typeface-open-sans');
-
-...
-// Default Theme
-<MuiThemeProvider theme={createMuiTheme(PXBThemes.blue)}>
-    <App />
-</MuiThemeProvider>
-...
-// Dark Theme
-<MuiThemeProvider theme={createMuiTheme(PXBThemes.blueDark)}>
-    <App />
-</MuiThemeProvider>
-```
-
-### React Native w/ @pxblue/react-native-components
-```
-import { ThemeProvider } from '@pxblue/react-native-components';
-import * as PXBThemes from '@pxblue/themes/react-native';
-...
-<ThemeProvider theme={PXBThemes.blue}>
-    <App />
-</ThemeProvider>
-```
-
-> **NOTE:** Using the PX Blue React Native theme requires that you add the Open Sans font to your application. You can learn how to do this by reading the instructions for [Vanilla React Native](https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e) or [Expo](https://docs.expo.io/versions/latest/guides/using-custom-fonts/). 
-
-> When using Expo, you will need to specify the name for each font weight you load using the format `OpenSans-<Weight>`, e.g., OpenSans-SemiBold. Refer to one of our React Native demos for reference.
+- [Angular](https://github.com/pxblue/themes/tree/master/angular)
+- [React](https://github.com/pxblue/themes/tree/master/react)
+- [React-Native](https://github.com/pxblue/themes/tree/master/react-native)
+- [Storybook](https://github.com/pxblue/themes/tree/master/storybook)
 
 ## Demos
 | Framework        | Live Examples                                                                                |

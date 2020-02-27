@@ -9,37 +9,43 @@ export declare const typography: {
     fontFamily: string;
     useNextVariants: boolean;
 };
+export declare const text: {
+    primary: string;
+    secondary: string;
+    icon: string;
+    hint: string;
+};
 export declare const darkText: {
-    primary: any;
-    secondary: any;
-    icon: any;
-    hint: any;
+    primary: string;
+    secondary: string;
+    icon: string;
+    hint: string;
 };
 export declare const input: {
-    bottomLine: any;
-    helperText: any;
-    labelText: any;
-    inputText: any;
+    bottomLine: string;
+    helperText: string;
+    labelText: string;
+    inputText: string;
 };
 export declare const darkInput: {
-    bottomLine: any;
-    helperText: any;
-    labelText: any;
-    inputText: any;
+    bottomLine: string;
+    helperText: string;
+    labelText: string;
+    inputText: string;
 };
 export declare const background: {
-    default: any;
-    paper: any;
+    default: string;
+    paper: string;
 };
 export declare const darkBackground: {
-    default: any;
-    paper: any;
-    appBar: any;
+    default: string | undefined;
+    paper: string;
+    appBar: string;
 };
 export declare const action: {
     active: string;
     disabled: string;
 };
 export declare const darkAction: {
-    active: any;
+    active: string;
 };
