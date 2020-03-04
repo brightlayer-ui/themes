@@ -2,7 +2,7 @@ import { create } from '@storybook/theming/create';
 import * as colors from '@pxblue/colors';
 
 export const pxblueTheme = create({
-    base: colors.blue[500],
+    base: 'light',
 
     colorPrimary: colors.blue[500],
     colorSecondary: colors.white[500],
