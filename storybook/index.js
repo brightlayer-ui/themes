@@ -43,7 +43,7 @@ export const pxblueTheme = create({
     // This section can be used to apply classes to our Markdown documents.
     addonNotesTheme: {
         a: {
-            color: colors.blue[500]
+            color: colors.blue[500]+'!important'
         },
         h1: {
             color: colors.blue[500]
