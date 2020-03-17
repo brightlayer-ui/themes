@@ -27,7 +27,7 @@ export const pxblueTheme = create({
     barBg: colors.blue[500],
 
     // Form colors
-    inputBg: colors.white[200],
+    inputBg: colors.white[50],
     inputBorder: colors.gray[100],
     inputTextColor: colors.black[500],
     inputBorderRadius: 4,
