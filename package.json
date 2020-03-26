@@ -2,7 +2,7 @@
     "name": "@pxblue/themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "4.0.0",
+    "version": "0.0.0",
     "description": "PXBlue themes for Eaton applications",
     "scripts": {
         "test": "bash ./buildTest.sh",
