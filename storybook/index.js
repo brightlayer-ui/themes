@@ -46,7 +46,8 @@ export const pxblueTheme = create({
             color: colors.blue[500]+'!important'
         },
         h1: {
-            color: colors.blue[500]
+            color: colors.blue[500],
+            fontWeight: '400!important'
         },
         h2: {
             color: colors.blue[500],
