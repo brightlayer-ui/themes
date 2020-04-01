@@ -1,6 +1,6 @@
 "use strict";
 /**
-Copyright (c) 2018-present, Eaton
+Copyright (c) 2020-present, Eaton
 
 All rights reserved.
 

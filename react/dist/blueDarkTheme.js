@@ -1,30 +1,35 @@
 "use strict";
 /**
- Copyright (c) 2018-present, Eaton
+ Copyright (c) 2020-present, Eaton
 
  All rights reserved.
 
  This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
  **/
 Object.defineProperty(exports, "__esModule", { value: true });
-var constants_1 = require("./constants");
+var shared_1 = require("./shared");
 var ThemeColors = require("@pxblue/colors");
 exports.blueDarkTheme = {
-    palette: {
-        primary: ThemeColors.blue,
-        secondary: ThemeColors.lightBlue,
-        error: ThemeColors.red,
-        grey: ThemeColors.gray,
-        background: constants_1.darkBackground,
-        text: constants_1.darkText,
-        action: constants_1.darkAction,
-        // @ts-ignore
-        line: { stepper: ThemeColors.black['500'] },
-        input: constants_1.darkInput,
-        type: 'dark'
-    },
-    typography: constants_1.typography,
     direction: "ltr",
+    typography: shared_1.typography,
+    palette: {
+        type: 'dark',
+        primary: shared_1.createSimplePalette(ThemeColors.blue),
+        secondary: shared_1.createSimplePalette(ThemeColors.lightBlue),
+        error: shared_1.createSimplePalette(ThemeColors.red),
+        background: {
+            default: ThemeColors.black['A200'],
+            paper: ThemeColors.black['900'],
+        },
+        text: {
+            primary: ThemeColors.gray['300'],
+            secondary: ThemeColors.black['300'],
+            hint: ThemeColors.gray['300'],
+        },
+        action: {
+            active: ThemeColors.gray['300'],
+        },
+    },
     overrides: {
         // APP BAR OVERRIDES
         MuiAppBar: {
