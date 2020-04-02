@@ -7,9 +7,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import Hero from '@pxblue/react-components/core/Hero';
-import HeroBanner from '@pxblue/react-components/core/HeroBanner';
-import ChannelValue from '@pxblue/react-components/core/ChannelValue';
+import { Hero, HeroBanner, ChannelValue } from '@pxblue/react-components';
+
 
 import * as Colors from '@pxblue/colors';
 import { GradeA, GradeB, GradeC, Temp, CurrentCircled, VoltageCircled } from '@pxblue/icons-mui';
@@ -83,7 +82,7 @@ class DashboardCard extends React.Component {
             </HeroBanner>
 
             {channelData.map((channelRow, index) => (
-              <ListItem divider = {index < channelData.length-1 ? true : false} key={index}>
+              <ListItem divider={index < channelData.length - 1 ? true : false} key={index}>
                 <ListItemIcon>{channelRow.icon}</ListItemIcon>
                 <ListItemText primary={channelRow.text}></ListItemText>
                 <ListItemText
