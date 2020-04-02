@@ -6,7 +6,7 @@ Notable changes in this theme:
     ```
     // before
     backgroundColor: theme.palette.primary[500]
-    backgroundColor: theme.palette.primary[300]
+    backgroundColor: theme.palette.primary[50]
     backgroundColor: theme.palette.primary[700]
 
     // now
@@ -19,7 +19,7 @@ Notable changes in this theme:
     ```
     // before
     theme.spacing.unit * 5
-    
+
     // now
     theme.spacing(5)
 

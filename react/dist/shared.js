@@ -12,7 +12,7 @@ exports.typography = {
     fontWeightMedium: 600,
 };
 exports.createSimplePalette = function (color) { return ({
-    light: color[300],
+    light: color[50],
     main: color[500],
     dark: color[700],
 }); };
