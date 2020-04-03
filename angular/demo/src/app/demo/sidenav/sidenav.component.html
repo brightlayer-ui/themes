@@ -1,36 +1,53 @@
 <mat-sidenav-container class="app-container" (backdropClick)="open = false">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : (hovering ? 'side' : 'side')" class="sidenav"
-                 [opened]="!mobileQuery.matches ? true : open" [class.mobile]="mobileQuery.matches" [class.open]="open || hovering"
-                 (openedChange)="goingMobile = false">
-        <mat-nav-list fxLayout="column" fxFlexFill style="padding-top:0; overflow-x:hidden">
+    <mat-sidenav
+        #snav
+        [mode]="mobileQuery.matches ? 'over' : hovering ? 'side' : 'side'"
+        class="sidenav"
+        [opened]="!mobileQuery.matches ? true : open"
+        [class.mobile]="mobileQuery.matches"
+        [class.open]="open || hovering"
+        (openedChange)="goingMobile = false"
+    >
+        <mat-nav-list fxLayout="column" fxFlexFill style="padding-top: 0; overflow-x: hidden;">
             <!-- Mobile Toolbar -->
-            <mat-toolbar style="background-color:#007bc1; color:white; min-height:150px;" *ngIf="mobileQuery.matches && !goingMobile">
-                <mat-toolbar-row style="height:75px; margin-left: 20px; margin-bottom: 40px; margin-top:50px">
-                    <mat-icon style="font-size:75px; transform:rotate(42deg);">offline_bolt</mat-icon>
+            <mat-toolbar
+                style="background-color: #007bc1; color: white; min-height: 150px;"
+                *ngIf="mobileQuery.matches && !goingMobile"
+            >
+                <mat-toolbar-row style="height: 75px; margin-left: 20px; margin-bottom: 40px; margin-top: 50px;">
+                    <mat-icon style="font-size: 75px; transform: rotate(42deg);">offline_bolt</mat-icon>
                 </mat-toolbar-row>
-                <mat-toolbar-row style="height:5px;">
+                <mat-toolbar-row style="height: 5px;">
                     <small>PX Blue</small>
                 </mat-toolbar-row>
-                <mat-toolbar-row style="height:35px;">
+                <mat-toolbar-row style="height: 35px;">
                     <small>Themes Example</small>
                 </mat-toolbar-row>
             </mat-toolbar>
 
             <!-- Desktop Toolbar -->
             <mat-toolbar *ngIf="!mobileQuery.matches || goingMobile" class="desktop-toolbar">
-                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleDesktopMenu()" style="margin-left:-4px; margin-right: 12px">
+                <button
+                    type="button"
+                    aria-label="Toggle sidenav"
+                    mat-icon-button
+                    (click)="toggleDesktopMenu()"
+                    style="margin-left: -4px; margin-right: 12px;"
+                >
                     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
                 <div fxLayout="column">
-                    <span class="mat-subheading-2" style="margin:unset;">PX Blue Themes Example</span>
+                    <span class="mat-subheading-2" style="margin: unset;">PX Blue Themes Example</span>
                 </div>
             </mat-toolbar>
             <mat-divider></mat-divider>
             <div class="navWrapper">
-                <section *ngIf="(mobileQuery.matches && !userMenu) || !mobileQuery.matches"
-                         fxLayout="column"
-                         (mouseover)="enter()"
-                         (mouseleave)="leave()">
+                <section
+                    *ngIf="(mobileQuery.matches && !userMenu) || !mobileQuery.matches"
+                    fxLayout="column"
+                    (mouseover)="enter()"
+                    (mouseleave)="leave()"
+                >
                     <a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/dashboard" (click)="closeNav()">
                         <mat-icon matListIcon class="nav-icon">dashboard</mat-icon>
                         Dashboard

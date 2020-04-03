@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
-Copyright (c) 2018-present, Eaton
+Copyright (c) 2020-present, Eaton
 
 All rights reserved.
 
