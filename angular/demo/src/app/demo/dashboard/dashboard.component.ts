@@ -1,26 +1,21 @@
-import {Component} from '@angular/core';
-import {BreakpointObserver} from '@angular/cdk/layout';
+import { Component } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import * as PXBColors from '@pxblue/colors';
-import {DeviceList} from "./DeviceList";
+import { DeviceList } from './DeviceList';
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.scss']
+    styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-
     cols = 4;
     breakpointSubscription: any;
     deviceList = DeviceList.getDevices();
 
     constructor(private breakpointObserver: BreakpointObserver) {
-
-
-        this.breakpointSubscription = this.breakpointObserver.observe([
-                '(max-width: 599.99px)',
-                '(max-width: 1278px)',
-                '(max-width: 1920px)'])
-            .subscribe(result => {
+        this.breakpointSubscription = this.breakpointObserver
+            .observe(['(max-width: 599.99px)', '(max-width: 1278px)', '(max-width: 1920px)'])
+            .subscribe((result) => {
                 const small = Object.keys(result.breakpoints)[0];
                 const medium = Object.keys(result.breakpoints)[1];
                 const large = Object.keys(result.breakpoints)[2];
@@ -34,7 +29,7 @@ export class DashboardComponent {
                 } else {
                     this.cols = 4;
                 }
-        });
+            });
     }
 
     interpretIcon(value) {

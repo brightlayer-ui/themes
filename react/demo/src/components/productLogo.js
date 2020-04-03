@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 import PersonIcon from '@material-ui/icons/Person';
 
 import { withStyles } from '@material-ui/core/styles';
-const styles = theme => ({
+const styles = (theme) => ({
     placeholderProductLogo: {
         height: '120px',
         width: 'auto',
         fontSize: '64px',
-    }
-  });
+    },
+});
 
 class ProductLogo extends React.Component {
-    render(){
+    render() {
         const { classes } = this.props;
         return (
             /* PLACEHOLDER IMAGE: please use the correct company or product logo here */
@@ -20,4 +20,4 @@ class ProductLogo extends React.Component {
     }
 }
 
-export default withStyles( styles )( ProductLogo );
+export default withStyles(styles)(ProductLogo);

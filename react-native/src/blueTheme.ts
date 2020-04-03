@@ -1,12 +1,12 @@
 /**
-Copyright (c) 2018-present, Eaton
+Copyright (c) 2020-present, Eaton
 
 All rights reserved.
 
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
 
-import {blue, red, gray, lightBlue, white} from '@pxblue/colors';
+import { blue, red, gray, lightBlue, white } from '@pxblue/colors';
 import { TextStyle } from 'react-native';
 
 type Font = {
@@ -40,50 +40,49 @@ export type PXBlueReactNativeTheme = {
         large: number;
         extraLarge: number;
         giant: number;
-    }
+    };
 };
 
-export const blueTheme: PXBlueReactNativeTheme =
-{
-  roundness: 4,
-  fonts: {
-    extraBold: {
-      fontFamily: 'OpenSans-ExtraBold',
-      // fontWeight: '800'
+export const blueTheme: PXBlueReactNativeTheme = {
+    roundness: 4,
+    fonts: {
+        extraBold: {
+            fontFamily: 'OpenSans-ExtraBold',
+            // fontWeight: '800'
+        },
+        bold: {
+            fontFamily: 'OpenSans-Bold',
+            // fontWeight: '700'
+        },
+        semiBold: {
+            fontFamily: 'OpenSans-SemiBold',
+            // fontWeight: '600'
+        },
+        regular: {
+            fontFamily: 'OpenSans-Regular',
+            // fontWeight: '400'
+        },
+        light: {
+            fontFamily: 'OpenSans-Light',
+            // fontWeight: '300'
+        },
     },
-    bold: {
-      fontFamily: 'OpenSans-Bold',
-      // fontWeight: '700'
+    colors: {
+        primary: blue[500],
+        background: gray[50],
+        surface: white[50],
+        accent: lightBlue[500],
+        error: red[500],
+        text: gray[500],
+        onPrimary: white[50],
     },
-    semiBold: {
-      fontFamily: 'OpenSans-SemiBold',
-      // fontWeight: '600'
+    sizes: {
+        tiny: 10,
+        extraSmall: 12,
+        small: 14,
+        medium: 16,
+        large: 20,
+        extraLarge: 24,
+        giant: 34,
     },
-    regular: {
-      fontFamily: 'OpenSans-Regular',
-      // fontWeight: '400'
-    },
-    light: {
-      fontFamily: 'OpenSans-Light',
-      // fontWeight: '300'
-    }
-  },
-  colors: {
-    primary: blue[500],
-    background: gray[50],
-    surface: white[50],
-    accent: lightBlue[500],
-    error: red[500],
-    text: gray[500],
-    onPrimary: white[50]
-  },
-  sizes: {
-    tiny: 10,
-    extraSmall: 12,
-    small: 14,
-    medium: 16,
-    large: 20,
-    extraLarge: 24,
-    giant: 34
-  }
 };

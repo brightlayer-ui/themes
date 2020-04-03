@@ -1,62 +1,62 @@
-@import "~@pxblue/colors/palette";
+@import '~@pxblue/colors/palette';
 @mixin bluetheme($primary, $accent) {
-  /* toolbar*/
-  .mat-toolbar {
-    background-color: map-get($pxb-gray, 50);
-    color: map-get($pxb-black, 500);
-    &.mat-accent {
-      background-color: map-get($primary, 700);
+    /* toolbar*/
+    .mat-toolbar {
+        background-color: map-get($pxb-gray, 50);
+        color: map-get($pxb-black, 500);
+        &.mat-accent {
+            background-color: map-get($primary, 700);
+        }
     }
-  }
 
-  /*tab bar*/
-  .mat-tab-group {
-    .mat-tab-header {
-      background-color: map-get($pxb-gray, 50);
+    /*tab bar*/
+    .mat-tab-group {
+        .mat-tab-header {
+            background-color: map-get($pxb-gray, 50);
+        }
+        &.mat-primary .mat-tab-header {
+            background-color: map-get($primary, 500);
+            .mat-tab-label,
+            .mat-tab-link {
+                color: map-get($pxb-white, 50);
+            }
+        }
+        &.mat-accent .mat-tab-header {
+            background-color: map-get($primary, 700);
+            .mat-tab-label,
+            .mat-tab-link {
+                color: map-get($pxb-white, 50);
+            }
+        }
     }
-    &.mat-primary .mat-tab-header {
-      background-color: map-get($primary, 500);
-      .mat-tab-label,
-      .mat-tab-link {
-        color: map-get($pxb-white, 50);
-      }
+    /* tabbar link*/
+    .mat-tab-group.mat-primary .mat-ink-bar,
+    .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+        background-color: map-get($pxb-white, 50);
     }
-    &.mat-accent .mat-tab-header {
-      background-color: map-get($primary, 700);
-      .mat-tab-label,
-      .mat-tab-link {
-        color: map-get($pxb-white, 50);
-      }
+    .mat-tab-group.mat-accent .mat-ink-bar,
+    .mat-tab-nav-bar.mat-accent .mat-ink-bar {
+        background-color: map-get($pxb-white, 50);
     }
-  }
-  /* tabbar link*/
-  .mat-tab-group.mat-primary .mat-ink-bar,
-  .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-    background-color: map-get($pxb-white, 50);
-  }
-  .mat-tab-group.mat-accent .mat-ink-bar,
-  .mat-tab-nav-bar.mat-accent .mat-ink-bar {
-    background-color: map-get($pxb-white, 50);
-  }
-  .mat-tab-group .mat-ink-bar {
-    background-color: map-get($primary, 500);
-  }
-  /* tab bar arrows*/
-  .mat-primary,
-  .mat-accent {
-    .mat-tab-header-pagination-chevron {
-      border-color: map-get($pxb-white, 50);
+    .mat-tab-group .mat-ink-bar {
+        background-color: map-get($primary, 500);
     }
-  }
+    /* tab bar arrows*/
+    .mat-primary,
+    .mat-accent {
+        .mat-tab-header-pagination-chevron {
+            border-color: map-get($pxb-white, 50);
+        }
+    }
 
-  /* button*/
-  .mat-stroked-button:not([disabled]) {
-    border-color: map-get($pxb-white, 50);
-    &.mat-primary {
-      border-color: map-get($primary, 500);
+    /* button*/
+    .mat-stroked-button:not([disabled]) {
+        border-color: map-get($pxb-white, 50);
+        &.mat-primary {
+            border-color: map-get($primary, 500);
+        }
+        &.mat-accent {
+            border-color: map-get($accent, 500);
+        }
     }
-    &.mat-accent {
-      border-color: map-get($accent, 500);
-    }
-  }
 }

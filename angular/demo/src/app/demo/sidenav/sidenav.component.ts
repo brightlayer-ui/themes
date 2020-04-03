@@ -1,15 +1,14 @@
-import {ChangeDetectorRef, Component, OnDestroy, ViewEncapsulation} from '@angular/core';
-import {NavigationService} from '../../services/navigation.service';
-import {MediaMatcher} from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { NavigationService } from '../../services/navigation.service';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
-  selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-sidenav',
+    templateUrl: './sidenav.component.html',
+    styleUrls: ['./sidenav.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class SidenavComponent implements OnDestroy {
-
     private _mobileQueryListener: () => void;
 
     mobileQuery: MediaQueryList;
@@ -22,7 +21,8 @@ export class SidenavComponent implements OnDestroy {
     constructor(
         private _navigationService: NavigationService,
         changeDetectorRef: ChangeDetectorRef,
-        media: MediaMatcher) {
+        media: MediaMatcher
+    ) {
         this.mobileQuery = media.matchMedia('(max-width: 600px)');
         this._mobileQueryListener = () => {
             if (this.mobileQuery.matches) {
@@ -31,12 +31,10 @@ export class SidenavComponent implements OnDestroy {
         };
         this.mobileQuery.addListener(this._mobileQueryListener);
 
-        _navigationService.navToggled$.subscribe(
-            value => {
-                this.open = !this.open;
-                changeDetectorRef.detectChanges();
-            }
-        );
+        _navigationService.navToggled$.subscribe((value) => {
+            this.open = !this.open;
+            changeDetectorRef.detectChanges();
+        });
     }
 
     ngOnDestroy(): void {
