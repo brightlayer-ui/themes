@@ -30,7 +30,7 @@ export const blueTheme: ThemeOptions =
         text: {
             primary: ThemeColors.black['500'],
             secondary: ThemeColors.black['300'],
-            hint: ThemeColors.black['500'],
+            hint: ThemeColors.gray['500'],
         },
         action: {
             active: ThemeColors.black[500],
@@ -53,7 +53,16 @@ export const blueTheme: ThemeOptions =
         MuiButton: {
             root: {
                 textTransform: 'none'
-            }
+            },
+            outlined: {
+                borderColor: ThemeColors.black[500],
+            },
+            outlinedPrimary: {
+                borderColor: ThemeColors.blue[500]
+            },
+            outlinedSecondary: {
+                borderColor: ThemeColors.lightBlue[500]
+            },
         },
 
         // BUTTON OVERRIDES

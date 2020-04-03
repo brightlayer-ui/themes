@@ -66,6 +66,12 @@ export const blueDarkTheme: ThemeOptions =
             outlined: {
                 borderColor: ThemeColors.black['100']
             },
+            outlinedPrimary: {
+                borderColor: ThemeColors.blue[500]
+            },
+            outlinedSecondary: {
+                borderColor: ThemeColors.lightBlue[500]
+            },
             contained: {
                 backgroundColor: ThemeColors.black['500'],
                 color: ThemeColors.white['50'],
