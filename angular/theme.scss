@@ -16,19 +16,19 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config(
     $font-family: '"Open Sans", Arial, Helvetica, sans-serif;',
-    $display-4 : mat-typography-level(6rem, 1, 300),
-    $display-3 : mat-typography-level(3.75rem, 1, 300),
-    $display-2 : mat-typography-level(3rem, 1.04, 400),
-    $display-1 : mat-typography-level(2.125rem, 1.17, 400),
-    $headline : mat-typography-level(1.5rem, 1.33, 400),
-    $title : mat-typography-level(1.25rem, 1.6, 500),
-    $subheading-2 : mat-typography-level(1rem, 1.75, 400),
-    $subheading-1 : mat-typography-level(.875rem, 1.57, 500),
-    $body-2 : mat-typography-level(0.875rem, 1.71429, 500),
-    $body-1 : mat-typography-level(0.875rem, 1.46429, 400),
-    $caption : mat-typography-level(.75rem, 1.35, 400),
-    $button : mat-typography-level(0.875rem, 1, 500),
-    $input : mat-typography-level(inherit, 1.125, 400)
+    $display-4: mat-typography-level(6rem, 1, 300),
+    $display-3: mat-typography-level(3.75rem, 1, 300),
+    $display-2: mat-typography-level(3rem, 1.04, 400),
+    $display-1: mat-typography-level(2.125rem, 1.17, 400),
+    $headline: mat-typography-level(1.5rem, 1.33, 400),
+    $title: mat-typography-level(1.25rem, 1.6, 500),
+    $subheading-2: mat-typography-level(1rem, 1.75, 400),
+    $subheading-1: mat-typography-level(0.875rem, 1.57, 500),
+    $body-2: mat-typography-level(0.875rem, 1.71429, 500),
+    $body-1: mat-typography-level(0.875rem, 1.46429, 400),
+    $caption: mat-typography-level(0.75rem, 1.35, 400),
+    $button: mat-typography-level(0.875rem, 1, 500),
+    $input: mat-typography-level(inherit, 1.125, 400),
 );
 
 /*
@@ -39,21 +39,19 @@ $custom-typography: mat-typography-config(
 */
 @include mat-core($custom-typography);
 
-
 // Material default theme colors
 $material-theme-primary: mat-palette($mat-indigo, 700, 300, 900);
 $material-theme-accent: mat-palette($mat-light-blue);
 $material-theme-warn: mat-palette($mat-deep-orange, A200);
 $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent, $material-theme-warn);
-    @include angular-material-theme($material-theme);
-
+@include angular-material-theme($material-theme);
 
 // Blue Theme
 $pxb-blue-primary: mat-palette($pxb-blue);
-$pxb-blue-accent : mat-palette($pxb-lightBlue, 500);
+$pxb-blue-accent: mat-palette($pxb-lightBlue, 500);
 $pxb-blue-warn: mat-palette($pxb-red, 500);
-$pxb-blue-theme : mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-warn);
-.pxb-blue{
+$pxb-blue-theme: mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-warn);
+.pxb-blue {
     @include angular-material-theme($pxb-blue-theme);
     @include reasonable-margins();
     @include bodyfont();
@@ -62,13 +60,12 @@ $pxb-blue-theme : mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue
 
 // Blue Dark Theme
 $pxb-blue-dark-primary: mat-palette($pxb-blue, 500);
-$pxb-blue-dark-accent : mat-palette($pxb-lightBlue, 500);
+$pxb-blue-dark-accent: mat-palette($pxb-lightBlue, 500);
 $pxb-blue-dark-warn: mat-palette($pxb-red, 500);
-$pxb-blue-dark-theme : mat-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-accent, $pxb-blue-dark-warn);
-.pxb-blue-dark{
+$pxb-blue-dark-theme: mat-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-accent, $pxb-blue-dark-warn);
+.pxb-blue-dark {
     @include angular-material-theme($pxb-blue-dark-theme);
     @include reasonable-margins();
     @include bodyfont();
     @include darktheme($pxb-blue-dark-primary, $pxb-blue-dark-accent);
-
 }

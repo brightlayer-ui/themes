@@ -14,7 +14,7 @@ var ThemeColors = require("@pxblue/colors");
     to customize in our themes. These have changed periodically from version to version of Material UI.
 */
 exports.blueTheme = {
-    direction: "ltr",
+    direction: 'ltr',
     typography: shared_1.typography,
     palette: {
         type: 'light',
@@ -23,7 +23,7 @@ exports.blueTheme = {
         error: shared_1.createSimplePalette(ThemeColors.red),
         background: {
             default: ThemeColors.gray['50'],
-            paper: ThemeColors.white['50']
+            paper: ThemeColors.white['50'],
         },
         text: {
             primary: ThemeColors.black['500'],
@@ -32,7 +32,7 @@ exports.blueTheme = {
         },
         action: {
             active: ThemeColors.black[500],
-            disabled: "rgba(0, 0, 0, .25)",
+            disabled: 'rgba(0, 0, 0, .25)',
         },
     },
     overrides: {
@@ -40,32 +40,32 @@ exports.blueTheme = {
         MuiAppBar: {
             colorDefault: {
                 color: ThemeColors.black['500'],
-                backgroundColor: ThemeColors.gray['50']
+                backgroundColor: ThemeColors.gray['50'],
             },
             colorSecondary: {
-                backgroundColor: ThemeColors.blue['700']
-            }
+                backgroundColor: ThemeColors.blue['700'],
+            },
         },
         // BUTTON OVERRIDES
         MuiButton: {
             root: {
-                textTransform: 'none'
+                textTransform: 'none',
             },
             outlined: {
                 borderColor: ThemeColors.black[500],
             },
             outlinedPrimary: {
-                borderColor: ThemeColors.blue[500]
+                borderColor: ThemeColors.blue[500],
             },
             outlinedSecondary: {
-                borderColor: ThemeColors.lightBlue[500]
+                borderColor: ThemeColors.lightBlue[500],
             },
         },
         // BUTTON OVERRIDES
         MuiFab: {
             root: {
-                textTransform: 'none'
-            }
+                textTransform: 'none',
+            },
         },
         // LIST ITEM OVERRIDES
         MuiListItem: {
@@ -76,8 +76,8 @@ exports.blueTheme = {
         // TABS OVERRIDES
         MuiTabs: {
             indicator: {
-                backgroundColor: ThemeColors.white['50']
-            }
+                backgroundColor: ThemeColors.white['50'],
+            },
         },
-    }
+    },
 };

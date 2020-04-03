@@ -7,14 +7,14 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 **/
 
 import { PXBlueColor } from '@pxblue/types';
-import { SimplePaletteColorOptions } from "@material-ui/core";
+import { SimplePaletteColorOptions } from '@material-ui/core';
 
 export const typography = {
-  fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
-  fontWeightMedium: 600,
+    fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
+    fontWeightMedium: 600,
 };
 export const createSimplePalette = (color: PXBlueColor): SimplePaletteColorOptions => ({
-  light: color[50],
-  main: color[500],
-  dark: color[700],
+    light: color[50],
+    main: color[500],
+    dark: color[700],
 });

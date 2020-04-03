@@ -25,7 +25,7 @@ exports.blueTheme = {
         },
         light: {
             fontFamily: 'OpenSans-Light',
-        }
+        },
     },
     colors: {
         primary: colors_1.blue[500],
@@ -34,7 +34,7 @@ exports.blueTheme = {
         accent: colors_1.lightBlue[500],
         error: colors_1.red[500],
         text: colors_1.gray[500],
-        onPrimary: colors_1.white[50]
+        onPrimary: colors_1.white[50],
     },
     sizes: {
         tiny: 10,
@@ -43,6 +43,6 @@ exports.blueTheme = {
         medium: 16,
         large: 20,
         extraLarge: 24,
-        giant: 34
-    }
+        giant: 34,
+    },
 };

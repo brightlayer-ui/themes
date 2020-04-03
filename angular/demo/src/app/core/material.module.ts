@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import {
     MatToolbarModule,
     MatButtonModule,
@@ -26,7 +26,7 @@ import {
     MatNativeDateModule,
     MatBottomSheetModule,
     MatDialog,
-    MAT_DIALOG_DEFAULT_OPTIONS
+    MAT_DIALOG_DEFAULT_OPTIONS,
 } from '@angular/material';
 
 @NgModule({
@@ -55,12 +55,8 @@ import {
         MatDatepickerModule,
         MatNativeDateModule,
         MatBottomSheetModule,
-        MatTableModule],
-    providers: [
-        MatDialog,
-        {   provide: MAT_DIALOG_DEFAULT_OPTIONS,
-            useValue: { hasBackdrop: true }
-        }],
+        MatTableModule,
+    ],
+    providers: [MatDialog, { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }],
 })
-export class MaterialModule {
-}
+export class MaterialModule {}

@@ -10,12 +10,12 @@
 
 .accordion {
     padding: 10px 16px 10px 16px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .checkbox {
-    height:unset;
+    height: unset;
 }
 
 .list-item-detail {
@@ -25,9 +25,9 @@
 }
 
 .mat-expansion-panel:not([class*='mat-elevation-z']) {
-     box-shadow: none;
- }
+    box-shadow: none;
+}
 
 .mat-expansion-panel {
-    background-color:unset;
+    background-color: unset;
 }

@@ -23,124 +23,106 @@ import { Device } from '@pxblue/icons-mui';
 
 import * as AppConstants from '../constants/appConstants';
 
-const styles = theme => ({
-  paper: {
-    width: '100%',
-    maxWidth: 600,
-    margin: 'auto',
-    userSelect: 'none',
-  },
+const styles = (theme) => ({
+    paper: {
+        width: '100%',
+        maxWidth: 600,
+        margin: 'auto',
+        userSelect: 'none',
+    },
 });
 
 const locationData = AppConstants.locationData;
 
 class Locations extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      drawerOpen: false,
-      moreMenuOpen: false,
-      menuPosition: null,
+    constructor(props) {
+        super(props);
+        this.state = {
+            drawerOpen: false,
+            moreMenuOpen: false,
+            menuPosition: null,
+        };
     }
-  }
 
-  onMoreInfoClick() {
-    this.setState({ drawerOpen: true, moreMenuOpen: false });
-  }
-  
-  onMenuClick(event, i) {
-    this.setState({ menuPosition: event.currentTarget, moreMenuOpen: true });
-  };
+    onMoreInfoClick() {
+        this.setState({ drawerOpen: true, moreMenuOpen: false });
+    }
 
-  render() {
+    onMenuClick(event, i) {
+        this.setState({ menuPosition: event.currentTarget, moreMenuOpen: true });
+    }
 
-    const { classes } = this.props;
+    render() {
+        const { classes } = this.props;
 
-    return (
-      <React.Fragment>
+        return (
+            <React.Fragment>
+                <div style={{ padding: '10px' }}>
+                    <Typography variant="subtitle1">Locations</Typography>
+                </div>
 
-        <div style={{ padding: '10px' }}>
-          <Typography variant="subtitle1">
-            Locations
-          </Typography>
-        </div>
+                {locationData
+                    .sort((a, b) => a.location > b.location)
+                    .map((dataRow, index) => (
+                        <List key={index}>
+                            <ListItem>
+                                <ListItemAvatar>
+                                    <Badge badgeContent={dataRow.numDevices} color="primary">
+                                        <Device />
+                                    </Badge>
+                                </ListItemAvatar>
+                                <ListItemText primary={dataRow.location} />
+                                <ListItemSecondaryAction>
+                                    <IconButton
+                                        aria-owns={this.state.menuPosition ? 'long-menu' : null}
+                                        aria-haspopup="true"
+                                        onClick={(evt) => this.onMenuClick(evt)}
+                                    >
+                                        <MoreHoriz />
+                                    </IconButton>
+                                </ListItemSecondaryAction>
+                            </ListItem>
+                        </List>
+                    ))}
 
-        {locationData
-        .sort((a, b) => a.location > b.location)
-        .map((dataRow, index) =>
-          <List key={index}>
-            <ListItem>
-              <ListItemAvatar>
-                <Badge badgeContent={dataRow.numDevices} color="primary">
-                  <Device />
-                </Badge>
-              </ListItemAvatar>
-              <ListItemText
-                primary={dataRow.location}
-              />
-              <ListItemSecondaryAction>
-                <IconButton
-                  aria-owns={this.state.menuPosition ? 'long-menu' : null}
-                  aria-haspopup="true"
-                  onClick={(evt) => this.onMenuClick(evt)}>
-                  <MoreHoriz />
-                </IconButton>
-              </ListItemSecondaryAction>
-            </ListItem>
-          </List>
-        )}
+                <Menu
+                    anchorEl={this.state.menuPosition}
+                    open={this.state.moreMenuOpen}
+                    onClose={() => this.setState({ moreMenuOpen: false })}
+                >
+                    <MenuItem onClick={() => this.onMoreInfoClick()}>More information</MenuItem>
+                    <MenuItem onClick={() => this.onMoreInfoClick()}>Inspect</MenuItem>
+                    <MenuItem onClick={() => this.onMoreInfoClick()}>Help</MenuItem>
+                </Menu>
 
-        <Menu
-          anchorEl={this.state.menuPosition}
-          open={this.state.moreMenuOpen}
-          onClose={() => this.setState({ moreMenuOpen: false })}
-        >
-          <MenuItem onClick={() => this.onMoreInfoClick()}>
-            More information
-          </MenuItem>
-          <MenuItem onClick={() => this.onMoreInfoClick()}>
-            Inspect
-          </MenuItem>
-          <MenuItem onClick={() => this.onMoreInfoClick()}>
-            Help
-          </MenuItem>
-        </Menu>
-
-        <Drawer
-          anchor="bottom"
-          open={this.state.drawerOpen}
-          onClose={() => this.setState({ drawerOpen: false })}
-          classes={{ paper: classes.paper }}
-        >
-          <ListItem
-            style={{ textAlign: 'center' }}
-          >
-            <ListItemText
-              primary="Lighting - PDU 200"
-              secondary="ETN 42.00"
-            />
-          </ListItem>
-          <MobileStepper
-            variant="dots"
-            steps={6}
-            position="static"
-            activeStep={0}
-            nextButton={
-              <Button size="small" >
-                <KeyboardArrowRight />
-              </Button>
-            }
-            backButton={
-              <Button size="small" disabled>
-                <KeyboardArrowLeft />
-              </Button>
-            }
-          />
-        </Drawer>
-
-      </React.Fragment>
-    )
-  }
+                <Drawer
+                    anchor="bottom"
+                    open={this.state.drawerOpen}
+                    onClose={() => this.setState({ drawerOpen: false })}
+                    classes={{ paper: classes.paper }}
+                >
+                    <ListItem style={{ textAlign: 'center' }}>
+                        <ListItemText primary="Lighting - PDU 200" secondary="ETN 42.00" />
+                    </ListItem>
+                    <MobileStepper
+                        variant="dots"
+                        steps={6}
+                        position="static"
+                        activeStep={0}
+                        nextButton={
+                            <Button size="small">
+                                <KeyboardArrowRight />
+                            </Button>
+                        }
+                        backButton={
+                            <Button size="small" disabled>
+                                <KeyboardArrowLeft />
+                            </Button>
+                        }
+                    />
+                </Drawer>
+            </React.Fragment>
+        );
+    }
 }
-export default withStyles(styles)(Locations); 
+export default withStyles(styles)(Locations);

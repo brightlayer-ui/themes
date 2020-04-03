@@ -6,7 +6,7 @@
  This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
  **/
 
-import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
+import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import { typography, createSimplePalette } from './shared';
 import * as ThemeColors from '@pxblue/colors';
 
@@ -14,9 +14,8 @@ import * as ThemeColors from '@pxblue/colors';
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
     to customize in our themes. These have changed periodically from version to version of Material UI.
 */
-export const blueTheme: ThemeOptions =
-{
-    direction: "ltr",
+export const blueTheme: ThemeOptions = {
+    direction: 'ltr',
     typography: typography,
     palette: {
         type: 'light',
@@ -25,7 +24,7 @@ export const blueTheme: ThemeOptions =
         error: createSimplePalette(ThemeColors.red),
         background: {
             default: ThemeColors.gray['50'],
-            paper: ThemeColors.white['50']
+            paper: ThemeColors.white['50'],
         },
         text: {
             primary: ThemeColors.black['500'],
@@ -34,7 +33,7 @@ export const blueTheme: ThemeOptions =
         },
         action: {
             active: ThemeColors.black[500],
-            disabled: "rgba(0, 0, 0, .25)",
+            disabled: 'rgba(0, 0, 0, .25)',
         },
     },
     overrides: {
@@ -42,34 +41,34 @@ export const blueTheme: ThemeOptions =
         MuiAppBar: {
             colorDefault: {
                 color: ThemeColors.black['500'],
-                backgroundColor: ThemeColors.gray['50']
+                backgroundColor: ThemeColors.gray['50'],
             },
             colorSecondary: {
-                backgroundColor: ThemeColors.blue['700']
-            }
+                backgroundColor: ThemeColors.blue['700'],
+            },
         },
 
         // BUTTON OVERRIDES
         MuiButton: {
             root: {
-                textTransform: 'none'
+                textTransform: 'none',
             },
             outlined: {
                 borderColor: ThemeColors.black[500],
             },
             outlinedPrimary: {
-                borderColor: ThemeColors.blue[500]
+                borderColor: ThemeColors.blue[500],
             },
             outlinedSecondary: {
-                borderColor: ThemeColors.lightBlue[500]
+                borderColor: ThemeColors.lightBlue[500],
             },
         },
 
         // BUTTON OVERRIDES
         MuiFab: {
             root: {
-                textTransform: 'none'
-            }
+                textTransform: 'none',
+            },
         },
 
         // LIST ITEM OVERRIDES
@@ -77,14 +76,13 @@ export const blueTheme: ThemeOptions =
             root: {
                 color: ThemeColors.black['500'],
             },
-
         },
 
         // TABS OVERRIDES
         MuiTabs: {
             indicator: {
-                backgroundColor: ThemeColors.white['50']
-            }
+                backgroundColor: ThemeColors.white['50'],
+            },
         },
-    }
+    },
 };

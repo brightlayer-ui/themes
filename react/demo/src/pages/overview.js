@@ -26,153 +26,137 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import * as AppConstants from '../constants/appConstants';
 
-const styles = theme => ({
-  inputField: {
-    width: '90%',
-    maxWidth: '400px'
-  },
-  locDropdown: {
-    display: 'block',
-    marginTop: '15px'
-  },
+const styles = (theme) => ({
+    inputField: {
+        width: '90%',
+        maxWidth: '400px',
+    },
+    locDropdown: {
+        display: 'block',
+        marginTop: '15px',
+    },
 });
 
 const rows = AppConstants.deviceData;
 
 class Overview extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      dialogOpen: false,
-      snackbarOpen: false
+    constructor(props) {
+        super(props);
+        this.state = {
+            dialogOpen: false,
+            snackbarOpen: false,
+        };
     }
-  }
 
-  handleClickAdd = () => {
-    this.setState({ dialogOpen: true });
-  };
+    handleClickAdd = () => {
+        this.setState({ dialogOpen: true });
+    };
 
-  handleDialogClose = () => {
-    this.setState({ dialogOpen: false });
-  }
+    handleDialogClose = () => {
+        this.setState({ dialogOpen: false });
+    };
 
-  render() {
+    render() {
+        const { classes } = this.props;
 
-    const { classes } = this.props;
+        return (
+            <React.Fragment>
+                <div style={{ padding: '16px' }}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        style={{ marginRight: '16px' }}
+                        onClick={this.handleClickAdd}
+                    >
+                        <AddIcon style={{ marginRight: '6px' }} />
+                        Add
+                    </Button>
+                    <Button variant="outlined" color="primary" onClick={() => this.setState({ snackbarOpen: true })}>
+                        <DeleteIcon style={{ marginRight: '6px' }} />
+                        Delete
+                    </Button>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell></TableCell>
+                                <TableCell>Name</TableCell>
+                                <TableCell align="right">Manufacturer</TableCell>
+                                <TableCell align="right">Network ID</TableCell>
+                                <TableCell align="right">Location</TableCell>
+                                <TableCell align="right">Date Added</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {rows
+                                .sort((a, b) => a.name > b.name)
+                                .map((row) => (
+                                    <TableRow hover key={row.name}>
+                                        <TableCell padding="checkbox">
+                                            <Checkbox />
+                                        </TableCell>
+                                        <TableCell component="th" scope="row">
+                                            {row.name}
+                                        </TableCell>
+                                        <TableCell align="right">{row.manufacturer}</TableCell>
+                                        <TableCell align="right">{row.networkID}</TableCell>
+                                        <TableCell align="right">{row.location}</TableCell>
+                                        <TableCell align="right">{row.dateAdded}</TableCell>
+                                    </TableRow>
+                                ))}
+                        </TableBody>
+                    </Table>
+                </div>
 
-    return (
-      <React.Fragment>
-        <div style={{ padding: '16px' }}>
-          <Button
-            variant="contained"
-            color="primary"
-            style={{ marginRight: '16px' }}
-            onClick={this.handleClickAdd}
-          >
-            <AddIcon style={{ marginRight: '6px' }} />
-            Add
-            </ Button>
-          <Button variant="outlined" color="primary" onClick={() => this.setState({ snackbarOpen: true })}>
-            <DeleteIcon style={{ marginRight: '6px' }} />
-            Delete
-            </ Button>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell></TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell align="right">Manufacturer</TableCell>
-                <TableCell align="right">Network ID</TableCell>
-                <TableCell align="right">Location</TableCell>
-                <TableCell align="right">Date Added</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows
-                .sort((a, b) => a.name > b.name)
-                .map(row => (
-                  <TableRow hover key={row.name}>
-                    <TableCell padding="checkbox">
-                      <Checkbox
-                      />
-                    </TableCell>
-                    <TableCell component="th" scope="row">
-                      {row.name}
-                    </TableCell>
-                    <TableCell align="right">{row.manufacturer}</TableCell>
-                    <TableCell align="right">{row.networkID}</TableCell>
-                    <TableCell align="right">{row.location}</TableCell>
-                    <TableCell align="right">{row.dateAdded}</TableCell>
-                  </TableRow>
-                ))}
-            </TableBody>
-          </Table>
-        </div>
+                <Dialog open={this.state.dialogOpen} onClose={this.handleDialogClose}>
+                    <DialogTitle>Add new device</DialogTitle>
+                    <DialogContent style={{ paddingBottom: '40px' }}>
+                        <TextField required label="Device name" margin="normal" className={classes.inputField} />
+                        <TextField required error label="Network ID" margin="normal" className={classes.inputField} />
+                        <FormControl className={classes.locDropdown}>
+                            <InputLabel>Location</InputLabel>
+                            <Select value={'CLE'}>
+                                <MenuItem value={'CLE'}>Cleveland</MenuItem>
+                                <MenuItem value={'PIT'}>Pittsburgh</MenuItem>
+                                <MenuItem value={'IRE'}>Ireland</MenuItem>
+                                <MenuItem value={'OTH'}>Other</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.handleDialogClose} variant="contained">
+                            Close
+                        </Button>
+                        <Button onClick={this.handleDialogClose} color="primary" variant="contained">
+                            Add
+                        </Button>
+                    </DialogActions>
+                </Dialog>
 
-        <Dialog
-          open={this.state.dialogOpen}
-          onClose={this.handleDialogClose}
-        >
-          <DialogTitle>Add new device</DialogTitle>
-          <DialogContent style={{paddingBottom: '40px'}}>
-            <TextField
-              required
-              label="Device name"
-              margin="normal"
-              className={classes.inputField}
-            />
-            <TextField
-              required
-              error
-              label="Network ID"
-              margin="normal"
-              className={classes.inputField}
-            />
-            <FormControl className={classes.locDropdown}>
-              <InputLabel>Location</InputLabel>
-              <Select value={"CLE"}>
-                <MenuItem value={"CLE"}>Cleveland</MenuItem>
-                <MenuItem value={"PIT"}>Pittsburgh</MenuItem>
-                <MenuItem value={"IRE"}>Ireland</MenuItem>
-                <MenuItem value={"OTH"}>Other</MenuItem>
-              </Select>
-            </FormControl>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={this.handleDialogClose} variant="contained">
-              Close
-            </Button>
-            <Button onClick={this.handleDialogClose} color="primary" variant="contained">
-              Add
-            </Button>
-          </DialogActions>
-        </Dialog>
-
-        <Snackbar
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
-          }}
-          open={this.state.snackbarOpen}
-          autoHideDuration={6000}
-          onClose={() => this.setState({ snackbarOpen: false })}
-          message={<span>Devices Deleted</span>}
-          action={[
-            <Button key="undo" color="secondary" size="small" onClick={() => this.setState({ snackbarOpen: false })}>
-              Undo
-            </Button>,
-            <IconButton
-              key="close"
-              color="inherit"
-              onClick={() => this.setState({ snackbarOpen: false })}
-            >
-              <CloseIcon />
-            </IconButton>
-          ]}
-        />
-      </React.Fragment>
-    )
-  }
+                <Snackbar
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'center',
+                    }}
+                    open={this.state.snackbarOpen}
+                    autoHideDuration={6000}
+                    onClose={() => this.setState({ snackbarOpen: false })}
+                    message={<span>Devices Deleted</span>}
+                    action={[
+                        <Button
+                            key="undo"
+                            color="secondary"
+                            size="small"
+                            onClick={() => this.setState({ snackbarOpen: false })}
+                        >
+                            Undo
+                        </Button>,
+                        <IconButton key="close" color="inherit" onClick={() => this.setState({ snackbarOpen: false })}>
+                            <CloseIcon />
+                        </IconButton>,
+                    ]}
+                />
+            </React.Fragment>
+        );
+    }
 }
-export default withStyles(styles)(Overview); 
+export default withStyles(styles)(Overview);

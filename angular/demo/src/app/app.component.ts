@@ -1,19 +1,15 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'my-app',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
     showNotice = true;
 
     currentTheme: Theme;
-    themes = [
-        new Theme('pxb-blue', 'Blue Theme'),
-        new Theme('pxb-blue-dark', 'Blue Dark Theme')
-    ];
+    themes = [new Theme('pxb-blue', 'Blue Theme'), new Theme('pxb-blue-dark', 'Blue Dark Theme')];
 
     constructor(private renderer: Renderer2) {}
 
