@@ -71,8 +71,16 @@ export const pxblueDarkTheme = create({
         'tr:nth-of-type(odd)': {
             backgroundColor: colors.gray[900] + '!important'
         },
-        'blockquote': {
+        blockquote: {
             color: colors.white[500] + '!important'
+        },
+        pre: {
+            backgroundColor: colors.black[800] + '!important',
+        },
+        code: {
+            backgroundColor: colors.black[800] + '!important',
+            border: 'none!important',
+            color: colors.white[50] + '!important',
         }
     }
 });
