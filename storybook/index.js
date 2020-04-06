@@ -1,2 +1,2 @@
-export * from './pxblueTheme';
-export * from './pxblueDarkTheme';
+export * from './lightTheme';
+export * from './darkTheme';

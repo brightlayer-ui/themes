@@ -35,6 +35,8 @@
         "README.md",
         "LICENSE",
         "CHANGELOG.md",
+        "lightTheme.js",
+        "darkTheme.js",
         "index.js",
         "index.d.ts"
     ]
