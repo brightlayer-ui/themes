@@ -7,7 +7,8 @@
     "scripts": {
         "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start",
         "link:themes": "bash ./scripts/linkThemes.sh",
-        "test": "bash ./scripts/buildTest.sh"
+        "test": "bash ./scripts/buildTest.sh",
+        "prettier": "prettier \"*.scss\" --write"
     },
     "repository": {
         "type": "git",
@@ -29,11 +30,16 @@
         "@pxblue/colors": "^2.0.0",
         "typeface-open-sans": "^0.0.75"
     },
+    "prettier": "@pxblue/prettier-config",
     "files": [
         "package.json",
         "README.md",
         "LICENSE",
         "CHANGELOG.md",
         "*.scss"
-    ]
+    ],
+    "devDependencies": {
+        "@pxblue/prettier-config": "^1.0.2",
+        "prettier": "^2.0.4"
+    }
 }

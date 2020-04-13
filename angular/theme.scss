@@ -56,6 +56,10 @@ $pxb-blue-theme: mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
     @include reasonable-margins();
     @include bodyfont();
     @include bluetheme($pxb-blue-primary, $pxb-blue-accent);
+    @include pxb-channel-value($theme);
+    .value-wrapper {
+        color: green;
+    }
 }
 
 // Blue Dark Theme
