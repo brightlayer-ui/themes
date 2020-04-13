@@ -61,6 +61,7 @@
     }
 
     /* PX Blue Components */
+
     .pxb-scorecard {
         .pxb-header {
             background-color: map-get($primary, 500);
@@ -80,5 +81,12 @@
 
     .pxb-channel-value {
         color: map-get($pxb-gray, 800);
+    }
+
+    .pxb-hero {
+        color: map-get($pxb-gray, 500);
+        .pxb-primary-wrapper {
+            color: map-get($pxb-gray, 800);
+        }
     }
 }
