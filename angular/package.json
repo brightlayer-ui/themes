@@ -26,10 +26,6 @@
         "Xpert",
         "Angular"
     ],
-    "dependencies": {
-        "@pxblue/colors": "^2.0.0",
-        "typeface-open-sans": "^0.0.75"
-    },
     "prettier": "@pxblue/prettier-config",
     "files": [
         "package.json",
@@ -38,8 +34,17 @@
         "CHANGELOG.md",
         "*.scss"
     ],
+    "dependencies": {
+        "@pxblue/colors": "^2.0.0",
+        "typeface-open-sans": "^0.0.75"
+    },
     "devDependencies": {
+        "@pxblue/colors": "^2.0.0",
+        "@angular/material": "^8.2.0",
         "@pxblue/prettier-config": "^1.0.2",
         "prettier": "^2.0.4"
+    },
+    "peerDependencies": {
+        "@angular/material": "^8.2.0"
     }
 }

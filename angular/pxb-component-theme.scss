@@ -1,0 +1,51 @@
+// Import library functions for theme creation.
+@import 'node_modules/@angular/material/theming';
+
+@mixin pxb-components-theme($theme) {
+    @include pxb-empty-state-theme($theme);
+    @include pxb-scorecard-theme($theme);
+    @include pxb-channel-value-theme($theme);
+    @include pxb-hero-theme($theme);
+}
+
+@mixin pxb-scorecard-theme($theme) {
+    $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+    .pxb-scorecard {
+        .pxb-scorecard-header {
+            background-color: mat-color($primary);
+            color: map-get($foreground, light);
+            .mat-card-subtitle {
+                color: inherit;
+            }
+        }
+    }
+}
+
+@mixin pxb-empty-state-theme($theme) {
+    $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+    .pxb-empty-state {
+        color: map-get($foreground, text);
+        .pxb-empty-state-description {
+            color: map-get($primary, 500);
+        }
+    }
+}
+
+@mixin pxb-channel-value-theme($theme) {
+    $foreground: map-get($theme, foreground);
+    .pxb-channel-value {
+        color: map-get($foreground, text);
+    }
+}
+
+@mixin pxb-hero-theme($theme) {
+    $foreground: map-get($theme, foreground);
+    .pxb-hero {
+        color: map-get($foreground, text);
+        .pxb-hero-primary-wrapper {
+            color: map-get($foreground, secondary-text);
+        }
+    }
+}

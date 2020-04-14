@@ -8,10 +8,11 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 
 @import '~@angular/material/_theming.scss';
 @import '~@pxblue/colors/palette.scss';
+@import 'pxb-component-theme';
 @import './margins';
 @import './fonts';
-@import './darkTheme';
-@import './blueTheme';
+@import 'darkTheme';
+@import 'blueTheme';
 
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config(
@@ -47,29 +48,52 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
 @include angular-material-theme($material-theme);
 
 // Blue Theme
+@function pxb-light-theme($primary, $accent, $warn) {
+    @return map-merge(
+        mat-light-theme($primary, $accent, $warn),
+        (
+            foreground: (
+                text: map-get($pxb-gray, 800),
+                secondary-text: map-get($pxb-gray, 500),
+                light: map-get($pxb-white, 50),
+            ),
+        )
+    );
+}
+
 $pxb-blue-primary: mat-palette($pxb-blue);
 $pxb-blue-accent: mat-palette($pxb-lightBlue, 500);
 $pxb-blue-warn: mat-palette($pxb-red, 500);
-$pxb-blue-theme: mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-warn);
+$pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-warn);
 .pxb-blue {
     @include angular-material-theme($pxb-blue-theme);
     @include reasonable-margins();
     @include bodyfont();
     @include bluetheme($pxb-blue-primary, $pxb-blue-accent);
-    @include pxb-channel-value($theme);
-    .value-wrapper {
-        color: green;
-    }
+    @include pxb-components-theme($pxb-blue-theme);
 }
 
 // Blue Dark Theme
+@function pxb-dark-theme($primary, $accent, $warn) {
+    @return map-merge(
+        mat-dark-theme($primary, $accent, $warn),
+        (
+            foreground: (
+                text: map-get($pxb-gray, 300),
+                secondary-text: map-get($pxb-gray, 50),
+                light: map-get($pxb-white, 50),
+            ),
+        )
+    );
+}
 $pxb-blue-dark-primary: mat-palette($pxb-blue, 500);
 $pxb-blue-dark-accent: mat-palette($pxb-lightBlue, 500);
 $pxb-blue-dark-warn: mat-palette($pxb-red, 500);
-$pxb-blue-dark-theme: mat-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-accent, $pxb-blue-dark-warn);
+$pxb-blue-dark-theme: pxb-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-accent, $pxb-blue-dark-warn);
 .pxb-blue-dark {
     @include angular-material-theme($pxb-blue-dark-theme);
     @include reasonable-margins();
     @include bodyfont();
     @include darktheme($pxb-blue-dark-primary, $pxb-blue-dark-accent);
+    @include pxb-components-theme($pxb-blue-dark-theme);
 }

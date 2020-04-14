@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette';
+@import '../node_modules/@pxblue/colors/palette';
 @mixin bluetheme($primary, $accent) {
     /* toolbar*/
     .mat-toolbar {
@@ -57,36 +57,6 @@
         }
         &.mat-accent {
             border-color: map-get($accent, 500);
-        }
-    }
-
-    /* PX Blue Components */
-
-    .pxb-scorecard {
-        .pxb-header {
-            background-color: map-get($primary, 500);
-            color: map-get($pxb-white, 50);
-            .mat-card-subtitle {
-                color: inherit;
-            }
-        }
-    }
-
-    .pxb-empty-state {
-        color: map-get($pxb-gray, 500);
-        .pxb-description {
-            color: map-get($primary, 500);
-        }
-    }
-
-    .pxb-channel-value {
-        color: map-get($pxb-gray, 800);
-    }
-
-    .pxb-hero {
-        color: map-get($pxb-gray, 500);
-        .pxb-primary-wrapper {
-            color: map-get($pxb-gray, 800);
         }
     }
 }
