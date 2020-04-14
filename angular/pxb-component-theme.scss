@@ -1,5 +1,5 @@
 // Import library functions for theme creation.
-@import 'node_modules/@angular/material/theming';
+@import '~@angular/material/theming';
 
 @mixin pxb-components-theme($theme) {
     @include pxb-empty-state-theme($theme);
