@@ -6,6 +6,7 @@
     @include pxb-scorecard-theme($theme);
     @include pxb-channel-value-theme($theme);
     @include pxb-hero-theme($theme);
+    @include pxb-info-list-item-theme($theme);
 }
 
 @mixin pxb-scorecard-theme($theme) {
@@ -47,5 +48,12 @@
         .pxb-hero-primary-wrapper {
             color: map-get($foreground, secondary-text);
         }
+    }
+}
+
+@mixin pxb-info-list-item-theme($theme) {
+    $foreground: map-get($theme, foreground);
+    .pxb-info-list-item {
+        color: map-get($foreground, text);
     }
 }
