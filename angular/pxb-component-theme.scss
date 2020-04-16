@@ -3,17 +3,17 @@
 
 @mixin pxb-components-theme($theme) {
     @include pxb-empty-state-theme($theme);
-    @include pxb-scorecard-theme($theme);
+    @include pxb-score-card-theme($theme);
     @include pxb-channel-value-theme($theme);
     @include pxb-hero-theme($theme);
     @include pxb-info-list-item-theme($theme);
 }
 
-@mixin pxb-scorecard-theme($theme) {
+@mixin pxb-score-card-theme($theme) {
     $primary: map-get($theme, primary);
     $foreground: map-get($theme, foreground);
-    .pxb-scorecard {
-        .pxb-scorecard-header {
+    .pxb-score-card {
+        .pxb-score-card-header {
             background-color: mat-color($primary);
             color: map-get($foreground, light);
             .mat-card-subtitle {
