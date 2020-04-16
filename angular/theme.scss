@@ -53,8 +53,9 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
         mat-light-theme($primary, $accent, $warn),
         (
             foreground: (
-                text: map-get($pxb-gray, 800),
-                secondary-text: map-get($pxb-gray, 500),
+                text: map-get($pxb-black, 500),
+                secondary-text: map-get($pxb-black, 300),
+                hint-text: map-get($pxb-gray, 500),
                 light: map-get($pxb-white, 50),
             ),
         )
@@ -80,7 +81,8 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
         (
             foreground: (
                 text: map-get($pxb-gray, 300),
-                secondary-text: map-get($pxb-gray, 50),
+                secondary-text: map-get($pxb-black, 300),
+                hint_text: map-get($pxb-gray, 300),
                 light: map-get($pxb-white, 50),
             ),
         )
