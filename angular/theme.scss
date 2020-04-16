@@ -82,7 +82,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
             foreground: (
                 text: map-get($pxb-gray, 300),
                 secondary-text: map-get($pxb-black, 300),
-                hint_text: map-get($pxb-gray, 300),
+                hint-text: map-get($pxb-gray, 300),
                 light: map-get($pxb-white, 50),
             ),
         )
