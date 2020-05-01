@@ -22,8 +22,8 @@ export const pxblueTheme = create({
     textInverseColor: 'white',
 
     // Toolbar default and active colors
-    barTextColor: colors.white[50],
-    barSelectedColor: colors.white[900],
+    barTextColor: colors.blue[100],
+    barSelectedColor: colors.white[50],
     barBg: colors.blue[500],
 
     // Form colors
