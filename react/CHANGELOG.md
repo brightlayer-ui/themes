@@ -1,5 +1,5 @@
 ## v5.0.0
-Themes have been updated for use with Material UI v4+. If you are using version 3 of Material UI, please read their [update guide](https://material-ui.com/guides/migration-v3/). 
+Themes have been updated for use with Material UI v4+. If you are using version 3 of Material UI, please read their [update guide](https://material-ui.com/guides/migration-v3/). To use this package with PX Blue components, you must be using @pxblue/react-components v4+.
 
 Notable changes in this theme:
 - Theme palettes are simplified (3 color variants instead of 10).
