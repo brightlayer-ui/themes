@@ -100,6 +100,9 @@ const styles = (theme) => ({
         paddingLeft: '15px',
         paddingRight: '15px',
     },
+    routeActive: {
+        backgroundColor: `${theme.palette.primary.main}`,
+    },
     listItem: {
         paddingLeft: '15px',
         paddingRight: '15px',

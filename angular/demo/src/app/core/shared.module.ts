@@ -20,4 +20,4 @@ import { MaterialModule } from './material.module';
         ReactiveFormsModule,
     ],
 })
-export class SharedModule { }
+export class SharedModule {}
