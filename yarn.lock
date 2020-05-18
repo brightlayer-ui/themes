@@ -2,45 +2,12 @@
 # yarn lockfile v1
 
 
-"@pxblue/angular-themes@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-4.0.0.tgz#8959f160520b347453953b6c306cdffa5ac72306"
-  integrity sha512-LwfxTVvHo+m2hOJTRJ+2HgV8F9fTWTdtLDaNF0MV8hBik1157kdPbvSBcIQ3je2RNj3VFb4l4RGILMgN6MaV4A==
-  dependencies:
-    "@pxblue/colors" "^2.0.0"
-    typeface-open-sans "^0.0.75"
-
-"@pxblue/colors@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/colors/-/colors-2.0.0.tgz#fa7d2abde80485537f26521df4c3f6e56dd93361"
-  integrity sha512-1JoCVC17nHmC6bbqg2nCAHJgJLHAWNIAmS/UZ3h8u0TnvU5C6qI+CpCrn/sP6bNSQ3LLhEkdVpjKna1kxCXdhg==
-
 "@pxblue/prettier-config@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@pxblue/prettier-config/-/prettier-config-1.0.2.tgz#fb00503df6557b66c3d91d43c9101e614c35d2ec"
   integrity sha512-/3cLBoTjZs3kV1ATPA/Sp0tsL7XmlV/b8HW/qt0jqR/uP5+cdXL2YIhMXQngLRa7PhpSkEiRIYK5sl0rKsXTUg==
 
-"@pxblue/react-native-themes@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/react-native-themes/-/react-native-themes-4.0.0.tgz#e6f46e031b0efdba7d1bb292cb114e61fa15e35e"
-  integrity sha512-rGRy+pmvoAS1Ik/unR3jwmy9v7xVADo9Aez/fL7G8n4Rj9Xu6H8EWL8/+nYWVKu0GdVuqrEea3AFarQTt5CmSQ==
-  dependencies:
-    "@pxblue/colors" "^2.0.0"
-
-"@pxblue/react-themes@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/react-themes/-/react-themes-4.0.0.tgz#5b3b2f87b9558439a59a0fadd06cc9bcb375c477"
-  integrity sha512-w0VFVZ+BLPk0AVNL0vWK7z8cl8Ec2seHOu68Dwl2R+CZ7iVuz6f+1I/KXjzjL458YWjNK1lu9UiaCX34MxvpHQ==
-  dependencies:
-    "@pxblue/colors" "^2.0.0"
-    typeface-open-sans "^0.0.75"
-
 prettier@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.2.tgz#1ba8f3eb92231e769b7fcd7cb73ae1b6b74ade08"
   integrity sha512-5xJQIPT8BraI7ZnaDwSbu5zLrB6vvi8hVV58yHQ+QK64qrY40dULy0HSRlQ2/2IdzeBpjhDkqdcFBnFeDEMVdg==
-
-typeface-open-sans@^0.0.75:
-  version "0.0.75"
-  resolved "https://registry.yarnpkg.com/typeface-open-sans/-/typeface-open-sans-0.0.75.tgz#20d0c330f14c0c40463c334adbedd6005389abe4"
-  integrity sha512-0lLmB7pfj113OP4T78SbpSmC4OCdFQ0vUxdSXQccsSb6qF76F92iEuC/DghFgmPswTyidk8+Hwf+PS/htiJoRQ==
