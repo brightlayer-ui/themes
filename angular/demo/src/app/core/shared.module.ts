@@ -4,8 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgProgressIconsModule } from '@pxblue/ng-progress-icons';
-import { HeroModule } from '@pxblue/angular-components/core/hero';
-import { ChannelValueModule } from '@pxblue/angular-components/core/channel-value';
+import { HeroModule, ChannelValueModule } from '@pxblue/angular-components';
 import { MaterialModule } from './material.module';
 
 @NgModule({
@@ -21,4 +20,4 @@ import { MaterialModule } from './material.module';
         ReactiveFormsModule,
     ],
 })
-export class SharedModule {}
+export class SharedModule { }

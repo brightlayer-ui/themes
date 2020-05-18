@@ -2,7 +2,7 @@
     "name": "@pxblue/angular-themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "4.0.0",
+    "version": "4.0.1",
     "description": "Angular themes for PX Blue applications",
     "scripts": {
         "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start",
@@ -26,7 +26,7 @@
         "Angular"
     ],
     "dependencies": {
-        "@pxblue/colors": "^2.0.0",
+        "@pxblue/colors": "^3.0.0",
         "typeface-open-sans": "^0.0.75"
     },
     "files": [
