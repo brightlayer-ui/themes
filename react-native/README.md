@@ -11,13 +11,13 @@ For other frameworks, check out our related packages:
 
 Install with npm
 
-```
+```shell
 npm install --save @pxblue/react-native-themes
 ```
 
 or yarn
 
-```
+```shell
 yarn add @pxblue/react-native-themes
 ```
 
@@ -25,7 +25,7 @@ yarn add @pxblue/react-native-themes
 
 To use these themes in your application, simply wrap the app in a `ThemeProvider` and pass in your desired theme (`blue`). Omitting the `theme` prop will default to the Material theme:
 
-```
+```tsx
 import { ThemeProvider } from '@pxblue/react-native-components';
 import * as PXBThemes from '@pxblue/react-native-themes';
 ...
