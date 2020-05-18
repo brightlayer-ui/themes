@@ -23,13 +23,13 @@ export const blueTheme: ThemeOptions = {
         secondary: createSimplePalette(ThemeColors.lightBlue),
         error: createSimplePalette(ThemeColors.red),
         background: {
-            default: ThemeColors.gray['50'],
-            paper: ThemeColors.white['50'],
+            default: ThemeColors.gray[50],
+            paper: ThemeColors.white[50],
         },
         text: {
-            primary: ThemeColors.black['500'],
-            secondary: ThemeColors.black['300'],
-            hint: ThemeColors.gray['500'],
+            primary: ThemeColors.black[500],
+            secondary: ThemeColors.black[300],
+            hint: ThemeColors.gray[500],
         },
         action: {
             active: ThemeColors.black[500],
@@ -40,11 +40,11 @@ export const blueTheme: ThemeOptions = {
         // APP BAR OVERRIDES
         MuiAppBar: {
             colorDefault: {
-                color: ThemeColors.black['500'],
-                backgroundColor: ThemeColors.gray['50'],
+                color: ThemeColors.black[500],
+                backgroundColor: ThemeColors.gray[50],
             },
             colorSecondary: {
-                backgroundColor: ThemeColors.blue['700'],
+                backgroundColor: ThemeColors.blue[700],
             },
         },
 
@@ -74,14 +74,14 @@ export const blueTheme: ThemeOptions = {
         // LIST ITEM OVERRIDES
         MuiListItem: {
             root: {
-                color: ThemeColors.black['500'],
+                color: ThemeColors.black[500],
             },
         },
 
         // TABS OVERRIDES
         MuiTabs: {
             indicator: {
-                backgroundColor: ThemeColors.white['50'],
+                backgroundColor: ThemeColors.white[50],
             },
         },
     },

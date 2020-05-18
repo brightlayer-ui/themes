@@ -43,11 +43,11 @@ export const pxblueTheme = create({
     // This section can be used to apply classes to our Markdown documents.
     addonNotesTheme: {
         a: {
-            color: colors.blue[500]+'!important'
+            color: colors.blue[500] + '!important',
         },
         h1: {
             color: colors.blue[500],
-            fontWeight: '400!important'
+            fontWeight: '400!important',
         },
         h2: {
             color: colors.blue[500],
@@ -62,10 +62,10 @@ export const pxblueTheme = create({
             color: colors.blue[500],
         },
         h6: {
-            color: colors.blue[500]
+            color: colors.blue[500],
         },
         table: {
-            width: '100%'
-        }
-    }
+            width: '100%',
+        },
+    },
 });

@@ -7,7 +7,7 @@
     @include pxb-channel-value-theme($theme);
     @include pxb-hero-theme($theme);
     @include pxb-info-list-item-theme($theme);
-    @include pxb-list-item-tag($theme)
+    @include pxb-list-item-tag($theme);
 }
 
 @mixin pxb-score-card-theme($theme) {

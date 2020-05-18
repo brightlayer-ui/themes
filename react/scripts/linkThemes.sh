@@ -23,7 +23,7 @@ cp -r ./package.json ./demo/node_modules/@pxblue/react-themes/package.json
 cp -r ./dist ./demo/node_modules/@pxblue/react-themes/dist
 echo -e "${GREEN}Done${NC}"
 
-echo -en "\r\n${BRED}Linking Components: ${NC}"
+echo -en "\r\n${BBLUE}Linking Components: ${NC}"
 if [ ! -f ./demo/node_modules/@pxblue/react-themes/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
 if [ ! -s ./demo/node_modules/@pxblue/react-themes/dist ]; 
     then 
