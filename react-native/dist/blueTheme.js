@@ -18,25 +18,23 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_native_1 = require("react-native");
 var react_native_paper_1 = require("react-native-paper");
 var colors_1 = require("@pxblue/colors");
-var fallbackFont = react_native_1.Platform.OS === 'ios' ? 'System' : 'Roboto';
 var defaultFontConfig = {
     regular: {
-        fontFamily: 'OpenSans-Regular' || fallbackFont,
+        fontFamily: 'OpenSans-Regular',
         fontWeight: '400',
     },
     medium: {
-        fontFamily: 'OpenSans-SemiBold' || fallbackFont,
-        fontWeight: '500',
+        fontFamily: 'OpenSans-SemiBold',
+        fontWeight: '600',
     },
     light: {
-        fontFamily: 'OpenSans-Light' || fallbackFont,
+        fontFamily: 'OpenSans-Light',
         fontWeight: '300',
     },
     thin: {
-        fontFamily: 'OpenSans-Light' || fallbackFont,
+        fontFamily: 'OpenSans-Light',
         fontWeight: '100',
     },
 };
