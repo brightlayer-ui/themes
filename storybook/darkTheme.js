@@ -42,11 +42,11 @@ export const pxblueDarkTheme = create({
     // This section can be used to apply classes to our Markdown documents.
     addonNotesTheme: {
         a: {
-            color: colors.blue[200]+'!important'
+            color: colors.blue[200] + '!important',
         },
         h1: {
             color: colors.blue[200],
-            fontWeight: '400!important'
+            fontWeight: '400!important',
         },
         h2: {
             color: colors.blue[200],
@@ -61,19 +61,19 @@ export const pxblueDarkTheme = create({
             color: colors.blue[200],
         },
         h6: {
-            color: colors.blue[200]
+            color: colors.blue[200],
         },
         table: {
             width: '100%',
         },
         'tr:nth-of-type(even)': {
-            backgroundColor: colors.gray[700] + '!important'
+            backgroundColor: colors.gray[700] + '!important',
         },
         'tr:nth-of-type(odd)': {
-            backgroundColor: colors.gray[900] + '!important'
+            backgroundColor: colors.gray[900] + '!important',
         },
         blockquote: {
-            color: colors.white[500] + '!important'
+            color: colors.white[500] + '!important',
         },
         pre: {
             backgroundColor: colors.black[800] + '!important',
@@ -82,6 +82,6 @@ export const pxblueDarkTheme = create({
             backgroundColor: colors.black[800] + '!important',
             border: 'none!important',
             color: colors.white[50] + '!important',
-        }
-    }
+        },
+    },
 });

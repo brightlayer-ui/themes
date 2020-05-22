@@ -18,31 +18,31 @@ exports.blueDarkTheme = {
         secondary: shared_1.createSimplePalette(ThemeColors.lightBlue),
         error: shared_1.createSimplePalette(ThemeColors.red),
         background: {
-            default: ThemeColors.black['A200'],
-            paper: ThemeColors.black['900'],
+            default: ThemeColors.darkBlack[100],
+            paper: ThemeColors.black[900],
         },
         text: {
-            primary: ThemeColors.gray['300'],
-            secondary: ThemeColors.black['300'],
-            hint: ThemeColors.gray['300'],
+            primary: ThemeColors.gray[300],
+            secondary: ThemeColors.black[300],
+            hint: ThemeColors.gray[300],
         },
         action: {
-            active: ThemeColors.gray['300'],
+            active: ThemeColors.gray[300],
         },
     },
     overrides: {
         // APP BAR OVERRIDES
         MuiAppBar: {
             colorDefault: {
-                color: ThemeColors.black['100'],
-                backgroundColor: ThemeColors.black['A200'],
+                color: ThemeColors.black[100],
+                backgroundColor: ThemeColors.darkBlack[100],
             },
             colorPrimary: {
-                color: ThemeColors.black['50'],
-                backgroundColor: ThemeColors.black['A700'],
+                color: ThemeColors.black[50],
+                backgroundColor: ThemeColors.darkBlack[900],
             },
             colorSecondary: {
-                backgroundColor: ThemeColors.black['A100'],
+                backgroundColor: ThemeColors.black[400],
             },
         },
         // BACKDROP OVERRIDES
@@ -57,7 +57,7 @@ exports.blueDarkTheme = {
                 textTransform: 'none',
             },
             outlined: {
-                borderColor: ThemeColors.black['100'],
+                borderColor: ThemeColors.black[100],
             },
             outlinedPrimary: {
                 borderColor: ThemeColors.blue[500],
@@ -66,50 +66,50 @@ exports.blueDarkTheme = {
                 borderColor: ThemeColors.lightBlue[500],
             },
             contained: {
-                backgroundColor: ThemeColors.black['500'],
-                color: ThemeColors.white['50'],
+                backgroundColor: ThemeColors.black[500],
+                color: ThemeColors.white[50],
                 '&:hover': {
-                    backgroundColor: ThemeColors.black['300'],
+                    backgroundColor: ThemeColors.black[300],
                 },
             },
         },
         // CHIP OVERRIDES
         MuiChip: {
             root: {
-                backgroundColor: ThemeColors.black['500'],
+                backgroundColor: ThemeColors.black[500],
             },
         },
         // DRAWER OVERRIDES
         MuiDrawer: {
             paper: {
-                backgroundColor: ThemeColors.black['A400'],
+                backgroundColor: ThemeColors.darkBlack[500],
             },
             paperAnchorBottom: {
-                backgroundColor: ThemeColors.black['900'],
+                backgroundColor: ThemeColors.black[900],
             },
         },
         // FAB OVERRIDES
         MuiFab: {
             root: {
                 textTransform: 'none',
-                backgroundColor: ThemeColors.black['500'],
-                color: ThemeColors.white['50'],
+                backgroundColor: ThemeColors.black[500],
+                color: ThemeColors.white[50],
                 '&:hover': {
-                    backgroundColor: ThemeColors.black['300'],
+                    backgroundColor: ThemeColors.black[300],
                 },
             },
         },
         //LIST ITEM OVERRIDES (plus nav drawer)
         MuiListItem: {
             root: {
-                color: ThemeColors.gray['300'],
+                color: ThemeColors.gray[300],
             },
         },
         // SNACKBAR OVERRIDES
         MuiSnackbarContent: {
             root: {
-                backgroundColor: ThemeColors.black['A700'],
-                color: ThemeColors.white['50'],
+                backgroundColor: ThemeColors.darkBlack[900],
+                color: ThemeColors.white[50],
             },
         },
         // TABLE OVERRIDES
@@ -120,21 +120,21 @@ exports.blueDarkTheme = {
         },
         MuiTableHead: {
             root: {
-                background: ThemeColors.black['A200'],
+                background: ThemeColors.darkBlack[100],
             },
         },
         MuiTableRow: {
             root: {
-                color: ThemeColors.gray['100'],
+                color: ThemeColors.gray[100],
                 '&$selected': {
-                    backgroundColor: ThemeColors.black['A400'],
+                    backgroundColor: ThemeColors.darkBlack[500],
                 },
             },
         },
         // TABS OVERRIDES
         MuiTabs: {
             indicator: {
-                backgroundColor: ThemeColors.blue['500'],
+                backgroundColor: ThemeColors.blue[500],
             },
         },
     },
