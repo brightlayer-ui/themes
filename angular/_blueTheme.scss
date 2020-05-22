@@ -72,36 +72,4 @@
             border-color: map-get($accent, 500);
         }
     }
-
-    .pxb-drawer {
-        background-color: #ffffff;
-
-        .pxb-drawer-subheader {
-            color: map-get($pxb-black, 500);
-        }
-
-        .pxb-drawer-nav-group .mat-list-base {
-            color: map-get($pxb-black, 500);
-        }
-
-        .pxb-drawer-nested-nav-item {
-            background-color: map-get($pxb-gray, 50);
-        }
-
-        .pxb-info-list-item .mat-list-item-content {
-            color: map-get($pxb-black, 500);
-        }
-
-        .pxb-info-list-item .mat-list-item-content:hover {
-            background-color: map-get($pxb-gray, 100);
-        }
-
-        .pxb-info-list-item-active .pxb-info-list-item .mat-list-item-content {
-            color: map-get($pxb-blue, 500);
-        }
-
-        .pxb-info-list-item-active:after {
-            background-color: map-get($pxb-blue, 50);
-        }
-    }
 }
