@@ -1199,15 +1199,22 @@
   resolved "https://registry.yarnpkg.com/@pxblue/colors/-/colors-2.0.0.tgz#fa7d2abde80485537f26521df4c3f6e56dd93361"
   integrity sha512-1JoCVC17nHmC6bbqg2nCAHJgJLHAWNIAmS/UZ3h8u0TnvU5C6qI+CpCrn/sP6bNSQ3LLhEkdVpjKna1kxCXdhg==
 
+"@pxblue/colors@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@pxblue/colors/-/colors-3.0.0.tgz#080fb5cfd5a08fea018ece7cac8022ed38f7878f"
+  integrity sha512-rMFW4an1V9M5KX4BiNzrbbaYe2fic4o9iGL8/bPYvITbeiwgAapyFX0VbMIoo8XKlIbNaxyn7oWnrxzI/tp8Rw==
+  dependencies:
+    "@pxblue/types" "^2.0.0"
+
 "@pxblue/icons-mui@^1.0.18":
   version "1.0.18"
   resolved "https://registry.yarnpkg.com/@pxblue/icons-mui/-/icons-mui-1.0.18.tgz#dc9d23637fc104dbcc25efd926a8f36259c98489"
   integrity sha512-/NI7GDYCz+dn/qI7W10pZt7x5gGY7IngqwFI2zyLBDMgeawD+ryzvzZ6LOvxjdeht0R8cZFa6ZPZuJjtIcLrjw==
 
-"@pxblue/react-components@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@pxblue/react-components/-/react-components-3.0.2.tgz#b1b08427db4f2569888f891c112468debed536a5"
-  integrity sha512-f29W0UQ8/4q+ljFt0kwBuNZ+B4BtAK8iLytLJ8jsKbz8uQXiP01K1L2ABipWGu6f6vdeeeOr0RWFodxOkVU8oQ==
+"@pxblue/react-components@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@pxblue/react-components/-/react-components-4.0.0.tgz#85592ad30433c2b54dad40edef993238907b3492"
+  integrity sha512-wl8ZU+HodHZSeKfIWkDZ/8oRN1jc5g/3oGblxT0vMsnTdZKH/wvONxNFV3uFlO73FJfr229R89mlHTVRuF6iYw==
   dependencies:
     "@pxblue/colors" "^2.0.0"
     color "^3.1.2"
@@ -1225,6 +1232,11 @@
   integrity sha512-Q96kMCOgJIPwk38ItsTrPxWxYNwiDLz8fpYxU1eYKcPhnRTSERdZ/i5GYO6v0mroLziYDVtWI9AGmK8qQ6z5DA==
   dependencies:
     "@pxblue/colors" "^2.0.0"
+
+"@pxblue/types@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@pxblue/types/-/types-2.0.0.tgz#3df970352aca5256974a10a97d75a2264bad1eba"
+  integrity sha512-rHABCqYALGjrDxdCfw/v4mFsHhE9y9+vdSD3VHfIzA3HY1g1Bp/VWwEuEXWbtj2H5n75D+jkMQZ0rTqSKY3vLw==
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
