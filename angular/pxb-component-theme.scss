@@ -97,7 +97,7 @@
         }
 
         .pxb-info-list-item-active .pxb-info-list-item .mat-list-item-content {
-            color: mat-color($primary);
+            color: mat-color($primary, 500);
         }
 
         .pxb-info-list-item-active:after {
