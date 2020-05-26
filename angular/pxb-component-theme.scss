@@ -8,6 +8,7 @@
     @include pxb-hero-theme($theme);
     @include pxb-info-list-item-theme($theme);
     @include pxb-list-item-tag($theme);
+    @include pxb-drawer($theme);
 }
 
 @mixin pxb-score-card-theme($theme) {
@@ -65,5 +66,42 @@
     .pxb-list-item-tag {
         background-color: mat-color($primary);
         color: map-get($foreground, light);
+    }
+}
+
+@mixin pxb-drawer($theme) {
+    $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+
+    .pxb-drawer {
+        background-color: map-get($foreground, light);
+
+        .pxb-drawer-subheader {
+            color: map-get($foreground, text);
+        }
+
+        .pxb-drawer-nav-group .mat-list-base {
+            color: map-get($foreground, text);
+        }
+
+        .pxb-drawer-nested-nav-item {
+            background-color: map-get($pxb-gray, 50);
+        }
+
+        .pxb-info-list-item .mat-list-item-content {
+            color: map-get($foreground, text);
+        }
+
+        .pxb-info-list-item .mat-list-item-content:hover {
+            background-color: map-get($pxb-gray, 100);
+        }
+
+        .pxb-info-list-item-active .pxb-info-list-item .mat-list-item-content {
+            color: map-get($primary, 500);
+        }
+
+        .pxb-info-list-item-active:after {
+            background-color: map-get($primary, 50);
+        }
     }
 }
