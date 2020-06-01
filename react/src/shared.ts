@@ -12,6 +12,28 @@ import { SimplePaletteColorOptions } from '@material-ui/core';
 export const typography = {
     fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
     fontWeightMedium: 600,
+    h6: {
+        fontWeight: 600
+    },
+    subtitle2: {
+        fontWeight: 600
+    },
+    body1: {
+        lineHeight: '1.5em'
+    },
+    body2: {
+        lineHeight: '1.43em'
+    },
+    button: {
+        fontWeight: 600,
+        lineHeight: '1.75em'
+    },
+    overline: {
+        letterSpacing: '2px',
+        fontSize: '12px'
+    },
+
+
 };
 export const createSimplePalette = (color: PXBlueColor): SimplePaletteColorOptions => ({
     light: color[50],
