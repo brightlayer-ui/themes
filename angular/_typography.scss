@@ -1,0 +1,13 @@
+@mixin typography() {
+  .mat-display-4, .mat-display-3, .mat-display-2 {
+    letter-spacing: 0;
+  }
+
+  .mat-overline {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2;
+    margin-bottom: 8px;
+    line-height: 2.66;
+  }
+}
