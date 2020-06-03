@@ -12,52 +12,25 @@ import { SimplePaletteColorOptions } from '@material-ui/core';
 export const typography = {
     fontFamily: '"Open Sans", Helvetica, Roboto, sans-serif',
     fontWeightMedium: 600,
-    h1: {
-        marginBottom: '8px'
-    },
-    h2: {
-        marginBottom: '8px'
-    },
-    h3: {
-        marginBottom: '8px'
-    },
-    h4: {
-        marginBottom: '8px'
-    },
-    h5: {
-        marginBottom: '8px'
-    },
     h6: {
-        fontWeight: 600,
-        marginBottom: '8px'
-    },
-    subtitle1: {
-        marginBottom: '8px'
+        fontWeight: 600
     },
     subtitle2: {
-        fontWeight: 600,
-        marginBottom: '8px'
+        fontWeight: 600
     },
     body1: {
-        lineHeight: '1.5em',
-        marginBottom: '8px'
+        lineHeight: '1.5em'
     },
     body2: {
-        lineHeight: '1.43em',
-        marginBottom: '8px'
+        lineHeight: '1.43em'
     },
     button: {
         fontWeight: 600,
-        lineHeight: '1.75em',
-        marginBottom: '8px'
-    },
-    caption: {
-        marginBottom: '8px'
+        lineHeight: '1.75em'
     },
     overline: {
         letterSpacing: '2px',
-        fontSize: '12px',
-        marginBottom: '8px'
+        fontSize: '12px'
     },
 
 
