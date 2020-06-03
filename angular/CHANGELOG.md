@@ -2,6 +2,7 @@
 
 -   Update theme definitions to use the [@pxblue/colors](https://www.npmjs.com/package/@pxblue/colors) version 3.0.0.
 <!-- - Update color schemes to address accessibility concerns. -->
+-   Updated default typography styles for consistency.
 
 ## v4.0.0
 

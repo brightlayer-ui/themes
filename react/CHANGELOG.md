@@ -1,3 +1,7 @@
+## v5.0.2
+
+-   Updated default typography styles for consistency.
+
 ## v5.0.1
 
 -   Updated themes to use [@pxblue/colors](https://www.npmjs.com/package/@pxblue/colors) version 3.0.0.
