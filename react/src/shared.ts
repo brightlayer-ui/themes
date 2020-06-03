@@ -30,7 +30,8 @@ export const typography = {
     },
     overline: {
         letterSpacing: '2px',
-        fontSize: '12px'
+        fontSize: '12px',
+        fontWeight: 600
     },
 
 
