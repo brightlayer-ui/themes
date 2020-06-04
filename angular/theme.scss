@@ -11,24 +11,25 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 @import 'pxb-component-theme';
 @import './margins';
 @import './fonts';
+@import './typography';
 @import 'darkTheme';
 @import 'blueTheme';
 
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config(
     $font-family: '"Open Sans", Arial, Helvetica, sans-serif;',
-    $display-4: mat-typography-level(6rem, 1, 300),
-    $display-3: mat-typography-level(3.75rem, 1, 300),
-    $display-2: mat-typography-level(3rem, 1.04, 400),
-    $display-1: mat-typography-level(2.125rem, 1.17, 400),
-    $headline: mat-typography-level(1.5rem, 1.33, 400),
-    $title: mat-typography-level(1.25rem, 1.6, 500),
+    $display-4: mat-typography-level(6rem, 1.167, 300),
+    $display-3: mat-typography-level(3.75rem, 1.2, 300),
+    $display-2: mat-typography-level(3rem, 1.167, 400),
+    $display-1: mat-typography-level(2.125rem, 1.235, 400),
+    $headline: mat-typography-level(1.5rem, 1.334, 400),
+    $title: mat-typography-level(1.25rem, 1.6, 600),
     $subheading-2: mat-typography-level(1rem, 1.75, 400),
-    $subheading-1: mat-typography-level(0.875rem, 1.57, 500),
-    $body-2: mat-typography-level(0.875rem, 1.71429, 500),
-    $body-1: mat-typography-level(0.875rem, 1.46429, 400),
-    $caption: mat-typography-level(0.75rem, 1.35, 400),
-    $button: mat-typography-level(0.875rem, 1, 500),
+    $subheading-1: mat-typography-level(0.875rem, 1.57, 600),
+    $body-2: mat-typography-level(0.875rem, 1.43, 500),
+    $body-1: mat-typography-level(1rem, 1.5, 400),
+    $caption: mat-typography-level(0.75rem, 1.66, 400),
+    $button: mat-typography-level(0.875rem, 1, 600),
     $input: mat-typography-level(inherit, 1.125, 400),
 );
 
@@ -70,6 +71,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
     @include angular-material-theme($pxb-blue-theme);
     @include reasonable-margins();
     @include bodyfont();
+    @include typography();
     @include bluetheme($pxb-blue-primary, $pxb-blue-accent);
     @include pxb-components-theme($pxb-blue-theme);
 }
@@ -96,6 +98,7 @@ $pxb-blue-dark-theme: pxb-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-acce
     @include angular-material-theme($pxb-blue-dark-theme);
     @include reasonable-margins();
     @include bodyfont();
+    @include typography();
     @include darktheme($pxb-blue-dark-primary, $pxb-blue-dark-accent);
     @include pxb-components-theme($pxb-blue-dark-theme);
 }
