@@ -76,6 +76,11 @@
     .pxb-drawer {
         background-color: map-get($foreground, light);
 
+        .pxb-drawer-header {
+            background-color: mat-color($primary);
+            color: map-get($foreground, light);
+        }
+
         .pxb-drawer-subheader {
             color: map-get($foreground, text);
         }
