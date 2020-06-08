@@ -178,4 +178,20 @@
         background-color: map-get($pxb-black, 900);
         color: map-get($pxb-gray, 300);
     }
+
+
+    .pxb-drawer {
+        background-color: map-get($pxb-darkblack, 800);
+        .pxb-drawer-nested-nav-item mat-expansion-panel {
+            background-color: map-get($pxb-black, 500);
+        }
+
+        .pxb-info-list-item-active .pxb-info-list-item .mat-list-item-content {
+            color: map-get($pxb-white, 50);
+        }
+
+        .pxb-info-list-item-active:after {
+            background-color: map-get($primary, 500);
+        }
+    }
 }
