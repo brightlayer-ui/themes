@@ -74,8 +74,6 @@
     $foreground: map-get($theme, foreground);
 
     .pxb-drawer {
-        background-color: map-get($foreground, light);
-
         .pxb-drawer-header {
             background-color: mat-color($primary);
             color: map-get($foreground, light);
@@ -83,18 +81,6 @@
 
         .pxb-drawer-nav-group .mat-list-base {
             color: map-get($foreground, text);
-        }
-
-        .pxb-drawer-nested-nav-item mat-expansion-panel {
-            background-color: map-get($pxb-white, 200);
-        }
-
-        .pxb-info-list-item-active .pxb-info-list-item .mat-list-item-content {
-            color: map-get($primary, 500);
-        }
-
-        .pxb-info-list-item-active:after {
-            background-color: map-get($primary, 50);
         }
     }
 }
