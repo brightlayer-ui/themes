@@ -181,7 +181,7 @@
 
 
     .pxb-drawer {
-        background-color: map-get($pxb-darkblack, 800);
+        background-color: map-get($pxb-darkBlack, 800);
         .pxb-drawer-nested-nav-item mat-expansion-panel {
             background-color: map-get($pxb-black, 500);
         }
