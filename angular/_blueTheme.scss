@@ -1,12 +1,14 @@
-@import '~@pxblue/colors/palette';
+// Import library functions for theme creation.
+@import '~@angular/material/theming';
 
-@mixin bluetheme($primary, $accent) {
+@mixin bluetheme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
 
     /* toolbar*/
     .mat-toolbar {
-        background-color: map-get($pxb-gray, 50);
-        color: map-get($pxb-black, 500);
-
         &.mat-accent {
             background-color: map-get($primary, 700);
         }
@@ -15,7 +17,7 @@
     /*tab bar*/
     .mat-tab-group {
         .mat-tab-header {
-            background-color: map-get($pxb-gray, 50);
+            background-color: map-get($background, app-bar);
         }
 
         &.mat-primary .mat-tab-header {
@@ -23,7 +25,7 @@
 
             .mat-tab-label,
             .mat-tab-link {
-                color: map-get($pxb-white, 50);
+                color: map-get($foreground, light);
             }
         }
 
@@ -32,7 +34,7 @@
 
             .mat-tab-label,
             .mat-tab-link {
-                color: map-get($pxb-white, 50);
+                color: map-get($foreground, light);
             }
         }
     }
@@ -45,7 +47,7 @@
 
     .mat-tab-group.mat-accent .mat-ink-bar,
     .mat-tab-nav-bar.mat-accent .mat-ink-bar {
-        background-color: map-get($pxb-white, 50);
+        background-color: map-get($background, light);
     }
 
     .mat-tab-group .mat-ink-bar {
@@ -56,13 +58,13 @@
     .mat-primary,
     .mat-accent {
         .mat-tab-header-pagination-chevron {
-            border-color: map-get($pxb-white, 50);
+            border-color: map-get($background, light);
         }
     }
 
     /* button*/
     .mat-stroked-button:not([disabled]) {
-        border-color: map-get($pxb-white, 50);
+        border-color: map-get($background, light);
 
         &.mat-primary {
             border-color: map-get($primary, 500);
@@ -70,21 +72,6 @@
 
         &.mat-accent {
             border-color: map-get($accent, 500);
-        }
-    }
-
-    .pxb-drawer {
-        background-color: map-get($pxb-white, 50);
-        .pxb-drawer-nested-nav-item mat-expansion-panel {
-            background-color: map-get($pxb-white, 200);
-        }
-
-        .pxb-info-list-item-active .pxb-info-list-item .mat-list-item-content {
-            color: map-get($primary, 500);
-        }
-
-        .pxb-info-list-item-active:after {
-            background-color: map-get($primary, 50);
         }
     }
 }

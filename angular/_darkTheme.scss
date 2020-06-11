@@ -1,5 +1,11 @@
 @import '~@pxblue/colors/palette';
-@mixin darktheme($primary, $accent) {
+
+@mixin darktheme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
     /* Side navigation*/
     .mat-drawer {
         background-color: map-get($pxb-darkBlack, 900);
@@ -44,7 +50,7 @@
         background-color: map-get($primary, 500);
     }
     .mat-tab-group .mat-ink-bar {
-        background-color: map-get($pxb-white, 50);
+        background-color: map-get($background, light);
     }
 
     /* button*/
@@ -58,14 +64,9 @@
         }
     }
 
-    /*default button*/
-    .mat-raised-button {
-        background-color: map-get($pxb-black, 500);
-    }
-
     /*list item*/
     .mat-list-item-content {
-        color: map-get($pxb-gray, 300);
+        color: map-get($foreground, text);
     }
 
     /*Body*/
@@ -76,7 +77,7 @@
 
     /* for the input forms fields */
     .mat-form-field-appearance-fill .mat-form-field-flex {
-        background-color: map-get($pxb-black, 800);
+        background-color: map-get($background, background);
     }
     .mat-form-field-appearance-legacy .mat-form-field-label,
     .mat-form-field-label,
@@ -125,7 +126,6 @@
     /* modal */
     .mat-dialog-container {
         background-color: map-get($pxb-black, 900);
-        color: map-get($pxb-gray, 300);
     }
 
     /*stepper*/
@@ -135,9 +135,6 @@
         color: map-get($pxb-gray, 100);
     }
     .mat-step-header {
-        .mat-step-label.mat-step-label-active {
-            color: map-get($pxb-gray, 300);
-        }
         .mat-step-icon {
             background-color: map-get($pxb-gray, 300);
         }
@@ -152,31 +149,24 @@
     .mat-expansion-panel {
         background-color: map-get($pxb-black, 900);
     }
-    .mat-expansion-panel-header-title {
-        color: map-get($pxb-gray, 300);
-    }
     .mat-expansion-panel-header-description {
-        color: map-get($pxb-gray, 300);
+        color: map-get($foreground, text);
     }
 
     /* table*/
     .mat-table {
         background-color: map-get($pxb-darkBlack, 100);
     }
-    .mat-cell {
-        color: map-get($pxb-gray, 300);
-    }
 
     /* paginator*/
     .mat-paginator {
         background-color: map-get($pxb-darkBlack, 100);
-        color: map-get($pxb-gray, 300);
+        color: map-get($foreground, text);
     }
 
     /* Cards */
     .mat-card {
         background-color: map-get($pxb-black, 900);
-        color: map-get($pxb-gray, 300);
     }
 
 
@@ -187,7 +177,7 @@
         }
 
         .pxb-info-list-item-active .pxb-info-list-item .mat-list-item-content {
-            color: map-get($pxb-white, 50);
+            color: map-get($foreground, light);
         }
 
         .pxb-info-list-item-active:after {
