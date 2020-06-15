@@ -6,6 +6,11 @@ jobs:
     steps:
       - checkout
       - run: 
+          name: Prettier Check
+          command: |
+          yarn install
+          yarn prettier:check
+      - run: 
           name: Build All
           command: yarn build:all
       - run:

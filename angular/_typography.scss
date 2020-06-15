@@ -1,5 +1,4 @@
 @mixin typography() {
-
     .mat-display-4,
     .mat-display-3,
     .mat-display-2 {
@@ -22,7 +21,7 @@
     }
 
     .mat-button {
-      text-transform: uppercase;
+        text-transform: uppercase;
     }
 
     .mat-overline {

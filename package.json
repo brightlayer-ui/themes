@@ -12,7 +12,8 @@
         "start:angular": "cd angular && yarn start",
         "start:react": "cd react && yarn start",
         "start:react-native": "cd react && yarn start",
-        "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html,md}\" --write"
+        "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html,md}\" --write",
+        "prettier:check": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html,md}\" --check"
     },
     "prettier": "@pxblue/prettier-config",
     "repository": {
