@@ -37,7 +37,6 @@ import Main from './router/main';
 import { NavigationDrawer } from './router/drawer';
 import { DrawerLayout } from '@pxblue/react-components';
 
-
 // Additional styling elements
 import styles from './styles/styleClasses';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -59,7 +58,10 @@ The container for the entire app, including the common side-navigation panel and
 */
 export default () => {
     const [drawerOpen, setDrawerOpen] = useState(true);
-    const [selectedPage, setSelectedPage] = useState(window.location.pathname.toLocaleLowerCase().substr(1).charAt(0).toUpperCase() + window.location.pathname.toLocaleLowerCase().substr(2));
+    const [selectedPage, setSelectedPage] = useState(
+        window.location.pathname.toLocaleLowerCase().substr(1).charAt(0).toUpperCase() +
+            window.location.pathname.toLocaleLowerCase().substr(2)
+    );
     const [themeToggle, setThemeToggle] = useState(0);
     const [showWarning, setShowWarning] = useState(true);
 
@@ -68,17 +70,26 @@ export default () => {
     return (
         <MuiThemeProvider theme={ThemeList[themeToggle].theme}>
             <CssBaseline />
-            <DrawerLayout drawer={<NavigationDrawer open={drawerOpen} setOpen={() => setDrawerOpen(!drawerOpen)} onRouteChange={(route) => setSelectedPage(route.charAt(0).toUpperCase() + route.substr(1))} />} style={{minHeight: '100vh'}}>
+            <DrawerLayout
+                drawer={
+                    <NavigationDrawer
+                        open={drawerOpen}
+                        setOpen={() => setDrawerOpen(!drawerOpen)}
+                        onRouteChange={(route) => setSelectedPage(route.charAt(0).toUpperCase() + route.substr(1))}
+                    />
+                }
+                style={{ minHeight: '100vh' }}
+            >
                 {showWarning && (
                     <div className={classes.notice} onClick={() => setShowWarning(false)}>
                         <Typography variant="h5" style={{ marginBottom: 5 }}>
                             THEME DEMO ONLY
-                            </Typography>
+                        </Typography>
                         <Typography variant="body2">
-                            This example is intended to demonstrate the effects of different PX Blue themes on
-                            various components. The data, icons, behaviors, etc. are not representative of a
-                            production application and many areas of the demo are non-functional/non-interactive.
-                            </Typography>
+                            This example is intended to demonstrate the effects of different PX Blue themes on various
+                            components. The data, icons, behaviors, etc. are not representative of a production
+                            application and many areas of the demo are non-functional/non-interactive.
+                        </Typography>
                         <IconButton
                             style={{ position: 'absolute', top: 5, right: 5, color: 'white' }}
                             onClick={() => setShowWarning(false)}
@@ -105,7 +116,12 @@ export default () => {
                 </AppBar>
                 <Main />
 
-                <Fab color="primary" className={classes.fab} variant="extended" onClick={() => setThemeToggle((themeToggle + 1) % ThemeList.length)}>
+                <Fab
+                    color="primary"
+                    className={classes.fab}
+                    variant="extended"
+                    onClick={() => setThemeToggle((themeToggle + 1) % ThemeList.length)}
+                >
                     <FlipIcon style={{ marginRight: 5 }} />
                     Toggle Theme
                 </Fab>
@@ -118,4 +134,4 @@ export default () => {
             </DrawerLayout>
         </MuiThemeProvider>
     );
-}
+};

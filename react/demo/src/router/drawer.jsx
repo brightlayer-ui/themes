@@ -1,4 +1,4 @@
-import {Menu } from '@material-ui/icons';
+import { Menu } from '@material-ui/icons';
 import { useMediaQuery } from '@material-ui/core';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -9,12 +9,7 @@ import AlarmsIcon from '@material-ui/icons/NotificationImportant';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { Device } from '@pxblue/icons-mui';
 
-import {
-    Drawer,
-    DrawerBody,
-    DrawerNavGroup,
-    DrawerHeader,
-} from '@pxblue/react-components';
+import { Drawer, DrawerBody, DrawerNavGroup, DrawerHeader } from '@pxblue/react-components';
 import { useCallback } from 'react';
 
 export const NavigationDrawer = (props) => {
@@ -24,12 +19,15 @@ export const NavigationDrawer = (props) => {
     const history = useHistory();
     const xsDown = useMediaQuery(theme.breakpoints.down('xs'));
 
-    const navigate = useCallback((route) => {
-        history.push(route);
-        setActiveRoute(route);
-        if (xsDown) setOpen(false);
-        onRouteChange(route);
-    }, [history, setActiveRoute, xsDown])
+    const navigate = useCallback(
+        (route) => {
+            history.push(route);
+            setActiveRoute(route);
+            if (xsDown) setOpen(false);
+            onRouteChange(route);
+        },
+        [history, setActiveRoute, xsDown]
+    );
 
     return (
         <Drawer

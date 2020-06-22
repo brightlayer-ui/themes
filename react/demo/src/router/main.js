@@ -22,5 +22,5 @@ const Main = () => {
             <Route path="*" component={Dashboard} />
         </Switch>
     );
-}
+};
 export default Main;
