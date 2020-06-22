@@ -56,7 +56,10 @@
 @mixin pxb-info-list-item-theme($theme) {
     $foreground: map-get($theme, foreground);
     .pxb-info-list-item {
-        color: map-get($foreground, text);
+        color: inherit;
+        &.mat-list-item {
+            color: inherit;
+        }
     }
 }
 
