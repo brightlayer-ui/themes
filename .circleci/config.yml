@@ -1,13 +1,18 @@
 version: 2
 jobs:
-  build:
-    docker: 
-      - image: circleci/node:12.6-browsers
-    steps:
-      - checkout
-      - run: 
-          name: Build All
-          command: yarn build:all
-      - run:
-          name: Verify Artifacts
-          command: yarn test
+    build:
+        docker:
+            - image: circleci/node:12.6-browsers
+        steps:
+            - checkout
+            - run:
+                  name: Prettier Check
+                  command: |
+                      yarn install
+                      yarn prettier:check
+            - run:
+                  name: Build All
+                  command: yarn build:all
+            - run:
+                  name: Verify Artifacts
+                  command: yarn test

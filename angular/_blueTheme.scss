@@ -1,7 +1,6 @@
 @import '~@pxblue/colors/palette';
 
 @mixin bluetheme($primary, $accent) {
-
     /* toolbar*/
     .mat-toolbar {
         background-color: map-get($pxb-gray, 50);
