@@ -11,8 +11,8 @@ import Login from '../pages/login';
 /*
 The main page body, which contains the route definitions
 */
-const Main = ({ style }) => (
-    <main style={{ padding: '0px', flex: '1 1 0px' }}>
+const Main = () => {
+    return (
         <Switch>
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/devices" component={Devices} />
@@ -21,6 +21,6 @@ const Main = ({ style }) => (
             <Route exact path="/login" component={Login} />
             <Route path="*" component={Dashboard} />
         </Switch>
-    </main>
-);
+    );
+};
 export default Main;

@@ -10,5 +10,26 @@ import { SimplePaletteColorOptions } from '@material-ui/core';
 export declare const typography: {
     fontFamily: string;
     fontWeightMedium: number;
+    h6: {
+        fontWeight: number;
+    };
+    subtitle2: {
+        fontWeight: number;
+    };
+    body1: {
+        lineHeight: string;
+    };
+    body2: {
+        lineHeight: string;
+    };
+    button: {
+        fontWeight: number;
+        lineHeight: string;
+    };
+    overline: {
+        letterSpacing: string;
+        fontSize: string;
+        fontWeight: number;
+    };
 };
 export declare const createSimplePalette: (color: PXBlueColor) => SimplePaletteColorOptions;
