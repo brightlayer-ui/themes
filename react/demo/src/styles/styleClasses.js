@@ -1,11 +1,7 @@
-/*
-  This file contains class definitions for use with Material UI's 'withStyles' 
-  method that allows for custom style overrides of the default component visuals.
-*/
-
 import * as Colors from '@pxblue/colors';
+import { makeStyles } from '@material-ui/core';
 
-const styles = (theme) => ({
+const styles = makeStyles((theme) => ({
     '@keyframes slideIn': {
         '0%': {
             transform: 'translate(-100%, -50%)',
@@ -34,53 +30,11 @@ const styles = (theme) => ({
         zIndex: 2000,
         borderRadius: 2,
     },
-    flush: {
-        paddingLeft: theme.spacing(0.5),
-    },
     toolbar: {
         [theme.breakpoints.down('xs')]: {
             paddingLeft: 0,
         },
         paddingLeft: theme.spacing(2),
-    },
-    noPadding: {
-        padding: 0,
-    },
-    drawerMargin: {
-        [theme.breakpoints.down('xs')]: {
-            marginLeft: 0,
-        },
-        marginLeft: theme.spacing(7),
-        transition: 'margin 175ms cubic-bezier(.4, 0, .2, 1)',
-    },
-    drawerMarginFull: {
-        [theme.breakpoints.down('xs')]: {
-            marginLeft: 0,
-        },
-        marginLeft: theme.spacing(45),
-        transition: 'margin 175ms cubic-bezier(.4, 0, .2, 1)',
-    },
-    drawerWidthFull: {
-        width: theme.spacing(45),
-        transition: 'width 175ms cubic-bezier(.4, 0, .2, 1)',
-    },
-    drawerWidthCollapsed: {
-        width: theme.spacing(7),
-        transition: 'width 175ms cubic-bezier(.4, 0, .2, 1)',
-    },
-    drawer: {
-        maxWidth: '85%',
-        width: theme.spacing(45),
-    },
-    header: {
-        height: '180px',
-        color: 'white',
-        background: Colors.blue['500'],
-        padding: '16px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-end',
     },
     notice: {
         padding: '75px 25px',
@@ -100,18 +54,5 @@ const styles = (theme) => ({
         paddingLeft: '15px',
         paddingRight: '15px',
     },
-    routeActive: {
-        backgroundColor: `${theme.palette.primary.main}`,
-    },
-    listItem: {
-        paddingLeft: '15px',
-        paddingRight: '15px',
-    },
-    listItemText: {
-        paddingLeft: '1px',
-    },
-    // these must be defined, even if empty so we can reference them in other nested rules
-    listIcon: {},
-    open: {},
-});
+}));
 export default styles;
