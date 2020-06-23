@@ -1,36 +1,22 @@
 // React/Material/PXBlue Basics
 import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
-import { withStyles } from '@material-ui/core/styles';
 
 // Material-UI Components
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
 import Fab from '@material-ui/core/Fab';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 // Material-UI Icons
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import BoltIcon from '@material-ui/icons/OfflineBolt';
-import AlarmsIcon from '@material-ui/icons/NotificationImportant';
 import FlipIcon from '@material-ui/icons/FlipToBack';
 import MenuIcon from '@material-ui/icons/Menu';
 import PersonIcon from '@material-ui/icons/Person';
-import SettingsIcon from '@material-ui/icons/Settings';
 import Close from '@material-ui/icons/Close';
-
-// PX Blue Icons
-import { Device } from '@pxblue/icons-mui';
 
 // Main routing controller
 import Main from './router/main';
@@ -57,7 +43,7 @@ const ThemeList = [
 The container for the entire app, including the common side-navigation panel and the main body panel.
 */
 export default () => {
-    const [drawerOpen, setDrawerOpen] = useState(true);
+    const [drawerOpen, setDrawerOpen] = useState(false);
     const [selectedPage, setSelectedPage] = useState(
         window.location.pathname.toLocaleLowerCase().substr(1).charAt(0).toUpperCase() +
             window.location.pathname.toLocaleLowerCase().substr(2)

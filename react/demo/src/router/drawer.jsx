@@ -26,7 +26,7 @@ export const NavigationDrawer = (props) => {
             if (xsDown) setOpen(false);
             onRouteChange(route);
         },
-        [history, setActiveRoute, xsDown]
+        [history, setActiveRoute, xsDown, onRouteChange, setOpen]
     );
 
     return (
