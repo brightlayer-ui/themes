@@ -1,5 +1,6 @@
 // Import library functions for theme creation.
 @import '~@angular/material/theming';
+@import '~@pxblue/colors/palette';
 
 @mixin bluetheme($theme) {
     $primary: map-get($theme, primary);
@@ -7,8 +8,18 @@
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
 
+    .body,
+    .mat-drawer-container {
+        background-color: map-get($pxb-white, 500);
+    }
+
     /* toolbar*/
     .mat-toolbar {
+        color: map-get($foreground, light);
+        background-color: map-get($primary, 500);
+        &.mat-primary {
+            background-color: map-get($primary, 500);
+        }
         &.mat-accent {
             background-color: map-get($primary, 700);
         }
@@ -42,7 +53,7 @@
     /* tabbar link*/
     .mat-tab-group.mat-primary .mat-ink-bar,
     .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-        background-color: map-get($pxb-white, 50);
+        background-color: map-get($background, base);
     }
 
     .mat-tab-group.mat-accent .mat-ink-bar,
