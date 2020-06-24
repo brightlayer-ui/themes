@@ -139,7 +139,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
                 app-bar:                    map-get($pxb-darkBlack, 100),
                 background:                 map_get($pxb-black, 800),
                 hover:                      rgba(white, 0.04),
-                card:                       map_get($mat-grey, 800),
+                card:                       map-get($pxb-black, 900),
                 dialog:                     map-get($pxb-black, 900),
                 disabled-button:            rgba(white, 0.12),
                 raised-button:              map-get($pxb-black, 500),

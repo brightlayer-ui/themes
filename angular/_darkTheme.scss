@@ -19,7 +19,6 @@
         color: map-get($pxb-black, 100);
 
         &.mat-primary {
-            // Seems contradictory to how primary and accent palettes are used.
             background-color: map-get($background, base);
             color: map-get($pxb-black, 50);
         }
@@ -32,6 +31,7 @@
     /*tab bar*/
     .mat-tab-group {
         .mat-tab-header {
+            color: red;
             background-color: map-get($pxb-darkBlack, 100);
         }
         &.mat-primary .mat-tab-header {
@@ -47,7 +47,10 @@
         background-color: map-get($primary, 500);
     }
     .mat-tab-group .mat-ink-bar {
-        background-color: map-get($background, light);
+        background-color: map-get($background, base);
+    }
+    .mat-tab-label-active {
+        color: map-get($pxb-black, 50);
     }
 
     /* button*/
@@ -101,43 +104,17 @@
         }
     }
 
-    /* expansion panel*/
-    .mat-expansion-panel-header-description {
-        color: map-get($foreground, text);
-    }
-
     /* snackbar theming */
     .mat-snack-bar-container {
         background-color: map-get($pxb-darkBlack, 500);
         color: white;
     }
 
-    /* bottomsheet */
-    .mat-bottom-sheet-container {
-        background-color: map-get($pxb-black, 900);
-        .mat-list-item-content {
-            color: map-get($foreground, text);
-        }
-    }
-
     /*stepper*/
     .mat-stepper-horizontal,
     .mat-stepper-vertical {
-        background-color: map-get($pxb-black, 900);
-        color: map-get($pxb-gray, 100);
-    }
-    .mat-step-header {
-        .mat-step-icon {
-            background-color: map-get($foreground, text);
-        }
-    }
-
-    /* Expansion Panel*/
-    .mat-expansion-panel {
-        background-color: map-get($pxb-black, 900);
-    }
-    .mat-expansion-panel-header-description {
-        color: map-get($foreground, text);
+        background-color: map-get($background, dialog);
+        color: map-get($foreground, secondary-text);
     }
 
     /* table*/
