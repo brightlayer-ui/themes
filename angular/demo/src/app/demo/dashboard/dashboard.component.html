@@ -31,7 +31,7 @@
                     <mat-list-item *ngFor="let list of device.channels; let last = last">
                         <div style="width: 100%; display: flex; justify-content: space-between;">
                             <mat-icon>{{ list.icon }}</mat-icon>
-                            <div class="list-label" style="margin-bottom: 0; width: 100%">{{ list.label }}</div>
+                            <div class="list-label" style="margin-bottom: 0; width: 100%;">{{ list.label }}</div>
                             <div class="list-value">
                                 <pxb-channel-value value="{{ list.value }}" units="{{ list.unit }}"></pxb-channel-value>
                             </div>
