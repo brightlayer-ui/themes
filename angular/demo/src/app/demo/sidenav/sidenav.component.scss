@@ -104,9 +104,6 @@ section {
     .desktop-toolbar {
         background-color: map-get($pxb-white, 50);
     }
-    .mat-list-item-content {
-        color: map-get($pxb-gray, 600);
-    }
     .primaryLink .mat-list-item-content {
         color: map-get($pxb-blue, 500);
     }

@@ -326,10 +326,10 @@
     tree-kill "1.2.1"
     webpack-sources "1.3.0"
 
-"@pxblue/angular-components@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-1.3.0.tgz#e87b690e4d151842dc2798b4b212f501bf3ab9ff"
-  integrity sha512-JiwPoWp74foVDjQf4NqJIiu1TtB9+/0HtwFi5+hdNIxCA0Npx3lR3AInFiBxxgYb3KIvwQDhqtN8dLtTiJtuVg==
+"@pxblue/angular-components@2.0.0-beta.9":
+  version "2.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-2.0.0-beta.9.tgz#e702f5e10fc32c181e46c48c8d65441d25624545"
+  integrity sha512-oHxL3Of5J/KePbrjUHksmyfIW6UXs1rA3Fxj7t8SSOSk+2N37MFy1Vb9nK6qE4W1pyLrDulN6QBCQXjVf0r4Kg==
   dependencies:
     tslib "^1.9.0"
 
