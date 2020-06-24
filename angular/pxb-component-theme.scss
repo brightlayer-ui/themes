@@ -77,7 +77,7 @@
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
     .pxb-drawer {
-        background-color: map-get($background, light);
+        background-color: map-get($background, base);
 
         .pxb-drawer-header {
             background-color: mat-color($primary);

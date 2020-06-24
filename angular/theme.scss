@@ -57,13 +57,13 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
                 text:               map-get($pxb-black, 500),
                 secondary-text:     map-get($pxb-black, 300),
                 hint-text:          map-get($pxb-gray, 500),
-                base:              black,
+                base:               map-get($pxb-darkBlack, 900),
                 divider:           $dark-dividers,
                 dividers:          $dark-dividers,
                 disabled:          $dark-disabled-text,
                 disabled-button:   rgba(black, 0.26),
                 disabled-text:     $dark-disabled-text,
-                elevation:         black,
+                elevation:         map-get($pxb-darkBlack, 900),
                 icon:              rgba(black, 0.54),
                 icons:             rgba(black, 0.54),
                 slider-min:        rgba(black, 0.87),
@@ -78,10 +78,10 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
                 app-bar:                    map-get($pxb-gray, 50),
                 background:                 map-get($pxb-white, 200),
                 hover:                      rgba(black, 0.04),
-                card:                       white,
-                dialog:                     white,
+                card:                       map-get($pxb-white, 50),
+                dialog:                     map-get($pxb-white, 50),
                 disabled-button:            rgba(black, 0.12),
-                raised-button:              white,
+                raised-button:              map-get($pxb-white, 50),
                 focused-button:             $dark-focused,
                 selected-button:            map_get($mat-grey, 300),
                 selected-disabled-button:   map_get($mat-grey, 400),
@@ -90,7 +90,7 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
                 disabled-list-option:       map_get($mat-grey, 200),
 
                 // Custom colors added to to theme
-                light:             map-get($pxb-white, 50),
+                base:             map-get($pxb-white, 50),
             ),
         )
     );
@@ -118,7 +118,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
                 text:               map-get($pxb-gray, 300),
                 secondary-text:     map-get($pxb-black, 300),
                 hint-text:          map-get($pxb-gray, 300),
-                base:               white,
+                base:               map-get($pxb-white, 50),
                 divider:            $light-dividers,
                 dividers:           $light-dividers,
                 disabled:           $light-disabled-text,
@@ -131,16 +131,16 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
                 slider-off:         rgba(white, 0.3),
                 slider-off-active:  rgba(white, 0.3),
 
-                // Custom
-                light:              map-get($pxb-white, 50),
+                // Custom colors added to to theme
+                light:             map-get($pxb-white, 50),
             ),
             background: (
                 status-bar:                 black,
-                app-bar:                    map_get($mat-grey, 900),
+                app-bar:                    map-get($pxb-darkBlack, 100),
                 background:                 map_get($pxb-black, 800),
                 hover:                      rgba(white, 0.04),
                 card:                       map_get($mat-grey, 800),
-                dialog:                     map_get($mat-grey, 800),
+                dialog:                     map-get($pxb-black, 900),
                 disabled-button:            rgba(white, 0.12),
                 raised-button:              map-get($pxb-black, 500),
                 focused-button:             $light-focused,
@@ -151,8 +151,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
                 disabled-list-option:       black,
 
                 // Custom
-                light:              map-get($pxb-white, 50),
-                pitchBlack:         map-get($pxb-darkBlack, 800),
+                base:         map-get($pxb-darkBlack, 800),
             )
         )
     );

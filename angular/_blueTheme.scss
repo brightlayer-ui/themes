@@ -47,7 +47,7 @@
 
     .mat-tab-group.mat-accent .mat-ink-bar,
     .mat-tab-nav-bar.mat-accent .mat-ink-bar {
-        background-color: map-get($background, light);
+        background-color: map-get($background, base);
     }
 
     .mat-tab-group .mat-ink-bar {
@@ -58,13 +58,13 @@
     .mat-primary,
     .mat-accent {
         .mat-tab-header-pagination-chevron {
-            border-color: map-get($background, light);
+            border-color: map-get($background, base);
         }
     }
 
     /* button*/
     .mat-stroked-button:not([disabled]) {
-        border-color: map-get($background, light);
+        border-color: map-get($background, base);
 
         &.mat-primary {
             border-color: map-get($primary, 500);

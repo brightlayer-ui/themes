@@ -8,10 +8,7 @@
 
     /* Side navigation*/
     .mat-drawer {
-        background-color: map-get($pxb-darkBlack, 900);
-    }
-    .mat-nav-list .mat-list-item:hover {
-        background-color: map-get($pxb-darkBlack, 100);
+        background-color: map-get($background, base);
     }
     .mat-drawer-container {
         background-color: map-get($pxb-darkBlack, 500);
@@ -19,11 +16,11 @@
 
     /* toolbar*/
     .mat-toolbar {
-        background-color: map-get($pxb-darkBlack, 100);
         color: map-get($pxb-black, 100);
 
         &.mat-primary {
-            background-color: map-get($pxb-darkBlack, 900);
+            // Seems contradictory to how primary and accent palettes are used.
+            background-color: map-get($background, base);
             color: map-get($pxb-black, 50);
         }
         &.mat-accent {
@@ -38,7 +35,7 @@
             background-color: map-get($pxb-darkBlack, 100);
         }
         &.mat-primary .mat-tab-header {
-            background-color: map-get($pxb-darkBlack, 900);
+            background-color: map-get($background, base);
         }
         &.mat-accent .mat-tab-header {
             background-color: map-get($pxb-darkBlack, 400);
@@ -72,7 +69,7 @@
     /*Body*/
     .mat-drawer-content {
         background-color: map-get($pxb-darkBlack, 100);
-        color: map-get($pxb-gray, 300);
+        color: map-get($foreground, text);
     }
 
     /* for the input forms fields */
@@ -82,31 +79,31 @@
     .mat-form-field-appearance-legacy .mat-form-field-label,
     .mat-form-field-label,
     .mat-form-field-appearance-standard .mat-form-field-label {
-        color: map-get($pxb-gray, 300);
+        color: map-get($foreground, text);
     }
 
     /* selection option*/
     .mat-option.mat-selected:not(.mat-option-disabled) {
-        color: map-get($pxb-gray, 300);
+        color: map-get($foreground, text);
     }
     .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-        color: map-get($pxb-gray, 300);
+        color: map-get($foreground, text);
     }
     .mat-accent .mat-option.mat-selected:not(.mat-option-disabled) {
-        color: map-get($pxb-gray, 300);
+        color: map-get($foreground, text);
     }
 
     /* dropdown list*/
     .mat-select-panel {
         background-color: map-get($pxb-black, 900);
         .mat-option {
-            color: map-get($pxb-gray, 300);
+            color: map-get($foreground, text);
         }
     }
 
     /* expansion panel*/
     .mat-expansion-panel-header-description {
-        color: map-get($pxb-gray, 300);
+        color: map-get($foreground, text);
     }
 
     /* snackbar theming */
@@ -119,13 +116,8 @@
     .mat-bottom-sheet-container {
         background-color: map-get($pxb-black, 900);
         .mat-list-item-content {
-            color: map-get($pxb-gray, 300);
+            color: map-get($foreground, text);
         }
-    }
-
-    /* modal */
-    .mat-dialog-container {
-        background-color: map-get($pxb-black, 900);
     }
 
     /*stepper*/
@@ -136,13 +128,8 @@
     }
     .mat-step-header {
         .mat-step-icon {
-            background-color: map-get($pxb-gray, 300);
+            background-color: map-get($foreground, text);
         }
-    }
-
-    /*chips*/
-    .mat-chip.mat-standard-chip {
-        background-color: map-get($pxb-black, 500);
     }
 
     /* Expansion Panel*/
