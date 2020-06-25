@@ -6,18 +6,18 @@
     </pxb-drawer-header>
     <pxb-drawer-body>
         <pxb-drawer-nav-group>
-            <pxb-drawer-nav-item *ngFor="let navItem of navItems"
-                                 [title]="navItem.title"
-                                 [selected]="selectedItemId === navItem.title"
-                                 (select)="setActive(navItem.title);"
-                                 [routerLink]="navItem.route"
+            <pxb-drawer-nav-item
+                *ngFor="let navItem of navItems"
+                [title]="navItem.title"
+                [selected]="selectedItemId === navItem.title"
+                (select)="setActive(navItem.title)"
+                [routerLink]="navItem.route"
             >
                 <mat-icon pxb-icon>{{ navItem.icon }}</mat-icon>
             </pxb-drawer-nav-item>
         </pxb-drawer-nav-group>
     </pxb-drawer-body>
 </pxb-drawer>
-
 
 <!--<a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/settings" (click)="closeNav()">
                         <mat-icon matListIcon class="nav-icon">settings</mat-icon>

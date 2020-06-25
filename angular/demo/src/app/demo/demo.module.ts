@@ -14,8 +14,7 @@ import { DeleteSnackbarComponent } from './devices/tabs/overview/delete-snackbar
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../core/shared.module';
-import { NavigationService } from '../services/navigation.service';
-import {DrawerModule} from "@pxblue/angular-components";
+import { DrawerModule } from '@pxblue/angular-components';
 
 @NgModule({
     imports: [AppRoutingModule, SharedModule, DrawerModule],
@@ -40,7 +39,6 @@ import {DrawerModule} from "@pxblue/angular-components";
         LocationBottomSheetExampleComponent,
         LoginDialogComponent,
     ],
-    providers: [NavigationService],
     exports: [SidenavComponent],
 })
 export class DemoModule {}

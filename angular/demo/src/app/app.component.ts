@@ -1,7 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import {DrawerLayoutVariantType} from "@pxblue/angular-components";
-import {StateService} from "./services/state.service";
-import {ViewportService} from "./services/viewport.service";
+import { DrawerLayoutVariantType } from '@pxblue/angular-components';
+import { StateService } from './services/state.service';
+import { ViewportService } from './services/viewport.service';
 
 @Component({
     selector: 'my-app',
@@ -15,9 +15,11 @@ export class AppComponent implements OnInit {
     currentTheme: Theme;
     themes = [new Theme('pxb-blue', 'Blue Theme'), new Theme('pxb-blue-dark', 'Blue Dark Theme')];
 
-    constructor(private renderer: Renderer2,
-                private readonly viewportService: ViewportService,
-                public readonly stateService: StateService,) {}
+    constructor(
+        private renderer: Renderer2,
+        private readonly viewportService: ViewportService,
+        public readonly stateService: StateService
+    ) {}
 
     ngOnInit(): void {
         this.applyTheme(this.themes[0]);
