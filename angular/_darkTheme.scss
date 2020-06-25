@@ -6,17 +6,20 @@
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
 
+    .body,
+    .mat-drawer-container {
+        background-color: map-get($foreground, app-bar);
+    }
+
     /* Side navigation*/
     .mat-drawer {
         background-color: map-get($background, base);
-    }
-    .mat-drawer-container {
-        background-color: map-get($pxb-darkBlack, 500);
     }
 
     /* toolbar*/
     .mat-toolbar {
         color: map-get($pxb-black, 100);
+
 
         &.mat-primary {
             background-color: map-get($background, base);

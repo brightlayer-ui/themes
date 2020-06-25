@@ -10,7 +10,7 @@
 
     .body,
     .mat-drawer-container {
-        background-color: map-get($pxb-white, 500);
+        background-color: map-get($foreground, app-bar);
     }
 
     /* toolbar*/
