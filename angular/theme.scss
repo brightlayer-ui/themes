@@ -57,7 +57,38 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
                 text: map-get($pxb-black, 500),
                 secondary-text: map-get($pxb-black, 300),
                 hint-text: map-get($pxb-gray, 500),
-                light: map-get($pxb-white, 50),
+                base: map-get($pxb-darkBlack, 900),
+                divider: $dark-dividers,
+                dividers: $dark-dividers,
+                disabled: $dark-disabled-text,
+                disabled-button: rgba(black, 0.26),
+                disabled-text: $dark-disabled-text,
+                elevation: map-get($pxb-darkBlack, 900),
+                icon: rgba(black, 0.54),
+                icons: rgba(black, 0.54),
+                slider-min: rgba(black, 0.87),
+                slider-off: rgba(black, 0.26),
+                slider-off-active: rgba(black, 0.38),
+                // Custom colors added to to theme
+                    light: map-get($pxb-white, 50),
+            ),
+            background: (
+                status-bar: map_get($mat-grey, 300),
+                app-bar: map-get($pxb-gray, 50),
+                background: map-get($pxb-gray, 50),
+                hover: rgba(black, 0.04),
+                card: map-get($pxb-white, 50),
+                dialog: map-get($pxb-white, 50),
+                disabled-button: rgba(black, 0.12),
+                raised-button: map-get($pxb-white, 50),
+                focused-button: $dark-focused,
+                selected-button: map_get($mat-grey, 300),
+                selected-disabled-button: map_get($mat-grey, 400),
+                disabled-button-toggle: map_get($mat-grey, 200),
+                unselected-chip: map_get($mat-grey, 300),
+                disabled-list-option: map_get($mat-grey, 200),
+                // Custom colors added to to theme
+                    base: map-get($pxb-white, 50),
             ),
         )
     );
@@ -72,7 +103,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
     @include reasonable-margins();
     @include bodyfont();
     @include typography();
-    @include bluetheme($pxb-blue-primary, $pxb-blue-accent);
+    @include bluetheme($pxb-blue-theme);
     @include pxb-components-theme($pxb-blue-theme);
 }
 
@@ -85,7 +116,38 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
                 text: map-get($pxb-gray, 300),
                 secondary-text: map-get($pxb-black, 300),
                 hint-text: map-get($pxb-gray, 300),
-                light: map-get($pxb-white, 50),
+                base: map-get($pxb-white, 50),
+                divider: $light-dividers,
+                dividers: $light-dividers,
+                disabled: $light-disabled-text,
+                disabled-button: rgba(white, 0.3),
+                disabled-text: $light-disabled-text,
+                elevation: black,
+                icon: white,
+                icons: white,
+                slider-min: white,
+                slider-off: rgba(white, 0.3),
+                slider-off-active: rgba(white, 0.3),
+                // Custom colors added to to theme
+                    light: map-get($pxb-white, 50),
+            ),
+            background: (
+                status-bar: black,
+                app-bar: map-get($pxb-darkBlack, 100),
+                background: map_get($pxb-darkBlack, 100),
+                hover: rgba(white, 0.04),
+                card: map-get($pxb-black, 900),
+                dialog: map-get($pxb-black, 900),
+                disabled-button: rgba(white, 0.12),
+                raised-button: map-get($pxb-black, 500),
+                focused-button: $light-focused,
+                selected-button: map_get($mat-grey, 900),
+                selected-disabled-button: map_get($mat-grey, 800),
+                disabled-button-toggle: black,
+                unselected-chip: map_get($mat-grey, 700),
+                disabled-list-option: black,
+                // Custom
+                    base: map-get($pxb-darkBlack, 800),
             ),
         )
     );
@@ -99,6 +161,6 @@ $pxb-blue-dark-theme: pxb-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-acce
     @include reasonable-margins();
     @include bodyfont();
     @include typography();
-    @include darktheme($pxb-blue-dark-primary, $pxb-blue-dark-accent);
+    @include darktheme($pxb-blue-dark-theme);
     @include pxb-components-theme($pxb-blue-dark-theme);
 }

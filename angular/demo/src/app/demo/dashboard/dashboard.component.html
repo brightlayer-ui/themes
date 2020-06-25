@@ -1,12 +1,12 @@
 <app-title></app-title>
 <div style="padding: 20px;">
-    <mat-grid-list #grid [cols]="cols" gutterSize="12px" rowHeight="260px">
+    <mat-grid-list #grid [cols]="cols" gutterSize="16px" rowHeight="268px">
         <mat-grid-tile *ngFor="let device of deviceList">
             <mat-card class="padding0">
                 <mat-list class="padding0">
                     <pxb-hero-banner [divider]="true">
                         <pxb-hero label="Grade" value="{{ device.heroValue }}" units="/100" size="36">
-                            <span [style.color]="gradeInterpretColor(device.heroValue)" primary
+                            <span [style.color]="gradeInterpretColor(device.heroValue)" pxb-primary
                                 >{{ interpretIcon(device.heroValue) }}
                             </span>
                         </pxb-hero>
@@ -15,7 +15,7 @@
                                 [style.color]="interpretColor(100 - device.loadValue)"
                                 percent="{{ device.loadValue }}"
                                 size="36"
-                                primary
+                                pxb-primary
                             ></pie-progress>
                             <pxb-channel-value value="{{ device.loadValue }}" units="%"></pxb-channel-value>
                         </pxb-hero>
@@ -24,14 +24,14 @@
                                 [style.color]="interpretColor(device.battery)"
                                 percent="{{ device.battery }}"
                                 size="36"
-                                primary
+                                pxb-primary
                             ></battery-progress>
                         </pxb-hero>
                     </pxb-hero-banner>
                     <mat-list-item *ngFor="let list of device.channels; let last = last">
                         <div style="width: 100%; display: flex; justify-content: space-between;">
                             <mat-icon>{{ list.icon }}</mat-icon>
-                            <span class="list-label" style="margin-bottom: 0;">{{ list.label }}</span>
+                            <div class="list-label" style="margin-bottom: 0; width: 100%;">{{ list.label }}</div>
                             <div class="list-value">
                                 <pxb-channel-value value="{{ list.value }}" units="{{ list.unit }}"></pxb-channel-value>
                             </div>

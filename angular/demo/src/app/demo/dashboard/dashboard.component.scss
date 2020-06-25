@@ -1,13 +1,3 @@
-@import '~@pxblue/colors/palette.scss';
-
-mat-list {
-    color: map-get($pxb-gray, 800);
-}
-
-.mat-list-base .mat-list-item {
-    color: inherit;
-}
-
 .list-label {
     margin: 0;
     margin-left: 15px;
