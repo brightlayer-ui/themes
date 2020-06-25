@@ -1,65 +1,48 @@
-import { ChangeDetectorRef, Component, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { NavigationService } from '../../services/navigation.service';
-import { MediaMatcher } from '@angular/cdk/layout';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { DrawerNavItem } from '@pxblue/angular-components';
+import { StateService } from '../../services/state.service';
 
 @Component({
     selector: 'app-sidenav',
     templateUrl: './sidenav.component.html',
-    styleUrls: ['./sidenav.component.scss'],
     encapsulation: ViewEncapsulation.None,
 })
-export class SidenavComponent implements OnDestroy {
-    private _mobileQueryListener: () => void;
+export class SidenavComponent {
+    selectedItemId: string;
+    navItems: (DrawerNavItem & { route: string })[] = [
+        {
+            title: 'Dashboard',
+            icon: 'dashboard',
+            route: '/dashboard',
+        },
+        {
+            title: 'Devices',
+            icon: 'devices',
+            route: '/devices',
+        },
+        {
+            title: 'Alarms',
+            icon: 'notifications_none',
+            route: '/alarms',
+        },
+        {
+            title: 'Settings',
+            icon: 'settings',
+            route: '/settings',
+        },
+    ];
 
-    mobileQuery: MediaQueryList;
-    hovering = false; // is the navigation menu hovered over
-    hasLeft = true; // used for handling hover behavior on nav menu
-    open = false; // is the nav menu open
-    userMenu = false; // toggles menu mode on mobile
-    goingMobile = false; // we use this to prevent the flash of mobile sidenav when making the window smaller
+    constructor(public readonly stateService: StateService) {}
 
-    constructor(
-        private _navigationService: NavigationService,
-        changeDetectorRef: ChangeDetectorRef,
-        media: MediaMatcher
-    ) {
-        this.mobileQuery = media.matchMedia('(max-width: 600px)');
-        this._mobileQueryListener = () => {
-            if (this.mobileQuery.matches) {
-                this.goingMobile = true;
-            }
-        };
-        this.mobileQuery.addListener(this._mobileQueryListener);
-
-        _navigationService.navToggled$.subscribe((value) => {
-            this.open = !this.open;
-            changeDetectorRef.detectChanges();
-        });
+    toggleDrawer(): void {
+        this.stateService.setDrawerOpen(!this.stateService.getDrawerOpen());
     }
 
-    ngOnDestroy(): void {
-        this.mobileQuery.removeListener(this._mobileQueryListener);
+    isOpen(): boolean {
+        return this.stateService.getDrawerOpen();
     }
 
-    toggleDesktopMenu() {
-        this._navigationService.toggleMenu();
-    }
-
-    leave() {
-        this.hovering = false;
-        this.hasLeft = true;
-    }
-
-    enter() {
-        if (this.hasLeft) {
-            this.hovering = true;
-        }
-        this.hasLeft = false;
-    }
-
-    closeNav() {
-        this.open = false;
-        this.hovering = false;
-        this.hasLeft = false;
+    setActive(id: string): void {
+        this.selectedItemId = id;
     }
 }
