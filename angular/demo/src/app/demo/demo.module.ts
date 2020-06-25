@@ -15,9 +15,10 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../core/shared.module';
 import { NavigationService } from '../services/navigation.service';
+import {DrawerModule} from "@pxblue/angular-components";
 
 @NgModule({
-    imports: [AppRoutingModule, SharedModule],
+    imports: [AppRoutingModule, SharedModule, DrawerModule],
     declarations: [
         AddDialogComponent,
         AlarmsComponent,
