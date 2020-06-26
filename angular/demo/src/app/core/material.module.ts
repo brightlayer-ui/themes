@@ -58,6 +58,5 @@ import {MatDividerModule} from "@angular/material/divider";
         MatTableModule,
         MatDividerModule,
     ],
-    providers: [MatDialog, { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }],
 })
 export class MaterialModule {}
