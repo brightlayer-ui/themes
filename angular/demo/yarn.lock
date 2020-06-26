@@ -333,24 +333,20 @@
   dependencies:
     tslib "^1.9.0"
 
-"@pxblue/angular-themes@latest":
-  version "4.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-4.0.0-alpha.0.tgz#1535eead4c325059ef40aa0f579506cd4505c71f"
-  integrity sha512-mbSPa6kNS6b5Y0R1VUsgXzbRTmaK9cUNjKTF+f2eluhuMvpBOLViZP8WShsxdYzGg4d6vPPQcc/C8EXupyFPvg==
+"@pxblue/angular-themes@^5.0.0-beta.8":
+  version "5.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-5.0.0-beta.8.tgz#73325b1b8282977fa37fd39117f5f29ae565f387"
+  integrity sha512-u8GYKcKyrZbfV/LKzoT54wqKziu0aTfnF8wcFAOBESdbb5mNewWo2QTxB25cDehVdjU93CU3Kar+IWdizgLdCg==
   dependencies:
-    "@pxblue/colors" "^2.0.0"
+    "@pxblue/colors" "^3.0.0"
+    typeface-open-sans "^0.0.75"
 
-"@pxblue/colors@3.0.0":
+"@pxblue/colors@3.0.0", "@pxblue/colors@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@pxblue/colors/-/colors-3.0.0.tgz#080fb5cfd5a08fea018ece7cac8022ed38f7878f"
   integrity sha512-rMFW4an1V9M5KX4BiNzrbbaYe2fic4o9iGL8/bPYvITbeiwgAapyFX0VbMIoo8XKlIbNaxyn7oWnrxzI/tp8Rw==
   dependencies:
     "@pxblue/types" "^2.0.0"
-
-"@pxblue/colors@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/colors/-/colors-2.0.0.tgz#fa7d2abde80485537f26521df4c3f6e56dd93361"
-  integrity sha512-1JoCVC17nHmC6bbqg2nCAHJgJLHAWNIAmS/UZ3h8u0TnvU5C6qI+CpCrn/sP6bNSQ3LLhEkdVpjKna1kxCXdhg==
 
 "@pxblue/ng-progress-icons@1.1.4":
   version "1.1.4"
