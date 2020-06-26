@@ -15,7 +15,6 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../core/shared.module';
 import { DrawerModule } from '@pxblue/angular-components';
-import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog} from "@angular/material/dialog";
 
 @NgModule({
     imports: [AppRoutingModule, SharedModule, DrawerModule],
@@ -41,6 +40,5 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog} from "@angular/material/dialog";
         LoginDialogComponent,
     ],
     exports: [SidenavComponent],
-    providers: [MatDialog, { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }],
 })
 export class DemoModule {}
