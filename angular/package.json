@@ -8,8 +8,7 @@
         "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start",
         "link:themes": "bash ./scripts/linkThemes.sh",
         "test": "bash ./scripts/buildTest.sh",
-        "prettier": "prettier \"*.scss\" --write",
-        "build": "sass _darkTheme.scss "
+        "prettier": "prettier \"*.scss\" --write"
     },
     "repository": {
         "type": "git",
@@ -42,8 +41,7 @@
     "devDependencies": {
         "@angular/material": ">=8.2.0",
         "@pxblue/prettier-config": "^1.0.2",
-        "prettier": "^2.0.4",
-        "sass": "^1.26.8"
+        "prettier": "^2.0.4"
     },
     "peerDependencies": {
         "@angular/material": ">=8.2.0"
