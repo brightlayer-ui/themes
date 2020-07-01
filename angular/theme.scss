@@ -1,5 +1,5 @@
 /**
-Copyright (c) 2018-present, Eaton
+Copyright (c) 2020-present, Eaton
 
 All rights reserved.
 
@@ -8,27 +8,29 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 
 @import '~@angular/material/_theming.scss';
 @import '~@pxblue/colors/palette.scss';
+@import 'pxb-component-theme';
 @import './margins';
 @import './fonts';
-@import './darkTheme';
-@import './blueTheme';
+@import './typography';
+@import 'darkTheme';
+@import 'blueTheme';
 
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config(
     $font-family: '"Open Sans", Arial, Helvetica, sans-serif;',
-    $display-4 : mat-typography-level(6rem, 1, 300),
-    $display-3 : mat-typography-level(3.75rem, 1, 300),
-    $display-2 : mat-typography-level(3rem, 1.04, 400),
-    $display-1 : mat-typography-level(2.125rem, 1.17, 400),
-    $headline : mat-typography-level(1.5rem, 1.33, 400),
-    $title : mat-typography-level(1.25rem, 1.6, 500),
-    $subheading-2 : mat-typography-level(1rem, 1.75, 400),
-    $subheading-1 : mat-typography-level(.875rem, 1.57, 500),
-    $body-2 : mat-typography-level(0.875rem, 1.71429, 500),
-    $body-1 : mat-typography-level(0.875rem, 1.46429, 400),
-    $caption : mat-typography-level(.75rem, 1.35, 400),
-    $button : mat-typography-level(0.875rem, 1, 500),
-    $input : mat-typography-level(inherit, 1.125, 400)
+    $display-4: mat-typography-level(6rem, 1.167, 300),
+    $display-3: mat-typography-level(3.75rem, 1.2, 300),
+    $display-2: mat-typography-level(3rem, 1.167, 400),
+    $display-1: mat-typography-level(2.125rem, 1.235, 400),
+    $headline: mat-typography-level(1.5rem, 1.334, 400),
+    $title: mat-typography-level(1.25rem, 1.6, 600),
+    $subheading-2: mat-typography-level(1rem, 1.75, 400),
+    $subheading-1: mat-typography-level(0.875rem, 1.57, 600),
+    $body-2: mat-typography-level(0.875rem, 1.43, 500),
+    $body-1: mat-typography-level(1rem, 1.5, 400),
+    $caption: mat-typography-level(0.75rem, 1.66, 400),
+    $button: mat-typography-level(0.875rem, 1, 600),
+    $input: mat-typography-level(inherit, 1.125, 400),
 );
 
 /*
@@ -39,36 +41,126 @@ $custom-typography: mat-typography-config(
 */
 @include mat-core($custom-typography);
 
-
 // Material default theme colors
 $material-theme-primary: mat-palette($mat-indigo, 700, 300, 900);
 $material-theme-accent: mat-palette($mat-light-blue);
 $material-theme-warn: mat-palette($mat-deep-orange, A200);
 $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent, $material-theme-warn);
-    @include angular-material-theme($material-theme);
-
+@include angular-material-theme($material-theme);
 
 // Blue Theme
+@function pxb-light-theme($primary, $accent, $warn) {
+    @return map-merge(
+        mat-light-theme($primary, $accent, $warn),
+        (
+            foreground: (
+                text: map-get($pxb-black, 500),
+                secondary-text: map-get($pxb-black, 300),
+                hint-text: map-get($pxb-gray, 500),
+                base: map-get($pxb-darkBlack, 900),
+                divider: $dark-dividers,
+                dividers: $dark-dividers,
+                disabled: $dark-disabled-text,
+                disabled-button: rgba(black, 0.26),
+                disabled-text: $dark-disabled-text,
+                elevation: map-get($pxb-darkBlack, 900),
+                icon: rgba(black, 0.54),
+                icons: rgba(black, 0.54),
+                slider-min: rgba(black, 0.87),
+                slider-off: rgba(black, 0.26),
+                slider-off-active: rgba(black, 0.38),
+                // Custom colors added to to theme
+                    light: map-get($pxb-white, 50),
+            ),
+            background: (
+                status-bar: map_get($mat-grey, 300),
+                app-bar: map-get($pxb-gray, 50),
+                background: map-get($pxb-gray, 50),
+                hover: rgba(black, 0.04),
+                card: map-get($pxb-white, 50),
+                dialog: map-get($pxb-white, 50),
+                disabled-button: rgba(black, 0.12),
+                raised-button: map-get($pxb-white, 50),
+                focused-button: $dark-focused,
+                selected-button: map_get($mat-grey, 300),
+                selected-disabled-button: map_get($mat-grey, 400),
+                disabled-button-toggle: map_get($mat-grey, 200),
+                unselected-chip: map_get($mat-grey, 300),
+                disabled-list-option: map_get($mat-grey, 200),
+                // Custom colors added to to theme
+                    base: map-get($pxb-white, 50),
+            ),
+        )
+    );
+}
+
 $pxb-blue-primary: mat-palette($pxb-blue);
-$pxb-blue-accent : mat-palette($pxb-lightBlue, 500);
+$pxb-blue-accent: mat-palette($pxb-lightBlue, 500);
 $pxb-blue-warn: mat-palette($pxb-red, 500);
-$pxb-blue-theme : mat-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-warn);
-.pxb-blue{
+$pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-warn);
+.pxb-blue {
     @include angular-material-theme($pxb-blue-theme);
     @include reasonable-margins();
     @include bodyfont();
-    @include bluetheme($pxb-blue-primary, $pxb-blue-accent);
+    @include typography();
+    @include bluetheme($pxb-blue-theme);
+    @include pxb-components-theme($pxb-blue-theme);
 }
 
 // Blue Dark Theme
+@function pxb-dark-theme($primary, $accent, $warn) {
+    @return map-merge(
+        mat-dark-theme($primary, $accent, $warn),
+        (
+            foreground: (
+                text: map-get($pxb-gray, 300),
+                secondary-text: map-get($pxb-black, 300),
+                hint-text: map-get($pxb-gray, 300),
+                base: map-get($pxb-white, 50),
+                divider: $light-dividers,
+                dividers: $light-dividers,
+                disabled: $light-disabled-text,
+                disabled-button: rgba(white, 0.3),
+                disabled-text: $light-disabled-text,
+                elevation: black,
+                icon: white,
+                icons: white,
+                slider-min: white,
+                slider-off: rgba(white, 0.3),
+                slider-off-active: rgba(white, 0.3),
+                // Custom colors added to to theme
+                    light: map-get($pxb-white, 50),
+            ),
+            background: (
+                status-bar: black,
+                app-bar: map-get($pxb-darkBlack, 100),
+                background: map_get($pxb-darkBlack, 100),
+                hover: rgba(white, 0.04),
+                card: map-get($pxb-black, 900),
+                dialog: map-get($pxb-black, 900),
+                disabled-button: rgba(white, 0.12),
+                raised-button: map-get($pxb-black, 500),
+                focused-button: $light-focused,
+                selected-button: map_get($mat-grey, 900),
+                selected-disabled-button: map_get($mat-grey, 800),
+                disabled-button-toggle: black,
+                unselected-chip: map_get($mat-grey, 700),
+                disabled-list-option: black,
+                // Custom
+                    base: map-get($pxb-darkBlack, 800),
+            ),
+        )
+    );
+}
 $pxb-blue-dark-primary: mat-palette($pxb-blue, 500);
-$pxb-blue-dark-accent : mat-palette($pxb-lightBlue, 500);
+$pxb-blue-dark-accent: mat-palette($pxb-lightBlue, 500);
 $pxb-blue-dark-warn: mat-palette($pxb-red, 500);
-$pxb-blue-dark-theme : mat-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-accent, $pxb-blue-dark-warn);
-.pxb-blue-dark{
+$pxb-blue-dark-theme: pxb-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-accent, $pxb-blue-dark-warn);
+.pxb-blue-dark {
     @include angular-material-theme($pxb-blue-dark-theme);
     @include reasonable-margins();
     @include bodyfont();
-    @include darktheme($pxb-blue-dark-primary, $pxb-blue-dark-accent);
-
+    @include typography();
+    @include darktheme($pxb-blue-dark-theme);
+    @include pxb-components-theme($pxb-blue-dark-theme);
 }

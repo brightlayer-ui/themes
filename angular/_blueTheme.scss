@@ -1,62 +1,83 @@
-@import "~@pxblue/colors/palette";
-@mixin bluetheme($primary, $accent) {
-  /* toolbar*/
-  .mat-toolbar {
-    background-color: map-get($pxb-gray, 50);
-    color: map-get($pxb-black, 500);
-    &.mat-accent {
-      background-color: map-get($primary, 700);
-    }
-  }
+// Import library functions for theme creation.
+@import '~@angular/material/theming';
+@import '~@pxblue/colors/palette';
 
-  /*tab bar*/
-  .mat-tab-group {
-    .mat-tab-header {
-      background-color: map-get($pxb-gray, 50);
-    }
-    &.mat-primary .mat-tab-header {
-      background-color: map-get($primary, 500);
-      .mat-tab-label,
-      .mat-tab-link {
-        color: map-get($pxb-white, 50);
-      }
-    }
-    &.mat-accent .mat-tab-header {
-      background-color: map-get($primary, 700);
-      .mat-tab-label,
-      .mat-tab-link {
-        color: map-get($pxb-white, 50);
-      }
-    }
-  }
-  /* tabbar link*/
-  .mat-tab-group.mat-primary .mat-ink-bar,
-  .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-    background-color: map-get($pxb-white, 50);
-  }
-  .mat-tab-group.mat-accent .mat-ink-bar,
-  .mat-tab-nav-bar.mat-accent .mat-ink-bar {
-    background-color: map-get($pxb-white, 50);
-  }
-  .mat-tab-group .mat-ink-bar {
-    background-color: map-get($primary, 500);
-  }
-  /* tab bar arrows*/
-  .mat-primary,
-  .mat-accent {
-    .mat-tab-header-pagination-chevron {
-      border-color: map-get($pxb-white, 50);
-    }
-  }
+@mixin bluetheme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
 
-  /* button*/
-  .mat-stroked-button:not([disabled]) {
-    border-color: map-get($pxb-white, 50);
-    &.mat-primary {
-      border-color: map-get($primary, 500);
+    /* toolbar*/
+    .mat-toolbar {
+        color: map-get($foreground, light);
+        background-color: map-get($primary, 500);
+        &.mat-primary {
+            background-color: map-get($primary, 500);
+        }
+        &.mat-accent {
+            background-color: map-get($primary, 700);
+        }
     }
-    &.mat-accent {
-      border-color: map-get($accent, 500);
+
+    /*tab bar*/
+    .mat-tab-group {
+        .mat-tab-header {
+            background-color: map-get($background, app-bar);
+        }
+
+        &.mat-primary .mat-tab-header {
+            background-color: map-get($primary, 500);
+
+            .mat-tab-label,
+            .mat-tab-link {
+                color: map-get($foreground, light);
+            }
+        }
+
+        &.mat-accent .mat-tab-header {
+            background-color: map-get($primary, 700);
+
+            .mat-tab-label,
+            .mat-tab-link {
+                color: map-get($foreground, light);
+            }
+        }
     }
-  }
+
+    /* tabbar link*/
+    .mat-tab-group.mat-primary .mat-ink-bar,
+    .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+        background-color: map-get($background, base);
+    }
+
+    .mat-tab-group.mat-accent .mat-ink-bar,
+    .mat-tab-nav-bar.mat-accent .mat-ink-bar {
+        background-color: map-get($background, base);
+    }
+
+    .mat-tab-group .mat-ink-bar {
+        background-color: map-get($primary, 500);
+    }
+
+    /* tab bar arrows*/
+    .mat-primary,
+    .mat-accent {
+        .mat-tab-header-pagination-chevron {
+            border-color: map-get($background, base);
+        }
+    }
+
+    /* button*/
+    .mat-stroked-button:not([disabled]) {
+        border-color: map-get($background, base);
+
+        &.mat-primary {
+            border-color: map-get($primary, 500);
+        }
+
+        &.mat-accent {
+            border-color: map-get($accent, 500);
+        }
+    }
 }

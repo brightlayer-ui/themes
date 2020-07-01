@@ -1,21 +1,20 @@
-import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-reports',
-    templateUrl: './reports.component.html'
+    templateUrl: './reports.component.html',
 })
 export class ReportsComponent {
-
     firstFormGroup: FormGroup;
     secondFormGroup: FormGroup;
 
     constructor(private formBuilder: FormBuilder) {
         this.firstFormGroup = this.formBuilder.group({
-            firstCtrl: ['', Validators.required]
+            firstCtrl: ['', Validators.required],
         });
         this.secondFormGroup = this.formBuilder.group({
-            secondCtrl: ['', Validators.required]
+            secondCtrl: ['', Validators.required],
         });
     }
 }

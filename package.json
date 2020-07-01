@@ -2,7 +2,7 @@
     "name": "@pxblue/themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "4.0.0",
+    "version": "0.0.0",
     "description": "PXBlue themes for Eaton applications",
     "scripts": {
         "test": "bash ./buildTest.sh",
@@ -11,8 +11,11 @@
         "build:react-native": "cd react-native && yarn build && cd ..",
         "start:angular": "cd angular && yarn start",
         "start:react": "cd react && yarn start",
-        "start:react-native": "cd react && yarn start"
+        "start:react-native": "cd react && yarn start",
+        "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html,md}\" --write",
+        "prettier:check": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html,md}\" --check"
     },
+    "prettier": "@pxblue/prettier-config",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/pxblue/themes.git"
@@ -28,11 +31,9 @@
         "url": "https://github.com/pxblue/themes/issues"
     },
     "homepage": "https://github.com/pxblue/themes#readme",
-    "dependencies": {
-        "@pxblue/angular-themes": "^4.0.0",
-        "@pxblue/react-themes": "^4.0.0",
-        "@pxblue/react-native-themes": "^4.0.0",
-        "typeface-open-sans": "^0.0.75"
+    "devDependencies": {
+        "@pxblue/prettier-config": "^1.0.2",
+        "prettier": "^2.0.2"
     },
     "files": [
         "package.json",

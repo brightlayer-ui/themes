@@ -1,21 +1,11 @@
-@import "~@pxblue/colors/palette.scss";
-
-mat-list {
-  color: map-get($pxb-gray, 800);
-}
-
-.mat-list-base .mat-list-item{
-  color: inherit;
-}
-
-.list-label{
-  margin: 0;
-  margin-left: 15px;
+.list-label {
+    margin: 0;
+    margin-left: 15px;
 }
 
 .list-value {
-  flex: 1 1 0px;
-  text-align: right;
+    flex: 1 1 0px;
+    text-align: right;
 }
 
 .mat-card {
@@ -24,10 +14,10 @@ mat-list {
     height: 100%;
 }
 
-.padding0{
-  padding: 0;
+.padding0 {
+    padding: 0;
 }
 
-mat-grid-tile{
-  overflow: visible;
+mat-grid-tile {
+    overflow: visible;
 }

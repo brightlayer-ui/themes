@@ -1,42 +1,43 @@
 {
-  "name": "@pxblue/storybook-themes",
-  "author": "PX Blue <pxblue@eaton.com>",
-  "license": "BSD-3-Clause",
-  "version": "1.0.1",
-  "description": "Storybook theme for PX Blue documentation",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "test": "bash ./scripts/buildTest.sh"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pxblue/themes.git"
-  },
-  "bugs": {
-    "url": "https://github.com/pxblue/themes/issues"
-  },
-  "homepage": "https://github.com/pxblue/themes/tree/master/storybook",
-  "keywords": [
-    "storybook",
-    "theme",
-    "pxblue"
-  ],
-  "devDependencies": {
-    "@pxblue/colors": "^2.0.0",
-    "@storybook/theming": "^5.3.13"
-  },
-  "peerDependencies": {
-    "@pxblue/colors": "^2.0.0",
-    "@storybook/theming": "^5.3.13"
-  },
-  "files": [
-      "package.json",
-      "README.md",
-      "LICENSE",
-      "CHANGELOG.md",
-      "index.js",
-      "index.d.ts"
-  ]
+    "name": "@pxblue/storybook-themes",
+    "author": "PX Blue <pxblue@eaton.com>",
+    "license": "BSD-3-Clause",
+    "version": "1.1.0",
+    "description": "Storybook theme for PX Blue documentation",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "scripts": {
+        "test": "bash ./scripts/buildTest.sh"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pxblue/themes.git"
+    },
+    "bugs": {
+        "url": "https://github.com/pxblue/themes/issues"
+    },
+    "homepage": "https://github.com/pxblue/themes/tree/master/storybook",
+    "keywords": [
+        "storybook",
+        "theme",
+        "pxblue"
+    ],
+    "devDependencies": {
+        "@pxblue/colors": "^2.0.0",
+        "@storybook/theming": "^5.3.13"
+    },
+    "peerDependencies": {
+        "@pxblue/colors": "^2.0.0",
+        "@storybook/theming": "^5.3.13"
+    },
+    "files": [
+        "package.json",
+        "README.md",
+        "LICENSE",
+        "CHANGELOG.md",
+        "lightTheme.js",
+        "darkTheme.js",
+        "index.js",
+        "index.d.ts"
+    ]
 }

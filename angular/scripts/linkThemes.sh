@@ -21,7 +21,9 @@ cp -r ./_blueTheme.scss ./demo/node_modules/@pxblue/angular-themes/_blueTheme.sc
 cp -r ./_darkTheme.scss ./demo/node_modules/@pxblue/angular-themes/_darkTheme.scss
 cp -r ./_fonts.scss ./demo/node_modules/@pxblue/angular-themes/_fonts.scss
 cp -r ./_margins.scss ./demo/node_modules/@pxblue/angular-themes/_margins.scss
+cp -r ./_typography.scss ./demo/node_modules/@pxblue/angular-themes/_typography.scss
 cp -r ./theme.scss ./demo/node_modules/@pxblue/angular-themes/theme.scss
+cp -r ./pxb-component-theme.scss ./demo/node_modules/@pxblue/angular-themes/pxb-component-theme.scss
 
 echo -e "${GREEN}Done${NC}"
 
