@@ -1,3 +1,7 @@
+## v5.1.0
+
+-  Add UserMenu theme
+
 ## v5.0.0
 
 -   Update theme definitions to use the [@pxblue/colors](https://www.npmjs.com/package/@pxblue/colors) version 3.0.0.
