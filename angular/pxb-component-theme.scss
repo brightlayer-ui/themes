@@ -9,6 +9,7 @@
     @include pxb-info-list-item-theme($theme);
     @include pxb-list-item-tag($theme);
     @include pxb-drawer($theme);
+    @include pxb-user-menu($theme);
 }
 
 @mixin pxb-score-card-theme($theme) {
@@ -99,5 +100,18 @@
         .pxb-info-list-item-active:after {
             background-color: map-get($primary, 50);
         }
+    }
+}
+
+@mixin pxb-user-menu($theme) {
+    $primary: map-get($theme, primary);
+    .pxb-user-menu-avatar {
+        background-color: map-get($primary, 50);
+        color: map-get($primary, 500);
+    }
+
+    .pxb-user-menu-overlay .mat-toolbar {
+        color: inherit;
+        background-color: inherit;
     }
 }
