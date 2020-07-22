@@ -1,6 +1,6 @@
 ## v5.1.0
 
--  Add UserMenu theme
+-   Add UserMenu theme
 
 ## v5.0.0
 
