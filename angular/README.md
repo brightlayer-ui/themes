@@ -40,14 +40,14 @@ Alternatively, you can also import the theme file in your top-level SCSS file.
 import '~@pxblue/angular-themes/theme.scss'
 ```
 
-You can then apply the theme to your application by adding the proper class to your application's top-level element:
+You can then apply the theme to your application by adding the proper class to your application's body element:
 
 ```HTML
 // Default Theme
-<app-root class="pxb-blue">
+<body class="pxb-blue">
 
 // Dark Theme
-<app-root class="pxb-blue-dark">
+<body class="pxb-blue-dark">
 ```
 
 > If you do not specify a theme class, your application will use the default Material theme.
