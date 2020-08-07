@@ -8,7 +8,7 @@
     "scripts": {
         "initialize": "bash scripts/initializeSubmodule.sh",
         "install:dependencies": "cd demos/showcase && yarn && cd ../theme && yarn && cd ../..",
-        "start": "yarn install:dependencies && yarn link:themes && cd demos/theme && yarn start",
+        "start": "yarn initialize && yarn install:dependencies && yarn link:themes && cd demos/theme && yarn start",
         "start:showcase": "yarn initialize && yarn install:dependencies && yarn link:themes && cd demos/showcase && yarn start",
         "build": "yarn && tsc",
         "link:themes": "bash ./scripts/linkThemes.sh",
