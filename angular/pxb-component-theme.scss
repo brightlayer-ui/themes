@@ -57,7 +57,8 @@
 @mixin pxb-info-list-item-theme($theme) {
     .pxb-info-list-item {
         color: inherit;
-        &.mat-list-item, .mat-list-item-content {
+        &.mat-list-item,
+        .mat-list-item-content {
             color: inherit;
         }
     }
