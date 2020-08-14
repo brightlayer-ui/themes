@@ -1,3 +1,13 @@
+# Changelog
+
+## v5.1.1
+
+-   Fix an issue with with setting a color for `<pxb-info-list-item>` text
+
+## v5.1.0
+
+-   Add UserMenu theme
+
 ## v5.0.0
 
 -   Update theme definitions to use the [@pxblue/colors](https://www.npmjs.com/package/@pxblue/colors) version 3.0.0.

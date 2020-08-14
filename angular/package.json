@@ -2,13 +2,13 @@
     "name": "@pxblue/angular-themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "5.0.0",
+    "version": "5.1.1",
     "description": "Angular themes for PX Blue applications",
     "scripts": {
         "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start",
         "link:themes": "bash ./scripts/linkThemes.sh",
         "test": "bash ./scripts/buildTest.sh",
-        "prettier": "prettier \"*.scss\" --write"
+        "prettier": "prettier \"*.{scss,md}\" --write"
     },
     "repository": {
         "type": "git",
