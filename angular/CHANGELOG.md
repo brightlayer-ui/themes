@@ -1,3 +1,9 @@
+# Changelog
+
+## v5.1.1
+
+-   Fix an issue with with setting a color for `<pxb-info-list-item>` text
+
 ## v5.1.0
 
 -   Add UserMenu theme
