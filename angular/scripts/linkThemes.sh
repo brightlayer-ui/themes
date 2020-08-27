@@ -11,19 +11,19 @@ NC='\033[0m' # No Color
 
 
 echo -en "${BLUE}Creating new folder in node_modules...${NC}"
-rm -rf "./demo/node_modules/@pxblue/angular-themes"
-mkdir "./demo/node_modules/@pxblue/angular-themes"
+rm -rf "./demos/showcase/node_modules/@pxblue/angular-themes"
+mkdir "./demos/showcase/node_modules/@pxblue/angular-themes"
 echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying angular themes into node_modules...${NC}";
-cp -r ./demo/package.json ./demo/node_modules/@pxblue/angular-themes/package.json
-cp -r ./_blueTheme.scss ./demo/node_modules/@pxblue/angular-themes/_blueTheme.scss
-cp -r ./_darkTheme.scss ./demo/node_modules/@pxblue/angular-themes/_darkTheme.scss
-cp -r ./_fonts.scss ./demo/node_modules/@pxblue/angular-themes/_fonts.scss
-cp -r ./_margins.scss ./demo/node_modules/@pxblue/angular-themes/_margins.scss
-cp -r ./_typography.scss ./demo/node_modules/@pxblue/angular-themes/_typography.scss
-cp -r ./theme.scss ./demo/node_modules/@pxblue/angular-themes/theme.scss
-cp -r ./pxb-component-theme.scss ./demo/node_modules/@pxblue/angular-themes/pxb-component-theme.scss
+cp -r ./demos/showcase/package.json ./demos/showcase/node_modules/@pxblue/angular-themes/package.json
+cp -r ./_blueTheme.scss ./demos/showcase/node_modules/@pxblue/angular-themes/_blueTheme.scss
+cp -r ./_darkTheme.scss ./demos/showcase/node_modules/@pxblue/angular-themes/_darkTheme.scss
+cp -r ./_fonts.scss ./demos/showcase/node_modules/@pxblue/angular-themes/_fonts.scss
+cp -r ./_margins.scss ./demos/showcase/node_modules/@pxblue/angular-themes/_margins.scss
+cp -r ./_typography.scss ./demos/showcase/node_modules/@pxblue/angular-themes/_typography.scss
+cp -r ./theme.scss ./demos/showcase/node_modules/@pxblue/angular-themes/theme.scss
+cp -r ./pxb-component-theme.scss ./demos/showcase/node_modules/@pxblue/angular-themes/pxb-component-theme.scss
 
 echo -e "${GREEN}Done${NC}"
 
