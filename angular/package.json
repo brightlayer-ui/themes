@@ -5,7 +5,10 @@
     "version": "5.1.1",
     "description": "Angular themes for PX Blue applications",
     "scripts": {
-        "start": "cd demo && yarn && cd .. && yarn link:themes && cd demo && yarn start",
+        "initialize": "bash scripts/initializeSubmodule.sh",
+        "install:dependencies": "cd demos/showcase && yarn && cd ../theme && yarn && cd ../..",
+        "start": "yarn initialize && yarn install:dependencies && yarn link:themes && cd demos/theme && yarn start",
+        "start:showcase": "yarn initialize && yarn install:dependencies && yarn link:themes && cd demos/showcase && yarn start",
         "link:themes": "bash ./scripts/linkThemes.sh",
         "test": "bash ./scripts/buildTest.sh",
         "prettier": "prettier \"*.{scss,md}\" --write"
