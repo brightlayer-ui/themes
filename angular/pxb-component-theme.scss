@@ -94,11 +94,15 @@
             background-color: map-get($background, background);
         }
 
-        .pxb-info-list-item-active .pxb-info-list-item .mat-list-item-content {
+        .pxb-info-list-item-active * {
             color: map-get($primary, 500);
         }
 
         .pxb-info-list-item-active:after {
+            background-color: map-get($primary, 50);
+        }
+        // This will have to be updated after the circle-ripple change is added to the component library.
+        .pxb-drawer-nav-item-rail:after {
             background-color: map-get($primary, 50);
         }
     }
