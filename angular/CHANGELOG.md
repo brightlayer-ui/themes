@@ -1,9 +1,8 @@
 # Changelog
 
-
 ## v5.1.2
 
-- Rename class used to highlight `<pxb-drawer>` selection.
+-   Rename class used to highlight `<pxb-drawer>` selection.
 
 ## v5.1.1
 
