@@ -94,7 +94,10 @@
         background-color: unset;
     }
     .mat-step-header {
-        &:hover, &.cdk-program-focused, &.cdk-mouse-focused, &.cdk-focused {
+        &:hover,
+        &.cdk-program-focused,
+        &.cdk-mouse-focused,
+        &.cdk-focused {
             background-color: unset;
         }
     }
