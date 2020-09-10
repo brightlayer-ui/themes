@@ -80,4 +80,25 @@
             border-color: map-get($accent, 500);
         }
     }
+
+    /* steppers */
+    .mat-step-header .mat-step-icon-state-done,
+    .mat-step-icon.mat-step-icon-state-number,
+    .mat-step-icon.mat-step-icon-state-add {
+        background-color: map-get($pxb-gray, 300);
+    }
+    .mat-step-header[aria-selected='true'] .mat-step-icon {
+        background-color: map-get($primary, 500);
+    }
+    .mat-focus-indicator.mat-button-base.ng-star-inserted {
+        background-color: unset;
+    }
+    .mat-step-header {
+        &:hover,
+        &.cdk-program-focused,
+        &.cdk-mouse-focused,
+        &.cdk-focused {
+            background-color: unset;
+        }
+    }
 }
