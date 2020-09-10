@@ -24,7 +24,8 @@ cp -r ./_fonts.scss ./demos/showcase/node_modules/@pxblue/angular-themes/_fonts.
 cp -r ./_margins.scss ./demos/showcase/node_modules/@pxblue/angular-themes/_margins.scss
 cp -r ./_typography.scss ./demos/showcase/node_modules/@pxblue/angular-themes/_typography.scss
 cp -r ./theme.scss ./demos/showcase/node_modules/@pxblue/angular-themes/theme.scss
-cp -r ./pxb-component-theme.scss ./demos/showcase/node_modules/@pxblue/angular-themes/pxb-component-theme.
+cp -r ./pxb-component-theme.scss ./demos/showcase/node_modules/@pxblue/angular-themes/pxb-component-theme.scss
+cp -r ./node_modules/. ./demos/showcase/node_modules/@pxblue/angular-themes/node_modules
 
 # Theme demo
 cp -r ./demos/showcase/package.json ./demos/theme/node_modules/@pxblue/angular-themes/package.json
@@ -35,6 +36,7 @@ cp -r ./_margins.scss ./demos/theme/node_modules/@pxblue/angular-themes/_margins
 cp -r ./_typography.scss ./demos/theme/node_modules/@pxblue/angular-themes/_typography.scss
 cp -r ./theme.scss ./demos/theme/node_modules/@pxblue/angular-themes/theme.scss
 cp -r ./pxb-component-theme.scss ./demos/theme/node_modules/@pxblue/angular-themes/pxb-component-theme.scss
+cp -r ./node_modules/. ./demos/theme/node_modules/@pxblue/angular-themes/node_modules
 
 echo -e "${GREEN}Done${NC}"
 
