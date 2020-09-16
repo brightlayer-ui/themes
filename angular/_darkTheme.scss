@@ -119,4 +119,9 @@
         background-color: map-get($background, app-bar);
         color: map-get($foreground, text);
     }
+
+    /* PXB Drawer */
+    .pxb-drawer-nested-nav-item mat-expansion-panel {
+        background-color: map-get($pxb-black, 800);
+    }
 }
