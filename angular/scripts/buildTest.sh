@@ -25,6 +25,8 @@ echo -ne "  font mixin: "
 if [ ! -f ./_fonts.scss ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
 echo -ne "  typography mixin: "
 if [ ! -f ./_typography.scss ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -ne "  pxb components theme mixin: "
+if [ ! -f ./pxb-component-theme.scss ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
 
 echo -e "\r\n${GREEN}-----------------------------------"
 echo -e "Angular Theme package successfully created"
