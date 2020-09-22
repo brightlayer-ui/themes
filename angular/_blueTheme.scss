@@ -101,4 +101,9 @@
             background-color: unset;
         }
     }
+
+    /* PXB Drawer */
+    .pxb-drawer-nested-nav-item mat-expansion-panel {
+        background-color: map-get($pxb-white, 200);
+    }
 }

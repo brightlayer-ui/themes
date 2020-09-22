@@ -8,12 +8,12 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 
 @import '~@angular/material/_theming.scss';
 @import '~@pxblue/colors/palette.scss';
-@import 'pxb-component-theme';
+@import './pxb-component-theme';
 @import './margins';
 @import './fonts';
 @import './typography';
-@import 'darkTheme';
-@import 'blueTheme';
+@import './darkTheme';
+@import './blueTheme';
 
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config(

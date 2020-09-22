@@ -22,7 +22,7 @@
         "@angular/platform-browser-dynamic": "~8.2.0",
         "@angular/router": "~8.2.0",
         "@pxblue/angular-components": "2.0.0-beta.9",
-        "@pxblue/colors": "3.0.0",
+        "@pxblue/colors": "^3.0.0",
         "@pxblue/ng-progress-icons": "1.1.4",
         "@pxblue/angular-themes": "latest",
         "core-js": "^2.0.0",
