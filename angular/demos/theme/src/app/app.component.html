@@ -13,15 +13,13 @@
 
 <div class="overlay" (click)="showNotice = false" *ngIf="showNotice">
     <div class="notice">
-        <div fxLayout="row" fxLayoutAlign="end" class="x" style="height: 0;">
+        <div fxLayout="row" fxLayoutAlign="end" class="x" style="height: 0">
             <button mat-icon-button (click)="showNotice = false">
                 <mat-icon>close</mat-icon>
             </button>
         </div>
         <div class="notice-content">
-            <h1>
-                THEME DEMO ONLY
-            </h1>
+            <h1>THEME DEMO ONLY</h1>
             <p>
                 This example is intended to demonstrate the effects of different PX Blue themes on various components.
                 The data, icons, behaviors, etc. are not representative of a production application and many areas of

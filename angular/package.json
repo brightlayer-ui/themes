@@ -11,7 +11,7 @@
         "start:showcase": "yarn initialize && yarn install:dependencies && yarn link:themes && cd demos/showcase && yarn start",
         "link:themes": "bash ./scripts/linkThemes.sh",
         "test": "bash ./scripts/buildTest.sh",
-        "prettier": "prettier \"*.{scss,md}\" --write"
+        "prettier": "prettier \"*.{css,scss,html,md}\" --write"
     },
     "repository": {
         "type": "git",

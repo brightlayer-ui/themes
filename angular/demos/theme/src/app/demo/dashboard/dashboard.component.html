@@ -1,5 +1,5 @@
 <app-title></app-title>
-<div style="padding: 20px;">
+<div style="padding: 20px">
     <mat-grid-list #grid [cols]="cols" gutterSize="16px" rowHeight="268px">
         <mat-grid-tile *ngFor="let device of deviceList">
             <mat-card class="padding0">
@@ -29,9 +29,9 @@
                         </pxb-hero>
                     </pxb-hero-banner>
                     <mat-list-item *ngFor="let list of device.channels; let last = last">
-                        <div style="width: 100%; display: flex; justify-content: space-between;">
+                        <div style="width: 100%; display: flex; justify-content: space-between">
                             <mat-icon>{{ list.icon }}</mat-icon>
-                            <div class="list-label" style="margin-bottom: 0; width: 100%;">{{ list.label }}</div>
+                            <div class="list-label" style="margin-bottom: 0; width: 100%">{{ list.label }}</div>
                             <div class="list-value">
                                 <pxb-channel-value value="{{ list.value }}" units="{{ list.unit }}"></pxb-channel-value>
                             </div>
