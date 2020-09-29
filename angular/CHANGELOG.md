@@ -3,6 +3,8 @@
 ## v5.1.2
 
 -   Rename class used to highlight `<pxb-drawer>` selection.
+-   Add style rules for `<mat-stepper>`.
+-   Removed `<mat-button>` uppercase default behavior.
 
 ## v5.1.1
 
