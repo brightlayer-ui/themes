@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.1.2
+
+-   Rename class used to highlight `<pxb-drawer>` selection.
+-   Add style rules for `<mat-stepper>`.
+-   Removed `<mat-button>` uppercase default behavior.
+
 ## v5.1.1
 
 -   Fix an issue with with setting a color for `<pxb-info-list-item>` text

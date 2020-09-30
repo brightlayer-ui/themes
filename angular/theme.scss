@@ -8,12 +8,12 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 
 @import '~@angular/material/_theming.scss';
 @import '~@pxblue/colors/palette.scss';
-@import 'pxb-component-theme';
+@import './pxb-component-theme';
 @import './margins';
 @import './fonts';
 @import './typography';
-@import 'darkTheme';
-@import 'blueTheme';
+@import './darkTheme';
+@import './blueTheme';
 
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config(
@@ -70,7 +70,7 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
                 slider-off: rgba(black, 0.26),
                 slider-off-active: rgba(black, 0.38),
                 // Custom colors added to to theme
-                    light: map-get($pxb-white, 50),
+                light: map-get($pxb-white, 50),
             ),
             background: (
                 status-bar: map_get($mat-grey, 300),
@@ -88,7 +88,7 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
                 unselected-chip: map_get($mat-grey, 300),
                 disabled-list-option: map_get($mat-grey, 200),
                 // Custom colors added to to theme
-                    base: map-get($pxb-white, 50),
+                base: map-get($pxb-white, 50),
             ),
         )
     );
@@ -129,7 +129,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
                 slider-off: rgba(white, 0.3),
                 slider-off-active: rgba(white, 0.3),
                 // Custom colors added to to theme
-                    light: map-get($pxb-white, 50),
+                light: map-get($pxb-white, 50),
             ),
             background: (
                 status-bar: black,
@@ -147,7 +147,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
                 unselected-chip: map_get($mat-grey, 700),
                 disabled-list-option: black,
                 // Custom
-                    base: map-get($pxb-darkBlack, 800),
+                base: map-get($pxb-darkBlack, 800),
             ),
         )
     );

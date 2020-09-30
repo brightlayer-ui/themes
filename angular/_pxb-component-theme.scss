@@ -90,15 +90,12 @@
             color: map-get($foreground, text);
         }
 
-        .pxb-drawer-nested-nav-item mat-expansion-panel {
-            background-color: map-get($background, background);
-        }
-
-        .pxb-info-list-item-active .pxb-info-list-item .mat-list-item-content {
+        .pxb-drawer-nav-item-active {
             color: map-get($primary, 500);
         }
 
-        .pxb-info-list-item-active:after {
+        .pxb-info-list-item-active:after,  // TODO Deprecated: This can be removed in the future.
+        .pxb-drawer-nav-item-active-highlight {
             background-color: map-get($primary, 50);
         }
     }
