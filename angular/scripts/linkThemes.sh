@@ -11,14 +11,14 @@ NC='\033[0m' # No Color
 
 
 echo -en "${BLUE}Creating new folder in node_modules...${NC}"
-rm -rf "./angular-showcase-demo/node_modules/@pxblue/angular-themes"
-mkdir "./angular-showcase-demo/node_modules/@pxblue/angular-themes"
+rm -rf "./showcase/node_modules/@pxblue/angular-themes"
+mkdir "./showcase/node_modules/@pxblue/angular-themes"
 echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying angular themes into node_modules...${NC}";
 # Showcase demo
-cp -r ./package.json ./angular-showcase-demo/node_modules/@pxblue/angular-themes/package.json
-cp -r ./*.scss ./angular-showcase-demo/node_modules/@pxblue/angular-themes
+cp -r ./package.json ./showcase/node_modules/@pxblue/angular-themes/package.json
+cp -r ./*.scss ./showcase/node_modules/@pxblue/angular-themes
 
 echo -e "${GREEN}Done${NC}"
 

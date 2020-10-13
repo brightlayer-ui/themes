@@ -6,8 +6,8 @@
     "description": "Angular themes for PX Blue applications",
     "scripts": {
         "initialize": "bash scripts/initializeSubmodule.sh",
-        "install:dependencies": "cd angular-showcase-demo && yarn && cd ../..",
-        "start": "yarn initialize && yarn install:dependencies && yarn link:themes && cd angular-showcase-demo && yarn start",
+        "install:dependencies": "cd showcase && yarn && cd ../..",
+        "start": "yarn initialize && yarn install:dependencies && yarn link:themes && cd showcase && yarn start",
         "link:themes": "bash ./scripts/linkThemes.sh",
         "test": "bash ./scripts/buildTest.sh",
         "prettier": "prettier \"*.{css,scss,html,md}\" --write"
