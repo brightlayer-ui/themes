@@ -10,9 +10,6 @@
 # production
 /build
 
-# Submodules
-angular/angular-showcase-demo
-
 # misc
 **/**/.DS_Store
 **/**/Thumbs.db
