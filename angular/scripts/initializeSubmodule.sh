@@ -10,7 +10,7 @@ GRAY='\033[1;30m'
 NC='\033[0m' # No Color
 
 echo -e "${BLUE}Initializing Showcase Submodule...${NC}"
-if [ ! -f ./showcase/package.json ];
+if [ ! -f ./demos/showcase/package.json ];
     then git submodule init && git submodule update;
     else echo -e "${BBLUE}Already initialized${NC}" && exit 0;
 fi

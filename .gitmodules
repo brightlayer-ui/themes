@@ -2,6 +2,7 @@
 	path = react/demos/showcase
 	url = https://github.com/pxblue/react-showcase-demo
 	branch = dev
-[submodule "angular/showcase"]
-	path = angular/showcase
+[submodule "angular/demos/showcase"]
+	path = angular/demos/showcase
 	url = https://github.com/pxblue/angular-showcase-demo
+	branch = dev
