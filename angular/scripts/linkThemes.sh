@@ -20,10 +20,6 @@ echo -en "${BLUE}Copying angular themes into node_modules...${NC}";
 cp -r ./package.json ./demos/showcase/node_modules/@pxblue/angular-themes/package.json
 cp -r ./*.scss ./demos/showcase/node_modules/@pxblue/angular-themes
 
-# Theme demo
-cp -r ./package.json ./demos/theme/node_modules/@pxblue/angular-themes/package.json
-cp -r ./*.scss ./demos/theme/node_modules/@pxblue/angular-themes
-
 echo -e "${GREEN}Done${NC}"
 
 echo -e "${GRAY}Complete${NC}\r\n"
