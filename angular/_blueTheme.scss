@@ -102,6 +102,13 @@
         }
     }
 
+    /* Mat Form Fields*/
+    .mat-form-field-appearance-fill {
+        .mat-form-field-flex {
+            background-color: map-get($pxb-white, 200);
+        }
+    }
+
     /* PXB Drawer */
     .pxb-drawer-nested-nav-item mat-expansion-panel {
         background-color: map-get($pxb-white, 200);
