@@ -10,7 +10,7 @@ import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import { typography, createSimplePalette } from './shared';
 import * as ThemeColors from '@pxblue/colors';
 
-/* 
+/*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
     to customize in our themes. These have changed periodically from version to version of Material UI.
 */
@@ -61,6 +61,13 @@ export const blueTheme: ThemeOptions = {
             },
             outlinedSecondary: {
                 borderColor: ThemeColors.lightBlue[500],
+            },
+        },
+
+        // TEXT INPUT OVERRIDES
+        MuiFilledInput: {
+            root: {
+                backgroundColor: ThemeColors.white[200],
             },
         },
 

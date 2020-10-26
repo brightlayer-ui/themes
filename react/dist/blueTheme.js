@@ -61,6 +61,12 @@ exports.blueTheme = {
                 borderColor: ThemeColors.lightBlue[500],
             },
         },
+        // TEXT INPUT OVERRIDES
+        MuiFilledInput: {
+            root: {
+                backgroundColor: ThemeColors.white[200]
+            }
+        },
         // BUTTON OVERRIDES
         MuiFab: {
             root: {
