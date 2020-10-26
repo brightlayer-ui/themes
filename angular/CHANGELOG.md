@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.1.3 (not published)
+
+-   Update `filled` input field light-themed background color. 
+
 ## v5.1.2
 
 -   Rename class used to highlight `<pxb-drawer>` selection.
