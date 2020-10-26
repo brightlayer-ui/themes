@@ -67,8 +67,8 @@ export const blueTheme: ThemeOptions = {
         // TEXT INPUT OVERRIDES
         MuiFilledInput: {
             root: {
-                backgroundColor: ThemeColors.white[200]
-            }
+                backgroundColor: ThemeColors.white[200],
+            },
         },
 
         // BUTTON OVERRIDES
