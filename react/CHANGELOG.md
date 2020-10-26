@@ -1,7 +1,6 @@
-
 ## v5.0.3 (not published)
 
--   Update `filled` input field light-themed background color. 
+-   Update `filled` input field light-themed background color.
 
 ## v5.0.2
 
