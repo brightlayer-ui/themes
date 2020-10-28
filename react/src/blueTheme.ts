@@ -44,7 +44,14 @@ export const blueTheme: ThemeOptions = {
                 backgroundColor: ThemeColors.gray[50],
             },
             colorSecondary: {
+                color: ThemeColors.white[50],
                 backgroundColor: ThemeColors.blue[700],
+                '& .MuiInputBase-root': {
+                    color: ThemeColors.white[50],
+                },
+                '& .MuiSelect-icon': {
+                    color: ThemeColors.white[50],
+                },
             },
         },
 
