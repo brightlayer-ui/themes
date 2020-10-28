@@ -43,7 +43,14 @@ exports.blueTheme = {
                 backgroundColor: ThemeColors.gray[50],
             },
             colorSecondary: {
+                color: ThemeColors.white[50],
                 backgroundColor: ThemeColors.blue[700],
+                '& .MuiInputBase-root': {
+                    color: ThemeColors.white[50],
+                },
+                '& .MuiSelect-icon': {
+                    color: ThemeColors.white[50],
+                },
             },
         },
         // BUTTON OVERRIDES
@@ -64,8 +71,8 @@ exports.blueTheme = {
         // TEXT INPUT OVERRIDES
         MuiFilledInput: {
             root: {
-                backgroundColor: ThemeColors.white[200]
-            }
+                backgroundColor: ThemeColors.white[200],
+            },
         },
         // BUTTON OVERRIDES
         MuiFab: {

@@ -23,7 +23,7 @@ class Devices extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <AppBar position="static" elevation={0}>
+                <AppBar position="static" elevation={0} color={'secondary'}>
                     <Tabs value={this.state.tabSelected} onChange={this.handleTabChange}>
                         <Tab label="Overview" />
                         <Tab label="Locations" />
