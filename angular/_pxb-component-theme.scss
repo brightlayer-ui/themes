@@ -10,6 +10,7 @@
     @include pxb-list-item-tag($theme);
     @include pxb-drawer($theme);
     @include pxb-user-menu($theme);
+    @include pxb-mobile-stepper($theme);
 }
 
 @mixin pxb-score-card-theme($theme) {
@@ -71,6 +72,19 @@
     .pxb-list-item-tag {
         background-color: mat-color($primary);
         color: map-get($foreground, light);
+    }
+}
+
+@mixin pxb-mobile-stepper($theme) {
+    $primary: map-get($theme, primary);
+    $background: map-get($theme, background);
+    .pxb-mobile-stepper {
+        .pxb-mobile-stepper-dot {
+            background-color: map-get($background, disabled-button-toggle);
+        }
+        .pxb-mobile-stepper-dot-active {
+            background-color: map-get($primary, 500);
+        }
     }
 }
 
