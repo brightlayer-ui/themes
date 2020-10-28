@@ -1,5 +1,8 @@
 # Changelog
 
+## v5.2.0 (not published)
+-   Add theme for `<pxb-mobile-stepper>`.
+
 ## v5.1.2
 
 -   Rename class used to highlight `<pxb-drawer>` selection.
