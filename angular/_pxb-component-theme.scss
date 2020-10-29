@@ -108,9 +108,8 @@
             color: map-get($primary, 500);
         }
 
-        .pxb-info-list-item-active:after,  // TODO Deprecated: This can be removed in the future.
         .pxb-drawer-nav-item-active-highlight {
-            background-color: map-get($primary, 50);
+            background-color: map-get($primary, 500);
         }
     }
 }
