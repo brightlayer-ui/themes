@@ -95,7 +95,7 @@
     .pxb-drawer {
         background-color: map-get($background, base);
 
-        .pxb-drawer-header {
+        .pxb-drawer-header-content {
             background-color: mat-color($primary);
             color: map-get($foreground, light);
         }
@@ -104,7 +104,7 @@
             color: map-get($foreground, text);
         }
 
-        .pxb-drawer-nav-item-active {
+        .pxb-drawer-nav-item-active .pxb-info-list-item .mat-list-item-content {
             color: map-get($primary, 500);
         }
 
