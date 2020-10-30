@@ -121,7 +121,21 @@
     }
 
     /* PXB Drawer */
-    .pxb-drawer-nested-nav-item mat-expansion-panel {
-        background-color: map-get($pxb-black, 800);
+    .pxb-drawer {
+        background-color: map-get($pxb-darkBlack, 300);
+        .pxb-drawer-nav-item-active .pxb-info-list-item .mat-list-item-content {
+            color: map-get($primary, 200);
+        }
+        .pxb-drawer-nav-item-active-highlight {
+            opacity: 0.2;
+        }
+        .mat-list-base .mat-list-item,
+        .pxb-drawer-nav-item-rail,
+        .pxb-drawer-nav-group-title {
+            color: map-get($pxb-black, 50);
+        }
+        .pxb-drawer-nested-nav-item mat-expansion-panel {
+            background-color: map-get($pxb-darkBlack, 500);
+        }
     }
 }

@@ -103,8 +103,8 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
     @include reasonable-margins();
     @include bodyfont();
     @include typography();
-    @include bluetheme($pxb-blue-theme);
     @include pxb-components-theme($pxb-blue-theme);
+    @include bluetheme($pxb-blue-theme);
 }
 
 // Blue Dark Theme
@@ -161,6 +161,6 @@ $pxb-blue-dark-theme: pxb-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-acce
     @include reasonable-margins();
     @include bodyfont();
     @include typography();
-    @include darktheme($pxb-blue-dark-theme);
     @include pxb-components-theme($pxb-blue-dark-theme);
+    @include darktheme($pxb-blue-dark-theme);
 }
