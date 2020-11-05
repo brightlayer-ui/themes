@@ -8,7 +8,7 @@
     "scripts": {
         "initialize": "bash scripts/initializeSubmodule.sh",
         "install:showcase-ios": "cd demos/showcase && yarn && cd ios && pod install && cd ../../.. && yarn link:themes",
-        "install:showcase-android": "cd demos/showcase && yarn && cd ../.. && yarn link:components",	        
+        "install:showcase-android": "cd demos/showcase && yarn && cd ../.. && yarn link:components",
         "start": "yarn start:showcase",
         "start:showcase": "yarn initialize && yarn start:showcase-ios",
         "start:showcase-ios": "yarn initialize && yarn install:showcase-ios && cd demos/showcase && yarn ios",
