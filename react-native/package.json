@@ -2,7 +2,7 @@
     "name": "@pxblue/react-native-themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "5.0.0",
+    "version": "5.0.1-beta.0",
     "description": "React Native themes for PX Blue applications",
     "main": "./dist/index.js",
     "scripts": {
@@ -37,10 +37,10 @@
         "@pxblue/colors": "^3.0.0"
     },
     "peerDependencies": {
-        "react-native-paper": "^3.10.1"
+        "react-native-paper": "^3.0.0 || ^4.0.0"
     },
     "devDependencies": {
-        "react-native-paper": "^3.10.1",
+        "react-native-paper": "^4.0.0",
         "typescript": "^3.7.2"
     },
     "files": [
