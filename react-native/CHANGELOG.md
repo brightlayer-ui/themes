@@ -1,6 +1,6 @@
 # Changelog
 
-## v5.0.1 (Not Published)
+## v5.0.1
 
 ### Changed
 
