@@ -1,4 +1,4 @@
-## v5.0.3 (not published)
+## v5.0.3
 
 -   Updated `filled` input field light-themed background color.
 -   Added class overrides for the secondary toolbar.
