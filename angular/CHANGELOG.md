@@ -1,6 +1,6 @@
 # Changelog
 
-## v5.2.0 (not published)
+## v5.2.0
 
 -   Add theme for `<pxb-mobile-stepper>`.
 -   Update `filled` input field light-themed background color.
