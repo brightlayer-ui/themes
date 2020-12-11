@@ -18,6 +18,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.blueTheme = void 0;
 var react_native_paper_1 = require("react-native-paper");
 var colors_1 = require("@pxblue/colors");
 var defaultFontConfig = {

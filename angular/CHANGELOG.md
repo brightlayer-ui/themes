@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.2.0
+
+-   Add theme for `<pxb-mobile-stepper>`.
+-   Update `filled` input field light-themed background color.
+-   Update `<pxb-drawer>` theme.
+
 ## v5.1.2
 
 -   Rename class used to highlight `<pxb-drawer>` selection.

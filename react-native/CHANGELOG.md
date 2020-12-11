@@ -1,3 +1,11 @@
+# Changelog
+
+## v5.0.1
+
+### Changed
+
+-   Updated peerDependencies to allow for use with react-native-paper version 4
+
 ## v5.0.0
 
 -   Updated theme to comply with the [react-native-paper](https://callstack.github.io/react-native-paper/theming.html) specification.

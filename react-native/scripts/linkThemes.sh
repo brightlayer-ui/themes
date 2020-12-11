@@ -9,29 +9,25 @@ BGREEN='\033[1;32m' #BOLD
 GRAY='\033[1;30m'
 NC='\033[0m' # No Color
 
-# echo -e "${BLUE}Building components...${NC}"
-# yarn build
+echo -e "${BLUE}Building themes...${NC}"
+yarn build
 
+echo -en "${BLUE}Creating new folder in node_modules...${NC}"
+rm -rf "./demos/showcase/node_modules/@pxblue/react-native-themes"
+mkdir -p "./demos/showcase/node_modules/@pxblue/react-native-themes"
+echo -e "${GREEN}Done${NC}"
 
-# echo -en "${BLUE}Creating new folder in node_modules...${NC}"
-# rm -rf "./demo/node_modules/@pxblue/themes"
-# mkdir "./demo/node_modules/@pxblue/themes"
-# mkdir "./demo/node_modules/@pxblue/themes/react"
-# echo -e "${GREEN}Done${NC}"
+echo -en "${BLUE}Copying build output into node_modules...${NC}";
+cp -r ./dist ./demos/showcase/node_modules/@pxblue/react-native-themes
+cp ./package.json ./demos/showcase/node_modules/@pxblue/react-native-themes/package.json
+echo -e "${GREEN}Done${NC}"
 
-# echo -en "${BLUE}Copying build output into node_modules...${NC}";
-# cp -r ./package.json ./demo/node_modules/@pxblue/themes/react/package.json
-# cp -r ./dist ./demo/node_modules/@pxblue/themes/react/dist
-# echo -e "${GREEN}Done${NC}"
-
-# echo -en "\r\n${BRED}Linking Components: ${NC}"
-# if [ ! -f ./demo/node_modules/@pxblue/themes/react/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
-# if [ ! -s ./demo/node_modules/@pxblue/themes/react/dist ]; 
-#     then 
-#         if [ ! -f ./demo/node_modules/@pxblue/themes/react/dist/index.js ];
-#         then echo -e "${BRED}Not Linked${NC}" && exit 1; 
-#         fi;
-# fi
-# echo -e "${GRAY}Complete${NC}\r\n"
-
-echo "React Native Linking Script Not Implemented Yet"
+echo -en "\r\n${BBLUE}Linking Themes: ${NC}"
+if [ ! -f ./demos/showcase/node_modules/@pxblue/react-native-themes/package.json ]; then echo -e "${BRED}Themes Not Linked${NC}" && exit 1; fi
+if [ ! -s ./demos/showcase/node_modules/@pxblue/react-native-themes/dist ];
+    then
+        if [ ! -f ./demos/showcase/node_modules/@pxblue/react-native-themes/dist/index.js ];
+        then echo -e "${BRED}Themes Not Linked${NC}" && exit 1;
+        fi;
+fi
+echo -e "${GRAY}Complete${NC}\r\n"
