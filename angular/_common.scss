@@ -1,23 +1,6 @@
 @mixin common() {
     /* Changing the default height of the mat-input fields requires repositioning text and label values. */
-    .mat-form-field-flex {
-        height: 56px;
-        line-height: 1.25;
-    }
-    .mat-form-field-appearance-outline .mat-form-field-infix {
-        padding: 0.5em 0 0.9em 0;
-    }
-    .mat-form-field-appearance-fill .mat-form-field-label {
-        margin-top: -0.6em;
-    }
-    .mat-form-field-appearance-outline .mat-form-field-label {
-        top: 1.6em;
-    }
-    .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
-        transform: translateY(-1.5em) scale(0.75);
-        width: 133.33333%;
-    }
-    .mat-form-field-appearance-standard .mat-form-field-flex {
-        padding-top: 0;
+    .mat-form-field {
+        line-height: 1.24;
     }
 }
