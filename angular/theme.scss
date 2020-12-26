@@ -14,6 +14,7 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 @import './typography';
 @import './darkTheme';
 @import './blueTheme';
+@import './common';
 
 // Custom Typography Sizes & Weights
 $custom-typography: mat-typography-config(
@@ -103,6 +104,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
     @include reasonable-margins();
     @include bodyfont();
     @include typography();
+    @include common();
     @include pxb-components-theme($pxb-blue-theme);
     @include bluetheme($pxb-blue-theme);
 }
@@ -161,6 +163,7 @@ $pxb-blue-dark-theme: pxb-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-acce
     @include reasonable-margins();
     @include bodyfont();
     @include typography();
+    @include common();
     @include pxb-components-theme($pxb-blue-dark-theme);
     @include darktheme($pxb-blue-dark-theme);
 }
