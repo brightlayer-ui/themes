@@ -110,10 +110,10 @@
         }
     }
     .mat-form-field .mat-form-field-label {
-        color: map-get($pxb-black, 500);
+        color: map-get($foreground, text);
     }
     .mat-form-field .mat-hint {
-        color: map-get($pxb-gray, 500);
+        color: map-get($foreground, hint-text);
     }
 
     /* Mat Form Field hover ripple */
@@ -121,7 +121,7 @@
         background-color: map-get($pxb-gray, 500);
     }
     .mat-form-field-appearance-outline .mat-form-field-outline-thick {
-        color: map-get($pxb-gray, 500);
+        color: map-get($foreground, hint-text);
     }
 
     /* PXB Drawer */
