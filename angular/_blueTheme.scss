@@ -109,6 +109,20 @@
             background-color: map-get($pxb-white, 200);
         }
     }
+    .mat-form-field .mat-form-field-label {
+        color: map-get($foreground, text);
+    }
+    .mat-form-field .mat-hint {
+        color: map-get($foreground, hint-text);
+    }
+
+    /* Mat Form Field hover ripple */
+    .mat-form-field-ripple {
+        background-color: map-get($pxb-gray, 500);
+    }
+    .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        color: map-get($foreground, hint-text);
+    }
 
     /* PXB Drawer */
     .pxb-drawer-nested-nav-item mat-expansion-panel {

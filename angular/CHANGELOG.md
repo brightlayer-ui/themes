@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.2.1 (Not published)
+
+-   Adjust `<mat-form-field>` blue-theme colors.
+
 ## v5.2.0
 
 -   Add theme for `<pxb-mobile-stepper>`.
