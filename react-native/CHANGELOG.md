@@ -8,7 +8,8 @@
 
 ## v5.0.0
 
-### Changed 
+### Changed
+
 -   Updated theme to comply with the [react-native-paper](https://callstack.github.io/react-native-paper/theming.html) specification.
 
 ** Breaking Changes **
@@ -20,4 +21,5 @@
 ## v4.0.0
 
 ### Changed
-- Themes have been broken out into their own packages. This package was originally part of @pxblue/themes. If you are switching to this package, you'll need to update some import statements (refer to the usage instructions in the README).
+
+-   Themes have been broken out into their own packages. This package was originally part of @pxblue/themes. If you are switching to this package, you'll need to update some import statements (refer to the usage instructions in the README).
