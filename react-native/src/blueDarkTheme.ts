@@ -6,9 +6,10 @@ All rights reserved.
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
 
-import { configureFonts, DefaultTheme, Theme } from 'react-native-paper';
+import { configureFonts, DefaultTheme } from 'react-native-paper';
 import { blue, red, darkBlack, black, lightBlue, gray } from '@pxblue/colors';
 import { fontConfig } from './shared';
+import { Theme } from 'react-native-paper/lib/typescript/src/types';
 
 export const blueDarkTheme: Theme = {
     ...DefaultTheme,
