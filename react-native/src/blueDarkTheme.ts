@@ -23,7 +23,7 @@ export const blueDarkTheme: Theme = {
         background: darkBlack[100],
         surface: black[900],
         error: red[500],
-        text: gray[300],
+        text: black[50],
         onBackground: gray[300],
         onSurface: gray[300],
         notification: lightBlue[500],
