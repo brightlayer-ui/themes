@@ -7,25 +7,25 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 **/
 
 import { configureFonts, DefaultTheme } from 'react-native-paper';
-import { blue, red, gray, black, lightBlue, white } from '@pxblue/colors';
+import { blue, red, darkBlack, black, lightBlue, gray } from '@pxblue/colors';
 import { fontConfig } from './shared';
 import { Theme } from 'react-native-paper/lib/typescript/src/types';
 
-export const blueTheme: Theme = {
+export const blueDarkTheme: Theme = {
     ...DefaultTheme,
-    dark: false,
+    dark: true,
     roundness: 4,
     fonts: configureFonts(fontConfig),
     colors: {
         ...DefaultTheme.colors,
         primary: blue[500],
         accent: lightBlue[500],
-        background: gray[50],
-        surface: white[50],
+        background: darkBlack[100],
+        surface: black[900],
         error: red[500],
-        text: black[500],
-        onBackground: black[500],
-        onSurface: black[500],
+        text: black[50],
+        onBackground: black[50],
+        onSurface: black[50],
         notification: lightBlue[500],
     },
 };
