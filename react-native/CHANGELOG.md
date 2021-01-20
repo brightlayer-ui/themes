@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.1.0 (Not Published Yet)
+
+### Added
+
+-   Initial Dark theme
+
 ## v5.0.1
 
 ### Changed
