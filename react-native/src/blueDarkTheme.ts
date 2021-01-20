@@ -24,8 +24,8 @@ export const blueDarkTheme: Theme = {
         surface: black[900],
         error: red[500],
         text: black[50],
-        onBackground: gray[300],
-        onSurface: gray[300],
+        onBackground: black[50],
+        onSurface: black[50],
         notification: lightBlue[500],
     },
 };
