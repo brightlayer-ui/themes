@@ -2,6 +2,10 @@
 
 ## v5.2.1 (Not published)
 
+### Fixed
+
+-   Fixed navigation rail active-item font-color bug. 
+
 ### Changed
 
 -   Adjust `<mat-form-field>` blue-theme colors.
