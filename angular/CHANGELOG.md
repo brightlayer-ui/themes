@@ -4,7 +4,7 @@
 
 ### Fixed
 
--   Fixed navigation rail active-item font-color bug. 
+-   Fixed navigation rail active-item font-color bug.
 
 ### Changed
 
