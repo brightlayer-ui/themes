@@ -1,3 +1,10 @@
+# Change Log
+
+## v6.0.0
+
+### Changed
+-   Update deprecated `typeface-open-sans` dependency to `@fontsource/open-sans`.
+
 ## v5.0.3
 
 ### Added

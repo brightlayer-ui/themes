@@ -29,7 +29,7 @@ In order to use the PX Blue themes and font (Open Sans), you will need to modify
 "styles": [
     "src/styles.scss",
     "./node_modules/@pxblue/angular-themes/theme.scss",
-    "./node_modules/typeface-open-sans"
+    "./node_modules/@fontsource/open-sans"
 ],
 ```
 

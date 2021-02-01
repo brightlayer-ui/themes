@@ -23,7 +23,7 @@ yarn add @pxblue/react-themes
 
 # Usage
 
-To use these themes in your application, simply wrap the app in a `ThemeProvider` and pass in your desired theme (`blue` or `blueDark`):
+To use these themes in your application, simply wrap the app in a `ThemeProvider` and pass in your desired theme (`blue` or `blueDark`). You'll also need to include the Open Sans font resources (included with the themes):
 
 ```tsx
 import {
@@ -31,6 +31,7 @@ import {
     createMuiTheme
 } from '@material-ui/core/styles';
 import * as PXBlueThemes from '@pxblue/react-themes';
+import "@fontsource/open-sans";
 ...
 <ThemeProvider theme={createMuiTheme(PXBlueThemes.blue)}>
     <App />
