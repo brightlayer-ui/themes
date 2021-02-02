@@ -31,11 +31,28 @@ import {
     createMuiTheme
 } from '@material-ui/core/styles';
 import * as PXBlueThemes from '@pxblue/react-themes';
-import "@fontsource/open-sans";
+import "@pxblue/react-themes/dist/open-sans";
 ...
 <ThemeProvider theme={createMuiTheme(PXBlueThemes.blue)}>
     <App />
 </ThemeProvider>
+```
+
+### Updating From Version 5 ~> 6
+
+In version 6, we have migrated from the deprecated `typeface-open-sans` package to `@fontsource/open-sans` (bundled with the PX Blue themes). You'll need to update your Open Sans import references in your root file:
+
+Before:
+
+```js
+require('typeface-open-sans');
+```
+
+After:
+
+```js
+import "@pxblue/react-themes/dist/open-sans";
+],
 ```
 
 ## Demo

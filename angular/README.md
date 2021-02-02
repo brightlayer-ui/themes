@@ -29,7 +29,7 @@ In order to use the PX Blue themes and font (Open Sans), you will need to modify
 "styles": [
     "src/styles.scss",
     "./node_modules/@pxblue/angular-themes/theme.scss",
-    "./node_modules/@fontsource/open-sans"
+    "./node_modules/@pxblue/angular-themes/open-sans.scss"
 ],
 ```
 
@@ -38,6 +38,7 @@ Alternatively, you can also import the theme file in your top-level SCSS file.
 ```scss
 // in styles.scss or your top-level scss file
 import '~@pxblue/angular-themes/theme.scss'
+import '~@pxblue/angular-themes/open-sans.scss'
 ```
 
 You can then apply the theme to your application by adding the proper class to your application's body element:
@@ -51,6 +52,24 @@ You can then apply the theme to your application by adding the proper class to y
 ```
 
 > If you do not specify a theme class, your application will use the default Material theme.
+
+### Updating From Version 5 ~> 6
+
+In version 6, we have migrated from the deprecated `typeface-open-sans` package to `@fontsource/open-sans` (bundled with the PX Blue themes). You'll need to update your Open Sans references in angular.json:
+
+Before:
+
+```js
+'./node_modules/typeface-open-sans';
+
+```
+
+After:
+
+```js
+'./node_modules/@pxblue/angular-themes/open-sans.scss';
+
+```
 
 ## Demo
 

@@ -6,7 +6,7 @@ import { render } from 'react-dom';
 import App from './App';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
-import '@fontsource/open-sans';
+import '@pxblue/react-themes/dist/open-sans';
 
 render(
     <BrowserRouter>
