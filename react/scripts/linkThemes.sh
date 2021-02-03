@@ -23,29 +23,14 @@ mkdir -p "./demos/showcase/node_modules/@pxblue/react-themes"
 echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying build output into node_modules...${NC}";
-cp -r ./package.json ./demos/theme/node_modules/@pxblue/react-themes/package.json
-cp -r ./dist ./demos/theme/node_modules/@pxblue/react-themes/dist
+cp -r ./dist/* ./demos/theme/node_modules/@pxblue/react-themes/
 
 echo -en "${BLUE}Copying build output into node_modules...${NC}";
-cp -r ./package.json ./demos/showcase/node_modules/@pxblue/react-themes/package.json
-cp -r ./dist ./demos/showcase/node_modules/@pxblue/react-themes/dist
+cp -r ./dist/* ./demos/showcase/node_modules/@pxblue/react-themes/
 
 echo -e "${GREEN}Done${NC}"
 
 echo -en "\r\n${BBLUE}Linking Components: ${NC}"
 if [ ! -f ./demos/theme/node_modules/@pxblue/react-themes/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
-if [ ! -s ./demos/theme/node_modules/@pxblue/react-themes/dist ]; 
-    then 
-        if [ ! -f ./demos/theme/node_modules/@pxblue/react-themes/dist/index.js ];
-        then echo -e "${BRED}Not Linked${NC}" && exit 1; 
-        fi;
-fi
-
 if [ ! -f ./demos/showcase/node_modules/@pxblue/react-themes/package.json ]; then echo -e "${BRED}Not Linked${NC}" && exit 1; fi
-if [ ! -s ./demos/showcase/node_modules/@pxblue/react-themes/dist ]; 
-    then 
-        if [ ! -f ./demos/showcase/node_modules/@pxblue/react-themes/dist/index.js ];
-        then echo -e "${BRED}Not Linked${NC}" && exit 1; 
-        fi;
-fi
 echo -e "${GRAY}Complete${NC}\r\n"

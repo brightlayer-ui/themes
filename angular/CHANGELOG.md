@@ -1,14 +1,15 @@
 # Changelog
 
-## v5.2.1 (Not published)
+## v6.0.0 (Not published)
 
 ### Fixed
 
--   Fixed navigation rail active-item font-color bug.
+-   Navigation rail active-item font-color bug.
 
 ### Changed
 
 -   Adjust `<mat-form-field>` blue-theme colors.
+-   Update deprecated `typeface-open-sans` dependency to `@fontsource/open-sans`.
 
 ## v5.2.0
 
@@ -33,7 +34,7 @@
 
 ### Removed
 
--   Removed `<mat-button>` uppercase default behavior.
+-   Remove `<mat-button>` uppercase default behavior.
 
 ## v5.1.1
 
@@ -53,7 +54,7 @@
 
 -   Update theme definitions to use the [@pxblue/colors](https://www.npmjs.com/package/@pxblue/colors) version 3.0.0.
 <!-- - Update color schemes to address accessibility concerns. -->
--   Updated default typography styles for consistency.
+-   Update default typography styles for consistency.
 
 ## v4.0.0
 
