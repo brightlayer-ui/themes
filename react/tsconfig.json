@@ -8,6 +8,6 @@
         "lib": ["es2015", "dom"],
         "skipLibCheck": true
     },
-    "include": ["src/*"],
+    "include": ["src/*", "package.json"],
     "exclude": ["node_modules"]
 }
