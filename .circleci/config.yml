@@ -2,7 +2,7 @@ version: 2
 jobs:
     build:
         docker:
-            - image: circleci/node:12.6-browsers
+            -   image: circleci/node:12.9.1-browsers
         steps:
             - checkout
             - run:
@@ -16,3 +16,80 @@ jobs:
             - run:
                   name: Verify Artifacts
                   command: yarn test
+            -   persist_to_workspace:
+                    root: .
+                    paths:
+                        - angular/dist
+                        - react/dist
+                        - react-native/dist
+
+    publish:
+        docker:
+            -   image: circleci/node:12.9.1-browsers
+        steps:
+            - checkout
+            -   attach_workspace:
+                    at: .
+            -   run:
+                    name: Authenticate with registry
+                    command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+            -   run:
+                    name: Publish @pxblue/angular-themes
+                    command:  |
+                        cd angular
+                        MASTER_VERSION=`node -p "require('./package.json').version"`
+                        NPM_LATEST_VERSION=`npm show @pxblue/angular-themes version`
+                        if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+                        then
+                            npm publish
+                        else
+                            echo "Latest version is already published."
+                        fi
+            -   run:
+                    name: Publish @pxblue/react-themes
+                    command:  |
+                        cd react/dist
+                        MASTER_VERSION=`node -p "require('./package.json').version"`
+                        NPM_LATEST_VERSION=`npm show @pxblue/react-themes version`
+                        if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+                        then
+                            npm publish
+                        else
+                            echo "Latest version is already published."
+                        fi
+            -   run:
+                    name: Publish @pxblue/react-native-themes
+                    command:  |
+                        cd react-native
+                        MASTER_VERSION=`node -p "require('./package.json').version"`
+                        NPM_LATEST_VERSION=`npm show @pxblue/react-native-themes version`
+                        if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+                        then
+                            npm publish
+                        else
+                            echo "Latest version is already published."
+                        fi
+            -   run:
+                    name: Publish @pxblue/storybook-themes
+                    command:  |
+                        cd storybook
+                        MASTER_VERSION=`node -p "require('./package.json').version"`
+                        NPM_LATEST_VERSION=`npm show @pxblue/storybook-themes version`
+                        if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+                        then
+                            npm publish
+                        else
+                            echo "Latest version is already published."
+                        fi
+workflows:
+    version: 2
+    types:
+        jobs:
+            - build
+            - publish:
+                  requires:
+                      - build
+                  filters:
+                      branches:
+                          only:
+                              - master
