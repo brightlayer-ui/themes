@@ -52,7 +52,6 @@ After:
 
 ```js
 import "@pxblue/react-themes/open-sans";
-],
 ```
 
 ## Demo
