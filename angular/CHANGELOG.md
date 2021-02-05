@@ -1,6 +1,6 @@
 # Changelog
 
-## v5.2.1 (Not published)
+## v5.2.1
 
 ### Fixed
 
