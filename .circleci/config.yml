@@ -19,7 +19,6 @@ jobs:
             -   persist_to_workspace:
                     root: .
                     paths:
-                        - angular/dist
                         - react/dist
                         - react-native/dist
 
