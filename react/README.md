@@ -51,7 +51,7 @@ require('typeface-open-sans');
 After:
 
 ```js
-import "@pxblue/react-themes/open-sans";
+import '@pxblue/react-themes/open-sans';
 ```
 
 ## Demo
