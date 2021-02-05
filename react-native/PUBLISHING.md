@@ -5,7 +5,7 @@ To update the version number, edit the version in `react-native/package.json`.
 To publish a new package through NPM, run the following commands from the root folder:
 
 ```
-yarn build 
+yarn build
 npm publish --tag <alpha | beta>
 ```
 
