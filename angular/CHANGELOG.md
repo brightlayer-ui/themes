@@ -2,6 +2,10 @@
 
 ## v6.0.0 (Not published)
 
+### Added
+
+-   Added `<pxb-score-card>` badge background theme. 
+
 ### Fixed
 
 -   Navigation rail active-item font-color bug.
