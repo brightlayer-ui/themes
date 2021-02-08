@@ -112,6 +112,11 @@
         .pxb-drawer-nav-item-active-highlight {
             background-color: map-get($primary, 500);
         }
+        .pxb-drawer-nav-item-rail {
+            &:hover, &:focus {
+                background: mat-color($background, 'hover');
+            }
+        }
     }
 }
 
