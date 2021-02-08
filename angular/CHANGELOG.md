@@ -4,7 +4,7 @@
 
 ### Added
 
--   Added `<pxb-score-card>` badge background theme. 
+-   Added `<pxb-score-card>` badge background theme.
 
 ### Fixed
 
