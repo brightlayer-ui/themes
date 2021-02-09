@@ -16,6 +16,7 @@
 @mixin pxb-score-card-theme($theme) {
     $primary: map-get($theme, primary);
     $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
     .pxb-score-card {
         .pxb-score-card-header {
             background-color: mat-color($primary);
@@ -23,6 +24,9 @@
             .mat-card-subtitle {
                 color: inherit;
             }
+        }
+        .pxb-hero-primary-wrapper {
+            background-color: mat-color($background, card);
         }
     }
 }
