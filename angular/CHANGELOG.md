@@ -8,7 +8,8 @@
 
 ### Fixed
 
--   Navigation rail active-item font-color bug.
+-   Fixed missing navigation rail active-item font-color bug.
+-   Fixed missing navigation rail hover highlight.
 
 ### Changed
 
