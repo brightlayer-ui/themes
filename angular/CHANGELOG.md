@@ -1,6 +1,6 @@
 # Changelog
 
-## v6.0.0 (Not published)
+## v5.2.1 
 
 ### Added
 
@@ -14,7 +14,6 @@
 ### Changed
 
 -   Adjust `<mat-form-field>` blue-theme colors.
--   Update deprecated `typeface-open-sans` dependency to `@fontsource/open-sans`.
 
 ## v5.2.0
 
