@@ -7,7 +7,7 @@
  **/
 
 import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
-import { typography, createSimplePalette } from './shared';
+import { typography, createSimpleLightPalette as createSimplePalette } from './shared';
 import * as ThemeColors from '@pxblue/colors';
 
 /*
@@ -22,6 +22,13 @@ export const blueTheme: ThemeOptions = {
         primary: createSimplePalette(ThemeColors.blue),
         secondary: createSimplePalette(ThemeColors.lightBlue),
         error: createSimplePalette(ThemeColors.red),
+        success: createSimplePalette(ThemeColors.green),
+        info: createSimplePalette(ThemeColors.lightBlue),
+        warning: {
+            light: ThemeColors.yellow[100],
+            main: ThemeColors.yellow[500],
+            dark: ThemeColors.yellow[900],
+        },
         background: {
             default: ThemeColors.gray[50],
             paper: ThemeColors.white[50],
@@ -32,11 +39,19 @@ export const blueTheme: ThemeOptions = {
             hint: ThemeColors.gray[500],
         },
         action: {
-            active: ThemeColors.black[500],
+            active: ThemeColors.gray[500],
             disabled: 'rgba(0, 0, 0, .25)',
         },
     },
     overrides: {
+        // AVATAR OVERRIDES
+        MuiAvatar: {
+            colorDefault: {
+                backgroundColor: ThemeColors.blue[50],
+                color: ThemeColors.blue[500],
+            }
+        },
+
         // APP BAR OVERRIDES
         MuiAppBar: {
             colorDefault: {
@@ -55,10 +70,38 @@ export const blueTheme: ThemeOptions = {
             },
         },
 
+        // BOTTOM NAVIGATION OVERRIDES
+        MuiBottomNavigation: {
+            root: {
+                backgroundColor: ThemeColors.blue[500],
+            }
+        },
+        MuiBottomNavigationAction: {
+            root: {
+                color: ThemeColors.blue[200],
+                '&$selected': {
+                    color: ThemeColors.white[50],
+                    '& $label': {
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                    }
+                }
+            },
+            selected: {},
+            label: {}
+        },
+
         // BUTTON OVERRIDES
         MuiButton: {
             root: {
                 textTransform: 'none',
+            },
+            containedPrimary: {
+                '&$disabled': {
+                    backgroundColor: ThemeColors.blue[50],
+                    color: ThemeColors.blue[200],
+                    opacity: 1,
+                }
             },
             outlined: {
                 borderColor: ThemeColors.black[500],
@@ -69,6 +112,7 @@ export const blueTheme: ThemeOptions = {
             outlinedSecondary: {
                 borderColor: ThemeColors.lightBlue[500],
             },
+            disabled: {},
         },
 
         // TEXT INPUT OVERRIDES
@@ -93,10 +137,60 @@ export const blueTheme: ThemeOptions = {
         },
 
         // TABS OVERRIDES
+        MuiTab: {
+            textColorPrimary: {
+                color: ThemeColors.white[50],
+                opacity: 0.7,
+                '&$selected': {
+                    color: ThemeColors.white[50],
+                    opacity: 1,
+                },
+            },
+            textColorSecondary: {
+                color: ThemeColors.white[50],
+                opacity: 0.7,
+                '&$selected': {
+                    color: ThemeColors.white[50],
+                    opacity: 1,
+                },
+            },
+            selected: {}
+        },
         MuiTabs: {
             indicator: {
                 backgroundColor: ThemeColors.white[50],
             },
         },
+
+        // TOGGLE BUTTON OVERRIDES (LAB)
+        // @ts-ignore
+        MuiToggleButtonGroup:{
+            root:{
+                backgroundColor: ThemeColors.white[50],
+            },
+            groupedHorizontal: {
+                '&:not(:first-child)':{
+                    marginLeft: 0,
+                }
+            },
+            groupedVertical: {
+                '&:not(:first-child)':{
+                    marginTop: 0,
+                }
+            }
+        },
+        // @ts-ignore
+        MuiToggleButton: {
+            root: {
+                backgroundColor: ThemeColors.white[50],
+                color: ThemeColors.gray[500],
+                borderColor: ThemeColors.gray[100],
+                '&$selected': {
+                    backgroundColor: ThemeColors.blue[50],
+                    color: ThemeColors.blue[500],
+                }
+            },
+            selected: {}
+        }
     },
 };

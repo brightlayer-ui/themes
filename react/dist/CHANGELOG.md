@@ -5,6 +5,7 @@
 ### Changed
 
 -   Update deprecated `typeface-open-sans` dependency to `@fontsource/open-sans`.
+-   Updates to dark theme colors.
 
 ## v5.0.3
 

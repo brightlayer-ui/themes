@@ -34,8 +34,14 @@ export const typography = {
         fontWeight: 600,
     },
 };
-export const createSimplePalette = (color: PXBlueColor): SimplePaletteColorOptions => ({
+export const createSimpleLightPalette = (color: PXBlueColor): SimplePaletteColorOptions => ({
     light: color[50],
     main: color[500],
     dark: color[700],
+});
+
+export const createSimpleDarkPalette = (color: PXBlueColor): SimplePaletteColorOptions => ({
+    light: color[50],
+    main: color[200],
+    dark: color[500],
 });
