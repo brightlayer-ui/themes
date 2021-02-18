@@ -229,8 +229,62 @@ exports.blueTheme = {
                 color: ThemeColors.black[50],
                 '& .MuiButton-textPrimary': {
                     color: ThemeColors.blue[200],
+                },
+            },
+        },
+        // STEPPER OVERRIDES
+        MuiStepper: {},
+        MuiStepConnector: {
+            line: {
+                borderColor: color_1.default(ThemeColors.black[500]).fade(0.88).rgb().string()
+            }
+        },
+        MuiStep: {
+            completed: {
+                // Place a white background behind the icons so that the checks will not be see-through
+                '& .MuiStepLabel-iconContainer:before': {
+                    content: '""',
+                    position: 'absolute',
+                    display: 'block',
+                    top: '5%',
+                    right: '5%',
+                    bottom: '5%',
+                    left: '5%',
+                    backgroundColor: ThemeColors.white[50],
+                    borderRadius: '50%',
+                }
+            }
+        },
+        MuiStepIcon: {
+            root: {
+                color: ThemeColors.white[500],
+                zIndex: 1,
+            },
+            text: {
+                fill: ThemeColors.black[500],
+            },
+            active: {
+                '& $text': {
+                    fill: ThemeColors.white[50],
+                },
+            }
+        },
+        MuiStepLabel: {
+            label: {
+                color: ThemeColors.black[500],
+                '&$active': {
+                    fontWeight: 600,
+                    color: ThemeColors.blue[500],
+                },
+                '&$completed': {
+                    fontWeight: 600,
                 }
             },
+            iconContainer: {
+                position: 'relative',
+            },
+            active: {},
+            completed: {},
         },
         // SWITCH OVERRIDES
         MuiSwitch: {
@@ -250,6 +304,46 @@ exports.blueTheme = {
                 opacity: 1,
             },
             checked: {},
+        },
+        // TABLE OVERRIDES
+        MuiTableCell: {
+            head: {
+                fontWeight: 600,
+            },
+        },
+        MuiTableHead: {
+            root: {
+                background: ThemeColors.white[50],
+            },
+        },
+        MuiTableRow: {
+            root: {
+                color: ThemeColors.black[50],
+                backgroundColor: '#FBFBFB',
+                '&$selected': {
+                    backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.95).rgb().string(),
+                    '&:hover': {
+                        backgroundColor: 'red',
+                    },
+                },
+                '&:nth-of-type(odd)': {
+                    backgroundColor: ThemeColors.white[50],
+                },
+            },
+        },
+        MuiTableSortLabel: {
+            root: {
+                '&:hover': {
+                    color: ThemeColors.black[500],
+                    '& $icon': {
+                        color: ThemeColors.black[300],
+                        opacity: 1,
+                    }
+                },
+            },
+            icon: {
+                opacity: 0.12,
+            }
         },
         // TABS OVERRIDES
         MuiTab: {

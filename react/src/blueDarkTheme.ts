@@ -22,7 +22,7 @@ export const blueDarkTheme: ThemeOptions = {
     palette: {
         type: 'dark',
         primary: createSimplePalette(ThemeColors.blue),
-        secondary: createSimplePalette(ThemeColors.green),
+        secondary: createSimplePalette(ThemeColors.lightBlue),
         error: createSimplePalette(ThemeColors.red),
         success: createSimplePalette(ThemeColors.green),
         info: createSimplePalette(ThemeColors.lightBlue),
@@ -272,6 +272,68 @@ export const blueDarkTheme: ThemeOptions = {
             },
         },
 
+        // STEPPER OVERRIDES
+        MuiStepper: {},
+        MuiStepConnector: {
+            line: {
+                borderColor: Color(ThemeColors.black[200]).fade(0.64).rgb().string(),
+            },
+        },
+        MuiStep: {
+            completed: {
+                // Place a white background behind the icons so that the checks will not be see-through
+                '& .MuiStepLabel-iconContainer:before': {
+                    content: '""',
+                    position: 'absolute',
+                    display: 'block',
+                    top: '5%',
+                    right: '5%',
+                    bottom: '5%',
+                    left: '5%',
+                    backgroundColor: ThemeColors.white[50],
+                    borderRadius: '50%',
+                },
+            },
+        },
+        MuiStepIcon: {
+            root: {
+                color: Color(ThemeColors.black[300]).fade(0.64).rgb().string(),
+                zIndex: 1,
+                '&$active': {
+                    color: ThemeColors.blue[500],
+                },
+                '&$completed': {
+                    color: ThemeColors.blue[500],
+                },
+            },
+            text: {
+                fill: ThemeColors.black[300],
+            },
+            active: {
+                '& $text': {
+                    fill: ThemeColors.white[50],
+                },
+            },
+            completed: {},
+        },
+        MuiStepLabel: {
+            label: {
+                color: ThemeColors.black[200],
+                '&$active': {
+                    fontWeight: 600,
+                    color: ThemeColors.blue[200],
+                },
+                '&$completed': {
+                    fontWeight: 600,
+                },
+            },
+            iconContainer: {
+                position: 'relative',
+            },
+            active: {},
+            completed: {},
+        },
+
         // SWITCH OVERRIDES
         MuiSwitch: {
             switchBase: {
@@ -300,15 +362,36 @@ export const blueDarkTheme: ThemeOptions = {
         },
         MuiTableHead: {
             root: {
-                background: ThemeColors.darkBlack[100],
+                background: ThemeColors.black[900],
             },
         },
         MuiTableRow: {
             root: {
-                color: ThemeColors.gray[100],
+                color: ThemeColors.black[50],
+                backgroundColor: ThemeColors.darkBlack[300],
                 '&$selected': {
-                    backgroundColor: ThemeColors.darkBlack[500],
+                    backgroundColor: Color(ThemeColors.blue[500]).fade(0.8).rgb().string(),
+                    '&:hover': {
+                        backgroundColor: 'red',
+                    },
                 },
+                '&:nth-of-type(odd)': {
+                    backgroundColor: ThemeColors.black[900],
+                },
+            },
+        },
+        MuiTableSortLabel: {
+            root: {
+                '&:hover': {
+                    color: ThemeColors.black[50],
+                    '& $icon': {
+                        color: ThemeColors.black[200],
+                        opacity: 1,
+                    },
+                },
+            },
+            icon: {
+                opacity: 0.36,
             },
         },
 

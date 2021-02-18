@@ -30,7 +30,7 @@ exports.blueDarkTheme = {
     palette: {
         type: 'dark',
         primary: shared_1.createSimpleDarkPalette(ThemeColors.blue),
-        secondary: shared_1.createSimpleDarkPalette(ThemeColors.green),
+        secondary: shared_1.createSimpleDarkPalette(ThemeColors.lightBlue),
         error: shared_1.createSimpleDarkPalette(ThemeColors.red),
         success: shared_1.createSimpleDarkPalette(ThemeColors.green),
         info: shared_1.createSimpleDarkPalette(ThemeColors.lightBlue),
@@ -233,7 +233,7 @@ exports.blueDarkTheme = {
                 color: ThemeColors.black[500],
                 '& .MuiButton-textPrimary': {
                     color: ThemeColors.blue[500],
-                }
+                },
             },
         },
         // SLIDER OVERRIDES
@@ -267,6 +267,67 @@ exports.blueDarkTheme = {
                 backgroundColor: ThemeColors.blue[500],
             },
         },
+        // STEPPER OVERRIDES
+        MuiStepper: {},
+        MuiStepConnector: {
+            line: {
+                borderColor: color_1.default(ThemeColors.black[200]).fade(0.64).rgb().string()
+            }
+        },
+        MuiStep: {
+            completed: {
+                // Place a white background behind the icons so that the checks will not be see-through
+                '& .MuiStepLabel-iconContainer:before': {
+                    content: '""',
+                    position: 'absolute',
+                    display: 'block',
+                    top: '5%',
+                    right: '5%',
+                    bottom: '5%',
+                    left: '5%',
+                    backgroundColor: ThemeColors.white[50],
+                    borderRadius: '50%',
+                }
+            }
+        },
+        MuiStepIcon: {
+            root: {
+                color: color_1.default(ThemeColors.black[300]).fade(0.64).rgb().string(),
+                zIndex: 1,
+                '&$active': {
+                    color: ThemeColors.blue[500],
+                },
+                '&$completed': {
+                    color: ThemeColors.blue[500],
+                },
+            },
+            text: {
+                fill: ThemeColors.black[300],
+            },
+            active: {
+                '& $text': {
+                    fill: ThemeColors.white[50],
+                },
+            },
+            completed: {}
+        },
+        MuiStepLabel: {
+            label: {
+                color: ThemeColors.black[200],
+                '&$active': {
+                    fontWeight: 600,
+                    color: ThemeColors.blue[200],
+                },
+                '&$completed': {
+                    fontWeight: 600,
+                }
+            },
+            iconContainer: {
+                position: 'relative',
+            },
+            active: {},
+            completed: {},
+        },
         // SWITCH OVERRIDES
         MuiSwitch: {
             switchBase: {
@@ -294,16 +355,37 @@ exports.blueDarkTheme = {
         },
         MuiTableHead: {
             root: {
-                background: ThemeColors.darkBlack[100],
+                background: ThemeColors.black[900],
             },
         },
         MuiTableRow: {
             root: {
-                color: ThemeColors.gray[100],
+                color: ThemeColors.black[50],
+                backgroundColor: ThemeColors.darkBlack[300],
                 '&$selected': {
-                    backgroundColor: ThemeColors.darkBlack[500],
+                    backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.8).rgb().string(),
+                    '&:hover': {
+                        backgroundColor: 'red',
+                    },
+                },
+                '&:nth-of-type(odd)': {
+                    backgroundColor: ThemeColors.black[900],
                 },
             },
+        },
+        MuiTableSortLabel: {
+            root: {
+                '&:hover': {
+                    color: ThemeColors.black[50],
+                    '& $icon': {
+                        color: ThemeColors.black[200],
+                        opacity: 1,
+                    }
+                },
+            },
+            icon: {
+                opacity: 0.36,
+            }
         },
         // TABS OVERRIDES
         MuiTab: {
