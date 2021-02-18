@@ -21,9 +21,9 @@ var shared_1 = require("./shared");
 var color_1 = __importDefault(require("color"));
 var ThemeColors = __importStar(require("@pxblue/colors"));
 /*
-*  When using the fade() function to set opacity, the fade functions subtracts the value passed as an argument.
-*  So fade(.60) = opacity 40%
-*/
+ *  When using the fade() function to set opacity, the fade functions subtracts the value passed as an argument.
+ *  So fade(.60) = opacity 40%
+ */
 exports.blueDarkTheme = {
     direction: 'ltr',
     typography: shared_1.typography,
@@ -62,7 +62,7 @@ exports.blueDarkTheme = {
             colorDefault: {
                 backgroundColor: color_1.default(ThemeColors.black[50]).fade(0.9).rgb().string(),
                 color: ThemeColors.black[50],
-            }
+            },
         },
         // APP BAR OVERRIDES
         MuiAppBar: {
@@ -90,13 +90,13 @@ exports.blueDarkTheme = {
             colorError: {
                 backgroundColor: ThemeColors.red[500],
                 color: ThemeColors.white[50],
-            }
+            },
         },
         // BOTTOM NAVIGATION OVERRIDES
         MuiBottomNavigation: {
             root: {
                 backgroundColor: ThemeColors.black[800],
-            }
+            },
         },
         MuiBottomNavigationAction: {
             root: {
@@ -104,11 +104,11 @@ exports.blueDarkTheme = {
                     '& $label': {
                         fontSize: '0.75rem',
                         fontWeight: 600,
-                    }
-                }
+                    },
+                },
             },
             selected: {},
-            label: {}
+            label: {},
         },
         // BUTTON OVERRIDES
         MuiButton: {
@@ -134,7 +134,7 @@ exports.blueDarkTheme = {
             containedPrimary: {
                 '&$disabled': {
                     color: ThemeColors.black[400],
-                }
+                },
             },
             disabled: {},
         },
@@ -146,30 +146,30 @@ exports.blueDarkTheme = {
                 color: ThemeColors.black[50],
                 '& $avatar': {
                     color: ThemeColors.white[50],
-                }
+                },
             },
             clickable: {
                 '&:hover': {
                     backgroundColor: ThemeColors.black[400],
-                }
+                },
             },
             deleteIcon: {
                 color: ThemeColors.black[200],
                 '&:hover': {
                     color: ThemeColors.black[50],
-                }
+                },
             },
             deleteIconColorPrimary: {
                 color: ThemeColors.blue[100],
                 '&:hover': {
                     color: ThemeColors.white[50],
-                }
+                },
             },
             deleteIconOutlinedColorPrimary: {
                 color: ThemeColors.blue[400],
                 '&:hover': {
                     color: ThemeColors.blue[200],
-                }
+                },
             },
             colorPrimary: {
                 color: ThemeColors.white[50],
@@ -186,13 +186,12 @@ exports.blueDarkTheme = {
                 },
             },
             outlinedPrimary: {
-                color: ThemeColors.blue[200],
-                backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.80).rgb().string(),
+                backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.8).rgb().string(),
                 '&$clickable:hover': {
                     backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.7).rgb().string(),
                 },
             },
-            avatar: {}
+            avatar: {},
         },
         // DRAWER OVERRIDES
         MuiDrawer: {
@@ -234,6 +233,25 @@ exports.blueDarkTheme = {
                 color: ThemeColors.white[50],
             },
         },
+        // SWITCH OVERRIDES
+        MuiSwitch: {
+            switchBase: {
+                color: ThemeColors.black[50],
+                '&$checked + $track': {
+                    opacity: 0.5,
+                },
+            },
+            colorPrimary: {
+                '&$checked': {
+                    color: ThemeColors.blue[200],
+                }
+            },
+            track: {
+                backgroundColor: ThemeColors.black[300],
+                opacity: 0.36,
+            },
+            checked: {},
+        },
         // TABLE OVERRIDES
         MuiTableCell: {
             head: {
@@ -262,7 +280,7 @@ exports.blueDarkTheme = {
                     color: ThemeColors.blue[200],
                 },
             },
-            selected: {}
+            selected: {},
         },
         MuiTabs: {
             root: {
@@ -281,13 +299,13 @@ exports.blueDarkTheme = {
             groupedHorizontal: {
                 '&:not(:first-child)': {
                     marginLeft: 0,
-                }
+                },
             },
             groupedVertical: {
                 '&:not(:first-child)': {
                     marginTop: 0,
-                }
-            }
+                },
+            },
         },
         // @ts-ignore
         MuiToggleButton: {
@@ -298,9 +316,9 @@ exports.blueDarkTheme = {
                 '&$selected': {
                     backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.8).rgb().string(),
                     color: ThemeColors.blue[200],
-                }
+                },
             },
-            selected: {}
+            selected: {},
         },
     },
 };

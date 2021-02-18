@@ -237,6 +237,26 @@ export const blueDarkTheme: ThemeOptions = {
             },
         },
 
+        // SWITCH OVERRIDES
+        MuiSwitch: {
+            switchBase: {
+                color: ThemeColors.black[50],
+                '&$checked + $track': {
+                    opacity: 0.5,
+                },
+            },
+            colorPrimary: {
+                '&$checked': {
+                    color: ThemeColors.blue[200],
+                },
+            },
+            track: {
+                backgroundColor: ThemeColors.black[300],
+                opacity: 0.36,
+            },
+            checked: {},
+        },
+
         // TABLE OVERRIDES
         MuiTableCell: {
             head: {

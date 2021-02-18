@@ -59,7 +59,7 @@ exports.blueTheme = {
             colorDefault: {
                 backgroundColor: ThemeColors.blue[50],
                 color: ThemeColors.blue[500],
-            }
+            },
         },
         // APP BAR OVERRIDES
         MuiAppBar: {
@@ -82,7 +82,7 @@ exports.blueTheme = {
         MuiBottomNavigation: {
             root: {
                 backgroundColor: ThemeColors.blue[500],
-            }
+            },
         },
         MuiBottomNavigationAction: {
             root: {
@@ -92,11 +92,11 @@ exports.blueTheme = {
                     '& $label': {
                         fontSize: '0.75rem',
                         fontWeight: 600,
-                    }
-                }
+                    },
+                },
             },
             selected: {},
-            label: {}
+            label: {},
         },
         // BUTTON OVERRIDES
         MuiButton: {
@@ -108,7 +108,7 @@ exports.blueTheme = {
                     backgroundColor: ThemeColors.blue[50],
                     color: ThemeColors.blue[200],
                     opacity: 1,
-                }
+                },
             },
             outlined: {
                 borderColor: ThemeColors.black[500],
@@ -129,30 +129,30 @@ exports.blueTheme = {
                 color: ThemeColors.black[500],
                 '& $avatar': {
                     color: ThemeColors.blue[500],
-                }
+                },
             },
             clickable: {
                 '&:hover': {
                     backgroundColor: ThemeColors.gray[100],
-                }
+                },
             },
             deleteIcon: {
                 color: ThemeColors.gray[500],
                 '&:hover': {
                     color: ThemeColors.black[500],
-                }
+                },
             },
             deleteIconColorPrimary: {
                 color: ThemeColors.blue[100],
                 '&:hover': {
                     color: ThemeColors.white[50],
-                }
+                },
             },
             deleteIconOutlinedColorPrimary: {
                 color: ThemeColors.blue[200],
                 '&:hover': {
                     color: ThemeColors.blue[500],
-                }
+                },
             },
             outlined: {
                 borderColor: color_1.default(ThemeColors.black[500]).fade(0.88).rgb().string(),
@@ -166,7 +166,7 @@ exports.blueTheme = {
                     backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.9).rgb().string(),
                 },
             },
-            avatar: {}
+            avatar: {},
         },
         // TEXT INPUT OVERRIDES
         MuiFilledInput: {
@@ -186,6 +186,25 @@ exports.blueTheme = {
                 color: ThemeColors.black[500],
             },
         },
+        // SWITCH OVERRIDES
+        MuiSwitch: {
+            switchBase: {
+                color: ThemeColors.white[50],
+                '&$checked + $track': {
+                    opacity: 0.38,
+                },
+            },
+            colorPrimary: {
+                '&$checked': {
+                    color: ThemeColors.blue[500],
+                }
+            },
+            track: {
+                backgroundColor: ThemeColors.black[100],
+                opacity: 1,
+            },
+            checked: {},
+        },
         // TABS OVERRIDES
         MuiTab: {
             textColorPrimary: {
@@ -204,7 +223,7 @@ exports.blueTheme = {
                     opacity: 1,
                 },
             },
-            selected: {}
+            selected: {},
         },
         MuiTabs: {
             indicator: {
@@ -220,13 +239,13 @@ exports.blueTheme = {
             groupedHorizontal: {
                 '&:not(:first-child)': {
                     marginLeft: 0,
-                }
+                },
             },
             groupedVertical: {
                 '&:not(:first-child)': {
                     marginTop: 0,
-                }
-            }
+                },
+            },
         },
         // @ts-ignore
         MuiToggleButton: {
@@ -237,9 +256,9 @@ exports.blueTheme = {
                 '&$selected': {
                     backgroundColor: ThemeColors.blue[50],
                     color: ThemeColors.blue[500],
-                }
+                },
             },
-            selected: {}
-        }
+            selected: {},
+        },
     },
 };

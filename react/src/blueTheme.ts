@@ -185,6 +185,26 @@ export const blueTheme: ThemeOptions = {
             },
         },
 
+        // SWITCH OVERRIDES
+        MuiSwitch: {
+            switchBase: {
+                color: ThemeColors.white[50],
+                '&$checked + $track': {
+                    opacity: 0.38,
+                },
+            },
+            colorPrimary: {
+                '&$checked': {
+                    color: ThemeColors.blue[500],
+                },
+            },
+            track: {
+                backgroundColor: ThemeColors.black[100],
+                opacity: 1,
+            },
+            checked: {},
+        },
+
         // TABS OVERRIDES
         MuiTab: {
             textColorPrimary: {
