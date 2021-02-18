@@ -9,6 +9,7 @@
 import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import { typography, createSimpleLightPalette as createSimplePalette } from './shared';
 import * as ThemeColors from '@pxblue/colors';
+import Color from 'color';
 
 /*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
@@ -30,7 +31,7 @@ export const blueTheme: ThemeOptions = {
             dark: ThemeColors.yellow[900],
         },
         background: {
-            default: ThemeColors.gray[50],
+            default: ThemeColors.white[200],
             paper: ThemeColors.white[50],
         },
         text: {
@@ -49,7 +50,7 @@ export const blueTheme: ThemeOptions = {
             colorDefault: {
                 backgroundColor: ThemeColors.blue[50],
                 color: ThemeColors.blue[500],
-            }
+            },
         },
 
         // APP BAR OVERRIDES
@@ -74,7 +75,7 @@ export const blueTheme: ThemeOptions = {
         MuiBottomNavigation: {
             root: {
                 backgroundColor: ThemeColors.blue[500],
-            }
+            },
         },
         MuiBottomNavigationAction: {
             root: {
@@ -84,11 +85,11 @@ export const blueTheme: ThemeOptions = {
                     '& $label': {
                         fontSize: '0.75rem',
                         fontWeight: 600,
-                    }
-                }
+                    },
+                },
             },
             selected: {},
-            label: {}
+            label: {},
         },
 
         // BUTTON OVERRIDES
@@ -101,7 +102,7 @@ export const blueTheme: ThemeOptions = {
                     backgroundColor: ThemeColors.blue[50],
                     color: ThemeColors.blue[200],
                     opacity: 1,
-                }
+                },
             },
             outlined: {
                 borderColor: ThemeColors.black[500],
@@ -113,6 +114,54 @@ export const blueTheme: ThemeOptions = {
                 borderColor: ThemeColors.lightBlue[500],
             },
             disabled: {},
+        },
+
+        // CHIP OVERRIDES
+        MuiChip: {
+            root: {
+                fontSize: '0.875rem',
+                backgroundColor: ThemeColors.white[500],
+                color: ThemeColors.black[500],
+                '& $avatar': {
+                    color: ThemeColors.blue[500],
+                },
+            },
+            clickable: {
+                '&:hover': {
+                    backgroundColor: ThemeColors.gray[100],
+                },
+            },
+            deleteIcon: {
+                color: ThemeColors.gray[500],
+                '&:hover': {
+                    color: ThemeColors.black[500],
+                },
+            },
+            deleteIconColorPrimary: {
+                color: ThemeColors.blue[100],
+                '&:hover': {
+                    color: ThemeColors.white[50],
+                },
+            },
+            deleteIconOutlinedColorPrimary: {
+                color: ThemeColors.blue[200],
+                '&:hover': {
+                    color: ThemeColors.blue[500],
+                },
+            },
+            outlined: {
+                borderColor: Color(ThemeColors.black[500]).fade(0.88).rgb().string(),
+                '&$clickable:hover': {
+                    backgroundColor: ThemeColors.white[200],
+                },
+            },
+            outlinedPrimary: {
+                backgroundColor: Color(ThemeColors.blue[500]).fade(0.95).rgb().string(),
+                '&$clickable:hover': {
+                    backgroundColor: Color(ThemeColors.blue[500]).fade(0.9).rgb().string(),
+                },
+            },
+            avatar: {},
         },
 
         // TEXT INPUT OVERRIDES
@@ -154,7 +203,7 @@ export const blueTheme: ThemeOptions = {
                     opacity: 1,
                 },
             },
-            selected: {}
+            selected: {},
         },
         MuiTabs: {
             indicator: {
@@ -164,20 +213,20 @@ export const blueTheme: ThemeOptions = {
 
         // TOGGLE BUTTON OVERRIDES (LAB)
         // @ts-ignore
-        MuiToggleButtonGroup:{
-            root:{
+        MuiToggleButtonGroup: {
+            root: {
                 backgroundColor: ThemeColors.white[50],
             },
             groupedHorizontal: {
-                '&:not(:first-child)':{
+                '&:not(:first-child)': {
                     marginLeft: 0,
-                }
+                },
             },
             groupedVertical: {
-                '&:not(:first-child)':{
+                '&:not(:first-child)': {
                     marginTop: 0,
-                }
-            }
+                },
+            },
         },
         // @ts-ignore
         MuiToggleButton: {
@@ -188,9 +237,9 @@ export const blueTheme: ThemeOptions = {
                 '&$selected': {
                     backgroundColor: ThemeColors.blue[50],
                     color: ThemeColors.blue[500],
-                }
+                },
             },
-            selected: {}
-        }
+            selected: {},
+        },
     },
 };

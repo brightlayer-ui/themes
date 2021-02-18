@@ -11,10 +11,10 @@ import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import Color from 'color';
 import * as ThemeColors from '@pxblue/colors';
 
-/* 
-*  When using the fade() function to set opacity, the fade functions subtracts the value passed as an argument.
-*  So fade(.60) = opacity 40%
-*/
+/*
+ *  When using the fade() function to set opacity, the fade functions subtracts the value passed as an argument.
+ *  So fade(.60) = opacity 40%
+ */
 
 export const blueDarkTheme: ThemeOptions = {
     direction: 'ltr',
@@ -55,7 +55,7 @@ export const blueDarkTheme: ThemeOptions = {
             colorDefault: {
                 backgroundColor: Color(ThemeColors.black[50]).fade(0.9).rgb().string(),
                 color: ThemeColors.black[50],
-            }
+            },
         },
 
         // APP BAR OVERRIDES
@@ -86,14 +86,14 @@ export const blueDarkTheme: ThemeOptions = {
             colorError: {
                 backgroundColor: ThemeColors.red[500],
                 color: ThemeColors.white[50],
-            }
+            },
         },
 
         // BOTTOM NAVIGATION OVERRIDES
         MuiBottomNavigation: {
             root: {
                 backgroundColor: ThemeColors.black[800],
-            }
+            },
         },
         MuiBottomNavigationAction: {
             root: {
@@ -101,11 +101,11 @@ export const blueDarkTheme: ThemeOptions = {
                     '& $label': {
                         fontSize: '0.75rem',
                         fontWeight: 600,
-                    }
-                }
+                    },
+                },
             },
             selected: {},
-            label: {}
+            label: {},
         },
 
         // BUTTON OVERRIDES
@@ -132,7 +132,7 @@ export const blueDarkTheme: ThemeOptions = {
             containedPrimary: {
                 '&$disabled': {
                     color: ThemeColors.black[400],
-                }
+                },
             },
             disabled: {},
         },
@@ -140,8 +140,57 @@ export const blueDarkTheme: ThemeOptions = {
         // CHIP OVERRIDES
         MuiChip: {
             root: {
+                fontSize: '0.875rem',
                 backgroundColor: ThemeColors.black[500],
+                color: ThemeColors.black[50],
+                '& $avatar': {
+                    color: ThemeColors.white[50],
+                },
             },
+            clickable: {
+                '&:hover': {
+                    backgroundColor: ThemeColors.black[400],
+                },
+            },
+            deleteIcon: {
+                color: ThemeColors.black[200],
+                '&:hover': {
+                    color: ThemeColors.black[50],
+                },
+            },
+            deleteIconColorPrimary: {
+                color: ThemeColors.blue[100],
+                '&:hover': {
+                    color: ThemeColors.white[50],
+                },
+            },
+            deleteIconOutlinedColorPrimary: {
+                color: ThemeColors.blue[400],
+                '&:hover': {
+                    color: ThemeColors.blue[200],
+                },
+            },
+            colorPrimary: {
+                color: ThemeColors.white[50],
+                backgroundColor: ThemeColors.blue[500],
+                '&$clickable:hover': {
+                    backgroundColor: ThemeColors.blue[300],
+                },
+            },
+            outlined: {
+                backgroundColor: ThemeColors.black[900],
+                borderColor: Color(ThemeColors.black[200]).fade(0.64).rgb().string(),
+                '&$clickable:hover': {
+                    backgroundColor: ThemeColors.black[800],
+                },
+            },
+            outlinedPrimary: {
+                backgroundColor: Color(ThemeColors.blue[500]).fade(0.8).rgb().string(),
+                '&$clickable:hover': {
+                    backgroundColor: Color(ThemeColors.blue[500]).fade(0.7).rgb().string(),
+                },
+            },
+            avatar: {},
         },
 
         // DRAWER OVERRIDES
@@ -217,7 +266,7 @@ export const blueDarkTheme: ThemeOptions = {
                     color: ThemeColors.blue[200],
                 },
             },
-            selected: {}
+            selected: {},
         },
         MuiTabs: {
             root: {
@@ -231,33 +280,32 @@ export const blueDarkTheme: ThemeOptions = {
         // TOGGLE BUTTON OVERRIDES (LAB)
         // @ts-ignore
         MuiToggleButtonGroup: {
-            root:{
+            root: {
                 backgroundColor: ThemeColors.black[900],
             },
             groupedHorizontal: {
                 '&:not(:first-child)': {
                     marginLeft: 0,
-                }
+                },
             },
             groupedVertical: {
                 '&:not(:first-child)': {
                     marginTop: 0,
-                }
-            }
+                },
+            },
         },
         // @ts-ignore
         MuiToggleButton: {
             root: {
                 backgroundColor: ThemeColors.black[900],
-                borderColor: 'red',
                 color: ThemeColors.gray[500],
                 borderColor: Color(ThemeColors.black[200]).fade(0.64).rgb().string(),
                 '&$selected': {
                     backgroundColor: Color(ThemeColors.blue[500]).fade(0.8).rgb().string(),
                     color: ThemeColors.blue[200],
-                }
+                },
             },
-            selected: {}
+            selected: {},
         },
     },
 };

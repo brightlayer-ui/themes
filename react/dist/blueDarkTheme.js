@@ -141,8 +141,58 @@ exports.blueDarkTheme = {
         // CHIP OVERRIDES
         MuiChip: {
             root: {
+                fontSize: '0.875rem',
                 backgroundColor: ThemeColors.black[500],
+                color: ThemeColors.black[50],
+                '& $avatar': {
+                    color: ThemeColors.white[50],
+                }
             },
+            clickable: {
+                '&:hover': {
+                    backgroundColor: ThemeColors.black[400],
+                }
+            },
+            deleteIcon: {
+                color: ThemeColors.black[200],
+                '&:hover': {
+                    color: ThemeColors.black[50],
+                }
+            },
+            deleteIconColorPrimary: {
+                color: ThemeColors.blue[100],
+                '&:hover': {
+                    color: ThemeColors.white[50],
+                }
+            },
+            deleteIconOutlinedColorPrimary: {
+                color: ThemeColors.blue[400],
+                '&:hover': {
+                    color: ThemeColors.blue[200],
+                }
+            },
+            colorPrimary: {
+                color: ThemeColors.white[50],
+                backgroundColor: ThemeColors.blue[500],
+                '&$clickable:hover': {
+                    backgroundColor: ThemeColors.blue[300],
+                },
+            },
+            outlined: {
+                backgroundColor: ThemeColors.black[900],
+                borderColor: color_1.default(ThemeColors.black[200]).fade(0.64).rgb().string(),
+                '&$clickable:hover': {
+                    backgroundColor: ThemeColors.black[800],
+                },
+            },
+            outlinedPrimary: {
+                color: ThemeColors.blue[200],
+                backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.80).rgb().string(),
+                '&$clickable:hover': {
+                    backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.7).rgb().string(),
+                },
+            },
+            avatar: {}
         },
         // DRAWER OVERRIDES
         MuiDrawer: {
@@ -243,7 +293,6 @@ exports.blueDarkTheme = {
         MuiToggleButton: {
             root: {
                 backgroundColor: ThemeColors.black[900],
-                borderColor: 'red',
                 color: ThemeColors.gray[500],
                 borderColor: color_1.default(ThemeColors.black[200]).fade(0.64).rgb().string(),
                 '&$selected': {

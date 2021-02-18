@@ -13,9 +13,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var shared_1 = require("./shared");
 var ThemeColors = __importStar(require("@pxblue/colors"));
+var color_1 = __importDefault(require("color"));
 /*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
     to customize in our themes. These have changed periodically from version to version of Material UI.
@@ -36,7 +40,7 @@ exports.blueTheme = {
             dark: ThemeColors.yellow[900],
         },
         background: {
-            default: ThemeColors.gray[50],
+            default: ThemeColors.white[200],
             paper: ThemeColors.white[50],
         },
         text: {
@@ -116,6 +120,53 @@ exports.blueTheme = {
                 borderColor: ThemeColors.lightBlue[500],
             },
             disabled: {},
+        },
+        // CHIP OVERRIDES
+        MuiChip: {
+            root: {
+                fontSize: '0.875rem',
+                backgroundColor: ThemeColors.white[500],
+                color: ThemeColors.black[500],
+                '& $avatar': {
+                    color: ThemeColors.blue[500],
+                }
+            },
+            clickable: {
+                '&:hover': {
+                    backgroundColor: ThemeColors.gray[100],
+                }
+            },
+            deleteIcon: {
+                color: ThemeColors.gray[500],
+                '&:hover': {
+                    color: ThemeColors.black[500],
+                }
+            },
+            deleteIconColorPrimary: {
+                color: ThemeColors.blue[100],
+                '&:hover': {
+                    color: ThemeColors.white[50],
+                }
+            },
+            deleteIconOutlinedColorPrimary: {
+                color: ThemeColors.blue[200],
+                '&:hover': {
+                    color: ThemeColors.blue[500],
+                }
+            },
+            outlined: {
+                borderColor: color_1.default(ThemeColors.black[500]).fade(0.88).rgb().string(),
+                '&$clickable:hover': {
+                    backgroundColor: ThemeColors.white[200],
+                },
+            },
+            outlinedPrimary: {
+                backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.95).rgb().string(),
+                '&$clickable:hover': {
+                    backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.9).rgb().string(),
+                },
+            },
+            avatar: {}
         },
         // TEXT INPUT OVERRIDES
         MuiFilledInput: {
