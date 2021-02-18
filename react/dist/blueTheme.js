@@ -124,7 +124,7 @@ exports.blueTheme = {
         MuiCheckbox: {
             root: {
                 color: ThemeColors.gray[500],
-            }
+            },
         },
         // CHIP OVERRIDES
         MuiChip: {
@@ -220,6 +220,16 @@ exports.blueTheme = {
             },
             markActive: {
                 backgroundColor: ThemeColors.blue[200],
+            },
+        },
+        // SNACKBAR OVERRIDES
+        MuiSnackbarContent: {
+            root: {
+                backgroundColor: ThemeColors.black[900],
+                color: ThemeColors.black[50],
+                '& .MuiButton-textPrimary': {
+                    color: ThemeColors.blue[200],
+                }
             },
         },
         // SWITCH OVERRIDES

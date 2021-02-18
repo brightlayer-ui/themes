@@ -223,6 +223,17 @@ export const blueTheme: ThemeOptions = {
             },
         },
 
+        // SNACKBAR OVERRIDES
+        MuiSnackbarContent: {
+            root: {
+                backgroundColor: ThemeColors.black[900],
+                color: ThemeColors.black[50],
+                '& .MuiButton-textPrimary': {
+                    color: ThemeColors.blue[200],
+                },
+            },
+        },
+
         // SWITCH OVERRIDES
         MuiSwitch: {
             switchBase: {

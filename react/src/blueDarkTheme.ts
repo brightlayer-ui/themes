@@ -232,8 +232,11 @@ export const blueDarkTheme: ThemeOptions = {
         // SNACKBAR OVERRIDES
         MuiSnackbarContent: {
             root: {
-                backgroundColor: ThemeColors.darkBlack[900],
-                color: ThemeColors.white[50],
+                // backgroundColor: ThemeColors.black[900],
+                color: ThemeColors.black[500],
+                '& .MuiButton-textPrimary': {
+                    color: ThemeColors.blue[500],
+                },
             },
         },
 
