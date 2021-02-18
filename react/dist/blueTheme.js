@@ -121,6 +121,11 @@ exports.blueTheme = {
             },
             disabled: {},
         },
+        MuiCheckbox: {
+            root: {
+                color: ThemeColors.gray[500],
+            }
+        },
         // CHIP OVERRIDES
         MuiChip: {
             root: {
@@ -174,7 +179,7 @@ exports.blueTheme = {
                 backgroundColor: ThemeColors.white[200],
             },
         },
-        // BUTTON OVERRIDES
+        // FAB OVERRIDES
         MuiFab: {
             root: {
                 textTransform: 'none',
@@ -184,6 +189,37 @@ exports.blueTheme = {
         MuiListItem: {
             root: {
                 color: ThemeColors.black[500],
+            },
+        },
+        // SLIDER OVERRIDES
+        MuiSlider: {
+            root: {
+                height: 6,
+                color: ThemeColors.blue[300],
+            },
+            track: {
+                height: 6,
+                marginTop: -1,
+            },
+            rail: {
+                height: 4,
+                backgroundColor: ThemeColors.black[100],
+            },
+            thumb: {
+                height: 20,
+                width: 20,
+                marginTop: -8,
+                backgroundColor: ThemeColors.blue[500],
+            },
+            thumbColorSecondary: {
+                backgroundColor: ThemeColors.lightBlue[500],
+            },
+            mark: {
+                backgroundColor: ThemeColors.blue[200],
+                marginTop: 1,
+            },
+            markActive: {
+                backgroundColor: ThemeColors.blue[200],
             },
         },
         // SWITCH OVERRIDES
@@ -197,7 +233,7 @@ exports.blueTheme = {
             colorPrimary: {
                 '&$checked': {
                     color: ThemeColors.blue[500],
-                }
+                },
             },
             track: {
                 backgroundColor: ThemeColors.black[100],

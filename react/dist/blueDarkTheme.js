@@ -233,6 +233,37 @@ exports.blueDarkTheme = {
                 color: ThemeColors.white[50],
             },
         },
+        // SLIDER OVERRIDES
+        MuiSlider: {
+            root: {
+                height: 6,
+                color: ThemeColors.blue[300],
+            },
+            track: {
+                height: 6,
+                marginTop: -1,
+            },
+            rail: {
+                height: 4,
+                backgroundColor: ThemeColors.black[300],
+            },
+            thumb: {
+                height: 20,
+                width: 20,
+                marginTop: -8,
+                backgroundColor: ThemeColors.blue[200],
+            },
+            thumbColorSecondary: {
+                backgroundColor: ThemeColors.lightBlue[200],
+            },
+            mark: {
+                backgroundColor: ThemeColors.blue[500],
+                marginTop: 1,
+            },
+            markActive: {
+                backgroundColor: ThemeColors.blue[500],
+            },
+        },
         // SWITCH OVERRIDES
         MuiSwitch: {
             switchBase: {
@@ -244,7 +275,7 @@ exports.blueDarkTheme = {
             colorPrimary: {
                 '&$checked': {
                     color: ThemeColors.blue[200],
-                }
+                },
             },
             track: {
                 backgroundColor: ThemeColors.black[300],
