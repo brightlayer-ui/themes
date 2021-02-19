@@ -32,8 +32,13 @@ exports.typography = {
         fontWeight: 600,
     },
 };
-exports.createSimplePalette = function (color) { return ({
+exports.createSimpleLightPalette = function (color) { return ({
     light: color[50],
     main: color[500],
     dark: color[700],
+}); };
+exports.createSimpleDarkPalette = function (color) { return ({
+    light: color[50],
+    main: color[200],
+    dark: color[500],
 }); };

@@ -32,4 +32,5 @@ export declare const typography: {
         fontWeight: number;
     };
 };
-export declare const createSimplePalette: (color: PXBlueColor) => SimplePaletteColorOptions;
+export declare const createSimpleLightPalette: (color: PXBlueColor) => SimplePaletteColorOptions;
+export declare const createSimpleDarkPalette: (color: PXBlueColor) => SimplePaletteColorOptions;
