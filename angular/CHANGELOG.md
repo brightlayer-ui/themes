@@ -6,6 +6,11 @@
 
 -   Added `<pxb-score-card>` badge background theme.
 
+### Changed
+
+-  Changed several dark mode defaults. 
+
+
 ### Fixed
 
 -   Fixed missing navigation rail active-item font-color bug.

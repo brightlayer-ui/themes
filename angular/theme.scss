@@ -115,7 +115,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
         mat-dark-theme($primary, $accent, $warn),
         (
             foreground: (
-                text: map-get($pxb-gray, 300),
+                text: map-get($pxb-black, 50),
                 secondary-text: map-get($pxb-black, 300),
                 hint-text: map-get($pxb-gray, 300),
                 base: map-get($pxb-white, 50),
