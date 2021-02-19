@@ -116,7 +116,7 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
         (
             foreground: (
                 text: map-get($pxb-black, 50),
-                secondary-text: map-get($pxb-black, 300),
+                secondary-text: map-get($pxb-black, 200),
                 hint-text: map-get($pxb-gray, 300),
                 base: map-get($pxb-white, 50),
                 divider: $light-dividers,
@@ -154,8 +154,8 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
         )
     );
 }
-$pxb-blue-dark-primary: mat-palette($pxb-blue, 500);
-$pxb-blue-dark-accent: mat-palette($pxb-lightBlue, 500);
+$pxb-blue-dark-primary: mat-palette($pxb-blue);
+$pxb-blue-dark-accent: mat-palette($pxb-lightBlue);
 $pxb-blue-dark-warn: mat-palette($pxb-red, 500);
 $pxb-blue-dark-theme: pxb-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-accent, $pxb-blue-dark-warn);
 .pxb-blue-dark {
