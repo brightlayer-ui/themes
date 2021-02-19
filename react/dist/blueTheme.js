@@ -73,13 +73,6 @@ exports.blueTheme = {
         action: ThemeColors.action,
     },
     overrides: {
-        // AVATAR OVERRIDES
-        MuiAvatar: {
-            colorDefault: {
-                backgroundColor: ThemeColors.primary.light,
-                color: ThemeColors.primary.main,
-            },
-        },
         // APP BAR OVERRIDES
         MuiAppBar: {
             colorDefault: {
@@ -95,6 +88,13 @@ exports.blueTheme = {
                 '& .MuiSelect-icon': {
                     color: PXBColors.white[50],
                 },
+            },
+        },
+        // AVATAR OVERRIDES
+        MuiAvatar: {
+            colorDefault: {
+                backgroundColor: ThemeColors.primary.light,
+                color: ThemeColors.primary.main,
             },
         },
         // BOTTOM NAVIGATION OVERRIDES
@@ -191,65 +191,6 @@ exports.blueTheme = {
                 },
             },
             avatar: {},
-        },
-        // TEXT INPUT OVERRIDES
-        MuiInput: {
-            underline: {
-                '&$disabled:before': {
-                    borderBottomColor: ThemeColors.action.disabled,
-                    borderBottomStyle: 'solid',
-                }
-            },
-            disabled: {},
-        },
-        MuiFilledInput: {
-            root: {
-                backgroundColor: ThemeColors.background.default,
-                '&:hover': {
-                    backgroundColor: PXBColors.white[400],
-                },
-                '&$focused': {
-                    backgroundColor: ThemeColors.background.default,
-                },
-                '&$disabled': {
-                    color: color_1.default(ThemeColors.text.primary).alpha(0.3).rgb().string(),
-                    backgroundColor: PXBColors.white[100],
-                    pointerEvents: 'none',
-                }
-            },
-            underline: {
-                '&:before': {
-                    borderBottomColor: ThemeColors.divider,
-                }
-            },
-            focused: {},
-            disabled: {},
-        },
-        MuiOutlinedInput: {
-            root: {
-                '&$error$colorSecondary$focused $notchedOutline': {
-                    borderColor: ThemeColors.error.main,
-                },
-                '&$error:hover $notchedOutline': {
-                    borderColor: PXBColors.red[900],
-                }
-            },
-            colorSecondary: {},
-            focused: {},
-            error: {},
-            notchedOutline: {
-                borderColor: ThemeColors.divider,
-            },
-        },
-        MuiFormLabel: {
-            root: {
-                color: ThemeColors.text.hint,
-                '&$error$colorSecondary$focused': {
-                    color: ThemeColors.error.main,
-                }
-            },
-            colorSecondary: {},
-            focused: {},
         },
         // FAB OVERRIDES
         MuiFab: {
@@ -448,6 +389,65 @@ exports.blueTheme = {
             indicator: {
                 backgroundColor: PXBColors.white[50],
             },
+        },
+        // TEXT FIELD OVERRIDES
+        MuiInput: {
+            underline: {
+                '&$disabled:before': {
+                    borderBottomColor: ThemeColors.action.disabled,
+                    borderBottomStyle: 'solid',
+                },
+            },
+            disabled: {},
+        },
+        MuiFilledInput: {
+            root: {
+                backgroundColor: ThemeColors.background.default,
+                '&:hover': {
+                    backgroundColor: PXBColors.white[400],
+                },
+                '&$focused': {
+                    backgroundColor: ThemeColors.background.default,
+                },
+                '&$disabled': {
+                    color: color_1.default(ThemeColors.text.primary).alpha(0.3).rgb().string(),
+                    backgroundColor: PXBColors.white[100],
+                    pointerEvents: 'none',
+                },
+            },
+            underline: {
+                '&:before': {
+                    borderBottomColor: ThemeColors.divider,
+                },
+            },
+            focused: {},
+            disabled: {},
+        },
+        MuiOutlinedInput: {
+            root: {
+                '&$error$colorSecondary$focused $notchedOutline': {
+                    borderColor: ThemeColors.error.main,
+                },
+                '&$error:hover $notchedOutline': {
+                    borderColor: PXBColors.red[900],
+                },
+            },
+            colorSecondary: {},
+            focused: {},
+            error: {},
+            notchedOutline: {
+                borderColor: ThemeColors.divider,
+            },
+        },
+        MuiFormLabel: {
+            root: {
+                color: ThemeColors.text.hint,
+                '&$error$colorSecondary$focused': {
+                    color: ThemeColors.error.main,
+                },
+            },
+            colorSecondary: {},
+            focused: {},
         },
         // TOGGLE BUTTON OVERRIDES (LAB)
         // @ts-ignore
