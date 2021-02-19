@@ -18,8 +18,41 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var shared_1 = require("./shared");
-var ThemeColors = __importStar(require("@pxblue/colors"));
+var PXBColors = __importStar(require("@pxblue/colors"));
 var color_1 = __importDefault(require("color"));
+/*
+    Variable color definitions so we can reuse them in the theme overrides below
+*/
+var ThemeColors = {
+    primary: shared_1.createSimpleLightPalette(PXBColors.blue),
+    secondary: shared_1.createSimpleLightPalette(PXBColors.lightBlue),
+    error: shared_1.createSimpleLightPalette(PXBColors.red),
+    success: shared_1.createSimpleLightPalette(PXBColors.green),
+    info: shared_1.createSimpleLightPalette(PXBColors.lightBlue),
+    // divider: Color(PXBColors.black[200]).alpha(0.32).rgb().string(),
+    warning: {
+        light: PXBColors.yellow[100],
+        main: PXBColors.yellow[500],
+        dark: PXBColors.yellow[900],
+    },
+    background: {
+        default: PXBColors.white[200],
+        paper: PXBColors.white[50],
+    },
+    text: {
+        primary: PXBColors.black[500],
+        secondary: PXBColors.black[300],
+        // disabled: Color(PXBColors.black[300]).alpha(0.32).rgb().string(),
+        hint: PXBColors.gray[500],
+    },
+    action: {
+        // hover: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
+        active: PXBColors.gray[500],
+        disabled: 'rgba(0, 0, 0, .25)',
+    },
+};
+var WhiteText = PXBColors.white[50];
+var BlackBorder = PXBColors.black[500];
 /*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
     to customize in our themes. These have changed periodically from version to version of Material UI.
@@ -29,66 +62,52 @@ exports.blueTheme = {
     typography: shared_1.typography,
     palette: {
         type: 'light',
-        primary: shared_1.createSimpleLightPalette(ThemeColors.blue),
-        secondary: shared_1.createSimpleLightPalette(ThemeColors.lightBlue),
-        error: shared_1.createSimpleLightPalette(ThemeColors.red),
-        success: shared_1.createSimpleLightPalette(ThemeColors.green),
-        info: shared_1.createSimpleLightPalette(ThemeColors.lightBlue),
-        warning: {
-            light: ThemeColors.yellow[100],
-            main: ThemeColors.yellow[500],
-            dark: ThemeColors.yellow[900],
-        },
-        background: {
-            default: ThemeColors.white[200],
-            paper: ThemeColors.white[50],
-        },
-        text: {
-            primary: ThemeColors.black[500],
-            secondary: ThemeColors.black[300],
-            hint: ThemeColors.gray[500],
-        },
-        action: {
-            active: ThemeColors.gray[500],
-            disabled: 'rgba(0, 0, 0, .25)',
-        },
+        primary: ThemeColors.primary,
+        secondary: ThemeColors.secondary,
+        error: ThemeColors.error,
+        success: ThemeColors.success,
+        info: ThemeColors.info,
+        warning: ThemeColors.warning,
+        background: ThemeColors.background,
+        text: ThemeColors.text,
+        action: ThemeColors.action,
     },
     overrides: {
         // AVATAR OVERRIDES
         MuiAvatar: {
             colorDefault: {
-                backgroundColor: ThemeColors.blue[50],
-                color: ThemeColors.blue[500],
+                backgroundColor: ThemeColors.primary.light,
+                color: ThemeColors.primary.main,
             },
         },
         // APP BAR OVERRIDES
         MuiAppBar: {
             colorDefault: {
-                color: ThemeColors.black[500],
-                backgroundColor: ThemeColors.gray[50],
+                color: ThemeColors.text.primary,
+                backgroundColor: PXBColors.gray[50],
             },
             colorSecondary: {
-                color: ThemeColors.white[50],
-                backgroundColor: ThemeColors.blue[700],
+                color: PXBColors.white[50],
+                backgroundColor: ThemeColors.primary.dark,
                 '& .MuiInputBase-root': {
-                    color: ThemeColors.white[50],
+                    color: PXBColors.white[50],
                 },
                 '& .MuiSelect-icon': {
-                    color: ThemeColors.white[50],
+                    color: PXBColors.white[50],
                 },
             },
         },
         // BOTTOM NAVIGATION OVERRIDES
         MuiBottomNavigation: {
             root: {
-                backgroundColor: ThemeColors.blue[500],
+                backgroundColor: ThemeColors.primary.main,
             },
         },
         MuiBottomNavigationAction: {
             root: {
-                color: ThemeColors.blue[200],
+                color: PXBColors.blue[200],
                 '&$selected': {
-                    color: ThemeColors.white[50],
+                    color: WhiteText,
                     '& $label': {
                         fontSize: '0.75rem',
                         fontWeight: 600,
@@ -105,70 +124,70 @@ exports.blueTheme = {
             },
             containedPrimary: {
                 '&$disabled': {
-                    backgroundColor: ThemeColors.blue[50],
-                    color: ThemeColors.blue[200],
+                    backgroundColor: ThemeColors.primary.light,
+                    color: PXBColors.blue[200],
                     opacity: 1,
                 },
             },
             outlined: {
-                borderColor: ThemeColors.black[500],
+                borderColor: BlackBorder,
             },
             outlinedPrimary: {
-                borderColor: ThemeColors.blue[500],
+                borderColor: ThemeColors.primary.main,
             },
             outlinedSecondary: {
-                borderColor: ThemeColors.lightBlue[500],
+                borderColor: ThemeColors.secondary.main,
             },
             disabled: {},
         },
         MuiCheckbox: {
             root: {
-                color: ThemeColors.gray[500],
+                color: ThemeColors.action.active,
             },
         },
         // CHIP OVERRIDES
         MuiChip: {
             root: {
                 fontSize: '0.875rem',
-                backgroundColor: ThemeColors.white[500],
-                color: ThemeColors.black[500],
+                backgroundColor: PXBColors.white[500],
+                color: ThemeColors.text.primary,
                 '& $avatar': {
-                    color: ThemeColors.blue[500],
+                    color: ThemeColors.primary.main,
                 },
             },
             clickable: {
                 '&:hover': {
-                    backgroundColor: ThemeColors.gray[100],
+                    backgroundColor: PXBColors.gray[100],
                 },
             },
             deleteIcon: {
-                color: ThemeColors.gray[500],
+                color: ThemeColors.action.active,
                 '&:hover': {
-                    color: ThemeColors.black[500],
+                    color: ThemeColors.text.primary,
                 },
             },
             deleteIconColorPrimary: {
-                color: ThemeColors.blue[100],
+                color: PXBColors.blue[100],
                 '&:hover': {
-                    color: ThemeColors.white[50],
+                    color: WhiteText,
                 },
             },
             deleteIconOutlinedColorPrimary: {
-                color: ThemeColors.blue[200],
+                color: PXBColors.blue[200],
                 '&:hover': {
-                    color: ThemeColors.blue[500],
+                    color: ThemeColors.primary.main,
                 },
             },
             outlined: {
-                borderColor: color_1.default(ThemeColors.black[500]).alpha(0.12).rgb().string(),
+                borderColor: color_1.default(BlackBorder).alpha(0.12).rgb().string(),
                 '&$clickable:hover': {
-                    backgroundColor: ThemeColors.white[200],
+                    backgroundColor: PXBColors.white[200],
                 },
             },
             outlinedPrimary: {
-                backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.05).rgb().string(),
+                backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).rgb().string(),
                 '&$clickable:hover': {
-                    backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.1).rgb().string(),
+                    backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.1).rgb().string(),
                 },
             },
             avatar: {},
@@ -176,13 +195,13 @@ exports.blueTheme = {
         // TEXT INPUT OVERRIDES
         MuiFilledInput: {
             root: {
-                backgroundColor: ThemeColors.white[200],
+                backgroundColor: ThemeColors.background.default,
             },
         },
         MuiOutlinedInput: {
             root: {
                 '&$error$colorSecondary$focused $notchedOutline': {
-                    borderColor: ThemeColors.red[500],
+                    borderColor: ThemeColors.error.main,
                 }
             },
             colorSecondary: {},
@@ -193,7 +212,7 @@ exports.blueTheme = {
         MuiFormLabel: {
             root: {
                 '&$error$colorSecondary$focused': {
-                    color: ThemeColors.red[500],
+                    color: ThemeColors.error.main,
                 }
             },
             colorSecondary: {},
@@ -209,14 +228,14 @@ exports.blueTheme = {
         // LIST ITEM OVERRIDES
         MuiListItem: {
             root: {
-                color: ThemeColors.black[500],
+                color: ThemeColors.text.primary,
             },
         },
         // SLIDER OVERRIDES
         MuiSlider: {
             root: {
                 height: 6,
-                color: ThemeColors.blue[300],
+                color: PXBColors.blue[300],
             },
             track: {
                 height: 6,
@@ -224,32 +243,32 @@ exports.blueTheme = {
             },
             rail: {
                 height: 4,
-                backgroundColor: ThemeColors.black[100],
+                backgroundColor: PXBColors.black[100],
             },
             thumb: {
                 height: 20,
                 width: 20,
                 marginTop: -8,
-                backgroundColor: ThemeColors.blue[500],
+                backgroundColor: ThemeColors.primary.main,
             },
             thumbColorSecondary: {
-                backgroundColor: ThemeColors.lightBlue[500],
+                backgroundColor: ThemeColors.secondary.main,
             },
             mark: {
-                backgroundColor: ThemeColors.blue[200],
+                backgroundColor: PXBColors.blue[200],
                 marginTop: 1,
             },
             markActive: {
-                backgroundColor: ThemeColors.blue[200],
+                backgroundColor: PXBColors.blue[200],
             },
         },
         // SNACKBAR OVERRIDES
         MuiSnackbarContent: {
             root: {
-                backgroundColor: ThemeColors.black[900],
-                color: ThemeColors.black[50],
+                backgroundColor: PXBColors.black[900],
+                color: PXBColors.black[50],
                 '& .MuiButton-textPrimary': {
-                    color: ThemeColors.blue[200],
+                    color: PXBColors.blue[200],
                 },
             },
         },
@@ -257,7 +276,7 @@ exports.blueTheme = {
         MuiStepper: {},
         MuiStepConnector: {
             line: {
-                borderColor: color_1.default(ThemeColors.black[500]).alpha(0.12).rgb().string(),
+                borderColor: color_1.default(BlackBorder).alpha(0.12).rgb().string(),
             },
         },
         MuiStep: {
@@ -271,31 +290,31 @@ exports.blueTheme = {
                     right: '5%',
                     bottom: '5%',
                     left: '5%',
-                    backgroundColor: ThemeColors.white[50],
+                    backgroundColor: ThemeColors.background.paper,
                     borderRadius: '50%',
                 },
             },
         },
         MuiStepIcon: {
             root: {
-                color: ThemeColors.white[500],
+                color: PXBColors.white[500],
                 zIndex: 1,
             },
             text: {
-                fill: ThemeColors.black[500],
+                fill: ThemeColors.text.primary,
             },
             active: {
                 '& $text': {
-                    fill: ThemeColors.white[50],
+                    fill: WhiteText,
                 },
             },
         },
         MuiStepLabel: {
             label: {
-                color: ThemeColors.black[500],
+                color: ThemeColors.text.primary,
                 '&$active': {
                     fontWeight: 600,
-                    color: ThemeColors.blue[500],
+                    color: ThemeColors.primary.main,
                 },
                 '&$completed': {
                     fontWeight: 600,
@@ -310,18 +329,18 @@ exports.blueTheme = {
         // SWITCH OVERRIDES
         MuiSwitch: {
             switchBase: {
-                color: ThemeColors.white[50],
+                color: ThemeColors.background.paper,
                 '&$checked + $track': {
                     opacity: 0.38,
                 },
             },
             colorPrimary: {
                 '&$checked': {
-                    color: ThemeColors.blue[500],
+                    color: ThemeColors.primary.main,
                 },
             },
             track: {
-                backgroundColor: ThemeColors.black[100],
+                backgroundColor: PXBColors.black[100],
                 opacity: 1,
             },
             checked: {},
@@ -334,26 +353,26 @@ exports.blueTheme = {
         },
         MuiTableHead: {
             root: {
-                background: ThemeColors.white[50],
+                background: ThemeColors.background.paper,
             },
         },
         MuiTableRow: {
             root: {
-                color: ThemeColors.black[50],
+                color: PXBColors.black[50],
                 backgroundColor: '#FBFBFB',
                 '&$hover:hover': {
-                    backgroundColor: color_1.default('#FBFBFB').mix(color_1.default(ThemeColors.black[50]), 0.5).rgb().string(),
+                    backgroundColor: color_1.default('#FBFBFB').mix(color_1.default(PXBColors.black[50]), 0.5).rgb().string(),
                 },
                 '&:nth-of-type(odd):not($selected)': {
-                    backgroundColor: ThemeColors.white[50],
+                    backgroundColor: PXBColors.white[50],
                     '&$hover:hover': {
-                        backgroundColor: color_1.default(ThemeColors.white[50]).mix(color_1.default(ThemeColors.black[50]), 0.5).rgb().string(),
+                        backgroundColor: color_1.default(PXBColors.white[50]).mix(color_1.default(PXBColors.black[50]), 0.5).rgb().string(),
                     },
                 },
                 '&$selected': {
-                    backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.05).rgb().string(),
+                    backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).rgb().string(),
                     '&$hover:hover': {
-                        backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.07).rgb().string(),
+                        backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.07).rgb().string(),
                     },
                 },
             },
@@ -362,9 +381,9 @@ exports.blueTheme = {
         MuiTableSortLabel: {
             root: {
                 '&:hover': {
-                    color: ThemeColors.black[500],
+                    color: ThemeColors.text.primary,
                     '& $icon': {
-                        color: ThemeColors.black[300],
+                        color: PXBColors.black[300],
                         opacity: 1,
                     },
                 },
@@ -376,18 +395,18 @@ exports.blueTheme = {
         // TABS OVERRIDES
         MuiTab: {
             textColorPrimary: {
-                color: ThemeColors.white[50],
+                color: WhiteText,
                 opacity: 0.7,
                 '&$selected': {
-                    color: ThemeColors.white[50],
+                    color: WhiteText,
                     opacity: 1,
                 },
             },
             textColorSecondary: {
-                color: ThemeColors.white[50],
+                color: WhiteText,
                 opacity: 0.7,
                 '&$selected': {
-                    color: ThemeColors.white[50],
+                    color: WhiteText,
                     opacity: 1,
                 },
             },
@@ -395,14 +414,14 @@ exports.blueTheme = {
         },
         MuiTabs: {
             indicator: {
-                backgroundColor: ThemeColors.white[50],
+                backgroundColor: PXBColors.white[50],
             },
         },
         // TOGGLE BUTTON OVERRIDES (LAB)
         // @ts-ignore
         MuiToggleButtonGroup: {
             root: {
-                backgroundColor: ThemeColors.white[50],
+                backgroundColor: ThemeColors.background.paper,
             },
             groupedHorizontal: {
                 '&:not(:first-child)': {
@@ -418,12 +437,12 @@ exports.blueTheme = {
         // @ts-ignore
         MuiToggleButton: {
             root: {
-                backgroundColor: ThemeColors.white[50],
-                color: ThemeColors.gray[500],
-                borderColor: ThemeColors.gray[100],
+                backgroundColor: ThemeColors.background.paper,
+                color: ThemeColors.text.hint,
+                borderColor: PXBColors.gray[100],
                 '&$selected': {
-                    backgroundColor: ThemeColors.blue[50],
-                    color: ThemeColors.blue[500],
+                    backgroundColor: ThemeColors.primary.light,
+                    color: ThemeColors.primary.main,
                 },
             },
             selected: {},

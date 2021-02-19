@@ -9,90 +9,110 @@
 import { typography, createSimpleDarkPalette as createSimplePalette } from './shared';
 import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import Color from 'color';
-import * as ThemeColors from '@pxblue/colors';
+import * as PXBColors from '@pxblue/colors';
+
+/* 
+    Variable color definitions so we can reuse them in the theme overrides below
+*/
+const ThemeColors = {
+    primary: createSimplePalette(PXBColors.blue),
+    secondary: createSimplePalette(PXBColors.lightBlue),
+    error: createSimplePalette(PXBColors.red),
+    success: createSimplePalette(PXBColors.green),
+    info: createSimplePalette(PXBColors.lightBlue),
+    divider: Color(PXBColors.black[200]).alpha(0.32).rgb().string(),
+    warning: {
+        light: PXBColors.yellow[100],
+        main: PXBColors.yellow[300],
+        dark: PXBColors.yellow[900],
+    },
+    background: {
+        default: PXBColors.darkBlack[800],
+        paper: PXBColors.black[900],
+    },
+    text: {
+        primary: PXBColors.black[50],
+        secondary: PXBColors.black[200],
+        disabled: Color(PXBColors.black[300]).alpha(0.32).rgb().string(),
+        hint: Color(PXBColors.black[300]).alpha(0.32).rgb().string(),
+    },
+    action: {
+        hover: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
+        active: PXBColors.black[200],
+        // disabled: 'rgba(0, 0, 0, .25)',
+        disabledBackground: Color(PXBColors.black[200]).alpha(0.24).rgb().string(),
+    },
+}
+const WhiteText = PXBColors.white[50];
+const MediumBlackBackground = PXBColors.black[500];
+const BlackText = PXBColors.black[500];
+// const BlackBorder = PXBColors.black[500];
 
 /*
- *  When using the fade() function to set opacity, the fade functions subtracts the value passed as an argument.
- *  So fade(.60) = opacity 40%
- */
-
+    Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
+    to customize in our themes. These have changed periodically from version to version of Material UI.
+*/
 export const blueDarkTheme: ThemeOptions = {
     direction: 'ltr',
     typography: typography,
     palette: {
         type: 'dark',
-        primary: createSimplePalette(ThemeColors.blue),
-        secondary: createSimplePalette(ThemeColors.lightBlue),
-        error: createSimplePalette(ThemeColors.red),
-        success: createSimplePalette(ThemeColors.green),
-        info: createSimplePalette(ThemeColors.lightBlue),
-        divider: Color(ThemeColors.black[200]).alpha(0.32).rgb().string(),
-        warning: {
-            light: ThemeColors.yellow[100],
-            main: ThemeColors.yellow[300],
-            dark: ThemeColors.yellow[900],
-        },
-        background: {
-            default: ThemeColors.darkBlack[800],
-            paper: ThemeColors.black[900],
-        },
-        text: {
-            primary: ThemeColors.black[50],
-            secondary: ThemeColors.black[200],
-            disabled: Color(ThemeColors.black[300]).alpha(0.32).rgb().string(),
-            hint: Color(ThemeColors.black[300]).alpha(0.32).rgb().string(),
-        },
-        action: {
-            hover: Color(ThemeColors.black[50]).alpha(0.1).rgb().string(),
-            active: ThemeColors.black[200],
-            disabledBackground: Color(ThemeColors.black[200]).alpha(0.24).rgb().string(),
-        },
+        primary: ThemeColors.primary,
+        secondary: ThemeColors.secondary,
+        error: ThemeColors.error,
+        success: ThemeColors.success,
+        info: ThemeColors.info,
+        divider: ThemeColors.divider,
+        warning: ThemeColors.warning,
+        background: ThemeColors.background,
+        text: ThemeColors.text,
+        action: ThemeColors.action,
     },
 
     overrides: {
         // AVATAR OVERRIDES
         MuiAvatar: {
             colorDefault: {
-                backgroundColor: Color(ThemeColors.black[50]).alpha(0.1).rgb().string(),
-                color: ThemeColors.black[50],
+                backgroundColor: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
+                color: ThemeColors.text.primary,
             },
         },
 
         // APP BAR OVERRIDES
         MuiAppBar: {
             colorDefault: {
-                color: ThemeColors.black[50],
-                backgroundColor: ThemeColors.darkBlack[100],
+                color: ThemeColors.text.primary,
+                backgroundColor: PXBColors.darkBlack[100],
             },
             colorPrimary: {
-                color: ThemeColors.black[50],
-                backgroundColor: ThemeColors.black[800],
+                color: ThemeColors.text.primary,
+                backgroundColor: PXBColors.black[800],
             },
             colorSecondary: {
-                color: ThemeColors.black[50],
-                backgroundColor: ThemeColors.black[900],
+                color: ThemeColors.text.primary,
+                backgroundColor: PXBColors.black[900],
             },
         },
 
         // BACKDROP OVERRIDES
         MuiBackdrop: {
             root: {
-                backgroundColor: Color(ThemeColors.darkBlack[900]).alpha(0.7).rgb().string(),
+                backgroundColor: Color(PXBColors.darkBlack[900]).alpha(0.7).rgb().string(),
             },
         },
 
         // BADGE OVERRIDES
         MuiBadge: {
             colorError: {
-                backgroundColor: ThemeColors.red[500],
-                color: ThemeColors.white[50],
+                backgroundColor: ThemeColors.error.main,
+                color: WhiteText,
             },
         },
 
         // BOTTOM NAVIGATION OVERRIDES
         MuiBottomNavigation: {
             root: {
-                backgroundColor: ThemeColors.black[800],
+                backgroundColor: PXBColors.black[800],
             },
         },
         MuiBottomNavigationAction: {
@@ -114,29 +134,23 @@ export const blueDarkTheme: ThemeOptions = {
                 textTransform: 'none',
             },
             outlined: {
-                borderColor: ThemeColors.black[100],
+                borderColor: PXBColors.black[100],
             },
-            // outlinedPrimary: {
-            //     borderColor: ThemeColors.blue[500],
-            // },
-            // outlinedSecondary: {
-            //     borderColor: ThemeColors.blue[200],
-            // },
             contained: {
-                backgroundColor: ThemeColors.black[500],
-                color: ThemeColors.white[50],
+                backgroundColor: MediumBlackBackground,
+                color: WhiteText,
                 '&:hover': {
-                    backgroundColor: ThemeColors.black[300],
+                    backgroundColor: PXBColors.black[300],
                 },
             },
             containedPrimary: {
-                backgroundColor: ThemeColors.blue[500],
-                color: ThemeColors.white[50],
+                backgroundColor: ThemeColors.primary.dark,
+                color: WhiteText,
                 '&:hover': {
-                    backgroundColor: ThemeColors.blue[700],
+                    backgroundColor: PXBColors.blue[700],
                 },
                 '&$disabled': {
-                    color: Color(ThemeColors.black[200]).alpha(0.24).rgb().string(),
+                    color: Color(PXBColors.black[200]).alpha(0.24).rgb().string(),
                 },
             },
             disabled: {},
@@ -146,53 +160,53 @@ export const blueDarkTheme: ThemeOptions = {
         MuiChip: {
             root: {
                 fontSize: '0.875rem',
-                backgroundColor: ThemeColors.black[500],
-                color: ThemeColors.black[50],
+                backgroundColor: MediumBlackBackground,
+                color: ThemeColors.text.primary,
                 '& $avatar': {
-                    color: ThemeColors.white[50],
+                    color: WhiteText,
                 },
             },
             clickable: {
                 '&:hover': {
-                    backgroundColor: ThemeColors.black[400],
+                    backgroundColor: PXBColors.black[400],
                 },
             },
             deleteIcon: {
-                color: ThemeColors.black[200],
+                color: ThemeColors.text.secondary,
                 '&:hover': {
-                    color: ThemeColors.black[50],
+                    color: ThemeColors.text.primary,
                 },
             },
             deleteIconColorPrimary: {
-                color: ThemeColors.blue[100],
+                color: PXBColors.blue[100],
                 '&:hover': {
-                    color: ThemeColors.white[50],
+                    color: WhiteText,
                 },
             },
             deleteIconOutlinedColorPrimary: {
-                color: ThemeColors.blue[400],
+                color: PXBColors.blue[400],
                 '&:hover': {
-                    color: ThemeColors.blue[200],
+                    color: ThemeColors.primary.main,
                 },
             },
             colorPrimary: {
-                color: ThemeColors.white[50],
-                backgroundColor: ThemeColors.blue[500],
+                color: WhiteText,
+                backgroundColor: ThemeColors.primary.dark,
                 '&$clickable:hover': {
-                    backgroundColor: ThemeColors.blue[300],
+                    backgroundColor: PXBColors.blue[300],
                 },
             },
             outlined: {
-                backgroundColor: ThemeColors.black[900],
-                borderColor: Color(ThemeColors.black[200]).alpha(0.32).rgb().string(),
+                backgroundColor: ThemeColors.background.paper,
+                borderColor: Color(PXBColors.black[200]).alpha(0.32).rgb().string(),
                 '&$clickable:hover': {
-                    backgroundColor: ThemeColors.black[800],
+                    backgroundColor: PXBColors.black[800],
                 },
             },
             outlinedPrimary: {
-                backgroundColor: Color(ThemeColors.blue[500]).alpha(0.2).rgb().string(),
+                backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).rgb().string(),
                 '&$clickable:hover': {
-                    backgroundColor: Color(ThemeColors.blue[500]).alpha(0.3).rgb().string(),
+                    backgroundColor: Color(ThemeColors.primary.dark).alpha(0.3).rgb().string(),
                 },
             },
             avatar: {},
@@ -201,10 +215,10 @@ export const blueDarkTheme: ThemeOptions = {
         // DRAWER OVERRIDES
         MuiDrawer: {
             paper: {
-                backgroundColor: ThemeColors.darkBlack[500],
+                backgroundColor: PXBColors.darkBlack[500],
             },
             paperAnchorBottom: {
-                backgroundColor: ThemeColors.black[900],
+                backgroundColor: ThemeColors.background.paper,
             },
         },
 
@@ -212,17 +226,17 @@ export const blueDarkTheme: ThemeOptions = {
         MuiFab: {
             root: {
                 textTransform: 'none',
-                backgroundColor: ThemeColors.black[500],
-                color: ThemeColors.white[50],
+                backgroundColor: MediumBlackBackground,
+                color: WhiteText,
                 '&:hover': {
-                    backgroundColor: ThemeColors.black[300],
+                    backgroundColor: PXBColors.black[300],
                 },
             },
             primary: {
-                backgroundColor: ThemeColors.blue[500],
-                color: ThemeColors.white[50],
+                backgroundColor: ThemeColors.primary.dark,
+                color: WhiteText,
                 '&:hover': {
-                    backgroundColor: ThemeColors.blue[700],
+                    backgroundColor: PXBColors.blue[700],
                 },
             },
         },
@@ -230,17 +244,17 @@ export const blueDarkTheme: ThemeOptions = {
         //LIST ITEM OVERRIDES (plus nav drawer)
         MuiListItem: {
             root: {
-                color: ThemeColors.black[50],
+                color: ThemeColors.text.primary,
             },
         },
 
         // SNACKBAR OVERRIDES
         MuiSnackbarContent: {
             root: {
-                // backgroundColor: ThemeColors.black[900],
-                color: ThemeColors.black[500],
+                // backgroundColor: PXBColors.black[900],
+                color: BlackText,
                 '& .MuiButton-textPrimary': {
-                    color: ThemeColors.blue[500],
+                    color: ThemeColors.primary.dark,
                 },
             },
         },
@@ -249,7 +263,7 @@ export const blueDarkTheme: ThemeOptions = {
         MuiSlider: {
             root: {
                 height: 6,
-                color: ThemeColors.blue[300],
+                color: PXBColors.blue[300],
             },
             track: {
                 height: 6,
@@ -257,23 +271,23 @@ export const blueDarkTheme: ThemeOptions = {
             },
             rail: {
                 height: 4,
-                backgroundColor: ThemeColors.black[300],
+                backgroundColor: PXBColors.black[300],
             },
             thumb: {
                 height: 20,
                 width: 20,
                 marginTop: -8,
-                backgroundColor: ThemeColors.blue[200],
+                backgroundColor: ThemeColors.primary.main,
             },
             thumbColorSecondary: {
-                backgroundColor: ThemeColors.lightBlue[200],
+                backgroundColor: ThemeColors.secondary.main,
             },
             mark: {
-                backgroundColor: ThemeColors.blue[500],
+                backgroundColor: ThemeColors.primary.dark,
                 marginTop: 1,
             },
             markActive: {
-                backgroundColor: ThemeColors.blue[500],
+                backgroundColor: ThemeColors.primary.dark,
             },
         },
 
@@ -281,7 +295,7 @@ export const blueDarkTheme: ThemeOptions = {
         MuiStepper: {},
         MuiStepConnector: {
             line: {
-                borderColor: Color(ThemeColors.black[200]).alpha(0.32).rgb().string(),
+                borderColor: ThemeColors.divider,
             },
         },
         MuiStep: {
@@ -295,38 +309,38 @@ export const blueDarkTheme: ThemeOptions = {
                     right: '5%',
                     bottom: '5%',
                     left: '5%',
-                    backgroundColor: ThemeColors.white[50],
+                    backgroundColor: PXBColors.white[50],
                     borderRadius: '50%',
                 },
             },
         },
         MuiStepIcon: {
             root: {
-                color: Color(ThemeColors.black[300]).alpha(0.32).rgb().string(),
+                color: Color(PXBColors.black[300]).alpha(0.32).rgb().string(),
                 zIndex: 1,
                 '&$active': {
-                    color: ThemeColors.blue[500],
+                    color: ThemeColors.primary.dark,
                 },
                 '&$completed': {
-                    color: ThemeColors.blue[500],
+                    color: ThemeColors.primary.dark,
                 },
             },
             text: {
-                fill: ThemeColors.black[300],
+                fill: PXBColors.black[300],
             },
             active: {
                 '& $text': {
-                    fill: ThemeColors.white[50],
+                    fill: WhiteText,
                 },
             },
             completed: {},
         },
         MuiStepLabel: {
             label: {
-                color: ThemeColors.black[200],
+                color: ThemeColors.text.secondary,
                 '&$active': {
                     fontWeight: 600,
-                    color: ThemeColors.blue[200],
+                    color: ThemeColors.primary.main,
                 },
                 '&$completed': {
                     fontWeight: 600,
@@ -342,18 +356,18 @@ export const blueDarkTheme: ThemeOptions = {
         // SWITCH OVERRIDES
         MuiSwitch: {
             switchBase: {
-                color: ThemeColors.black[50],
+                color: ThemeColors.text.primary,
                 '&$checked + $track': {
                     opacity: 0.5,
                 },
             },
             colorPrimary: {
                 '&$checked': {
-                    color: ThemeColors.blue[200],
+                    color: ThemeColors.primary.main,
                 },
             },
             track: {
-                backgroundColor: ThemeColors.black[300],
+                backgroundColor: PXBColors.black[300],
                 opacity: 0.36,
             },
             checked: {},
@@ -367,26 +381,26 @@ export const blueDarkTheme: ThemeOptions = {
         },
         MuiTableHead: {
             root: {
-                background: ThemeColors.black[900],
+                background: ThemeColors.background.paper,
             },
         },
         MuiTableRow: {
             root: {
-                color: ThemeColors.black[50],
-                backgroundColor: ThemeColors.darkBlack[300],
+                color: ThemeColors.text.primary,
+                backgroundColor: PXBColors.darkBlack[300],
                 '&$hover:hover': {
-                    backgroundColor: Color(ThemeColors.darkBlack[300]).mix(Color(ThemeColors.black[500]), 0.5).rgb().string(),
+                    backgroundColor: Color(PXBColors.darkBlack[300]).mix(Color(PXBColors.black[500]), 0.5).rgb().string(),
                 },
                 '&:nth-of-type(odd):not($selected)': {
-                    backgroundColor: ThemeColors.black[900],
+                    backgroundColor: PXBColors.black[900],
                     '&$hover:hover': {
-                        backgroundColor: Color(ThemeColors.black[900]).mix(Color(ThemeColors.black[500]), 0.5).rgb().string(),
+                        backgroundColor: Color(PXBColors.black[900]).mix(Color(PXBColors.black[500]), 0.5).rgb().string(),
                     },
                 },
                 '&$selected': {
-                    backgroundColor: Color(ThemeColors.blue[500]).alpha(0.2).rgb().string(),
+                    backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).rgb().string(),
                     '&$hover:hover': {
-                        backgroundColor: Color(ThemeColors.blue[500]).mix(Color(ThemeColors.black[500]), 0.5).alpha(0.2).rgb().string(),
+                        backgroundColor: Color(ThemeColors.primary.dark).mix(Color(PXBColors.black[500]), 0.5).alpha(0.2).rgb().string(),
                     },
                 },
             },
@@ -395,9 +409,9 @@ export const blueDarkTheme: ThemeOptions = {
         MuiTableSortLabel: {
             root: {
                 '&:hover': {
-                    color: ThemeColors.black[50],
+                    color: ThemeColors.text.primary,
                     '& $icon': {
-                        color: ThemeColors.black[200],
+                        color: ThemeColors.text.secondary,
                         opacity: 1,
                     },
                 },
@@ -410,20 +424,20 @@ export const blueDarkTheme: ThemeOptions = {
         // TABS OVERRIDES
         MuiTab: {
             textColorInherit: {
-                color: ThemeColors.black[200],
+                color: ThemeColors.text.secondary,
                 opacity: 1,
                 '&$selected': {
-                    color: ThemeColors.blue[200],
+                    color: ThemeColors.primary.main,
                 },
             },
             selected: {},
         },
         MuiTabs: {
             root: {
-                color: ThemeColors.black[200],
+                color: ThemeColors.text.secondary,
             },
             indicator: {
-                backgroundColor: ThemeColors.blue[200],
+                backgroundColor: ThemeColors.primary.main,
             },
         },
 
@@ -431,7 +445,7 @@ export const blueDarkTheme: ThemeOptions = {
         // @ts-ignore
         MuiToggleButtonGroup: {
             root: {
-                backgroundColor: ThemeColors.black[900],
+                backgroundColor: ThemeColors.background.paper,
             },
             groupedHorizontal: {
                 '&:not(:first-child)': {
@@ -447,12 +461,12 @@ export const blueDarkTheme: ThemeOptions = {
         // @ts-ignore
         MuiToggleButton: {
             root: {
-                backgroundColor: ThemeColors.black[900],
-                color: ThemeColors.gray[500],
-                borderColor: Color(ThemeColors.black[200]).alpha(0.32).rgb().string(),
+                backgroundColor: ThemeColors.background.paper,
+                color: PXBColors.gray[500],
+                borderColor: Color(PXBColors.black[200]).alpha(0.32).rgb().string(),
                 '&$selected': {
-                    backgroundColor: Color(ThemeColors.blue[500]).alpha(0.2).rgb().string(),
-                    color: ThemeColors.blue[200],
+                    backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).rgb().string(),
+                    color: ThemeColors.primary.main,
                 },
             },
             selected: {},
