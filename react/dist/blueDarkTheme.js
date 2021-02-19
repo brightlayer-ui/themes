@@ -48,7 +48,7 @@ var ThemeColors = {
     action: {
         hover: color_1.default(PXBColors.black[50]).alpha(0.1).rgb().string(),
         active: PXBColors.black[200],
-        // disabled: 'rgba(0, 0, 0, .25)',
+        disabled: color_1.default(PXBColors.black[50]).alpha(0.1).rgb().string(),
         disabledBackground: color_1.default(PXBColors.black[200]).alpha(0.24).rgb().string(),
     },
 };
@@ -220,6 +220,97 @@ exports.blueDarkTheme = {
             paperAnchorBottom: {
                 backgroundColor: ThemeColors.background.paper,
             },
+        },
+        // TEXT INPUT OVERRIDES
+        MuiInput: {
+            underline: {
+                '&:before': {
+                    borderBottomColor: color_1.default(ThemeColors.action.active).alpha(.36).rgb().string(),
+                },
+                '&:after': {
+                    borderBottomColor: ThemeColors.primary.dark,
+                },
+                '&$colorSecondary:not($error):after': {
+                    borderBottomColor: ThemeColors.secondary.main,
+                },
+                '&$disabled:before': {
+                    borderBottomColor: ThemeColors.action.disabled,
+                    borderBottomStyle: 'solid',
+                }
+            },
+            disabled: {},
+            colorSecondary: {},
+            error: {}
+        },
+        MuiFilledInput: {
+            root: {
+                backgroundColor: PXBColors.black[800],
+                '&:hover': {
+                    backgroundColor: PXBColors.black[600],
+                },
+                '&$focused': {
+                    backgroundColor: PXBColors.black[800],
+                },
+                '&$disabled': {
+                    color: color_1.default(PXBColors.black[300]).alpha(0.36).rgb().string(),
+                    backgroundColor: color_1.default(PXBColors.black[800]).alpha(0.5),
+                    pointerEvents: 'none',
+                }
+            },
+            underline: {
+                '&:before': {
+                    borderBottomColor: ThemeColors.divider,
+                },
+                '&:after': {
+                    borderBottomColor: ThemeColors.primary.dark,
+                },
+                '&$disabled:before': {
+                    borderBottomStyle: 'solid',
+                },
+                '&$colorSecondary:not($error):after': {
+                    borderBottomColor: ThemeColors.primary.dark,
+                },
+            },
+            focused: {},
+            disabled: {},
+            colorSecondary: {},
+            error: {},
+        },
+        MuiOutlinedInput: {
+            root: {
+                '&$error $notchedOutline': {
+                    borderColor: ThemeColors.error.dark,
+                },
+                '&$disabled $notchedOutline': {
+                    borderColor: color_1.default(ThemeColors.action.active).alpha(0.36).rgb().string(),
+                },
+                '&$error$colorSecondary$focused $notchedOutline': {
+                    borderColor: ThemeColors.error.dark,
+                },
+                '&$error:hover $notchedOutline': {
+                    borderColor: ThemeColors.error.main,
+                },
+                '&$focused $notchedOutline': {
+                    borderColor: ThemeColors.primary.dark,
+                },
+            },
+            colorSecondary: {},
+            focused: {},
+            error: {},
+            disabled: {},
+            notchedOutline: {
+                borderColor: ThemeColors.divider,
+            },
+        },
+        MuiFormLabel: {
+            root: {
+                color: ThemeColors.text.secondary,
+                '&$error$colorSecondary$focused': {
+                    color: ThemeColors.error.main,
+                }
+            },
+            colorSecondary: {},
+            focused: {},
         },
         // FAB OVERRIDES
         MuiFab: {

@@ -39,10 +39,10 @@ const ThemeColors = {
     action: {
         hover: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
         active: PXBColors.black[200],
-        // disabled: 'rgba(0, 0, 0, .25)',
+        disabled: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
         disabledBackground: Color(PXBColors.black[200]).alpha(0.24).rgb().string(),
     },
-}
+};
 const WhiteText = PXBColors.white[50];
 const MediumBlackBackground = PXBColors.black[500];
 const BlackText = PXBColors.black[500];
@@ -70,14 +70,6 @@ export const blueDarkTheme: ThemeOptions = {
     },
 
     overrides: {
-        // AVATAR OVERRIDES
-        MuiAvatar: {
-            colorDefault: {
-                backgroundColor: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
-                color: ThemeColors.text.primary,
-            },
-        },
-
         // APP BAR OVERRIDES
         MuiAppBar: {
             colorDefault: {
@@ -91,6 +83,14 @@ export const blueDarkTheme: ThemeOptions = {
             colorSecondary: {
                 color: ThemeColors.text.primary,
                 backgroundColor: PXBColors.black[900],
+            },
+        },
+
+        // AVATAR OVERRIDES
+        MuiAvatar: {
+            colorDefault: {
+                backgroundColor: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
+                color: ThemeColors.text.primary,
             },
         },
 
@@ -248,17 +248,6 @@ export const blueDarkTheme: ThemeOptions = {
             },
         },
 
-        // SNACKBAR OVERRIDES
-        MuiSnackbarContent: {
-            root: {
-                // backgroundColor: PXBColors.black[900],
-                color: BlackText,
-                '& .MuiButton-textPrimary': {
-                    color: ThemeColors.primary.dark,
-                },
-            },
-        },
-
         // SLIDER OVERRIDES
         MuiSlider: {
             root: {
@@ -288,6 +277,17 @@ export const blueDarkTheme: ThemeOptions = {
             },
             markActive: {
                 backgroundColor: ThemeColors.primary.dark,
+            },
+        },
+
+        // SNACKBAR OVERRIDES
+        MuiSnackbarContent: {
+            root: {
+                // backgroundColor: PXBColors.black[900],
+                color: BlackText,
+                '& .MuiButton-textPrimary': {
+                    color: ThemeColors.primary.dark,
+                },
             },
         },
 
@@ -389,18 +389,28 @@ export const blueDarkTheme: ThemeOptions = {
                 color: ThemeColors.text.primary,
                 backgroundColor: PXBColors.darkBlack[300],
                 '&$hover:hover': {
-                    backgroundColor: Color(PXBColors.darkBlack[300]).mix(Color(PXBColors.black[500]), 0.5).rgb().string(),
+                    backgroundColor: Color(PXBColors.darkBlack[300])
+                        .mix(Color(PXBColors.black[500]), 0.5)
+                        .rgb()
+                        .string(),
                 },
                 '&:nth-of-type(odd):not($selected)': {
                     backgroundColor: PXBColors.black[900],
                     '&$hover:hover': {
-                        backgroundColor: Color(PXBColors.black[900]).mix(Color(PXBColors.black[500]), 0.5).rgb().string(),
+                        backgroundColor: Color(PXBColors.black[900])
+                            .mix(Color(PXBColors.black[500]), 0.5)
+                            .rgb()
+                            .string(),
                     },
                 },
                 '&$selected': {
                     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).rgb().string(),
                     '&$hover:hover': {
-                        backgroundColor: Color(ThemeColors.primary.dark).mix(Color(PXBColors.black[500]), 0.5).alpha(0.2).rgb().string(),
+                        backgroundColor: Color(ThemeColors.primary.dark)
+                            .mix(Color(PXBColors.black[500]), 0.5)
+                            .alpha(0.2)
+                            .rgb()
+                            .string(),
                     },
                 },
             },
@@ -439,6 +449,98 @@ export const blueDarkTheme: ThemeOptions = {
             indicator: {
                 backgroundColor: ThemeColors.primary.main,
             },
+        },
+
+        // TEXT FIELD OVERRIDES
+        MuiInput: {
+            underline: {
+                '&:before': {
+                    borderBottomColor: Color(ThemeColors.action.active).alpha(0.36).rgb().string(),
+                },
+                '&:after': {
+                    borderBottomColor: ThemeColors.primary.dark, // Color(ThemeColors.action.active).alpha(.36),
+                },
+                '&$colorSecondary:not($error):after': {
+                    borderBottomColor: ThemeColors.secondary.main,
+                },
+                '&$disabled:before': {
+                    borderBottomColor: ThemeColors.action.disabled,
+                    borderBottomStyle: 'solid',
+                },
+            },
+            disabled: {},
+            colorSecondary: {},
+            error: {},
+        },
+        MuiFilledInput: {
+            root: {
+                backgroundColor: PXBColors.black[800],
+                '&:hover': {
+                    backgroundColor: PXBColors.black[600],
+                },
+                '&$focused': {
+                    backgroundColor: PXBColors.black[800],
+                },
+                '&$disabled': {
+                    color: Color(PXBColors.black[300]).alpha(0.36).rgb().string(),
+                    backgroundColor: Color(PXBColors.black[800]).alpha(0.5),
+                    pointerEvents: 'none',
+                },
+            },
+            underline: {
+                '&:before': {
+                    borderBottomColor: ThemeColors.divider,
+                },
+                '&:after': {
+                    borderBottomColor: ThemeColors.primary.dark,
+                },
+                '&$disabled:before': {
+                    borderBottomStyle: 'solid',
+                },
+                '&$colorSecondary:not($error):after': {
+                    borderBottomColor: ThemeColors.primary.dark,
+                },
+            },
+            focused: {},
+            disabled: {},
+            colorSecondary: {},
+            error: {},
+        },
+        MuiOutlinedInput: {
+            root: {
+                '&$error $notchedOutline': {
+                    borderColor: ThemeColors.error.dark,
+                },
+                '&$disabled $notchedOutline': {
+                    borderColor: Color(ThemeColors.action.active).alpha(0.36).rgb().string(),
+                },
+                '&$error$colorSecondary$focused $notchedOutline': {
+                    borderColor: ThemeColors.error.dark,
+                },
+                '&$error:hover $notchedOutline': {
+                    borderColor: ThemeColors.error.main,
+                },
+                '&$focused $notchedOutline': {
+                    borderColor: ThemeColors.primary.dark,
+                },
+            },
+            colorSecondary: {},
+            focused: {},
+            error: {},
+            disabled: {},
+            notchedOutline: {
+                borderColor: ThemeColors.divider,
+            },
+        },
+        MuiFormLabel: {
+            root: {
+                color: ThemeColors.text.secondary,
+                '&$error$colorSecondary$focused': {
+                    color: ThemeColors.error.main,
+                },
+            },
+            colorSecondary: {},
+            focused: {},
         },
 
         // TOGGLE BUTTON OVERRIDES (LAB)
