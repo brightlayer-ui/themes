@@ -160,15 +160,15 @@ exports.blueTheme = {
                 },
             },
             outlined: {
-                borderColor: color_1.default(ThemeColors.black[500]).fade(0.88).rgb().string(),
+                borderColor: color_1.default(ThemeColors.black[500]).alpha(0.12).rgb().string(),
                 '&$clickable:hover': {
                     backgroundColor: ThemeColors.white[200],
                 },
             },
             outlinedPrimary: {
-                backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.95).rgb().string(),
+                backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.05).rgb().string(),
                 '&$clickable:hover': {
-                    backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.9).rgb().string(),
+                    backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.1).rgb().string(),
                 },
             },
             avatar: {},
@@ -178,6 +178,27 @@ exports.blueTheme = {
             root: {
                 backgroundColor: ThemeColors.white[200],
             },
+        },
+        MuiOutlinedInput: {
+            root: {
+                '&$error$colorSecondary$focused $notchedOutline': {
+                    borderColor: ThemeColors.red[500],
+                }
+            },
+            colorSecondary: {},
+            focused: {},
+            error: {},
+            notchedOutline: {}
+        },
+        MuiFormLabel: {
+            root: {
+                '&$error$colorSecondary$focused': {
+                    color: ThemeColors.red[500],
+                }
+            },
+            colorSecondary: {},
+            error: {},
+            focused: {},
         },
         // FAB OVERRIDES
         MuiFab: {
@@ -236,8 +257,8 @@ exports.blueTheme = {
         MuiStepper: {},
         MuiStepConnector: {
             line: {
-                borderColor: color_1.default(ThemeColors.black[500]).fade(0.88).rgb().string()
-            }
+                borderColor: color_1.default(ThemeColors.black[500]).alpha(0.12).rgb().string(),
+            },
         },
         MuiStep: {
             completed: {
@@ -252,8 +273,8 @@ exports.blueTheme = {
                     left: '5%',
                     backgroundColor: ThemeColors.white[50],
                     borderRadius: '50%',
-                }
-            }
+                },
+            },
         },
         MuiStepIcon: {
             root: {
@@ -267,7 +288,7 @@ exports.blueTheme = {
                 '& $text': {
                     fill: ThemeColors.white[50],
                 },
-            }
+            },
         },
         MuiStepLabel: {
             label: {
@@ -278,7 +299,7 @@ exports.blueTheme = {
                 },
                 '&$completed': {
                     fontWeight: 600,
-                }
+                },
             },
             iconContainer: {
                 position: 'relative',
@@ -320,16 +341,23 @@ exports.blueTheme = {
             root: {
                 color: ThemeColors.black[50],
                 backgroundColor: '#FBFBFB',
-                '&$selected': {
-                    backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.95).rgb().string(),
-                    '&:hover': {
-                        backgroundColor: 'red',
+                '&$hover:hover': {
+                    backgroundColor: color_1.default('#FBFBFB').mix(color_1.default(ThemeColors.black[50]), 0.5).rgb().string(),
+                },
+                '&:nth-of-type(odd):not($selected)': {
+                    backgroundColor: ThemeColors.white[50],
+                    '&$hover:hover': {
+                        backgroundColor: color_1.default(ThemeColors.white[50]).mix(color_1.default(ThemeColors.black[50]), 0.5).rgb().string(),
                     },
                 },
-                '&:nth-of-type(odd)': {
-                    backgroundColor: ThemeColors.white[50],
+                '&$selected': {
+                    backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.05).rgb().string(),
+                    '&$hover:hover': {
+                        backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.07).rgb().string(),
+                    },
                 },
             },
+            hover: {},
         },
         MuiTableSortLabel: {
             root: {
@@ -338,12 +366,12 @@ exports.blueTheme = {
                     '& $icon': {
                         color: ThemeColors.black[300],
                         opacity: 1,
-                    }
+                    },
                 },
             },
             icon: {
                 opacity: 0.12,
-            }
+            },
         },
         // TABS OVERRIDES
         MuiTab: {

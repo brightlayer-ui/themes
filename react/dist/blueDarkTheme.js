@@ -34,7 +34,7 @@ exports.blueDarkTheme = {
         error: shared_1.createSimpleDarkPalette(ThemeColors.red),
         success: shared_1.createSimpleDarkPalette(ThemeColors.green),
         info: shared_1.createSimpleDarkPalette(ThemeColors.lightBlue),
-        divider: color_1.default(ThemeColors.black[200]).fade(0.64).rgb().string(),
+        divider: color_1.default(ThemeColors.black[200]).alpha(0.32).rgb().string(),
         warning: {
             light: ThemeColors.yellow[100],
             main: ThemeColors.yellow[300],
@@ -47,20 +47,20 @@ exports.blueDarkTheme = {
         text: {
             primary: ThemeColors.black[50],
             secondary: ThemeColors.black[200],
-            disabled: color_1.default(ThemeColors.black[300]).fade(0.64).rgb().string(),
-            hint: color_1.default(ThemeColors.black[300]).fade(0.64).rgb().string(),
+            disabled: color_1.default(ThemeColors.black[300]).alpha(0.32).rgb().string(),
+            hint: color_1.default(ThemeColors.black[300]).alpha(0.32).rgb().string(),
         },
         action: {
-            hover: color_1.default(ThemeColors.black[50]).fade(0.9).rgb().string(),
+            hover: color_1.default(ThemeColors.black[50]).alpha(0.1).rgb().string(),
             active: ThemeColors.black[200],
-            disabledBackground: color_1.default(ThemeColors.black[200]).fade(0.76).rgb().string(),
+            disabledBackground: color_1.default(ThemeColors.black[200]).alpha(0.24).rgb().string(),
         },
     },
     overrides: {
         // AVATAR OVERRIDES
         MuiAvatar: {
             colorDefault: {
-                backgroundColor: color_1.default(ThemeColors.black[50]).fade(0.9).rgb().string(),
+                backgroundColor: color_1.default(ThemeColors.black[50]).alpha(0.1).rgb().string(),
                 color: ThemeColors.black[50],
             },
         },
@@ -82,7 +82,7 @@ exports.blueDarkTheme = {
         // BACKDROP OVERRIDES
         MuiBackdrop: {
             root: {
-                backgroundColor: color_1.default(ThemeColors.darkBlack[900]).fade(0.3).rgb().string(),
+                backgroundColor: color_1.default(ThemeColors.darkBlack[900]).alpha(0.7).rgb().string(),
             },
         },
         // BADGE OVERRIDES
@@ -118,12 +118,12 @@ exports.blueDarkTheme = {
             outlined: {
                 borderColor: ThemeColors.black[100],
             },
-            outlinedPrimary: {
-                borderColor: ThemeColors.blue[500],
-            },
-            outlinedSecondary: {
-                borderColor: ThemeColors.blue[200],
-            },
+            // outlinedPrimary: {
+            //     borderColor: ThemeColors.blue[500],
+            // },
+            // outlinedSecondary: {
+            //     borderColor: ThemeColors.blue[200],
+            // },
             contained: {
                 backgroundColor: ThemeColors.black[500],
                 color: ThemeColors.white[50],
@@ -132,8 +132,13 @@ exports.blueDarkTheme = {
                 },
             },
             containedPrimary: {
+                backgroundColor: ThemeColors.blue[500],
+                color: ThemeColors.white[50],
+                '&:hover': {
+                    backgroundColor: ThemeColors.blue[700],
+                },
                 '&$disabled': {
-                    color: ThemeColors.black[400],
+                    color: color_1.default(ThemeColors.black[200]).alpha(0.24).rgb().string(),
                 },
             },
             disabled: {},
@@ -180,15 +185,15 @@ exports.blueDarkTheme = {
             },
             outlined: {
                 backgroundColor: ThemeColors.black[900],
-                borderColor: color_1.default(ThemeColors.black[200]).fade(0.64).rgb().string(),
+                borderColor: color_1.default(ThemeColors.black[200]).alpha(0.32).rgb().string(),
                 '&$clickable:hover': {
                     backgroundColor: ThemeColors.black[800],
                 },
             },
             outlinedPrimary: {
-                backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.8).rgb().string(),
+                backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.2).rgb().string(),
                 '&$clickable:hover': {
-                    backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.7).rgb().string(),
+                    backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.3).rgb().string(),
                 },
             },
             avatar: {},
@@ -271,8 +276,8 @@ exports.blueDarkTheme = {
         MuiStepper: {},
         MuiStepConnector: {
             line: {
-                borderColor: color_1.default(ThemeColors.black[200]).fade(0.64).rgb().string()
-            }
+                borderColor: color_1.default(ThemeColors.black[200]).alpha(0.32).rgb().string(),
+            },
         },
         MuiStep: {
             completed: {
@@ -287,12 +292,12 @@ exports.blueDarkTheme = {
                     left: '5%',
                     backgroundColor: ThemeColors.white[50],
                     borderRadius: '50%',
-                }
-            }
+                },
+            },
         },
         MuiStepIcon: {
             root: {
-                color: color_1.default(ThemeColors.black[300]).fade(0.64).rgb().string(),
+                color: color_1.default(ThemeColors.black[300]).alpha(0.32).rgb().string(),
                 zIndex: 1,
                 '&$active': {
                     color: ThemeColors.blue[500],
@@ -309,7 +314,7 @@ exports.blueDarkTheme = {
                     fill: ThemeColors.white[50],
                 },
             },
-            completed: {}
+            completed: {},
         },
         MuiStepLabel: {
             label: {
@@ -320,7 +325,7 @@ exports.blueDarkTheme = {
                 },
                 '&$completed': {
                     fontWeight: 600,
-                }
+                },
             },
             iconContainer: {
                 position: 'relative',
@@ -362,16 +367,23 @@ exports.blueDarkTheme = {
             root: {
                 color: ThemeColors.black[50],
                 backgroundColor: ThemeColors.darkBlack[300],
-                '&$selected': {
-                    backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.8).rgb().string(),
-                    '&:hover': {
-                        backgroundColor: 'red',
+                '&$hover:hover': {
+                    backgroundColor: color_1.default(ThemeColors.darkBlack[300]).mix(color_1.default(ThemeColors.black[500]), 0.5).rgb().string(),
+                },
+                '&:nth-of-type(odd):not($selected)': {
+                    backgroundColor: ThemeColors.black[900],
+                    '&$hover:hover': {
+                        backgroundColor: color_1.default(ThemeColors.black[900]).mix(color_1.default(ThemeColors.black[500]), 0.5).rgb().string(),
                     },
                 },
-                '&:nth-of-type(odd)': {
-                    backgroundColor: ThemeColors.black[900],
+                '&$selected': {
+                    backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.2).rgb().string(),
+                    '&$hover:hover': {
+                        backgroundColor: color_1.default(ThemeColors.blue[500]).mix(color_1.default(ThemeColors.black[500]), 0.5).alpha(0.2).rgb().string(),
+                    },
                 },
             },
+            hover: {},
         },
         MuiTableSortLabel: {
             root: {
@@ -380,12 +392,12 @@ exports.blueDarkTheme = {
                     '& $icon': {
                         color: ThemeColors.black[200],
                         opacity: 1,
-                    }
+                    },
                 },
             },
             icon: {
                 opacity: 0.36,
-            }
+            },
         },
         // TABS OVERRIDES
         MuiTab: {
@@ -428,9 +440,9 @@ exports.blueDarkTheme = {
             root: {
                 backgroundColor: ThemeColors.black[900],
                 color: ThemeColors.gray[500],
-                borderColor: color_1.default(ThemeColors.black[200]).fade(0.64).rgb().string(),
+                borderColor: color_1.default(ThemeColors.black[200]).alpha(0.32).rgb().string(),
                 '&$selected': {
-                    backgroundColor: color_1.default(ThemeColors.blue[500]).fade(0.8).rgb().string(),
+                    backgroundColor: color_1.default(ThemeColors.blue[500]).alpha(0.2).rgb().string(),
                     color: ThemeColors.blue[200],
                 },
             },

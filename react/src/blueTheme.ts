@@ -156,15 +156,15 @@ export const blueTheme: ThemeOptions = {
                 },
             },
             outlined: {
-                borderColor: Color(ThemeColors.black[500]).fade(0.88).rgb().string(),
+                borderColor: Color(ThemeColors.black[500]).alpha(0.12).rgb().string(),
                 '&$clickable:hover': {
                     backgroundColor: ThemeColors.white[200],
                 },
             },
             outlinedPrimary: {
-                backgroundColor: Color(ThemeColors.blue[500]).fade(0.95).rgb().string(),
+                backgroundColor: Color(ThemeColors.blue[500]).alpha(0.05).rgb().string(),
                 '&$clickable:hover': {
-                    backgroundColor: Color(ThemeColors.blue[500]).fade(0.9).rgb().string(),
+                    backgroundColor: Color(ThemeColors.blue[500]).alpha(0.1).rgb().string(),
                 },
             },
             avatar: {},
@@ -175,6 +175,27 @@ export const blueTheme: ThemeOptions = {
             root: {
                 backgroundColor: ThemeColors.white[200],
             },
+        },
+        MuiOutlinedInput: {
+            root: {
+                '&$error$colorSecondary$focused $notchedOutline': {
+                    borderColor: ThemeColors.red[500],
+                }
+            },
+            colorSecondary: {},
+            focused: {},
+            error: {},
+            notchedOutline: {}
+        },
+        MuiFormLabel:{
+            root:{
+                '&$error$colorSecondary$focused': {
+                    color: ThemeColors.red[500],
+                }
+            },
+            colorSecondary:{ },
+            error: {},
+            focused: {},
         },
 
         // FAB OVERRIDES
@@ -238,7 +259,7 @@ export const blueTheme: ThemeOptions = {
         MuiStepper: {},
         MuiStepConnector: {
             line: {
-                borderColor: Color(ThemeColors.black[500]).fade(0.88).rgb().string(),
+                borderColor: Color(ThemeColors.black[500]).alpha(0.12).rgb().string(),
             },
         },
         MuiStep: {
@@ -324,16 +345,23 @@ export const blueTheme: ThemeOptions = {
             root: {
                 color: ThemeColors.black[50],
                 backgroundColor: '#FBFBFB', // possible new shade of white
-                '&$selected': {
-                    backgroundColor: Color(ThemeColors.blue[500]).fade(0.95).rgb().string(),
-                    '&:hover': {
-                        backgroundColor: 'red',
+                '&$hover:hover': {
+                    backgroundColor: Color('#FBFBFB').mix(Color(ThemeColors.black[50]), 0.5).rgb().string(),
+                },
+                '&:nth-of-type(odd):not($selected)': {
+                    backgroundColor: ThemeColors.white[50],
+                    '&$hover:hover': {
+                        backgroundColor: Color(ThemeColors.white[50]).mix(Color(ThemeColors.black[50]), 0.5).rgb().string(),
                     },
                 },
-                '&:nth-of-type(odd)': {
-                    backgroundColor: ThemeColors.white[50],
+                '&$selected': {
+                    backgroundColor: Color(ThemeColors.blue[500]).alpha(0.05).rgb().string(),
+                    '&$hover:hover': {
+                        backgroundColor: Color(ThemeColors.blue[500]).alpha(0.07).rgb().string(),
+                    },
                 },
             },
+            hover: {},
         },
         MuiTableSortLabel: {
             root: {
