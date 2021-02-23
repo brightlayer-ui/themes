@@ -215,7 +215,7 @@ export const blueDarkTheme: ThemeOptions = {
         // DRAWER OVERRIDES
         MuiDrawer: {
             paper: {
-                backgroundColor: PXBColors.darkBlack[500],
+                backgroundColor: PXBColors.darkBlack[300],
             },
             paperAnchorBottom: {
                 backgroundColor: ThemeColors.background.paper,
