@@ -210,12 +210,12 @@ exports.blueDarkTheme = {
             textPrimary: {
                 '&:hover': {
                     backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.2).string(),
-                }
+                },
             },
             textSecondary: {
                 '&:hover': {
                     backgroundColor: color_1.default(ThemeColors.secondary.dark).alpha(0.2).string(),
-                }
+                },
             },
             disabled: {},
         },
@@ -226,7 +226,16 @@ exports.blueDarkTheme = {
                 backgroundColor: MediumBlackBackground,
                 color: ThemeColors.text.primary,
                 '& $avatar': {
-                    color: WhiteText,
+                    backgroundColor: PXBColors.black[700],
+                    color: ThemeColors.text.primary,
+                },
+                '& $avatarColorPrimary': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: ThemeColors.primary.dark,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: ThemeColors.primary.dark,
                 },
             },
             clickable: {
@@ -235,6 +244,7 @@ exports.blueDarkTheme = {
                 },
             },
             deleteIcon: {
+                fontSize: '1.125rem',
                 color: ThemeColors.text.secondary,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -265,12 +275,27 @@ exports.blueDarkTheme = {
                 '&$clickable:hover': {
                     backgroundColor: PXBColors.black[800],
                 },
+                '& $avatar': {
+                    backgroundColor: PXBColors.black[600],
+                    color: ThemeColors.text.primary,
+                },
+                '& $avatarColorPrimary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.dark,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.dark,
+                },
             },
             outlinedPrimary: {
                 backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.2).string(),
                 '&$clickable:hover': {
                     backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.3).string(),
                 },
+            },
+            icon: {
+                fontSize: '1.125rem',
             },
             avatar: {},
         },

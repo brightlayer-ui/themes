@@ -166,7 +166,7 @@ exports.blueTheme = {
                 borderColor: ThemeColors.primary.main,
                 '&:hover': {
                     backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
-                }
+                },
             },
             outlinedSecondary: {
                 borderColor: ThemeColors.secondary.main,
@@ -175,7 +175,7 @@ exports.blueTheme = {
                 },
                 '&:hover': {
                     backgroundColor: color_1.default(ThemeColors.secondary.main).alpha(0.05).string(),
-                }
+                },
             },
             text: {
                 '&$disabled': {
@@ -183,17 +183,17 @@ exports.blueTheme = {
                 },
                 '&:hover': {
                     backgroundColor: color_1.default(PXBColors.black[500]).alpha(0.05).string(),
-                }
+                },
             },
             textPrimary: {
                 '&:hover': {
                     backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
-                }
+                },
             },
             textSecondary: {
                 '&:hover': {
                     backgroundColor: color_1.default(ThemeColors.secondary.main).alpha(0.05).string(),
-                }
+                },
             },
             disabled: {},
         },
@@ -210,6 +210,15 @@ exports.blueTheme = {
                 backgroundColor: PXBColors.white[500],
                 color: ThemeColors.text.primary,
                 '& $avatar': {
+                    backgroundColor: ThemeColors.primary.main,
+                    color: WhiteText,
+                },
+                '& $avatarColorPrimary': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: ThemeColors.primary.main,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.main,
                 },
             },
@@ -219,6 +228,7 @@ exports.blueTheme = {
                 },
             },
             deleteIcon: {
+                fontSize: '1.125rem',
                 color: ThemeColors.action.active,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -241,6 +251,14 @@ exports.blueTheme = {
                 '&$clickable:hover': {
                     backgroundColor: PXBColors.white[200],
                 },
+                '& $avatarColorPrimary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.main,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.main,
+                },
             },
             outlinedPrimary: {
                 backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
@@ -248,7 +266,12 @@ exports.blueTheme = {
                     backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.1).string(),
                 },
             },
+            icon: {
+                fontSize: '1.125rem',
+            },
             avatar: {},
+            avatarColorPrimary: {},
+            avatarColorSecondary: {}
         },
         // FAB OVERRIDES
         MuiFab: {

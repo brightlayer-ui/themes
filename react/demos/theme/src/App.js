@@ -321,6 +321,12 @@ export default () => {
                     />
                     <Chip label="Deletable primary" color="primary" onDelete={() => {}} />
                     <Chip icon={<Favorite />} label="Deletable secondary" color="secondary" onDelete={() => {}} />
+                    <Chip
+                        label="Deletable secondary"
+                        color="secondary"
+                        avatar={<Avatar>M</Avatar>}
+                        onDelete={() => {}}
+                    />
                 </div>
                 <div style={{ margin: 40 }}>
                     <Chip label="Basic" variant="outlined" />
@@ -359,6 +365,13 @@ export default () => {
                         label="Deletable secondary"
                         color="secondary"
                         variant="outlined"
+                        onDelete={() => {}}
+                    />
+                    <Chip
+                        label="Deletable secondary"
+                        color="secondary"
+                        variant="outlined"
+                        avatar={<Avatar>M</Avatar>}
                         onDelete={() => {}}
                     />
                 </div>

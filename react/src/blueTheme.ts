@@ -209,6 +209,15 @@ export const blueTheme: ThemeOptions = {
                 backgroundColor: PXBColors.white[500],
                 color: ThemeColors.text.primary,
                 '& $avatar': {
+                    backgroundColor: ThemeColors.primary.main,
+                    color: WhiteText,
+                },
+                '& $avatarColorPrimary': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: ThemeColors.primary.main,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.main,
                 },
             },
@@ -218,6 +227,7 @@ export const blueTheme: ThemeOptions = {
                 },
             },
             deleteIcon: {
+                fontSize: '1.125rem',
                 color: ThemeColors.action.active,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -240,6 +250,14 @@ export const blueTheme: ThemeOptions = {
                 '&$clickable:hover': {
                     backgroundColor: PXBColors.white[200],
                 },
+                '& $avatarColorPrimary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.main,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.main,
+                },
             },
             outlinedPrimary: {
                 backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
@@ -247,7 +265,12 @@ export const blueTheme: ThemeOptions = {
                     backgroundColor: Color(ThemeColors.primary.main).alpha(0.1).string(),
                 },
             },
+            icon: {
+                fontSize: '1.125rem',
+            },
             avatar: {},
+            avatarColorPrimary: {},
+            avatarColorSecondary: {},
         },
 
         // FAB OVERRIDES

@@ -225,7 +225,16 @@ export const blueDarkTheme: ThemeOptions = {
                 backgroundColor: MediumBlackBackground,
                 color: ThemeColors.text.primary,
                 '& $avatar': {
-                    color: WhiteText,
+                    backgroundColor: PXBColors.black[700],
+                    color: ThemeColors.text.primary,
+                },
+                '& $avatarColorPrimary': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: ThemeColors.primary.dark,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: ThemeColors.primary.dark,
                 },
             },
             clickable: {
@@ -234,6 +243,7 @@ export const blueDarkTheme: ThemeOptions = {
                 },
             },
             deleteIcon: {
+                fontSize: '1.125rem',
                 color: ThemeColors.text.secondary,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -264,12 +274,27 @@ export const blueDarkTheme: ThemeOptions = {
                 '&$clickable:hover': {
                     backgroundColor: PXBColors.black[800],
                 },
+                '& $avatar': {
+                    backgroundColor: PXBColors.black[600],
+                    color: ThemeColors.text.primary,
+                },
+                '& $avatarColorPrimary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.dark,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.dark,
+                },
             },
             outlinedPrimary: {
                 backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
                 '&$clickable:hover': {
                     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.3).string(),
                 },
+            },
+            icon: {
+                fontSize: '1.125rem',
             },
             avatar: {},
         },
