@@ -29,7 +29,7 @@ var ThemeColors = {
     error: shared_1.createSimpleLightPalette(PXBColors.red),
     success: shared_1.createSimpleLightPalette(PXBColors.green),
     info: shared_1.createSimpleLightPalette(PXBColors.lightBlue),
-    divider: color_1.default(PXBColors.black[500]).alpha(0.12).rgb().string(),
+    divider: color_1.default(PXBColors.black[500]).alpha(0.12).string(),
     warning: {
         light: PXBColors.yellow[100],
         main: PXBColors.yellow[500],
@@ -42,13 +42,13 @@ var ThemeColors = {
     text: {
         primary: PXBColors.black[500],
         secondary: PXBColors.black[300],
-        // disabled: Color(PXBColors.black[300]).alpha(0.32).rgb().string(),
+        // disabled: Color(PXBColors.black[300]).alpha(0.32).string(),
         hint: PXBColors.gray[500],
     },
     action: {
-        // hover: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
+        // hover: Color(PXBColors.black[50]).alpha(0.1).string(),
         active: PXBColors.gray[500],
-        disabled: 'rgba(0, 0, 0, .25)',
+        disabled: color_1.default(PXBColors.black[500]).alpha(0.30).string(),
     },
 };
 var WhiteText = PXBColors.white[50];
@@ -123,23 +123,30 @@ exports.blueTheme = {
                 textTransform: 'none',
             },
             containedPrimary: {
-                '&$disabled': {
-                    backgroundColor: ThemeColors.primary.light,
-                    color: PXBColors.blue[200],
-                    opacity: 1,
-                },
+            // '&$disabled': {
+            //     backgroundColor: ThemeColors.primary.light,
+            //     color: PXBColors.blue[200],
+            //     opacity: 1,
+            // },
             },
             outlined: {
                 borderColor: BlackBorder,
+                '&$disabled': {
+                    borderColor: ThemeColors.action.disabled,
+                }
             },
             outlinedPrimary: {
                 borderColor: ThemeColors.primary.main,
             },
             outlinedSecondary: {
                 borderColor: ThemeColors.secondary.main,
+                '&$disabled': {
+                    borderColor: ThemeColors.action.disabled,
+                }
             },
             disabled: {},
         },
+        // CHECKBOX OVERRIDES
         MuiCheckbox: {
             root: {
                 color: ThemeColors.action.active,
@@ -179,15 +186,15 @@ exports.blueTheme = {
                 },
             },
             outlined: {
-                borderColor: color_1.default(BlackBorder).alpha(0.12).rgb().string(),
+                borderColor: color_1.default(BlackBorder).alpha(0.12).string(),
                 '&$clickable:hover': {
                     backgroundColor: PXBColors.white[200],
                 },
             },
             outlinedPrimary: {
-                backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).rgb().string(),
+                backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
                 '&$clickable:hover': {
-                    backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.1).rgb().string(),
+                    backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.1).string(),
                 },
             },
             avatar: {},
@@ -243,13 +250,16 @@ exports.blueTheme = {
                 '& .MuiButton-textPrimary': {
                     color: PXBColors.blue[200],
                 },
+                '& .MuiButton-textSecondary': {
+                    color: PXBColors.lightBlue[200],
+                },
             },
         },
         // STEPPER OVERRIDES
         MuiStepper: {},
         MuiStepConnector: {
             line: {
-                borderColor: color_1.default(BlackBorder).alpha(0.12).rgb().string(),
+                borderColor: color_1.default(BlackBorder).alpha(0.12).string(),
             },
         },
         MuiStep: {
@@ -334,18 +344,18 @@ exports.blueTheme = {
                 color: PXBColors.black[50],
                 backgroundColor: '#FBFBFB',
                 '&$hover:hover': {
-                    backgroundColor: color_1.default('#FBFBFB').mix(color_1.default(PXBColors.black[50]), 0.5).rgb().string(),
+                    backgroundColor: color_1.default('#FBFBFB').mix(color_1.default(PXBColors.black[50]), 0.5).string(),
                 },
                 '&:nth-of-type(odd):not($selected)': {
                     backgroundColor: PXBColors.white[50],
                     '&$hover:hover': {
-                        backgroundColor: color_1.default(PXBColors.white[50]).mix(color_1.default(PXBColors.black[50]), 0.5).rgb().string(),
+                        backgroundColor: color_1.default(PXBColors.white[50]).mix(color_1.default(PXBColors.black[50]), 0.5).string(),
                     },
                 },
                 '&$selected': {
-                    backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).rgb().string(),
+                    backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
                     '&$hover:hover': {
-                        backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.07).rgb().string(),
+                        backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.07).string(),
                     },
                 },
             },
@@ -367,6 +377,12 @@ exports.blueTheme = {
         },
         // TABS OVERRIDES
         MuiTab: {
+            root: {
+                fontWeight: 400,
+                '&$selected': {
+                    fontWeight: 600,
+                }
+            },
             textColorPrimary: {
                 color: WhiteText,
                 opacity: 0.7,
@@ -410,7 +426,7 @@ exports.blueTheme = {
                     backgroundColor: ThemeColors.background.default,
                 },
                 '&$disabled': {
-                    color: color_1.default(ThemeColors.text.primary).alpha(0.3).rgb().string(),
+                    color: color_1.default(ThemeColors.text.primary).alpha(0.3).string(),
                     backgroundColor: PXBColors.white[100],
                     pointerEvents: 'none',
                 },
@@ -425,10 +441,13 @@ exports.blueTheme = {
         },
         MuiOutlinedInput: {
             root: {
+                '& $notchedOutline': {
+                    borderColor: ThemeColors.divider,
+                },
                 '&$error$colorSecondary$focused $notchedOutline': {
                     borderColor: ThemeColors.error.main,
                 },
-                '&$error:hover $notchedOutline': {
+                '&$error:hover:not($focused) $notchedOutline': {
                     borderColor: PXBColors.red[900],
                 },
             },
@@ -441,7 +460,7 @@ exports.blueTheme = {
         },
         MuiFormLabel: {
             root: {
-                color: ThemeColors.text.hint,
+                color: ThemeColors.text.primary,
                 '&$error$colorSecondary$focused': {
                     color: ThemeColors.error.main,
                 },
