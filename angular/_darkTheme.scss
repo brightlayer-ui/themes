@@ -1,10 +1,68 @@
 @import '~@pxblue/colors/palette';
 
+
+@function createSimplePalette($color) {
+    @return ("light": map-get($color, 50), "main": map-get($color, 200), "dark": map-get($color, 500));
+}
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+/*primary: createSimplePalette(PXBColors.blue),
+secondary: createSimplePalette(PXBColors.lightBlue),
+error: createSimplePalette(PXBColors.red),
+success: createSimplePalette(PXBColors.green),
+info: createSimplePalette(PXBColors.lightBlue),
+divider: Color(PXBColors.black[200]).alpha(0.32).rgb().string(),
+warning: {
+    light: PXBColors.yellow[100],
+    main: PXBColors.yellow[300],
+    dark: PXBColors.yellow[900],
+},
+background: {
+    default: PXBColors.darkBlack[800],
+    paper: PXBColors.black[900],
+},
+text: {
+    primary: PXBColors.black[50],
+    secondary: PXBColors.black[200],
+    disabled: Color(PXBColors.black[300]).alpha(0.32).rgb().string(),
+    hint: Color(PXBColors.black[300]).alpha(0.32).rgb().string(),
+},
+action: {
+    hover: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
+    active: PXBColors.black[200],
+    disabled: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
+    disabledBackground: Color(PXBColors.black[200]).alpha(0.24).rgb().string(),
+},
+}; */
+
+
 @mixin darktheme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
+
+
+    $overrides: (
+        "primary": createSimplePalette($primary),
+        "secondary": createSimplePalette($accent),
+        "error": createSimplePalette($pxb-red),
+        "success": createSimplePalette($pxb-green),
+        "background": (
+            "default": map-get($pxb-darkBlack, 800),
+            "paper": map-get($pxb-black, 900)
+        ),
+        "text": (
+            "primary": map-get($pxb-black, 50),
+            "secondary": map-get($pxb-black, 200),
+        )
+    );
 
     /* Side navigation*/
     .mat-drawer {
@@ -13,44 +71,47 @@
 
     /* toolbar*/
     .mat-toolbar {
-        color: map-get($pxb-black, 100);
-
+        color: map-deep-get($overrides, "text", "primary");
+        background-color: map-get($pxb-darkBlack, 100);
         &.mat-primary {
-            background-color: map-get($background, base);
-            color: map-get($pxb-black, 50);
+            background-color: map-get($pxb-black, 800);
         }
         &.mat-accent {
-            background-color: map-get($pxb-darkBlack, 400);
-            color: map-get($pxb-black, 50);
+            background-color: map-get($pxb-black, 900);
         }
     }
+
 
     /*tab bar*/
     .mat-tab-group {
-        .mat-tab-header {
-            background-color: map-get($background, app-bar);
+        .mat-tab-label {
+            color: map-deep-get($overrides, "text", "secondary");
+            background-color: map-deep-get($overrides, "background", "paper");
         }
-        &.mat-primary .mat-tab-header {
-            background-color: map-get($background, base);
+        .mat-tab-label-active {
+            color: map-deep-get($overrides, "primary", "main")
         }
-        &.mat-accent .mat-tab-header {
-            background-color: map-get($pxb-darkBlack, 400);
+    }
+    .mat-tab-group.mat-primary, .mat-tab-nav-bar.mat-primary {
+        .mat-ink-bar {
+            background-color: map-deep-get($overrides, "primary", "main")
         }
     }
 
-    /* tabbar link*/
-    .mat-tab-group.mat-primary.mat-background-primary .mat-ink-bar {
-        background-color: map-get($primary, 500);
-    }
-    .mat-tab-group .mat-ink-bar {
-        background-color: map-get($background, base);
-    }
-    .mat-tab-label-active {
-        color: map-get($pxb-black, 50);
+    /* Chips */
+    .mat-chip.mat-standard-chip {
+        &.mat-primary {
+            color: map-get($pxb-white, 50);
+            background-color: map-deep-get($overrides, "primary", "dark");
+        }
+        &:not([color='primary']) {
+            background-color: map-get($pxb-black, 500);
+            color: map-deep-get($overrides, "text", "primary");
+        }
     }
 
     /* button*/
-    .mat-stroked-button:not([disabled]) {
+   /* .mat-stroked-button:not([disabled]) {
         border-color: #c6cacc;
         &.mat-primary {
             border-color: map-get($primary, 500);
@@ -58,7 +119,7 @@
         &.mat-accent {
             border-color: map-get($accent, 500);
         }
-    }
+    } */
 
     /*Body*/
     .mat-drawer-content {
@@ -80,7 +141,25 @@
     /* snackbar theming */
     .mat-snack-bar-container {
         background-color: map-get($pxb-darkBlack, 500);
-        color: white;
+    }
+
+    /* input fields */
+    .mat-form-field {
+        &.mat-primary {
+            .mat-form-field-label {
+                color: map-deep-get($overrides, "primary", "main");
+            }
+        }
+        &.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+            color: map-deep-get($overrides, "error", "dark");
+        }
+    }
+
+    .mat-form-field-empty.mat-form-field-label,
+    .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    }
+    input:-internal-autofill-selected {
+        background-color: unset;
     }
 
     /*stepper*/

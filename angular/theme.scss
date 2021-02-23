@@ -70,7 +70,7 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
                 slider-min: rgba(black, 0.87),
                 slider-off: rgba(black, 0.26),
                 slider-off-active: rgba(black, 0.38),
-                // Custom colors added to to theme
+                // Custom (TODO? REMOVE ME!)
                 light: map-get($pxb-white, 50),
             ),
             background: (
@@ -88,7 +88,7 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
                 disabled-button-toggle: map_get($mat-grey, 200),
                 unselected-chip: map_get($mat-grey, 300),
                 disabled-list-option: map_get($mat-grey, 200),
-                // Custom colors added to to theme
+                // Custom (TODO? REMOVE ME!)
                 base: map-get($pxb-white, 50),
             ),
         )
@@ -124,19 +124,19 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
                 disabled: $light-disabled-text,
                 disabled-button: rgba(white, 0.3),
                 disabled-text: $light-disabled-text,
-                elevation: black,
-                icon: white,
-                icons: white,
-                slider-min: white,
+                elevation: map-get($pxb-darkBlack, 900),
+                icon: map-get($pxb-black, 50),
+                icons: map-get($pxb-black, 50),
+                slider-min: map-get($pxb-black, 50),
                 slider-off: rgba(white, 0.3),
                 slider-off-active: rgba(white, 0.3),
-                // Custom colors added to to theme
+                // Custom (TODO? REMOVE ME!)
                 light: map-get($pxb-white, 50),
             ),
             background: (
-                status-bar: black,
+                status-bar: map-get($pxb-darkBlack, 900),
                 app-bar: map-get($pxb-darkBlack, 100),
-                background: map_get($pxb-darkBlack, 100),
+                background: map-get($pxb-darkBlack, 100),
                 hover: rgba(white, 0.04),
                 card: map-get($pxb-black, 900),
                 dialog: map-get($pxb-black, 900),
@@ -148,15 +148,15 @@ $pxb-blue-theme: pxb-light-theme($pxb-blue-primary, $pxb-blue-accent, $pxb-blue-
                 disabled-button-toggle: black,
                 unselected-chip: map_get($mat-grey, 700),
                 disabled-list-option: black,
-                // Custom
+                // Custom (TODO? REMOVE ME!)
                 base: map-get($pxb-darkBlack, 800),
             ),
         )
     );
 }
 $pxb-blue-dark-primary: mat-palette($pxb-blue);
-$pxb-blue-dark-accent: mat-palette($pxb-lightBlue);
-$pxb-blue-dark-warn: mat-palette($pxb-red, 500);
+$pxb-blue-dark-accent: mat-palette($pxb-lightBlue, 200);
+$pxb-blue-dark-warn: mat-palette($pxb-red, 200);
 $pxb-blue-dark-theme: pxb-dark-theme($pxb-blue-dark-primary, $pxb-blue-dark-accent, $pxb-blue-dark-warn);
 .pxb-blue-dark {
     @include angular-material-theme($pxb-blue-dark-theme);
