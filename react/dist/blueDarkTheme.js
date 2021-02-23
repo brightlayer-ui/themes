@@ -142,6 +142,9 @@ exports.blueDarkTheme = {
         MuiButton: {
             root: {
                 textTransform: 'none',
+                '&:hover': {
+                    backgroundColor: PXBColors.black[400],
+                },
             },
             outlined: {
                 borderColor: PXBColors.black[200],
@@ -152,13 +155,18 @@ exports.blueDarkTheme = {
             },
             outlinedPrimary: {
                 borderColor: ThemeColors.primary.main,
+                '&:hover': {
+                    backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.2).string(),
+                },
             },
             outlinedSecondary: {
                 '&:not($disabled)': {
                     borderColor: ThemeColors.secondary.main,
-                    backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.20).string(),
+                    // backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
                     '&:hover': {
-                        color: PXBColors.blue[100],
+                        // color: PXBColors.blue[100],
+                        // borderColor: PXBColors.blue[100],
+                        backgroundColor: color_1.default(ThemeColors.secondary.dark).alpha(0.2).string(),
                     },
                 },
                 '&$disabled': {
@@ -181,13 +189,33 @@ exports.blueDarkTheme = {
                 backgroundColor: ThemeColors.primary.dark,
                 color: WhiteText,
                 '&:hover': {
-                    backgroundColor: PXBColors.blue[700],
+                    backgroundColor: PXBColors.blue[300],
+                },
+            },
+            containedSecondary: {
+                backgroundColor: ThemeColors.secondary.dark,
+                color: WhiteText,
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
                 },
             },
             text: {
                 '&$disabled': {
                     color: color_1.default(PXBColors.black[300]).alpha(0.36).string(),
                 },
+                '&:hover': {
+                    backgroundColor: color_1.default(PXBColors.black[50]).alpha(0.1).string(),
+                },
+            },
+            textPrimary: {
+                '&:hover': {
+                    backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.2).string(),
+                }
+            },
+            textSecondary: {
+                '&:hover': {
+                    backgroundColor: color_1.default(ThemeColors.secondary.dark).alpha(0.2).string(),
+                }
             },
             disabled: {},
         },
@@ -419,16 +447,12 @@ exports.blueDarkTheme = {
                 color: ThemeColors.text.primary,
                 backgroundColor: PXBColors.darkBlack[300],
                 '&$hover:hover': {
-                    backgroundColor: color_1.default(PXBColors.darkBlack[300])
-                        .mix(color_1.default(PXBColors.black[500]), 0.5)
-                        .string(),
+                    backgroundColor: color_1.default(PXBColors.darkBlack[300]).mix(color_1.default(PXBColors.black[500]), 0.5).string(),
                 },
                 '&:nth-of-type(odd):not($selected)': {
                     backgroundColor: PXBColors.black[900],
                     '&$hover:hover': {
-                        backgroundColor: color_1.default(PXBColors.black[900])
-                            .mix(color_1.default(PXBColors.black[500]), 0.5)
-                            .string(),
+                        backgroundColor: color_1.default(PXBColors.black[900]).mix(color_1.default(PXBColors.black[500]), 0.5).string(),
                     },
                 },
                 '&$selected': {
@@ -462,8 +486,8 @@ exports.blueDarkTheme = {
             root: {
                 fontWeight: 400,
                 '&$selected': {
-                    fontWeight: 600
-                }
+                    fontWeight: 600,
+                },
             },
             textColorInherit: {
                 color: ThemeColors.text.secondary,
@@ -486,9 +510,10 @@ exports.blueDarkTheme = {
         MuiInputBase: {
             input: {
                 '&::placeholder': {
-                    color: color_1.default(PXBColors.black[300]).alpha(0.36).string(),
-                }
-            }
+                    color: PXBColors.black[300],
+                    opacity: 0.36,
+                },
+            },
         },
         MuiInput: {
             underline: {
@@ -497,6 +522,9 @@ exports.blueDarkTheme = {
                 },
                 '&:after': {
                     borderBottomColor: ThemeColors.primary.dark,
+                },
+                '&$error$focused:after': {
+                    borderBottomColor: ThemeColors.error.dark,
                 },
                 '&$colorSecondary:not($error):after': {
                     borderBottomColor: ThemeColors.secondary.main,
@@ -507,6 +535,7 @@ exports.blueDarkTheme = {
                 },
             },
             disabled: {},
+            focused: {},
             colorSecondary: {},
             error: {},
         },
@@ -532,6 +561,9 @@ exports.blueDarkTheme = {
                 '&:after': {
                     borderBottomColor: ThemeColors.primary.dark,
                 },
+                '&$error$focused:after': {
+                    borderBottomColor: ThemeColors.error.dark,
+                },
                 '&$disabled:before': {
                     borderBottomStyle: 'solid',
                 },
@@ -551,6 +583,9 @@ exports.blueDarkTheme = {
                 },
                 '&$disabled $notchedOutline': {
                     borderColor: color_1.default(ThemeColors.action.active).alpha(0.36).string(),
+                },
+                '&:hover $notchedOutline': {
+                    borderColor: PXBColors.black[200],
                 },
                 '&$error$colorSecondary$focused $notchedOutline': {
                     borderColor: ThemeColors.error.dark,
@@ -572,7 +607,7 @@ exports.blueDarkTheme = {
         },
         MuiFormLabel: {
             root: {
-                color: ThemeColors.text.secondary,
+                color: ThemeColors.text.primary,
                 '&$error$colorSecondary$focused': {
                     color: ThemeColors.error.main,
                 },

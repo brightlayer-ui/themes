@@ -754,7 +754,7 @@ export default () => {
                     <Button onClick={() => setButtonColor('primary')}>Primary</Button>
                     <Button onClick={() => setButtonColor('secondary')}>Secondary</Button> */}
                     <Typography>Default Buttons</Typography>
-                    <Table>
+                    <Table style={{ width: 400 }}>
                         <TableHead>
                             <TableRow>
                                 <TableCell>State</TableCell>
@@ -812,7 +812,7 @@ export default () => {
                         </TableBody>
                     </Table>
                     <Typography>Primary Buttons</Typography>
-                    <Table>
+                    <Table style={{ width: 400 }}>
                         <TableHead>
                             <TableRow>
                                 <TableCell>State</TableCell>
@@ -870,7 +870,7 @@ export default () => {
                         </TableBody>
                     </Table>
                     <Typography>Secondary Buttons</Typography>
-                    <Table>
+                    <Table style={{ width: 400 }}>
                         <TableHead>
                             <TableRow>
                                 <TableCell>State</TableCell>

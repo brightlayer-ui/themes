@@ -119,26 +119,77 @@ export const blueTheme: ThemeOptions = {
             root: {
                 textTransform: 'none',
             },
+            contained: {
+                backgroundColor: PXBColors.gray[100],
+                color: ThemeColors.text.primary,
+                '&:hover': {
+                    backgroundColor: PXBColors.white[900],
+                },
+                '&$disabled': {
+                    opacity: 0.5,
+                },
+            },
             containedPrimary: {
-                // '&$disabled': {
-                //     backgroundColor: ThemeColors.primary.light,
-                //     color: PXBColors.blue[200],
-                //     opacity: 1,
-                // },
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+                '&$disabled': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: PXBColors.blue[200],
+                    opacity: 1,
+                },
+            },
+            containedSecondary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
+                },
+                '&$disabled': {
+                    backgroundColor: ThemeColors.secondary.light,
+                    color: PXBColors.lightBlue[200],
+                    opacity: 1,
+                },
             },
             outlined: {
-                borderColor: BlackBorder,
+                borderColor: ThemeColors.action.disabled,
+                '&:hover': {
+                    backgroundColor: Color(PXBColors.black[500]).alpha(0.05).string(),
+                },
                 '&$disabled': {
                     borderColor: ThemeColors.action.disabled,
+                    color: ThemeColors.action.disabled,
                 },
             },
             outlinedPrimary: {
                 borderColor: ThemeColors.primary.main,
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
+                },
             },
             outlinedSecondary: {
                 borderColor: ThemeColors.secondary.main,
                 '&$disabled': {
                     borderColor: ThemeColors.action.disabled,
+                },
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.secondary.main).alpha(0.05).string(),
+                },
+            },
+            text: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                },
+                '&:hover': {
+                    backgroundColor: Color(PXBColors.black[500]).alpha(0.05).string(),
+                },
+            },
+            textPrimary: {
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
+                },
+            },
+            textSecondary: {
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.secondary.main).alpha(0.05).string(),
                 },
             },
             disabled: {},
@@ -500,6 +551,9 @@ export const blueTheme: ThemeOptions = {
                 backgroundColor: ThemeColors.background.paper,
                 color: ThemeColors.text.hint,
                 borderColor: PXBColors.gray[100],
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
+                },
                 '&$selected': {
                     backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.main,

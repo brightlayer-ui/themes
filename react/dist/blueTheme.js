@@ -48,7 +48,7 @@ var ThemeColors = {
     action: {
         // hover: Color(PXBColors.black[50]).alpha(0.1).string(),
         active: PXBColors.gray[500],
-        disabled: color_1.default(PXBColors.black[500]).alpha(0.30).string(),
+        disabled: color_1.default(PXBColors.black[500]).alpha(0.3).string(),
     },
 };
 var WhiteText = PXBColors.white[50];
@@ -122,26 +122,77 @@ exports.blueTheme = {
             root: {
                 textTransform: 'none',
             },
+            contained: {
+                backgroundColor: PXBColors.gray[100],
+                color: ThemeColors.text.primary,
+                '&:hover': {
+                    backgroundColor: PXBColors.white[900],
+                },
+                '&$disabled': {
+                    opacity: 0.5,
+                },
+            },
             containedPrimary: {
-            // '&$disabled': {
-            //     backgroundColor: ThemeColors.primary.light,
-            //     color: PXBColors.blue[200],
-            //     opacity: 1,
-            // },
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+                '&$disabled': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: PXBColors.blue[200],
+                    opacity: 1,
+                },
+            },
+            containedSecondary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
+                },
+                '&$disabled': {
+                    backgroundColor: ThemeColors.secondary.light,
+                    color: PXBColors.lightBlue[200],
+                    opacity: 1,
+                },
             },
             outlined: {
-                borderColor: BlackBorder,
+                borderColor: ThemeColors.action.disabled,
+                '&:hover': {
+                    backgroundColor: color_1.default(PXBColors.black[500]).alpha(0.05).string(),
+                },
                 '&$disabled': {
                     borderColor: ThemeColors.action.disabled,
-                }
+                    color: ThemeColors.action.disabled,
+                },
             },
             outlinedPrimary: {
                 borderColor: ThemeColors.primary.main,
+                '&:hover': {
+                    backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
+                }
             },
             outlinedSecondary: {
                 borderColor: ThemeColors.secondary.main,
                 '&$disabled': {
                     borderColor: ThemeColors.action.disabled,
+                },
+                '&:hover': {
+                    backgroundColor: color_1.default(ThemeColors.secondary.main).alpha(0.05).string(),
+                }
+            },
+            text: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                },
+                '&:hover': {
+                    backgroundColor: color_1.default(PXBColors.black[500]).alpha(0.05).string(),
+                }
+            },
+            textPrimary: {
+                '&:hover': {
+                    backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
+                }
+            },
+            textSecondary: {
+                '&:hover': {
+                    backgroundColor: color_1.default(ThemeColors.secondary.main).alpha(0.05).string(),
                 }
             },
             disabled: {},
@@ -381,7 +432,7 @@ exports.blueTheme = {
                 fontWeight: 400,
                 '&$selected': {
                     fontWeight: 600,
-                }
+                },
             },
             textColorPrimary: {
                 color: WhiteText,
@@ -491,6 +542,9 @@ exports.blueTheme = {
                 backgroundColor: ThemeColors.background.paper,
                 color: ThemeColors.text.hint,
                 borderColor: PXBColors.gray[100],
+                '&:hover': {
+                    backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
+                },
                 '&$selected': {
                     backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.main,
