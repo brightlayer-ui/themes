@@ -335,6 +335,15 @@ action: {
         color: map-get($foreground, text);
     }
 
+    /* snackbar */
+    .mat-snack-bar-container {
+        background-color: map-get($pxb-black, 50);
+        color: map-get($pxb-black, 500);
+        .mat-simple-snackbar-action {
+            color: map-get($pxb-blue, 500);
+        }
+    }
+
     /* PXB Drawer */
     .pxb-drawer {
         background-color: map-get($pxb-darkBlack, 300);
@@ -351,6 +360,16 @@ action: {
         }
         .pxb-drawer-nested-nav-item mat-expansion-panel {
             background-color: map-get($pxb-darkBlack, 500);
+        }
+    }
+
+    /* PXB Empty State */
+    .pxb-empty-state {
+        .pxb-empty-state-empty-icon-wrapper {
+            color: map-get($pxb-black, 200);
+        }
+        .pxb-empty-state-description {
+            color: map-deep-get($overrides, "primary", "main");
         }
     }
 }
