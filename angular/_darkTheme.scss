@@ -82,8 +82,12 @@ action: {
     /* badge */
     .mat-badge-content,
     .mat-badge-accent .mat-badge-content {
-        color: rgba(0, 0, 0, 0.87);
-        background-color: map-deep-get($overrides, "primary", "main");
+        color: #fff;
+        background-color: map-deep-get($overrides, "primary", "dark");
+    }
+    .mat-badge-warn .mat-badge-content {
+        color: #fff;
+        background-color: map-deep-get($overrides, "error", "dark");
     }
 
     /* checkbox */
@@ -122,6 +126,7 @@ action: {
             background-color: map-get($pxb-black, 800);
         }
         &.mat-accent {
+            color: map-get($pxb-black, 50);
             background-color: map-get($pxb-black, 900);
         }
     }
@@ -131,12 +136,14 @@ action: {
     .mat-tab-group {
         .mat-tab-label {
             color: map-deep-get($overrides, "text", "secondary");
+            font-weight: 400;
             background-color: map-deep-get($overrides, "background", "paper");
             &:not(.mat-tab-disabled) {
                 opacity: 1;
             }
         }
         .mat-tab-label-active {
+            font-weight: 600;
             color: map-deep-get($overrides, "primary", "main")
         }
     }
@@ -147,14 +154,27 @@ action: {
     }
 
     /* Chips */
-    .mat-chip.mat-standard-chip {
+    .mat-chip {
+        &.mat-standard-chip {
+            background-color: map-get($pxb-black, 500);
+            color: map-deep-get($overrides, "text", "primary");
+            .mat-chip-remove {
+                color: map-get($pxb-blue, 100);
+            }
+        }
         &.mat-primary {
             color: map-get($pxb-white, 50);
             background-color: map-deep-get($overrides, "primary", "dark");
+            .mat-chip-remove {
+                color: map-get($pxb-blue, 100);
+            }
         }
-        &:not([color='primary']) {
-            background-color: map-get($pxb-black, 500);
-            color: map-deep-get($overrides, "text", "primary");
+        &.mat-accent {
+            color: map-get($pxb-white, 50);
+            background-color: map-deep-get($overrides, "primary", "main");
+            .mat-chip-remove {
+                color: rgba(0, 0, 0, 0.7);
+            }
         }
     }
 
