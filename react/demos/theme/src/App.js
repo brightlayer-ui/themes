@@ -34,6 +34,13 @@ import {
     Paper,
     InputAdornment,
     Snackbar,
+    Grid,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow,
+    TableSortLabel,
 } from '@material-ui/core';
 import { ToggleButtonGroup, ToggleButton } from '@material-ui/lab';
 
@@ -95,6 +102,7 @@ export default () => {
     );
     const [themeToggle, setThemeToggle] = useState(0);
     const [showWarning, setShowWarning] = useState(true);
+    const [buttonColor, setButtonColor] = useState('default');
 
     const classes = styles();
 
@@ -216,9 +224,9 @@ export default () => {
                     <Snackbar
                         anchorOrigin={{
                             vertical: 'bottom',
-                            horizontal: 'left',
+                            horizontal: 'center',
                         }}
-                        open={false}
+                        open={true}
                         // autoHideDuration={6000}
                         // onClose={handleClose}
                         message="Note archived"
@@ -305,7 +313,7 @@ export default () => {
                         deleteIcon={<DoneIcon />}
                     />
                     <Chip
-                        icon={<Favorite />}
+                        icon={<Favorite style={{ fontSize: 18 }} />}
                         label="Primary clickable"
                         clickable
                         color="primary"
@@ -313,6 +321,12 @@ export default () => {
                     />
                     <Chip label="Deletable primary" color="primary" onDelete={() => {}} />
                     <Chip icon={<Favorite />} label="Deletable secondary" color="secondary" onDelete={() => {}} />
+                    <Chip
+                        label="Deletable secondary"
+                        color="secondary"
+                        avatar={<Avatar>M</Avatar>}
+                        onDelete={() => {}}
+                    />
                 </div>
                 <div style={{ margin: 40 }}>
                     <Chip label="Basic" variant="outlined" />
@@ -351,6 +365,13 @@ export default () => {
                         label="Deletable secondary"
                         color="secondary"
                         variant="outlined"
+                        onDelete={() => {}}
+                    />
+                    <Chip
+                        label="Deletable secondary"
+                        color="secondary"
+                        variant="outlined"
+                        avatar={<Avatar>M</Avatar>}
                         onDelete={() => {}}
                     />
                 </div>
@@ -646,6 +667,7 @@ export default () => {
                         label={'Out. primary'}
                         color={'primary'}
                         placeholder={'test'}
+                        helperText={'Helper text'}
                     ></TextField>
                     <TextField
                         variant={'outlined'}
@@ -741,7 +763,184 @@ export default () => {
                     ></TextField>
                 </div>
                 <div style={{ margin: 20 }}>
-                    <Button>Hello</Button>
+                    {/* <Button onClick={() => setButtonColor('default')}>Default</Button>
+                    <Button onClick={() => setButtonColor('primary')}>Primary</Button>
+                    <Button onClick={() => setButtonColor('secondary')}>Secondary</Button> */}
+                    <Typography>Default Buttons</Typography>
+                    <Table style={{ width: 400 }}>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>State</TableCell>
+                                <TableCell>Default</TableCell>
+                                <TableCell>Contained</TableCell>
+                                <TableCell>Outlined</TableCell>
+                                <TableCell>Text</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell padding="checkbox">NORMAL</TableCell>
+                                <TableCell>
+                                    <Button color={'default'}>Hello</Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'default'} variant={'contained'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'default'} variant={'outlined'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'default'} variant={'text'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell padding="checkbox">DISABLED</TableCell>
+                                <TableCell>
+                                    <Button color={'default'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'default'} variant={'contained'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'default'} variant={'outlined'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'default'} variant={'text'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                    <Typography>Primary Buttons</Typography>
+                    <Table style={{ width: 400 }}>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>State</TableCell>
+                                <TableCell>Default</TableCell>
+                                <TableCell>Contained</TableCell>
+                                <TableCell>Outlined</TableCell>
+                                <TableCell>Text</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell padding="checkbox">NORMAL</TableCell>
+                                <TableCell>
+                                    <Button color={'primary'}>Hello</Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'primary'} variant={'contained'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'primary'} variant={'outlined'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'primary'} variant={'text'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell padding="checkbox">DISABLED</TableCell>
+                                <TableCell>
+                                    <Button color={'primary'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'primary'} variant={'contained'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'primary'} variant={'outlined'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'primary'} variant={'text'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                    <Typography>Secondary Buttons</Typography>
+                    <Table style={{ width: 400 }}>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>State</TableCell>
+                                <TableCell>Default</TableCell>
+                                <TableCell>Contained</TableCell>
+                                <TableCell>Outlined</TableCell>
+                                <TableCell>Text</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell padding="checkbox">NORMAL</TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'}>Hello</Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} variant={'contained'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} variant={'outlined'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} variant={'text'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell padding="checkbox">DISABLED</TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} variant={'contained'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} variant={'outlined'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} variant={'text'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                    {/* <Button>Hello</Button>
                     <br />
                     <Button color={'default'}>Hello</Button>
                     <br />
@@ -860,7 +1059,7 @@ export default () => {
                     <Button disabled variant={'text'} color={'secondary'}>
                         Hello
                     </Button>
-                    <br />
+                    <br /> */}
                 </div>
 
                 <Fab

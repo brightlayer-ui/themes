@@ -13,6 +13,9 @@ export declare const typography: {
     h6: {
         fontWeight: number;
     };
+    subtitle1: {
+        fontWeight: number;
+    };
     subtitle2: {
         fontWeight: number;
     };

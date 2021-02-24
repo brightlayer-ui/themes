@@ -21,7 +21,7 @@ const ThemeColors = {
     error: createSimplePalette(PXBColors.red),
     success: createSimplePalette(PXBColors.green),
     info: createSimplePalette(PXBColors.lightBlue),
-    divider: Color(PXBColors.black[500]).alpha(0.12).rgb().string(),
+    divider: Color(PXBColors.black[500]).alpha(0.12).string(),
     warning: {
         light: PXBColors.yellow[100],
         main: PXBColors.yellow[500],
@@ -34,14 +34,14 @@ const ThemeColors = {
     text: {
         primary: PXBColors.black[500],
         secondary: PXBColors.black[300],
-        // disabled: Color(PXBColors.black[300]).alpha(0.32).rgb().string(),
+        // disabled: Color(PXBColors.black[300]).alpha(0.32).string(),
         hint: PXBColors.gray[500],
     },
     action: {
-        // hover: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
+        // hover: Color(PXBColors.black[50]).alpha(0.1).string(),
         active: PXBColors.gray[500],
-        disabled: 'rgba(0, 0, 0, .25)',
-        // disabledBackground: Color(PXBColors.black[200]).alpha(0.24).rgb().string(),
+        disabled: Color(PXBColors.black[500]).alpha(0.3).string(),
+        // disabledBackground: Color(PXBColors.black[200]).alpha(0.24).string(),
     },
 };
 const WhiteText = PXBColors.white[50];
@@ -119,25 +119,83 @@ export const blueTheme: ThemeOptions = {
             root: {
                 textTransform: 'none',
             },
+            contained: {
+                backgroundColor: PXBColors.gray[100],
+                color: ThemeColors.text.primary,
+                '&:hover': {
+                    backgroundColor: PXBColors.white[900],
+                },
+                '&$disabled': {
+                    opacity: 0.5,
+                },
+            },
             containedPrimary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
                 '&$disabled': {
                     backgroundColor: ThemeColors.primary.light,
                     color: PXBColors.blue[200],
                     opacity: 1,
                 },
             },
+            containedSecondary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
+                },
+                '&$disabled': {
+                    backgroundColor: ThemeColors.secondary.light,
+                    color: PXBColors.lightBlue[200],
+                    opacity: 1,
+                },
+            },
             outlined: {
-                borderColor: BlackBorder,
+                borderColor: ThemeColors.action.disabled,
+                '&:hover': {
+                    backgroundColor: Color(PXBColors.black[500]).alpha(0.05).string(),
+                },
+                '&$disabled': {
+                    borderColor: ThemeColors.action.disabled,
+                    color: ThemeColors.action.disabled,
+                },
             },
             outlinedPrimary: {
                 borderColor: ThemeColors.primary.main,
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
+                },
             },
             outlinedSecondary: {
                 borderColor: ThemeColors.secondary.main,
+                '&$disabled': {
+                    borderColor: ThemeColors.action.disabled,
+                },
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.secondary.main).alpha(0.05).string(),
+                },
+            },
+            text: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                },
+                '&:hover': {
+                    backgroundColor: Color(PXBColors.black[500]).alpha(0.05).string(),
+                },
+            },
+            textPrimary: {
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
+                },
+            },
+            textSecondary: {
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.secondary.main).alpha(0.05).string(),
+                },
             },
             disabled: {},
         },
 
+        // CHECKBOX OVERRIDES
         MuiCheckbox: {
             root: {
                 color: ThemeColors.action.active,
@@ -151,6 +209,15 @@ export const blueTheme: ThemeOptions = {
                 backgroundColor: PXBColors.white[500],
                 color: ThemeColors.text.primary,
                 '& $avatar': {
+                    backgroundColor: ThemeColors.primary.main,
+                    color: WhiteText,
+                },
+                '& $avatarColorPrimary': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: ThemeColors.primary.main,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.main,
                 },
             },
@@ -160,6 +227,7 @@ export const blueTheme: ThemeOptions = {
                 },
             },
             deleteIcon: {
+                fontSize: '1.125rem',
                 color: ThemeColors.action.active,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -178,18 +246,31 @@ export const blueTheme: ThemeOptions = {
                 },
             },
             outlined: {
-                borderColor: Color(BlackBorder).alpha(0.12).rgb().string(),
+                borderColor: Color(BlackBorder).alpha(0.12).string(),
                 '&$clickable:hover': {
                     backgroundColor: PXBColors.white[200],
                 },
-            },
-            outlinedPrimary: {
-                backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).rgb().string(),
-                '&$clickable:hover': {
-                    backgroundColor: Color(ThemeColors.primary.main).alpha(0.1).rgb().string(),
+                '& $avatarColorPrimary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.main,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.main,
                 },
             },
+            outlinedPrimary: {
+                backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
+                '&$clickable:hover': {
+                    backgroundColor: Color(ThemeColors.primary.main).alpha(0.1).string(),
+                },
+            },
+            icon: {
+                fontSize: '1.125rem',
+            },
             avatar: {},
+            avatarColorPrimary: {},
+            avatarColorSecondary: {},
         },
 
         // FAB OVERRIDES
@@ -246,6 +327,9 @@ export const blueTheme: ThemeOptions = {
                 '& .MuiButton-textPrimary': {
                     color: PXBColors.blue[200],
                 },
+                '& .MuiButton-textSecondary': {
+                    color: PXBColors.lightBlue[200],
+                },
             },
         },
 
@@ -253,7 +337,7 @@ export const blueTheme: ThemeOptions = {
         MuiStepper: {},
         MuiStepConnector: {
             line: {
-                borderColor: Color(BlackBorder).alpha(0.12).rgb().string(),
+                borderColor: Color(BlackBorder).alpha(0.12).string(),
             },
         },
         MuiStep: {
@@ -340,18 +424,18 @@ export const blueTheme: ThemeOptions = {
                 color: PXBColors.black[50],
                 backgroundColor: '#FBFBFB', // possible new shade of white
                 '&$hover:hover': {
-                    backgroundColor: Color('#FBFBFB').mix(Color(PXBColors.black[50]), 0.5).rgb().string(),
+                    backgroundColor: Color('#FBFBFB').mix(Color(PXBColors.black[50]), 0.5).string(),
                 },
                 '&:nth-of-type(odd):not($selected)': {
                     backgroundColor: PXBColors.white[50],
                     '&$hover:hover': {
-                        backgroundColor: Color(PXBColors.white[50]).mix(Color(PXBColors.black[50]), 0.5).rgb().string(),
+                        backgroundColor: Color(PXBColors.white[50]).mix(Color(PXBColors.black[50]), 0.5).string(),
                     },
                 },
                 '&$selected': {
-                    backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).rgb().string(),
+                    backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
                     '&$hover:hover': {
-                        backgroundColor: Color(ThemeColors.primary.main).alpha(0.07).rgb().string(),
+                        backgroundColor: Color(ThemeColors.primary.main).alpha(0.07).string(),
                     },
                 },
             },
@@ -374,6 +458,12 @@ export const blueTheme: ThemeOptions = {
 
         // TABS OVERRIDES
         MuiTab: {
+            root: {
+                fontWeight: 400,
+                '&$selected': {
+                    fontWeight: 600,
+                },
+            },
             textColorPrimary: {
                 color: WhiteText,
                 opacity: 0.7,
@@ -418,7 +508,7 @@ export const blueTheme: ThemeOptions = {
                     backgroundColor: ThemeColors.background.default,
                 },
                 '&$disabled': {
-                    color: Color(ThemeColors.text.primary).alpha(0.3).rgb().string(),
+                    color: Color(ThemeColors.text.primary).alpha(0.3).string(),
                     backgroundColor: PXBColors.white[100],
                     pointerEvents: 'none',
                 },
@@ -433,10 +523,13 @@ export const blueTheme: ThemeOptions = {
         },
         MuiOutlinedInput: {
             root: {
+                '& $notchedOutline': {
+                    borderColor: ThemeColors.divider,
+                },
                 '&$error$colorSecondary$focused $notchedOutline': {
                     borderColor: ThemeColors.error.main,
                 },
-                '&$error:hover $notchedOutline': {
+                '&$error:hover:not($focused) $notchedOutline': {
                     borderColor: PXBColors.red[900],
                 },
             },
@@ -449,7 +542,7 @@ export const blueTheme: ThemeOptions = {
         },
         MuiFormLabel: {
             root: {
-                color: ThemeColors.text.hint,
+                color: ThemeColors.text.primary,
                 '&$error$colorSecondary$focused': {
                     color: ThemeColors.error.main,
                 },
@@ -481,6 +574,9 @@ export const blueTheme: ThemeOptions = {
                 backgroundColor: ThemeColors.background.paper,
                 color: ThemeColors.text.hint,
                 borderColor: PXBColors.gray[100],
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
+                },
                 '&$selected': {
                     backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.main,

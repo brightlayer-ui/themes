@@ -146,7 +146,7 @@ class Overview extends React.Component {
                         vertical: 'bottom',
                         horizontal: 'center',
                     }}
-                    open={this.state.snackbarOpen}
+                    open={true}
                     autoHideDuration={6000}
                     onClose={() => this.setState({ snackbarOpen: false })}
                     message={<span>Devices Deleted</span>}
