@@ -158,18 +158,7 @@ action: {
         }
     }
 
-    /* button*/
-   /* .mat-stroked-button:not([disabled]) {
-        border-color: #c6cacc;
-        &.mat-primary {
-            border-color: map-get($primary, 500);
-        }
-        &.mat-accent {
-            border-color: map-get($accent, 500);
-        }
-    } */
-
-    /*Body*/
+    /*  Drawer Content */
     .mat-drawer-content {
         background-color: map-get($pxb-darkBlack, 100);
         color: map-get($foreground, text);
