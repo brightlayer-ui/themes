@@ -69,7 +69,52 @@ action: {
         background-color: map-get($background, base);
     }
 
-    /* toolbar*/
+    /* slide toggle */
+    .mat-slide-toggle.mat-primary.mat-checked {
+        .mat-slide-toggle-bar {
+            background-color: rgba(128, 196, 249, 0.54);
+        }
+        .mat-slide-toggle-thumb {
+            background-color: map-deep-get($overrides, "primary", "main");
+        }
+    }
+
+    /* badge */
+    .mat-badge-content,
+    .mat-badge-accent .mat-badge-content {
+        color: rgba(0, 0, 0, 0.87);
+        background-color: map-deep-get($overrides, "primary", "main");
+    }
+
+    /* checkbox */
+    .mat-checkbox-checked {
+        &.mat-primary, &.mat-accent {
+            .mat-checkbox-background {
+                background-color: map-deep-get($overrides, "primary", "main");
+            }
+        }
+    }
+
+
+    /* radio button */
+    .mat-radio-button.mat-primary {
+        .mat-radio-inner-circle,
+        .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+        &.mat-radio-checked .mat-radio-persistent-ripple {
+            background-color: map-deep-get($overrides, "primary", "main");
+        }
+        &.mat-radio-checked .mat-radio-outer-circle {
+            border-color: map-deep-get($overrides, "primary", "main");
+        }
+
+    }
+
+    /* Tooltip  */
+    .mat-tooltip {
+        background-color: map-get($pxb-black, 500);
+    }
+
+        /* toolbar*/
     .mat-toolbar {
         color: map-deep-get($overrides, "text", "primary");
         background-color: map-get($pxb-darkBlack, 100);
@@ -87,6 +132,9 @@ action: {
         .mat-tab-label {
             color: map-deep-get($overrides, "text", "secondary");
             background-color: map-deep-get($overrides, "background", "paper");
+            &:not(.mat-tab-disabled) {
+                opacity: 1;
+            }
         }
         .mat-tab-label-active {
             color: map-deep-get($overrides, "primary", "main")
@@ -248,10 +296,6 @@ action: {
             }
         }
     }
-    /*
-    .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start, .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end, .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap
-
-     */
 
     /*stepper*/
     .mat-stepper-horizontal,
