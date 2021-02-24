@@ -1,8 +1,7 @@
 @import '~@pxblue/colors/palette';
 
-
 @function createSimplePalette($color) {
-    @return ("light": map-get($color, 50), "main": map-get($color, 200), "dark": map-get($color, 500));
+    @return ('light': map-get($color, 50), 'main': map-get($color, 200), 'dark': map-get($color, 500));
 }
 
 @function map-deep-get($map, $keys...) {
@@ -12,56 +11,15 @@
     @return $map;
 }
 
-/*primary: createSimplePalette(PXBColors.blue),
-secondary: createSimplePalette(PXBColors.lightBlue),
-error: createSimplePalette(PXBColors.red),
-success: createSimplePalette(PXBColors.green),
-info: createSimplePalette(PXBColors.lightBlue),
-divider: Color(PXBColors.black[200]).alpha(0.32).rgb().string(),
-warning: {
-    light: PXBColors.yellow[100],
-    main: PXBColors.yellow[300],
-    dark: PXBColors.yellow[900],
-},
-background: {
-    default: PXBColors.darkBlack[800],
-    paper: PXBColors.black[900],
-},
-text: {
-    primary: PXBColors.black[50],
-    secondary: PXBColors.black[200],
-    disabled: Color(PXBColors.black[300]).alpha(0.32).rgb().string(),
-    hint: Color(PXBColors.black[300]).alpha(0.32).rgb().string(),
-},
-action: {
-    hover: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
-    active: PXBColors.black[200],
-    disabled: Color(PXBColors.black[50]).alpha(0.1).rgb().string(),
-    disabledBackground: Color(PXBColors.black[200]).alpha(0.24).rgb().string(),
-},
-}; */
-
-
 @mixin darktheme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
 
-
     $overrides: (
-        "primary": createSimplePalette($primary),
-        "secondary": createSimplePalette($accent),
-        "error": createSimplePalette($pxb-red),
-        "success": createSimplePalette($pxb-green),
-        "background": (
-            "default": map-get($pxb-darkBlack, 800),
-            "paper": map-get($pxb-black, 900)
-        ),
-        "text": (
-            "primary": map-get($pxb-black, 50),
-            "secondary": map-get($pxb-black, 200),
-        )
+        'primary': createSimplePalette($primary),
+        'error': createSimplePalette($pxb-red),
     );
 
     /* Side navigation*/
@@ -75,7 +33,7 @@ action: {
             background-color: rgba(128, 196, 249, 0.54);
         }
         .mat-slide-toggle-thumb {
-            background-color: map-deep-get($overrides, "primary", "main");
+            background-color: map-deep-get($overrides, 'primary', 'main');
         }
     }
 
@@ -83,34 +41,33 @@ action: {
     .mat-badge-content,
     .mat-badge-accent .mat-badge-content {
         color: #fff;
-        background-color: map-deep-get($overrides, "primary", "dark");
+        background-color: map-deep-get($overrides, 'primary', 'dark');
     }
     .mat-badge-warn .mat-badge-content {
         color: #fff;
-        background-color: map-deep-get($overrides, "error", "dark");
+        background-color: map-deep-get($overrides, 'error', 'dark');
     }
 
     /* checkbox */
     .mat-checkbox-checked {
-        &.mat-primary, &.mat-accent {
+        &.mat-primary,
+        &.mat-accent {
             .mat-checkbox-background {
-                background-color: map-deep-get($overrides, "primary", "main");
+                background-color: map-deep-get($overrides, 'primary', 'main');
             }
         }
     }
-
 
     /* radio button */
     .mat-radio-button.mat-primary {
         .mat-radio-inner-circle,
         .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
         &.mat-radio-checked .mat-radio-persistent-ripple {
-            background-color: map-deep-get($overrides, "primary", "main");
+            background-color: map-deep-get($overrides, 'primary', 'main');
         }
         &.mat-radio-checked .mat-radio-outer-circle {
-            border-color: map-deep-get($overrides, "primary", "main");
+            border-color: map-deep-get($overrides, 'primary', 'main');
         }
-
     }
 
     /* Tooltip  */
@@ -118,38 +75,38 @@ action: {
         background-color: map-get($pxb-black, 500);
     }
 
-        /* toolbar*/
+    /* toolbar*/
     .mat-toolbar {
-        color: map-deep-get($overrides, "text", "primary");
+        color: map-get($foreground, 'text');
         background-color: map-get($pxb-darkBlack, 100);
         &.mat-primary {
             background-color: map-get($pxb-black, 800);
         }
         &.mat-accent {
-            color: map-get($pxb-black, 50);
+            color: map-get($foreground, text);
             background-color: map-get($pxb-black, 900);
         }
     }
 
-
     /*tab bar*/
     .mat-tab-group {
         .mat-tab-label {
-            color: map-deep-get($overrides, "text", "secondary");
+            color: map-get($foreground, 'secondary');
             font-weight: 400;
-            background-color: map-deep-get($overrides, "background", "paper");
+            background-color: map-get($pxb-black, 900);
             &:not(.mat-tab-disabled) {
                 opacity: 1;
             }
         }
         .mat-tab-label-active {
             font-weight: 600;
-            color: map-deep-get($overrides, "primary", "main")
+            color: map-deep-get($overrides, 'primary', 'main');
         }
     }
-    .mat-tab-group.mat-primary, .mat-tab-nav-bar.mat-primary {
+    .mat-tab-group.mat-primary,
+    .mat-tab-nav-bar.mat-primary {
         .mat-ink-bar {
-            background-color: map-deep-get($overrides, "primary", "main")
+            background-color: map-deep-get($overrides, 'primary', 'main');
         }
     }
 
@@ -157,21 +114,21 @@ action: {
     .mat-chip {
         &.mat-standard-chip {
             background-color: map-get($pxb-black, 500);
-            color: map-deep-get($overrides, "text", "primary");
+            color: map-get($foreground, 'text');
             .mat-chip-remove {
                 color: map-get($pxb-blue, 100);
             }
         }
         &.mat-primary {
             color: map-get($pxb-white, 50);
-            background-color: map-deep-get($overrides, "primary", "dark");
+            background-color: map-deep-get($overrides, 'primary', 'dark');
             .mat-chip-remove {
                 color: map-get($pxb-blue, 100);
             }
         }
         &.mat-accent {
             color: map-get($pxb-white, 50);
-            background-color: map-deep-get($overrides, "primary", "main");
+            background-color: map-deep-get($overrides, 'primary', 'main');
             .mat-chip-remove {
                 color: rgba(0, 0, 0, 0.7);
             }
@@ -184,7 +141,7 @@ action: {
         color: map-get($foreground, text);
     }
 
-    /* selection option*/
+    /* selection option */
     .mat-option.mat-selected:not(.mat-option-disabled) {
         color: map-get($foreground, text);
     }
@@ -204,14 +161,15 @@ action: {
     .mat-form-field {
         /* Disabled */
         &.mat-form-field-disabled {
-            &.mat-form-field-appearance-legacy, &.mat-form-field-appearance-standard {
+            &.mat-form-field-appearance-legacy,
+            &.mat-form-field-appearance-standard {
                 .mat-form-field-underline {
                     background-image: none;
                     background-color: rgba(161, 167, 170, 0.36);
                 }
             }
             .mat-form-field-label {
-                color: rgba(123, 131, 135, 0.32)
+                color: rgba(123, 131, 135, 0.32);
             }
             .mat-form-field-outline-thick {
                 color: rgba(161, 167, 170, 0.36);
@@ -225,32 +183,36 @@ action: {
             /* Fill */
             &.mat-form-field-appearance-fill {
                 .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, "primary", "dark");
+                    color: map-deep-get($overrides, 'primary', 'dark');
                 }
                 .mat-form-field-flex:hover {
                     background-color: map-get($pxb-black, 600);
                     .mat-form-field-outline-thick {
-                        color: map-deep-get($overrides, "error", "main");
+                        color: map-deep-get($overrides, 'error', 'main');
                     }
                 }
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, "error", "dark");
+                    color: map-deep-get($overrides, 'error', 'dark');
                 }
             }
             /* Outline */
             &.mat-form-field-appearance-outline {
                 .mat-form-field-outline-thick {
-                    .mat-form-field-outline-start, .mat-form-field-outline-end, .mat-form-field-outline-gap {
+                    .mat-form-field-outline-start,
+                    .mat-form-field-outline-end,
+                    .mat-form-field-outline-gap {
                         border-width: 1px;
                     }
-                    color: map-deep-get($overrides, "primary", "main");
+                    color: map-deep-get($overrides, 'primary', 'main');
                 }
                 .mat-form-field-flex:hover .mat-form-field-outline-thick {
-                    color: map-get($pxb-black, 50);
+                    color: map-get($foreground, text);
                 }
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, "primary", "dark");
-                    .mat-form-field-outline-start, .mat-form-field-outline-end, .mat-form-field-outline-gap {
+                    color: map-deep-get($overrides, 'primary', 'dark');
+                    .mat-form-field-outline-start,
+                    .mat-form-field-outline-end,
+                    .mat-form-field-outline-gap {
                         border-width: 2px;
                     }
                 }
@@ -261,44 +223,48 @@ action: {
             /* Standard */
             &.mat-form-field-appearance-standard {
                 .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, "error", "dark");
+                    color: map-deep-get($overrides, 'error', 'dark');
                 }
                 .mat-form-field-flex:hover .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, "error", "main");
+                    color: map-deep-get($overrides, 'error', 'main');
                 }
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, "error", "dark");
+                    color: map-deep-get($overrides, 'error', 'dark');
                 }
             }
             /* Fill */
             &.mat-form-field-appearance-fill {
                 .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, "error", "dark");
+                    color: map-deep-get($overrides, 'error', 'dark');
                 }
                 .mat-form-field-flex:hover {
                     background-color: map-get($pxb-black, 600);
                     .mat-form-field-outline-thick {
-                        color: map-deep-get($overrides, "error", "main");
+                        color: map-deep-get($overrides, 'error', 'main');
                     }
                 }
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, "error", "dark");
+                    color: map-deep-get($overrides, 'error', 'dark');
                 }
             }
             /* Outline */
             &.mat-form-field-appearance-outline {
                 .mat-form-field-outline-thick {
-                    .mat-form-field-outline-start, .mat-form-field-outline-end, .mat-form-field-outline-gap {
+                    .mat-form-field-outline-start,
+                    .mat-form-field-outline-end,
+                    .mat-form-field-outline-gap {
                         border-width: 1px;
                     }
-                    color: map-deep-get($overrides, "error", "dark");
+                    color: map-deep-get($overrides, 'error', 'dark');
                 }
                 .mat-form-field-flex:hover .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, "error", "main");
+                    color: map-deep-get($overrides, 'error', 'main');
                 }
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, "error", "dark");
-                    .mat-form-field-outline-start, .mat-form-field-outline-end, .mat-form-field-outline-gap {
+                    color: map-deep-get($overrides, 'error', 'dark');
+                    .mat-form-field-outline-start,
+                    .mat-form-field-outline-end,
+                    .mat-form-field-outline-gap {
                         border-width: 2px;
                     }
                 }
@@ -365,7 +331,7 @@ action: {
         .mat-list-base .mat-list-item,
         .pxb-drawer-nav-item-rail,
         .pxb-drawer-nav-group-title {
-            color: map-get($pxb-black, 50);
+            color: map-get($foreground, 50);
         }
         .pxb-drawer-nested-nav-item mat-expansion-panel {
             background-color: map-get($pxb-darkBlack, 500);
@@ -378,7 +344,7 @@ action: {
             color: map-get($pxb-black, 200);
         }
         .pxb-empty-state-description {
-            color: map-deep-get($overrides, "primary", "main");
+            color: map-deep-get($overrides, 'primary', 'main');
         }
     }
 }

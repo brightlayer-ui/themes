@@ -8,8 +8,7 @@
 
 ### Changed
 
--  Changed several dark mode defaults. 
-
+-   Changed several dark mode defaults.
 
 ### Fixed
 
