@@ -29,7 +29,7 @@ var ThemeColors = {
     error: shared_1.createSimpleDarkPalette(PXBColors.red),
     success: shared_1.createSimpleDarkPalette(PXBColors.green),
     info: shared_1.createSimpleDarkPalette(PXBColors.lightBlue),
-    divider: color_1.default(PXBColors.black[200]).alpha(0.32).string(),
+    divider: color_1.default(PXBColors.black[200]).alpha(0.36).string(),
     warning: {
         light: PXBColors.yellow[100],
         main: PXBColors.yellow[300],
@@ -55,6 +55,7 @@ var ThemeColors = {
 var WhiteText = PXBColors.white[50];
 var MediumBlackBackground = PXBColors.black[500];
 var BlackText = PXBColors.black[500];
+var Spacing = 8;
 // const BlackBorder = PXBColors.black[500];
 /*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
@@ -134,6 +135,9 @@ exports.blueDarkTheme = {
                         fontWeight: 600,
                     },
                 },
+                '&:not($selected) $label': {
+                    color: ThemeColors.text.primary,
+                },
             },
             selected: {},
             label: {},
@@ -191,12 +195,18 @@ exports.blueDarkTheme = {
                 '&:hover': {
                     backgroundColor: PXBColors.blue[300],
                 },
+                '&$disabled': {
+                    borderWidth: 0,
+                },
             },
             containedSecondary: {
                 backgroundColor: ThemeColors.secondary.dark,
                 color: WhiteText,
                 '&:hover': {
                     backgroundColor: PXBColors.lightBlue[300],
+                },
+                '&$disabled': {
+                    borderWidth: 0,
                 },
             },
             text: {
@@ -245,6 +255,10 @@ exports.blueDarkTheme = {
             },
             deleteIcon: {
                 fontSize: '1.125rem',
+                height: '1.125rem',
+                width: '1.125rem',
+                marginLeft: 0,
+                marginRight: Spacing,
                 color: ThemeColors.text.secondary,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -296,6 +310,13 @@ exports.blueDarkTheme = {
             },
             icon: {
                 fontSize: '1.125rem',
+                color: ThemeColors.text.primary,
+                marginLeft: Spacing,
+                marginRight: 0,
+            },
+            label: {
+                paddingLeft: Spacing,
+                paddingRight: Spacing,
             },
             avatar: {},
         },
@@ -330,6 +351,15 @@ exports.blueDarkTheme = {
         MuiListItem: {
             root: {
                 color: ThemeColors.text.primary,
+            },
+        },
+        // MOBILE STEPPER OVERRIDES
+        MuiMobileStepper: {
+            dot: {
+                backgroundColor: color_1.default(PXBColors.black[300]).alpha(0.36).string(),
+            },
+            dotActive: {
+                backgroundColor: ThemeColors.primary.dark,
             },
         },
         // SLIDER OVERRIDES
@@ -543,7 +573,11 @@ exports.blueDarkTheme = {
         MuiInput: {
             underline: {
                 '&:before': {
-                    borderBottomColor: color_1.default(ThemeColors.action.active).alpha(0.36).string(),
+                    borderBottomColor: ThemeColors.divider,
+                },
+                '&:not($disabled):hover:before': {
+                    borderBottomWidth: 1,
+                    borderBottomColor: PXBColors.black[200],
                 },
                 '&:after': {
                     borderBottomColor: ThemeColors.primary.dark,
@@ -551,11 +585,18 @@ exports.blueDarkTheme = {
                 '&$error$focused:after': {
                     borderBottomColor: ThemeColors.error.dark,
                 },
+                '&$error:not($focused):after': {
+                    borderBottomWidth: 1,
+                    borderBottomColor: ThemeColors.error.dark,
+                },
+                '&$error:not($focused):hover:after': {
+                    borderBottomColor: ThemeColors.error.main,
+                },
                 '&$colorSecondary:not($error):after': {
                     borderBottomColor: ThemeColors.secondary.main,
                 },
                 '&$disabled:before': {
-                    borderBottomColor: ThemeColors.action.disabled,
+                    borderBottomColor: ThemeColors.divider,
                     borderBottomStyle: 'solid',
                 },
             },
@@ -589,6 +630,9 @@ exports.blueDarkTheme = {
                 '&$error$focused:after': {
                     borderBottomColor: ThemeColors.error.dark,
                 },
+                '&$error:not($focused):after': {
+                    borderBottomWidth: 1,
+                },
                 '&$disabled:before': {
                     borderBottomStyle: 'solid',
                 },
@@ -607,7 +651,7 @@ exports.blueDarkTheme = {
                     borderColor: ThemeColors.error.dark,
                 },
                 '&$disabled $notchedOutline': {
-                    borderColor: color_1.default(ThemeColors.action.active).alpha(0.36).string(),
+                    borderColor: ThemeColors.divider,
                 },
                 '&:hover $notchedOutline': {
                     borderColor: PXBColors.black[200],
@@ -632,7 +676,10 @@ exports.blueDarkTheme = {
         },
         MuiFormLabel: {
             root: {
-                color: ThemeColors.text.primary,
+                color: ThemeColors.text.secondary,
+                '&$filled': {
+                    color: ThemeColors.text.primary,
+                },
                 '&$error$colorSecondary$focused': {
                     color: ThemeColors.error.main,
                 },
@@ -664,8 +711,14 @@ exports.blueDarkTheme = {
                 color: PXBColors.gray[500],
                 borderColor: color_1.default(PXBColors.black[200]).alpha(0.32).string(),
                 '&$selected': {
-                    backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.2).string(),
+                    backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.36).string(),
                     color: ThemeColors.primary.main,
+                    '&:hover': {
+                        backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.36).string(),
+                    },
+                },
+                '&:hover': {
+                    backgroundColor: color_1.default(PXBColors.black[50]).alpha(0.1).string(),
                 },
             },
             selected: {},

@@ -39,6 +39,7 @@ import {
     TableBody,
     TableCell,
     TableHead,
+    MobileStepper,
     TableRow,
     TableSortLabel,
 } from '@material-ui/core';
@@ -70,6 +71,8 @@ import {
     LocationOn,
     Inbox as InboxIcon,
     Drafts as DraftsIcon,
+    KeyboardArrowRight,
+    KeyboardArrowLeft,
     Visibility,
     VisibilityOff,
 } from '@material-ui/icons';
@@ -91,6 +94,25 @@ const ThemeList = [
     { title: 'Blue Dark', theme: createMuiTheme(PXBThemes.blueDark) },
 ];
 
+const withIcons = {
+    InputProps: {
+        endAdornment: (
+            <InputAdornment position="end">
+                <IconButton>
+                    <VisibilityOff />
+                </IconButton>
+            </InputAdornment>
+        ),
+        startAdornment: (
+            <InputAdornment position={'start'}>
+                <IconButton>
+                    <Visibility />
+                </IconButton>
+            </InputAdornment>
+        ),
+    },
+};
+
 /*
 The container for the entire app, including the common side-navigation panel and the main body panel.
 */
@@ -103,6 +125,7 @@ export default () => {
     const [themeToggle, setThemeToggle] = useState(0);
     const [showWarning, setShowWarning] = useState(true);
     const [buttonColor, setButtonColor] = useState('default');
+    const [showInputIcons, setShowInputIcons] = useState(false);
 
     const classes = styles();
 
@@ -578,50 +601,41 @@ export default () => {
                     </Typography>
                     <br />
                 </div>
+                <Button onClick={() => setShowInputIcons(!showInputIcons)}>Toggle Icons</Button>
                 <div style={{ margin: 20 }}>
                     <TextField
                         label={'Default'}
                         placeholder={'test'}
                         helperText={'helper text'}
-                        // InputProps={{
-                        //     endAdornment:
-                        //         <InputAdornment position="end">
-                        //           <IconButton
-                        //             aria-label="toggle password visibility"
-                        //           >
-                        //             <VisibilityOff />
-                        //           </IconButton>
-                        //         </InputAdornment>,
-                        //         startAdornment:
-                        //         <InputAdornment position="start">
-                        //           <IconButton
-                        //             aria-label="toggle password visibility"
-                        //           >
-                        //             <Visibility />
-                        //           </IconButton>
-                        //         </InputAdornment>,
-
-                        // }}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         label={'Default disabled'}
                         placeholder={'test'}
                         disabled
                         helperText={'helper text'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         label={'Default error'}
                         placeholder={'test'}
                         error
                         helperText={'there is an error'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <br />
-                    <TextField label={'D. primary'} color={'primary'} placeholder={'test'}></TextField>
+                    <TextField
+                        label={'D. primary'}
+                        color={'primary'}
+                        placeholder={'test'}
+                        {...(showInputIcons ? withIcons : {})}
+                    ></TextField>
                     <TextField
                         label={'D. primary disabled'}
                         color={'primary'}
                         placeholder={'test'}
                         disabled
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         label={'D. primary error'}
@@ -629,14 +643,21 @@ export default () => {
                         placeholder={'test'}
                         error
                         helperText={'there is an error'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <br />
-                    <TextField label={'D. secondary'} color={'secondary'} placeholder={'test'}></TextField>
+                    <TextField
+                        label={'D. secondary'}
+                        color={'secondary'}
+                        placeholder={'test'}
+                        {...(showInputIcons ? withIcons : {})}
+                    ></TextField>
                     <TextField
                         label={'D. secondary dis.'}
                         color={'secondary'}
                         placeholder={'test'}
                         disabled
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         label={'D. secondary error'}
@@ -644,15 +665,22 @@ export default () => {
                         placeholder={'test'}
                         error
                         helperText={'there is an error'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <br />
                     <br />
-                    <TextField variant={'outlined'} label={'Outlined'} placeholder={'test'}></TextField>
+                    <TextField
+                        variant={'outlined'}
+                        label={'Outlined'}
+                        placeholder={'test'}
+                        {...(showInputIcons ? withIcons : {})}
+                    ></TextField>
                     <TextField
                         variant={'outlined'}
                         label={'Outlined disabled'}
                         placeholder={'test'}
                         disabled
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         variant={'outlined'}
@@ -660,6 +688,7 @@ export default () => {
                         placeholder={'test'}
                         error
                         helperText={'there is an error'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <br />
                     <TextField
@@ -668,6 +697,7 @@ export default () => {
                         color={'primary'}
                         placeholder={'test'}
                         helperText={'Helper text'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         variant={'outlined'}
@@ -675,6 +705,7 @@ export default () => {
                         color={'primary'}
                         placeholder={'test'}
                         disabled
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         variant={'outlined'}
@@ -683,6 +714,7 @@ export default () => {
                         placeholder={'test'}
                         error
                         helperText={'there is an error'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <br />
                     <TextField
@@ -690,6 +722,7 @@ export default () => {
                         label={'Out. secondary'}
                         color={'secondary'}
                         placeholder={'test'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         variant={'outlined'}
@@ -697,6 +730,7 @@ export default () => {
                         color={'secondary'}
                         placeholder={'test'}
                         disabled
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         variant={'outlined'}
@@ -705,17 +739,30 @@ export default () => {
                         placeholder={'test'}
                         error
                         helperText={'there is an error'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <br />
                     <br />
-                    <TextField variant={'filled'} label={'Filled'} placeholder={'test'}></TextField>
-                    <TextField variant={'filled'} label={'Filled disabled'} placeholder={'test'} disabled></TextField>
+                    <TextField
+                        variant={'filled'}
+                        label={'Filled'}
+                        placeholder={'test'}
+                        {...(showInputIcons ? withIcons : {})}
+                    ></TextField>
+                    <TextField
+                        variant={'filled'}
+                        label={'Filled disabled'}
+                        placeholder={'test'}
+                        disabled
+                        {...(showInputIcons ? withIcons : {})}
+                    ></TextField>
                     <TextField
                         variant={'filled'}
                         label={'Filled error'}
                         placeholder={'test'}
                         error
                         helperText={'there is an error'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <br />
                     <TextField
@@ -723,6 +770,7 @@ export default () => {
                         label={'Fil. primary'}
                         color={'primary'}
                         placeholder={'test'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         variant={'filled'}
@@ -730,6 +778,7 @@ export default () => {
                         color={'primary'}
                         placeholder={'test'}
                         disabled
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         variant={'filled'}
@@ -738,6 +787,7 @@ export default () => {
                         placeholder={'test'}
                         error
                         helperText={'there is an error'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <br />
                     <TextField
@@ -745,6 +795,7 @@ export default () => {
                         label={'Fil. secondary'}
                         color={'secondary'}
                         placeholder={'test'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         variant={'filled'}
@@ -752,6 +803,7 @@ export default () => {
                         color={'secondary'}
                         placeholder={'test'}
                         disabled
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         variant={'filled'}
@@ -760,6 +812,7 @@ export default () => {
                         placeholder={'test'}
                         error
                         helperText={'there is an error'}
+                        {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                 </div>
                 <div style={{ margin: 20 }}>
@@ -773,6 +826,7 @@ export default () => {
                                 <TableCell>State</TableCell>
                                 <TableCell>Default</TableCell>
                                 <TableCell>Contained</TableCell>
+                                <TableCell>Flat</TableCell>
                                 <TableCell>Outlined</TableCell>
                                 <TableCell>Text</TableCell>
                             </TableRow>
@@ -785,6 +839,11 @@ export default () => {
                                 </TableCell>
                                 <TableCell>
                                     <Button color={'default'} variant={'contained'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'default'} variant={'contained'} disableElevation>
                                         Hello
                                     </Button>
                                 </TableCell>
@@ -808,6 +867,11 @@ export default () => {
                                 </TableCell>
                                 <TableCell>
                                     <Button color={'default'} variant={'contained'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'default'} variant={'contained'} disabled disableElevation>
                                         Hello
                                     </Button>
                                 </TableCell>
@@ -1061,7 +1125,24 @@ export default () => {
                     </Button>
                     <br /> */}
                 </div>
-
+                <div style={{ margin: 30 }}>
+                    <MobileStepper
+                        variant="dots"
+                        steps={6}
+                        position="static"
+                        activeStep={0}
+                        nextButton={
+                            <Button size="small">
+                                <KeyboardArrowRight />
+                            </Button>
+                        }
+                        backButton={
+                            <Button size="small" disabled>
+                                <KeyboardArrowLeft />
+                            </Button>
+                        }
+                    />
+                </div>
                 <Fab
                     color="primary"
                     className={classes.fab}
