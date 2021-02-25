@@ -29,7 +29,7 @@ var ThemeColors = {
     error: shared_1.createSimpleDarkPalette(PXBColors.red),
     success: shared_1.createSimpleDarkPalette(PXBColors.green),
     info: shared_1.createSimpleDarkPalette(PXBColors.lightBlue),
-    divider: color_1.default(PXBColors.black[200]).alpha(0.32).string(),
+    divider: color_1.default(PXBColors.black[200]).alpha(0.36).string(),
     warning: {
         light: PXBColors.yellow[100],
         main: PXBColors.yellow[300],
@@ -55,6 +55,7 @@ var ThemeColors = {
 var WhiteText = PXBColors.white[50];
 var MediumBlackBackground = PXBColors.black[500];
 var BlackText = PXBColors.black[500];
+var Spacing = 8;
 // const BlackBorder = PXBColors.black[500];
 /*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
@@ -134,6 +135,9 @@ exports.blueDarkTheme = {
                         fontWeight: 600,
                     },
                 },
+                '&:not($selected) $label': {
+                    color: ThemeColors.text.primary,
+                }
             },
             selected: {},
             label: {},
@@ -245,6 +249,10 @@ exports.blueDarkTheme = {
             },
             deleteIcon: {
                 fontSize: '1.125rem',
+                height: '1.125rem',
+                width: '1.125rem',
+                marginLeft: 0,
+                marginRight: Spacing,
                 color: ThemeColors.text.secondary,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -296,6 +304,13 @@ exports.blueDarkTheme = {
             },
             icon: {
                 fontSize: '1.125rem',
+                color: ThemeColors.text.primary,
+                marginLeft: Spacing,
+                marginRight: 0,
+            },
+            label: {
+                paddingLeft: Spacing,
+                paddingRight: Spacing,
             },
             avatar: {},
         },
@@ -613,7 +628,7 @@ exports.blueDarkTheme = {
                     borderColor: ThemeColors.error.dark,
                 },
                 '&$disabled $notchedOutline': {
-                    borderColor: color_1.default(ThemeColors.action.active).alpha(0.36).string(),
+                    borderColor: ThemeColors.divider,
                 },
                 '&:hover $notchedOutline': {
                     borderColor: PXBColors.black[200],

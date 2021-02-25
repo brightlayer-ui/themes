@@ -20,7 +20,7 @@ const ThemeColors = {
     error: createSimplePalette(PXBColors.red),
     success: createSimplePalette(PXBColors.green),
     info: createSimplePalette(PXBColors.lightBlue),
-    divider: Color(PXBColors.black[200]).alpha(0.32).string(),
+    divider: Color(PXBColors.black[200]).alpha(0.36).string(),
     warning: {
         light: PXBColors.yellow[100],
         main: PXBColors.yellow[300],
@@ -46,6 +46,7 @@ const ThemeColors = {
 const WhiteText = PXBColors.white[50];
 const MediumBlackBackground = PXBColors.black[500];
 const BlackText = PXBColors.black[500];
+const Spacing = 8;
 // const BlackBorder = PXBColors.black[500];
 
 /*
@@ -130,6 +131,9 @@ export const blueDarkTheme: ThemeOptions = {
                         fontSize: '0.75rem',
                         fontWeight: 600,
                     },
+                },
+                '&:not($selected) $label': {
+                    color: ThemeColors.text.primary,
                 },
             },
             selected: {},
@@ -244,6 +248,10 @@ export const blueDarkTheme: ThemeOptions = {
             },
             deleteIcon: {
                 fontSize: '1.125rem',
+                height: '1.125rem',
+                width: '1.125rem',
+                marginLeft: 0,
+                marginRight: Spacing,
                 color: ThemeColors.text.secondary,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -295,6 +303,13 @@ export const blueDarkTheme: ThemeOptions = {
             },
             icon: {
                 fontSize: '1.125rem',
+                color: ThemeColors.text.primary,
+                marginLeft: Spacing,
+                marginRight: 0,
+            },
+            label: {
+                paddingLeft: Spacing,
+                paddingRight: Spacing,
             },
             avatar: {},
         },
@@ -622,7 +637,7 @@ export const blueDarkTheme: ThemeOptions = {
                     borderColor: ThemeColors.error.dark,
                 },
                 '&$disabled $notchedOutline': {
-                    borderColor: Color(ThemeColors.action.active).alpha(0.36).string(),
+                    borderColor: ThemeColors.divider,
                 },
                 '&:hover $notchedOutline': {
                     borderColor: PXBColors.black[200],
@@ -682,7 +697,13 @@ export const blueDarkTheme: ThemeOptions = {
                 '&$selected': {
                     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
                     color: ThemeColors.primary.main,
+                    // '&:hover':{
+                    //     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
+                    // }
                 },
+                // '&:hover':{
+                //     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
+                // }
             },
             selected: {},
         },

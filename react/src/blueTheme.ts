@@ -46,6 +46,7 @@ const ThemeColors = {
 };
 const WhiteText = PXBColors.white[50];
 const BlackBorder = PXBColors.black[500];
+const Spacing = 8;
 
 /*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
@@ -120,13 +121,24 @@ export const blueTheme: ThemeOptions = {
                 textTransform: 'none',
             },
             contained: {
-                backgroundColor: PXBColors.gray[100],
+                backgroundColor: PXBColors.white[50],
                 color: ThemeColors.text.primary,
+                '&$disableElevation': {
+                    backgroundColor: PXBColors.white[500],
+                    '&:hover': {
+                        backgroundColor: PXBColors.white[400],
+                    },
+                    '&$disabled': {
+                        borderWidth: 0,
+                    },
+                },
                 '&:hover': {
-                    backgroundColor: PXBColors.white[900],
+                    backgroundColor: Color(PXBColors.black[500]).alpha(0.05).string(),
                 },
                 '&$disabled': {
-                    opacity: 0.5,
+                    backgroundColor: ThemeColors.background.paper,
+                    border: `1px solid ${Color(PXBColors.black[500]).alpha(0.12).string()}`,
+                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
                 },
             },
             containedPrimary: {
@@ -150,13 +162,14 @@ export const blueTheme: ThemeOptions = {
                 },
             },
             outlined: {
-                borderColor: ThemeColors.action.disabled,
+                borderColor: ThemeColors.divider,
                 '&:hover': {
                     backgroundColor: Color(PXBColors.black[500]).alpha(0.05).string(),
                 },
                 '&$disabled': {
-                    borderColor: ThemeColors.action.disabled,
-                    color: ThemeColors.action.disabled,
+                    backgroundColor: ThemeColors.background.paper,
+                    borderColor: Color(PXBColors.black[500]).alpha(0.12).string(),
+                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
                 },
             },
             outlinedPrimary: {
@@ -193,6 +206,7 @@ export const blueTheme: ThemeOptions = {
                 },
             },
             disabled: {},
+            disableElevation: {},
         },
 
         // CHECKBOX OVERRIDES
@@ -228,6 +242,10 @@ export const blueTheme: ThemeOptions = {
             },
             deleteIcon: {
                 fontSize: '1.125rem',
+                height: '1.125rem',
+                width: '1.125rem',
+                marginLeft: 0,
+                marginRight: Spacing,
                 color: ThemeColors.action.active,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -267,6 +285,13 @@ export const blueTheme: ThemeOptions = {
             },
             icon: {
                 fontSize: '1.125rem',
+                color: ThemeColors.text.primary,
+                marginLeft: Spacing,
+                marginRight: 0,
+            },
+            label: {
+                paddingLeft: Spacing,
+                paddingRight: Spacing,
             },
             avatar: {},
             avatarColorPrimary: {},
@@ -532,11 +557,17 @@ export const blueTheme: ThemeOptions = {
                 '& $notchedOutline': {
                     borderColor: ThemeColors.divider,
                 },
+                '&:hover $notchedOutline': {
+                    borderColor: PXBColors.gray[500],
+                },
                 '&$error$colorSecondary$focused $notchedOutline': {
                     borderColor: ThemeColors.error.main,
                 },
                 '&$error:hover:not($focused) $notchedOutline': {
                     borderColor: PXBColors.red[900],
+                },
+                '&$disabled $notchedOutline': {
+                    borderColor: ThemeColors.divider,
                 },
             },
             colorSecondary: {},
@@ -545,6 +576,7 @@ export const blueTheme: ThemeOptions = {
             notchedOutline: {
                 borderColor: ThemeColors.divider,
             },
+            disabled: {},
         },
         MuiFormLabel: {
             root: {
@@ -586,6 +618,9 @@ export const blueTheme: ThemeOptions = {
                 '&$selected': {
                     backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.main,
+                    // '&:hover': {
+                    //     backgroundColor: ThemeColors.primary.light,
+                    // },
                 },
             },
             selected: {},

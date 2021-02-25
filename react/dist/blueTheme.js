@@ -53,6 +53,7 @@ var ThemeColors = {
 };
 var WhiteText = PXBColors.white[50];
 var BlackBorder = PXBColors.black[500];
+var Spacing = 8;
 /*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
     to customize in our themes. These have changed periodically from version to version of Material UI.
@@ -123,13 +124,24 @@ exports.blueTheme = {
                 textTransform: 'none',
             },
             contained: {
-                backgroundColor: PXBColors.gray[100],
+                backgroundColor: PXBColors.white[50],
                 color: ThemeColors.text.primary,
+                '&$disableElevation': {
+                    backgroundColor: PXBColors.white[500],
+                    '&:hover': {
+                        backgroundColor: PXBColors.white[400],
+                    },
+                    '&$disabled': {
+                        borderWidth: 0,
+                    },
+                },
                 '&:hover': {
-                    backgroundColor: PXBColors.white[900],
+                    backgroundColor: color_1.default(PXBColors.black[500]).alpha(0.05).string(),
                 },
                 '&$disabled': {
-                    opacity: 0.5,
+                    backgroundColor: ThemeColors.background.paper,
+                    border: "1px solid " + color_1.default(PXBColors.black[500]).alpha(0.12).string(),
+                    color: color_1.default(PXBColors.black[500]).alpha(0.3).string()
                 },
             },
             containedPrimary: {
@@ -153,13 +165,14 @@ exports.blueTheme = {
                 },
             },
             outlined: {
-                borderColor: ThemeColors.action.disabled,
+                borderColor: ThemeColors.divider,
                 '&:hover': {
                     backgroundColor: color_1.default(PXBColors.black[500]).alpha(0.05).string(),
                 },
                 '&$disabled': {
-                    borderColor: ThemeColors.action.disabled,
-                    color: ThemeColors.action.disabled,
+                    backgroundColor: ThemeColors.background.paper,
+                    borderColor: color_1.default(PXBColors.black[500]).alpha(0.12).string(),
+                    color: color_1.default(PXBColors.black[500]).alpha(0.3).string()
                 },
             },
             outlinedPrimary: {
@@ -196,6 +209,7 @@ exports.blueTheme = {
                 },
             },
             disabled: {},
+            disableElevation: {},
         },
         // CHECKBOX OVERRIDES
         MuiCheckbox: {
@@ -229,6 +243,10 @@ exports.blueTheme = {
             },
             deleteIcon: {
                 fontSize: '1.125rem',
+                height: '1.125rem',
+                width: '1.125rem',
+                marginLeft: 0,
+                marginRight: Spacing,
                 color: ThemeColors.action.active,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -268,6 +286,13 @@ exports.blueTheme = {
             },
             icon: {
                 fontSize: '1.125rem',
+                color: ThemeColors.text.primary,
+                marginLeft: Spacing,
+                marginRight: 0,
+            },
+            label: {
+                paddingLeft: Spacing,
+                paddingRight: Spacing,
             },
             avatar: {},
             avatarColorPrimary: {},
@@ -530,6 +555,9 @@ exports.blueTheme = {
                 '&$error:hover:not($focused) $notchedOutline': {
                     borderColor: PXBColors.red[900],
                 },
+                '&$disabled $notchedOutline': {
+                    borderColor: ThemeColors.divider,
+                },
             },
             colorSecondary: {},
             focused: {},
@@ -537,6 +565,7 @@ exports.blueTheme = {
             notchedOutline: {
                 borderColor: ThemeColors.divider,
             },
+            disabled: {},
         },
         MuiFormLabel: {
             root: {
