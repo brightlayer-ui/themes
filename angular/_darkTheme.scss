@@ -57,6 +57,9 @@
             }
         }
     }
+    .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+        border-color: map-get($foreground, disabled);
+    }
 
     /* radio button */
     .mat-radio-button.mat-primary {
