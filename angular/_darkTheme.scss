@@ -33,18 +33,24 @@
         .mat-slide-toggle-thumb {
             background-color: map-get($foreground, text);
         }
-        &.mat-primary.mat-checked, &.mat-accent.mat-checked {
+
+        &.mat-primary.mat-checked,
+        &.mat-accent.mat-checked {
             .mat-slide-toggle-bar {
-                background-color: rgba(map-deep-get($overrides, 'primary', 'main'), .5);
+                background-color: rgba(map-deep-get($overrides, 'primary', 'main'), 0.5);
             }
+
             .mat-slide-toggle-thumb {
                 background-color: map-deep-get($overrides, 'primary', 'main');
             }
         }
-        &:not([color]).mat-checked { /* defaults (no color (primary|accent|warn) set) */
+
+        &:not([color]).mat-checked {
+            /* defaults (no color (primary|accent|warn) set) */
             .mat-slide-toggle-bar {
                 background-color: map-get($foreground, secondary-text);
             }
+
             .mat-slide-toggle-thumb {
                 background-color: map-get($foreground, text);
             }
@@ -82,6 +88,7 @@
         &.mat-radio-checked .mat-radio-persistent-ripple {
             background-color: map-deep-get($overrides, 'primary', 'main');
         }
+
         &.mat-radio-checked .mat-radio-outer-circle {
             border-color: map-deep-get($overrides, 'primary', 'main');
         }
@@ -96,13 +103,16 @@
     .mat-toolbar {
         color: map-get($foreground, 'text');
         background-color: map-get($pxb-darkBlack, 100);
+
         &.mat-primary {
             background-color: map-get($pxb-black, 800);
         }
+
         &.mat-accent {
             color: map-get($foreground, text);
             background-color: map-get($pxb-black, 900);
         }
+
         &.mat-warn {
             color: map-get($pxb-white, 50);
         }
@@ -114,10 +124,12 @@
             color: map-get($foreground, secondary-text);
             font-weight: 400;
             background-color: map-get($pxb-black, 900);
+
             &:not(.mat-tab-disabled) {
                 opacity: 1;
             }
         }
+
         .mat-tab-label-active {
             font-weight: 600;
             color: map-deep-get($overrides, 'primary', 'main');
@@ -135,20 +147,25 @@
         &.mat-standard-chip {
             background-color: map-get($pxb-black, 500);
             color: map-get($foreground, 'text');
+
             .mat-chip-remove {
                 color: map-get($pxb-blue, 100);
             }
         }
+
         &.mat-primary {
             color: map-get($pxb-white, 50);
             background-color: map-deep-get($overrides, 'primary', 'dark');
+
             .mat-chip-remove {
                 color: map-get($pxb-blue, 100);
             }
         }
+
         &.mat-accent {
             color: map-get($pxb-white, 50);
             background-color: map-deep-get($overrides, 'primary', 'main');
+
             .mat-chip-remove {
                 color: rgba(0, 0, 0, 0.7);
             }
@@ -188,33 +205,41 @@
                     background-color: rgba(161, 167, 170, 0.36);
                 }
             }
+
             .mat-form-field-label {
                 color: rgba(123, 131, 135, 0.32);
             }
+
             .mat-form-field-outline-thick {
                 color: rgba(161, 167, 170, 0.36);
             }
         }
+
         /* Primary */
         &.mat-primary:not(.mat-form-field-disabled) {
             .mat-form-field-label {
                 color: map-get($pxb-black, 200);
             }
+
             /* Fill */
             &.mat-form-field-appearance-fill {
                 .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, 'primary', 'dark');
                 }
+
                 .mat-form-field-flex:hover {
                     background-color: map-get($pxb-black, 600);
+
                     .mat-form-field-outline-thick {
                         color: map-deep-get($overrides, 'error', 'main');
                     }
                 }
+
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, 'error', 'dark');
                 }
             }
+
             /* Outline */
             &.mat-form-field-appearance-outline {
                 .mat-form-field-outline-thick {
@@ -223,13 +248,17 @@
                     .mat-form-field-outline-gap {
                         border-width: 1px;
                     }
+
                     color: map-deep-get($overrides, 'primary', 'main');
                 }
+
                 .mat-form-field-flex:hover .mat-form-field-outline-thick {
                     color: map-get($foreground, text);
                 }
+
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, 'primary', 'dark');
+
                     .mat-form-field-outline-start,
                     .mat-form-field-outline-end,
                     .mat-form-field-outline-gap {
@@ -238,6 +267,7 @@
                 }
             }
         }
+
         /* Error */
         &.mat-form-field-invalid:not(.mat-form-field-disabled) {
             /* Standard */
@@ -245,28 +275,35 @@
                 .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, 'error', 'dark');
                 }
+
                 .mat-form-field-flex:hover .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, 'error', 'main');
                 }
-                .mat-form-field-flex:focus-within+.mat-form-field-underline .mat-form-field-ripple{
+
+                .mat-form-field-flex:focus-within + .mat-form-field-underline .mat-form-field-ripple {
                     color: map-deep-get($overrides, 'error', 'dark');
                 }
             }
+
             /* Fill */
             &.mat-form-field-appearance-fill {
                 .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, 'error', 'dark');
                 }
+
                 .mat-form-field-flex:hover {
                     background-color: map-get($pxb-black, 600);
+
                     .mat-form-field-outline-thick {
                         color: map-deep-get($overrides, 'error', 'main');
                     }
                 }
+
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, 'error', 'dark');
                 }
             }
+
             /* Outline */
             &.mat-form-field-appearance-outline {
                 .mat-form-field-outline-thick {
@@ -275,13 +312,17 @@
                     .mat-form-field-outline-gap {
                         border-width: 1px;
                     }
+
                     color: map-deep-get($overrides, 'error', 'dark');
                 }
+
                 .mat-form-field-flex:hover .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, 'error', 'main');
                 }
+
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, 'error', 'dark');
+
                     .mat-form-field-outline-start,
                     .mat-form-field-outline-end,
                     .mat-form-field-outline-gap {
@@ -334,6 +375,7 @@
     .mat-snack-bar-container {
         background-color: map-get($pxb-black, 50);
         color: map-get($pxb-black, 500);
+
         .mat-simple-snackbar-action {
             color: map-get($pxb-blue, 500);
         }
@@ -342,17 +384,21 @@
     /* PXB Drawer */
     .pxb-drawer {
         background-color: map-get($pxb-darkBlack, 300);
+
         .pxb-drawer-nav-item-active .pxb-info-list-item .mat-list-item-content {
             color: map-get($primary, 200);
         }
+
         .pxb-drawer-nav-item-active-highlight {
             opacity: 0.2;
         }
+
         .mat-list-base .mat-list-item,
         .pxb-drawer-nav-item-rail,
         .pxb-drawer-nav-group-title {
             color: map-get($foreground, 50);
         }
+
         .pxb-drawer-nested-nav-item mat-expansion-panel {
             background-color: map-get($pxb-darkBlack, 500);
         }
@@ -363,16 +409,22 @@
         .pxb-empty-state-empty-icon-wrapper {
             color: map-get($pxb-black, 200);
         }
+
         .pxb-empty-state-description {
             color: map-deep-get($overrides, 'primary', 'main');
         }
     }
 
     /* PXB Info List Item */
-    .pxb-info-list-item  .pxb-info-list-item-content {
+    .pxb-info-list-item .pxb-info-list-item-content {
         .pxb-info-list-item-subtitle-wrapper,
         .pxb-info-list-item-info-wrapper {
             color: map-get($foreground, secondary-text);
         }
+    }
+
+    /* PXB Mobile Stepper */
+    .pxb-mobile-stepper .pxb-mobile-stepper-dot:not(.pxb-mobile-stepper-dot-active) {
+        background-color: map-get($foreground, disabled);
     }
 }
