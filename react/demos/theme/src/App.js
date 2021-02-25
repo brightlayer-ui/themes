@@ -39,6 +39,7 @@ import {
     TableBody,
     TableCell,
     TableHead,
+    MobileStepper,
     TableRow,
     TableSortLabel,
 } from '@material-ui/core';
@@ -70,6 +71,8 @@ import {
     LocationOn,
     Inbox as InboxIcon,
     Drafts as DraftsIcon,
+    KeyboardArrowRight,
+    KeyboardArrowLeft,
     Visibility,
     VisibilityOff,
 } from '@material-ui/icons';
@@ -1122,7 +1125,24 @@ export default () => {
                     </Button>
                     <br /> */}
                 </div>
-
+                <div style={{ margin: 30 }}>
+                    <MobileStepper
+                        variant="dots"
+                        steps={6}
+                        position="static"
+                        activeStep={0}
+                        nextButton={
+                            <Button size="small">
+                                <KeyboardArrowRight />
+                            </Button>
+                        }
+                        backButton={
+                            <Button size="small" disabled>
+                                <KeyboardArrowLeft />
+                            </Button>
+                        }
+                    />
+                </div>
                 <Fab
                     color="primary"
                     className={classes.fab}

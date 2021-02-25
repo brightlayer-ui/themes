@@ -137,7 +137,7 @@ exports.blueDarkTheme = {
                 },
                 '&:not($selected) $label': {
                     color: ThemeColors.text.primary,
-                }
+                },
             },
             selected: {},
             label: {},
@@ -345,6 +345,15 @@ exports.blueDarkTheme = {
         MuiListItem: {
             root: {
                 color: ThemeColors.text.primary,
+            },
+        },
+        // MOBILE STEPPER OVERRIDES
+        MuiMobileStepper: {
+            dot: {
+                backgroundColor: color_1.default(PXBColors.black[300]).alpha(0.36).string(),
+            },
+            dotActive: {
+                backgroundColor: ThemeColors.primary.dark,
             },
         },
         // SLIDER OVERRIDES

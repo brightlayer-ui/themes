@@ -312,6 +312,16 @@ export const blueTheme: ThemeOptions = {
             },
         },
 
+        // MOBILE STEPPER OVERRIDES
+        MuiMobileStepper: {
+            dot: {
+                backgroundColor: PXBColors.gray[200],
+            },
+            dotActive: {
+                backgroundColor: ThemeColors.primary.main,
+            },
+        },
+
         // SLIDER OVERRIDES
         MuiSlider: {
             root: {

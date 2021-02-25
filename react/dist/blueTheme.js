@@ -141,7 +141,7 @@ exports.blueTheme = {
                 '&$disabled': {
                     backgroundColor: ThemeColors.background.paper,
                     border: "1px solid " + color_1.default(PXBColors.black[500]).alpha(0.12).string(),
-                    color: color_1.default(PXBColors.black[500]).alpha(0.3).string()
+                    color: color_1.default(PXBColors.black[500]).alpha(0.3).string(),
                 },
             },
             containedPrimary: {
@@ -172,7 +172,7 @@ exports.blueTheme = {
                 '&$disabled': {
                     backgroundColor: ThemeColors.background.paper,
                     borderColor: color_1.default(PXBColors.black[500]).alpha(0.12).string(),
-                    color: color_1.default(PXBColors.black[500]).alpha(0.3).string()
+                    color: color_1.default(PXBColors.black[500]).alpha(0.3).string(),
                 },
             },
             outlinedPrimary: {
@@ -308,6 +308,15 @@ exports.blueTheme = {
         MuiListItem: {
             root: {
                 color: ThemeColors.text.primary,
+            },
+        },
+        // MOBILE STEPPER OVERRIDES
+        MuiMobileStepper: {
+            dot: {
+                backgroundColor: PXBColors.gray[200],
+            },
+            dotActive: {
+                backgroundColor: ThemeColors.primary.main,
             },
         },
         // SLIDER OVERRIDES
@@ -548,6 +557,9 @@ exports.blueTheme = {
             root: {
                 '& $notchedOutline': {
                     borderColor: ThemeColors.divider,
+                },
+                '&:hover $notchedOutline': {
+                    borderColor: PXBColors.gray[500],
                 },
                 '&$error$colorSecondary$focused $notchedOutline': {
                     borderColor: ThemeColors.error.main,

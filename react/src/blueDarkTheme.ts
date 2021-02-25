@@ -350,6 +350,16 @@ export const blueDarkTheme: ThemeOptions = {
             },
         },
 
+        // MOBILE STEPPER OVERRIDES
+        MuiMobileStepper: {
+            dot: {
+                backgroundColor: Color(PXBColors.black[300]).alpha(0.36).string(),
+            },
+            dotActive: {
+                backgroundColor: ThemeColors.primary.dark,
+            },
+        },
+
         // SLIDER OVERRIDES
         MuiSlider: {
             root: {
