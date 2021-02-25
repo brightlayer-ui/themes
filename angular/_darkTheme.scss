@@ -28,7 +28,6 @@
     }
 
     /* slide toggle */
-
     .mat-slide-toggle {
         .mat-slide-toggle-thumb {
             background-color: map-get($foreground, text);
@@ -329,6 +328,19 @@
                     }
                 }
             }
+        }
+    }
+
+    /* slider */
+    .mat-slider {
+        .mat-slider-thumb {
+            color: map-deep-get($overrides, 'primary', 'main');
+        }
+        .mat-slider-track-fill {
+            background-color: map-get($pxb-blue, 300);
+        }
+        .mat-slider-ticks {
+            background-image: repeating-linear-gradient(to right, map-get($pxb-blue, 500), map-get($pxb-blue, 500), 2px, transparent 0, transparent);
         }
     }
 
