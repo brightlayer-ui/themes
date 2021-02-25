@@ -220,6 +220,9 @@
             .mat-hint, .mat-form-field-label, .mat-form-field-outline-thick, .mat-form-field-suffix {
                 color: map-get($foreground, disabled);
             }
+            &.mat-form-field-appearance-fill .mat-form-field-underline::before {
+                background-color:  map-get($foreground, disabled);
+            }
         }
 
         /* Primary */
