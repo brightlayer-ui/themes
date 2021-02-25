@@ -83,9 +83,10 @@
 @mixin pxb-mobile-stepper($theme) {
     $primary: map-get($theme, primary);
     $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
     .pxb-mobile-stepper {
         .pxb-mobile-stepper-dot {
-            background-color: map-get($background, disabled-button-toggle);
+            background-color: map-get($foreground, disabled);
         }
         .pxb-mobile-stepper-dot-active {
             background-color: map-get($primary, 500);
