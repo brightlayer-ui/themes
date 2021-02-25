@@ -560,6 +560,9 @@ export const blueDarkTheme: ThemeOptions = {
                 '&$error$focused:after': {
                     borderBottomColor: ThemeColors.error.dark,
                 },
+                '&$error:not($focused):not(:hover):after': {
+                    borderBottomWidth: 1,
+                },
                 '&$colorSecondary:not($error):after': {
                     borderBottomColor: ThemeColors.secondary.main,
                 },
@@ -597,6 +600,9 @@ export const blueDarkTheme: ThemeOptions = {
                 },
                 '&$error$focused:after': {
                     borderBottomColor: ThemeColors.error.dark,
+                },
+                '&$error:not($focused):after': {
+                    borderBottomWidth: 1,
                 },
                 '&$disabled:before': {
                     borderBottomStyle: 'solid',

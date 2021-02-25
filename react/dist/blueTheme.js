@@ -271,7 +271,7 @@ exports.blueTheme = {
             },
             avatar: {},
             avatarColorPrimary: {},
-            avatarColorSecondary: {}
+            avatarColorSecondary: {},
         },
         // FAB OVERRIDES
         MuiFab: {
@@ -487,6 +487,9 @@ exports.blueTheme = {
                     borderBottomColor: ThemeColors.action.disabled,
                     borderBottomStyle: 'solid',
                 },
+                '&$error:not($focused):not(:hover):after': {
+                    borderBottomWidth: 1,
+                },
             },
             disabled: {},
         },
@@ -508,6 +511,9 @@ exports.blueTheme = {
             underline: {
                 '&:before': {
                     borderBottomColor: ThemeColors.divider,
+                },
+                '&$error:not($focused):after': {
+                    borderBottomWidth: 1,
                 },
             },
             focused: {},

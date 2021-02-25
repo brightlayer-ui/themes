@@ -495,6 +495,9 @@ export const blueTheme: ThemeOptions = {
                     borderBottomColor: ThemeColors.action.disabled,
                     borderBottomStyle: 'solid',
                 },
+                '&$error:not($focused):not(:hover):after': {
+                    borderBottomWidth: 1,
+                },
             },
             disabled: {},
         },
@@ -516,6 +519,9 @@ export const blueTheme: ThemeOptions = {
             underline: {
                 '&:before': {
                     borderBottomColor: ThemeColors.divider,
+                },
+                '&$error:not($focused):after': {
+                    borderBottomWidth: 1,
                 },
             },
             focused: {},
