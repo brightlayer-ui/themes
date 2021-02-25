@@ -91,7 +91,7 @@
     /*tab bar*/
     .mat-tab-group {
         .mat-tab-label {
-            color: map-get($foreground, 'secondary');
+            color: map-get($foreground, secondary-text);
             font-weight: 400;
             background-color: map-get($pxb-black, 900);
             &:not(.mat-tab-disabled) {
@@ -228,7 +228,7 @@
                 .mat-form-field-flex:hover .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, 'error', 'main');
                 }
-                .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
+                .mat-form-field-flex:focus-within+.mat-form-field-underline .mat-form-field-ripple{
                     color: map-deep-get($overrides, 'error', 'dark');
                 }
             }
@@ -345,6 +345,14 @@
         }
         .pxb-empty-state-description {
             color: map-deep-get($overrides, 'primary', 'main');
+        }
+    }
+
+    /* PXB Info List Item */
+    .pxb-info-list-item  .pxb-info-list-item-content {
+        .pxb-info-list-item-subtitle-wrapper,
+        .pxb-info-list-item-info-wrapper {
+            color: map-get($foreground, secondary-text);
         }
     }
 }
