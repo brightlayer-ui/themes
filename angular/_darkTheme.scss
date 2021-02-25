@@ -1,7 +1,7 @@
 @import '~@pxblue/colors/palette';
 
 @function createSimplePalette($color) {
-    @return ('light': map-get($color, 50), 'main': map-get($color, 200), 'dark': map-get($color, 500));
+    @return (light: map-get($color, 50), main: map-get($color, 200), dark: map-get($color, 500));
 }
 
 @function map-deep-get($map, $keys...) {
@@ -18,8 +18,8 @@
     $background: map-get($theme, background);
 
     $overrides: (
-        'primary': createSimplePalette($primary),
-        'error': createSimplePalette($pxb-red),
+        primary: createSimplePalette($primary),
+        error: createSimplePalette($pxb-red),
     );
 
     /* Side navigation*/
@@ -36,11 +36,11 @@
         &.mat-primary.mat-checked,
         &.mat-accent.mat-checked {
             .mat-slide-toggle-bar {
-                background-color: rgba(map-deep-get($overrides, 'primary', 'main'), 0.5);
+                background-color: rgba(map-deep-get($overrides, primary, main), 0.5);
             }
 
             .mat-slide-toggle-thumb {
-                background-color: map-deep-get($overrides, 'primary', 'main');
+                background-color: map-deep-get($overrides, primary, main);
             }
         }
 
@@ -60,11 +60,11 @@
     .mat-badge-content,
     .mat-badge-accent .mat-badge-content {
         color: #fff;
-        background-color: map-deep-get($overrides, 'primary', 'dark');
+        background-color: map-deep-get($overrides, primary, dark);
     }
     .mat-badge-warn .mat-badge-content {
         color: #fff;
-        background-color: map-deep-get($overrides, 'error', 'dark');
+        background-color: map-deep-get($overrides, error, dark);
     }
 
     /* checkbox */
@@ -72,7 +72,7 @@
         &.mat-primary,
         &.mat-accent {
             .mat-checkbox-background {
-                background-color: map-deep-get($overrides, 'primary', 'main');
+                background-color: map-deep-get($overrides, primary, main);
             }
         }
     }
@@ -85,11 +85,11 @@
         .mat-radio-inner-circle,
         .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
         &.mat-radio-checked .mat-radio-persistent-ripple {
-            background-color: map-deep-get($overrides, 'primary', 'main');
+            background-color: map-deep-get($overrides, primary, main);
         }
 
         &.mat-radio-checked .mat-radio-outer-circle {
-            border-color: map-deep-get($overrides, 'primary', 'main');
+            border-color: map-deep-get($overrides, primary, main);
         }
     }
 
@@ -100,7 +100,7 @@
 
     /* toolbar*/
     .mat-toolbar {
-        color: map-get($foreground, 'text');
+        color: map-get($foreground, text);
         background-color: map-get($pxb-darkBlack, 100);
 
         &.mat-primary {
@@ -131,13 +131,13 @@
 
         .mat-tab-label-active {
             font-weight: 600;
-            color: map-deep-get($overrides, 'primary', 'main');
+            color: map-deep-get($overrides, primary, main);
         }
     }
     .mat-tab-group.mat-primary,
     .mat-tab-nav-bar.mat-primary {
         .mat-ink-bar {
-            background-color: map-deep-get($overrides, 'primary', 'main');
+            background-color: map-deep-get($overrides, primary, main);
         }
     }
 
@@ -155,11 +155,11 @@
         }
         &.mat-standard-chip {
             background-color: map-get($pxb-black, 500);
-            color: map-get($foreground, 'text');
+            color: map-get($foreground, text);
         }
         &.mat-primary {
             color: map-get($pxb-white, 50);
-            background-color: map-deep-get($overrides, 'primary', 'dark');
+            background-color: map-deep-get($overrides, primary, dark);
         }
         &.mat-accent {
             color: map-get($pxb-white, 50);
@@ -187,6 +187,17 @@
     /* snackbar theming */
     .mat-snack-bar-container {
         background-color: map-get($pxb-darkBlack, 500);
+    }
+
+    /* date picker */
+    .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+        border-color: map-deep-get($overrides, primary, main);
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon, .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon {
+        color: map-get($foreground, secondary-text);
+    }
+    .mat-input-element.mat-form-field-autofill-control.mat-datepicker-input {
+        color: map-get($foreground, text);
     }
 
     /* input fields */
@@ -219,19 +230,19 @@
             /* Fill */
             &.mat-form-field-appearance-fill {
                 .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, 'primary', 'dark');
+                    color: map-deep-get($overrides, primary, dark);
                 }
 
                 .mat-form-field-flex:hover {
                     background-color: map-get($pxb-black, 600);
 
                     .mat-form-field-outline-thick {
-                        color: map-deep-get($overrides, 'error', 'main');
+                        color: map-deep-get($overrides, error, main);
                     }
                 }
 
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, 'error', 'dark');
+                    color: map-deep-get($overrides, error, dark);
                 }
             }
 
@@ -243,7 +254,7 @@
                     .mat-form-field-outline-gap {
                         border-width: 1px;
                     }
-                    color: map-deep-get($overrides, 'primary', 'main');
+                    color: map-deep-get($overrides, primary, main);
                 }
 
                 .mat-form-field-flex:hover .mat-form-field-outline-thick {
@@ -251,7 +262,7 @@
                 }
 
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, 'primary', 'dark');
+                    color: map-deep-get($overrides, primary, dark);
 
                     .mat-form-field-outline-start,
                     .mat-form-field-outline-end,
@@ -267,34 +278,34 @@
             /* Standard */
             &.mat-form-field-appearance-standard {
                 .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, 'error', 'dark');
+                    color: map-deep-get($overrides, error, dark);
                 }
 
                 .mat-form-field-flex:hover .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, 'error', 'main');
+                    color: map-deep-get($overrides, error, main);
                 }
 
                 .mat-form-field-flex:focus-within + .mat-form-field-underline .mat-form-field-ripple {
-                    color: map-deep-get($overrides, 'error', 'dark');
+                    color: map-deep-get($overrides, error, dark);
                 }
             }
 
             /* Fill */
             &.mat-form-field-appearance-fill {
                 .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, 'error', 'dark');
+                    color: map-deep-get($overrides, error, dark);
                 }
 
                 .mat-form-field-flex:hover {
                     background-color: map-get($pxb-black, 600);
 
                     .mat-form-field-outline-thick {
-                        color: map-deep-get($overrides, 'error', 'main');
+                        color: map-deep-get($overrides, error, main);
                     }
                 }
 
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, 'error', 'dark');
+                    color: map-deep-get($overrides, error, dark);
                 }
             }
 
@@ -307,15 +318,15 @@
                         border-width: 1px;
                     }
 
-                    color: map-deep-get($overrides, 'error', 'dark');
+                    color: map-deep-get($overrides, error, dark);
                 }
 
                 .mat-form-field-flex:hover .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, 'error', 'main');
+                    color: map-deep-get($overrides, error, main);
                 }
 
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, 'error', 'dark');
+                    color: map-deep-get($overrides, error, dark);
 
                     .mat-form-field-outline-start,
                     .mat-form-field-outline-end,
@@ -330,7 +341,7 @@
     /* slider */
     .mat-slider {
         .mat-slider-thumb {
-            color: map-deep-get($overrides, 'primary', 'main');
+            color: map-deep-get($overrides, primary, main);
         }
         .mat-slider-track-fill {
             background-color: map-get($pxb-blue, 300);
@@ -367,7 +378,7 @@
                 color: map-get($pxb-black, 200);
             }
             .mat-step-label-selected {
-                color: map-deep-get($overrides, 'primary', 'main');
+                color: map-deep-get($overrides, primary, main);
             }
             &:hover,
             &.cdk-program-focused,
@@ -442,7 +453,7 @@
         }
 
         .pxb-empty-state-description {
-            color: map-deep-get($overrides, 'primary', 'main');
+            color: map-deep-get($overrides, primary, main);
         }
     }
 
