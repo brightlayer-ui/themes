@@ -461,6 +461,9 @@
     }
 
     /* PXB Drawer */
+    .pxb-drawer-layout-content .pxb-drawer-layout-sidenav.pxb-drawer-layout-shadow {
+        box-shadow: none;
+    }
     .pxb-drawer {
         background-color: map-get($pxb-darkBlack, 300);
 
