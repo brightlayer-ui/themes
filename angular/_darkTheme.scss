@@ -143,31 +143,27 @@
 
     /* Chips */
     .mat-chip {
+        &.mat-standard-chip,
+        &.mat-primary,
+        &.mat-accent, {
+            .mat-chip-remove {
+                color: map-get($pxb-blue, 100);
+                &:hover {
+                    color: map-get($pxb-white, 50);
+                }
+            }
+        }
         &.mat-standard-chip {
             background-color: map-get($pxb-black, 500);
             color: map-get($foreground, 'text');
-
-            .mat-chip-remove {
-                color: map-get($pxb-blue, 100);
-            }
         }
-
         &.mat-primary {
             color: map-get($pxb-white, 50);
             background-color: map-deep-get($overrides, 'primary', 'dark');
-
-            .mat-chip-remove {
-                color: map-get($pxb-blue, 100);
-            }
         }
-
         &.mat-accent {
             color: map-get($pxb-white, 50);
-            background-color: map-deep-get($overrides, 'primary', 'main');
-
-            .mat-chip-remove {
-                color: rgba(0, 0, 0, 0.7);
-            }
+            background-color: map-get($pxb-lightBlue, 500);
         }
     }
 
@@ -340,7 +336,14 @@
             background-color: map-get($pxb-blue, 300);
         }
         .mat-slider-ticks {
-            background-image: repeating-linear-gradient(to right, map-get($pxb-blue, 500), map-get($pxb-blue, 500), 2px, transparent 0, transparent);
+            background-image: repeating-linear-gradient(
+                to right,
+                map-get($pxb-blue, 500),
+                map-get($pxb-blue, 500),
+                2px,
+                transparent 0,
+                transparent
+            );
         }
     }
 
@@ -350,8 +353,9 @@
         background-color: map-get($background, dialog);
         color: map-get($foreground, secondary-text);
         .mat-step-header {
-            .mat-step-label, .mat-step-label-selected {
-                font-size: .875rem;
+            .mat-step-label,
+            .mat-step-label-selected {
+                font-size: 0.875rem;
             }
             .mat-step-label {
                 font-weight: 400;
@@ -376,8 +380,11 @@
                 background-color: unset;
             }
         }
-        .mat-stepper-vertical-line::before,  .mat-stepper-horizontal-line {
+        .mat-stepper-vertical-line::before {
             border-left-color: map-get($pxb-black, 300);
+        }
+        .mat-stepper-horizontal-line {
+            border-top-color: map-get($pxb-black, 300);
         }
         .mat-step-header[aria-selected='true'] .mat-step-icon {
             background-color: map-get($primary, 500);
