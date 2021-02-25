@@ -705,15 +705,15 @@ export const blueDarkTheme: ThemeOptions = {
                 color: PXBColors.gray[500],
                 borderColor: Color(PXBColors.black[200]).alpha(0.32).string(),
                 '&$selected': {
-                    backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
+                    backgroundColor: Color(ThemeColors.primary.dark).alpha(0.36).string(),
                     color: ThemeColors.primary.main,
-                    // '&:hover':{
-                    //     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
-                    // }
+                    '&:hover': {
+                        backgroundColor: Color(ThemeColors.primary.main).alpha(0.36).string(),
+                    },
                 },
-                // '&:hover':{
-                //     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
-                // }
+                '&:hover': {
+                    backgroundColor: Color(PXBColors.black[50]).alpha(0.1).string(),
+                },
             },
             selected: {},
         },

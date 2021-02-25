@@ -613,11 +613,14 @@ exports.blueTheme = {
                 color: ThemeColors.text.hint,
                 borderColor: PXBColors.gray[100],
                 '&:hover': {
-                    backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
+                    backgroundColor: color_1.default(PXBColors.black[500]).alpha(0.05).string(),
                 },
                 '&$selected': {
                     backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.main,
+                    '&:hover': {
+                        backgroundColor: PXBColors.blue[100],
+                    },
                 },
             },
             selected: {},

@@ -694,9 +694,15 @@ exports.blueDarkTheme = {
                 color: PXBColors.gray[500],
                 borderColor: color_1.default(PXBColors.black[200]).alpha(0.32).string(),
                 '&$selected': {
-                    backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.2).string(),
+                    backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.36).string(),
                     color: ThemeColors.primary.main,
+                    '&:hover': {
+                        backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.36).string(),
+                    }
                 },
+                '&:hover': {
+                    backgroundColor: color_1.default(PXBColors.black[50]).alpha(0.1).string(),
+                }
             },
             selected: {},
         },
