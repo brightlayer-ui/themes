@@ -248,7 +248,6 @@
                     .mat-form-field-outline-gap {
                         border-width: 1px;
                     }
-
                     color: map-deep-get($overrides, 'primary', 'main');
                 }
 
@@ -338,25 +337,38 @@
     .mat-stepper-vertical {
         background-color: map-get($background, dialog);
         color: map-get($foreground, secondary-text);
-    }
-    .mat-step-header .mat-step-icon-state-done,
-    .mat-step-icon.mat-step-icon-state-number,
-    .mat-step-icon.mat-step-icon-state-add {
-        background-color: map-get($pxb-gray, 300);
-    }
-    .mat-step-header[aria-selected='true'] .mat-step-icon {
-        background-color: map-get($primary, 500);
-    }
-    .mat-step-header {
-        &:hover,
-        &.cdk-program-focused,
-        &.cdk-mouse-focused,
-        &.cdk-focused {
-            background-color: unset;
-        }
+        .mat-step-header {
+            .mat-step-label, .mat-step-label-selected {
+                font-size: .875rem;
+            }
+            .mat-step-label {
+                font-weight: 400;
+            }
+            .mat-step-label-active {
+                font-weight: 600;
+            }
+            .mat-step-label {
+                color: map-get($pxb-black, 200);
+            }
+            .mat-step-label-selected {
+                color: map-deep-get($overrides, 'primary', 'main');
+            }
+            &:hover,
+            &.cdk-program-focused,
+            &.cdk-mouse-focused,
+            &.cdk-focused {
+                background-color: unset;
+            }
 
-        .mat-focus-indicator.mat-button-base.ng-star-inserted {
-            background-color: unset;
+            .mat-focus-indicator.mat-button-base.ng-star-inserted {
+                background-color: unset;
+            }
+        }
+        .mat-stepper-vertical-line::before,  .mat-stepper-horizontal-line {
+            border-left-color: map-get($pxb-black, 300);
+        }
+        .mat-step-header[aria-selected='true'] .mat-step-icon {
+            background-color: map-get($primary, 500);
         }
     }
 
