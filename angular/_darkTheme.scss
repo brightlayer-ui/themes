@@ -208,6 +208,7 @@
         input::-webkit-input-placeholder {
             color: map-get($foreground, disabled);
         }
+
         /* Disabled */
         &.mat-form-field-disabled {
             &.mat-form-field-appearance-legacy,
@@ -225,10 +226,28 @@
             }
         }
 
+        /* Underline width */
+        &.mat-form-field-appearance-legacy,
+        &.mat-form-field-appearance-standard,
+        &.mat-form-field-appearance-fill {
+            .mat-form-field-flex + .mat-form-field-underline .mat-form-field-ripple {
+                height: 1px;
+            }
+            .mat-form-field-flex:focus-within + .mat-form-field-underline .mat-form-field-ripple {
+                height: 2px;
+            }
+        }
+
         /* Primary */
         &.mat-primary:not(.mat-form-field-disabled) {
             .mat-form-field-label {
                 color: map-get($pxb-black, 200);
+            }
+
+            .mat-form-field-flex:focus-within {
+                .mat-form-field-label {
+                    color: map-deep-get($overrides, primary, main);
+                }
             }
 
             .mat-hint {
