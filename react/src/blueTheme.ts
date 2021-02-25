@@ -147,6 +147,7 @@ export const blueTheme: ThemeOptions = {
                 },
                 '&$disabled': {
                     backgroundColor: ThemeColors.primary.light,
+                    borderWidth: 0,
                     color: PXBColors.blue[200],
                     opacity: 1,
                 },
@@ -157,6 +158,7 @@ export const blueTheme: ThemeOptions = {
                 },
                 '&$disabled': {
                     backgroundColor: ThemeColors.secondary.light,
+                    borderWidth: 0,
                     color: PXBColors.lightBlue[200],
                     opacity: 1,
                 },

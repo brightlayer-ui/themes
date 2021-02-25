@@ -195,12 +195,18 @@ exports.blueDarkTheme = {
                 '&:hover': {
                     backgroundColor: PXBColors.blue[300],
                 },
+                '&$disabled': {
+                    borderWidth: 0,
+                },
             },
             containedSecondary: {
                 backgroundColor: ThemeColors.secondary.dark,
                 color: WhiteText,
                 '&:hover': {
                     backgroundColor: PXBColors.lightBlue[300],
+                },
+                '&$disabled': {
+                    borderWidth: 0,
                 },
             },
             text: {

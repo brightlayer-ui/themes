@@ -150,6 +150,7 @@ exports.blueTheme = {
                 },
                 '&$disabled': {
                     backgroundColor: ThemeColors.primary.light,
+                    borderWidth: 0,
                     color: PXBColors.blue[200],
                     opacity: 1,
                 },
@@ -160,6 +161,7 @@ exports.blueTheme = {
                 },
                 '&$disabled': {
                     backgroundColor: ThemeColors.secondary.light,
+                    borderWidth: 0,
                     color: PXBColors.lightBlue[200],
                     opacity: 1,
                 },
