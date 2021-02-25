@@ -169,7 +169,7 @@
 
     /*  Drawer Content */
     .mat-drawer-content {
-        background-color: map-get($pxb-darkBlack, 100);
+        background-color: map-get($pxb-darkBlack, 800);
         color: map-get($foreground, text);
     }
 
@@ -237,7 +237,9 @@
                 .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, primary, dark);
                 }
-
+                .mat-form-field-flex {
+                    background-color: rgba(map-get($pxb-black, 800), .5);
+                }
                 .mat-form-field-flex:hover {
                     background-color: map-get($pxb-black, 600);
 
@@ -432,6 +434,9 @@
 
         .pxb-drawer-nav-item-active .pxb-info-list-item .mat-list-item-content {
             color: map-get($primary, 200);
+            .pxb-info-list-item-subtitle-wrapper {
+                color: map-get($primary, 200);
+            }
         }
 
         .pxb-drawer-nav-item-active-highlight {
