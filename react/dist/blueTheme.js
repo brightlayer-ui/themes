@@ -517,12 +517,22 @@ exports.blueTheme = {
         // TEXT FIELD OVERRIDES
         MuiInput: {
             underline: {
+                '&:before': {
+                    borderBottomColor: ThemeColors.divider,
+                },
+                '&:not($disabled):hover:before': {
+                    borderBottomWidth: 1,
+                    borderBottomColor: PXBColors.black[500],
+                },
                 '&$disabled:before': {
-                    borderBottomColor: ThemeColors.action.disabled,
+                    borderBottomColor: ThemeColors.divider,
                     borderBottomStyle: 'solid',
                 },
-                '&$error:not($focused):not(:hover):after': {
+                '&$error:not($focused):after': {
                     borderBottomWidth: 1,
+                },
+                '&$error:not($focused)&:hover:after': {
+                    borderBottomColor: ThemeColors.error.dark,
                 },
             },
             disabled: {},
@@ -548,6 +558,10 @@ exports.blueTheme = {
                 },
                 '&$error:not($focused):after': {
                     borderBottomWidth: 1,
+                },
+                '&$disabled:before': {
+                    borderBottomColor: ThemeColors.divider,
+                    borderBottomStyle: 'solid',
                 },
             },
             focused: {},
@@ -581,13 +595,17 @@ exports.blueTheme = {
         },
         MuiFormLabel: {
             root: {
-                color: ThemeColors.text.primary,
+                color: ThemeColors.text.secondary,
+                '&$filled': {
+                    color: ThemeColors.text.primary,
+                },
                 '&$error$colorSecondary$focused': {
                     color: ThemeColors.error.main,
                 },
             },
             colorSecondary: {},
             focused: {},
+            filled: {},
         },
         // TOGGLE BUTTON OVERRIDES (LAB)
         // @ts-ignore

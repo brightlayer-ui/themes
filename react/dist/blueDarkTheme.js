@@ -567,7 +567,11 @@ exports.blueDarkTheme = {
         MuiInput: {
             underline: {
                 '&:before': {
-                    borderBottomColor: color_1.default(ThemeColors.action.active).alpha(0.36).string(),
+                    borderBottomColor: ThemeColors.divider,
+                },
+                '&:not($disabled):hover:before': {
+                    borderBottomWidth: 1,
+                    borderBottomColor: PXBColors.black[200],
                 },
                 '&:after': {
                     borderBottomColor: ThemeColors.primary.dark,
@@ -575,14 +579,18 @@ exports.blueDarkTheme = {
                 '&$error$focused:after': {
                     borderBottomColor: ThemeColors.error.dark,
                 },
-                '&$error:not($focused):not(:hover):after': {
+                '&$error:not($focused):after': {
                     borderBottomWidth: 1,
+                    borderBottomColor: ThemeColors.error.dark,
+                },
+                '&$error:not($focused):hover:after': {
+                    borderBottomColor: ThemeColors.error.main,
                 },
                 '&$colorSecondary:not($error):after': {
                     borderBottomColor: ThemeColors.secondary.main,
                 },
                 '&$disabled:before': {
-                    borderBottomColor: ThemeColors.action.disabled,
+                    borderBottomColor: ThemeColors.divider,
                     borderBottomStyle: 'solid',
                 },
             },
@@ -662,7 +670,10 @@ exports.blueDarkTheme = {
         },
         MuiFormLabel: {
             root: {
-                color: ThemeColors.text.primary,
+                color: ThemeColors.text.secondary,
+                '&$filled': {
+                    color: ThemeColors.text.primary,
+                },
                 '&$error$colorSecondary$focused': {
                     color: ThemeColors.error.main,
                 },
@@ -698,11 +709,11 @@ exports.blueDarkTheme = {
                     color: ThemeColors.primary.main,
                     '&:hover': {
                         backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.36).string(),
-                    }
+                    },
                 },
                 '&:hover': {
                     backgroundColor: color_1.default(PXBColors.black[50]).alpha(0.1).string(),
-                }
+                },
             },
             selected: {},
         },

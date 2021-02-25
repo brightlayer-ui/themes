@@ -577,7 +577,11 @@ export const blueDarkTheme: ThemeOptions = {
         MuiInput: {
             underline: {
                 '&:before': {
-                    borderBottomColor: Color(ThemeColors.action.active).alpha(0.36).string(),
+                    borderBottomColor: ThemeColors.divider,
+                },
+                '&:not($disabled):hover:before': {
+                    borderBottomWidth: 1,
+                    borderBottomColor: PXBColors.black[200],
                 },
                 '&:after': {
                     borderBottomColor: ThemeColors.primary.dark,
@@ -585,14 +589,18 @@ export const blueDarkTheme: ThemeOptions = {
                 '&$error$focused:after': {
                     borderBottomColor: ThemeColors.error.dark,
                 },
-                '&$error:not($focused):not(:hover):after': {
+                '&$error:not($focused):after': {
                     borderBottomWidth: 1,
+                    borderBottomColor: ThemeColors.error.dark,
+                },
+                '&$error:not($focused):hover:after': {
+                    borderBottomColor: ThemeColors.error.main,
                 },
                 '&$colorSecondary:not($error):after': {
                     borderBottomColor: ThemeColors.secondary.main,
                 },
                 '&$disabled:before': {
-                    borderBottomColor: ThemeColors.action.disabled,
+                    borderBottomColor: ThemeColors.divider,
                     borderBottomStyle: 'solid',
                 },
             },
@@ -672,7 +680,10 @@ export const blueDarkTheme: ThemeOptions = {
         },
         MuiFormLabel: {
             root: {
-                color: ThemeColors.text.primary,
+                color: ThemeColors.text.secondary,
+                '&$filled': {
+                    color: ThemeColors.text.primary,
+                },
                 '&$error$colorSecondary$focused': {
                     color: ThemeColors.error.main,
                 },
