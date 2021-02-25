@@ -28,12 +28,26 @@
     }
 
     /* slide toggle */
-    .mat-slide-toggle.mat-primary.mat-checked {
-        .mat-slide-toggle-bar {
-            background-color: rgba(128, 196, 249, 0.54);
-        }
+
+    .mat-slide-toggle {
         .mat-slide-toggle-thumb {
-            background-color: map-deep-get($overrides, 'primary', 'main');
+            background-color: map-get($foreground, text);
+        }
+        &.mat-primary.mat-checked, &.mat-accent.mat-checked {
+            .mat-slide-toggle-bar {
+                background-color: rgba(map-deep-get($overrides, 'primary', 'main'), .5);
+            }
+            .mat-slide-toggle-thumb {
+                background-color: map-deep-get($overrides, 'primary', 'main');
+            }
+        }
+        &:not([color]).mat-checked { /* defaults (no color (primary|accent|warn) set) */
+            .mat-slide-toggle-bar {
+                background-color: map-get($foreground, secondary-text);
+            }
+            .mat-slide-toggle-thumb {
+                background-color: map-get($foreground, text);
+            }
         }
     }
 
