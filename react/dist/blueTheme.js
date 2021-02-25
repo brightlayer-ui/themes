@@ -271,7 +271,7 @@ exports.blueTheme = {
             },
             avatar: {},
             avatarColorPrimary: {},
-            avatarColorSecondary: {}
+            avatarColorSecondary: {},
         },
         // FAB OVERRIDES
         MuiFab: {

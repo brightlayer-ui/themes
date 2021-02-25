@@ -103,6 +103,9 @@
             color: map-get($foreground, text);
             background-color: map-get($pxb-black, 900);
         }
+        &.mat-warn {
+            color: map-get($pxb-white, 50);
+        }
     }
 
     /*tab bar*/
