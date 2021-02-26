@@ -228,6 +228,8 @@ exports.blueTheme = {
                 '& $avatar': {
                     backgroundColor: ThemeColors.primary.main,
                     color: WhiteText,
+                    // marginLeft: Spacing,
+                    marginRight: -4,
                 },
                 '& $avatarColorPrimary': {
                     backgroundColor: ThemeColors.primary.light,
@@ -247,8 +249,7 @@ exports.blueTheme = {
                 fontSize: '1.125rem',
                 height: '1.125rem',
                 width: '1.125rem',
-                marginLeft: 0,
-                marginRight: Spacing,
+                margin: "0px " + Spacing + "px 0px -4px",
                 color: ThemeColors.action.active,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -279,6 +280,17 @@ exports.blueTheme = {
                     backgroundColor: PXBColors.blue[100],
                     color: ThemeColors.primary.main,
                 },
+                '& $icon': {
+                    marginLeft: Spacing,
+                    marginRight: -4,
+                },
+                '& $avatar': {
+                    // marginLeft: Spacing,
+                    marginRight: -4,
+                },
+                '& $deleteIcon': {
+                    margin: "0px " + Spacing + "px 0px -4px",
+                }
             },
             outlinedPrimary: {
                 backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
@@ -290,13 +302,10 @@ exports.blueTheme = {
                 fontSize: '1.125rem',
                 color: ThemeColors.text.primary,
                 marginLeft: Spacing,
-                marginRight: 0,
-            },
-            label: {
-                paddingLeft: Spacing,
-                paddingRight: Spacing,
+                marginRight: -4,
             },
             avatar: {},
+            label: {},
             avatarColorPrimary: {},
             avatarColorSecondary: {},
         },
@@ -304,7 +313,18 @@ exports.blueTheme = {
         MuiFab: {
             root: {
                 textTransform: 'none',
+                backgroundColor: PXBColors.white[50],
+                color: ThemeColors.text.primary,
+                '&:hover': {
+                    backgroundColor: color_1.default(PXBColors.black[500]).alpha(0.05).string(),
+                },
+                '&$disabled': {
+                    backgroundColor: ThemeColors.background.paper,
+                    border: "1px solid " + color_1.default(PXBColors.black[500]).alpha(0.12).string(),
+                    color: color_1.default(PXBColors.black[500]).alpha(0.3).string(),
+                },
             },
+            disabled: {},
         },
         // LIST ITEM OVERRIDES
         MuiListItem: {
@@ -316,6 +336,7 @@ exports.blueTheme = {
         MuiMobileStepper: {
             dot: {
                 backgroundColor: PXBColors.gray[200],
+                margin: "0px 4px",
             },
             dotActive: {
                 backgroundColor: ThemeColors.primary.main,
@@ -517,6 +538,28 @@ exports.blueTheme = {
             },
         },
         // TEXT FIELD OVERRIDES
+        MuiInputBase: {
+            root: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled
+                },
+                '& .MuiInputAdornment-positionStart .MuiIconButton-root': {
+                    marginLeft: -12,
+                },
+                '& .MuiInputAdornment-positionEnd .MuiIconButton-root': {
+                    marginRight: -12,
+                },
+            },
+            input: {
+                '&::placeholder': {
+                    color: PXBColors.black[100],
+                    opacity: 1,
+                },
+            },
+            adornedStart: {},
+            adornedEnd: {},
+            disabled: {}
+        },
         MuiInput: {
             underline: {
                 '&:before': {
@@ -598,7 +641,10 @@ exports.blueTheme = {
         MuiFormLabel: {
             root: {
                 color: ThemeColors.text.secondary,
-                '&$filled': {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                },
+                '&$filled:not($disabled)': {
                     color: ThemeColors.text.primary,
                 },
                 '&$error$colorSecondary$focused': {
@@ -608,6 +654,7 @@ exports.blueTheme = {
             colorSecondary: {},
             focused: {},
             filled: {},
+            disabled: {},
         },
         // TOGGLE BUTTON OVERRIDES (LAB)
         // @ts-ignore

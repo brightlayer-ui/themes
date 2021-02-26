@@ -238,6 +238,8 @@ exports.blueDarkTheme = {
                 '& $avatar': {
                     backgroundColor: PXBColors.black[700],
                     color: ThemeColors.text.primary,
+                    // marginLeft: Spacing,
+                    marginRight: -4,
                 },
                 '& $avatarColorPrimary': {
                     backgroundColor: ThemeColors.primary.light,
@@ -257,8 +259,7 @@ exports.blueDarkTheme = {
                 fontSize: '1.125rem',
                 height: '1.125rem',
                 width: '1.125rem',
-                marginLeft: 0,
-                marginRight: Spacing,
+                margin: "0px " + Spacing + "px 0px -4px",
                 color: ThemeColors.text.secondary,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -292,6 +293,8 @@ exports.blueDarkTheme = {
                 '& $avatar': {
                     backgroundColor: PXBColors.black[600],
                     color: ThemeColors.text.primary,
+                    // marginLeft: Spacing,
+                    marginRight: -4,
                 },
                 '& $avatarColorPrimary': {
                     backgroundColor: PXBColors.blue[100],
@@ -301,6 +304,13 @@ exports.blueDarkTheme = {
                     backgroundColor: PXBColors.blue[100],
                     color: ThemeColors.primary.dark,
                 },
+                '& $icon': {
+                    marginLeft: Spacing,
+                    marginRight: -4,
+                },
+                '& $deleteIcon': {
+                    margin: "0px " + Spacing + "px 0px -4px",
+                }
             },
             outlinedPrimary: {
                 backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.2).string(),
@@ -312,13 +322,10 @@ exports.blueDarkTheme = {
                 fontSize: '1.125rem',
                 color: ThemeColors.text.primary,
                 marginLeft: Spacing,
-                marginRight: 0,
-            },
-            label: {
-                paddingLeft: Spacing,
-                paddingRight: Spacing,
+                marginRight: -4,
             },
             avatar: {},
+            label: {},
         },
         // DRAWER OVERRIDES
         MuiDrawer: {
@@ -357,6 +364,7 @@ exports.blueDarkTheme = {
         MuiMobileStepper: {
             dot: {
                 backgroundColor: color_1.default(PXBColors.black[300]).alpha(0.36).string(),
+                margin: "0px 4px",
             },
             dotActive: {
                 backgroundColor: ThemeColors.primary.dark,
@@ -563,12 +571,26 @@ exports.blueDarkTheme = {
         },
         // TEXT FIELD OVERRIDES
         MuiInputBase: {
+            root: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled
+                },
+                '& .MuiInputAdornment-positionStart .MuiIconButton-root': {
+                    marginLeft: -12,
+                },
+                '& .MuiInputAdornment-positionEnd .MuiIconButton-root': {
+                    marginRight: -12,
+                },
+            },
             input: {
                 '&::placeholder': {
                     color: PXBColors.black[300],
                     opacity: 0.36,
                 },
             },
+            adornedStart: {},
+            adornedEnd: {},
+            disabled: {}
         },
         MuiInput: {
             underline: {
@@ -677,7 +699,7 @@ exports.blueDarkTheme = {
         MuiFormLabel: {
             root: {
                 color: ThemeColors.text.secondary,
-                '&$filled': {
+                '&$filled:not($disabled)': {
                     color: ThemeColors.text.primary,
                 },
                 '&$error$colorSecondary$focused': {
