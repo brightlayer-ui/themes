@@ -147,6 +147,7 @@
         &.mat-primary,
         &.mat-accent {
             .mat-chip-remove {
+                opacity: 1;
                 color: map-get($pxb-blue, 100);
                 &:hover {
                     color: map-get($pxb-white, 50);
@@ -238,8 +239,13 @@
                 color: map-get($foreground, disabled);
             }
 
-            &.mat-form-field-appearance-fill .mat-form-field-underline::before {
-                background-color: map-get($foreground, disabled);
+            &.mat-form-field-appearance-fill {
+                .mat-form-field-underline::before {
+                    background-color: map-get($foreground, disabled);
+                }
+                .mat-form-field-flex {
+                    background-color: rgba(map-get($pxb-black, 800), .5);
+                }
             }
         }
 
