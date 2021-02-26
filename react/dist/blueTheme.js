@@ -129,7 +129,7 @@ exports.blueTheme = {
                 '&$disableElevation': {
                     backgroundColor: PXBColors.white[500],
                     '&:hover': {
-                        backgroundColor: PXBColors.white[400],
+                        backgroundColor: PXBColors.white[300],
                     },
                     '&$disabled': {
                         borderWidth: 0,

@@ -141,6 +141,36 @@
         }
     }
 
+    /* Buttons */
+    .mat-button:not(.mat-button-disabled) {
+        &:not(.mat-warn):hover {
+            background-color: rgba(232, 234, 234, 0.1)
+        }
+        &.mat-primary, &.mat-accent {
+            color: map-deep-get($overrides, primary, main);
+            &:hover {
+                background-color: rgba(0, 123, 193, 0.2);
+            }
+        }
+    }
+    .mat-raised-button.mat-accent, .mat-flat-button.mat-accent {
+        color: map-get($pxb-white, 50);
+        background-color: map-get($pxb-lightBlue, 500);
+    }
+    .mat-stroked-button:not(.mat-button-disabled) {
+        border-color: map-get($pxb-black, 200);
+        &.mat-primary, &.mat-accent {
+            color: map-deep-get($overrides, primary, main);
+            border-color: map-deep-get($overrides, primary, main);
+            &:hover {
+                background-color: rgba(0, 123, 193, 0.2);
+            }
+        }
+        &.mat-warn {
+            border-color: map-deep-get($overrides, error, dark);
+        }
+    }
+
     /* Chips */
     .mat-chip {
         &.mat-standard-chip,
