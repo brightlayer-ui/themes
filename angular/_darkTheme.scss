@@ -264,7 +264,6 @@
 
         /* Primary */
         &.mat-primary:not(.mat-form-field-disabled) {
-
             .mat-form-field-flex:focus-within {
                 .mat-form-field-label {
                     color: map-deep-get($overrides, primary, main);
