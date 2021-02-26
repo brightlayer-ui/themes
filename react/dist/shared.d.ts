@@ -13,6 +13,9 @@ export declare const typography: {
     h6: {
         fontWeight: number;
     };
+    subtitle1: {
+        fontWeight: number;
+    };
     subtitle2: {
         fontWeight: number;
     };
@@ -32,4 +35,5 @@ export declare const typography: {
         fontWeight: number;
     };
 };
-export declare const createSimplePalette: (color: PXBlueColor) => SimplePaletteColorOptions;
+export declare const createSimpleLightPalette: (color: PXBlueColor) => SimplePaletteColorOptions;
+export declare const createSimpleDarkPalette: (color: PXBlueColor) => SimplePaletteColorOptions;

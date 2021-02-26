@@ -6,93 +6,334 @@
  This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
  **/
 
-import { typography, createSimplePalette } from './shared';
+import { typography, createSimpleDarkPalette as createSimplePalette } from './shared';
 import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
+import Color from 'color';
+import * as PXBColors from '@pxblue/colors';
 
-import * as ThemeColors from '@pxblue/colors';
+/* 
+    Variable color definitions so we can reuse them in the theme overrides below
+*/
+const ThemeColors = {
+    primary: createSimplePalette(PXBColors.blue),
+    secondary: createSimplePalette(PXBColors.lightBlue),
+    error: createSimplePalette(PXBColors.red),
+    success: createSimplePalette(PXBColors.green),
+    info: createSimplePalette(PXBColors.lightBlue),
+    divider: Color(PXBColors.black[200]).alpha(0.36).string(),
+    warning: {
+        light: PXBColors.yellow[100],
+        main: PXBColors.yellow[300],
+        dark: PXBColors.yellow[900],
+    },
+    background: {
+        default: PXBColors.darkBlack[800],
+        paper: PXBColors.black[900],
+    },
+    text: {
+        primary: PXBColors.black[50],
+        secondary: PXBColors.black[200],
+        disabled: Color(PXBColors.black[300]).alpha(0.36).string(),
+        hint: Color(PXBColors.black[300]).alpha(0.36).string(),
+    },
+    action: {
+        hover: Color(PXBColors.black[50]).alpha(0.1).string(),
+        active: PXBColors.black[200],
+        disabled: Color(PXBColors.black[50]).alpha(0.1).string(),
+        disabledBackground: Color(PXBColors.black[200]).alpha(0.24).string(),
+    },
+};
+const WhiteText = PXBColors.white[50];
+const MediumBlackBackground = PXBColors.black[500];
+const BlackText = PXBColors.black[500];
+const Spacing = 8;
+// const BlackBorder = PXBColors.black[500];
 
+/*
+    Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
+    to customize in our themes. These have changed periodically from version to version of Material UI.
+*/
 export const blueDarkTheme: ThemeOptions = {
     direction: 'ltr',
     typography: typography,
     palette: {
         type: 'dark',
-        primary: createSimplePalette(ThemeColors.blue),
-        secondary: createSimplePalette(ThemeColors.lightBlue),
-        error: createSimplePalette(ThemeColors.red),
-        background: {
-            default: ThemeColors.darkBlack[100],
-            paper: ThemeColors.black[900],
-        },
-        text: {
-            primary: ThemeColors.gray[300],
-            secondary: ThemeColors.black[300],
-            hint: ThemeColors.gray[300],
-        },
-        action: {
-            active: ThemeColors.gray[300],
-        },
+        primary: ThemeColors.primary,
+        secondary: ThemeColors.secondary,
+        error: ThemeColors.error,
+        success: ThemeColors.success,
+        info: ThemeColors.info,
+        divider: ThemeColors.divider,
+        warning: ThemeColors.warning,
+        background: ThemeColors.background,
+        text: ThemeColors.text,
+        action: ThemeColors.action,
     },
 
     overrides: {
         // APP BAR OVERRIDES
         MuiAppBar: {
             colorDefault: {
-                color: ThemeColors.black[100],
-                backgroundColor: ThemeColors.darkBlack[100],
+                color: ThemeColors.text.primary,
+                backgroundColor: PXBColors.darkBlack[100],
             },
             colorPrimary: {
-                color: ThemeColors.black[50],
-                backgroundColor: ThemeColors.darkBlack[900],
+                color: ThemeColors.text.primary,
+                backgroundColor: PXBColors.black[800],
             },
             colorSecondary: {
-                backgroundColor: ThemeColors.black[400],
+                color: ThemeColors.text.primary,
+                backgroundColor: PXBColors.black[900],
+            },
+        },
+
+        // AVATAR OVERRIDES
+        MuiAvatar: {
+            colorDefault: {
+                backgroundColor: Color(PXBColors.black[50]).alpha(0.1).string(),
+                color: ThemeColors.text.primary,
             },
         },
 
         // BACKDROP OVERRIDES
         MuiBackdrop: {
             root: {
-                backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                backgroundColor: Color(PXBColors.darkBlack[900]).alpha(0.7).string(),
             },
+        },
+
+        // BADGE OVERRIDES
+        MuiBadge: {
+            colorError: {
+                backgroundColor: ThemeColors.error.dark,
+                color: WhiteText,
+            },
+            colorPrimary: {
+                backgroundColor: ThemeColors.primary.dark,
+                color: WhiteText,
+            },
+            colorSecondary: {
+                backgroundColor: ThemeColors.secondary.dark,
+                color: WhiteText,
+            },
+        },
+
+        // BOTTOM NAVIGATION OVERRIDES
+        MuiBottomNavigation: {
+            root: {
+                backgroundColor: PXBColors.black[800],
+            },
+        },
+        MuiBottomNavigationAction: {
+            root: {
+                '&$selected': {
+                    '& $label': {
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                    },
+                },
+                '&:not($selected) $label': {
+                    color: ThemeColors.text.primary,
+                },
+            },
+            selected: {},
+            label: {},
         },
 
         // BUTTON OVERRIDES
         MuiButton: {
             root: {
                 textTransform: 'none',
-            },
-            outlined: {
-                borderColor: ThemeColors.black[100],
-            },
-            outlinedPrimary: {
-                borderColor: ThemeColors.blue[500],
-            },
-            outlinedSecondary: {
-                borderColor: ThemeColors.lightBlue[500],
-            },
-            contained: {
-                backgroundColor: ThemeColors.black[500],
-                color: ThemeColors.white[50],
                 '&:hover': {
-                    backgroundColor: ThemeColors.black[300],
+                    backgroundColor: PXBColors.black[400],
                 },
             },
+            outlined: {
+                borderColor: PXBColors.black[200],
+                '&$disabled': {
+                    borderColor: Color(PXBColors.black[200]).alpha(0.36).string(),
+                    color: Color(PXBColors.black[300]).alpha(0.36).string(),
+                },
+            },
+            outlinedPrimary: {
+                borderColor: ThemeColors.primary.main,
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
+                },
+            },
+            outlinedSecondary: {
+                '&:not($disabled)': {
+                    borderColor: ThemeColors.secondary.main,
+                    // backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
+                    '&:hover': {
+                        // color: PXBColors.blue[100],
+                        // borderColor: PXBColors.blue[100],
+                        backgroundColor: Color(ThemeColors.secondary.dark).alpha(0.2).string(),
+                    },
+                },
+                '&$disabled': {
+                    borderColor: Color(PXBColors.black[200]).alpha(0.36).string(),
+                    color: Color(PXBColors.black[300]).alpha(0.36).string(),
+                },
+            },
+            contained: {
+                backgroundColor: MediumBlackBackground,
+                color: WhiteText,
+                '&:hover': {
+                    backgroundColor: PXBColors.black[400],
+                },
+                '&$disabled': {
+                    backgroundColor: Color(PXBColors.black[200]).alpha(0.24).string(),
+                    color: PXBColors.black[400],
+                },
+            },
+            containedPrimary: {
+                backgroundColor: ThemeColors.primary.dark,
+                color: WhiteText,
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+                '&$disabled': {
+                    borderWidth: 0,
+                },
+            },
+            containedSecondary: {
+                backgroundColor: ThemeColors.secondary.dark,
+                color: WhiteText,
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
+                },
+                '&$disabled': {
+                    borderWidth: 0,
+                },
+            },
+            text: {
+                '&$disabled': {
+                    color: Color(PXBColors.black[300]).alpha(0.36).string(),
+                },
+                '&:hover': {
+                    backgroundColor: Color(PXBColors.black[50]).alpha(0.1).string(),
+                },
+            },
+            textPrimary: {
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
+                },
+            },
+            textSecondary: {
+                '&:hover': {
+                    backgroundColor: Color(ThemeColors.secondary.dark).alpha(0.2).string(),
+                },
+            },
+            disabled: {},
         },
 
         // CHIP OVERRIDES
         MuiChip: {
             root: {
-                backgroundColor: ThemeColors.black[500],
+                fontSize: '0.875rem',
+                backgroundColor: MediumBlackBackground,
+                color: ThemeColors.text.primary,
+                '& $avatar': {
+                    backgroundColor: PXBColors.black[700],
+                    color: ThemeColors.text.primary,
+                    // marginLeft: Spacing,
+                    marginRight: -4,
+                },
+                '& $avatarColorPrimary': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: ThemeColors.primary.dark,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: ThemeColors.primary.dark,
+                },
             },
+            clickable: {
+                '&:hover': {
+                    backgroundColor: PXBColors.black[400],
+                },
+            },
+            deleteIcon: {
+                fontSize: '1.125rem',
+                height: '1.125rem',
+                width: '1.125rem',
+                margin: `0px ${Spacing}px 0px -4px`,
+                color: ThemeColors.text.secondary,
+                '&:hover': {
+                    color: ThemeColors.text.primary,
+                },
+            },
+            deleteIconColorPrimary: {
+                color: PXBColors.blue[100],
+                '&:hover': {
+                    color: WhiteText,
+                },
+            },
+            deleteIconOutlinedColorPrimary: {
+                color: PXBColors.blue[400],
+                '&:hover': {
+                    color: ThemeColors.primary.main,
+                },
+            },
+            colorPrimary: {
+                color: WhiteText,
+                backgroundColor: ThemeColors.primary.dark,
+                '&$clickable:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+            },
+            outlined: {
+                backgroundColor: ThemeColors.background.paper,
+                borderColor: Color(PXBColors.black[200]).alpha(0.32).string(),
+                '&$clickable:hover': {
+                    backgroundColor: PXBColors.black[800],
+                },
+                '& $avatar': {
+                    backgroundColor: PXBColors.black[600],
+                    color: ThemeColors.text.primary,
+                    // marginLeft: Spacing,
+                    marginRight: -4,
+                },
+                '& $avatarColorPrimary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.dark,
+                },
+                '& $avatarColorSecondary': {
+                    backgroundColor: PXBColors.blue[100],
+                    color: ThemeColors.primary.dark,
+                },
+                '& $icon': {
+                    marginLeft: Spacing,
+                    marginRight: -4,
+                },
+                '& $deleteIcon': {
+                    margin: `0px ${Spacing}px 0px -4px`,
+                },
+            },
+            outlinedPrimary: {
+                backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
+                '&$clickable:hover': {
+                    backgroundColor: Color(ThemeColors.primary.dark).alpha(0.3).string(),
+                },
+            },
+            icon: {
+                fontSize: '1.125rem',
+                color: ThemeColors.text.primary,
+                marginLeft: Spacing,
+                marginRight: -4,
+            },
+            avatar: {},
+            label: {},
         },
 
         // DRAWER OVERRIDES
         MuiDrawer: {
             paper: {
-                backgroundColor: ThemeColors.darkBlack[500],
+                backgroundColor: PXBColors.darkBlack[300],
             },
             paperAnchorBottom: {
-                backgroundColor: ThemeColors.black[900],
+                backgroundColor: ThemeColors.background.paper,
             },
         },
 
@@ -100,10 +341,17 @@ export const blueDarkTheme: ThemeOptions = {
         MuiFab: {
             root: {
                 textTransform: 'none',
-                backgroundColor: ThemeColors.black[500],
-                color: ThemeColors.white[50],
+                backgroundColor: MediumBlackBackground,
+                color: WhiteText,
                 '&:hover': {
-                    backgroundColor: ThemeColors.black[300],
+                    backgroundColor: PXBColors.black[300],
+                },
+            },
+            primary: {
+                backgroundColor: ThemeColors.primary.dark,
+                color: WhiteText,
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[700],
                 },
             },
         },
@@ -111,16 +359,147 @@ export const blueDarkTheme: ThemeOptions = {
         //LIST ITEM OVERRIDES (plus nav drawer)
         MuiListItem: {
             root: {
-                color: ThemeColors.gray[300],
+                color: ThemeColors.text.primary,
+            },
+        },
+
+        // MOBILE STEPPER OVERRIDES
+        MuiMobileStepper: {
+            dot: {
+                backgroundColor: Color(PXBColors.black[300]).alpha(0.36).string(),
+                margin: `0px 4px`,
+            },
+            dotActive: {
+                backgroundColor: ThemeColors.primary.dark,
+            },
+        },
+
+        // SLIDER OVERRIDES
+        MuiSlider: {
+            root: {
+                height: 6,
+                color: PXBColors.blue[300],
+            },
+            track: {
+                height: 6,
+                marginTop: -1,
+            },
+            rail: {
+                height: 4,
+                backgroundColor: PXBColors.black[300],
+            },
+            thumb: {
+                height: 20,
+                width: 20,
+                marginTop: -8,
+                backgroundColor: ThemeColors.primary.main,
+            },
+            thumbColorSecondary: {
+                backgroundColor: ThemeColors.secondary.main,
+            },
+            mark: {
+                backgroundColor: ThemeColors.primary.dark,
+                marginTop: 1,
+            },
+            markActive: {
+                backgroundColor: ThemeColors.primary.dark,
             },
         },
 
         // SNACKBAR OVERRIDES
         MuiSnackbarContent: {
             root: {
-                backgroundColor: ThemeColors.darkBlack[900],
-                color: ThemeColors.white[50],
+                // backgroundColor: PXBColors.black[900],
+                color: BlackText,
+                '& .MuiButton-textPrimary': {
+                    color: ThemeColors.primary.dark,
+                },
+                '& .MuiButton-textSecondary': {
+                    color: PXBColors.lightBlue[500],
+                },
             },
+        },
+
+        // STEPPER OVERRIDES
+        MuiStepper: {},
+        MuiStepConnector: {
+            line: {
+                borderColor: ThemeColors.divider,
+            },
+        },
+        MuiStep: {
+            completed: {
+                // Place a white background behind the icons so that the checks will not be see-through
+                '& .MuiStepLabel-iconContainer:before': {
+                    content: '""',
+                    position: 'absolute',
+                    display: 'block',
+                    top: '5%',
+                    right: '5%',
+                    bottom: '5%',
+                    left: '5%',
+                    backgroundColor: PXBColors.white[50],
+                    borderRadius: '50%',
+                },
+            },
+        },
+        MuiStepIcon: {
+            root: {
+                color: Color(PXBColors.black[300]).alpha(0.32).string(),
+                zIndex: 1,
+                '&$active': {
+                    color: ThemeColors.primary.dark,
+                },
+                '&$completed': {
+                    color: ThemeColors.primary.dark,
+                },
+            },
+            text: {
+                fill: PXBColors.black[300],
+            },
+            active: {
+                '& $text': {
+                    fill: WhiteText,
+                },
+            },
+            completed: {},
+        },
+        MuiStepLabel: {
+            label: {
+                color: ThemeColors.text.secondary,
+                '&$active': {
+                    fontWeight: 600,
+                    color: ThemeColors.primary.main,
+                },
+                '&$completed': {
+                    fontWeight: 600,
+                },
+            },
+            iconContainer: {
+                position: 'relative',
+            },
+            active: {},
+            completed: {},
+        },
+
+        // SWITCH OVERRIDES
+        MuiSwitch: {
+            switchBase: {
+                color: ThemeColors.text.primary,
+                '&$checked + $track': {
+                    opacity: 0.5,
+                },
+            },
+            colorPrimary: {
+                '&$checked': {
+                    color: ThemeColors.primary.main,
+                },
+            },
+            track: {
+                backgroundColor: PXBColors.black[300],
+                opacity: 0.36,
+            },
+            checked: {},
         },
 
         // TABLE OVERRIDES
@@ -131,23 +510,250 @@ export const blueDarkTheme: ThemeOptions = {
         },
         MuiTableHead: {
             root: {
-                background: ThemeColors.darkBlack[100],
+                background: ThemeColors.background.paper,
             },
         },
         MuiTableRow: {
             root: {
-                color: ThemeColors.gray[100],
-                '&$selected': {
-                    backgroundColor: ThemeColors.darkBlack[500],
+                color: ThemeColors.text.primary,
+                backgroundColor: PXBColors.darkBlack[300],
+                '&$hover:hover': {
+                    backgroundColor: Color(PXBColors.darkBlack[300]).mix(Color(PXBColors.black[500]), 0.5).string(),
                 },
+                '&:nth-of-type(odd):not($selected)': {
+                    backgroundColor: PXBColors.black[900],
+                    '&$hover:hover': {
+                        backgroundColor: Color(PXBColors.black[900]).mix(Color(PXBColors.black[500]), 0.5).string(),
+                    },
+                },
+                '&$selected': {
+                    backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
+                    '&$hover:hover': {
+                        backgroundColor: Color(ThemeColors.primary.dark)
+                            .mix(Color(PXBColors.black[500]), 0.5)
+                            .alpha(0.2)
+                            .string(),
+                    },
+                },
+            },
+            hover: {},
+        },
+        MuiTableSortLabel: {
+            root: {
+                '&:hover': {
+                    color: ThemeColors.text.primary,
+                    '& $icon': {
+                        color: ThemeColors.text.secondary,
+                        opacity: 1,
+                    },
+                },
+            },
+            icon: {
+                opacity: 0.36,
             },
         },
 
         // TABS OVERRIDES
-        MuiTabs: {
-            indicator: {
-                backgroundColor: ThemeColors.blue[500],
+        MuiTab: {
+            root: {
+                fontWeight: 400,
+                '&$selected': {
+                    fontWeight: 600,
+                },
             },
+            textColorInherit: {
+                color: ThemeColors.text.secondary,
+                opacity: 1,
+                '&$selected': {
+                    color: ThemeColors.primary.main,
+                },
+            },
+            selected: {},
+        },
+        MuiTabs: {
+            root: {
+                color: ThemeColors.text.secondary,
+            },
+            indicator: {
+                backgroundColor: ThemeColors.primary.main,
+            },
+        },
+
+        // TEXT FIELD OVERRIDES
+        MuiInputBase: {
+            root: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                },
+            },
+            input: {
+                '&::placeholder': {
+                    color: PXBColors.black[300],
+                    opacity: 0.36,
+                },
+            },
+            adornedStart: {},
+            adornedEnd: {},
+            disabled: {},
+        },
+        MuiInput: {
+            underline: {
+                '&:before': {
+                    borderBottomColor: ThemeColors.divider,
+                },
+                '&:not($disabled):hover:before': {
+                    borderBottomWidth: 1,
+                    borderBottomColor: PXBColors.black[200],
+                },
+                '&:after': {
+                    borderBottomColor: ThemeColors.primary.dark,
+                },
+                '&$error$focused:after': {
+                    borderBottomColor: ThemeColors.error.dark,
+                },
+                '&$error:not($focused):after': {
+                    borderBottomWidth: 1,
+                    borderBottomColor: ThemeColors.error.dark,
+                },
+                '&$error:not($focused):hover:after': {
+                    borderBottomColor: ThemeColors.error.main,
+                },
+                '&$colorSecondary:not($error):after': {
+                    borderBottomColor: ThemeColors.secondary.dark,
+                },
+                '&$disabled:before': {
+                    borderBottomColor: ThemeColors.divider,
+                    borderBottomStyle: 'solid',
+                },
+            },
+            disabled: {},
+            focused: {},
+            colorSecondary: {},
+            error: {},
+        },
+        MuiFilledInput: {
+            root: {
+                backgroundColor: PXBColors.black[800],
+                '&:hover': {
+                    backgroundColor: PXBColors.black[600],
+                },
+                '&$focused': {
+                    backgroundColor: PXBColors.black[800],
+                },
+                '&$disabled': {
+                    color: Color(PXBColors.black[300]).alpha(0.36).string(),
+                    backgroundColor: Color(PXBColors.black[800]).alpha(0.5).string(),
+                    pointerEvents: 'none',
+                },
+            },
+            underline: {
+                '&:before': {
+                    borderBottomColor: ThemeColors.divider,
+                },
+                '&:after': {
+                    borderBottomColor: ThemeColors.primary.dark,
+                },
+                '&$error$focused:after': {
+                    borderBottomColor: ThemeColors.error.dark,
+                },
+                '&$error:not($focused):after': {
+                    borderBottomWidth: 1,
+                },
+                '&$disabled:before': {
+                    borderBottomStyle: 'solid',
+                },
+                '&$colorSecondary:not($error):after': {
+                    borderBottomColor: ThemeColors.secondary.dark,
+                },
+            },
+            focused: {},
+            disabled: {},
+            colorSecondary: {},
+            error: {},
+        },
+        MuiOutlinedInput: {
+            root: {
+                '&$error $notchedOutline': {
+                    borderColor: ThemeColors.error.dark,
+                },
+                '&$disabled $notchedOutline': {
+                    borderColor: ThemeColors.divider,
+                },
+                '&:hover $notchedOutline': {
+                    borderColor: PXBColors.black[200],
+                },
+                '&$error$colorSecondary$focused $notchedOutline': {
+                    borderColor: ThemeColors.error.dark,
+                },
+                '&$error:hover:not($focused) $notchedOutline': {
+                    borderColor: ThemeColors.error.main,
+                },
+                '&$focused $notchedOutline': {
+                    borderColor: ThemeColors.primary.dark,
+                },
+                '&$colorSecondary$focused $notchedOutline': {
+                    borderColor: ThemeColors.secondary.dark,
+                },
+            },
+            colorSecondary: {},
+            focused: {},
+            error: {},
+            disabled: {},
+            notchedOutline: {
+                borderColor: ThemeColors.divider,
+            },
+        },
+        MuiFormLabel: {
+            root: {
+                color: ThemeColors.text.secondary,
+                '&$filled:not($disabled):not($focused):not($error)': {
+                    color: ThemeColors.text.primary,
+                },
+                '&$error$colorSecondary$focused': {
+                    color: ThemeColors.error.main,
+                },
+            },
+            colorSecondary: {},
+            error: {},
+            disabled: {},
+            focused: {},
+        },
+
+        // TOGGLE BUTTON OVERRIDES (LAB)
+        // @ts-ignore
+        MuiToggleButtonGroup: {
+            root: {
+                backgroundColor: ThemeColors.background.paper,
+            },
+            groupedHorizontal: {
+                '&:not(:first-child)': {
+                    marginLeft: 0,
+                },
+            },
+            groupedVertical: {
+                '&:not(:first-child)': {
+                    marginTop: 0,
+                },
+            },
+        },
+        // @ts-ignore
+        MuiToggleButton: {
+            root: {
+                backgroundColor: ThemeColors.background.paper,
+                color: PXBColors.gray[500],
+                borderColor: Color(PXBColors.black[200]).alpha(0.32).string(),
+                '&$selected': {
+                    backgroundColor: Color(ThemeColors.primary.dark).alpha(0.36).string(),
+                    color: ThemeColors.primary.main,
+                    '&:hover': {
+                        backgroundColor: Color(ThemeColors.primary.main).alpha(0.36).string(),
+                    },
+                },
+                '&:hover': {
+                    backgroundColor: Color(PXBColors.black[50]).alpha(0.1).string(),
+                },
+            },
+            selected: {},
         },
     },
 };
