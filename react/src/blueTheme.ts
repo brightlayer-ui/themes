@@ -126,7 +126,7 @@ export const blueTheme: ThemeOptions = {
                 '&$disableElevation': {
                     backgroundColor: PXBColors.white[500],
                     '&:hover': {
-                        backgroundColor: PXBColors.white[400],
+                        backgroundColor: PXBColors.white[300],
                     },
                     '&$disabled': {
                         borderWidth: 0,
@@ -227,6 +227,8 @@ export const blueTheme: ThemeOptions = {
                 '& $avatar': {
                     backgroundColor: ThemeColors.primary.main,
                     color: WhiteText,
+                    // marginLeft: Spacing,
+                    marginRight: -4,
                 },
                 '& $avatarColorPrimary': {
                     backgroundColor: ThemeColors.primary.light,
@@ -246,8 +248,7 @@ export const blueTheme: ThemeOptions = {
                 fontSize: '1.125rem',
                 height: '1.125rem',
                 width: '1.125rem',
-                marginLeft: 0,
-                marginRight: Spacing,
+                margin: `0px ${Spacing}px 0px -4px`,
                 color: ThemeColors.action.active,
                 '&:hover': {
                     color: ThemeColors.text.primary,
@@ -278,6 +279,17 @@ export const blueTheme: ThemeOptions = {
                     backgroundColor: PXBColors.blue[100],
                     color: ThemeColors.primary.main,
                 },
+                '& $icon': {
+                    marginLeft: Spacing,
+                    marginRight: -4,
+                },
+                '& $avatar': {
+                    // marginLeft: Spacing,
+                    marginRight: -4,
+                },
+                '& $deleteIcon': {
+                    margin: `0px ${Spacing}px 0px -4px`,
+                },
             },
             outlinedPrimary: {
                 backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
@@ -289,13 +301,10 @@ export const blueTheme: ThemeOptions = {
                 fontSize: '1.125rem',
                 color: ThemeColors.text.primary,
                 marginLeft: Spacing,
-                marginRight: 0,
-            },
-            label: {
-                paddingLeft: Spacing,
-                paddingRight: Spacing,
+                marginRight: -4,
             },
             avatar: {},
+            label: {},
             avatarColorPrimary: {},
             avatarColorSecondary: {},
         },
@@ -304,7 +313,18 @@ export const blueTheme: ThemeOptions = {
         MuiFab: {
             root: {
                 textTransform: 'none',
+                backgroundColor: PXBColors.white[50],
+                color: ThemeColors.text.primary,
+                '&:hover': {
+                    backgroundColor: Color(PXBColors.black[500]).alpha(0.05).string(),
+                },
+                '&$disabled': {
+                    backgroundColor: ThemeColors.background.paper,
+                    border: `1px solid ${Color(PXBColors.black[500]).alpha(0.12).string()}`,
+                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
+                },
             },
+            disabled: {},
         },
 
         // LIST ITEM OVERRIDES
@@ -318,6 +338,7 @@ export const blueTheme: ThemeOptions = {
         MuiMobileStepper: {
             dot: {
                 backgroundColor: PXBColors.gray[200],
+                margin: `0px 4px`,
             },
             dotActive: {
                 backgroundColor: ThemeColors.primary.main,
@@ -526,6 +547,22 @@ export const blueTheme: ThemeOptions = {
         },
 
         // TEXT FIELD OVERRIDES
+        MuiInputBase: {
+            root: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                },
+            },
+            input: {
+                '&::placeholder': {
+                    color: PXBColors.black[100],
+                    opacity: 1,
+                },
+            },
+            adornedStart: {},
+            adornedEnd: {},
+            disabled: {},
+        },
         MuiInput: {
             underline: {
                 '&:before': {
@@ -607,7 +644,10 @@ export const blueTheme: ThemeOptions = {
         MuiFormLabel: {
             root: {
                 color: ThemeColors.text.secondary,
-                '&$filled': {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                },
+                '&$filled:not($disabled):not($focused):not($error)': {
                     color: ThemeColors.text.primary,
                 },
                 '&$error$colorSecondary$focused': {
@@ -617,6 +657,8 @@ export const blueTheme: ThemeOptions = {
             colorSecondary: {},
             focused: {},
             filled: {},
+            disabled: {},
+            error: {},
         },
 
         // TOGGLE BUTTON OVERRIDES (LAB)
