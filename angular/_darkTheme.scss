@@ -216,6 +216,11 @@
             color: map-get($pxb-black, 50);
         }
 
+        /* Icon */
+        .mat-form-field-suffix {
+            color: map-get($pxb-black, 200);
+        }
+
         /* Disabled */
         &.mat-form-field-disabled {
             &.mat-form-field-appearance-legacy,
@@ -239,9 +244,9 @@
         }
 
         /* Underline */
-        &.mat-form-field-appearance-legacy,
-        &.mat-form-field-appearance-standard,
-        &.mat-form-field-appearance-fill {
+        &.mat-form-field-appearance-legacy:not(.mat-form-field-disabled),
+        &.mat-form-field-appearance-standard:not(.mat-form-field-disabled),
+        &.mat-form-field-appearance-fill:not(.mat-form-field-disabled) {
             .mat-form-field-underline {
                 background-color: map-get($foreground, divider);
             }
@@ -364,7 +369,6 @@
                     .mat-form-field-outline-gap {
                         border-width: 1px;
                     }
-
                     color: map-deep-get($overrides, error, dark);
                 }
 
@@ -374,7 +378,6 @@
 
                 .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
                     color: map-deep-get($overrides, error, dark);
-
                     .mat-form-field-outline-start,
                     .mat-form-field-outline-end,
                     .mat-form-field-outline-gap {
