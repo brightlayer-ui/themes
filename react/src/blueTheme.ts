@@ -126,7 +126,7 @@ export const blueTheme: ThemeOptions = {
                 '&$disableElevation': {
                     backgroundColor: PXBColors.white[500],
                     '&:hover': {
-                        backgroundColor: PXBColors.white[400],
+                        backgroundColor: PXBColors.white[300],
                     },
                     '&$disabled': {
                         borderWidth: 0,
@@ -551,12 +551,6 @@ export const blueTheme: ThemeOptions = {
             root: {
                 '&$disabled': {
                     color: ThemeColors.action.disabled,
-                },
-                '& .MuiInputAdornment-positionStart .MuiIconButton-root': {
-                    marginLeft: -12,
-                },
-                '& .MuiInputAdornment-positionEnd .MuiIconButton-root': {
-                    marginRight: -12,
                 },
             },
             input: {

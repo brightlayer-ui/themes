@@ -98,14 +98,14 @@ const withIcons = {
     InputProps: {
         endAdornment: (
             <InputAdornment position="end">
-                <IconButton>
+                <IconButton edge={'end'}>
                     <VisibilityOff />
                 </IconButton>
             </InputAdornment>
         ),
         startAdornment: (
             <InputAdornment position={'start'}>
-                <IconButton>
+                <IconButton edge={'start'}>
                     <Visibility />
                 </IconButton>
             </InputAdornment>

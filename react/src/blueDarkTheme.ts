@@ -585,12 +585,6 @@ export const blueDarkTheme: ThemeOptions = {
                 '&$disabled': {
                     color: ThemeColors.action.disabled,
                 },
-                '& .MuiInputAdornment-positionStart .MuiIconButton-root': {
-                    marginLeft: -12,
-                },
-                '& .MuiInputAdornment-positionEnd .MuiIconButton-root': {
-                    marginRight: -12,
-                },
             },
             input: {
                 '&::placeholder': {
