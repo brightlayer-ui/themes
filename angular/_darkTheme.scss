@@ -244,7 +244,7 @@
                     background-color: map-get($foreground, disabled);
                 }
                 .mat-form-field-flex {
-                    background-color: rgba(map-get($pxb-black, 800), .5);
+                    background-color: rgba(map-get($pxb-black, 800), 0.5);
                 }
             }
         }
@@ -465,7 +465,7 @@
 
     /* Nav list */
     .mat-nav-list .mat-list-item:hover {
-        background-color: rgba(map-get($pxb-black, 50), .1);
+        background-color: rgba(map-get($pxb-black, 50), 0.1);
     }
 
     /* table*/
@@ -544,7 +544,7 @@
 
     /* User Menu */
     .pxb-user-menu-avatar {
-        background-color: rgba(map-get($pxb-black, 50), .1);
+        background-color: rgba(map-get($pxb-black, 50), 0.1);
         color: map-get($pxb-black, 50);
     }
 }
