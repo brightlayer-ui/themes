@@ -653,7 +653,7 @@ export const blueTheme: ThemeOptions = {
                 '&$disabled': {
                     color: ThemeColors.action.disabled,
                 },
-                '&$filled:not($disabled)': {
+                '&$filled:not($disabled):not($focused):not($error)': {
                     color: ThemeColors.text.primary,
                 },
                 '&$error$colorSecondary$focused': {
@@ -664,6 +664,7 @@ export const blueTheme: ThemeOptions = {
             focused: {},
             filled: {},
             disabled: {},
+            error: {},
         },
 
         // TOGGLE BUTTON OVERRIDES (LAB)

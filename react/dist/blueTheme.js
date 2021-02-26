@@ -290,7 +290,7 @@ exports.blueTheme = {
                 },
                 '& $deleteIcon': {
                     margin: "0px " + Spacing + "px 0px -4px",
-                }
+                },
             },
             outlinedPrimary: {
                 backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
@@ -541,7 +541,7 @@ exports.blueTheme = {
         MuiInputBase: {
             root: {
                 '&$disabled': {
-                    color: ThemeColors.action.disabled
+                    color: ThemeColors.action.disabled,
                 },
                 '& .MuiInputAdornment-positionStart .MuiIconButton-root': {
                     marginLeft: -12,
@@ -558,7 +558,7 @@ exports.blueTheme = {
             },
             adornedStart: {},
             adornedEnd: {},
-            disabled: {}
+            disabled: {},
         },
         MuiInput: {
             underline: {
@@ -644,7 +644,7 @@ exports.blueTheme = {
                 '&$disabled': {
                     color: ThemeColors.action.disabled,
                 },
-                '&$filled:not($disabled)': {
+                '&$filled:not($disabled):not($focused):not($error)': {
                     color: ThemeColors.text.primary,
                 },
                 '&$error$colorSecondary$focused': {
@@ -655,6 +655,7 @@ exports.blueTheme = {
             focused: {},
             filled: {},
             disabled: {},
+            error: {},
         },
         // TOGGLE BUTTON OVERRIDES (LAB)
         // @ts-ignore

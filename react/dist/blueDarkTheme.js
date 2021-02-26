@@ -182,7 +182,7 @@ exports.blueDarkTheme = {
                 backgroundColor: MediumBlackBackground,
                 color: WhiteText,
                 '&:hover': {
-                    backgroundColor: PXBColors.black[300],
+                    backgroundColor: PXBColors.black[400],
                 },
                 '&$disabled': {
                     backgroundColor: color_1.default(PXBColors.black[200]).alpha(0.24).string(),
@@ -310,7 +310,7 @@ exports.blueDarkTheme = {
                 },
                 '& $deleteIcon': {
                     margin: "0px " + Spacing + "px 0px -4px",
-                }
+                },
             },
             outlinedPrimary: {
                 backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.2).string(),
@@ -573,7 +573,7 @@ exports.blueDarkTheme = {
         MuiInputBase: {
             root: {
                 '&$disabled': {
-                    color: ThemeColors.action.disabled
+                    color: ThemeColors.action.disabled,
                 },
                 '& .MuiInputAdornment-positionStart .MuiIconButton-root': {
                     marginLeft: -12,
@@ -590,7 +590,7 @@ exports.blueDarkTheme = {
             },
             adornedStart: {},
             adornedEnd: {},
-            disabled: {}
+            disabled: {},
         },
         MuiInput: {
             underline: {
@@ -615,7 +615,7 @@ exports.blueDarkTheme = {
                     borderBottomColor: ThemeColors.error.main,
                 },
                 '&$colorSecondary:not($error):after': {
-                    borderBottomColor: ThemeColors.secondary.main,
+                    borderBottomColor: ThemeColors.secondary.dark,
                 },
                 '&$disabled:before': {
                     borderBottomColor: ThemeColors.divider,
@@ -659,7 +659,7 @@ exports.blueDarkTheme = {
                     borderBottomStyle: 'solid',
                 },
                 '&$colorSecondary:not($error):after': {
-                    borderBottomColor: ThemeColors.primary.dark,
+                    borderBottomColor: ThemeColors.secondary.dark,
                 },
             },
             focused: {},
@@ -687,6 +687,9 @@ exports.blueDarkTheme = {
                 '&$focused $notchedOutline': {
                     borderColor: ThemeColors.primary.dark,
                 },
+                '&$colorSecondary$focused $notchedOutline': {
+                    borderColor: ThemeColors.secondary.dark,
+                },
             },
             colorSecondary: {},
             focused: {},
@@ -699,7 +702,7 @@ exports.blueDarkTheme = {
         MuiFormLabel: {
             root: {
                 color: ThemeColors.text.secondary,
-                '&$filled:not($disabled)': {
+                '&$filled:not($disabled):not($focused):not($error)': {
                     color: ThemeColors.text.primary,
                 },
                 '&$error$colorSecondary$focused': {
@@ -707,6 +710,8 @@ exports.blueDarkTheme = {
                 },
             },
             colorSecondary: {},
+            error: {},
+            disabled: {},
             focused: {},
         },
         // TOGGLE BUTTON OVERRIDES (LAB)

@@ -180,7 +180,7 @@ export const blueDarkTheme: ThemeOptions = {
                 backgroundColor: MediumBlackBackground,
                 color: WhiteText,
                 '&:hover': {
-                    backgroundColor: PXBColors.black[300],
+                    backgroundColor: PXBColors.black[400],
                 },
                 '&$disabled': {
                     backgroundColor: Color(PXBColors.black[200]).alpha(0.24).string(),
@@ -625,7 +625,7 @@ export const blueDarkTheme: ThemeOptions = {
                     borderBottomColor: ThemeColors.error.main,
                 },
                 '&$colorSecondary:not($error):after': {
-                    borderBottomColor: ThemeColors.secondary.main,
+                    borderBottomColor: ThemeColors.secondary.dark,
                 },
                 '&$disabled:before': {
                     borderBottomColor: ThemeColors.divider,
@@ -669,7 +669,7 @@ export const blueDarkTheme: ThemeOptions = {
                     borderBottomStyle: 'solid',
                 },
                 '&$colorSecondary:not($error):after': {
-                    borderBottomColor: ThemeColors.primary.dark,
+                    borderBottomColor: ThemeColors.secondary.dark,
                 },
             },
             focused: {},
@@ -697,6 +697,9 @@ export const blueDarkTheme: ThemeOptions = {
                 '&$focused $notchedOutline': {
                     borderColor: ThemeColors.primary.dark,
                 },
+                '&$colorSecondary$focused $notchedOutline': {
+                    borderColor: ThemeColors.secondary.dark,
+                },
             },
             colorSecondary: {},
             focused: {},
@@ -709,7 +712,7 @@ export const blueDarkTheme: ThemeOptions = {
         MuiFormLabel: {
             root: {
                 color: ThemeColors.text.secondary,
-                '&$filled:not($disabled)': {
+                '&$filled:not($disabled):not($focused):not($error)': {
                     color: ThemeColors.text.primary,
                 },
                 '&$error$colorSecondary$focused': {
@@ -717,6 +720,8 @@ export const blueDarkTheme: ThemeOptions = {
                 },
             },
             colorSecondary: {},
+            error: {},
+            disabled: {},
             focused: {},
         },
 
