@@ -446,12 +446,13 @@
                 background-color: unset;
             }
         }
+        /*
         .mat-stepper-vertical-line::before {
             border-left-color: map-get($pxb-black, 300);
         }
         .mat-stepper-horizontal-line {
             border-top-color: map-get($pxb-black, 300);
-        }
+        } */
         .mat-step-header[aria-selected='true'] .mat-step-icon {
             background-color: map-get($primary, 500);
         }
