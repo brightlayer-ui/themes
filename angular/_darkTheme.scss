@@ -451,6 +451,16 @@
         }
     }
 
+    /* expansion panel */
+    .mat-expansion-panel-header-title {
+        color: map-deep-get($overrides, primary, main);
+    }
+
+    /* Nav list */
+    .mat-nav-list .mat-list-item:hover {
+        background-color: rgba(map-get($pxb-black, 50), .1);
+    }
+
     /* table*/
     .mat-table {
         background-color: map-get($background, app-bar);
