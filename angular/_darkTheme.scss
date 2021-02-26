@@ -524,4 +524,10 @@
     .pxb-mobile-stepper .pxb-mobile-stepper-dot:not(.pxb-mobile-stepper-dot-active) {
         background-color: map-get($foreground, disabled);
     }
+
+    /* User Menu */
+    .pxb-user-menu-avatar {
+        background-color: rgba(map-get($pxb-black, 50), .1);
+        color: map-get($pxb-black, 50);
+    }
 }
