@@ -142,19 +142,44 @@
     }
 
     /* Buttons */
-    .mat-button:not(.mat-button-disabled) {
-        &:not(.mat-warn):hover {
-            background-color: rgba(232, 234, 234, 0.1);
-        }
-        &.mat-primary,
-        &.mat-accent {
-            color: map-deep-get($overrides, primary, main);
-            &:hover {
-                background-color: rgba(0, 123, 193, 0.2);
+
+    /* Default buttons */
+    .mat-button {
+        &:not(.mat-button-disabled) {
+            &:not(.mat-warn):hover {
+                background-color: rgba(232, 234, 234, 0.1);
+            }
+            &.mat-primary,
+            &.mat-accent {
+                color: map-deep-get($overrides, primary, main);
+                &:hover {
+                    background-color: rgba(0, 123, 193, 0.2);
+                }
             }
         }
     }
 
+    /* Raised, Flat */
+    .mat-raised-button.mat-accent,
+    .mat-raised-button.mat-primary,
+    .mat-flat-button.mat-accent,
+    .mat-flat-button.mat-primary {
+        &:not(.mat-button-disabled) {
+            color: map-get($pxb-white, 50);
+            background-color: map-get($pxb-lightBlue, 500);
+            &:hover {
+                background-color: map-get($pxb-blue, 300);
+            }
+        }
+    }
+    .mat-flat-button,
+    .mat-raised-button {
+        &:not(.mat-warn):hover {
+            background-color: map-get($pxb-black, 400);
+        }
+    }
+
+    /* Toggle buttong group */
     .mat-button-toggle .mat-button-toggle-button {
         border-color: map-get($pxb-black, 200);
         background-color: map-get($pxb-black, 900);
@@ -171,28 +196,25 @@
         }
     }
 
-    .mat-raised-button.mat-accent,
-    .mat-flat-button.mat-accent,
-    .mat-button-toggle-button[color='primary'] {
-        color: map-get($pxb-white, 50);
-        background-color: map-get($pxb-lightBlue, 500);
-    }
-    .mat-stroked-button:not(.mat-button-disabled) {
-        border-color: map-get($pxb-black, 200);
-        &.mat-primary,
-        &.mat-accent {
-            color: map-deep-get($overrides, primary, main);
-            border-color: map-deep-get($overrides, primary, main);
-            &:hover {
-                background-color: rgba(0, 123, 193, 0.2);
+    /* Stroked */
+    .mat-stroked-button {
+        &:not(.mat-button-disabled) {
+            border-color: map-get($pxb-black, 200);
+            &.mat-primary,
+            &.mat-accent {
+                color: map-deep-get($overrides, primary, main);
+                border-color: map-deep-get($overrides, primary, main);
+                &:hover {
+                    background-color: rgba(0, 123, 193, 0.2);
+                }
+            }
+            &.mat-warn {
+                border-color: map-deep-get($overrides, error, dark);
             }
         }
-        &.mat-warn {
-            border-color: map-deep-get($overrides, error, dark);
+        &.mat-button-disabled {
+            border-color: map-get($pxb-black, 200);
         }
-    }
-    .mat-stroked-button.mat-button-disabled {
-        border-color: map-get($pxb-black, 200);
     }
 
     /* Chips */
