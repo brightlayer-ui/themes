@@ -228,6 +228,26 @@ export const blueDarkTheme: ThemeOptions = {
             disabled: {},
         },
 
+        // BUTTON GROUP OVERRIDES
+        MuiButtonGroup: {
+            groupedText: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                },
+            },
+            groupedTextPrimary: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                },
+            },
+            groupedTextSecondary: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                },
+            },
+            disabled: {},
+        },
+
         // CHIP OVERRIDES
         MuiChip: {
             root: {

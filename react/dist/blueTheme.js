@@ -129,7 +129,7 @@ exports.blueTheme = {
                 '&$disableElevation': {
                     backgroundColor: PXBColors.white[500],
                     '&:hover': {
-                        backgroundColor: PXBColors.white[400],
+                        backgroundColor: PXBColors.white[300],
                     },
                     '&$disabled': {
                         borderWidth: 0,
@@ -212,6 +212,25 @@ exports.blueTheme = {
             },
             disabled: {},
             disableElevation: {},
+        },
+        // BUTTON GROUP OVERRIDES
+        MuiButtonGroup: {
+            groupedText: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                }
+            },
+            groupedTextPrimary: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                }
+            },
+            groupedTextSecondary: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                }
+            },
+            disabled: {},
         },
         // CHECKBOX OVERRIDES
         MuiCheckbox: {
