@@ -228,7 +228,9 @@ export const blueTheme: ThemeOptions = {
                     borderColor: ThemeColors.divider,
                 },
             },
-            disabled: {},
+            disabled: {
+                boxShadow: 'none',
+            },
         },
 
         // CHECKBOX OVERRIDES
@@ -445,6 +447,7 @@ export const blueTheme: ThemeOptions = {
             active: {
                 '& $text': {
                     fill: WhiteText,
+                    fontWeight: 600,
                 },
             },
         },
@@ -542,6 +545,11 @@ export const blueTheme: ThemeOptions = {
                     fontWeight: 600,
                 },
             },
+            labelIcon: {
+                '& $wrapper > *:first-child': {
+                    marginBottom: 0,
+                },
+            },
             textColorPrimary: {
                 color: WhiteText,
                 opacity: 0.7,
@@ -559,6 +567,7 @@ export const blueTheme: ThemeOptions = {
                 },
             },
             selected: {},
+            wrapper: {},
         },
         MuiTabs: {
             indicator: {
@@ -679,6 +688,14 @@ export const blueTheme: ThemeOptions = {
             filled: {},
             disabled: {},
             error: {},
+        },
+        MuiFormHelperText: {
+            root: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                },
+            },
+            disabled: {},
         },
 
         // TOGGLE BUTTON OVERRIDES (LAB)

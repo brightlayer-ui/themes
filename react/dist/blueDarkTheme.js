@@ -152,6 +152,9 @@ exports.blueDarkTheme = {
             },
             outlined: {
                 borderColor: PXBColors.black[200],
+                '&:hover': {
+                    backgroundColor: color_1.default(PXBColors.black[50]).alpha(0.1).string(),
+                },
                 '&$disabled': {
                     borderColor: color_1.default(PXBColors.black[200]).alpha(0.36).string(),
                     color: color_1.default(PXBColors.black[300]).alpha(0.36).string(),
@@ -234,17 +237,17 @@ exports.blueDarkTheme = {
             groupedText: {
                 '&:not(:last-child)$disabled': {
                     borderColor: ThemeColors.divider,
-                }
+                },
             },
             groupedTextPrimary: {
                 '&:not(:last-child)$disabled': {
                     borderColor: ThemeColors.divider,
-                }
+                },
             },
             groupedTextSecondary: {
                 '&:not(:last-child)$disabled': {
                     borderColor: ThemeColors.divider,
-                }
+                },
             },
             disabled: {},
         },
@@ -462,6 +465,9 @@ exports.blueDarkTheme = {
                 zIndex: 1,
                 '&$active': {
                     color: ThemeColors.primary.dark,
+                    '& $text': {
+                        fontWeight: 600,
+                    },
                 },
                 '&$completed': {
                     color: ThemeColors.primary.dark,
@@ -485,6 +491,7 @@ exports.blueDarkTheme = {
                     color: ThemeColors.primary.main,
                 },
                 '&$completed': {
+                    color: ThemeColors.text.secondary,
                     fontWeight: 600,
                 },
             },
@@ -571,6 +578,11 @@ exports.blueDarkTheme = {
                     fontWeight: 600,
                 },
             },
+            labelIcon: {
+                '& $wrapper > *:first-child': {
+                    marginBottom: 0,
+                }
+            },
             textColorInherit: {
                 color: ThemeColors.text.secondary,
                 opacity: 1,
@@ -578,6 +590,7 @@ exports.blueDarkTheme = {
                     color: ThemeColors.primary.main,
                 },
             },
+            wrapper: {},
             selected: {},
         },
         MuiTabs: {

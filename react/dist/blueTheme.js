@@ -218,19 +218,21 @@ exports.blueTheme = {
             groupedText: {
                 '&:not(:last-child)$disabled': {
                     borderColor: ThemeColors.divider,
-                }
+                },
             },
             groupedTextPrimary: {
                 '&:not(:last-child)$disabled': {
                     borderColor: ThemeColors.divider,
-                }
+                },
             },
             groupedTextSecondary: {
                 '&:not(:last-child)$disabled': {
                     borderColor: ThemeColors.divider,
-                }
+                },
             },
-            disabled: {},
+            disabled: {
+                boxShadow: 'none',
+            },
         },
         // CHECKBOX OVERRIDES
         MuiCheckbox: {
@@ -439,6 +441,7 @@ exports.blueTheme = {
             active: {
                 '& $text': {
                     fill: WhiteText,
+                    fontWeight: 600,
                 },
             },
         },
@@ -533,6 +536,11 @@ exports.blueTheme = {
                     fontWeight: 600,
                 },
             },
+            labelIcon: {
+                '& $wrapper > *:first-child': {
+                    marginBottom: 0,
+                }
+            },
             textColorPrimary: {
                 color: WhiteText,
                 opacity: 0.7,
@@ -550,6 +558,7 @@ exports.blueTheme = {
                 },
             },
             selected: {},
+            wrapper: {},
         },
         MuiTabs: {
             indicator: {
@@ -670,6 +679,17 @@ exports.blueTheme = {
             disabled: {},
             error: {},
         },
+        MuiFormHelperText: {
+            root: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                }
+            },
+            disabled: {}
+        }
+        // TOGGLE BUTTON OVERRIDES (LAB)
+        // @ts-ignore
+        ,
         // TOGGLE BUTTON OVERRIDES (LAB)
         // @ts-ignore
         MuiToggleButtonGroup: {

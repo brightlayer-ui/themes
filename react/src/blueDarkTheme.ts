@@ -150,6 +150,9 @@ export const blueDarkTheme: ThemeOptions = {
             },
             outlined: {
                 borderColor: PXBColors.black[200],
+                '&:hover': {
+                    backgroundColor: Color(PXBColors.black[50]).alpha(0.1).string(),
+                },
                 '&$disabled': {
                     borderColor: Color(PXBColors.black[200]).alpha(0.36).string(),
                     color: Color(PXBColors.black[300]).alpha(0.36).string(),
@@ -469,6 +472,9 @@ export const blueDarkTheme: ThemeOptions = {
                 zIndex: 1,
                 '&$active': {
                     color: ThemeColors.primary.dark,
+                    '& $text': {
+                        fontWeight: 600,
+                    },
                 },
                 '&$completed': {
                     color: ThemeColors.primary.dark,
@@ -492,6 +498,7 @@ export const blueDarkTheme: ThemeOptions = {
                     color: ThemeColors.primary.main,
                 },
                 '&$completed': {
+                    color: ThemeColors.text.secondary,
                     fontWeight: 600,
                 },
             },
@@ -581,6 +588,11 @@ export const blueDarkTheme: ThemeOptions = {
                     fontWeight: 600,
                 },
             },
+            labelIcon: {
+                '& $wrapper > *:first-child': {
+                    marginBottom: 0,
+                },
+            },
             textColorInherit: {
                 color: ThemeColors.text.secondary,
                 opacity: 1,
@@ -588,6 +600,7 @@ export const blueDarkTheme: ThemeOptions = {
                     color: ThemeColors.primary.main,
                 },
             },
+            wrapper: {},
             selected: {},
         },
         MuiTabs: {

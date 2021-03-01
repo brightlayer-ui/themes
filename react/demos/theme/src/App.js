@@ -208,7 +208,7 @@ export default () => {
                 </AppBar>
                 <AppBar style={{ flex: '0 0 auto' }} elevation={0} position="static" color="secondary">
                     <Tabs value={3}>
-                        <Tab label="Item One" value={2} />
+                        <Tab label="Item One" value={2} icon={<MailIcon />} />
                         <Tab label="Item Two" value={3} />
                         <Tab label="Item Three" value={1} />
                     </Tabs>
