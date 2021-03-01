@@ -159,6 +159,32 @@
         }
     }
 
+    /* FABS */
+    .mat-fab,
+    .mat-mini-fab {
+        &.mat-primary {
+            background-color: map-get($pxb-blue, 500);
+            color: map-get($pxb-white, 50);
+            &:not(.mat-button-disabled):hover {
+                background-color: #0068b3;
+            }
+        }
+        &.mat-accent {
+            background-color: map-get($pxb-lightBlue, 200);
+            color: rgba(0, 0, 0, 0.87);
+            &:not(.mat-button-disabled):hover {
+                background-color: map-get($pxb-lightBlue, 500);
+            }
+        }
+        &:not([color]) {
+            background-color: map-get($pxb-black, 500);
+            color: map-get($pxb-white, 50);
+            &:not(.mat-button-disabled):hover {
+                background-color: map-get($pxb-black, 300);
+            }
+        }
+    }
+
     /* Raised, Flat */
     .mat-raised-button.mat-accent,
     .mat-raised-button.mat-primary,
