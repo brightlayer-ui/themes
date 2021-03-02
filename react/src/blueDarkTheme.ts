@@ -400,13 +400,12 @@ export const blueDarkTheme: ThemeOptions = {
         // PROGRESS OVERRIDES
         MuiLinearProgress: {
             root: {},
-            // TODO: Waiting for a response on transparent background issue with buffer variant
-            // colorPrimary:{
-            //     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
-            // },
-            // colorSecondary:{
-            //     backgroundColor: Color(ThemeColors.secondary.dark).alpha(0.2).string(),
-            // },
+            colorPrimary: {
+                backgroundColor: PXBColors.black[300],
+            },
+            colorSecondary: {
+                backgroundColor: PXBColors.black[300],
+            },
             barColorPrimary: {
                 backgroundColor: ThemeColors.primary.dark,
             },
