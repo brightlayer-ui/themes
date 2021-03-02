@@ -228,9 +228,7 @@ export const blueTheme: ThemeOptions = {
                     borderColor: ThemeColors.divider,
                 },
             },
-            disabled: {
-                boxShadow: 'none',
-            },
+            disabled: {},
         },
 
         // CHECKBOX OVERRIDES
@@ -366,6 +364,20 @@ export const blueTheme: ThemeOptions = {
                 backgroundColor: ThemeColors.primary.main,
             },
         },
+
+        // PROGRESS OVERRIDES
+        MuiLinearProgress: {
+            root: {},
+            colorPrimary: {
+                backgroundColor: PXBColors.blue[100],
+            },
+            colorSecondary: {
+                backgroundColor: PXBColors.lightBlue[100],
+            },
+            barColorPrimary: {},
+            barColorSecondary: {},
+        },
+        MuiCircularProgress: {},
 
         // SLIDER OVERRIDES
         MuiSlider: {

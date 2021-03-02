@@ -230,9 +230,7 @@ exports.blueTheme = {
                     borderColor: ThemeColors.divider,
                 },
             },
-            disabled: {
-                boxShadow: 'none',
-            },
+            disabled: {},
         },
         // CHECKBOX OVERRIDES
         MuiCheckbox: {
@@ -363,6 +361,19 @@ exports.blueTheme = {
                 backgroundColor: ThemeColors.primary.main,
             },
         },
+        // PROGRESS OVERRIDES
+        MuiLinearProgress: {
+            root: {},
+            colorPrimary: {
+                backgroundColor: PXBColors.blue[100],
+            },
+            colorSecondary: {
+                backgroundColor: PXBColors.lightBlue[100],
+            },
+            barColorPrimary: {},
+            barColorSecondary: {},
+        },
+        MuiCircularProgress: {},
         // SLIDER OVERRIDES
         MuiSlider: {
             root: {
@@ -539,7 +550,7 @@ exports.blueTheme = {
             labelIcon: {
                 '& $wrapper > *:first-child': {
                     marginBottom: 0,
-                }
+                },
             },
             textColorPrimary: {
                 color: WhiteText,
@@ -683,13 +694,10 @@ exports.blueTheme = {
             root: {
                 '&$disabled': {
                     color: ThemeColors.action.disabled,
-                }
+                },
             },
-            disabled: {}
-        }
-        // TOGGLE BUTTON OVERRIDES (LAB)
-        // @ts-ignore
-        ,
+            disabled: {},
+        },
         // TOGGLE BUTTON OVERRIDES (LAB)
         // @ts-ignore
         MuiToggleButtonGroup: {

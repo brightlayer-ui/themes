@@ -42,6 +42,8 @@ import {
     MobileStepper,
     TableRow,
     TableSortLabel,
+    LinearProgress,
+    CircularProgress,
 } from '@material-ui/core';
 import { ToggleButtonGroup, ToggleButton } from '@material-ui/lab';
 
@@ -264,6 +266,22 @@ export default () => {
                             </React.Fragment>
                         }
                     />
+                </div>
+                <div style={{ margin: 40 }}>
+                    <LinearProgress style={{ marginBottom: 10 }} />
+                    <LinearProgress color="secondary" style={{ marginBottom: 10 }} />
+                    <LinearProgress variant={'determinate'} value={50} style={{ marginBottom: 10 }} />
+                    <LinearProgress variant={'determinate'} value={50} color="secondary" style={{ marginBottom: 10 }} />
+                    <LinearProgress variant={'buffer'} value={50} valueBuffer={75} style={{ marginBottom: 10 }} />
+                    <LinearProgress
+                        variant={'buffer'}
+                        value={50}
+                        color="secondary"
+                        valueBuffer={75}
+                        style={{ marginBottom: 10 }}
+                    />
+                    <CircularProgress />
+                    <CircularProgress color={'secondary'} />
                 </div>
                 {/* <Dialog open={true}>
                     <DialogTitle >Set backup account</DialogTitle>

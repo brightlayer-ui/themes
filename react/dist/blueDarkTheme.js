@@ -392,6 +392,31 @@ exports.blueDarkTheme = {
                 backgroundColor: ThemeColors.primary.dark,
             },
         },
+        // PROGRESS OVERRIDES
+        MuiLinearProgress: {
+            root: {},
+            // TODO: Waiting for a response on transparent background issue with buffer variant
+            // colorPrimary:{
+            //     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
+            // },
+            // colorSecondary:{
+            //     backgroundColor: Color(ThemeColors.secondary.dark).alpha(0.2).string(),
+            // },
+            barColorPrimary: {
+                backgroundColor: ThemeColors.primary.dark,
+            },
+            barColorSecondary: {
+                backgroundColor: ThemeColors.secondary.dark,
+            },
+        },
+        MuiCircularProgress: {
+            colorPrimary: {
+                color: ThemeColors.primary.dark,
+            },
+            colorSecondary: {
+                color: ThemeColors.secondary.dark,
+            },
+        },
         // SLIDER OVERRIDES
         MuiSlider: {
             root: {
@@ -581,7 +606,7 @@ exports.blueDarkTheme = {
             labelIcon: {
                 '& $wrapper > *:first-child': {
                     marginBottom: 0,
-                }
+                },
             },
             textColorInherit: {
                 color: ThemeColors.text.secondary,
@@ -605,7 +630,7 @@ exports.blueDarkTheme = {
         MuiInputBase: {
             root: {
                 '&$disabled': {
-                    color: ThemeColors.action.disabled,
+                    color: ThemeColors.text.disabled,
                 },
             },
             input: {
@@ -728,6 +753,9 @@ exports.blueDarkTheme = {
         MuiFormLabel: {
             root: {
                 color: ThemeColors.text.secondary,
+                '&$disabled': {
+                    color: ThemeColors.text.disabled,
+                },
                 '&$filled:not($disabled):not($focused):not($error)': {
                     color: ThemeColors.text.primary,
                 },
