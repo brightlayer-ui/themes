@@ -22,19 +22,23 @@ export const typography = {
         fontWeight: 600,
     },
     body1: {
-        lineHeight: '1.5em',
+        lineHeight: '1.5',
     },
     body2: {
-        lineHeight: '1.43em',
+        lineHeight: '1.43',
     },
     button: {
         fontWeight: 600,
-        lineHeight: '1.75em',
+        lineHeight: '1.75',
     },
     overline: {
         letterSpacing: '2px',
-        fontSize: '12px',
+        fontSize: '0.75rem',
         fontWeight: 600,
+        lineHeight: '2.67',
+    },
+    caption: {
+        lineHeight: '1.67',
     },
 };
 export const createSimpleLightPalette = (color: PXBlueColor): SimplePaletteColorOptions => ({
