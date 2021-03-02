@@ -232,7 +232,6 @@
     .mat-button-toggle-checked .mat-button-toggle-button {
         background-color: rgba(0, 123, 193, 0.36);
         color: map-deep-get($overrides, primary, main);
-
         &:hover {
             background-color: rgba(128, 189, 224, 0.36);
         }
@@ -240,10 +239,7 @@
 
     /* Stroked */
     .mat-stroked-button {
-        &:not(.mat-button-disabled) {
-            border-color: map-get($pxb-black, 200);
-        }
-
+        border-color: map-get($pxb-black, 200);
         &.mat-primary,
         &.mat-accent {
             color: map-deep-get($overrides, primary, main);
@@ -257,6 +253,9 @@
             &:hover:not(.mat-button-disabled) {
                 background-color: rgba(map-get($pxb-red, 200), 0.2);
             }
+        }
+        &.mat-button-disabled {
+            border-color: map-get($foreground, disabled);
         }
     }
 
