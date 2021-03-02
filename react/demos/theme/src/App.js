@@ -242,6 +242,26 @@ export default () => {
                         <MailIcon />
                     </Badge>
                 </div>
+                <div>
+                    <IconButton color={'default'}>
+                        <MailIcon />
+                    </IconButton>
+                    <IconButton color={'primary'}>
+                        <MailIcon />
+                    </IconButton>
+                    <IconButton color={'secondary'}>
+                        <MailIcon />
+                    </IconButton>
+                    <IconButton color={'default'} disabled>
+                        <MailIcon />
+                    </IconButton>
+                    <IconButton color={'primary'} disabled>
+                        <MailIcon />
+                    </IconButton>
+                    <IconButton color={'secondary'} disabled>
+                        <MailIcon />
+                    </IconButton>
+                </div>
                 <Slider marks={true} />
                 <Slider marks={true} color={'primary'} />
                 <Slider marks={true} color={'secondary'} />

@@ -401,10 +401,24 @@ export const blueDarkTheme: ThemeOptions = {
         MuiLinearProgress: {
             root: {},
             colorPrimary: {
-                backgroundColor: PXBColors.black[300],
+                backgroundColor: Color(ThemeColors.primary.dark).darken(0.7).string(),
             },
             colorSecondary: {
-                backgroundColor: PXBColors.black[300],
+                backgroundColor: Color(ThemeColors.secondary.dark).darken(0.7).string(),
+            },
+            dashedColorPrimary: {
+                backgroundImage: `radial-gradient(${Color(ThemeColors.primary.dark).darken(0.5).string()} 0%, ${Color(
+                    ThemeColors.primary.dark
+                )
+                    .darken(0.7)
+                    .string()} 16%, transparent 42%)`,
+            },
+            dashedColorSecondary: {
+                backgroundImage: `radial-gradient(${Color(ThemeColors.secondary.dark).darken(0.5).string()} 0%, ${Color(
+                    ThemeColors.secondary.dark
+                )
+                    .darken(0.7)
+                    .string()} 16%, transparent 42%)`,
             },
             barColorPrimary: {
                 backgroundColor: ThemeColors.primary.dark,
