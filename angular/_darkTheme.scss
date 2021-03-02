@@ -145,14 +145,16 @@
 
     /* Default buttons */
     .mat-button {
-        &:not(.mat-button-disabled):hover {
-            background-color: rgba(232, 234, 234, 0.1);
-        }
-        &.mat-primary,
-        &.mat-accent {
+        &.mat-primary {
             color: map-deep-get($overrides, primary, main);
             &:hover:not(.mat-button-disabled) {
-                background-color: rgba(0, 123, 193, 0.2);
+                background-color: rgba(map-get($pxb-blue, 500), 0.2);
+            }
+        }
+        &.mat-accent {
+            color: map-get($pxb-lightBlue, 500);
+            &:hover:not(.mat-button-disabled) {
+                background-color: rgba(map-get($pxb-lightBlue, 500), 0.2);
             }
         }
         &.mat-warn {
@@ -160,21 +162,28 @@
                 background-color: rgba(map-get($pxb-red, 200), 0.2);
             }
         }
+        &:not(.mat-button-disabled):hover {
+            background-color: rgba(map-get($pxb-black, 50), 0.1);
+        }
     }
 
     /* FABS */
     .mat-fab,
     .mat-mini-fab {
-        &.mat-primary,
-        &.mat-accent {
-            background-color: map-get($pxb-blue, 500);
+        &.mat-primary {
             color: map-get($pxb-white, 50);
-
+            background-color: map-get($pxb-blue, 500);
             &:hover:not(.mat-button-disabled) {
                 background-color: map-get($pxb-blue, 400);
             }
         }
-
+        &.mat-accent {
+            color: map-get($pxb-white, 50);
+            background-color: map-get($pxb-lightBlue, 500);
+            &:hover:not(.mat-button-disabled) {
+                background-color: map-get($pxb-lightBlue, 400);
+            }
+        }
         &.mat-warn {
             background-color: map-deep-get($overrides, error, dark);
             color: map-get($pxb-white, 50);
@@ -182,7 +191,6 @@
                 background-color: map-get($pxb-red, 300);
             }
         }
-
         &:not([color]) {
             background-color: map-get($pxb-black, 500);
             color: map-get($pxb-white, 50);
@@ -195,19 +203,23 @@
     /* Raised, Flat */
     .mat-raised-button,
     .mat-flat-button {
-        &.mat-primary,
-        &.mat-accent {
+        &.mat-primary {
             color: map-get($pxb-white, 50);
             background-color: map-get($pxb-blue, 500);
-
             &:hover:not(.mat-button-disabled) {
                 background-color: map-get($pxb-blue, 400);
+            }
+        }
+        &.mat-accent {
+            color: map-get($pxb-white, 50);
+            background-color: map-get($pxb-lightBlue, 500);
+            &:hover:not(.mat-button-disabled) {
+                background-color: map-get($pxb-lightBlue, 400);
             }
         }
         &.mat-warn {
             background-color: map-deep-get($overrides, error, dark);
             color: map-get($pxb-white, 50);
-
             &:hover:not(.mat-button-disabled) {
                 background-color: map-get($pxb-red, 300);
             }
@@ -245,7 +257,7 @@
             color: map-deep-get($overrides, primary, main);
             border-color: map-deep-get($overrides, primary, main);
             &:hover:not(.mat-button-disabled) {
-                background-color: rgba(0, 123, 193, 0.2);
+                background-color: rgba(map-get($pxb-blue, 500), 0.2);
             }
         }
         &.mat-warn {
@@ -256,6 +268,9 @@
         }
         &.mat-button-disabled {
             border-color: map-get($foreground, disabled);
+        }
+        &:not([color]):not(.mat-button-disabled):hover {
+            background-color: rgba(map-get($pxb-black, 50), 0.1);
         }
     }
 
