@@ -306,6 +306,13 @@ export const blueDarkTheme: ThemeOptions = {
                     backgroundColor: PXBColors.blue[300],
                 },
             },
+            colorSecondary: {
+                color: WhiteText,
+                backgroundColor: ThemeColors.secondary.dark,
+                '&$clickable:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
+                },
+            },
             outlined: {
                 backgroundColor: ThemeColors.background.paper,
                 borderColor: Color(PXBColors.black[200]).alpha(0.32).string(),
@@ -377,6 +384,13 @@ export const blueDarkTheme: ThemeOptions = {
                     backgroundColor: PXBColors.blue[700],
                 },
             },
+            secondary: {
+                backgroundColor: ThemeColors.secondary.dark,
+                color: WhiteText,
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[700],
+                },
+            },
         },
 
         //LIST ITEM OVERRIDES (plus nav drawer)
@@ -441,6 +455,9 @@ export const blueDarkTheme: ThemeOptions = {
             root: {
                 height: 6,
                 color: PXBColors.blue[300],
+            },
+            colorSecondary: {
+                color: PXBColors.lightBlue[300],
             },
             track: {
                 height: 6,

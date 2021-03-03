@@ -306,6 +306,13 @@ exports.blueDarkTheme = {
                     backgroundColor: PXBColors.blue[300],
                 },
             },
+            colorSecondary: {
+                color: WhiteText,
+                backgroundColor: ThemeColors.secondary.dark,
+                '&$clickable:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
+                },
+            },
             outlined: {
                 backgroundColor: ThemeColors.background.paper,
                 borderColor: color_1.default(PXBColors.black[200]).alpha(0.32).string(),
@@ -375,6 +382,13 @@ exports.blueDarkTheme = {
                     backgroundColor: PXBColors.blue[700],
                 },
             },
+            secondary: {
+                backgroundColor: ThemeColors.secondary.dark,
+                color: WhiteText,
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[700],
+                },
+            },
         },
         //LIST ITEM OVERRIDES (plus nav drawer)
         MuiListItem: {
@@ -396,16 +410,20 @@ exports.blueDarkTheme = {
         MuiLinearProgress: {
             root: {},
             colorPrimary: {
-                backgroundColor: color_1.default(ThemeColors.primary.dark).darken(.70).string(),
+                backgroundColor: color_1.default(ThemeColors.primary.dark).darken(0.7).string(),
             },
             colorSecondary: {
-                backgroundColor: color_1.default(ThemeColors.secondary.dark).darken(.70).string(),
+                backgroundColor: color_1.default(ThemeColors.secondary.dark).darken(0.7).string(),
             },
             dashedColorPrimary: {
-                backgroundImage: "radial-gradient(" + color_1.default(ThemeColors.primary.dark).darken(.50).string() + " 0%, " + color_1.default(ThemeColors.primary.dark).darken(.70).string() + " 16%, transparent 42%)",
+                backgroundImage: "radial-gradient(" + color_1.default(ThemeColors.primary.dark).darken(0.5).string() + " 0%, " + color_1.default(ThemeColors.primary.dark)
+                    .darken(0.7)
+                    .string() + " 16%, transparent 42%)",
             },
             dashedColorSecondary: {
-                backgroundImage: "radial-gradient(" + color_1.default(ThemeColors.secondary.dark).darken(.50).string() + " 0%, " + color_1.default(ThemeColors.secondary.dark).darken(.70).string() + " 16%, transparent 42%)",
+                backgroundImage: "radial-gradient(" + color_1.default(ThemeColors.secondary.dark).darken(0.5).string() + " 0%, " + color_1.default(ThemeColors.secondary.dark)
+                    .darken(0.7)
+                    .string() + " 16%, transparent 42%)",
             },
             barColorPrimary: {
                 backgroundColor: ThemeColors.primary.dark,
@@ -427,6 +445,9 @@ exports.blueDarkTheme = {
             root: {
                 height: 6,
                 color: PXBColors.blue[300],
+            },
+            colorSecondary: {
+                color: PXBColors.lightBlue[300],
             },
             track: {
                 height: 6,
