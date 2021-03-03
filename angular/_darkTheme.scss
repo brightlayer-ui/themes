@@ -662,8 +662,7 @@
 
     /* expansion panel */
     .mat-expansion-panel-header-title,
-    .mat-expansion-indicator::after,
-    .mat-card-header {
+    .mat-expansion-indicator::after {
         color: map-deep-get($overrides, primary, main);
     }
 
