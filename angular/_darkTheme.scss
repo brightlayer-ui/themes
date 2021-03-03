@@ -79,6 +79,9 @@
     .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
         border-color: map-get($foreground, disabled);
     }
+    .mat-checkbox-disabled .mat-checkbox-label {
+        color: map-get($foreground, disabled);
+    }
 
     /* radio button */
     .mat-radio-button.mat-primary {
@@ -102,17 +105,15 @@
     .mat-toolbar {
         color: map-get($foreground, text);
         background-color: map-get($pxb-darkBlack, 100);
-
         &.mat-primary {
             background-color: map-get($pxb-black, 800);
         }
-
         &.mat-accent {
             color: map-get($foreground, text);
             background-color: map-get($pxb-black, 900);
         }
-
         &.mat-warn {
+            background-color: map-get($pxb-red, 500);
             color: map-get($pxb-white, 50);
         }
     }
@@ -142,9 +143,9 @@
     }
 
     /* Buttons */
-
-    /* Default buttons */
-    .mat-button {
+    /* Default/Stroked buttons */
+    .mat-button,
+    .mat-stroked-button {
         &.mat-primary {
             color: map-deep-get($overrides, primary, main);
             &:hover:not(.mat-button-disabled) {
@@ -152,18 +153,65 @@
             }
         }
         &.mat-accent {
-            color: map-get($pxb-lightBlue, 500);
+            color: map-get($pxb-lightBlue, 200);
             &:hover:not(.mat-button-disabled) {
                 background-color: rgba(map-get($pxb-lightBlue, 500), 0.2);
             }
         }
         &.mat-warn {
+            color: map-get($pxb-red, 200);
             &:hover:not(.mat-button-disabled) {
-                background-color: rgba(map-get($pxb-red, 200), 0.2);
+                background-color: rgba(map-get($pxb-red, 500), 0.2);
             }
         }
         &:not(.mat-button-disabled):hover {
             background-color: rgba(map-get($pxb-black, 50), 0.1);
+        }
+        &:not([color]) {
+            color: map-get($pxb-black, 50);
+            &:hover:not(.mat-button-disabled) {
+                background-color: rgba(map-get($pxb-black, 50), 0.1);
+            }
+        }
+    }
+
+    /* Snackbar button */
+    .mat-snack-bar-container .mat-simple-snackbar-action .mat-button {
+        color: map-get($pxb-blue, 500);
+    }
+
+    /* Icon Buttons */
+    .mat-icon-button {
+        &.mat-primary {
+            color: map-deep-get($overrides, primary, main);
+        }
+        &.mat-accent {
+            color: map-get($pxb-lightBlue, 200);
+        }
+        &.mat-warn {
+            color: map-get($pxb-red, 200);
+        }
+        &:not([color]) {
+            color: map-get($pxb-black, 50);
+        }
+    }
+
+    /* Stroked */
+    .mat-stroked-button {
+        &.mat-primary {
+            border-color: map-deep-get($overrides, primary, main);
+        }
+        &.mat-accent {
+            border-color: map-get($pxb-lightBlue, 200);
+        }
+        &.mat-warn {
+            border-color: map-deep-get($overrides, error, main);
+        }
+        &.mat-button-disabled {
+            border-color: map-get($foreground, disabled);
+        }
+        &:not([color]):not(.mat-button-disabled) {
+            border-color: map-get($pxb-black, 200);
         }
     }
 
@@ -244,64 +292,65 @@
     .mat-button-toggle-checked .mat-button-toggle-button {
         background-color: rgba(0, 123, 193, 0.36);
         color: map-deep-get($overrides, primary, main);
-        &:hover {
-            background-color: rgba(128, 189, 224, 0.36);
-        }
-    }
-
-    /* Stroked */
-    .mat-stroked-button {
-        border-color: map-get($pxb-black, 200);
-        &.mat-primary,
-        &.mat-accent {
-            color: map-deep-get($overrides, primary, main);
-            border-color: map-deep-get($overrides, primary, main);
-            &:hover:not(.mat-button-disabled) {
-                background-color: rgba(map-get($pxb-blue, 500), 0.2);
-            }
-        }
-        &.mat-warn {
-            border-color: map-deep-get($overrides, error, main);
-            &:hover:not(.mat-button-disabled) {
-                background-color: rgba(map-get($pxb-red, 200), 0.2);
-            }
-        }
-        &.mat-button-disabled {
-            border-color: map-get($foreground, disabled);
-        }
-        &:not([color]):not(.mat-button-disabled):hover {
-            background-color: rgba(map-get($pxb-black, 50), 0.1);
+        &:hover:not(.mat-button-disabled) {
+            background-color: rgba(map-get($pxb-blue, 500), 0.2);
         }
     }
 
     /* Chips */
     .mat-chip {
-        &.mat-standard-chip,
-        &.mat-primary,
-        &.mat-accent {
-            .mat-chip-remove {
-                opacity: 1;
-                color: map-get($pxb-blue, 100);
-
-                &:hover {
-                    color: map-get($pxb-white, 50);
-                }
-            }
-        }
-
-        &.mat-standard-chip {
-            background-color: map-get($pxb-black, 500);
-            color: map-get($foreground, text);
-        }
-
         &.mat-primary {
             color: map-get($pxb-white, 50);
             background-color: map-deep-get($overrides, primary, dark);
+            &:hover:not(.mat-chip-disabled) {
+                background-color: map-get($pxb-blue, 400);
+            }
+            .mat-chip-remove {
+                color: map-get($pxb-blue, 100);
+            }
+            &:not(.mat-chip-disabled) .mat-chip-remove:hover {
+                color: map-get($pxb-white, 50);
+            }
         }
-
         &.mat-accent {
             color: map-get($pxb-white, 50);
             background-color: map-get($pxb-lightBlue, 500);
+            &:hover:not(.mat-chip-disabled) {
+                background-color: map-get($pxb-lightBlue, 400);
+            }
+            .mat-chip-remove {
+                color: map-get($pxb-lightBlue, 100);
+            }
+            &:not(.mat-chip-disabled) .mat-chip-remove:hover {
+                color: map-get($pxb-white, 50);
+            }
+        }
+        &.mat-standard-chip.mat-chip-selected.mat-warn {
+            /* Thanks, angular default theme */
+            background-color: map-get($pxb-red, 500);
+            color: map-get($pxb-white, 50);
+            &:hover:not(.mat-chip-disabled) {
+                background-color: map-get($pxb-red, 400);
+            }
+            .mat-chip-remove {
+                color: map-get($pxb-red, 100);
+            }
+            &:not(.mat-chip-disabled) .mat-chip-remove:hover {
+                color: map-get($pxb-white, 50);
+            }
+        }
+        &:not([color]) {
+            color: map-get($foreground, text);
+            background-color: map-get($pxb-black, 500);
+            &:hover:not(.mat-chip-disabled) {
+                background-color: map-get($pxb-black, 400);
+            }
+            .mat-chip-remove {
+                color: map-get($pxb-black, 200);
+            }
+            &:not(.mat-chip-disabled) .mat-chip-remove:hover {
+                color: map-get($pxb-black, 100);
+            }
         }
     }
 
@@ -551,6 +600,15 @@
                 transparent
             );
         }
+        &.mat-slider-disabled {
+            .mat-slider-thumb {
+                background-color: map-get($foreground, disabled);
+            }
+        }
+    }
+    .mat-slider-horizontal .mat-slider-track-background,
+    .mat-slider:hover .mat-slider-track-background {
+        background-color: rgba(map-get($pxb-black, 300), 0.36);
     }
 
     /*stepper*/
@@ -558,6 +616,11 @@
     .mat-stepper-vertical {
         background-color: map-get($background, dialog);
         color: map-get($foreground, secondary-text);
+
+        .mat-step-icon:not(.mat-step-icon-selected):not(.mat-step-icon-state-edit) {
+            background-color: rgba(map-get($pxb-black, 300), 0.36);
+            color: map-get($pxb-black, 300);
+        }
 
         .mat-step-header {
             .mat-step-label,
@@ -592,21 +655,15 @@
                 background-color: unset;
             }
         }
-
-        /*
-        .mat-stepper-vertical-line::before {
-            border-left-color: map-get($pxb-black, 300);
-        }
-        .mat-stepper-horizontal-line {
-            border-top-color: map-get($pxb-black, 300);
-        } */
         .mat-step-header[aria-selected='true'] .mat-step-icon {
             background-color: map-get($primary, 500);
         }
     }
 
     /* expansion panel */
-    .mat-expansion-panel-header-title {
+    .mat-expansion-panel-header-title,
+    .mat-expansion-indicator::after,
+    .mat-card-header {
         color: map-deep-get($overrides, primary, main);
     }
 
@@ -634,6 +691,11 @@
         .mat-simple-snackbar-action {
             color: map-get($pxb-blue, 500);
         }
+    }
+
+    /* progress bar */
+    .mat-progress-bar-buffer {
+        background-color: rgba(map-get($pxb-blue, 500), 0.2);
     }
 
     /* PXB Drawer */
