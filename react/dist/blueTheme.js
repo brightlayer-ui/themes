@@ -264,6 +264,16 @@ exports.blueTheme = {
                     backgroundColor: PXBColors.gray[100],
                 },
             },
+            clickableColorPrimary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+            },
+            clickableColorSecondary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
+                },
+            },
             deleteIcon: {
                 fontSize: '1.125rem',
                 height: '1.125rem',
@@ -341,6 +351,16 @@ exports.blueTheme = {
                     backgroundColor: ThemeColors.background.paper,
                     border: "1px solid " + color_1.default(PXBColors.black[500]).alpha(0.12).string(),
                     color: color_1.default(PXBColors.black[500]).alpha(0.3).string(),
+                },
+            },
+            primary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+            },
+            secondary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
                 },
             },
             disabled: {},

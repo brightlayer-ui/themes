@@ -277,6 +277,16 @@ export const blueDarkTheme: ThemeOptions = {
                     backgroundColor: PXBColors.black[400],
                 },
             },
+            clickableColorPrimary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+            },
+            clickableColorSecondary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
+                },
+            },
             deleteIcon: {
                 fontSize: '1.125rem',
                 height: '1.125rem',
@@ -381,14 +391,14 @@ export const blueDarkTheme: ThemeOptions = {
                 backgroundColor: ThemeColors.primary.dark,
                 color: WhiteText,
                 '&:hover': {
-                    backgroundColor: PXBColors.blue[700],
+                    backgroundColor: PXBColors.blue[300],
                 },
             },
             secondary: {
                 backgroundColor: ThemeColors.secondary.dark,
                 color: WhiteText,
                 '&:hover': {
-                    backgroundColor: PXBColors.lightBlue[700],
+                    backgroundColor: PXBColors.lightBlue[300],
                 },
             },
         },
