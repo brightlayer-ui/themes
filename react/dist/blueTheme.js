@@ -129,7 +129,7 @@ exports.blueTheme = {
                 '&$disableElevation': {
                     backgroundColor: PXBColors.white[500],
                     '&:hover': {
-                        backgroundColor: PXBColors.white[400],
+                        backgroundColor: PXBColors.white[300],
                     },
                     '&$disabled': {
                         borderWidth: 0,
@@ -213,6 +213,25 @@ exports.blueTheme = {
             disabled: {},
             disableElevation: {},
         },
+        // BUTTON GROUP OVERRIDES
+        MuiButtonGroup: {
+            groupedText: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                },
+            },
+            groupedTextPrimary: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                },
+            },
+            groupedTextSecondary: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                },
+            },
+            disabled: {},
+        },
         // CHECKBOX OVERRIDES
         MuiCheckbox: {
             root: {
@@ -243,6 +262,16 @@ exports.blueTheme = {
             clickable: {
                 '&:hover': {
                     backgroundColor: PXBColors.gray[100],
+                },
+            },
+            clickableColorPrimary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+            },
+            clickableColorSecondary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
                 },
             },
             deleteIcon: {
@@ -324,6 +353,16 @@ exports.blueTheme = {
                     color: color_1.default(PXBColors.black[500]).alpha(0.3).string(),
                 },
             },
+            primary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+            },
+            secondary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
+                },
+            },
             disabled: {},
         },
         // LIST ITEM OVERRIDES
@@ -342,6 +381,19 @@ exports.blueTheme = {
                 backgroundColor: ThemeColors.primary.main,
             },
         },
+        // PROGRESS OVERRIDES
+        MuiLinearProgress: {
+            root: {},
+            colorPrimary: {
+                backgroundColor: PXBColors.blue[100],
+            },
+            colorSecondary: {
+                backgroundColor: PXBColors.lightBlue[100],
+            },
+            barColorPrimary: {},
+            barColorSecondary: {},
+        },
+        MuiCircularProgress: {},
         // SLIDER OVERRIDES
         MuiSlider: {
             root: {
@@ -420,6 +472,7 @@ exports.blueTheme = {
             active: {
                 '& $text': {
                     fill: WhiteText,
+                    fontWeight: 600,
                 },
             },
         },
@@ -514,6 +567,11 @@ exports.blueTheme = {
                     fontWeight: 600,
                 },
             },
+            labelIcon: {
+                '& $wrapper > *:first-child': {
+                    marginBottom: 0,
+                },
+            },
             textColorPrimary: {
                 color: WhiteText,
                 opacity: 0.7,
@@ -531,6 +589,7 @@ exports.blueTheme = {
                 },
             },
             selected: {},
+            wrapper: {},
         },
         MuiTabs: {
             indicator: {
@@ -650,6 +709,14 @@ exports.blueTheme = {
             filled: {},
             disabled: {},
             error: {},
+        },
+        MuiFormHelperText: {
+            root: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                },
+            },
+            disabled: {},
         },
         // TOGGLE BUTTON OVERRIDES (LAB)
         // @ts-ignore

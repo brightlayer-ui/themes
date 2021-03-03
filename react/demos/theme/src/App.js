@@ -42,6 +42,8 @@ import {
     MobileStepper,
     TableRow,
     TableSortLabel,
+    LinearProgress,
+    CircularProgress,
 } from '@material-ui/core';
 import { ToggleButtonGroup, ToggleButton } from '@material-ui/lab';
 
@@ -208,7 +210,7 @@ export default () => {
                 </AppBar>
                 <AppBar style={{ flex: '0 0 auto' }} elevation={0} position="static" color="secondary">
                     <Tabs value={3}>
-                        <Tab label="Item One" value={2} />
+                        <Tab label="Item One" value={2} icon={<MailIcon />} />
                         <Tab label="Item Two" value={3} />
                         <Tab label="Item Three" value={1} />
                     </Tabs>
@@ -240,6 +242,26 @@ export default () => {
                         <MailIcon />
                     </Badge>
                 </div>
+                <div>
+                    <IconButton color={'default'}>
+                        <MailIcon />
+                    </IconButton>
+                    <IconButton color={'primary'}>
+                        <MailIcon />
+                    </IconButton>
+                    <IconButton color={'secondary'}>
+                        <MailIcon />
+                    </IconButton>
+                    <IconButton color={'default'} disabled>
+                        <MailIcon />
+                    </IconButton>
+                    <IconButton color={'primary'} disabled>
+                        <MailIcon />
+                    </IconButton>
+                    <IconButton color={'secondary'} disabled>
+                        <MailIcon />
+                    </IconButton>
+                </div>
                 <Slider marks={true} />
                 <Slider marks={true} color={'primary'} />
                 <Slider marks={true} color={'secondary'} />
@@ -264,6 +286,22 @@ export default () => {
                             </React.Fragment>
                         }
                     />
+                </div>
+                <div style={{ margin: 40 }}>
+                    <LinearProgress style={{ marginBottom: 10 }} />
+                    <LinearProgress color="secondary" style={{ marginBottom: 10 }} />
+                    <LinearProgress variant={'determinate'} value={50} style={{ marginBottom: 10 }} />
+                    <LinearProgress variant={'determinate'} value={50} color="secondary" style={{ marginBottom: 10 }} />
+                    <LinearProgress variant={'buffer'} value={50} valueBuffer={75} style={{ marginBottom: 10 }} />
+                    <LinearProgress
+                        variant={'buffer'}
+                        value={50}
+                        color="secondary"
+                        valueBuffer={75}
+                        style={{ marginBottom: 10 }}
+                    />
+                    <CircularProgress />
+                    <CircularProgress color={'secondary'} />
                 </div>
                 {/* <Dialog open={true}>
                     <DialogTitle >Set backup account</DialogTitle>
@@ -540,6 +578,63 @@ export default () => {
                     </ButtonGroup>
                     <br />
                     <ButtonGroup variant="text" color="secondary">
+                        <Button>One</Button>
+                        <Button>Two</Button>
+                        <Button>Three</Button>
+                    </ButtonGroup>
+                    <br />
+                    <br />
+                    <ButtonGroup disabled>
+                        <Button>One</Button>
+                        <Button>Two</Button>
+                        <Button>Three</Button>
+                    </ButtonGroup>
+                    <br />
+                    <ButtonGroup variant="contained" disabled>
+                        <Button>One</Button>
+                        <Button>Two</Button>
+                        <Button>Three</Button>
+                    </ButtonGroup>
+                    <br />
+                    <ButtonGroup variant="text" disabled>
+                        <Button>One</Button>
+                        <Button>Two</Button>
+                        <Button>Three</Button>
+                    </ButtonGroup>
+                    <br />
+                    <br />
+                    <ButtonGroup color="primary" disabled>
+                        <Button>One</Button>
+                        <Button>Two</Button>
+                        <Button>Three</Button>
+                    </ButtonGroup>
+                    <br />
+                    <ButtonGroup variant="contained" color="primary" disabled>
+                        <Button>One</Button>
+                        <Button>Two</Button>
+                        <Button>Three</Button>
+                    </ButtonGroup>
+                    <br />
+                    <ButtonGroup variant="text" color="primary" disabled>
+                        <Button>One</Button>
+                        <Button>Two</Button>
+                        <Button>Three</Button>
+                    </ButtonGroup>
+                    <br />
+                    <br />
+                    <ButtonGroup color="secondary" disabled>
+                        <Button>One</Button>
+                        <Button>Two</Button>
+                        <Button>Three</Button>
+                    </ButtonGroup>
+                    <br />
+                    <ButtonGroup variant="contained" color="secondary" disabled>
+                        <Button>One</Button>
+                        <Button>Two</Button>
+                        <Button>Three</Button>
+                    </ButtonGroup>
+                    <br />
+                    <ButtonGroup variant="text" color="secondary" disabled>
                         <Button>One</Button>
                         <Button>Two</Button>
                         <Button>Three</Button>

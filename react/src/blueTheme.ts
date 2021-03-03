@@ -211,6 +211,26 @@ export const blueTheme: ThemeOptions = {
             disableElevation: {},
         },
 
+        // BUTTON GROUP OVERRIDES
+        MuiButtonGroup: {
+            groupedText: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                },
+            },
+            groupedTextPrimary: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                },
+            },
+            groupedTextSecondary: {
+                '&:not(:last-child)$disabled': {
+                    borderColor: ThemeColors.divider,
+                },
+            },
+            disabled: {},
+        },
+
         // CHECKBOX OVERRIDES
         MuiCheckbox: {
             root: {
@@ -242,6 +262,16 @@ export const blueTheme: ThemeOptions = {
             clickable: {
                 '&:hover': {
                     backgroundColor: PXBColors.gray[100],
+                },
+            },
+            clickableColorPrimary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+            },
+            clickableColorSecondary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
                 },
             },
             deleteIcon: {
@@ -324,6 +354,16 @@ export const blueTheme: ThemeOptions = {
                     color: Color(PXBColors.black[500]).alpha(0.3).string(),
                 },
             },
+            primary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.blue[300],
+                },
+            },
+            secondary: {
+                '&:hover': {
+                    backgroundColor: PXBColors.lightBlue[300],
+                },
+            },
             disabled: {},
         },
 
@@ -344,6 +384,20 @@ export const blueTheme: ThemeOptions = {
                 backgroundColor: ThemeColors.primary.main,
             },
         },
+
+        // PROGRESS OVERRIDES
+        MuiLinearProgress: {
+            root: {},
+            colorPrimary: {
+                backgroundColor: PXBColors.blue[100],
+            },
+            colorSecondary: {
+                backgroundColor: PXBColors.lightBlue[100],
+            },
+            barColorPrimary: {},
+            barColorSecondary: {},
+        },
+        MuiCircularProgress: {},
 
         // SLIDER OVERRIDES
         MuiSlider: {
@@ -425,6 +479,7 @@ export const blueTheme: ThemeOptions = {
             active: {
                 '& $text': {
                     fill: WhiteText,
+                    fontWeight: 600,
                 },
             },
         },
@@ -522,6 +577,11 @@ export const blueTheme: ThemeOptions = {
                     fontWeight: 600,
                 },
             },
+            labelIcon: {
+                '& $wrapper > *:first-child': {
+                    marginBottom: 0,
+                },
+            },
             textColorPrimary: {
                 color: WhiteText,
                 opacity: 0.7,
@@ -539,6 +599,7 @@ export const blueTheme: ThemeOptions = {
                 },
             },
             selected: {},
+            wrapper: {},
         },
         MuiTabs: {
             indicator: {
@@ -659,6 +720,14 @@ export const blueTheme: ThemeOptions = {
             filled: {},
             disabled: {},
             error: {},
+        },
+        MuiFormHelperText: {
+            root: {
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
+                },
+            },
+            disabled: {},
         },
 
         // TOGGLE BUTTON OVERRIDES (LAB)
