@@ -2,6 +2,8 @@
 
 ## v6.0.0 (Not published)
 
+>  Migrating some 5.0.0 to 6.0.0 may require higher specificity when applying custom styles to Angular or PX Blue components. 
+
 ### Added
 
 -   Added `<pxb-score-card>` badge background theme.

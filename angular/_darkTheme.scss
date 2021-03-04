@@ -1,15 +1,7 @@
 @import '~@pxblue/colors/palette';
+@import 'utility';
+@import './mixins/input-field';
 
-@function createSimplePalette($color) {
-    @return (light: map-get($color, 50), main: map-get($color, 200), dark: map-get($color, 500));
-}
-
-@function map-deep-get($map, $keys...) {
-    @each $key in $keys {
-        $map: map-get($map, $key);
-    }
-    @return $map;
-}
 
 @mixin darktheme($theme) {
     $primary: map-get($theme, primary);
@@ -386,207 +378,35 @@
     }
 
     /* input fields */
-    .mat-form-field {
-        /* Input Placeholders */
-        input::-webkit-input-placeholder {
-            color: map-get($foreground, disabled);
-        }
-
-        .mat-form-field-label {
-            color: map-get($pxb-black, 200);
-        }
-
-        /* Filled input (inactive) label should be white[50] */
-        &:not(.mat-form-field-invalid).mat-form-field-should-float .mat-form-field-label {
-            color: map-get($pxb-black, 50);
-        }
-
-        /* Icon */
-        .mat-form-field-suffix {
-            color: map-get($pxb-black, 200);
-        }
-
-        /* Disabled */
-        &.mat-form-field-disabled {
-            &.mat-form-field-appearance-legacy,
-            &.mat-form-field-appearance-standard {
-                .mat-form-field-underline {
-                    background-image: none;
-                    background-color: map-get($foreground, disabled);
-                }
-            }
-
-            .mat-hint,
-            .mat-form-field-label,
-            .mat-form-field-outline-thick,
-            .mat-form-field-suffix {
-                color: map-get($foreground, disabled);
-            }
-
-            &.mat-form-field-appearance-fill {
-                .mat-form-field-underline::before {
-                    background-color: map-get($foreground, disabled);
-                }
-
-                .mat-form-field-flex {
-                    background-color: rgba(map-get($pxb-black, 800), 0.5);
-                }
-            }
-        }
-
-        /* Underline */
-        &.mat-form-field-appearance-legacy:not(.mat-form-field-disabled),
-        &.mat-form-field-appearance-standard:not(.mat-form-field-disabled),
-        &.mat-form-field-appearance-fill:not(.mat-form-field-disabled) {
-            .mat-form-field-underline {
-                background-color: map-get($foreground, divider);
-            }
-
-            .mat-form-field-flex:hover + .mat-form-field-underline {
-                background-color: map-get($pxb-black, 200);
-            }
-
-            .mat-form-field-flex + .mat-form-field-underline .mat-form-field-ripple {
-                height: 1px;
-            }
-
-            .mat-form-field-flex:focus-within + .mat-form-field-underline .mat-form-field-ripple {
-                height: 2px;
-            }
-        }
-
-        /* Primary */
-        &.mat-primary:not(.mat-form-field-disabled) {
-            .mat-form-field-flex:focus-within {
-                .mat-form-field-label {
-                    color: map-deep-get($overrides, primary, main);
-                }
-            }
-
-            .mat-hint {
-                color: map-get($foreground, secondary-text);
-            }
-
-            /* Fill */
-            &.mat-form-field-appearance-fill {
-                .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, primary, dark);
-                }
-
-                .mat-form-field-flex {
-                    background-color: rgba(map-get($pxb-black, 800), 0.5);
-                }
-
-                .mat-form-field-flex:hover {
-                    .mat-form-field-outline-thick {
-                        color: map-deep-get($overrides, error, main);
-                    }
-                }
-
-                .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, error, dark);
-                }
-            }
-
-            /* Outline */
-            &.mat-form-field-appearance-outline {
-                .mat-form-field-outline-thick {
-                    .mat-form-field-outline-start,
-                    .mat-form-field-outline-end,
-                    .mat-form-field-outline-gap {
-                        border-width: 1px;
-                    }
-
-                    color: map-deep-get($overrides, primary, main);
-                }
-
-                .mat-form-field-flex:hover .mat-form-field-outline-thick {
-                    color: map-get($pxb-black, 200);
-                }
-
-                .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, primary, dark);
-
-                    .mat-form-field-outline-start,
-                    .mat-form-field-outline-end,
-                    .mat-form-field-outline-gap {
-                        border-width: 2px;
-                    }
-                }
-            }
-        }
-
-        /* Error */
-        &.mat-form-field-invalid:not(.mat-form-field-disabled) {
-            &.mat-form-field-appearance-legacy,
-            &.mat-form-field-appearance-standard,
-            &.mat-form-field-appearance-fill {
-                .mat-form-field-flex + .mat-form-field-underline .mat-form-field-ripple {
-                    background-color: map-deep-get($overrides, error, dark);
-                }
-
-                .mat-form-field-flex:hover + .mat-form-field-underline .mat-form-field-ripple {
-                    background-color: map-deep-get($overrides, error, main);
-                }
-
-                .mat-form-field-flex:focus-within + .mat-form-field-underline .mat-form-field-ripple {
-                    background-color: map-deep-get($overrides, error, dark);
-                }
-            }
-
-            /* Standard */
-            &.mat-form-field-appearance-standard,
-            &.mat-form-field-appearance-legacy {
-                .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, error, dark);
-                }
-
-                .mat-form-field-flex:hover .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, error, main);
-                }
-            }
-
-            /* Fill */
-            &.mat-form-field-appearance-fill {
-                .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, error, dark);
-                }
-
-                .mat-form-field-flex:hover {
-                    .mat-form-field-outline-thick {
-                        color: map-deep-get($overrides, error, main);
-                    }
-                }
-            }
-
-            /* Outline */
-            &.mat-form-field-appearance-outline {
-                .mat-form-field-outline-thick {
-                    .mat-form-field-outline-start,
-                    .mat-form-field-outline-end,
-                    .mat-form-field-outline-gap {
-                        border-width: 1px;
-                    }
-
-                    color: map-deep-get($overrides, error, dark);
-                }
-
-                .mat-form-field-flex:hover .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, error, main);
-                }
-
-                .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
-                    color: map-deep-get($overrides, error, dark);
-
-                    .mat-form-field-outline-start,
-                    .mat-form-field-outline-end,
-                    .mat-form-field-outline-gap {
-                        border-width: 2px;
-                    }
-                }
-            }
-        }
-    }
+    $inputPrimary: (
+        icon: map-get($foreground, secondary-text),
+        labelEmpty: map-get($foreground, secondary-text),
+        labelFilled: map-get($pxb-black, 50),
+        labelFocused: map-deep-get($overrides, primary, main),
+        underlineColor: map-get($foreground, disabled),
+        underlineHoverColor: map-get($foreground, secondary-text),
+        underlineFocusColor: map-deep-get($overrides, primary, dark),
+        placeholder: map-get($foreground, disabled),
+        hint: map-get($foreground, secondary-text),
+        filledBackgroundColor: rgba(map-get($pxb-black, 800), 0.5)
+    );
+    $inputWarn: (
+        icon: map-get($foreground, secondary-text),
+        labelEmpty: map-deep-get($overrides, error, main),
+        labelFilled: map-deep-get($overrides, error, main),
+        labelFocused: map-deep-get($overrides, error, main),
+        underlineColor: map-deep-get($overrides, error, dark),
+        underlineHoverColor: map-deep-get($overrides, error, main),
+        underlineFocusColor: map-deep-get($overrides, error, dark),
+        placeholder: map-get($foreground, disabled),
+        hint: map-deep-get($overrides, error, main),
+        filledBackgroundColor: rgba(255, 255, 255, 0.1)
+    );
+    $inputDisabled: (
+        text: map-get($foreground, disabled),
+        filledBackgroundColor: rgba(map-get($pxb-black, 800), 0.5)
+    );
+    @include input-fields($inputPrimary, $inputWarn, $inputDisabled);
 
     /* slider */
     .mat-slider {
