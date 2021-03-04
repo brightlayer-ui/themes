@@ -10,7 +10,7 @@
 
     /* toolbar*/
     .mat-toolbar {
-        color: map-get($foreground, light);
+        color: map-get($pxb-white, 50);
         background-color: map-get($primary, 500);
         &.mat-primary {
             background-color: map-get($primary, 500);
@@ -31,7 +31,7 @@
 
             .mat-tab-label,
             .mat-tab-link {
-                color: map-get($foreground, light);
+                color: map-get($pxb-white, 50);
             }
         }
 
@@ -40,7 +40,7 @@
 
             .mat-tab-label,
             .mat-tab-link {
-                color: map-get($foreground, light);
+                color: map-get($pxb-white, 50);
             }
         }
     }
@@ -125,10 +125,13 @@
     }
 
     /* PXB Drawer */
-    .pxb-drawer-nested-nav-item mat-expansion-panel {
-        background-color: map-get($pxb-white, 200);
-    }
-    .pxb-drawer-nav-item-active-highlight {
-        opacity: 0.05;
+    .pxb-drawer {
+        background-color: map-get($pxb-white, 50);
+        .pxb-drawer-nested-nav-item mat-expansion-panel {
+            background-color: map-get($pxb-white, 200);
+        }
+        .pxb-drawer-nav-item-active-highlight {
+            opacity: 0.05;
+        }
     }
 }
