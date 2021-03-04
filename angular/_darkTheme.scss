@@ -293,7 +293,7 @@
         background-color: rgba(0, 123, 193, 0.36);
         color: map-deep-get($overrides, primary, main);
         &:hover:not(.mat-button-disabled) {
-            background-color: rgba(map-get($pxb-blue, 500), 0.2);
+            background-color: rgba(map-get($pxb-blue, 200), 0.36);
         }
     }
 
@@ -306,10 +306,12 @@
                 background-color: map-get($pxb-blue, 400);
             }
             .mat-chip-remove {
+                opacity: 1;
                 color: map-get($pxb-blue, 100);
             }
             &:not(.mat-chip-disabled) .mat-chip-remove:hover {
                 color: map-get($pxb-white, 50);
+                opacity: 1;
             }
         }
         &.mat-accent {
@@ -319,10 +321,12 @@
                 background-color: map-get($pxb-lightBlue, 400);
             }
             .mat-chip-remove {
+                opacity: 1;
                 color: map-get($pxb-lightBlue, 100);
             }
             &:not(.mat-chip-disabled) .mat-chip-remove:hover {
                 color: map-get($pxb-white, 50);
+                opacity: 1;
             }
         }
         &.mat-standard-chip.mat-chip-selected.mat-warn {
@@ -334,9 +338,11 @@
             }
             .mat-chip-remove {
                 color: map-get($pxb-red, 100);
+                opacity: 1;
             }
             &:not(.mat-chip-disabled) .mat-chip-remove:hover {
                 color: map-get($pxb-white, 50);
+                opacity: 1;
             }
         }
         &:not([color]) {
@@ -347,9 +353,11 @@
             }
             .mat-chip-remove {
                 color: map-get($pxb-black, 200);
+                opacity: 1;
             }
             &:not(.mat-chip-disabled) .mat-chip-remove:hover {
                 color: map-get($pxb-black, 100);
+                opacity: 1;
             }
         }
     }
@@ -694,7 +702,7 @@
 
     /* progress bar */
     .mat-progress-bar-buffer {
-        background-color: rgba(map-get($pxb-blue, 500), 0.2);
+        background-color: #173647;
     }
 
     /* PXB Drawer */
