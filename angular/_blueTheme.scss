@@ -1,12 +1,68 @@
 // Import library functions for theme creation.
 @import '~@angular/material/theming';
 @import '~@pxblue/colors/palette';
+@import 'utility';
+@import './mixins/input-field';
+@import './mixins/chip';
 
 @mixin bluetheme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
+
+    /* input fields */
+    $inputPrimary: (
+        icon: map-get($foreground, hint),
+        labelEmpty: map-get($foreground, hint),
+        labelFilled: map-get($foreground, text),
+        labelFocused: map-get($pxb-blue, 500),
+        underlineColor: map-get($foreground, divider),
+        underlineHoverColor: map-get($foreground, text),
+        underlineFocusColor: map-get($pxb-blue, 500),
+        placeholder: map-get($pxb-black, 100),
+        hint: map-get($foreground, secondary-text),
+        filledBackgroundColor: map-get($pxb-white, 200),
+    );
+    $inputWarn: (
+        icon: map-get($foreground, hint),
+        labelEmpty: map-get($pxb-red, 500),
+        labelFilled: map-get($pxb-red, 500),
+        labelFocused: map-get($pxb-red, 500),
+        underlineColor: map-get($pxb-red, 500),
+        underlineHoverColor: map-get($pxb-red, 900),
+        underlineFocusColor: map-get($pxb-red, 500),
+        placeholder: map-get($pxb-black, 100),
+        hint: map-get($pxb-red, 500),
+        filledBackgroundColor: map-get($pxb-white, 200),
+    );
+    $inputDisabled: (
+        text: map-get($foreground, disabled),
+        filledBackgroundColor: map-get($pxb-white, 100),
+    );
+    @include pxb-mat-form-field($inputPrimary, $inputWarn, $inputDisabled);
+
+    /* Chips */
+    $chipText: map-get($pxb-white, 50);
+    $chipPrimary: (
+        text: $chipText,
+        backgroundPalette: $pxb-blue,
+    );
+    $chipAccent: (
+        text: $chipText,
+        backgroundPalette: $pxb-lightBlue,
+    );
+    $chipWarn: (
+        text: $chipText,
+        backgroundPalette: $pxb-red,
+    );
+    $chipDefault: (
+        text: map-get($foreground, text),
+        backgroundPalette: $pxb-white,
+        remove: map-get($pxb-gray, 500),
+        removeHover: map-get($pxb-gray, 400),
+    );
+    @include pxb-mat-chip($chipPrimary, $chipAccent, $chipWarn, $chipDefault);
 
     /* toolbar*/
     .mat-toolbar {
@@ -101,27 +157,6 @@
         .mat-focus-indicator.mat-button-base.ng-star-inserted {
             background-color: unset;
         }
-    }
-
-    /* Mat Form Fields*/
-    .mat-form-field-appearance-fill {
-        .mat-form-field-flex {
-            background-color: map-get($pxb-white, 200);
-        }
-    }
-    .mat-form-field .mat-form-field-label {
-        color: map-get($foreground, text);
-    }
-    .mat-form-field .mat-hint {
-        color: map-get($foreground, hint-text);
-    }
-
-    /* Mat Form Field hover ripple */
-    .mat-form-field-ripple {
-        background-color: map-get($pxb-gray, 500);
-    }
-    .mat-form-field-appearance-outline .mat-form-field-outline-thick {
-        color: map-get($foreground, hint-text);
     }
 
     /* PXB Drawer */
