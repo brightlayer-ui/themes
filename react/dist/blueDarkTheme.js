@@ -303,10 +303,22 @@ exports.blueDarkTheme = {
                     color: WhiteText,
                 },
             },
+            deleteIconColorSecondary: {
+                color: PXBColors.lightBlue[100],
+                '&:hover': {
+                    color: WhiteText,
+                },
+            },
             deleteIconOutlinedColorPrimary: {
                 color: PXBColors.blue[400],
                 '&:hover': {
                     color: ThemeColors.primary.main,
+                },
+            },
+            deleteIconOutlinedColorSecondary: {
+                color: PXBColors.lightBlue[400],
+                '&:hover': {
+                    color: ThemeColors.secondary.main,
                 },
             },
             colorPrimary: {

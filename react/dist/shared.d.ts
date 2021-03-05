@@ -33,6 +33,10 @@ export declare const typography: {
         letterSpacing: string;
         fontSize: string;
         fontWeight: number;
+        lineHeight: string;
+    };
+    caption: {
+        lineHeight: string;
     };
 };
 export declare const createSimpleLightPalette: (color: PXBlueColor) => SimplePaletteColorOptions;
