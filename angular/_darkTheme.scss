@@ -2,6 +2,8 @@
 @import 'utility';
 @import './mixins/input-field';
 @import './mixins/chip';
+@import './mixins/button';
+@import './mixins/tab';
 
 @mixin darktheme($theme) {
     $primary: map-get($theme, primary);
@@ -66,6 +68,71 @@
         filledBackgroundColor: rgba(map-get($pxb-black, 800), 0.5),
     );
     @include pxb-mat-form-field($inputPrimary, $inputWarn, $inputDisabled);
+
+    /* Buttons*/
+    $buttonPrimary: (
+        iconText: map-deep-get($overrides, primary, main),
+        defaultText: map-deep-get($overrides, primary, main),
+        defaultHoverBg: rgba(map-get($pxb-blue, 500), 0.2),
+        strokedBorder: map-deep-get($overrides, primary, main),
+        fabBg: map-deep-get($overrides, primary, dark),
+        fabHoverBg: map-get($pxb-blue, 300),
+        raisedText: map-get($pxb-white, 50),
+        raisedBg: map-deep-get($overrides, primary, dark),
+        raisedHoverBg: map-get($pxb-blue, 300),
+    );
+    $buttonAccent: (
+        iconText: map-get($pxb-lightBlue, 200),
+        defaultText: map-get($pxb-lightBlue, 200),
+        defaultHoverBg: rgba(map-get($pxb-blue, 500), 0.2),
+        strokedBorder: map-get($pxb-lightBlue, 200),
+        fabText: map-get($pxb-white, 50),
+        fabBg: map-get($pxb-lightBlue, 500),
+        fabHoverBg: map-get($pxb-lightBlue, 300),
+        raisedText: map-get($pxb-white, 50),
+        raisedBg: map-get($pxb-lightBlue, 500),
+        raisedHoverBg: map-get($pxb-lightBlue, 300),
+    );
+    $buttonWarn: (
+        iconText: map-deep-get($overrides, error, main),
+        strokedText: map-get($pxb-red, 200),
+        defaultHoverBg: rgba(map-get($pxb-red, 500), 0.2),
+        strokedBorder: map-deep-get($overrides, error, main),
+        fabText: map-get($pxb-white, 50),
+        fabBg: map-deep-get($overrides, error, dark),
+        fabHoverBg: map-get($pxb-red, 300),
+        raisedText: map-get($pxb-white, 50),
+        raisedBg: map-deep-get($overrides, error, dark),
+        raisedHoverBg: map-get($pxb-red, 300),
+    );
+    $buttonDefault: (
+        iconText: map-get($pxb-black, 50),
+        strokedText: map-get($pxb-black, 50),
+        defaultHoverBg: rgba(map-get($pxb-black, 50), 0.1),
+        strokedBorder: map-get($pxb-black, 200),
+        fabText: map-get($pxb-white, 50),
+        fabBg: map-get($pxb-black, 500),
+        fabHoverBg: map-get($pxb-black, 300),
+        raisedText: map-get($pxb-white, 50),
+        raisedBg: map-get($pxb-black, 500),
+        raisedHoverBg: map-get($pxb-black, 400),
+        /* Toggle Buttons */ toggleBorder: map-get($pxb-black, 200),
+        toggleBg: map-get($pxb-black, 900),
+        toggleText: map-get($pxb-black, 200),
+        toggleHoverBg: rgba(map-get($pxb-black, 50), 0.1),
+        toggleActiveBg: rgba(0, 123, 193, 0.36),
+        toggleActiveText: map-deep-get($overrides, primary, main),
+        toggleActiveHoverBg: rgba(map-get($pxb-blue, 200), 0.36),
+    );
+    @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
+
+    /* Tabs */
+    $tabText: map-get($foreground, secondary-text);
+    $tabBackground: map-get($pxb-black, 900);
+    $tabActiveText: map-deep-get($overrides, primary, main);
+    $tabActiveBackground: map-get($pxb-black, 900);
+    $underline: map-deep-get($overrides, primary, main);
+    @include pxb-mat-tab($tabText, $tabBackground, $tabActiveText, $tabActiveBackground, $underline);
 
     /* Side navigation*/
     .mat-drawer {
@@ -160,63 +227,6 @@
         &.mat-warn {
             background-color: map-get($pxb-red, 500);
             color: map-get($pxb-white, 50);
-        }
-    }
-
-    /*tab bar*/
-    .mat-tab-group {
-        .mat-tab-label {
-            color: map-get($foreground, secondary-text);
-            font-weight: 400;
-            background-color: map-get($pxb-black, 900);
-
-            &:not(.mat-tab-disabled) {
-                opacity: 1;
-            }
-        }
-
-        .mat-tab-label-active {
-            font-weight: 600;
-            color: map-deep-get($overrides, primary, main);
-        }
-    }
-    .mat-tab-group.mat-primary,
-    .mat-tab-nav-bar.mat-primary {
-        .mat-ink-bar {
-            background-color: map-deep-get($overrides, primary, main);
-        }
-    }
-
-    /* Buttons */
-    /* Default/Stroked buttons */
-    .mat-button,
-    .mat-stroked-button {
-        &.mat-primary {
-            color: map-deep-get($overrides, primary, main);
-            &:hover:not(.mat-button-disabled) {
-                background-color: rgba(map-get($pxb-blue, 500), 0.2);
-            }
-        }
-        &.mat-accent {
-            color: map-get($pxb-lightBlue, 200);
-            &:hover:not(.mat-button-disabled) {
-                background-color: rgba(map-get($pxb-lightBlue, 500), 0.2);
-            }
-        }
-        &.mat-warn {
-            color: map-get($pxb-red, 200);
-            &:hover:not(.mat-button-disabled) {
-                background-color: rgba(map-get($pxb-red, 500), 0.2);
-            }
-        }
-        &:not(.mat-button-disabled):hover {
-            background-color: rgba(map-get($pxb-black, 50), 0.1);
-        }
-        &:not([color]) {
-            color: map-get($pxb-black, 50);
-            &:hover:not(.mat-button-disabled) {
-                background-color: rgba(map-get($pxb-black, 50), 0.1);
-            }
         }
     }
 

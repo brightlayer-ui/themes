@@ -1,11 +1,7 @@
 @import '../utility';
 
-
-
 @mixin pxb-mat-form-field($primaryPalette, $warnPalette, $disablePalette) {
-
     .mat-form-field {
-
         &.mat-primary {
             @include colored-input-styles($primaryPalette);
         }
@@ -16,7 +12,6 @@
 
         /* Disabled */
         &.mat-form-field-disabled {
-
             .mat-hint,
             .mat-form-field-label,
             .mat-form-field-underline,
@@ -47,9 +42,7 @@
 }
 
 @mixin colored-input-styles($palette) {
-
     &:not(.mat-form-field-disabled) {
-
         /* Underline */
         &.mat-form-field-appearance-legacy,
         &.mat-form-field-appearance-standard,

@@ -4,6 +4,7 @@
 @import 'utility';
 @import './mixins/input-field';
 @import './mixins/chip';
+@import './mixins/button';
 
 @mixin bluetheme($theme) {
     $primary: map-get($theme, primary);
@@ -76,6 +77,64 @@
         }
     }
 
+    /* Buttons*/
+    $buttonPrimary: (
+        iconText: map-get($pxb-white, 50),
+        fabText: map-get($pxb-white, 50),
+        strokedText: map-get($pxb-blue, 500),
+        raisedText: map-get($pxb-white, 50),
+        defaultHoverBg: map-get($pxb-blue, 300),
+        fabHoverBg: map-get($pxb-blue, 300),
+        raisedHoverBg: map-get($pxb-blue, 300),
+        fabBg: map-get($pxb-blue, 500),
+        raisedBg: map-get($pxb-blue, 500),
+        strokedBorder: map-get($pxb-blue, 500),
+    );
+    $buttonAccent: (
+        iconText: map-get($pxb-white, 50),
+        fabText: map-get($pxb-white, 50),
+        strokedText: map-get($pxb-lightBlue, 500),
+        raisedText: map-get($pxb-white, 50),
+        defaultHoverBg: map-get($pxb-lightBlue, 300),
+        fabHoverBg: map-get($pxb-lightBlue, 300),
+        raisedHoverBg: map-get($pxb-lightBlue, 300),
+        fabBg: map-get($pxb-lightBlue, 500),
+        raisedBg: map-get($pxb-lightBlue, 500),
+        strokedBorder: map-get($pxb-lightBlue, 500),
+    );
+    $buttonWarn: (
+        iconText: map-get($pxb-white, 50),
+        fabText: map-get($pxb-white, 50),
+        strokedText: map-get($pxb-red, 500),
+        raisedText: map-get($pxb-white, 50),
+        defaultHoverBg: map-get($pxb-red, 300),
+        fabHoverBg: map-get($pxb-red, 300),
+        raisedHoverBg: map-get($pxb-red, 300),
+        fabBg: map-get($pxb-red, 500),
+        raisedBg: map-get($pxb-red, 500),
+        strokedBorder: map-get($pxb-red, 500),
+    );
+    $buttonDefault: (
+        raisedText: map-get($pxb-white, 50),
+        fabText: map-get($pxb-white, 50),
+        iconText: map-get($pxb-black, 500),
+        strokedText: map-get($pxb-black, 500),
+        defaultHoverBg: map-get($pxb-black, 300),
+        raisedHoverBg: map-get($pxb-white, 900),
+        fabHoverBg: map-get($pxb-gray, 300),
+        fabBg: map-get($pxb-gray, 500),
+        raisedBg: map-get($pxb-gray, 100),
+        strokedBorder: map-get($pxb-black, 500),
+        /* Toggle Buttons */ toggleBorder: map-get($pxb-black, 200),
+        toggleBg: map-get($pxb-white, 50),
+        toggleText: map-get($pxb-gray, 500),
+        toggleHoverBg: rgba(66, 78, 84, 0.05),
+        toggleActiveBg: map-get($pxb-blue, 50),
+        toggleActiveText: map-get($pxb-blue, 500),
+        toggleActiveHoverBg: map-get($pxb-blue, 100),
+    );
+    @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
+
     /*tab bar*/
     .mat-tab-group {
         .mat-tab-header {
@@ -121,19 +180,6 @@
     .mat-accent {
         .mat-tab-header-pagination-chevron {
             border-color: map-get($background, base);
-        }
-    }
-
-    /* button*/
-    .mat-stroked-button:not([disabled]) {
-        border-color: map-get($background, base);
-
-        &.mat-primary {
-            border-color: map-get($primary, 500);
-        }
-
-        &.mat-accent {
-            border-color: map-get($accent, 500);
         }
     }
 
