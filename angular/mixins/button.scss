@@ -12,9 +12,7 @@
         @include stroked-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette);
     }
     .mat-fab,
-    .mat-mini-fab {
-        @include fab-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette);
-    }
+    .mat-mini-fab,
     .mat-raised-button,
     .mat-flat-button {
         @include raised-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette);
@@ -25,7 +23,7 @@
 }
 
 @mixin icon-colors($palette) {
-    color: map-get($palette, iconText);
+    color: map-deep-get($palette, icon, text);
 }
 @mixin icon-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
     &.mat-primary {
@@ -43,9 +41,9 @@
 }
 
 @mixin default-colors($palette) {
-    color: map-get($palette, defaultText);
+    color: map-deep-get($palette, outline, text);
     &:hover:not(.mat-button-disabled) {
-        background-color: map-get($palette, defaultHoverBg);
+        background-color: map-deep-get($palette, outline, backgroundHover);
     }
 }
 @mixin default-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
@@ -65,8 +63,8 @@
 
 @mixin stroked-colors($palette) {
     &:not(.mat-button-disabled) {
-        color: map-get($palette, strokedText);
-        border-color: map-get($palette, strokedBorder);
+        color: map-deep-get($palette, outline, text);
+        border-color: map-deep-get($palette, outline, border);
     }
 }
 @mixin stroked-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
@@ -84,33 +82,11 @@
     }
 }
 
-@mixin fab-colors($palette) {
-    color: map-get($palette, fabText);
-    background-color: map-get($palette, fabBg);
-    &:hover:not(.mat-button-disabled) {
-        background-color: map-get($palette, fabHoverBg);
-    }
-}
-@mixin fab-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
-    &.mat-primary {
-        @include fab-colors($primaryPalette);
-    }
-    &.mat-accent {
-        @include fab-colors($accentPalette);
-    }
-    &.mat-warn {
-        @include fab-colors($warnPalette);
-    }
-    &:not([color]) {
-        @include fab-colors($defaultPalette);
-    }
-}
-
 @mixin raised-colors($palette) {
-    color: map-get($palette, raisedText);
-    background-color: map-get($palette, raisedBg);
+    color: map-deep-get($palette, fill, text);
+    background-color: map-deep-get($palette, fill, background);
     &:hover:not(.mat-button-disabled) {
-        background-color: map-get($palette, raisedHoverBg);
+        background-color: map-deep-get($palette, fill, backgroundHover);
     }
 }
 @mixin raised-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
@@ -130,19 +106,19 @@
 
 @mixin button-toggle-helper($palette) {
     .mat-button-toggle-button {
-        color: map-get($palette, toggleText);
-        background-color: map-get($palette, toggleBg);
-        border-color: map-get($palette, toggleBorder);
+        color: map-deep-get($palette, toggle, default, text);
+        background-color: map-deep-get($palette, toggle, default, background);
+        border-color: map-deep-get($palette, toggle, border);
         &:hover:not(.mat-button-disabled) {
-            background-color: map-get($palette, toggleHoverBg);
+            background-color: map-deep-get($palette, toggle, default, backgroundHover);
         }
     }
 
     &.mat-button-toggle-checked .mat-button-toggle-button {
-        color: map-get($palette, toggleActiveText);
-        background-color: map-get($palette, toggleActiveBg);
+        color: map-deep-get($palette, toggle, active, text);
+        background-color: map-deep-get($palette, toggle, active, background);
         &:hover:not(.mat-button-disabled) {
-            background-color: map-get($palette, toggleActiveHoverBg);
+            background-color: map-deep-get($palette, toggle, active, backgroundHover);
         }
     }
 }

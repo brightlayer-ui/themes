@@ -78,6 +78,7 @@
     }
 
     /* Buttons*/
+    /*
     $buttonPrimary: (
         iconText: map-get($pxb-white, 50),
         fabText: map-get($pxb-white, 50),
@@ -125,7 +126,7 @@
         fabBg: map-get($pxb-gray, 500),
         raisedBg: map-get($pxb-gray, 100),
         strokedBorder: map-get($pxb-black, 500),
-        /* Toggle Buttons */ toggleBorder: map-get($pxb-black, 200),
+      toggleBorder: map-get($pxb-black, 200),
         toggleBg: map-get($pxb-white, 50),
         toggleText: map-get($pxb-gray, 500),
         toggleHoverBg: rgba(66, 78, 84, 0.05),
@@ -134,7 +135,7 @@
         toggleActiveHoverBg: map-get($pxb-blue, 100),
     );
     @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
-
+ */
     /*tab bar*/
     .mat-tab-group {
         .mat-tab-header {

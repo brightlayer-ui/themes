@@ -71,58 +71,81 @@
 
     /* Buttons*/
     $buttonPrimary: (
-        iconText: map-deep-get($overrides, primary, main),
-        defaultText: map-deep-get($overrides, primary, main),
-        defaultHoverBg: rgba(map-get($pxb-blue, 500), 0.2),
-        strokedBorder: map-deep-get($overrides, primary, main),
-        fabBg: map-deep-get($overrides, primary, dark),
-        fabHoverBg: map-get($pxb-blue, 300),
-        raisedText: map-get($pxb-white, 50),
-        raisedBg: map-deep-get($overrides, primary, dark),
-        raisedHoverBg: map-get($pxb-blue, 300),
+        icon: (
+            text: map-deep-get($overrides, primary, main),
+        ),
+        outline: (
+            text: map-deep-get($overrides, primary, main),
+            background: transparent,
+            backgroundHover: rgba(map-get($pxb-blue, 500), 0.2),
+            border: map-deep-get($overrides, primary, main),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-deep-get($overrides, primary, dark),
+            backgroundHover: map-get($pxb-blue, 300),
+        ),
     );
     $buttonAccent: (
-        iconText: map-get($pxb-lightBlue, 200),
-        defaultText: map-get($pxb-lightBlue, 200),
-        defaultHoverBg: rgba(map-get($pxb-blue, 500), 0.2),
-        strokedBorder: map-get($pxb-lightBlue, 200),
-        fabText: map-get($pxb-white, 50),
-        fabBg: map-get($pxb-lightBlue, 500),
-        fabHoverBg: map-get($pxb-lightBlue, 300),
-        raisedText: map-get($pxb-white, 50),
-        raisedBg: map-get($pxb-lightBlue, 500),
-        raisedHoverBg: map-get($pxb-lightBlue, 300),
+        icon: (
+            text: map-get($pxb-lightBlue, 200),
+        ),
+        outline: (
+            text: map-get($pxb-lightBlue, 200),
+            background: transparent,
+            backgroundHover: rgba(map-get($pxb-lightBlue, 500), 0.2),
+            border: map-get($pxb-lightBlue, 200),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-get($pxb-lightBlue, 500),
+            backgroundHover: map-get($pxb-lightBlue, 300),
+        ),
     );
     $buttonWarn: (
-        iconText: map-deep-get($overrides, error, main),
-        strokedText: map-get($pxb-red, 200),
-        defaultHoverBg: rgba(map-get($pxb-red, 500), 0.2),
-        strokedBorder: map-deep-get($overrides, error, main),
-        fabText: map-get($pxb-white, 50),
-        fabBg: map-deep-get($overrides, error, dark),
-        fabHoverBg: map-get($pxb-red, 300),
-        raisedText: map-get($pxb-white, 50),
-        raisedBg: map-deep-get($overrides, error, dark),
-        raisedHoverBg: map-get($pxb-red, 300),
+        icon: (
+            text: map-deep-get($overrides, error, main),
+        ),
+        outline: (
+            text: map-get($pxb-red, 200),
+            background: transparent,
+            backgroundHover: rgba(map-get($pxb-red, 500), 0.2),
+            border: map-get($pxb-red, 200),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-deep-get($overrides, error, dark),
+            backgroundHover: map-get($pxb-red, 300),
+        ),
     );
     $buttonDefault: (
-        iconText: map-get($pxb-black, 50),
-        strokedText: map-get($pxb-black, 50),
-        defaultHoverBg: rgba(map-get($pxb-black, 50), 0.1),
-        strokedBorder: map-get($pxb-black, 200),
-        fabText: map-get($pxb-white, 50),
-        fabBg: map-get($pxb-black, 500),
-        fabHoverBg: map-get($pxb-black, 300),
-        raisedText: map-get($pxb-white, 50),
-        raisedBg: map-get($pxb-black, 500),
-        raisedHoverBg: map-get($pxb-black, 400),
-        /* Toggle Buttons */ toggleBorder: map-get($pxb-black, 200),
-        toggleBg: map-get($pxb-black, 900),
-        toggleText: map-get($pxb-black, 200),
-        toggleHoverBg: rgba(map-get($pxb-black, 50), 0.1),
-        toggleActiveBg: rgba(0, 123, 193, 0.36),
-        toggleActiveText: map-deep-get($overrides, primary, main),
-        toggleActiveHoverBg: rgba(map-get($pxb-blue, 200), 0.36),
+        icon: (
+            text: map-get($pxb-black, 50),
+        ),
+        outline: (
+            text: map-get($pxb-black, 50),
+            background: transparent,
+            backgroundHover: rgba(map-get($pxb-black, 50), 0.1),
+            border: map-get($pxb-black, 200),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-get($pxb-black, 500),
+            backgroundHover: map-get($pxb-black, 300),
+        ),
+        toggle: (
+            border: map-get($pxb-black, 200),
+            default: (
+                text: map-get($pxb-black, 200),
+                background: map-get($pxb-black, 900),
+                backgroundHover: rgba(map-get($pxb-black, 50), 0.1),
+            ),
+            active: (
+                text: map-deep-get($overrides, primary, main),
+                background: rgba(0, 123, 193, 0.36),
+                backgroundHover: rgba(map-get($pxb-blue, 200), 0.36),
+            ),
+        ),
     );
     @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
 
