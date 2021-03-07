@@ -8,6 +8,7 @@
 -   Updates to dark theme colors.
 -   Minor updates to light theme colors.
 -   `<Typography>` `subtitle1` variant from regular to semibold to distinguish it from `body1`.
+-   Light theme shadow now uses black500 as the base color.
 
 ## v5.0.3
 

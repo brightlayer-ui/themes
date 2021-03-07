@@ -6,6 +6,9 @@
 
  This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
  **/
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -13,10 +16,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+var shadows_1 = __importDefault(require("@material-ui/core/styles/shadows"));
 var shared_1 = require("./shared");
 var PXBColors = __importStar(require("@pxblue/colors"));
 var color_1 = __importDefault(require("color"));
@@ -54,6 +55,14 @@ var ThemeColors = {
 var WhiteText = PXBColors.white[50];
 var BlackBorder = PXBColors.black[500];
 var Spacing = 8;
+var ShadowBaseColorArray = color_1.default(PXBColors.black[500]).rgb().array();
+var MUIShadowCopy = shadows_1.default.slice();
+MUIShadowCopy.splice(0, 1);
+var TunedShadow = new Array(24);
+TunedShadow.fill('');
+MUIShadowCopy.forEach(function (shadow, index) {
+    TunedShadow[index] = shadow.replace(/rgba\(0,0,0/g, "rgba(" + ShadowBaseColorArray[0] + "," + ShadowBaseColorArray[1] + "," + ShadowBaseColorArray[2]);
+});
 /*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
     to customize in our themes. These have changed periodically from version to version of Material UI.
@@ -73,6 +82,8 @@ exports.blueTheme = {
         text: ThemeColors.text,
         action: ThemeColors.action,
     },
+    // @ts-ignore
+    shadows: ['none'].concat(TunedShadow),
     overrides: {
         // APP BAR OVERRIDES
         MuiAppBar: {
