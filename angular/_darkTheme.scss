@@ -1,5 +1,4 @@
 @import '~@pxblue/colors/palette';
-@import 'utility';
 @import './mixins/input-field';
 @import './mixins/chip';
 @import './mixins/button';
@@ -10,13 +9,9 @@
 @mixin darktheme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
+    $warn: $pxb-red;
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
-
-    $overrides: (
-        primary: createSimplePalette($primary),
-        error: createSimplePalette($pxb-red),
-    );
 
     /* Chips */
     $chipText: map-get($pxb-white, 50);
@@ -49,28 +44,28 @@
         label: (
             withoutValue: map-get($foreground, secondary-text),
             withValue: map-get($foreground, text),
-            onFocus: map-deep-get($overrides, primary, main),
+            onFocus: map-get($accent, 200),
         ),
         underline: (
             default: map-get($foreground, disabled),
             onHover: map-get($foreground, secondary-text),
-            onFocus: map-deep-get($overrides, primary, dark),
+            onFocus: map-get($accent, 500),
         ),
     );
     $inputWarn: (
         icon: map-get($foreground, secondary-text),
         placeholder: map-get($foreground, disabled),
-        hint: map-deep-get($overrides, error, main),
+        hint: map-get($warn, 200),
         filledBackgroundColor: rgba(255, 255, 255, 0.1),
         label: (
-            withoutValue: map-deep-get($overrides, error, main),
-            withValue: map-deep-get($overrides, error, main),
-            onFocus: map-deep-get($overrides, error, main),
+            withoutValue: map-get($warn, 200),
+            withValue: map-get($warn, 200),
+            onFocus: map-get($warn, 200),
         ),
         underline: (
-            default: map-deep-get($overrides, error, dark),
-            onHover: map-deep-get($overrides, error, main),
-            onFocus: map-deep-get($overrides, error, dark),
+            default: map-get($warn, 500),
+            onHover: map-get($warn, 200),
+            onFocus: map-get($warn, 500),
         ),
     );
     $inputDisabled: (
@@ -82,17 +77,17 @@
     /* Buttons*/
     $buttonPrimary: (
         icon: (
-            text: map-deep-get($overrides, primary, main),
+            text: map-get($accent, 200),
         ),
         outline: (
-            text: map-deep-get($overrides, primary, main),
+            text: map-get($accent, 200),
             background: transparent,
             backgroundHover: rgba(map-get($pxb-blue, 500), 0.2),
-            border: map-deep-get($overrides, primary, main),
+            border: map-get($accent, 200),
         ),
         fill: (
             text: map-get($pxb-white, 50),
-            background: map-deep-get($overrides, primary, dark),
+            background: map-get($accent, 500),
             backgroundHover: map-get($pxb-blue, 300),
         ),
     );
@@ -114,7 +109,7 @@
     );
     $buttonWarn: (
         icon: (
-            text: map-deep-get($overrides, error, main),
+            text: map-get($warn, 200),
         ),
         outline: (
             text: map-get($pxb-red, 200),
@@ -124,7 +119,7 @@
         ),
         fill: (
             text: map-get($pxb-white, 50),
-            background: map-deep-get($overrides, error, dark),
+            background: map-get($warn, 500),
             backgroundHover: map-get($pxb-red, 300),
         ),
     );
@@ -151,7 +146,7 @@
                 backgroundHover: rgba(map-get($pxb-black, 50), 0.1),
             ),
             active: (
-                text: map-deep-get($overrides, primary, main),
+                text: map-get($accent, 200),
                 background: rgba(0, 123, 193, 0.36),
                 backgroundHover: rgba(map-get($pxb-blue, 200), 0.36),
             ),
@@ -162,9 +157,9 @@
     /* Tabs */
     $tabText: map-get($foreground, secondary-text);
     $tabBackground: map-get($pxb-black, 900);
-    $tabActiveText: map-deep-get($overrides, primary, main);
+    $tabActiveText: map-get($accent, 200);
     $tabActiveBackground: map-get($pxb-black, 900);
-    $tabUnderline: map-deep-get($overrides, primary, main);
+    $tabUnderline: map-get($accent, 200);
     @include pxb-mat-tab($tabText, $tabBackground, $tabActiveText, $tabActiveBackground, $tabUnderline);
 
     /* Stepper */
@@ -177,7 +172,7 @@
     );
     $stepperLabel: (
         defaultColor: map-get($pxb-black, 200),
-        activeColor: map-deep-get($overrides, primary, main),
+        activeColor: map-get($accent, 200),
     );
     @include pxb-mat-stepper($stepperBackground, $stepperIcon, $stepperLabel);
 
@@ -188,16 +183,16 @@
 
     /* Slide Toggle */
     $slideTogglePrimary: (
-        thumb: map-deep-get($overrides, primary, main),
-        bar: rgba(map-deep-get($overrides, primary, main), 0.5),
+        thumb: map-get($accent, 200),
+        bar: rgba(map-get($accent, 200), 0.5),
     );
     $slideToggleAccent: (
         thumb: map-get($pxb-lightBlue, 200),
         bar: rgba(map-get($pxb-lightBlue, 200), 0.5),
     );
     $slideToggleWarn: (
-        thumb: map-deep-get($overrides, error, main),
-        bar: rgba(map-deep-get($overrides, error, main), 0.5),
+        thumb: map-get($warn, 200),
+        bar: rgba(map-get($warn, 200), 0.5),
     );
     $slideToggleDefault: (
         thumb: map-get($foreground, text),
@@ -208,7 +203,7 @@
     /* badge */
     .mat-badge-content {
         color: #fff;
-        background-color: map-deep-get($overrides, primary, dark);
+        background-color: map-get($accent, 500);
     }
     .mat-badge-accent .mat-badge-content {
         color: #fff;
@@ -216,12 +211,12 @@
     }
     .mat-badge-warn .mat-badge-content {
         color: #fff;
-        background-color: map-deep-get($overrides, error, dark);
+        background-color: map-get($warn, 500);
     }
 
     /* checkbox */
     .mat-checkbox-checked.mat-primary .mat-checkbox-background {
-        background-color: map-deep-get($overrides, primary, main);
+        background-color: map-get($accent, 200);
     }
     .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
         border-color: map-get($foreground, disabled);
@@ -235,11 +230,11 @@
         .mat-radio-inner-circle,
         .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
         &.mat-radio-checked .mat-radio-persistent-ripple {
-            background-color: map-deep-get($overrides, primary, main);
+            background-color: map-get($accent, 200);
         }
 
         &.mat-radio-checked .mat-radio-outer-circle {
-            border-color: map-deep-get($overrides, primary, main);
+            border-color: map-get($accent, 200);
         }
     }
 
@@ -283,7 +278,7 @@
 
     /* date picker */
     .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
-        border-color: map-deep-get($overrides, primary, main);
+        border-color: map-get($accent, 200);
     }
     .mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon,
     .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon {
@@ -296,7 +291,7 @@
     /* slider */
     .mat-slider {
         .mat-slider-thumb {
-            color: map-deep-get($overrides, primary, main);
+            color: map-get($accent, 200);
         }
 
         .mat-slider-track-fill {
@@ -327,7 +322,7 @@
     /* expansion panel */
     .mat-expansion-panel-header-title,
     .mat-expansion-indicator::after {
-        color: map-deep-get($overrides, primary, main);
+        color: map-get($accent, 200);
     }
 
     /* Nav list */
@@ -399,7 +394,7 @@
         }
 
         .pxb-empty-state-description {
-            color: map-deep-get($overrides, primary, main);
+            color: map-get($accent, 200);
         }
     }
 

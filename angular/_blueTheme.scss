@@ -12,6 +12,7 @@
 @mixin bluetheme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
+    $warn: $pxb-red;
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
 
@@ -24,28 +25,28 @@
         label: (
             withoutValue: map-get($foreground, hint),
             withValue: map-get($foreground, text),
-            onFocus: map-get($pxb-blue, 500),
+            onFocus: map-get($primary, 500),
         ),
         underline: (
             default: map-get($foreground, divider),
             onHover: map-get($foreground, text),
-            onFocus: map-get($pxb-blue, 500),
+            onFocus: map-get($primary, 500),
         ),
     );
     $inputWarn: (
         icon: map-get($foreground, hint),
         placeholder: map-get($pxb-black, 100),
-        hint: map-get($pxb-red, 500),
+        hint: map-get($warn, 500),
         filledBackgroundColor: map-get($pxb-white, 200),
         label: (
-            withoutValue: map-get($pxb-red, 500),
-            withValue: map-get($pxb-red, 500),
-            onFocus: map-get($pxb-red, 500),
+            withoutValue: map-get($warn, 500),
+            withValue: map-get($warn, 500),
+            onFocus: map-get($warn, 500),
         ),
         underline: (
-            default: map-get($pxb-red, 500),
-            onHover: map-get($pxb-red, 900),
-            onFocus: map-get($pxb-red, 500),
+            default: map-get($warn, 500),
+            onHover: map-get($warn, 900),
+            onFocus: map-get($warn, 500),
         ),
     );
     $inputDisabled: (
@@ -91,50 +92,50 @@
     /* Buttons*/
     $buttonPrimary: (
         icon: (
-            text: map-get($pxb-blue, 500),
+            text: map-get($primary, 500),
         ),
         outline: (
-            text: map-get($pxb-blue, 500),
+            text: map-get($primary, 500),
             background: transparent,
             backgroundHover: rgba(0, 123, 193, 0.05),
-            border: map-get($pxb-blue, 500),
+            border: map-get($primary, 500),
         ),
         fill: (
             text: map-get($pxb-white, 50),
-            background: map-get($pxb-blue, 500),
-            backgroundHover: map-get($pxb-blue, 300),
+            background: map-get($primary, 500),
+            backgroundHover: map-get($primary, 300),
         ),
     );
     $buttonAccent: (
         icon: (
-            text: map-get($pxb-lightBlue, 500),
+            text: map-get($accent, 500),
         ),
         outline: (
-            text: map-get($pxb-lightBlue, 500),
+            text: map-get($accent, 500),
             background: transparent,
-            backgroundHover: rgba(map-get($pxb-lightBlue, 500), 0.05),
-            border: map-get($pxb-lightBlue, 500),
+            backgroundHover: rgba(map-get($accent, 500), 0.05),
+            border: map-get($accent, 500),
         ),
         fill: (
             text: map-get($pxb-white, 50),
-            background: map-get($pxb-lightBlue, 500),
-            backgroundHover: map-get($pxb-lightBlue, 300),
+            background: map-get($accent, 500),
+            backgroundHover: map-get($accent, 300),
         ),
     );
     $buttonWarn: (
         icon: (
-            text: map-get($pxb-red, 500),
+            text: map-get($warn, 500),
         ),
         outline: (
-            text: map-get($pxb-red, 500),
+            text: map-get($warn, 500),
             background: transparent,
-            backgroundHover: rgba(map-get($pxb-red, 500), 0.05),
-            border: map-get($pxb-red, 500),
+            backgroundHover: rgba(map-get($warn, 500), 0.05),
+            border: map-get($warn, 500),
         ),
         fill: (
             text: map-get($pxb-white, 50),
-            background: map-get($pxb-red, 500),
-            backgroundHover: map-get($pxb-red, 300),
+            background: map-get($warn, 500),
+            backgroundHover: map-get($warn, 300),
         ),
     );
     $buttonDefault: (
@@ -160,9 +161,9 @@
                 backgroundHover: rgba(66, 78, 84, 0.05),
             ),
             active: (
-                text: map-get($pxb-blue, 500),
-                background: map-get($pxb-blue, 50),
-                backgroundHover: map-get($pxb-blue, 100),
+                text: map-get($primary, 500),
+                background: map-get($primary, 50),
+                backgroundHover: map-get($primary, 100),
             ),
         ),
     );
@@ -175,7 +176,7 @@
     }
 
     /* Tabs */
-    $tabText: map-get($pxb-blue, 200);
+    $tabText: map-get($primary, 200);
     $tabBackground: map-get($primary, 500);
     $tabActiveText: map-get($pxb-white, 50);
     $tabActiveBackground: map-get($primary, 500);
@@ -192,22 +193,22 @@
     );
     $stepperLabel: (
         defaultColor: map-get($pxb-black, 500),
-        activeColor: map-get($pxb-blue, 500),
+        activeColor: map-get($primary, 500),
     );
     @include pxb-mat-stepper($stepperBackground, $stepperIcon, $stepperLabel);
 
     /* Slide Toggle */
     $slideTogglePrimary: (
-        thumb: map-get($pxb-blue, 500),
-        bar: rgba(map-get($pxb-blue, 500), 0.38),
+        thumb: map-get($primary, 500),
+        bar: rgba(map-get($primary, 500), 0.38),
     );
     $slideToggleAccent: (
-        thumb: map-get($pxb-lightBlue, 500),
-        bar: rgba(map-get($pxb-lightBlue, 500), 0.5),
+        thumb: map-get($accent, 500),
+        bar: rgba(map-get($accent, 500), 0.5),
     );
     $slideToggleWarn: (
-        thumb: map-get($pxb-red, 500),
-        bar: rgba(map-get($pxb-red, 500), 0.38),
+        thumb: map-get($warn, 500),
+        bar: rgba(map-get($warn, 500), 0.38),
     );
     $slideToggleDefault: (
         thumb: map-get($pxb-white, 50),
@@ -217,7 +218,7 @@
 
     /* date picker */
     .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
-        border-color: map-get($pxb-blue, 500);
+        border-color: map-get($primary, 500);
     }
     .mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon,
     .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon,
@@ -229,9 +230,9 @@
     .mat-snack-bar-container {
         color: map-get($pxb-black, 50);
         .mat-simple-snackbar-action .mat-button {
-            color: map-get($pxb-blue, 200);
+            color: map-get($primary, 200);
             &:hover {
-                background-color: rgba(map-get($pxb-lightBlue, 500), 0.2);
+                background-color: rgba(map-get($accent, 500), 0.2);
             }
         }
     }
@@ -247,13 +248,13 @@
     /* Slider */
     .mat-slider {
         .mat-slider-track-fill {
-            background-color: map-get($pxb-blue, 300);
+            background-color: map-get($primary, 300);
         }
         .mat-slider-ticks {
             background-image: repeating-linear-gradient(
                 to right,
-                map-get($pxb-blue, 200),
-                map-get($pxb-blue, 200),
+                map-get($primary, 200),
+                map-get($primary, 200),
                 2px,
                 transparent 0,
                 transparent
