@@ -4,6 +4,8 @@
 @import './mixins/chip';
 @import './mixins/button';
 @import './mixins/tab';
+@import './mixins/stepper';
+@import './mixins/slide-toggle';
 
 @mixin darktheme($theme) {
     $primary: map-get($theme, primary);
@@ -41,27 +43,35 @@
     /* input fields */
     $inputPrimary: (
         icon: map-get($foreground, secondary-text),
-        labelEmpty: map-get($foreground, secondary-text),
-        labelFilled: map-get($foreground, text),
-        labelFocused: map-deep-get($overrides, primary, main),
-        underlineColor: map-get($foreground, disabled),
-        underlineHoverColor: map-get($foreground, secondary-text),
-        underlineFocusColor: map-deep-get($overrides, primary, dark),
         placeholder: map-get($foreground, disabled),
         hint: map-get($foreground, secondary-text),
         filledBackgroundColor: rgba(map-get($pxb-black, 800), 0.5),
+        label: (
+            withoutValue: map-get($foreground, secondary-text),
+            withValue: map-get($foreground, text),
+            onFocus: map-deep-get($overrides, primary, main),
+        ),
+        underline: (
+            default: map-get($foreground, disabled),
+            onHover: map-get($foreground, secondary-text),
+            onFocus: map-deep-get($overrides, primary, dark),
+        ),
     );
     $inputWarn: (
         icon: map-get($foreground, secondary-text),
-        labelEmpty: map-deep-get($overrides, error, main),
-        labelFilled: map-deep-get($overrides, error, main),
-        labelFocused: map-deep-get($overrides, error, main),
-        underlineColor: map-deep-get($overrides, error, dark),
-        underlineHoverColor: map-deep-get($overrides, error, main),
-        underlineFocusColor: map-deep-get($overrides, error, dark),
         placeholder: map-get($foreground, disabled),
         hint: map-deep-get($overrides, error, main),
         filledBackgroundColor: rgba(255, 255, 255, 0.1),
+        label: (
+            withoutValue: map-deep-get($overrides, error, main),
+            withValue: map-deep-get($overrides, error, main),
+            onFocus: map-deep-get($overrides, error, main),
+        ),
+        underline: (
+            default: map-deep-get($overrides, error, dark),
+            onHover: map-deep-get($overrides, error, main),
+            onFocus: map-deep-get($overrides, error, dark),
+        ),
     );
     $inputDisabled: (
         text: map-get($foreground, disabled),
@@ -154,48 +164,55 @@
     $tabBackground: map-get($pxb-black, 900);
     $tabActiveText: map-deep-get($overrides, primary, main);
     $tabActiveBackground: map-get($pxb-black, 900);
-    $underline: map-deep-get($overrides, primary, main);
-    @include pxb-mat-tab($tabText, $tabBackground, $tabActiveText, $tabActiveBackground, $underline);
+    $tabUnderline: map-deep-get($overrides, primary, main);
+    @include pxb-mat-tab($tabText, $tabBackground, $tabActiveText, $tabActiveBackground, $tabUnderline);
+
+    /* Stepper */
+    $stepperBackground: map-get($background, dialog);
+    $stepperIcon: (
+        defaultColor: map-get($pxb-black, 300),
+        defaultBg: rgba(map-get($pxb-black, 300), 0.36),
+        activeColor: map-get($pxb-white, 50),
+        activeBg: map-get($primary, 500),
+    );
+    $stepperLabel: (
+        defaultColor: map-get($pxb-black, 200),
+        activeColor: map-deep-get($overrides, primary, main),
+    );
+    @include pxb-mat-stepper($stepperBackground, $stepperIcon, $stepperLabel);
 
     /* Side navigation*/
     .mat-drawer {
         background-color: map-get($background, base);
     }
 
-    /* slide toggle */
-    .mat-slide-toggle {
-        .mat-slide-toggle-thumb {
-            background-color: map-get($foreground, text);
-        }
-
-        &.mat-primary.mat-checked,
-        &.mat-accent.mat-checked {
-            .mat-slide-toggle-bar {
-                background-color: rgba(map-deep-get($overrides, primary, main), 0.5);
-            }
-
-            .mat-slide-toggle-thumb {
-                background-color: map-deep-get($overrides, primary, main);
-            }
-        }
-
-        &:not([color]).mat-checked {
-            /* defaults (no color (primary|accent|warn) set) */
-            .mat-slide-toggle-bar {
-                background-color: map-get($foreground, secondary-text);
-            }
-
-            .mat-slide-toggle-thumb {
-                background-color: map-get($foreground, text);
-            }
-        }
-    }
+    /* Slide Toggle */
+    $slideTogglePrimary: (
+        thumb: map-deep-get($overrides, primary, main),
+        bar: rgba(map-deep-get($overrides, primary, main), 0.5),
+    );
+    $slideToggleAccent: (
+        thumb: map-get($pxb-lightBlue, 200),
+        bar: rgba(map-get($pxb-lightBlue, 200), 0.5),
+    );
+    $slideToggleWarn: (
+        thumb: map-deep-get($overrides, error, main),
+        bar: rgba(map-deep-get($overrides, error, main), 0.5),
+    );
+    $slideToggleDefault: (
+        thumb: map-get($foreground, text),
+        bar: map-get($foreground, divider),
+    );
+    @include pxb-mat-slide-toggle($slideTogglePrimary, $slideToggleAccent, $slideToggleWarn, $slideToggleDefault);
 
     /* badge */
-    .mat-badge-content,
-    .mat-badge-accent .mat-badge-content {
+    .mat-badge-content {
         color: #fff;
         background-color: map-deep-get($overrides, primary, dark);
+    }
+    .mat-badge-accent .mat-badge-content {
+        color: #fff;
+        background-color: map-get($pxb-lightBlue, 500);
     }
     .mat-badge-warn .mat-badge-content {
         color: #fff;
@@ -203,13 +220,8 @@
     }
 
     /* checkbox */
-    .mat-checkbox-checked {
-        &.mat-primary,
-        &.mat-accent {
-            .mat-checkbox-background {
-                background-color: map-deep-get($overrides, primary, main);
-            }
-        }
+    .mat-checkbox-checked.mat-primary .mat-checkbox-background {
+        background-color: map-deep-get($overrides, primary, main);
     }
     .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
         border-color: map-get($foreground, disabled);
@@ -310,55 +322,6 @@
     .mat-slider-horizontal .mat-slider-track-background,
     .mat-slider:hover .mat-slider-track-background {
         background-color: rgba(map-get($pxb-black, 300), 0.36);
-    }
-
-    /*stepper*/
-    .mat-stepper-horizontal,
-    .mat-stepper-vertical {
-        background-color: map-get($background, dialog);
-        color: map-get($foreground, secondary-text);
-
-        .mat-step-icon:not(.mat-step-icon-selected):not(.mat-step-icon-state-edit) {
-            background-color: rgba(map-get($pxb-black, 300), 0.36);
-            color: map-get($pxb-black, 300);
-        }
-
-        .mat-step-header {
-            .mat-step-label,
-            .mat-step-label-selected {
-                font-size: 0.875rem;
-            }
-
-            .mat-step-label {
-                font-weight: 400;
-            }
-
-            .mat-step-label-active {
-                font-weight: 600;
-            }
-
-            .mat-step-label {
-                color: map-get($pxb-black, 200);
-            }
-
-            .mat-step-label-selected {
-                color: map-deep-get($overrides, primary, main);
-            }
-
-            &:hover,
-            &.cdk-program-focused,
-            &.cdk-mouse-focused,
-            &.cdk-focused {
-                background-color: unset;
-            }
-
-            .mat-focus-indicator.mat-button-base.ng-star-inserted {
-                background-color: unset;
-            }
-        }
-        .mat-step-header[aria-selected='true'] .mat-step-icon {
-            background-color: map-get($primary, 500);
-        }
     }
 
     /* expansion panel */

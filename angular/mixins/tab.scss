@@ -22,4 +22,13 @@
             background-color: $underline;
         }
     }
+    .mat-tab-header-pagination-chevron {
+        border-color: $text;
+    }
+    .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+        border-color: rgba($text, 0.28);
+    }
+    .mat-tab-header-pagination {
+        background-color: $background;
+    }
 }

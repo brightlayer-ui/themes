@@ -1,28 +1,50 @@
-@mixin pxb-mat-buttons($iconText, $iconBg, $activeIconText, $activeIconBg, $instructions, $instructionsActive) {
-    .mat-slide-toggle {
-        .mat-slide-toggle-thumb {
-            background-color: map-get($foreground, text);
+@import '../utility';
+
+@mixin pxb-mat-stepper($stepperBackground, $stepperIcon, $stepperLabel) {
+    /*stepper*/
+    .mat-stepper-horizontal,
+    .mat-stepper-vertical {
+        background-color: $stepperBackground;
+
+        .mat-step-icon:not(.mat-step-icon-selected):not(.mat-step-icon-state-edit) {
+            background-color: map-get($stepperIcon, defaultBg);
+            color: map-get($stepperIcon, defaultColor);
+        }
+        .mat-step-header[aria-selected='true'] .mat-step-icon {
+            background-color: map-get($stepperIcon, activeBg);
+            color: map-get($stepperIcon, activeColor);
         }
 
-        &.mat-primary.mat-checked,
-        &.mat-accent.mat-checked {
-            .mat-slide-toggle-bar {
-                background-color: rgba(map-deep-get($overrides, primary, main), 0.5);
+        .mat-step-header {
+            .mat-step-label,
+            .mat-step-label-selected {
+                font-size: 0.875rem;
             }
 
-            .mat-slide-toggle-thumb {
-                background-color: map-deep-get($overrides, primary, main);
-            }
-        }
-
-        &:not([color]).mat-checked {
-            /* defaults (no color (primary|accent|warn) set) */
-            .mat-slide-toggle-bar {
-                background-color: map-get($foreground, secondary-text);
+            .mat-step-label {
+                font-weight: 400;
             }
 
-            .mat-slide-toggle-thumb {
-                background-color: map-get($foreground, text);
+            .mat-step-label-active {
+                font-weight: 600;
+            }
+
+            .mat-step-label {
+                color: map-get($stepperLabel, defaultColor);
+            }
+            .mat-step-label-selected {
+                color: map-get($stepperLabel, activeColor);
+            }
+
+            &:hover,
+            &.cdk-program-focused,
+            &.cdk-mouse-focused,
+            &.cdk-focused {
+                background-color: unset;
+            }
+
+            .mat-focus-indicator.mat-button-base.ng-star-inserted {
+                background-color: unset;
             }
         }
     }

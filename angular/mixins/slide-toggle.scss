@@ -1,0 +1,37 @@
+@mixin pxb-mat-slide-toggle($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
+    .mat-slide-toggle {
+        .mat-slide-toggle-thumb {
+            /* Inactive Thumb Background */
+            background-color: map-get($defaultPalette, thumb);
+        }
+
+        &.mat-primary {
+            @include active-slide-toggle-helper($primaryPalette);
+        }
+
+        &.mat-accent {
+            @include active-slide-toggle-helper($accentPalette);
+        }
+
+        &.mat-warn {
+            @include active-slide-toggle-helper($warnPalette);
+        }
+
+        &:not([color]) {
+            /* defaults (no color (primary|accent|warn) set) */
+            @include active-slide-toggle-helper($defaultPalette);
+        }
+    }
+}
+
+@mixin active-slide-toggle-helper($palette) {
+    &.mat-checked {
+        .mat-slide-toggle-bar {
+            background-color: map-get($palette, bar);
+        }
+
+        .mat-slide-toggle-thumb {
+            background-color: map-get($palette, thumb);
+        }
+    }
+}

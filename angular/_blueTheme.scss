@@ -5,6 +5,9 @@
 @import './mixins/input-field';
 @import './mixins/chip';
 @import './mixins/button';
+@import './mixins/tab';
+@import './mixins/stepper';
+@import './mixins/slide-toggle';
 
 @mixin bluetheme($theme) {
     $primary: map-get($theme, primary);
@@ -15,27 +18,35 @@
     /* input fields */
     $inputPrimary: (
         icon: map-get($foreground, hint),
-        labelEmpty: map-get($foreground, hint),
-        labelFilled: map-get($foreground, text),
-        labelFocused: map-get($pxb-blue, 500),
-        underlineColor: map-get($foreground, divider),
-        underlineHoverColor: map-get($foreground, text),
-        underlineFocusColor: map-get($pxb-blue, 500),
         placeholder: map-get($pxb-black, 100),
         hint: map-get($foreground, secondary-text),
         filledBackgroundColor: map-get($pxb-white, 200),
+        label: (
+            withoutValue: map-get($foreground, hint),
+            withValue: map-get($foreground, text),
+            onFocus: map-get($pxb-blue, 500),
+        ),
+        underline: (
+            default: map-get($foreground, divider),
+            onHover: map-get($foreground, text),
+            onFocus: map-get($pxb-blue, 500),
+        ),
     );
     $inputWarn: (
         icon: map-get($foreground, hint),
-        labelEmpty: map-get($pxb-red, 500),
-        labelFilled: map-get($pxb-red, 500),
-        labelFocused: map-get($pxb-red, 500),
-        underlineColor: map-get($pxb-red, 500),
-        underlineHoverColor: map-get($pxb-red, 900),
-        underlineFocusColor: map-get($pxb-red, 500),
         placeholder: map-get($pxb-black, 100),
         hint: map-get($pxb-red, 500),
         filledBackgroundColor: map-get($pxb-white, 200),
+        label: (
+            withoutValue: map-get($pxb-red, 500),
+            withValue: map-get($pxb-red, 500),
+            onFocus: map-get($pxb-red, 500),
+        ),
+        underline: (
+            default: map-get($pxb-red, 500),
+            onHover: map-get($pxb-red, 900),
+            onFocus: map-get($pxb-red, 500),
+        ),
     );
     $inputDisabled: (
         text: map-get($foreground, disabled),
@@ -78,138 +89,191 @@
     }
 
     /* Buttons*/
-    /*
     $buttonPrimary: (
-        iconText: map-get($pxb-white, 50),
-        fabText: map-get($pxb-white, 50),
-        strokedText: map-get($pxb-blue, 500),
-        raisedText: map-get($pxb-white, 50),
-        defaultHoverBg: map-get($pxb-blue, 300),
-        fabHoverBg: map-get($pxb-blue, 300),
-        raisedHoverBg: map-get($pxb-blue, 300),
-        fabBg: map-get($pxb-blue, 500),
-        raisedBg: map-get($pxb-blue, 500),
-        strokedBorder: map-get($pxb-blue, 500),
+        icon: (
+            text: map-get($pxb-blue, 500),
+        ),
+        outline: (
+            text: map-get($pxb-blue, 500),
+            background: transparent,
+            backgroundHover: rgba(0, 123, 193, 0.05),
+            border: map-get($pxb-blue, 500),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-get($pxb-blue, 500),
+            backgroundHover: map-get($pxb-blue, 300),
+        ),
     );
     $buttonAccent: (
-        iconText: map-get($pxb-white, 50),
-        fabText: map-get($pxb-white, 50),
-        strokedText: map-get($pxb-lightBlue, 500),
-        raisedText: map-get($pxb-white, 50),
-        defaultHoverBg: map-get($pxb-lightBlue, 300),
-        fabHoverBg: map-get($pxb-lightBlue, 300),
-        raisedHoverBg: map-get($pxb-lightBlue, 300),
-        fabBg: map-get($pxb-lightBlue, 500),
-        raisedBg: map-get($pxb-lightBlue, 500),
-        strokedBorder: map-get($pxb-lightBlue, 500),
+        icon: (
+            text: map-get($pxb-lightBlue, 500),
+        ),
+        outline: (
+            text: map-get($pxb-lightBlue, 500),
+            background: transparent,
+            backgroundHover: rgba(map-get($pxb-lightBlue, 500), 0.05),
+            border: map-get($pxb-lightBlue, 500),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-get($pxb-lightBlue, 500),
+            backgroundHover: map-get($pxb-lightBlue, 300),
+        ),
     );
     $buttonWarn: (
-        iconText: map-get($pxb-white, 50),
-        fabText: map-get($pxb-white, 50),
-        strokedText: map-get($pxb-red, 500),
-        raisedText: map-get($pxb-white, 50),
-        defaultHoverBg: map-get($pxb-red, 300),
-        fabHoverBg: map-get($pxb-red, 300),
-        raisedHoverBg: map-get($pxb-red, 300),
-        fabBg: map-get($pxb-red, 500),
-        raisedBg: map-get($pxb-red, 500),
-        strokedBorder: map-get($pxb-red, 500),
+        icon: (
+            text: map-get($pxb-red, 500),
+        ),
+        outline: (
+            text: map-get($pxb-red, 500),
+            background: transparent,
+            backgroundHover: rgba(map-get($pxb-red, 500), 0.05),
+            border: map-get($pxb-red, 500),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-get($pxb-red, 500),
+            backgroundHover: map-get($pxb-red, 300),
+        ),
     );
     $buttonDefault: (
-        raisedText: map-get($pxb-white, 50),
-        fabText: map-get($pxb-white, 50),
-        iconText: map-get($pxb-black, 500),
-        strokedText: map-get($pxb-black, 500),
-        defaultHoverBg: map-get($pxb-black, 300),
-        raisedHoverBg: map-get($pxb-white, 900),
-        fabHoverBg: map-get($pxb-gray, 300),
-        fabBg: map-get($pxb-gray, 500),
-        raisedBg: map-get($pxb-gray, 100),
-        strokedBorder: map-get($pxb-black, 500),
-      toggleBorder: map-get($pxb-black, 200),
-        toggleBg: map-get($pxb-white, 50),
-        toggleText: map-get($pxb-gray, 500),
-        toggleHoverBg: rgba(66, 78, 84, 0.05),
-        toggleActiveBg: map-get($pxb-blue, 50),
-        toggleActiveText: map-get($pxb-blue, 500),
-        toggleActiveHoverBg: map-get($pxb-blue, 100),
+        icon: (
+            text: map-get($pxb-white, 50),
+        ),
+        outline: (
+            text: map-get($pxb-black, 500),
+            background: transparent,
+            backgroundHover: rgba(66, 78, 84, 0.05),
+            border: rgba(66, 78, 84, 0.3),
+        ),
+        fill: (
+            text: map-get($pxb-black, 500),
+            background: map-get($pxb-gray, 100),
+            backgroundHover: map-get($pxb-white, 900),
+        ),
+        toggle: (
+            border: map-get($pxb-gray, 100),
+            default: (
+                text: map-get($pxb-gray, 500),
+                background: map-get($pxb-white, 50),
+                backgroundHover: rgba(66, 78, 84, 0.05),
+            ),
+            active: (
+                text: map-get($pxb-blue, 500),
+                background: map-get($pxb-blue, 50),
+                backgroundHover: map-get($pxb-blue, 100),
+            ),
+        ),
     );
     @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
- */
-    /*tab bar*/
-    .mat-tab-group {
-        .mat-tab-header {
-            background-color: map-get($background, app-bar);
+    .mat-fab,
+    .mat-mini-fab {
+        &:not([color]) {
+            background-color: map-get($pxb-white, 50);
         }
+    }
 
-        &.mat-primary .mat-tab-header {
-            background-color: map-get($primary, 500);
+    /* Tabs */
+    $tabText: map-get($pxb-blue, 200);
+    $tabBackground: map-get($primary, 500);
+    $tabActiveText: map-get($pxb-white, 50);
+    $tabActiveBackground: map-get($primary, 500);
+    $tabUnderline: map-get($pxb-white, 50);
+    @include pxb-mat-tab($tabText, $tabBackground, $tabActiveText, $tabActiveBackground, $tabUnderline);
 
-            .mat-tab-label,
-            .mat-tab-link {
-                color: map-get($pxb-white, 50);
+    /* Stepper */
+    $stepperBackground: map-get($background, dialog);
+    $stepperIcon: (
+        defaultColor: map-get($pxb-black, 500),
+        defaultBg: map-get($pxb-white, 500),
+        activeColor: map-get($pxb-white, 50),
+        activeBg: map-get($primary, 500),
+    );
+    $stepperLabel: (
+        defaultColor: map-get($pxb-black, 500),
+        activeColor: map-get($pxb-blue, 500),
+    );
+    @include pxb-mat-stepper($stepperBackground, $stepperIcon, $stepperLabel);
+
+    /* Slide Toggle */
+    $slideTogglePrimary: (
+        thumb: map-get($pxb-blue, 500),
+        bar: rgba(map-get($pxb-blue, 500), 0.38),
+    );
+    $slideToggleAccent: (
+        thumb: map-get($pxb-lightBlue, 500),
+        bar: rgba(map-get($pxb-lightBlue, 500), 0.5),
+    );
+    $slideToggleWarn: (
+        thumb: map-get($pxb-red, 500),
+        bar: rgba(map-get($pxb-red, 500), 0.38),
+    );
+    $slideToggleDefault: (
+        thumb: map-get($pxb-white, 50),
+        bar: map-get($foreground, divider),
+    );
+    @include pxb-mat-slide-toggle($slideTogglePrimary, $slideToggleAccent, $slideToggleWarn, $slideToggleDefault);
+
+    /* date picker */
+    .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+        border-color: map-get($pxb-blue, 500);
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon,
+    .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon,
+    .mat-input-element.mat-form-field-autofill-control.mat-datepicker-input {
+        color: map-get($foreground, text);
+    }
+
+    /* Snackbar button */
+    .mat-snack-bar-container {
+        color: map-get($pxb-black, 50);
+        .mat-simple-snackbar-action .mat-button {
+            color: map-get($pxb-blue, 200);
+            &:hover {
+                background-color: rgba(map-get($pxb-lightBlue, 500), 0.2);
             }
         }
+    }
 
-        &.mat-accent .mat-tab-header {
-            background-color: map-get($primary, 700);
+    /* Radio Button */
+    .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+        border-color: map-get($foreground, disabled);
+    }
+    .mat-checkbox-disabled .mat-checkbox-label {
+        color: map-get($foreground, disabled);
+    }
 
-            .mat-tab-label,
-            .mat-tab-link {
-                color: map-get($pxb-white, 50);
+    /* Slider */
+    .mat-slider {
+        .mat-slider-track-fill {
+            background-color: map-get($pxb-blue, 300);
+        }
+        .mat-slider-ticks {
+            background-image: repeating-linear-gradient(
+                to right,
+                map-get($pxb-blue, 200),
+                map-get($pxb-blue, 200),
+                2px,
+                transparent 0,
+                transparent
+            );
+        }
+        &.mat-slider-disabled {
+            .mat-slider-thumb {
+                background-color: map-get($foreground, disabled);
             }
         }
     }
-
-    /* tabbar link*/
-    .mat-tab-group.mat-primary .mat-ink-bar,
-    .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-        background-color: map-get($background, base);
-    }
-
-    .mat-tab-group.mat-accent .mat-ink-bar,
-    .mat-tab-nav-bar.mat-accent .mat-ink-bar {
-        background-color: map-get($background, base);
-    }
-
-    .mat-tab-group .mat-ink-bar {
-        background-color: map-get($primary, 500);
-    }
-
-    /* tab bar arrows*/
-    .mat-primary,
-    .mat-accent {
-        .mat-tab-header-pagination-chevron {
-            border-color: map-get($background, base);
-        }
-    }
-
-    /* steppers */
-    .mat-step-header .mat-step-icon-state-done,
-    .mat-step-icon.mat-step-icon-state-number,
-    .mat-step-icon.mat-step-icon-state-add {
-        background-color: map-get($pxb-gray, 300);
-    }
-    .mat-step-header[aria-selected='true'] .mat-step-icon {
-        background-color: map-get($primary, 500);
-    }
-    .mat-step-header {
-        &:hover,
-        &.cdk-program-focused,
-        &.cdk-mouse-focused,
-        &.cdk-focused {
-            background-color: unset;
-        }
-
-        .mat-focus-indicator.mat-button-base.ng-star-inserted {
-            background-color: unset;
-        }
+    .mat-slider-horizontal .mat-slider-track-background,
+    .mat-slider:hover .mat-slider-track-background {
+        background-color: rgba(map-get($pxb-black, 300), 0.36);
     }
 
     /* PXB Drawer */
     .pxb-drawer {
         background-color: map-get($pxb-white, 50);
-        .pxb-drawer-nested-nav-item mat-expansion-panel {
+        .pxb-drawer-nested-nav-item .mat-expansion-panel {
             background-color: map-get($pxb-white, 200);
         }
         .pxb-drawer-nav-item-active-highlight {

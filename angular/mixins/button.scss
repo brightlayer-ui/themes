@@ -15,7 +15,7 @@
     .mat-mini-fab,
     .mat-raised-button,
     .mat-flat-button {
-        @include raised-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette);
+        @include filled-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette);
     }
     .mat-button-toggle {
         @include button-toggle-helper($defaultPalette);
@@ -89,7 +89,7 @@
         background-color: map-deep-get($palette, fill, backgroundHover);
     }
 }
-@mixin raised-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
+@mixin filled-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
     &.mat-primary {
         @include raised-colors($primaryPalette);
     }
