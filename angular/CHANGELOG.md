@@ -2,7 +2,7 @@
 
 ## v6.0.0 (Not published)
 
-> Migrating some 5.0.0 to 6.0.0 may require higher specificity when applying custom styles to Angular or PX Blue components.
+> Migrating to version 6.0.0 may require you to provide higher specificity if you were applying custom styles to Angular or PX Blue components.
 
 ### Added
 
