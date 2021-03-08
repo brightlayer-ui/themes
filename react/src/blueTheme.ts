@@ -290,8 +290,20 @@ export const blueTheme: ThemeOptions = {
                     color: WhiteText,
                 },
             },
+            deleteIconColorSecondary: {
+                color: PXBColors.lightBlue[100],
+                '&:hover': {
+                    color: WhiteText,
+                },
+            },
             deleteIconOutlinedColorPrimary: {
                 color: PXBColors.blue[200],
+                '&:hover': {
+                    color: ThemeColors.primary.main,
+                },
+            },
+            deleteIconOutlinedColorSecondary: {
+                color: PXBColors.lightBlue[200],
                 '&:hover': {
                     color: ThemeColors.primary.main,
                 },
