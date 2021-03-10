@@ -54,6 +54,9 @@
         filledBackgroundColor: map-get($pxb-white, 100),
     );
     @include pxb-mat-form-field($inputPrimary, $inputWarn, $inputDisabled);
+    .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+        color: map-get($foreground, disabled);
+    }
 
     /* Chips */
     $chipText: map-get($pxb-white, 50);
@@ -76,6 +79,9 @@
         removeHover: map-get($pxb-gray, 400),
     );
     @include pxb-mat-chip($chipPrimary, $chipAccent, $chipWarn, $chipDefault);
+    .mat-chip:not([color]).mat-chip-disabled .mat-chip-remove {
+        color: map-get($chipDefault, remove);
+    }
 
     /* toolbar*/
     .mat-toolbar {
