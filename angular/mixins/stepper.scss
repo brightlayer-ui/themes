@@ -35,6 +35,14 @@
             .mat-step-label-selected {
                 color: map-get($stepperLabel, activeColor);
             }
+            .mat-step-icon-content {
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 400;
+            }
+            .mat-step-icon-selected .mat-step-icon-content {
+                font-weight: 600;
+            }
 
             &:hover,
             &.cdk-program-focused,

@@ -18,12 +18,12 @@
 
     /* input fields */
     $inputPrimary: (
-        icon: map-get($foreground, hint),
+        icon: map-get($foreground, hint-text),
         placeholder: map-get($pxb-black, 100),
         hint: map-get($foreground, secondary-text),
         filledBackgroundColor: map-get($pxb-white, 200),
         label: (
-            withoutValue: map-get($foreground, hint),
+            withoutValue: map-get($foreground, hint-text),
             withValue: map-get($foreground, text),
             onFocus: map-get($primary, 500),
         ),
@@ -34,7 +34,7 @@
         ),
     );
     $inputWarn: (
-        icon: map-get($foreground, hint),
+        icon: map-get($foreground, hint-text),
         placeholder: map-get($pxb-black, 100),
         hint: map-get($warn, 500),
         filledBackgroundColor: map-get($pxb-white, 200),
@@ -150,7 +150,7 @@
         ),
         fill: (
             text: map-get($pxb-black, 500),
-            background: map-get($pxb-gray, 100),
+            background: map-get($pxb-white, 50),
             backgroundHover: map-get($pxb-white, 900),
         ),
         toggle: (
@@ -168,19 +168,16 @@
         ),
     );
     @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
-    .mat-fab,
-    .mat-mini-fab {
-        &:not([color]) {
-            background-color: map-get($pxb-white, 50);
-        }
-    }
+   .mat-stroked-button.mat-button-disabled {
+       border-color: map-get($foreground, disabled);
+   }
 
     /* Tabs */
-    $tabText: map-get($primary, 200);
-    $tabBackground: map-get($primary, 500);
-    $tabActiveText: map-get($pxb-white, 50);
-    $tabActiveBackground: map-get($primary, 500);
-    $tabUnderline: map-get($pxb-white, 50);
+    $tabText: map-get($primary, 500);
+    $tabBackground: map-get($pxb-white, 50);
+    $tabActiveText: map-get($primary, 500);
+    $tabActiveBackground: map-get($pxb-white, 50);
+    $tabUnderline:  map-get($primary, 500);
     @include pxb-mat-tab($tabText, $tabBackground, $tabActiveText, $tabActiveBackground, $tabUnderline);
 
     /* Stepper */
@@ -215,6 +212,9 @@
         bar: map-get($foreground, divider),
     );
     @include pxb-mat-slide-toggle($slideTogglePrimary, $slideToggleAccent, $slideToggleWarn, $slideToggleDefault);
+    .mat-slide-toggle:not([color]).mat-checked .mat-ripple-element {
+        background-color: rgba(map-get($pxb-black, 500), .36);
+    }
 
     /* date picker */
     .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
@@ -280,5 +280,16 @@
         .pxb-drawer-nav-item-active-highlight {
             opacity: 0.05;
         }
+    }
+
+    /*  Drawer Content */
+    .mat-drawer-content {
+        background-color: map-get($pxb-white, 200);
+    }
+
+    /* Toolbar */
+    .mat-toolbar:not([color]):not([ng-reflect-color]) {
+        color: map-get($foreground, text);
+        background-color: map-get($pxb-white, 200);
     }
 }

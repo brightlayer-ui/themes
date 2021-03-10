@@ -216,6 +216,7 @@
 
     /* checkbox */
     .mat-checkbox-checked.mat-primary .mat-checkbox-background {
+        color: map-get($pxb-black, 50);
         background-color: map-get($accent, 200);
     }
     .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
