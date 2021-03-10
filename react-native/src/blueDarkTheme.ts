@@ -27,6 +27,6 @@ export const blueDarkTheme: typeof DefaultTheme = {
         onBackground: black[50],
         onSurface: black[50],
         notification: lightBlue[200],
-        disabled: 'rgba(123, 131, 135, 0.36)' // black[300] - 36% opacity
+        disabled: 'rgba(123, 131, 135, 0.36)', // black[300] - 36% opacity
     },
 };
