@@ -82,6 +82,9 @@
     .mat-chip:not([color]).mat-chip-disabled .mat-chip-remove {
         color: map-get($chipDefault, remove);
     }
+    .mat-chip.mat-standard-chip::after {
+        background-color: white;
+    }
 
     /* toolbar*/
     .mat-toolbar {
