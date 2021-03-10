@@ -5,6 +5,7 @@
 ### Added
 
 -   Initial Dark theme
+-   Initial Dark theme supplement
 
 ## v5.0.1
 

@@ -7,3 +7,4 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 **/
 export { blueTheme as blue } from './blueTheme';
 export { blueDarkTheme as blueDark } from './blueDarkTheme';
+export { blueDarkSupplementTheme as blueDarkSupplement } from './blueDarkSupplementTheme';

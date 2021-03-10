@@ -11,3 +11,5 @@ var blueTheme_1 = require("./blueTheme");
 Object.defineProperty(exports, "blue", { enumerable: true, get: function () { return blueTheme_1.blueTheme; } });
 var blueDarkTheme_1 = require("./blueDarkTheme");
 Object.defineProperty(exports, "blueDark", { enumerable: true, get: function () { return blueDarkTheme_1.blueDarkTheme; } });
+var blueDarkSupplementTheme_1 = require("./blueDarkSupplementTheme");
+Object.defineProperty(exports, "blueDarkSupplement", { enumerable: true, get: function () { return blueDarkSupplementTheme_1.blueDarkSupplementTheme; } });
