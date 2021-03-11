@@ -105,6 +105,8 @@
 }
 
 @mixin button-toggle-helper($palette) {
+    border-left: 0!important;
+    border-right: 0!important;
     .mat-button-toggle-button {
         color: map-deep-get($palette, toggle, default, text);
         background-color: map-deep-get($palette, toggle, default, background);
