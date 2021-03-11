@@ -16,5 +16,6 @@ export const blueDarkAltTheme: typeof blueDarkTheme = {
         primary: blue[500],
         accent: lightBlue[500],
         background: black[900],
+        notification: lightBlue[500],
     },
 };

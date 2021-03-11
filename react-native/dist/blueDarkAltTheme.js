@@ -21,4 +21,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.blueDarkAltTheme = void 0;
 var colors_1 = require("@pxblue/colors");
 var blueDarkTheme_1 = require("./blueDarkTheme");
-exports.blueDarkAltTheme = __assign(__assign({}, blueDarkTheme_1.blueDarkTheme), { colors: __assign(__assign({}, blueDarkTheme_1.blueDarkTheme.colors), { primary: colors_1.blue[500], accent: colors_1.lightBlue[500], background: colors_1.black[900] }) });
+exports.blueDarkAltTheme = __assign(__assign({}, blueDarkTheme_1.blueDarkTheme), { colors: __assign(__assign({}, blueDarkTheme_1.blueDarkTheme.colors), { primary: colors_1.blue[500], accent: colors_1.lightBlue[500], background: colors_1.black[900], notification: colors_1.lightBlue[500] }) });
