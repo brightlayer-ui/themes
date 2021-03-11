@@ -22,5 +22,5 @@ exports.blueDarkTheme = void 0;
 var react_native_paper_1 = require("react-native-paper");
 var colors_1 = require("@pxblue/colors");
 var shared_1 = require("./shared");
-exports.blueDarkTheme = __assign(__assign({}, react_native_paper_1.DefaultTheme), { dark: true, roundness: 4, fonts: react_native_paper_1.configureFonts(shared_1.fontConfig), colors: __assign(__assign({}, react_native_paper_1.DefaultTheme.colors), { primary: colors_1.blue[200], accent: colors_1.lightBlue[200], background: colors_1.darkBlack[800], surface: colors_1.black[900], error: colors_1.red[200], text: colors_1.black[50], placeholder: colors_1.black[200], onBackground: colors_1.black[50], onSurface: colors_1.black[50], notification: colors_1.lightBlue[200], disabled: 'rgba(123, 131, 135, 0.36)' // black[300] - 36% opacity
-     }) });
+var color = require("color");
+exports.blueDarkTheme = __assign(__assign({}, react_native_paper_1.DefaultTheme), { dark: true, roundness: 4, fonts: react_native_paper_1.configureFonts(shared_1.fontConfig), colors: __assign(__assign({}, react_native_paper_1.DefaultTheme.colors), { primary: colors_1.blue[200], accent: colors_1.lightBlue[200], background: colors_1.darkBlack[800], surface: colors_1.black[900], error: colors_1.red[200], text: colors_1.black[50], placeholder: colors_1.black[200], onBackground: colors_1.black[50], onSurface: colors_1.black[50], notification: colors_1.lightBlue[200], disabled: color(colors_1.black[300]).alpha(0.36).rgb().string() }) });
