@@ -9,7 +9,7 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 import { configureFonts, DefaultTheme } from 'react-native-paper';
 import { blue, red, darkBlack, black, lightBlue } from '@pxblue/colors';
 import { fontConfig } from './shared';
-import * as color from 'color';
+import Color from 'color';
 
 export const blueDarkTheme: typeof DefaultTheme = {
     ...DefaultTheme,
@@ -28,6 +28,6 @@ export const blueDarkTheme: typeof DefaultTheme = {
         onBackground: black[50],
         onSurface: black[50],
         notification: lightBlue[200],
-        disabled: color(black[300]).alpha(0.36).rgb().string(),
+        disabled: Color(black[300]).alpha(0.36).rgb().string(),
     },
 };
