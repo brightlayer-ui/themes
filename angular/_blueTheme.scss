@@ -159,8 +159,8 @@
         ),
         fill: (
             text: map-get($pxb-black, 500),
-            background: map-get($pxb-white, 50),
-            backgroundHover: map-get($pxb-white, 900),
+            background: map-get($pxb-white, 500),
+            backgroundHover: map-get($pxb-white, 300),
         ),
         toggle: (
             border: map-get($pxb-gray, 100),

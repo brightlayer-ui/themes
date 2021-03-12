@@ -42,6 +42,7 @@
 
 @mixin default-colors($palette) {
     color: map-deep-get($palette, outline, text);
+    background-color: map-deep-get($palette, outline, background);
     &:hover:not(.mat-button-disabled) {
         background-color: map-deep-get($palette, outline, backgroundHover);
     }
