@@ -177,16 +177,16 @@
         ),
     );
     @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
-   .mat-stroked-button.mat-button-disabled {
-       border-color: map-get($foreground, disabled);
-   }
+    .mat-stroked-button.mat-button-disabled {
+        border-color: map-get($foreground, disabled);
+    }
 
     /* Tabs */
     $tabText: map-get($primary, 500);
     $tabBackground: map-get($pxb-white, 50);
     $tabActiveText: map-get($primary, 500);
     $tabActiveBackground: map-get($pxb-white, 50);
-    $tabUnderline:  map-get($primary, 500);
+    $tabUnderline: map-get($primary, 500);
     @include pxb-mat-tab($tabText, $tabBackground, $tabActiveText, $tabActiveBackground, $tabUnderline);
 
     /* Stepper */
@@ -222,7 +222,7 @@
     );
     @include pxb-mat-slide-toggle($slideTogglePrimary, $slideToggleAccent, $slideToggleWarn, $slideToggleDefault);
     .mat-slide-toggle:not([color]).mat-checked .mat-ripple-element {
-        background-color: rgba(map-get($pxb-black, 500), .36);
+        background-color: rgba(map-get($pxb-black, 500), 0.36);
     }
 
     /* date picker */
