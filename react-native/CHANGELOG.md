@@ -4,7 +4,7 @@
 
 ### Added
 
--   Initial Dark theme
+-   Initial Dark themes (regular and alternate)
 
 ## v5.0.1
 
