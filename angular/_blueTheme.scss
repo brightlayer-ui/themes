@@ -160,7 +160,7 @@
         fill: (
             text: map-get($pxb-black, 500),
             background: map-get($pxb-white, 50),
-            backgroundHover: rgba(66, 78, 84, 0.05)
+            backgroundHover: rgba(66, 78, 84, 0.05),
         ),
         toggle: (
             border: map-get($pxb-gray, 100),
@@ -177,9 +177,10 @@
         ),
     );
     @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
-    .mat-stroked-button, .mat-raised-button {
+    .mat-stroked-button,
+    .mat-raised-button {
         &.mat-button-disabled {
-            background-color: map-get($pxb-white, 50)!important;
+            background-color: map-get($pxb-white, 50) !important;
             color: map-get($foreground, disabled);
             border: solid 1px map-get($foreground, divider);
         }
@@ -327,7 +328,8 @@
     }
 
     /* Mat Disabled Select Underline Color */
-    .mat-form-field.mat-form-field-type-mat-select.mat-form-field-disabled.mat-form-field-appearance-legacy .mat-form-field-underline {
+    .mat-form-field.mat-form-field-type-mat-select.mat-form-field-disabled.mat-form-field-appearance-legacy
+        .mat-form-field-underline {
         background-color: map-get($foreground, divider);
     }
 }
