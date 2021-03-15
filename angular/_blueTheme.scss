@@ -332,4 +332,8 @@
         .mat-form-field-underline {
         background-color: map-get($foreground, divider);
     }
+
+    .mat-toolbar .mat-icon-button:not([color]) {
+        color: map-get($pxb-white, 50);
+    }
 }
