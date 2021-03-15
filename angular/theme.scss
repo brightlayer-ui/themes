@@ -78,7 +78,7 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
                 hover: rgba(black, 0.04),
                 card: map-get($pxb-white, 50),
                 dialog: map-get($pxb-white, 50),
-                disabled-button: rgba(black, 0.12),
+                disabled-button: rgba(114, 126, 132, 0.12),
                 raised-button: map-get($pxb-white, 50),
                 focused-button: $dark-focused,
                 selected-button: map-get($pxb-gray, 300),

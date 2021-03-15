@@ -17,11 +17,11 @@
     $chipText: map-get($pxb-white, 50);
     $chipPrimary: (
         text: $chipText,
-        backgroundPalette: $pxb-blue,
+        backgroundPalette: $primary,
     );
     $chipAccent: (
         text: $chipText,
-        backgroundPalette: $pxb-lightBlue,
+        backgroundPalette: $accent,
     );
     $chipWarn: (
         text: $chipText,
@@ -77,34 +77,34 @@
     /* Buttons*/
     $buttonPrimary: (
         icon: (
+            text: map-get($primary, 200),
+        ),
+        outline: (
+            text: map-get($primary, 200),
+            background: transparent,
+            backgroundHover: rgba(map-get($primary, 500), 0.2),
+            border: map-get($primary, 200),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-get($primary, 500),
+            backgroundHover: map-get($primary, 300),
+        ),
+    );
+    $buttonAccent: (
+        icon: (
             text: map-get($accent, 200),
         ),
         outline: (
             text: map-get($accent, 200),
             background: transparent,
-            backgroundHover: rgba(map-get($pxb-blue, 500), 0.2),
+            backgroundHover: rgba(map-get($accent, 500), 0.2),
             border: map-get($accent, 200),
         ),
         fill: (
             text: map-get($pxb-white, 50),
             background: map-get($accent, 500),
-            backgroundHover: map-get($pxb-blue, 300),
-        ),
-    );
-    $buttonAccent: (
-        icon: (
-            text: map-get($pxb-lightBlue, 200),
-        ),
-        outline: (
-            text: map-get($pxb-lightBlue, 200),
-            background: transparent,
-            backgroundHover: rgba(map-get($pxb-lightBlue, 500), 0.2),
-            border: map-get($pxb-lightBlue, 200),
-        ),
-        fill: (
-            text: map-get($pxb-white, 50),
-            background: map-get($pxb-lightBlue, 500),
-            backgroundHover: map-get($pxb-lightBlue, 300),
+            backgroundHover: map-get($accent, 300),
         ),
     );
     $buttonWarn: (
@@ -148,7 +148,7 @@
             active: (
                 text: map-get($accent, 200),
                 background: rgba(0, 123, 193, 0.36),
-                backgroundHover: rgba(map-get($pxb-blue, 200), 0.36),
+                backgroundHover: rgba(map-get($primary, 200), 0.36),
             ),
         ),
     );
@@ -187,8 +187,8 @@
         bar: rgba(map-get($accent, 200), 0.5),
     );
     $slideToggleAccent: (
-        thumb: map-get($pxb-lightBlue, 200),
-        bar: rgba(map-get($pxb-lightBlue, 200), 0.5),
+        thumb: map-get($accent, 200),
+        bar: rgba(map-get($accent, 200), 0.5),
     );
     $slideToggleWarn: (
         thumb: map-get($warn, 200),
@@ -203,11 +203,11 @@
     /* badge */
     .mat-badge-content {
         color: #fff;
-        background-color: map-get($accent, 500);
+        background-color: map-get($primary, 500);
     }
     .mat-badge-accent .mat-badge-content {
         color: #fff;
-        background-color: map-get($pxb-lightBlue, 500);
+        background-color: map-get($accent, 500);
     }
     .mat-badge-warn .mat-badge-content {
         color: #fff;
@@ -216,6 +216,10 @@
 
     /* checkbox */
     .mat-checkbox-checked.mat-primary .mat-checkbox-background {
+        color: map-get($pxb-black, 50);
+        background-color: map-get($primary, 200);
+    }
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
         color: map-get($pxb-black, 50);
         background-color: map-get($accent, 200);
     }
@@ -228,6 +232,17 @@
 
     /* radio button */
     .mat-radio-button.mat-primary {
+        .mat-radio-inner-circle,
+        .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+        &.mat-radio-checked .mat-radio-persistent-ripple {
+            background-color: map-get($primary, 200);
+        }
+
+        &.mat-radio-checked .mat-radio-outer-circle {
+            border-color: map-get($primary, 200);
+        }
+    }
+    .mat-radio-button.mat-accent {
         .mat-radio-inner-circle,
         .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
         &.mat-radio-checked .mat-radio-persistent-ripple {
@@ -263,7 +278,7 @@
 
     /* Snackbar button */
     .mat-snack-bar-container .mat-simple-snackbar-action .mat-button {
-        color: map-get($pxb-blue, 500);
+        color: map-get($primary, 500);
     }
 
     /*  Drawer Content */
@@ -292,18 +307,18 @@
     /* slider */
     .mat-slider {
         .mat-slider-thumb {
-            color: map-get($accent, 200);
+            background-color: map-get($accent, 200);
         }
 
         .mat-slider-track-fill {
-            background-color: map-get($pxb-blue, 300);
+            background-color: map-get($primary, 300);
         }
 
         .mat-slider-ticks {
             background-image: repeating-linear-gradient(
                 to right,
-                map-get($pxb-blue, 500),
-                map-get($pxb-blue, 500),
+                map-get($primary, 500),
+                map-get($primary, 500),
                 2px,
                 transparent 0,
                 transparent
@@ -348,7 +363,7 @@
         color: map-get($pxb-black, 500);
 
         .mat-simple-snackbar-action {
-            color: map-get($pxb-blue, 500);
+            color: map-get($primary, 500);
         }
     }
 

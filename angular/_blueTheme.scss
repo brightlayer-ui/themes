@@ -149,7 +149,7 @@
     );
     $buttonDefault: (
         icon: (
-            text: map-get($pxb-white, 50),
+            text: map-get($pxb-gray, 500),
         ),
         outline: (
             text: map-get($pxb-black, 500),
@@ -159,8 +159,8 @@
         ),
         fill: (
             text: map-get($pxb-black, 500),
-            background: map-get($pxb-white, 500),
-            backgroundHover: map-get($pxb-white, 300),
+            background: map-get($pxb-white, 50),
+            backgroundHover: rgba(66, 78, 84, 0.05)
         ),
         toggle: (
             border: map-get($pxb-gray, 100),
@@ -177,8 +177,19 @@
         ),
     );
     @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
-    .mat-stroked-button.mat-button-disabled {
-        border-color: map-get($foreground, disabled);
+    .mat-stroked-button, .mat-raised-button {
+        &.mat-button-disabled {
+            background-color: map-get($pxb-white, 50)!important;
+            color: map-get($foreground, disabled);
+            border: solid 1px map-get($foreground, divider);
+        }
+    }
+    .mat-flat-button:not([color]) {
+        background-color: map-get($pxb-white, 500);
+        &.mat-button-disabled {
+            color: map-get($foreground, disabled);
+            background-color: rgba(114, 126, 132, 0.12);
+        }
     }
 
     /* Tabs */
@@ -256,6 +267,9 @@
 
     /* Slider */
     .mat-slider {
+        .mat-slider-thumb {
+            background-color: map-get($primary, 500);
+        }
         .mat-slider-track-fill {
             background-color: map-get($primary, 300);
         }
@@ -310,5 +324,10 @@
         .pxb-info-list-item-content {
             color: map-get($pxb-gray, 500);
         }
+    }
+
+    /* Mat Disabled Select Underline Color */
+    .mat-form-field.mat-form-field-type-mat-select.mat-form-field-disabled.mat-form-field-appearance-legacy .mat-form-field-underline {
+        background-color: map-get($foreground, divider);
     }
 }
