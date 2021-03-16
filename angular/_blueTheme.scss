@@ -54,8 +54,16 @@
         filledBackgroundColor: map-get($pxb-white, 100),
     );
     @include pxb-mat-form-field($inputPrimary, $inputWarn, $inputDisabled);
+    /* Mat Disabled Select Underline Color */
+    .mat-form-field.mat-form-field-disabled.mat-form-field-appearance-legacy,
+    .mat-form-field.mat-form-field-disabled,
+    .mat-form-field.mat-form-field-disabled.mat-form-field-appearance-standard {
+        .mat-form-field-underline {
+            background-color: map-get($foreground, divider);
+        }
+    }
     .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
-        color: map-get($foreground, disabled);
+        color: map-get($foreground, divider);
     }
 
     /* Chips */
@@ -325,12 +333,6 @@
         .pxb-info-list-item-content {
             color: map-get($pxb-gray, 500);
         }
-    }
-
-    /* Mat Disabled Select Underline Color */
-    .mat-form-field.mat-form-field-type-mat-select.mat-form-field-disabled.mat-form-field-appearance-legacy
-        .mat-form-field-underline {
-        background-color: map-get($foreground, divider);
     }
 
     .mat-toolbar .mat-icon-button:not([color]) {

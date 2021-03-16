@@ -49,7 +49,7 @@
         underline: (
             default: map-get($foreground, disabled),
             onHover: map-get($foreground, secondary-text),
-            onFocus: map-get($accent, 500),
+            onFocus: map-get($primary, 500),
         ),
     );
     $inputWarn: (
@@ -73,6 +73,9 @@
         filledBackgroundColor: rgba(map-get($pxb-black, 800), 0.5),
     );
     @include pxb-mat-form-field($inputPrimary, $inputWarn, $inputDisabled);
+    .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+        color: map-get($foreground, disabled);
+    }
 
     /* Buttons*/
     $buttonPrimary: (
@@ -153,6 +156,9 @@
         ),
     );
     @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
+    .mat-icon-button.mat-button-disabled.mat-button-disabled {
+        color: map-get($foreground, disabled);
+    }
 
     /* Tabs */
     $tabText: map-get($foreground, secondary-text);
