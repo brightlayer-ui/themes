@@ -23,6 +23,10 @@ yarn add @pxblue/react-native-themes
 
 # Usage
 
+> **NOTE:** Using the PX Blue React Native theme requires that you add the Open Sans font to your application. You can learn how to do this by reading the instructions for [Vanilla React Native](https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e) or [Expo](https://docs.expo.io/versions/latest/guides/using-custom-fonts/). This will be added automatically if you start your project with the [@pxblue/cli](https://www.npmjs.com/package/@pxblue/cli).
+
+> When using Expo, you will need to specify the name for each font weight you load using the format `OpenSans-<Weight>`, e.g., OpenSans-SemiBold. Refer to one of our React Native demos for reference.
+
 ### Light Theme
 
 To use the light theme in your application, simply wrap the app in a `Provider` and pass in your desired theme (`blue`).
@@ -39,7 +43,9 @@ import * as PXBThemes from '@pxblue/react-native-themes';
 
 ### Dark Theme
 
-To use the dark theme in your application, simply wrap the app in a `Provider` and pass in your desired theme (`blueDark`).
+The theming mechanism for React Native Paper is a bit limited in the amount of customization available for components. Because of this, there are two dark themes available from PX Blue that should be applied to different components.
+
+The main theme should be applied using a `Provider` that wraps your application and passing in the theme (`blueDark`). This will be applied to the majority of the component in the RNP library.
 
 ```tsx
 import { Provider as ThemeProvider} from 'react-native-paper';
@@ -50,10 +56,9 @@ import * as PXBThemes from '@pxblue/react-native-themes';
 </ThemeProvider>
 ```
 
-#### Recommended Use With React Native Paper Components
+#### Alternate Dark Theme
 
-We provide an additional dark theme (`blueDarkAlt`) to be used with certain components in the React Native Paper library.
-The following components will need to have the `blueDarkAlt` theme applied:
+The alternate dark theme (`blueDarkAlt`) should be applied to select components to give them the desired PX Blue styling. The following components should use the alternate dark theme:
 
 -   Appbar
 -   Avatar
@@ -65,7 +70,9 @@ The following components will need to have the `blueDarkAlt` theme applied:
 -   ProgressBar
 -   Snackbar
 
-One-Off Usage
+##### One-Off Usage
+
+If you are only using a component from this list once or twice in your application, you can pass the alternate theme directly to the component through the `theme` prop.
 
 ```tsx
 import { useTheme } from 'react-native-paper';
@@ -75,11 +82,45 @@ const theme = useTheme();
 <Badge size={24} visible theme={theme.dark ? blueDarkAlt : {}}></Badge>
 ```
 
-Component Based Usage
+##### Component-Based Usage
+
+If you are using components frequently, it's best to create a wrapper component that will handle the alternate theme logic. This will allow you to keep your code more readable and avoid errors with inconsistent theme application.
+
+To do this, you define a wrapper component that acts as a pass-through for all of the default props and adds the theme logic.
 
 ```tsx
-import { blueDarkAlt } from '@pxblue/react-native-themes';
 import React from 'react';
+import { blueDarkAlt } from '@pxblue/react-native-themes';
+import { SomeComponent as PaperComponent, useTheme } from 'react-native-paper';
+...
+export const SomeComponent: typeof PaperComponent = (props) => {
+    const theme = useTheme(props.theme);
+    return (
+        <PaperComponent
+            {...props}
+            theme={
+                theme.dark
+                ? Object.assign({}, JSON.parse(JSON.stringify(blueDarkAlt)), props.theme)
+                : {}
+            }
+        />
+    );
+};
+```
+
+You would then use your custom wrapper component throughout your application instead of using the component directly from React Native Paper:
+
+```tsx
+import { SomeComponent } from './path/to/SomeComponent';
+...
+<SomeComponent {...samePropsAsThePaperComponent} />
+```
+
+The `Button` component is a special case that requires the alternate theme only if you are using the contained mode. The wrapper component for the `Button` should look like:
+
+```tsx
+import React from 'react';
+import { blueDarkAlt } from '@pxblue/react-native-themes';
 import { Button, useTheme } from 'react-native-paper';
 ...
 export const MyCustomButton: typeof Button = (props) => {
@@ -97,10 +138,8 @@ export const MyCustomButton: typeof Button = (props) => {
 };
 ```
 
-> **NOTE:** Using the PX Blue React Native theme requires that you add the Open Sans font to your application. You can learn how to do this by reading the instructions for [Vanilla React Native](https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e) or [Expo](https://docs.expo.io/versions/latest/guides/using-custom-fonts/). This will be added automatically if you start your project with the [@pxblue/cli](https://www.npmjs.com/package/@pxblue/cli).
-
-> When using Expo, you will need to specify the name for each font weight you load using the format `OpenSans-<Weight>`, e.g., OpenSans-SemiBold. Refer to one of our React Native demos for reference.
+> **Sample Wrappers:** PX Blue has sample wrapper code for all of these components that you can copy for use in your application. These can be found in our [Showcase Demo](https://github.com/pxblue/react-native-showcase-demo/tree/dev/components/wrappers).
 
 ## Demo
 
-Coming Soon
+[Check it out](https://github.com/pxblue/react-native-showcase-demo/tree/dev)
