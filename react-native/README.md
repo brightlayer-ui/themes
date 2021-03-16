@@ -60,15 +60,16 @@ import * as PXBThemes from '@pxblue/react-native-themes';
 
 The alternate dark theme (`blueDarkAlt`) should be applied to select components to give them the desired PX Blue styling. The following components should use the alternate dark theme:
 
+-   Activity Indicator
 -   Appbar
 -   Avatar
 -   Badge
 -   Bottom Navigation
 -   Button (`contained` mode variant)
 -   FAB
--   TextInput
 -   ProgressBar
 -   Snackbar
+-   TextInput
 
 ##### One-Off Usage
 
@@ -100,7 +101,7 @@ export const SomeComponent: typeof PaperComponent = (props) => {
             {...props}
             theme={
                 theme.dark
-                ? Object.assign({}, JSON.parse(JSON.stringify(blueDarkAlt)), props.theme)
+                ? Object.assign({}, blueDarkAlt, props.theme)
                 : {}
             }
         />
@@ -130,7 +131,7 @@ export const MyCustomButton: typeof Button = (props) => {
             {...props}
             theme={
                 props.mode === 'contained' && theme.dark
-                    ? Object.assign({}, JSON.parse(JSON.stringify(blueDarkAlt)), props.theme)
+                    ? Object.assign({}, blueDarkAlt, props.theme)
                     : {}
             }
         />
@@ -138,8 +139,24 @@ export const MyCustomButton: typeof Button = (props) => {
 };
 ```
 
-> **Sample Wrappers:** PX Blue has sample wrapper code for all of these components that you can copy for use in your application. These can be found in our [Showcase Demo](https://github.com/pxblue/react-native-showcase-demo/tree/dev/components/wrappers).
+The `TextInput` component is a special case that requires usage of both `blueDark` and `blueDarkAlt` themes. The wrapper component for the `TextInput` should look like:
+
+```tsx
+import { blueDark, blueDarkAlt } from '@pxblue/react-native-themes';
+import { TextInput, useTheme } from 'react-native-paper';
+import _clonedeep from 'lodash.clonedeep';
+
+export const MyCustomTextInput: typeof TextInput = (props) => {
+    const theme = useTheme(props.theme);
+    const darkTheme = _clonedeep(blueDarkAlt);
+    darkTheme.colors.primary = blueDark.colors.primary;
+
+    return <TextInput {...props} theme={theme.dark ? Object.assign({}, darkTheme, props.theme) : {}} />;
+};
+```
+
+> **Sample Wrappers:** PX Blue has sample wrapper code for all of these components that you can copy for use in your application. These can be found in our [Showcase Demo](https://github.com/pxblue/react-native-showcase-demo/tree/master/components/wrappers).
 
 ## Demo
 
-[Check it out](https://github.com/pxblue/react-native-showcase-demo/tree/dev)
+[Check it out](https://github.com/pxblue/react-native-showcase-demo/tree/master)
