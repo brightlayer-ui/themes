@@ -62,6 +62,9 @@
             background-color: map-get($foreground, divider);
         }
     }
+    .mat-form-field.mat-form-field-disabled.mat-form-field-appearance-fill .mat-form-field-underline::before {
+        background-color: map-get($foreground, divider);
+    }
     .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
         color: map-get($foreground, divider);
     }
