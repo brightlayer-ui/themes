@@ -1013,6 +1013,7 @@ export default () => {
                                 <TableCell>State</TableCell>
                                 <TableCell>Default</TableCell>
                                 <TableCell>Contained</TableCell>
+                                <TableCell>Flat</TableCell>
                                 <TableCell>Outlined</TableCell>
                                 <TableCell>Text</TableCell>
                             </TableRow>
@@ -1025,6 +1026,11 @@ export default () => {
                                 </TableCell>
                                 <TableCell>
                                     <Button color={'primary'} variant={'contained'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'primary'} variant={'contained'} disableElevation>
                                         Hello
                                     </Button>
                                 </TableCell>
@@ -1052,6 +1058,11 @@ export default () => {
                                     </Button>
                                 </TableCell>
                                 <TableCell>
+                                    <Button color={'primary'} variant={'contained'} disableElevation disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
                                     <Button color={'primary'} variant={'outlined'} disabled>
                                         Hello
                                     </Button>
@@ -1071,6 +1082,7 @@ export default () => {
                                 <TableCell>State</TableCell>
                                 <TableCell>Default</TableCell>
                                 <TableCell>Contained</TableCell>
+                                <TableCell>Flat</TableCell>
                                 <TableCell>Outlined</TableCell>
                                 <TableCell>Text</TableCell>
                             </TableRow>
@@ -1083,6 +1095,11 @@ export default () => {
                                 </TableCell>
                                 <TableCell>
                                     <Button color={'secondary'} variant={'contained'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} variant={'contained'} disableElevation>
                                         Hello
                                     </Button>
                                 </TableCell>
@@ -1106,6 +1123,11 @@ export default () => {
                                 </TableCell>
                                 <TableCell>
                                     <Button color={'secondary'} variant={'contained'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} variant={'contained'} disableElevation disabled>
                                         Hello
                                     </Button>
                                 </TableCell>

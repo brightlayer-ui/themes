@@ -120,10 +120,11 @@ export const blueTheme: ThemeOptions = {
             root: {
                 textTransform: 'none',
             },
+            disableElevation: {},
             contained: {
                 backgroundColor: PXBColors.white[50],
                 color: ThemeColors.text.primary,
-                '&$disableElevation': {
+                '&$disableElevation:not($containedPrimary):not($containedSecondary)': {
                     backgroundColor: PXBColors.white[500],
                     '&:hover': {
                         backgroundColor: PXBColors.white[300],
