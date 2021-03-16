@@ -74,7 +74,7 @@ $material-theme: mat-light-theme($material-theme-primary, $material-theme-accent
             background: (
                 status-bar: map_get($mat-grey, 300),
                 app-bar: map-get($pxb-gray, 50),
-                background: map-get($pxb-gray, 50),
+                background: map-get($pxb-white, 200),
                 hover: rgba(black, 0.04),
                 card: map-get($pxb-white, 50),
                 dialog: map-get($pxb-white, 50),

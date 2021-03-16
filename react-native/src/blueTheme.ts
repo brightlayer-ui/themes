@@ -20,7 +20,7 @@ export const blueTheme: Theme = {
         ...DefaultTheme.colors,
         primary: blue[500],
         accent: lightBlue[500],
-        background: gray[50],
+        background: white[200],
         surface: white[50],
         error: red[500],
         text: black[500],
