@@ -123,10 +123,11 @@ exports.blueTheme = {
             root: {
                 textTransform: 'none',
             },
+            disableElevation: {},
             contained: {
                 backgroundColor: PXBColors.white[50],
                 color: ThemeColors.text.primary,
-                '&$disableElevation': {
+                '&$disableElevation:not($containedPrimary):not($containedSecondary)': {
                     backgroundColor: PXBColors.white[500],
                     '&:hover': {
                         backgroundColor: PXBColors.white[300],
@@ -537,7 +538,6 @@ exports.blueTheme = {
         },
         MuiTableRow: {
             root: {
-                color: PXBColors.black[50],
                 backgroundColor: '#FBFBFB',
                 '&$hover:hover': {
                     backgroundColor: color_1.default('#FBFBFB').mix(color_1.default(PXBColors.black[50]), 0.5).string(),

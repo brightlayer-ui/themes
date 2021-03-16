@@ -120,10 +120,11 @@ export const blueTheme: ThemeOptions = {
             root: {
                 textTransform: 'none',
             },
+            disableElevation: {},
             contained: {
                 backgroundColor: PXBColors.white[50],
                 color: ThemeColors.text.primary,
-                '&$disableElevation': {
+                '&$disableElevation:not($containedPrimary):not($containedSecondary)': {
                     backgroundColor: PXBColors.white[500],
                     '&:hover': {
                         backgroundColor: PXBColors.white[300],
@@ -546,7 +547,6 @@ export const blueTheme: ThemeOptions = {
         },
         MuiTableRow: {
             root: {
-                color: PXBColors.black[50],
                 backgroundColor: '#FBFBFB', // possible new shade of white
                 '&$hover:hover': {
                     backgroundColor: Color('#FBFBFB').mix(Color(PXBColors.black[50]), 0.5).string(),
