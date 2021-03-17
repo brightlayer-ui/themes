@@ -164,22 +164,6 @@ export default () => {
                         </IconButton>
                     </div>
                 )} */}
-                <AppBar style={{ flex: '0 0 auto' }} elevation={0} position="static" color="default">
-                    <Toolbar className={classes.toolbar}>
-                        <Hidden smUp>
-                            <IconButton color="inherit" onClick={() => setDrawerOpen(!drawerOpen)}>
-                                <MenuIcon />
-                            </IconButton>
-                        </Hidden>
-                        <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
-                            {selectedPage}
-                        </Typography>
-                        <Button variant="outlined" color="inherit" component={CompNavLink} to={'/login'}>
-                            <PersonIcon style={{ marginRight: '6px' }} />
-                            Log In
-                        </Button>
-                    </Toolbar>
-                </AppBar>
                 <AppBar style={{ flex: '0 0 auto' }} elevation={0} position="static" color="primary">
                     <Toolbar className={classes.toolbar}>
                         <Hidden smUp>
@@ -233,7 +217,7 @@ export default () => {
                         <Tab label="Item Three" value={1} />
                     </Tabs>
                 </AppBar>
-                <AppBar style={{ flex: '0 0 auto', color: 'red', backgroundColor: 'orange' }} elevation={0} position="static">
+                <AppBar style={{ flex: '0 0 auto' }} elevation={0} position="static">
                     <Toolbar className={classes.toolbar}>
                         <Hidden smUp>
                             <IconButton color="inherit" onClick={() => setDrawerOpen(!drawerOpen)}>
