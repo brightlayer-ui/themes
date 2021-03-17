@@ -200,11 +200,8 @@
         thumb: map-get($warn, 200),
         bar: rgba(map-get($warn, 200), 0.5),
     );
-    $slideToggleDefault: (
-        thumb: map-get($foreground, text),
-        bar: map-get($foreground, divider),
-    );
-    @include pxb-mat-slide-toggle($slideTogglePrimary, $slideToggleAccent, $slideToggleWarn, $slideToggleDefault);
+    $inactiveThumb: map-get($foreground, text);
+    @include pxb-mat-slide-toggle($slideTogglePrimary, $slideToggleAccent, $slideToggleWarn, $inactiveThumb);
 
     /* badge */
     .mat-badge-content {

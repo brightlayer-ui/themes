@@ -1,25 +1,21 @@
-@mixin pxb-mat-slide-toggle($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
+@mixin pxb-mat-slide-toggle($primaryPalette, $accentPalette, $warnPalette, $inactiveThumb) {
     .mat-slide-toggle {
         .mat-slide-toggle-thumb {
             /* Inactive Thumb Background */
-            background-color: map-get($defaultPalette, thumb);
+            background-color: $inactiveThumb;
         }
 
         &.mat-primary {
             @include active-slide-toggle-helper($primaryPalette);
         }
 
-        &.mat-accent {
+        &.mat-accent,
+        &:not([color]) {
             @include active-slide-toggle-helper($accentPalette);
         }
 
         &.mat-warn {
             @include active-slide-toggle-helper($warnPalette);
-        }
-
-        &:not([color]) {
-            /* defaults (no color (primary|accent|warn) set) */
-            @include active-slide-toggle-helper($defaultPalette);
         }
     }
 }

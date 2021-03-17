@@ -107,6 +107,10 @@
         &.mat-accent {
             background-color: map-get($primary, 700);
         }
+        &:not([color]):not([ng-reflect-color]) {
+            color: map-get($foreground, text);
+            background-color: map-get($pxb-white, 50);
+        }
     }
 
     /* Buttons*/
@@ -239,11 +243,8 @@
         thumb: map-get($warn, 500),
         bar: rgba(map-get($warn, 500), 0.38),
     );
-    $slideToggleDefault: (
-        thumb: map-get($pxb-white, 50),
-        bar: map-get($foreground, divider),
-    );
-    @include pxb-mat-slide-toggle($slideTogglePrimary, $slideToggleAccent, $slideToggleWarn, $slideToggleDefault);
+    $inactiveThumb: map-get($pxb-white, 50);
+    @include pxb-mat-slide-toggle($slideTogglePrimary, $slideToggleAccent, $slideToggleWarn, $inactiveThumb);
     .mat-slide-toggle:not([color]).mat-checked .mat-ripple-element {
         background-color: rgba(map-get($pxb-black, 500), 0.36);
     }
@@ -319,12 +320,6 @@
 
     /*  Drawer Content */
     .mat-drawer-content {
-        background-color: map-get($pxb-white, 200);
-    }
-
-    /* Toolbar */
-    .mat-toolbar:not([color]):not([ng-reflect-color]) {
-        color: map-get($foreground, text);
         background-color: map-get($pxb-white, 200);
     }
 
