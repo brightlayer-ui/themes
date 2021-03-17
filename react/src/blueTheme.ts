@@ -72,7 +72,7 @@ export const blueTheme: ThemeOptions = {
         MuiAppBar: {
             colorDefault: {
                 color: ThemeColors.text.primary,
-                backgroundColor: PXBColors.gray[50],
+                backgroundColor: PXBColors.white[50],
             },
             colorSecondary: {
                 color: PXBColors.white[50],
