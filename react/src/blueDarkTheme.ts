@@ -774,7 +774,7 @@ export const blueDarkTheme: ThemeOptions = {
                     backgroundColor: PXBColors.black[800],
                 },
                 '&$disabled': {
-                    color: Color(PXBColors.black[300]).alpha(0.36).string(),
+                    color: ThemeColors.text.disabled,
                     backgroundColor: Color(PXBColors.black[800]).alpha(0.5).string(),
                     pointerEvents: 'none',
                 },
@@ -886,10 +886,14 @@ export const blueDarkTheme: ThemeOptions = {
                     },
                 },
                 '&:hover': {
-                    backgroundColor: Color(PXBColors.black[50]).alpha(0.1).string(),
+                    backgroundColor: ThemeColors.action.hover,
+                },
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
                 },
             },
             selected: {},
+            disabled: {},
         },
     },
 };
