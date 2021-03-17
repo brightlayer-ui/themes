@@ -39,7 +39,7 @@ const ThemeColors = {
     action: {
         hover: Color(PXBColors.black[50]).alpha(0.1).string(),
         active: PXBColors.black[200],
-        disabled: Color(PXBColors.black[50]).alpha(0.1).string(),
+        disabled: Color(PXBColors.black[300]).alpha(0.36).string(),
         disabledBackground: Color(PXBColors.black[200]).alpha(0.24).string(),
     },
 };
