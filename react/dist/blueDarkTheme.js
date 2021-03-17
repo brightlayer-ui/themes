@@ -271,6 +271,20 @@ exports.blueDarkTheme = {
                     backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.dark,
                 },
+                '&$disabled': {
+                    opacity: 1,
+                    backgroundColor: color_1.default(PXBColors.black[200]).alpha(0.24).string(),
+                    color: PXBColors.black[400],
+                    '& $avatar': {
+                        opacity: 0.5,
+                    },
+                    '& $deleteIcon': {
+                        color: ThemeColors.action.disabled,
+                    },
+                    '& $icon': {
+                        color: ThemeColors.action.disabled,
+                    },
+                }
             },
             clickable: {
                 '&:hover': {
@@ -362,11 +376,25 @@ exports.blueDarkTheme = {
                 '& $deleteIcon': {
                     margin: "0px " + Spacing + "px 0px -4px",
                 },
+                '&$disabled': {
+                    opacity: 1,
+                    borderColor: color_1.default(PXBColors.black[200]).alpha(0.36).string(),
+                    // borderWidth: 0,
+                    // backgroundColor: Color(PXBColors.black[200]).alpha(0.24).string(),
+                    backgroundColor: 'transparent',
+                    color: PXBColors.black[400],
+                },
             },
             outlinedPrimary: {
                 backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.2).string(),
                 '&$clickable:hover': {
                     backgroundColor: color_1.default(ThemeColors.primary.dark).alpha(0.3).string(),
+                },
+            },
+            outlinedSecondary: {
+                backgroundColor: color_1.default(ThemeColors.secondary.dark).alpha(0.2).string(),
+                '&$clickable:hover': {
+                    backgroundColor: color_1.default(ThemeColors.secondary.dark).alpha(0.3).string(),
                 },
             },
             icon: {
@@ -376,6 +404,7 @@ exports.blueDarkTheme = {
                 marginRight: -4,
             },
             avatar: {},
+            disabled: {},
             label: {},
         },
         // DRAWER OVERRIDES

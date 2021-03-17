@@ -29,7 +29,7 @@ var ThemeColors = {
     error: shared_1.createSimpleLightPalette(PXBColors.red),
     success: shared_1.createSimpleLightPalette(PXBColors.green),
     info: shared_1.createSimpleLightPalette(PXBColors.lightBlue),
-    divider: color_1.default(PXBColors.black[500]).alpha(0.12).string(),
+    divider: color_1.default(PXBColors.black[200]).alpha(0.36).string(),
     warning: {
         light: PXBColors.yellow[100],
         main: PXBColors.yellow[500],
@@ -123,7 +123,6 @@ exports.blueTheme = {
             root: {
                 textTransform: 'none',
             },
-            disableElevation: {},
             contained: {
                 backgroundColor: PXBColors.white[50],
                 color: ThemeColors.text.primary,
@@ -180,6 +179,9 @@ exports.blueTheme = {
             },
             outlinedPrimary: {
                 borderColor: ThemeColors.primary.main,
+                '&$disabled': {
+                    borderColor: color_1.default(PXBColors.black[500]).alpha(0.12).string(),
+                },
                 '&:hover': {
                     backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
                 },
@@ -187,7 +189,7 @@ exports.blueTheme = {
             outlinedSecondary: {
                 borderColor: ThemeColors.secondary.main,
                 '&$disabled': {
-                    borderColor: ThemeColors.action.disabled,
+                    borderColor: color_1.default(PXBColors.black[500]).alpha(0.12).string(),
                 },
                 '&:hover': {
                     backgroundColor: color_1.default(ThemeColors.secondary.main).alpha(0.05).string(),
@@ -259,6 +261,19 @@ exports.blueTheme = {
                     backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.main,
                 },
+                '&$disabled': {
+                    opacity: 1,
+                    color: color_1.default(PXBColors.black[500]).alpha(0.3).string(),
+                    '& $avatar': {
+                        opacity: 0.5,
+                    },
+                    '&:not($colorPrimary):not($colorSecondary) $deleteIcon': {
+                        color: ThemeColors.action.disabled,
+                    },
+                    '&:not($colorPrimary):not($colorSecondary) $icon': {
+                        color: ThemeColors.action.disabled,
+                    },
+                },
             },
             clickable: {
                 '&:hover': {
@@ -273,6 +288,20 @@ exports.blueTheme = {
             clickableColorSecondary: {
                 '&:hover': {
                     backgroundColor: PXBColors.lightBlue[300],
+                },
+            },
+            colorPrimary: {
+                '&:not($outlinedPrimary)$disabled': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: PXBColors.blue[200],
+                    opacity: 1,
+                },
+            },
+            colorSecondary: {
+                '&:not($outlinedSecondary)$disabled': {
+                    backgroundColor: ThemeColors.secondary.light,
+                    color: PXBColors.lightBlue[200],
+                    opacity: 1,
                 },
             },
             deleteIcon: {
@@ -333,11 +362,32 @@ exports.blueTheme = {
                 '& $deleteIcon': {
                     margin: "0px " + Spacing + "px 0px -4px",
                 },
+                '&$disabled $deleteIcon': {
+                    color: 'inherit',
+                }
             },
             outlinedPrimary: {
                 backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.05).string(),
                 '&$clickable:hover': {
                     backgroundColor: color_1.default(ThemeColors.primary.main).alpha(0.1).string(),
+                },
+                '&$disabled': {
+                    opacity: 1,
+                    backgroundColor: ThemeColors.background.paper,
+                    color: color_1.default(PXBColors.black[500]).alpha(0.3).string(),
+                    borderColor: color_1.default(PXBColors.black[500]).alpha(0.12).string(),
+                },
+            },
+            outlinedSecondary: {
+                backgroundColor: color_1.default(ThemeColors.secondary.main).alpha(0.05).string(),
+                '&$clickable:hover': {
+                    backgroundColor: color_1.default(ThemeColors.secondary.main).alpha(0.1).string(),
+                },
+                '&$disabled': {
+                    opacity: 1,
+                    backgroundColor: ThemeColors.background.paper,
+                    color: color_1.default(PXBColors.black[500]).alpha(0.3).string(),
+                    borderColor: color_1.default(PXBColors.black[500]).alpha(0.12).string(),
                 },
             },
             icon: {
@@ -347,6 +397,7 @@ exports.blueTheme = {
                 marginRight: -4,
             },
             avatar: {},
+            disabled: {},
             label: {},
             avatarColorPrimary: {},
             avatarColorSecondary: {},
