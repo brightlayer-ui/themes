@@ -39,7 +39,7 @@ const ThemeColors = {
     action: {
         hover: Color(PXBColors.black[50]).alpha(0.1).string(),
         active: PXBColors.black[200],
-        disabled: Color(PXBColors.black[50]).alpha(0.1).string(),
+        disabled: Color(PXBColors.black[300]).alpha(0.36).string(),
         disabledBackground: Color(PXBColors.black[200]).alpha(0.24).string(),
     },
 };
@@ -167,10 +167,7 @@ export const blueDarkTheme: ThemeOptions = {
             outlinedSecondary: {
                 '&:not($disabled)': {
                     borderColor: ThemeColors.secondary.main,
-                    // backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
                     '&:hover': {
-                        // color: PXBColors.blue[100],
-                        // borderColor: PXBColors.blue[100],
                         backgroundColor: Color(ThemeColors.secondary.dark).alpha(0.2).string(),
                     },
                 },
@@ -260,7 +257,6 @@ export const blueDarkTheme: ThemeOptions = {
                 '& $avatar': {
                     backgroundColor: PXBColors.black[700],
                     color: ThemeColors.text.primary,
-                    // marginLeft: Spacing,
                     marginRight: -4,
                 },
                 '& $avatarColorPrimary': {
@@ -270,6 +266,20 @@ export const blueDarkTheme: ThemeOptions = {
                 '& $avatarColorSecondary': {
                     backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.dark,
+                },
+                '&$disabled': {
+                    opacity: 1,
+                    backgroundColor: Color(PXBColors.black[200]).alpha(0.24).string(),
+                    color: PXBColors.black[400],
+                    '& $avatar': {
+                        opacity: 0.5,
+                    },
+                    '& $deleteIcon': {
+                        color: ThemeColors.action.disabled,
+                    },
+                    '& $icon': {
+                        color: ThemeColors.action.disabled,
+                    },
                 },
             },
             clickable: {
@@ -344,7 +354,6 @@ export const blueDarkTheme: ThemeOptions = {
                 '& $avatar': {
                     backgroundColor: PXBColors.black[600],
                     color: ThemeColors.text.primary,
-                    // marginLeft: Spacing,
                     marginRight: -4,
                 },
                 '& $avatarColorPrimary': {
@@ -362,11 +371,23 @@ export const blueDarkTheme: ThemeOptions = {
                 '& $deleteIcon': {
                     margin: `0px ${Spacing}px 0px -4px`,
                 },
+                '&$disabled': {
+                    opacity: 1,
+                    borderColor: Color(PXBColors.black[200]).alpha(0.36).string(),
+                    backgroundColor: 'transparent',
+                    color: PXBColors.black[400],
+                },
             },
             outlinedPrimary: {
                 backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
                 '&$clickable:hover': {
                     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.3).string(),
+                },
+            },
+            outlinedSecondary: {
+                backgroundColor: Color(ThemeColors.secondary.dark).alpha(0.2).string(),
+                '&$clickable:hover': {
+                    backgroundColor: Color(ThemeColors.secondary.dark).alpha(0.3).string(),
                 },
             },
             icon: {
@@ -376,6 +397,7 @@ export const blueDarkTheme: ThemeOptions = {
                 marginRight: -4,
             },
             avatar: {},
+            disabled: {},
             label: {},
         },
 
@@ -752,7 +774,7 @@ export const blueDarkTheme: ThemeOptions = {
                     backgroundColor: PXBColors.black[800],
                 },
                 '&$disabled': {
-                    color: Color(PXBColors.black[300]).alpha(0.36).string(),
+                    color: ThemeColors.text.disabled,
                     backgroundColor: Color(PXBColors.black[800]).alpha(0.5).string(),
                     pointerEvents: 'none',
                 },
@@ -864,10 +886,14 @@ export const blueDarkTheme: ThemeOptions = {
                     },
                 },
                 '&:hover': {
-                    backgroundColor: Color(PXBColors.black[50]).alpha(0.1).string(),
+                    backgroundColor: ThemeColors.action.hover,
+                },
+                '&$disabled': {
+                    color: ThemeColors.action.disabled,
                 },
             },
             selected: {},
+            disabled: {},
         },
     },
 };
