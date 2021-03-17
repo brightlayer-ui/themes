@@ -71,6 +71,10 @@ The alternate dark theme (`blueDarkAlt`) should be applied to select components 
 -   Snackbar
 -   TextInput
 
+![Dark Theme Infographic](https://raw.githubusercontent.com/pxblue/themes/master/react-native/assets/dark-theme-infographic.png)
+1. For these components, make sure you are using the darkThemeAlt. 
+2. Do not use the darkTheme or these components will render using the incorrect color scheme. 
+ 
 ##### One-Off Usage
 
 If you are only using a component from this list once or twice in your application, you can pass the alternate theme directly to the component through the `theme` prop.
