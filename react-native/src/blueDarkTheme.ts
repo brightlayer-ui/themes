@@ -11,7 +11,7 @@ import { blue, red, darkBlack, black, lightBlue } from '@pxblue/colors';
 import { fontConfig } from './shared';
 import Color from 'color';
 
-export const blueDarkTheme: typeof DefaultTheme = {
+export const blueDarkTheme = {
     ...DefaultTheme,
     dark: true,
     roundness: 4,
@@ -19,11 +19,13 @@ export const blueDarkTheme: typeof DefaultTheme = {
     colors: {
         ...DefaultTheme.colors,
         primary: blue[200],
+        primaryBase: blue[500],
         accent: lightBlue[200],
         background: darkBlack[800],
         surface: black[900],
         error: red[200],
         text: black[50],
+        textSecondary: black[200],
         placeholder: black[200],
         onBackground: black[50],
         onSurface: black[50],

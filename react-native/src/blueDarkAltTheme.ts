@@ -9,7 +9,7 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 import { blue, black, lightBlue } from '@pxblue/colors';
 import { blueDarkTheme } from './blueDarkTheme';
 
-export const blueDarkAltTheme: typeof blueDarkTheme = {
+export const blueDarkAltTheme = {
     ...blueDarkTheme,
     colors: {
         ...blueDarkTheme.colors,
