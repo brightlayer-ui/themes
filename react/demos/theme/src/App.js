@@ -1106,6 +1106,7 @@ export default () => {
                 </div>
                 <div>
                     <Avatar color={'primary'}>JB</Avatar>
+                    <Avatar color={'primary'}>JB</Avatar>
                     <Avatar color={'secondary'}>JB</Avatar>
                     <Avatar color={'error'}>JB</Avatar>
                 </div>

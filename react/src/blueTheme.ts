@@ -343,6 +343,10 @@ export const blueTheme: ThemeOptions = {
                 '&$clickable:hover': {
                     backgroundColor: PXBColors.white[200],
                 },
+                '& $avatar': {
+                    backgroundColor: PXBColors.gray[500],
+                    marginRight: -4,
+                },
                 '& $avatarColorPrimary': {
                     backgroundColor: PXBColors.blue[100],
                     color: ThemeColors.primary.main,
@@ -353,10 +357,6 @@ export const blueTheme: ThemeOptions = {
                 },
                 '& $icon': {
                     marginLeft: Spacing,
-                    marginRight: -4,
-                },
-                '& $avatar': {
-                    // marginLeft: Spacing,
                     marginRight: -4,
                 },
                 '& $deleteIcon': {
