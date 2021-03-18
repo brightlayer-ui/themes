@@ -11,15 +11,6 @@ import { blue, red, darkBlack, black, lightBlue } from '@pxblue/colors';
 import { fontConfig } from './shared';
 import Color from 'color';
 
-declare global {
-    namespace ReactNativePaper {
-        interface ThemeColors {
-            primaryBase: string;
-            textSecondary: string;
-        }
-    }
-}
-
 export const blueDarkTheme = {
     ...DefaultTheme,
     dark: true,
