@@ -130,6 +130,7 @@ export default () => {
     const [showWarning, setShowWarning] = useState(true);
     const [buttonColor, setButtonColor] = useState('default');
     const [showInputIcons, setShowInputIcons] = useState(false);
+    const [showInputValues, setShowInputValues] = useState(false);
 
     const classes = styles();
 
@@ -1369,6 +1370,7 @@ export default () => {
                     <br />
                 </div>
                 <Button onClick={() => setShowInputIcons(!showInputIcons)}>Toggle Icons</Button>
+                <Button onClick={() => setShowInputValues(!showInputValues)}>Toggle Values</Button>
                 <div style={{ margin: 20 }}>
                     <TextField
                         label={'Default'}
@@ -1378,7 +1380,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         label={'Default disabled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         placeholder={'test'}
                         disabled
                         helperText={'helper text'}
@@ -1400,7 +1402,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         label={'D. primary disabled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         color={'primary'}
                         placeholder={'test'}
                         disabled
@@ -1408,7 +1410,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         label={'D. primary error'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         color={'primary'}
                         placeholder={'test'}
                         error
@@ -1418,14 +1420,14 @@ export default () => {
                     <br />
                     <TextField
                         label={'D. secondary'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         color={'secondary'}
                         placeholder={'test'}
                         {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         label={'D. secondary dis.'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         color={'secondary'}
                         placeholder={'test'}
                         disabled
@@ -1433,7 +1435,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         label={'D. secondary error'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         color={'secondary'}
                         placeholder={'test'}
                         error
@@ -1450,7 +1452,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Outlined disabled'}
                         placeholder={'test'}
                         disabled
@@ -1458,7 +1460,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Outlined error'}
                         placeholder={'test'}
                         error
@@ -1476,7 +1478,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Out. primary disabled'}
                         color={'primary'}
                         placeholder={'test'}
@@ -1485,7 +1487,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Out. primary error'}
                         color={'primary'}
                         placeholder={'test'}
@@ -1496,7 +1498,7 @@ export default () => {
                     <br />
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Out. secondary'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -1504,7 +1506,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Out. secondary dis.'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -1513,7 +1515,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Out. secondary error'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -1531,7 +1533,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Filled disabled'}
                         placeholder={'test'}
                         disabled
@@ -1539,7 +1541,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Filled error'}
                         placeholder={'test'}
                         error
@@ -1556,7 +1558,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Fil. primary disabled'}
                         color={'primary'}
                         placeholder={'test'}
@@ -1565,7 +1567,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Fil. primary error'}
                         color={'primary'}
                         placeholder={'test'}
@@ -1576,7 +1578,7 @@ export default () => {
                     <br />
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Fil. secondary'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -1584,7 +1586,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Fil. secondary dis.'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -1593,7 +1595,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Fil. secondary error'}
                         color={'secondary'}
                         placeholder={'test'}

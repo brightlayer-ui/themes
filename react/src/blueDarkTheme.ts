@@ -791,6 +791,10 @@ export const blueDarkTheme: ThemeOptions = {
                 },
                 '&$error:not($focused):after': {
                     borderBottomWidth: 1,
+                    borderBottomColor: ThemeColors.error.dark,
+                },
+                '&$error:not($focused):hover:after': {
+                    borderBottomColor: ThemeColors.error.main,
                 },
                 '&$disabled:before': {
                     borderBottomStyle: 'solid',
