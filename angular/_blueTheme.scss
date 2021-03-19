@@ -330,6 +330,9 @@
         }
         .pxb-info-list-item-content {
             color: map-get($pxb-gray, 500);
+            .mat-list-text {
+                color: map-get($pxb-black, 500);
+            }
         }
     }
 
