@@ -162,6 +162,24 @@ export const MyCustomTextInput: typeof TextInput = (props) => {
 
 > **Sample Wrappers:** PX Blue has sample wrapper code for all of these components that you can copy for use in your application. These can be found in our [Showcase Demo](https://github.com/pxblue/react-native-showcase-demo/tree/master/components/wrappers).
 
+### TypeScript
+
+Our PX Blue themes extend the themes provided by React Native Paper. If you are using these themes in a TypeScript project and want to access any of the properties that were added to the defaults, you need to add the following [global augmentation](https://callstack.github.io/react-native-paper/theming.html#typescript) in your project's index.tsx file:
+
+```tsx
+declare global {
+    namespace ReactNativePaper {
+        interface ThemeColors {
+            primaryBase: string;
+            textSecondary: string;
+        }
+        interface ThemeFonts {
+            bold: ThemeFont;
+        }
+    }
+}
+```
+
 ## Demo
 
 [Check it out](https://github.com/pxblue/react-native-showcase-demo/tree/master)
