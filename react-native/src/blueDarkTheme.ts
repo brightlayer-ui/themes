@@ -11,11 +11,17 @@ import { blue, red, darkBlack, black, lightBlue } from '@pxblue/colors';
 import { fontConfig } from './shared';
 import Color from 'color';
 
-export const blueDarkTheme = {
+export const blueDarkTheme: ReactNativePaper.Theme = {
     ...DefaultTheme,
     dark: true,
     roundness: 4,
-    fonts: configureFonts(fontConfig),
+    fonts: {
+        ...configureFonts(fontConfig),
+        bold: {
+            fontFamily: 'OpenSans-Bold',
+            fontWeight: '700',
+        },
+    },
     colors: {
         ...DefaultTheme.colors,
         primary: blue[200],

@@ -9,12 +9,15 @@ export { blueTheme as blue } from './blueTheme';
 export { blueDarkTheme as blueDark } from './blueDarkTheme';
 export { blueDarkAltTheme as blueDarkAlt } from './blueDarkAltTheme';
 
-// TODO This isn't working as expected when used in a project...need to figure out how to make this accessible
+// This will still need to be added to an end-user project if they want to access these properties without typescript yelling at them.
 declare global {
     namespace ReactNativePaper {
         interface ThemeColors {
             primaryBase: string;
             textSecondary: string;
+        }
+        interface ThemeFonts {
+            bold: ThemeFont;
         }
     }
 }
