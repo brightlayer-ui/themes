@@ -323,16 +323,6 @@
         background-color: map-get($pxb-white, 200);
     }
 
-    /* User Menu */
-    .pxb-user-menu-overlay {
-        .pxb-drawer-header-content.mat-toolbar-single-row.mat-toolbar {
-            background-color: unset;
-        }
-        .pxb-info-list-item-content {
-            color: map-get($pxb-gray, 500);
-        }
-    }
-
     .mat-toolbar .mat-icon-button:not([color]) {
         color: map-get($pxb-white, 50);
     }

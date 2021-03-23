@@ -33,7 +33,7 @@ const ThemeColors = {
     },
     text: {
         primary: PXBColors.black[500],
-        secondary: PXBColors.black[300],
+        secondary: PXBColors.gray[500],
         // disabled: Color(PXBColors.black[300]).alpha(0.32).string(),
         hint: PXBColors.gray[500],
     },
