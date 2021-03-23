@@ -329,9 +329,9 @@
             background-color: unset;
         }
         .pxb-info-list-item-content {
-            color: map-get($pxb-gray, 500);
+            color: map-get($foreground, secondary-text);
             .mat-list-text {
-                color: map-get($pxb-black, 500);
+                color: map-get($foreground, text),;
             }
         }
     }
