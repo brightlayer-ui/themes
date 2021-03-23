@@ -435,12 +435,4 @@
         background-color: rgba(map-get($pxb-black, 50), 0.1);
         color: map-get($pxb-black, 50);
     }
-    .pxb-user-menu-overlay {
-        .pxb-info-list-item-content {
-            color: map-get($foreground, secondary-text);
-            .mat-list-text {
-                color: map-get($foreground, text);
-            }
-        }
-    }
 }
