@@ -7,11 +7,10 @@
  **/
 
 import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
-import MUIShadows from '@material-ui/core/styles/shadows';
 import { typography, createSimpleLightPalette as createSimplePalette } from './shared';
+import shadows from './shadow';
 import * as PXBColors from '@pxblue/colors';
 import Color from 'color';
-import { PaletteOptions } from '@material-ui/core/styles/createPalette';
 
 /* 
     Variable color definitions so we can reuse them in the theme overrides below
@@ -49,18 +48,6 @@ const WhiteText = PXBColors.white[50];
 const BlackBorder = PXBColors.black[500];
 const Spacing = 8;
 
-const ShadowBaseColorArray = Color(PXBColors.black[500]).rgb().array();
-const MUIShadowCopy: string[] = MUIShadows.slice();
-MUIShadowCopy.splice(0, 1);
-const TunedShadow = new Array<string>(24);
-TunedShadow.fill('');
-MUIShadowCopy.forEach((shadow, index): void => {
-    TunedShadow[index] = shadow.replace(
-        /rgba\(0,0,0/g,
-        `rgba(${ShadowBaseColorArray[0]},${ShadowBaseColorArray[1]},${ShadowBaseColorArray[2]}`
-    );
-});
-
 /*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
     to customize in our themes. These have changed periodically from version to version of Material UI.
@@ -80,14 +67,13 @@ export const blueTheme: ThemeOptions = {
         text: ThemeColors.text,
         action: ThemeColors.action,
     },
-    // @ts-ignore
-    shadows: ['none'].concat(TunedShadow),
+    shadows: shadows,
     overrides: {
         // APP BAR OVERRIDES
         MuiAppBar: {
             colorDefault: {
                 color: ThemeColors.text.primary,
-                backgroundColor: PXBColors.gray[50],
+                backgroundColor: PXBColors.white[50],
             },
             colorSecondary: {
                 color: PXBColors.white[50],
