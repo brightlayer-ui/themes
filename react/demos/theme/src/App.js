@@ -172,8 +172,7 @@ export default () => {
                         <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
                             {selectedPage}
                         </Typography>
-                        <Button variant="outlined" color="inherit" component={CompNavLink} to={'/login'}>
-                            <PersonIcon style={{ marginRight: '6px' }} />
+                        <Button variant="outlined" color="inherit" component={CompNavLink} to={'/login'} startIcon={<PersonIcon />}>
                             Log In
                         </Button>
                     </Toolbar>
@@ -188,8 +187,7 @@ export default () => {
                         <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
                             {selectedPage}
                         </Typography>
-                        <Button variant="outlined" color="inherit" component={CompNavLink} to={'/login'}>
-                            <PersonIcon style={{ marginRight: '6px' }} />
+                        <Button variant="outlined" color="inherit" component={CompNavLink} to={'/login'} startIcon={<PersonIcon />}>
                             Log In
                         </Button>
                     </Toolbar>
@@ -225,8 +223,7 @@ export default () => {
                         <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
                             {selectedPage}
                         </Typography>
-                        <Button variant="outlined" color="inherit" component={CompNavLink} to={'/login'}>
-                            <PersonIcon style={{ marginRight: '6px' }} />
+                        <Button variant="outlined" color="inherit" component={CompNavLink} to={'/login'} startIcon={<PersonIcon />}>
                             Log In
                         </Button>
                     </Toolbar>
@@ -856,6 +853,7 @@ export default () => {
                     <br />
                     <TextField
                         variant={'filled'}
+                        helperText={'a helper text'}
                         label={'Filled'}
                         placeholder={'test'}
                         {...(showInputIcons ? withIcons : {})}

@@ -1445,10 +1445,10 @@
   resolved "https://registry.yarnpkg.com/@pxblue/icons-mui/-/icons-mui-1.0.18.tgz#dc9d23637fc104dbcc25efd926a8f36259c98489"
   integrity sha512-/NI7GDYCz+dn/qI7W10pZt7x5gGY7IngqwFI2zyLBDMgeawD+ryzvzZ6LOvxjdeht0R8cZFa6ZPZuJjtIcLrjw==
 
-"@pxblue/react-components@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/react-components/-/react-components-5.0.0.tgz#f245e51de9c0bf2403ee12769aff87dd0875a3ec"
-  integrity sha512-HrZxrV8lWj/09m/pjtTsoo2z/RUBxKj3gu//vqwL3LtN+i3FeTl9guvDbJIHpLWFxHfBJ/AVgOgyIjWAWqRJAA==
+"@pxblue/react-components@^5.0.1-beta.2":
+  version "5.0.1-beta.2"
+  resolved "https://registry.yarnpkg.com/@pxblue/react-components/-/react-components-5.0.1-beta.2.tgz#97dbfd5a5733a291623b55410ac1905e7677aafb"
+  integrity sha512-z6/RHSvlpDjze+RxymfEiMxrxu/PQM0kIgncXSbEsSDexxLik5T3GZzkISw/t5YGhoOd+qk6ixd53iK0Lg3doQ==
   dependencies:
     "@pxblue/colors" "^3.0.0"
     color "^3.1.2"

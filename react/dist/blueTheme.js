@@ -17,8 +17,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var shadows_1 = __importDefault(require("@material-ui/core/styles/shadows"));
 var shared_1 = require("./shared");
+var shadow_1 = __importDefault(require("./shadow"));
 var PXBColors = __importStar(require("@pxblue/colors"));
 var color_1 = __importDefault(require("color"));
 /*
@@ -55,14 +55,6 @@ var ThemeColors = {
 var WhiteText = PXBColors.white[50];
 var BlackBorder = PXBColors.black[500];
 var Spacing = 8;
-var ShadowBaseColorArray = color_1.default(PXBColors.black[500]).rgb().array();
-var MUIShadowCopy = shadows_1.default.slice();
-MUIShadowCopy.splice(0, 1);
-var TunedShadow = new Array(24);
-TunedShadow.fill('');
-MUIShadowCopy.forEach(function (shadow, index) {
-    TunedShadow[index] = shadow.replace(/rgba\(0,0,0/g, "rgba(" + ShadowBaseColorArray[0] + "," + ShadowBaseColorArray[1] + "," + ShadowBaseColorArray[2]);
-});
 /*
     Refer to https://material-ui.com/customization/default-theme/ for a list of properties that are available
     to customize in our themes. These have changed periodically from version to version of Material UI.
@@ -82,14 +74,13 @@ exports.blueTheme = {
         text: ThemeColors.text,
         action: ThemeColors.action,
     },
-    // @ts-ignore
-    shadows: ['none'].concat(TunedShadow),
+    shadows: shadow_1.default,
     overrides: {
         // APP BAR OVERRIDES
         MuiAppBar: {
             colorDefault: {
                 color: ThemeColors.text.primary,
-                backgroundColor: PXBColors.gray[50],
+                backgroundColor: PXBColors.white[50],
             },
             colorSecondary: {
                 color: PXBColors.white[50],
