@@ -67,6 +67,9 @@
         &.mat-list-item,
         .mat-list-item-content {
             color: inherit;
+            & .mat-list-icon {
+                color: map-get($foreground, secondary-text);
+            }
         }
     }
 }
@@ -134,5 +137,10 @@
     .pxb-user-menu-overlay .mat-toolbar {
         color: inherit;
         background-color: inherit;
+    }
+    .pxb-user-menu-overlay {
+        .pxb-drawer-header-content.mat-toolbar-single-row.mat-toolbar {
+            background-color: unset;
+        }
     }
 }

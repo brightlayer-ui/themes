@@ -21,7 +21,7 @@ const ThemeColors = {
     error: createSimplePalette(PXBColors.red),
     success: createSimplePalette(PXBColors.green),
     info: createSimplePalette(PXBColors.lightBlue),
-    divider: Color(PXBColors.black[500]).alpha(0.12).string(),
+    divider: Color(PXBColors.black[200]).alpha(0.36).string(),
     warning: {
         light: PXBColors.yellow[100],
         main: PXBColors.yellow[500],
@@ -33,7 +33,7 @@ const ThemeColors = {
     },
     text: {
         primary: PXBColors.black[500],
-        secondary: PXBColors.black[300],
+        secondary: PXBColors.gray[500],
         // disabled: Color(PXBColors.black[300]).alpha(0.32).string(),
         hint: PXBColors.gray[500],
     },
@@ -123,7 +123,7 @@ export const blueTheme: ThemeOptions = {
             contained: {
                 backgroundColor: PXBColors.white[50],
                 color: ThemeColors.text.primary,
-                '&$disableElevation': {
+                '&$disableElevation:not($containedPrimary):not($containedSecondary)': {
                     backgroundColor: PXBColors.white[500],
                     '&:hover': {
                         backgroundColor: PXBColors.white[300],
@@ -176,6 +176,9 @@ export const blueTheme: ThemeOptions = {
             },
             outlinedPrimary: {
                 borderColor: ThemeColors.primary.main,
+                '&$disabled': {
+                    borderColor: Color(PXBColors.black[500]).alpha(0.12).string(),
+                },
                 '&:hover': {
                     backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
                 },
@@ -183,7 +186,7 @@ export const blueTheme: ThemeOptions = {
             outlinedSecondary: {
                 borderColor: ThemeColors.secondary.main,
                 '&$disabled': {
-                    borderColor: ThemeColors.action.disabled,
+                    borderColor: Color(PXBColors.black[500]).alpha(0.12).string(),
                 },
                 '&:hover': {
                     backgroundColor: Color(ThemeColors.secondary.main).alpha(0.05).string(),
@@ -258,6 +261,19 @@ export const blueTheme: ThemeOptions = {
                     backgroundColor: ThemeColors.primary.light,
                     color: ThemeColors.primary.main,
                 },
+                '&$disabled': {
+                    opacity: 1,
+                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
+                    '& $avatar': {
+                        opacity: 0.5,
+                    },
+                    '&:not($colorPrimary):not($colorSecondary) $deleteIcon': {
+                        color: ThemeColors.action.disabled,
+                    },
+                    '&:not($colorPrimary):not($colorSecondary) $icon': {
+                        color: ThemeColors.action.disabled,
+                    },
+                },
             },
             clickable: {
                 '&:hover': {
@@ -272,6 +288,20 @@ export const blueTheme: ThemeOptions = {
             clickableColorSecondary: {
                 '&:hover': {
                     backgroundColor: PXBColors.lightBlue[300],
+                },
+            },
+            colorPrimary: {
+                '&:not($outlinedPrimary)$disabled': {
+                    backgroundColor: ThemeColors.primary.light,
+                    color: PXBColors.blue[200],
+                    opacity: 1,
+                },
+            },
+            colorSecondary: {
+                '&:not($outlinedSecondary)$disabled': {
+                    backgroundColor: ThemeColors.secondary.light,
+                    color: PXBColors.lightBlue[200],
+                    opacity: 1,
                 },
             },
             deleteIcon: {
@@ -305,13 +335,17 @@ export const blueTheme: ThemeOptions = {
             deleteIconOutlinedColorSecondary: {
                 color: PXBColors.lightBlue[200],
                 '&:hover': {
-                    color: ThemeColors.primary.main,
+                    color: ThemeColors.secondary.main,
                 },
             },
             outlined: {
                 borderColor: Color(BlackBorder).alpha(0.12).string(),
                 '&$clickable:hover': {
                     backgroundColor: PXBColors.white[200],
+                },
+                '& $avatar': {
+                    backgroundColor: PXBColors.gray[500],
+                    marginRight: -4,
                 },
                 '& $avatarColorPrimary': {
                     backgroundColor: PXBColors.blue[100],
@@ -325,18 +359,35 @@ export const blueTheme: ThemeOptions = {
                     marginLeft: Spacing,
                     marginRight: -4,
                 },
-                '& $avatar': {
-                    // marginLeft: Spacing,
-                    marginRight: -4,
-                },
                 '& $deleteIcon': {
                     margin: `0px ${Spacing}px 0px -4px`,
+                },
+                '&$disabled $deleteIcon': {
+                    color: 'inherit',
                 },
             },
             outlinedPrimary: {
                 backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
                 '&$clickable:hover': {
                     backgroundColor: Color(ThemeColors.primary.main).alpha(0.1).string(),
+                },
+                '&$disabled': {
+                    opacity: 1,
+                    backgroundColor: ThemeColors.background.paper,
+                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
+                    borderColor: Color(PXBColors.black[500]).alpha(0.12).string(),
+                },
+            },
+            outlinedSecondary: {
+                backgroundColor: Color(ThemeColors.secondary.main).alpha(0.05).string(),
+                '&$clickable:hover': {
+                    backgroundColor: Color(ThemeColors.secondary.main).alpha(0.1).string(),
+                },
+                '&$disabled': {
+                    opacity: 1,
+                    backgroundColor: ThemeColors.background.paper,
+                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
+                    borderColor: Color(PXBColors.black[500]).alpha(0.12).string(),
                 },
             },
             icon: {
@@ -346,6 +397,7 @@ export const blueTheme: ThemeOptions = {
                 marginRight: -4,
             },
             avatar: {},
+            disabled: {},
             label: {},
             avatarColorPrimary: {},
             avatarColorSecondary: {},
@@ -546,7 +598,6 @@ export const blueTheme: ThemeOptions = {
         },
         MuiTableRow: {
             root: {
-                color: PXBColors.black[50],
                 backgroundColor: '#FBFBFB', // possible new shade of white
                 '&$hover:hover': {
                     backgroundColor: Color('#FBFBFB').mix(Color(PXBColors.black[50]), 0.5).string(),

@@ -87,6 +87,8 @@ import * as PXBThemes from '@pxblue/react-themes';
 import './style.css';
 import { Avatar, TextField } from '@material-ui/core';
 
+import avatar from './assets/images/1.jpg';
+
 // NavLink for components in app (Button, Nav Drawer, etc.)
 const CompNavLink = React.forwardRef((props, ref) => <NavLink {...props} innerRef={ref} />);
 
@@ -128,6 +130,7 @@ export default () => {
     const [showWarning, setShowWarning] = useState(true);
     const [buttonColor, setButtonColor] = useState('default');
     const [showInputIcons, setShowInputIcons] = useState(false);
+    const [showInputValues, setShowInputValues] = useState(false);
 
     const classes = styles();
 
@@ -213,7 +216,7 @@ export default () => {
                         <Tab label="Item Three" value={1} />
                     </Tabs>
                 </AppBar>
-                <AppBar style={{ flex: '0 0 auto' }} elevation={0} position="static" color="default">
+                <AppBar style={{ flex: '0 0 auto' }} elevation={0} position="static">
                     <Toolbar className={classes.toolbar}>
                         <Hidden smUp>
                             <IconButton color="inherit" onClick={() => setDrawerOpen(!drawerOpen)}>
@@ -356,84 +359,751 @@ export default () => {
                     <Switch defaultChecked color="default" />
                 </div>
                 <div style={{ margin: 40 }}>
-                    <Chip label="Basic" />
-                    <Chip label="Disabled" disabled />
-                    <Chip avatar={<Avatar>M</Avatar>} label="Clickable" onClick={() => {}} />
-                    <Chip avatar={<Avatar alt="Natacha" src="/static/images/avatar/1.jpg" />} label="Deletable" />
-                    <Chip icon={<Favorite />} label="Clickable deletable" onDelete={() => {}} onClick={() => {}} />
-                    <Chip label="Custom delete icon" deleteIcon={<DoneIcon />} />
-                    <Chip label="Clickable Link" component="a" href="#chip" clickable />
-                    <Chip
-                        avatar={<Avatar>M</Avatar>}
-                        label="Primary clickable"
-                        clickable
-                        color="primary"
-                        deleteIcon={<DoneIcon />}
-                    />
-                    <Chip
-                        icon={<Favorite style={{ fontSize: 18 }} />}
-                        label="Primary clickable"
-                        clickable
-                        color="primary"
-                        deleteIcon={<DoneIcon />}
-                    />
-                    <Chip label="Deletable primary" color="primary" onDelete={() => {}} />
-                    <Chip icon={<Favorite />} label="Deletable secondary" color="secondary" onDelete={() => {}} />
-                    <Chip
-                        label="Deletable secondary"
-                        color="secondary"
-                        avatar={<Avatar>M</Avatar>}
-                        onDelete={() => {}}
-                    />
-                </div>
-                <div style={{ margin: 40 }}>
-                    <Chip label="Basic" variant="outlined" />
-                    <Chip label="Disabled" disabled variant="outlined" />
-                    <Chip avatar={<Avatar>M</Avatar>} label="Clickable" variant="outlined" />
-                    <Chip
-                        avatar={<Avatar alt="Natacha" src="/static/images/avatar/1.jpg" />}
-                        label="Deletable"
-                        variant="outlined"
-                    />
-                    <Chip icon={<Favorite />} label="Clickable deletable" variant="outlined" onDelete={() => {}} />
-                    <Chip label="Custom delete icon" deleteIcon={<DoneIcon />} variant="outlined" />
-                    <Chip label="Clickable link" component="a" href="#chip" clickable variant="outlined" />
-                    <Chip
-                        avatar={<Avatar>M</Avatar>}
-                        label="Primary clickable"
-                        clickable
-                        color="primary"
-                        deleteIcon={<DoneIcon />}
-                        variant="outlined"
-                    />
-                    <Chip
-                        icon={<Favorite />}
-                        label="Primary clickable"
-                        clickable
-                        color="primary"
-                        onDelete={() => {
-                            /* do nothing */
-                        }}
-                        deleteIcon={<DoneIcon />}
-                        variant="outlined"
-                    />
-                    <Chip label="Deletable primary" color="primary" variant="outlined" />
-                    <Chip
-                        icon={<Favorite />}
-                        label="Deletable secondary"
-                        color="secondary"
-                        variant="outlined"
-                        onDelete={() => {}}
-                    />
-                    <Chip
-                        label="Deletable secondary"
-                        color="secondary"
-                        variant="outlined"
-                        avatar={<Avatar>M</Avatar>}
-                        onDelete={() => {}}
-                    />
+                    <Grid container spacing={3}>
+                        <Grid item xs={4}>
+                            <Chip label="Basic" color={'default'} className={classes.margins} />
+                            <Chip label="Disabled" color={'default'} disabled className={classes.margins} />
+                            <br />
+                            <Chip label="Clickable" color={'default'} clickable className={classes.margins} />
+                            <Chip label="Disabled" color={'default'} clickable disabled className={classes.margins} />
+                            <br />
+                            <Chip
+                                label="Deletable"
+                                color={'default'}
+                                clickable
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="With Icon"
+                                color={'default'}
+                                clickable
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Dual Icon"
+                                color={'default'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Text Avatar"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Image Avatar"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Deletable Avatar"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Chip label="Primary" color={'primary'} />
+                            <Chip label="Disabled" color={'primary'} disabled className={classes.margins} />
+                            <br />
+                            <Chip label="Clickable" color={'primary'} clickable className={classes.margins} />
+                            <Chip label="Disabled" color={'primary'} clickable disabled className={classes.margins} />
+                            <br />
+                            <Chip
+                                label="Deletable"
+                                color={'primary'}
+                                clickable
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="With Icon"
+                                color={'primary'}
+                                clickable
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Dual Icon"
+                                color={'primary'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Text Avatar"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Image Avatar"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Deletable Avatar"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Chip label="Secondary" color={'secondary'} className={classes.margins} />
+                            <Chip label="Disabled" color={'secondary'} disabled className={classes.margins} />
+                            <br />
+                            <Chip label="Clickable" color={'secondary'} clickable className={classes.margins} />
+                            <Chip label="Disabled" color={'secondary'} clickable disabled className={classes.margins} />
+                            <br />
+                            <Chip
+                                label="Deletable"
+                                color={'secondary'}
+                                clickable
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="With Icon"
+                                color={'secondary'}
+                                clickable
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Dual Icon"
+                                color={'secondary'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Text Avatar"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Image Avatar"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                label="Deletable Avatar"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Chip variant={'outlined'} label="Basic" color={'default'} className={classes.margins} />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'default'}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Clickable"
+                                color={'default'}
+                                clickable
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Deletable"
+                                color={'default'}
+                                clickable
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="With Icon"
+                                color={'default'}
+                                clickable
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Dual Icon"
+                                color={'default'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Text Avatar"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Image Avatar"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Deletable Avatar"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'default'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Chip variant={'outlined'} label="Primary" color={'primary'} className={classes.margins} />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'primary'}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Clickable"
+                                color={'primary'}
+                                clickable
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Deletable"
+                                color={'primary'}
+                                clickable
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="With Icon"
+                                color={'primary'}
+                                clickable
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Dual Icon"
+                                color={'primary'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Text Avatar"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Image Avatar"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Deletable Avatar"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'primary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Chip
+                                variant={'outlined'}
+                                label="Secondary"
+                                color={'secondary'}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'secondary'}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Clickable"
+                                color={'secondary'}
+                                clickable
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Deletable"
+                                color={'secondary'}
+                                clickable
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="With Icon"
+                                color={'secondary'}
+                                clickable
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Dual Icon"
+                                color={'secondary'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                onDelete={() => {}}
+                                icon={<Favorite />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Text Avatar"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar>MB</Avatar>}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Image Avatar"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                disabled
+                                className={classes.margins}
+                            />
+                            <br />
+                            <Chip
+                                variant={'outlined'}
+                                label="Deletable Avatar"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                className={classes.margins}
+                            />
+                            <Chip
+                                variant={'outlined'}
+                                label="Disabled"
+                                color={'secondary'}
+                                clickable
+                                avatar={<Avatar alt="Natacha" src={avatar} />}
+                                onDelete={() => {}}
+                                disabled
+                                className={classes.margins}
+                            />
+                        </Grid>
+                    </Grid>
                 </div>
                 <div>
+                    <Avatar color={'primary'}>JB</Avatar>
                     <Avatar color={'primary'}>JB</Avatar>
                     <Avatar color={'secondary'}>JB</Avatar>
                     <Avatar color={'error'}>JB</Avatar>
@@ -697,6 +1367,7 @@ export default () => {
                     <br />
                 </div>
                 <Button onClick={() => setShowInputIcons(!showInputIcons)}>Toggle Icons</Button>
+                <Button onClick={() => setShowInputValues(!showInputValues)}>Toggle Values</Button>
                 <div style={{ margin: 20 }}>
                     <TextField
                         label={'Default'}
@@ -706,7 +1377,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         label={'Default disabled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         placeholder={'test'}
                         disabled
                         helperText={'helper text'}
@@ -728,7 +1399,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         label={'D. primary disabled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         color={'primary'}
                         placeholder={'test'}
                         disabled
@@ -736,7 +1407,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         label={'D. primary error'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         color={'primary'}
                         placeholder={'test'}
                         error
@@ -746,14 +1417,14 @@ export default () => {
                     <br />
                     <TextField
                         label={'D. secondary'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         color={'secondary'}
                         placeholder={'test'}
                         {...(showInputIcons ? withIcons : {})}
                     ></TextField>
                     <TextField
                         label={'D. secondary dis.'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         color={'secondary'}
                         placeholder={'test'}
                         disabled
@@ -761,7 +1432,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         label={'D. secondary error'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         color={'secondary'}
                         placeholder={'test'}
                         error
@@ -778,7 +1449,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Outlined disabled'}
                         placeholder={'test'}
                         disabled
@@ -786,7 +1457,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Outlined error'}
                         placeholder={'test'}
                         error
@@ -804,7 +1475,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Out. primary disabled'}
                         color={'primary'}
                         placeholder={'test'}
@@ -813,7 +1484,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Out. primary error'}
                         color={'primary'}
                         placeholder={'test'}
@@ -824,7 +1495,7 @@ export default () => {
                     <br />
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Out. secondary'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -832,7 +1503,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Out. secondary dis.'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -841,7 +1512,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'outlined'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Out. secondary error'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -860,7 +1531,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Filled disabled'}
                         placeholder={'test'}
                         disabled
@@ -868,7 +1539,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Filled error'}
                         placeholder={'test'}
                         error
@@ -885,7 +1556,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Fil. primary disabled'}
                         color={'primary'}
                         placeholder={'test'}
@@ -894,7 +1565,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Fil. primary error'}
                         color={'primary'}
                         placeholder={'test'}
@@ -905,7 +1576,7 @@ export default () => {
                     <br />
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Fil. secondary'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -913,7 +1584,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Fil. secondary dis.'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -922,7 +1593,7 @@ export default () => {
                     ></TextField>
                     <TextField
                         variant={'filled'}
-                        value={234}
+                        value={showInputValues ? 234 : ''}
                         label={'Fil. secondary error'}
                         color={'secondary'}
                         placeholder={'test'}
@@ -1011,6 +1682,7 @@ export default () => {
                                 <TableCell>State</TableCell>
                                 <TableCell>Default</TableCell>
                                 <TableCell>Contained</TableCell>
+                                <TableCell>Flat</TableCell>
                                 <TableCell>Outlined</TableCell>
                                 <TableCell>Text</TableCell>
                             </TableRow>
@@ -1023,6 +1695,11 @@ export default () => {
                                 </TableCell>
                                 <TableCell>
                                     <Button color={'primary'} variant={'contained'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'primary'} variant={'contained'} disableElevation>
                                         Hello
                                     </Button>
                                 </TableCell>
@@ -1050,6 +1727,11 @@ export default () => {
                                     </Button>
                                 </TableCell>
                                 <TableCell>
+                                    <Button color={'primary'} variant={'contained'} disableElevation disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
                                     <Button color={'primary'} variant={'outlined'} disabled>
                                         Hello
                                     </Button>
@@ -1069,6 +1751,7 @@ export default () => {
                                 <TableCell>State</TableCell>
                                 <TableCell>Default</TableCell>
                                 <TableCell>Contained</TableCell>
+                                <TableCell>Flat</TableCell>
                                 <TableCell>Outlined</TableCell>
                                 <TableCell>Text</TableCell>
                             </TableRow>
@@ -1081,6 +1764,11 @@ export default () => {
                                 </TableCell>
                                 <TableCell>
                                     <Button color={'secondary'} variant={'contained'}>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} variant={'contained'} disableElevation>
                                         Hello
                                     </Button>
                                 </TableCell>
@@ -1104,6 +1792,11 @@ export default () => {
                                 </TableCell>
                                 <TableCell>
                                     <Button color={'secondary'} variant={'contained'} disabled>
+                                        Hello
+                                    </Button>
+                                </TableCell>
+                                <TableCell>
+                                    <Button color={'secondary'} variant={'contained'} disableElevation disabled>
                                         Hello
                                     </Button>
                                 </TableCell>

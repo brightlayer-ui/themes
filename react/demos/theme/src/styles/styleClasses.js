@@ -54,5 +54,8 @@ const styles = makeStyles((theme) => ({
         paddingLeft: '15px',
         paddingRight: '15px',
     },
+    margins: {
+        margin: theme.spacing(0.5),
+    },
 }));
 export default styles;

@@ -1,12 +1,101 @@
 // Import library functions for theme creation.
 @import '~@angular/material/theming';
 @import '~@pxblue/colors/palette';
+@import 'utility';
+@import './mixins/input-field';
+@import './mixins/chip';
+@import './mixins/button';
+@import './mixins/tab';
+@import './mixins/stepper';
+@import './mixins/slide-toggle';
 
 @mixin bluetheme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
+    $warn: $pxb-red;
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
+
+    /* input fields */
+    $inputPrimary: (
+        icon: map-get($foreground, hint-text),
+        placeholder: map-get($pxb-black, 100),
+        hint: map-get($foreground, secondary-text),
+        filledBackgroundColor: map-get($pxb-white, 200),
+        label: (
+            withoutValue: map-get($foreground, hint-text),
+            withValue: map-get($foreground, text),
+            onFocus: map-get($primary, 500),
+        ),
+        underline: (
+            default: map-get($foreground, divider),
+            onHover: map-get($foreground, text),
+            onFocus: map-get($primary, 500),
+        ),
+    );
+    $inputWarn: (
+        icon: map-get($foreground, hint-text),
+        placeholder: map-get($pxb-black, 100),
+        hint: map-get($warn, 500),
+        filledBackgroundColor: map-get($pxb-white, 200),
+        label: (
+            withoutValue: map-get($warn, 500),
+            withValue: map-get($warn, 500),
+            onFocus: map-get($warn, 500),
+        ),
+        underline: (
+            default: map-get($warn, 500),
+            onHover: map-get($warn, 900),
+            onFocus: map-get($warn, 500),
+        ),
+    );
+    $inputDisabled: (
+        text: map-get($foreground, disabled),
+        filledBackgroundColor: map-get($pxb-white, 100),
+    );
+    @include pxb-mat-form-field($inputPrimary, $inputWarn, $inputDisabled);
+    /* Mat Disabled Select Underline Color */
+    .mat-form-field.mat-form-field-disabled.mat-form-field-appearance-legacy,
+    .mat-form-field.mat-form-field-disabled,
+    .mat-form-field.mat-form-field-disabled.mat-form-field-appearance-standard {
+        .mat-form-field-underline {
+            background-color: map-get($foreground, divider);
+        }
+    }
+    .mat-form-field.mat-form-field-disabled.mat-form-field-appearance-fill .mat-form-field-underline::before {
+        background-color: map-get($foreground, divider);
+    }
+    .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+        color: map-get($foreground, divider);
+    }
+
+    /* Chips */
+    $chipText: map-get($pxb-white, 50);
+    $chipPrimary: (
+        text: $chipText,
+        backgroundPalette: $pxb-blue,
+    );
+    $chipAccent: (
+        text: $chipText,
+        backgroundPalette: $pxb-lightBlue,
+    );
+    $chipWarn: (
+        text: $chipText,
+        backgroundPalette: $pxb-red,
+    );
+    $chipDefault: (
+        text: map-get($foreground, text),
+        backgroundPalette: $pxb-white,
+        remove: map-get($pxb-gray, 500),
+        removeHover: map-get($pxb-gray, 400),
+    );
+    @include pxb-mat-chip($chipPrimary, $chipAccent, $chipWarn, $chipDefault);
+    .mat-chip:not([color]).mat-chip-disabled .mat-chip-remove {
+        color: map-get($chipDefault, remove);
+    }
+    .mat-chip.mat-standard-chip::after {
+        background-color: white;
+    }
 
     /* toolbar*/
     .mat-toolbar {
@@ -18,120 +107,223 @@
         &.mat-accent {
             background-color: map-get($primary, 700);
         }
-    }
-
-    /*tab bar*/
-    .mat-tab-group {
-        .mat-tab-header {
-            background-color: map-get($background, app-bar);
-        }
-
-        &.mat-primary .mat-tab-header {
-            background-color: map-get($primary, 500);
-
-            .mat-tab-label,
-            .mat-tab-link {
-                color: map-get($pxb-white, 50);
-            }
-        }
-
-        &.mat-accent .mat-tab-header {
-            background-color: map-get($primary, 700);
-
-            .mat-tab-label,
-            .mat-tab-link {
-                color: map-get($pxb-white, 50);
-            }
+        &:not([color]):not([ng-reflect-color]) {
+            color: map-get($foreground, text);
+            background-color: map-get($pxb-white, 50);
         }
     }
 
-    /* tabbar link*/
-    .mat-tab-group.mat-primary .mat-ink-bar,
-    .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-        background-color: map-get($background, base);
+    /* Buttons*/
+    $buttonPrimary: (
+        icon: (
+            text: map-get($primary, 500),
+        ),
+        outline: (
+            text: map-get($primary, 500),
+            background: transparent,
+            backgroundHover: rgba(0, 123, 193, 0.05),
+            border: map-get($primary, 500),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-get($primary, 500),
+            backgroundHover: map-get($primary, 300),
+        ),
+    );
+    $buttonAccent: (
+        icon: (
+            text: map-get($accent, 500),
+        ),
+        outline: (
+            text: map-get($accent, 500),
+            background: transparent,
+            backgroundHover: rgba(map-get($accent, 500), 0.05),
+            border: map-get($accent, 500),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-get($accent, 500),
+            backgroundHover: map-get($accent, 300),
+        ),
+    );
+    $buttonWarn: (
+        icon: (
+            text: map-get($warn, 500),
+        ),
+        outline: (
+            text: map-get($warn, 500),
+            background: transparent,
+            backgroundHover: rgba(map-get($warn, 500), 0.05),
+            border: map-get($warn, 500),
+        ),
+        fill: (
+            text: map-get($pxb-white, 50),
+            background: map-get($warn, 500),
+            backgroundHover: map-get($warn, 300),
+        ),
+    );
+    $buttonDefault: (
+        icon: (
+            text: map-get($pxb-gray, 500),
+        ),
+        outline: (
+            text: map-get($pxb-black, 500),
+            background: transparent,
+            backgroundHover: rgba(66, 78, 84, 0.05),
+            border: rgba(66, 78, 84, 0.3),
+        ),
+        fill: (
+            text: map-get($pxb-black, 500),
+            background: map-get($pxb-white, 50),
+            backgroundHover: rgba(66, 78, 84, 0.05),
+        ),
+        toggle: (
+            border: map-get($pxb-gray, 100),
+            default: (
+                text: map-get($pxb-gray, 500),
+                background: map-get($pxb-white, 50),
+                backgroundHover: rgba(66, 78, 84, 0.05),
+            ),
+            active: (
+                text: map-get($primary, 500),
+                background: map-get($primary, 50),
+                backgroundHover: map-get($primary, 100),
+            ),
+        ),
+    );
+    @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
+    .mat-stroked-button,
+    .mat-raised-button {
+        &.mat-button-disabled {
+            background-color: map-get($pxb-white, 50) !important;
+            color: map-get($foreground, disabled);
+            border: solid 1px map-get($foreground, divider);
+        }
     }
-
-    .mat-tab-group.mat-accent .mat-ink-bar,
-    .mat-tab-nav-bar.mat-accent .mat-ink-bar {
-        background-color: map-get($background, base);
-    }
-
-    .mat-tab-group .mat-ink-bar {
-        background-color: map-get($primary, 500);
-    }
-
-    /* tab bar arrows*/
-    .mat-primary,
-    .mat-accent {
-        .mat-tab-header-pagination-chevron {
-            border-color: map-get($background, base);
+    .mat-flat-button:not([color]) {
+        background-color: map-get($pxb-white, 500);
+        &.mat-button-disabled {
+            color: map-get($foreground, disabled);
+            background-color: rgba(114, 126, 132, 0.12);
         }
     }
 
-    /* button*/
-    .mat-stroked-button:not([disabled]) {
-        border-color: map-get($background, base);
+    /* Tabs */
+    $tabText: map-get($primary, 500);
+    $tabBackground: map-get($pxb-white, 50);
+    $tabActiveText: map-get($primary, 500);
+    $tabActiveBackground: map-get($pxb-white, 50);
+    $tabUnderline: map-get($primary, 500);
+    @include pxb-mat-tab($tabText, $tabBackground, $tabActiveText, $tabActiveBackground, $tabUnderline);
 
-        &.mat-primary {
-            border-color: map-get($primary, 500);
-        }
+    /* Stepper */
+    $stepperBackground: map-get($background, dialog);
+    $stepperIcon: (
+        defaultColor: map-get($pxb-black, 500),
+        defaultBg: map-get($pxb-white, 500),
+        activeColor: map-get($pxb-white, 50),
+        activeBg: map-get($primary, 500),
+    );
+    $stepperLabel: (
+        defaultColor: map-get($pxb-black, 500),
+        activeColor: map-get($primary, 500),
+    );
+    @include pxb-mat-stepper($stepperBackground, $stepperIcon, $stepperLabel);
 
-        &.mat-accent {
-            border-color: map-get($accent, 500);
-        }
+    /* Slide Toggle */
+    $slideTogglePrimary: (
+        thumb: map-get($primary, 500),
+        bar: rgba(map-get($primary, 500), 0.38),
+    );
+    $slideToggleAccent: (
+        thumb: map-get($accent, 500),
+        bar: rgba(map-get($accent, 500), 0.5),
+    );
+    $slideToggleWarn: (
+        thumb: map-get($warn, 500),
+        bar: rgba(map-get($warn, 500), 0.38),
+    );
+    $inactiveThumb: map-get($pxb-white, 50);
+    @include pxb-mat-slide-toggle($slideTogglePrimary, $slideToggleAccent, $slideToggleWarn, $inactiveThumb);
+    .mat-slide-toggle:not([color]).mat-checked .mat-ripple-element {
+        background-color: rgba(map-get($pxb-black, 500), 0.36);
     }
 
-    /* steppers */
-    .mat-step-header .mat-step-icon-state-done,
-    .mat-step-icon.mat-step-icon-state-number,
-    .mat-step-icon.mat-step-icon-state-add {
-        background-color: map-get($pxb-gray, 300);
+    /* date picker */
+    .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+        border-color: map-get($primary, 500);
     }
-    .mat-step-header[aria-selected='true'] .mat-step-icon {
-        background-color: map-get($primary, 500);
-    }
-    .mat-step-header {
-        &:hover,
-        &.cdk-program-focused,
-        &.cdk-mouse-focused,
-        &.cdk-focused {
-            background-color: unset;
-        }
-
-        .mat-focus-indicator.mat-button-base.ng-star-inserted {
-            background-color: unset;
-        }
-    }
-
-    /* Mat Form Fields*/
-    .mat-form-field-appearance-fill {
-        .mat-form-field-flex {
-            background-color: map-get($pxb-white, 200);
-        }
-    }
-    .mat-form-field .mat-form-field-label {
+    .mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon,
+    .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon,
+    .mat-input-element.mat-form-field-autofill-control.mat-datepicker-input {
         color: map-get($foreground, text);
     }
-    .mat-form-field .mat-hint {
-        color: map-get($foreground, hint-text);
+
+    /* Snackbar button */
+    .mat-snack-bar-container {
+        color: map-get($pxb-black, 50);
+        .mat-simple-snackbar-action .mat-button {
+            color: map-get($primary, 200);
+            &:hover {
+                background-color: rgba(map-get($accent, 500), 0.2);
+            }
+        }
     }
 
-    /* Mat Form Field hover ripple */
-    .mat-form-field-ripple {
-        background-color: map-get($pxb-gray, 500);
+    /* Radio Button */
+    .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+        border-color: map-get($foreground, disabled);
     }
-    .mat-form-field-appearance-outline .mat-form-field-outline-thick {
-        color: map-get($foreground, hint-text);
+    .mat-checkbox-disabled .mat-checkbox-label {
+        color: map-get($foreground, disabled);
+    }
+
+    /* Slider */
+    .mat-slider {
+        .mat-slider-thumb {
+            background-color: map-get($primary, 500);
+        }
+        .mat-slider-track-fill {
+            background-color: map-get($primary, 300);
+        }
+        .mat-slider-ticks {
+            background-image: repeating-linear-gradient(
+                to right,
+                map-get($primary, 200),
+                map-get($primary, 200),
+                2px,
+                transparent 0,
+                transparent
+            );
+        }
+        &.mat-slider-disabled {
+            .mat-slider-thumb {
+                background-color: map-get($foreground, disabled);
+            }
+        }
+    }
+    .mat-slider-horizontal .mat-slider-track-background,
+    .mat-slider:hover .mat-slider-track-background {
+        background-color: rgba(map-get($pxb-black, 300), 0.36);
     }
 
     /* PXB Drawer */
     .pxb-drawer {
         background-color: map-get($pxb-white, 50);
-        .pxb-drawer-nested-nav-item mat-expansion-panel {
+        .pxb-drawer-nested-nav-item .mat-expansion-panel {
             background-color: map-get($pxb-white, 200);
         }
         .pxb-drawer-nav-item-active-highlight {
             opacity: 0.05;
         }
+    }
+
+    /*  Drawer Content */
+    .mat-drawer-content {
+        background-color: map-get($pxb-white, 200);
+    }
+
+    .mat-toolbar .mat-icon-button:not([color]) {
+        color: map-get($pxb-white, 50);
     }
 }
