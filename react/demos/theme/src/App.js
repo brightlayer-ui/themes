@@ -175,7 +175,13 @@ export default () => {
                         <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
                             {selectedPage}
                         </Typography>
-                        <Button variant="outlined" color="inherit" component={CompNavLink} to={'/login'} startIcon={<PersonIcon />}>
+                        <Button
+                            variant="outlined"
+                            color="inherit"
+                            component={CompNavLink}
+                            to={'/login'}
+                            startIcon={<PersonIcon />}
+                        >
                             Log In
                         </Button>
                     </Toolbar>
@@ -190,7 +196,13 @@ export default () => {
                         <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
                             {selectedPage}
                         </Typography>
-                        <Button variant="outlined" color="inherit" component={CompNavLink} to={'/login'} startIcon={<PersonIcon />}>
+                        <Button
+                            variant="outlined"
+                            color="inherit"
+                            component={CompNavLink}
+                            to={'/login'}
+                            startIcon={<PersonIcon />}
+                        >
                             Log In
                         </Button>
                     </Toolbar>
@@ -226,7 +238,13 @@ export default () => {
                         <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
                             {selectedPage}
                         </Typography>
-                        <Button variant="outlined" color="inherit" component={CompNavLink} to={'/login'} startIcon={<PersonIcon />}>
+                        <Button
+                            variant="outlined"
+                            color="inherit"
+                            component={CompNavLink}
+                            to={'/login'}
+                            startIcon={<PersonIcon />}
+                        >
                             Log In
                         </Button>
                     </Toolbar>
