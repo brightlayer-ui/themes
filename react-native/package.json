@@ -15,7 +15,8 @@
         "start:showcase-android": "yarn initialize && yarn install:showcase-android && cd demos/showcase && yarn android",
         "build": "yarn && tsc",
         "link:themes": "bash ./scripts/linkThemes.sh",
-        "test": "bash ./scripts/buildTest.sh"
+        "test": "bash ./scripts/buildTest.sh",
+        "publish:package": "bash ./scripts/publish.sh"
     },
     "repository": {
         "type": "git",

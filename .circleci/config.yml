@@ -36,50 +36,22 @@ jobs:
                     name: Publish @pxblue/angular-themes
                     command:  |
                         cd angular
-                        MASTER_VERSION=`node -p "require('./package.json').version"`
-                        NPM_LATEST_VERSION=`npm show @pxblue/angular-themes version`
-                        if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
-                        then
-                            npm publish
-                        else
-                            echo "Latest version is already published."
-                        fi
+                        yarn publish:package
             -   run:
                     name: Publish @pxblue/react-themes
                     command:  |
                         cd react/dist
-                        MASTER_VERSION=`node -p "require('./package.json').version"`
-                        NPM_LATEST_VERSION=`npm show @pxblue/react-themes version`
-                        if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
-                        then
-                            npm publish
-                        else
-                            echo "Latest version is already published."
-                        fi
+                        yarn publish:package
             -   run:
                     name: Publish @pxblue/react-native-themes
                     command:  |
                         cd react-native
-                        MASTER_VERSION=`node -p "require('./package.json').version"`
-                        NPM_LATEST_VERSION=`npm show @pxblue/react-native-themes version`
-                        if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
-                        then
-                            npm publish
-                        else
-                            echo "Latest version is already published."
-                        fi
+                        yarn publish:package
             -   run:
                     name: Publish @pxblue/storybook-themes
                     command:  |
                         cd storybook
-                        MASTER_VERSION=`node -p "require('./package.json').version"`
-                        NPM_LATEST_VERSION=`npm show @pxblue/storybook-themes version`
-                        if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
-                        then
-                            npm publish
-                        else
-                            echo "Latest version is already published."
-                        fi
+                        yarn publish:package
 workflows:
     version: 2
     types:
