@@ -2,7 +2,7 @@
     "name": "@pxblue/react-themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "6.0.0-beta.3",
+    "version": "6.0.0",
     "description": "React themes for PX Blue applications",
     "main": "index.js",
     "scripts": {
@@ -12,7 +12,8 @@
         "start:showcase": "yarn initialize && yarn install:dependencies && yarn link:themes && cd demos/showcase && yarn start",
         "build": "yarn && bash ./scripts/build.sh",
         "link:themes": "bash ./scripts/linkThemes.sh",
-        "test": "bash ./scripts/buildTest.sh"
+        "test": "bash ./scripts/buildTest.sh",
+        "publish:package": "bash ./scripts/publish.sh"
     },
     "repository": {
         "type": "git",

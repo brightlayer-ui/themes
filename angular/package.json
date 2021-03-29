@@ -2,7 +2,7 @@
     "name": "@pxblue/angular-themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "6.0.0-beta.0",
+    "version": "6.0.0-beta.3",
     "description": "Angular themes for PX Blue applications",
     "scripts": {
         "initialize": "bash scripts/initializeSubmodule.sh",
@@ -11,6 +11,7 @@
         "link:themes": "bash ./scripts/linkThemes.sh",
         "test": "bash ./scripts/buildTest.sh",
         "prettier": "prettier \"**/**.{css,scss,html,md}\" --write",
+        "publish:package": "bash ./scripts/publish.sh",
         "precommit": "yarn initialize && yarn install:dependencies && yarn prettier && yarn test"
     },
     "repository": {
