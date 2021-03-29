@@ -9,4 +9,12 @@ yarn build
 npm publish --tag <alpha | beta>
 ```
 
-> The above command should only be run for `alpha` or `beta` packages. This repo's CircleCI will automatically publish latest packages from the master branch.
+Alternatively, you can run:
+
+```sh
+yarn publish:package
+```
+
+which will automatically look at the version in `react-native/package.json` and determine whether to publish an alpha, beta, or latest package.
+
+> The above command should only be run manually for `alpha` or `beta` packages. Latest packages should only be published automatically by CircleCI once the code has been merged into the master branch.

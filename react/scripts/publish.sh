@@ -1,3 +1,5 @@
+cd dist
+
 MASTER_VERSION=`node -p "require('./package.json').version"`
 NPM_LATEST_VERSION=`npm show @pxblue/react-themes version`
 NPM_BETA_VERSION=`npm show @pxblue/react-themes@beta version`

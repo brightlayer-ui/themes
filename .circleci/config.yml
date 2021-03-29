@@ -40,7 +40,7 @@ jobs:
             -   run:
                     name: Publish @pxblue/react-themes
                     command:  |
-                        cd react/dist
+                        cd react
                         yarn publish:package
             -   run:
                     name: Publish @pxblue/react-native-themes
