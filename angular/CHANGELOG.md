@@ -1,6 +1,6 @@
 # Changelog
 
-## v6.0.0 (Not published)
+## v6.0.0
 
 > Migrating to version 6.0.0 may require you to provide higher specificity if you were applying custom styles to Angular or PX Blue components.
 
