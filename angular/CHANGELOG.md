@@ -2,15 +2,9 @@
 
 ## v6.0.0
 
-> Migrating to version 6.0.0 may require you to provide higher specificity if you were applying custom styles to Angular or PX Blue components.
-
 ### Added
 
 -   Added `<pxb-score-card>` badge background theme.
-
-### Changed
-
--   Changed several dark mode defaults.
 
 ### Fixed
 
@@ -21,6 +15,9 @@
 
 -   Adjusted `<mat-form-field>` blue-theme colors.
 -   Updated deprecated `typeface-open-sans` dependency to `@fontsource/open-sans`.
+-   Changed several dark mode defaults.
+-   Updated `<pxb-empty-state>` default colors.
+-   Updated CSS rule-specificity for some default styles. If you have been using custom style overrides, check to make sure that your rules are specific enough to take precedence over the defaults.
 
 ## v5.2.0
 
