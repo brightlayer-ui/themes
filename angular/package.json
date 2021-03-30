@@ -2,7 +2,7 @@
     "name": "@pxblue/angular-themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "6.0.0",
+    "version": "6.0.1",
     "description": "Angular themes for PX Blue applications",
     "scripts": {
         "initialize": "bash scripts/initializeSubmodule.sh",
@@ -32,6 +32,7 @@
     ],
     "prettier": "@pxblue/prettier-config",
     "files": [
+        "mixins",
         "package.json",
         "README.md",
         "LICENSE",
