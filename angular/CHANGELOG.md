@@ -19,8 +19,8 @@
 
 ### Changed
 
--   Adjust `<mat-form-field>` blue-theme colors.
--   Update deprecated `typeface-open-sans` dependency to `@fontsource/open-sans`.
+-   Adjusted `<mat-form-field>` blue-theme colors.
+-   Updated deprecated `typeface-open-sans` dependency to `@fontsource/open-sans`.
 
 ## v5.2.0
 
