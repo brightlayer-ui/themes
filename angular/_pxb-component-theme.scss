@@ -37,8 +37,11 @@
     $foreground: map-get($theme, foreground);
     .pxb-empty-state {
         color: map-get($foreground, text);
+        .pxb-empty-state-empty-icon-wrapper {
+            color: map-get($foreground, secondary-text);
+        }
         .pxb-empty-state-description {
-            color: map-get($primary, 500);
+            color: map-get($foreground, text);
         }
     }
 }
