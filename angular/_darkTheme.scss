@@ -408,10 +408,6 @@
 
     /* PXB Empty State */
     .pxb-empty-state {
-        .pxb-empty-state-empty-icon-wrapper {
-            color: map-get($foreground, secondary-text);
-        }
-
         .pxb-empty-state-description {
             color: map-get($foreground, secondary-text);
         }
