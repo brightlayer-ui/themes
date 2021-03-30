@@ -20,10 +20,14 @@
         margin-bottom: 0;
     }
 
-    .mat-overline {
-        font-size: 12px;
+    .mat-body-2 {
         font-weight: 600;
-        letter-spacing: 2px;
+    }
+
+    .mat-overline {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.125rem;
         line-height: 2.66;
         text-transform: uppercase;
     }

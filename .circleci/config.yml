@@ -2,7 +2,7 @@ version: 2
 jobs:
     build:
         docker:
-            - image: circleci/node:12.6-browsers
+            -   image: circleci/node:12.9.1-browsers
         steps:
             - checkout
             - run:
@@ -16,3 +16,51 @@ jobs:
             - run:
                   name: Verify Artifacts
                   command: yarn test
+            -   persist_to_workspace:
+                    root: .
+                    paths:
+                        - react/dist
+                        - react-native/dist
+
+    publish:
+        docker:
+            -   image: circleci/node:12.9.1-browsers
+        steps:
+            - checkout
+            -   attach_workspace:
+                    at: .
+            -   run:
+                    name: Authenticate with registry
+                    command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+            -   run:
+                    name: Publish @pxblue/angular-themes
+                    command:  |
+                        cd angular
+                        yarn publish:package
+            -   run:
+                    name: Publish @pxblue/react-themes
+                    command:  |
+                        cd react
+                        yarn publish:package
+            -   run:
+                    name: Publish @pxblue/react-native-themes
+                    command:  |
+                        cd react-native
+                        yarn publish:package
+            -   run:
+                    name: Publish @pxblue/storybook-themes
+                    command:  |
+                        cd storybook
+                        yarn publish:package
+workflows:
+    version: 2
+    types:
+        jobs:
+            - build
+            - publish:
+                  requires:
+                      - build
+                  filters:
+                      branches:
+                          only:
+                              - master

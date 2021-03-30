@@ -2,11 +2,11 @@
 	path = react/demos/showcase
 	url = https://github.com/pxblue/react-showcase-demo
 	branch = dev
-[submodule "angular/demos/showcase"]
-	path = angular/demos/showcase
-	url = https://github.com/pxblue/angular-showcase-demo
-	branch = dev
 [submodule "react-native/demos/showcase"]
 	path = react-native/demos/showcase
 	url = https://github.com/pxblue/react-native-showcase-demo
+	branch = dev
+[submodule "angular/demos/showcase"]
+	path = angular/demos/showcase
+	url = https://github.com/pxblue/angular-showcase-demo
 	branch = dev

@@ -1,5 +1,6 @@
 // Import library functions for theme creation.
 @import '~@angular/material/theming';
+@import '~@pxblue/colors/palette.scss';
 
 @mixin pxb-components-theme($theme) {
     @include pxb-empty-state-theme($theme);
@@ -16,13 +17,17 @@
 @mixin pxb-score-card-theme($theme) {
     $primary: map-get($theme, primary);
     $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
     .pxb-score-card {
         .pxb-score-card-header {
             background-color: mat-color($primary);
-            color: map-get($foreground, light);
+            color: map-get($pxb-white, 50);
             .mat-card-subtitle {
                 color: inherit;
             }
+        }
+        .pxb-hero-primary-wrapper {
+            background-color: mat-color($background, card);
         }
     }
 }
@@ -32,8 +37,11 @@
     $foreground: map-get($theme, foreground);
     .pxb-empty-state {
         color: map-get($foreground, text);
+        .pxb-empty-state-empty-icon-wrapper {
+            color: map-get($foreground, secondary-text);
+        }
         .pxb-empty-state-description {
-            color: map-get($primary, 500);
+            color: map-get($foreground, text);
         }
     }
 }
@@ -62,6 +70,9 @@
         &.mat-list-item,
         .mat-list-item-content {
             color: inherit;
+            & .mat-list-icon {
+                color: map-get($foreground, secondary-text);
+            }
         }
     }
 }
@@ -71,7 +82,7 @@
     $foreground: map-get($theme, foreground);
     .pxb-list-item-tag {
         background-color: mat-color($primary);
-        color: map-get($foreground, light);
+        color: map-get($pxb-white, 50);
     }
 }
 
@@ -93,23 +104,28 @@
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
     .pxb-drawer {
-        background-color: map-get($background, base);
-
         .pxb-drawer-header-content {
             background-color: mat-color($primary);
-            color: map-get($foreground, light);
+            color: map-get($pxb-white, 50);
         }
 
         .pxb-drawer-nav-group .mat-list-base {
             color: map-get($foreground, text);
         }
 
-        .pxb-drawer-nav-item-active .pxb-info-list-item .mat-list-item-content {
+        .pxb-drawer-nav-item-active, /*NavRail item*/
+        .pxb-drawer-nav-item-active .pxb-info-list-item .mat-list-item-content /*Normal NavItem*/ {
             color: map-get($primary, 500);
         }
 
         .pxb-drawer-nav-item-active-highlight {
             background-color: map-get($primary, 500);
+        }
+        .pxb-drawer-nav-item-rail {
+            &:hover,
+            &:focus {
+                background: mat-color($background, 'hover');
+            }
         }
     }
 }
@@ -124,5 +140,10 @@
     .pxb-user-menu-overlay .mat-toolbar {
         color: inherit;
         background-color: inherit;
+    }
+    .pxb-user-menu-overlay {
+        .pxb-drawer-header-content.mat-toolbar-single-row.mat-toolbar {
+            background-color: unset;
+        }
     }
 }

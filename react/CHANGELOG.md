@@ -1,19 +1,42 @@
+# Change Log
+
+## v6.0.0
+
+### Changed
+
+-   Update deprecated `typeface-open-sans` dependency to `@fontsource/open-sans`.
+-   Updates to dark theme colors.
+-   Minor updates to light theme colors.
+-   `<Typography>` `subtitle1` variant from regular to semibold to distinguish it from `body1`.
+-   Light theme shadow now uses black500 as the base color.
+
 ## v5.0.3
 
--   Updated `filled` input field light-themed background color.
+### Added
+
 -   Added class overrides for the secondary toolbar.
 
+### Changed
+
+-   Updated `filled` input field light-themed background color.
+
 ## v5.0.2
+
+### Changed
 
 -   Updated default typography styles for consistency.
 
 ## v5.0.1
 
+### Changed
+
 -   Updated themes to use [@pxblue/colors](https://www.npmjs.com/package/@pxblue/colors) version 3.0.0.
 
 ## v5.0.0
 
-Themes have been updated for use with Material UI v4+. If you are using version 3 of Material UI, please read their [update guide](https://material-ui.com/guides/migration-v3/). To use this package with PX Blue components, you must be using @pxblue/react-components v4+.
+### Changed
+
+-   Themes have been updated for use with Material UI v4+. If you are using version 3 of Material UI, please read their [update guide](https://material-ui.com/guides/migration-v3/). To use this package with PX Blue components, you must be using @pxblue/react-components v4+.
 
 Notable changes in this theme:
 
@@ -44,7 +67,9 @@ Notable changes in this theme:
 
 ## v4.0.0
 
+### Changed
+
 Themes have been broken out into their own packages. This package was originally part of @pxblue/themes. If you are switching to this package, you'll need to update some import statements (refer to the usage instructions in the README).
 
--   Updates default text colors to match PX Blue palette
--   Disables automatic UPPERCASE transform on buttons
+-   Updates default text colors to match PX Blue palette.
+-   Disables automatic UPPERCASE transform on buttons.

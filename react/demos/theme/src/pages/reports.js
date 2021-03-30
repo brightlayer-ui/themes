@@ -30,10 +30,10 @@ class Reports extends React.Component {
 
         return (
             <React.Fragment>
-                <Stepper activeStep={0} orientation="vertical">
+                <Stepper activeStep={1} orientation="horizontal" alternativeLabel>
                     <Step>
                         <StepLabel>Select Date</StepLabel>
-                        <StepContent>
+                        {/* <StepContent>
                             <TextField
                                 id="date"
                                 label="Select Event Date"
@@ -52,7 +52,8 @@ class Reports extends React.Component {
                                     Done
                                 </Button>
                             </div>
-                        </StepContent>
+                        </StepContent>                  
+                        */}
                     </Step>
                     <Step>
                         <StepLabel>Name Report</StepLabel>

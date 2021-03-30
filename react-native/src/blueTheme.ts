@@ -7,48 +7,30 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 **/
 
 import { configureFonts, DefaultTheme } from 'react-native-paper';
-import { blue, red, gray, black, lightBlue, white } from '@pxblue/colors';
+import { blue, red, black, lightBlue, white } from '@pxblue/colors';
+import { fontConfig } from './shared';
 
-type FontWeight = 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
-
-const defaultFontConfig = {
-    regular: {
-        fontFamily: 'OpenSans-Regular',
-        fontWeight: '400' as FontWeight,
-    },
-    medium: {
-        fontFamily: 'OpenSans-SemiBold',
-        fontWeight: '600' as FontWeight,
-    },
-    light: {
-        fontFamily: 'OpenSans-Light',
-        fontWeight: '300' as FontWeight,
-    },
-    thin: {
-        fontFamily: 'OpenSans-Light',
-        fontWeight: '100' as FontWeight,
-    },
-};
-
-const fontConfig = {
-    default: defaultFontConfig,
-    ios: defaultFontConfig,
-    android: defaultFontConfig,
-};
-
-export const blueTheme: typeof DefaultTheme = {
+export const blueTheme: ReactNativePaper.Theme = {
     ...DefaultTheme,
     dark: false,
     roundness: 4,
-    fonts: configureFonts(fontConfig),
+    fonts: {
+        ...configureFonts(fontConfig),
+        bold: {
+            fontFamily: 'OpenSans-Bold',
+            fontWeight: '700',
+        },
+    },
     colors: {
         ...DefaultTheme.colors,
         primary: blue[500],
+        primaryBase: blue[500],
         accent: lightBlue[500],
-        background: gray[50],
+        background: white[200],
         surface: white[50],
         error: red[500],
         text: black[500],
+        textSecondary: black[300],
         onBackground: black[500],
         onSurface: black[500],
         notification: lightBlue[500],

@@ -25,6 +25,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 import * as AppConstants from '../constants/appConstants';
+import { TableSortLabel } from '@material-ui/core';
 
 const styles = (theme) => ({
     inputField: {
@@ -79,8 +80,16 @@ class Overview extends React.Component {
                         <TableHead>
                             <TableRow>
                                 <TableCell></TableCell>
-                                <TableCell>Name</TableCell>
-                                <TableCell align="right">Manufacturer</TableCell>
+                                <TableCell>
+                                    <TableSortLabel active={false} direction={'asc'}>
+                                        Name
+                                    </TableSortLabel>
+                                </TableCell>
+                                <TableCell align="right">
+                                    <TableSortLabel active={true} direction={'desc'}>
+                                        Manufacturer
+                                    </TableSortLabel>
+                                </TableCell>
                                 <TableCell align="right">Network ID</TableCell>
                                 <TableCell align="right">Location</TableCell>
                                 <TableCell align="right">Date Added</TableCell>
@@ -90,7 +99,7 @@ class Overview extends React.Component {
                             {rows
                                 .sort((a, b) => a.name > b.name)
                                 .map((row) => (
-                                    <TableRow hover key={row.name}>
+                                    <TableRow hover key={row.name} selected={Math.random() < 0.3}>
                                         <TableCell padding="checkbox">
                                             <Checkbox />
                                         </TableCell>
@@ -137,7 +146,7 @@ class Overview extends React.Component {
                         vertical: 'bottom',
                         horizontal: 'center',
                     }}
-                    open={this.state.snackbarOpen}
+                    open={true}
                     autoHideDuration={6000}
                     onClose={() => this.setState({ snackbarOpen: false })}
                     message={<span>Devices Deleted</span>}
