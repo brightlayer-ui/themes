@@ -1,6 +1,6 @@
 # Changelog
 
-## v6.0.0 (Not published)
+## v6.0.0
 
 > Migrating to version 6.0.0 may require you to provide higher specificity if you were applying custom styles to Angular or PX Blue components.
 
@@ -19,8 +19,8 @@
 
 ### Changed
 
--   Adjust `<mat-form-field>` blue-theme colors.
--   Update deprecated `typeface-open-sans` dependency to `@fontsource/open-sans`.
+-   Adjusted `<mat-form-field>` blue-theme colors.
+-   Updated deprecated `typeface-open-sans` dependency to `@fontsource/open-sans`.
 
 ## v5.2.0
 
