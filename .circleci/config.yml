@@ -54,7 +54,7 @@ jobs:
                         yarn publish:package
 workflows:
     version: 2
-    types:
+    themes:
         jobs:
             - build
             - publish:
