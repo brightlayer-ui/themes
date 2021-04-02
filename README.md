@@ -6,7 +6,7 @@ These packages provide theming support for Eaton applications using the PX Blue 
 -   React w/ [Material UI](https://www.npmjs.com/package/@material-ui/core)
 -   React Native w/ [@pxblue/react-native-components](https://www.npmjs.com/package/@pxblue/react-native-components)
 
-The PX Blue theme packages come with two theme options: a Blue theme (standard) and a Dark theme (not yet available for React Native).
+The PX Blue theme packages come with two theme options: a Blue theme (standard) and a Dark theme. Read more about the designs of those themes [on our website](https://pxblue.github.io/style/themes).
 
 ## Installation
 
@@ -31,8 +31,8 @@ Depending on the framework that you are using, PX Blue themes are applied in dif
 
 ## Demos
 
-| Framework    | Live Examples                                                                                |
-| ------------ | -------------------------------------------------------------------------------------------- |
-| Angular      | [View on Stackblitz](https://stackblitz.com/github/pxblue/themes/tree/master/angular/demo)   |
-| React        | [View on Code Sandbox](https://codesandbox.io/s/github/pxblue/themes/tree/master/react/demo) |
-| React Native | Coming Soon                                                                                  |
+| Framework    | Live Examples                                                                                  |
+| ------------ | ---------------------------------------------------------------------------------------------- |
+| Angular      | [View on Stackblitz](https://stackblitz.com/github/pxblue/angular-showcase-demo/tree/master)   |
+| React        | [View on Code Sandbox](https://codesandbox.io/s/github/pxblue/react-showcase-demo/tree/master) |
+| React Native | Coming Soon                                                                                    |

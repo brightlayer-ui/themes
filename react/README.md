@@ -56,4 +56,4 @@ import '@pxblue/react-themes/open-sans';
 
 ## Demo
 
-[View on Code Sandbox](https://codesandbox.io/s/github/pxblue/themes/tree/master/react/demo)
+[View on Code Sandbox](https://codesandbox.io/s/github/pxblue/react-showcase-demo/tree/master)
