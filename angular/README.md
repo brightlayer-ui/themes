@@ -73,4 +73,4 @@ After:
 
 ## Demo
 
-[View on Stackblitz](https://stackblitz.com/github/pxblue/themes/tree/master/angular/demo)
+[View on Stackblitz](https://stackblitz.com/github/pxblue/angular-showcase-demo/tree/master)
