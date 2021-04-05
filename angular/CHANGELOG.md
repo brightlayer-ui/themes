@@ -4,7 +4,7 @@
 
 ### Fixed
 
--   Fixed default `<pxb-drawer-header>` and `<pxb-dropdown-toolbar`> background color.
+-   Fixed default `<pxb-drawer-header>` and `<pxb-dropdown-toolbar>` background color.
 
 ## v6.0.1
 
