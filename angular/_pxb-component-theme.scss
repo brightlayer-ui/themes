@@ -104,11 +104,6 @@
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
     .pxb-drawer {
-        .pxb-drawer-header-content {
-            background-color: mat-color($primary);
-            color: map-get($pxb-white, 50);
-        }
-
         .pxb-drawer-nav-group .mat-list-base {
             color: map-get($foreground, text);
         }

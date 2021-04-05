@@ -99,17 +99,22 @@
 
     /* toolbar*/
     .mat-toolbar {
-        color: map-get($pxb-white, 50);
-        background-color: map-get($primary, 500);
+        color: map-get($foreground, text);
+        background-color: map-get($pxb-white, 50);
         &.mat-primary {
             background-color: map-get($primary, 500);
+            .mat-icon-button:not([color]) {
+                color: map-get($pxb-white, 50);
+            }
         }
         &.mat-accent {
             background-color: map-get($primary, 700);
+            .mat-icon-button:not([color]) {
+                color: map-get($pxb-white, 50);
+            }
         }
-        &:not([color]):not([ng-reflect-color]) {
-            color: map-get($foreground, text);
-            background-color: map-get($pxb-white, 50);
+        &.mat-warn .mat-icon-button:not([color]) {
+            color: map-get($pxb-white, 50);
         }
     }
 
@@ -321,9 +326,5 @@
     /*  Drawer Content */
     .mat-drawer-content {
         background-color: map-get($pxb-white, 200);
-    }
-
-    .mat-toolbar .mat-icon-button:not([color]) {
-        color: map-get($pxb-white, 50);
     }
 }
