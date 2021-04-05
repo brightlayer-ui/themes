@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.2
+
+### Fixed
+
+-   Fixed default `<pxb-drawer-header>` and `<pxb-dropdown-toolbar`> background color.
+
 ## v6.0.1
 
 ### Added
