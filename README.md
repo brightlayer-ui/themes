@@ -31,8 +31,8 @@ Depending on the framework that you are using, PX Blue themes are applied in dif
 
 ## Demos
 
-| Framework    | Live Examples                                                                                  |
-| ------------ | ---------------------------------------------------------------------------------------------- |
-| Angular      | [View on Stackblitz](https://stackblitz.com/github/pxblue/angular-showcase-demo/tree/master)   |
-| React        | [View on Code Sandbox](https://codesandbox.io/s/github/pxblue/react-showcase-demo/tree/master) |
-| React Native | Coming Soon                                                                                    |
+| Framework    | Live Examples                                                                                        |
+| ------------ | ---------------------------------------------------------------------------------------------------- |
+| Angular      | [View on Stackblitz](https://stackblitz.com/github/pxblue/angular-showcase-demo/tree/master)         |
+| React        | [View on Code Sandbox](https://codesandbox.io/s/github/pxblue/themes/tree/master/react/demos/theme/) |
+| React Native | Coming Soon                                                                                          |
