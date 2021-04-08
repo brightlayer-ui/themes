@@ -438,8 +438,8 @@
     .mat-menu-item[disabled] .mat-icon-no-color {
         color: map-get($foreground, disabled);
     }
-    .mat-list-item-disabled  {
+    .mat-list-item-disabled {
         background-color: unset;
-        opacity: .5;
+        opacity: 0.5;
     }
 }
