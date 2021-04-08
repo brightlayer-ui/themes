@@ -333,4 +333,13 @@
     .mat-drawer-content {
         background-color: map-get($pxb-white, 200);
     }
+
+    /* Disabled  */
+    .mat-menu-item[disabled] .mat-icon-no-color {
+        color: map-get($foreground, disabled);
+    }
+    .mat-list-item-disabled  {
+        background-color: unset;
+        opacity: .5;
+    }
 }

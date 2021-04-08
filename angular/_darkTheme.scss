@@ -433,4 +433,13 @@
         background-color: rgba(map-get($pxb-black, 50), 0.1);
         color: map-get($pxb-black, 50);
     }
+
+    /* Disabled */
+    .mat-menu-item[disabled] .mat-icon-no-color {
+        color: map-get($foreground, disabled);
+    }
+    .mat-list-item-disabled  {
+        background-color: unset;
+        opacity: .5;
+    }
 }
