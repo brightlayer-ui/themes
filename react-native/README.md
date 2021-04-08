@@ -1,6 +1,6 @@
 # PX Blue themes for React Native applications
 
-This package provides theming support for Eaton applications using the PX Blue design system. It includes resources for developers using React Native with [react-native-paper](https://www.npmjs.com/package/react-native-paper). This package currently comes with one theme option: a Blue theme (standard). A dark variation of the theme will be coming in a future update.
+This package provides theming support for Eaton applications using the PX Blue design system. It includes resources for developers using React Native with [react-native-paper](https://www.npmjs.com/package/react-native-paper). This package comes with two theme options: a Blue theme (standard) and a Dark theme.
 
 For other frameworks, check out our related packages:
 
@@ -180,6 +180,8 @@ declare global {
 }
 ```
 
+<!--
 ## Demo
 
 [Check it out](https://github.com/pxblue/react-native-showcase-demo/tree/master)
+-->

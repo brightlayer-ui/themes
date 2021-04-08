@@ -321,10 +321,25 @@
         .pxb-drawer-nav-item-active-highlight {
             opacity: 0.05;
         }
+
+        .pxb-drawer-nav-item-active, /*NavRail item*/
+        .pxb-drawer-nav-item-active .pxb-info-list-item .mat-list-item-content, /*Normal NavItem*/
+        .pxb-drawer-nav-item-active .pxb-info-list-item .pxb-info-list-item-icon-wrapper {
+            color: map-get($primary, 500);
+        }
     }
 
     /*  Drawer Content */
     .mat-drawer-content {
         background-color: map-get($pxb-white, 200);
+    }
+
+    /* Disabled  */
+    .mat-menu-item[disabled] .mat-icon-no-color {
+        color: map-get($foreground, disabled);
+    }
+    .mat-list-item-disabled {
+        background-color: unset;
+        opacity: 0.5;
     }
 }

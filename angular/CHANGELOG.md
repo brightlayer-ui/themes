@@ -1,5 +1,12 @@
 # Changelog
 
+## v6.0.3
+
+### Fixed
+
+-   Fixed disabled icon & text color for `<pxb-info-list-item>` and `<mat-menu-item>`.
+-   Fixed dark-mode active item text color for `<pxb-drawer>` rail variant.
+
 ## v6.0.2
 
 ### Fixed

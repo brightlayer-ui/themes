@@ -108,12 +108,6 @@
             color: map-get($foreground, text);
         }
 
-        .pxb-drawer-nav-item-active, /*NavRail item*/
-        .pxb-drawer-nav-item-active .pxb-info-list-item .mat-list-item-content, /*Normal NavItem*/
-        .pxb-drawer-nav-item-active .pxb-info-list-item .pxb-info-list-item-icon-wrapper {
-            color: map-get($primary, 500);
-        }
-
         .pxb-drawer-nav-item-active-highlight {
             background-color: map-get($primary, 500);
         }
