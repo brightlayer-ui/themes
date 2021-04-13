@@ -1,18 +1,18 @@
 # Changelog
 
-## v5.1.0
+## v5.1.0 (March 30, 2021)
 
 ### Added
 
 -   Initial Dark themes (regular and alternate)
 
-## v5.0.1
+## v5.0.1 (November 19, 2020)
 
 ### Changed
 
 -   Updated peerDependencies to allow for use with react-native-paper version 4.
 
-## v5.0.0
+## v5.0.0 (June 30, 2020)
 
 ### Changed
 
@@ -24,7 +24,7 @@
 -   `onPrimary` color is no longer available.
 -   `sizes` property of the theme has been removed. If you need these size values, they are now exported from @pxblue/react-native-components.
 
-## v4.0.0
+## v4.0.0 (February 24, 2020)
 
 ### Changed
 

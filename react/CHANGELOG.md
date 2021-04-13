@@ -1,6 +1,6 @@
 # Change Log
 
-## v6.0.0
+## v6.0.0 (March 29, 2021)
 
 ### Changed
 
@@ -10,7 +10,7 @@
 -   `<Typography>` `subtitle1` variant from regular to semibold to distinguish it from `body1`.
 -   Light theme shadow now uses black500 as the base color.
 
-## v5.0.3
+## v5.0.3 (November 19, 2020)
 
 ### Added
 
@@ -20,19 +20,19 @@
 
 -   Updated `filled` input field light-themed background color.
 
-## v5.0.2
+## v5.0.2 (June 30, 2020)
 
 ### Changed
 
 -   Updated default typography styles for consistency.
 
-## v5.0.1
+## v5.0.1 (May 19, 2020)
 
 ### Changed
 
 -   Updated themes to use [@pxblue/colors](https://www.npmjs.com/package/@pxblue/colors) version 3.0.0.
 
-## v5.0.0
+## v5.0.0 (May 8, 2020)
 
 ### Changed
 
@@ -65,7 +65,7 @@ Notable changes in this theme:
     theme.spacing(5)
     ```
 
-## v4.0.0
+## v4.0.0 (February 24, 2020)
 
 ### Changed
 
