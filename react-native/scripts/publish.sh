@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 MASTER_VERSION=`node -p "require('./package.json').version"`
 NPM_LATEST_VERSION=`npm show @pxblue/react-native-themes version`
 NPM_BETA_VERSION=`npm show @pxblue/react-native-themes@beta version`
