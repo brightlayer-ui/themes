@@ -2,10 +2,19 @@
 
 cd dist
 
+branch=master # default
 MASTER_VERSION=`node -p "require('./package.json').version"`
 NPM_LATEST_VERSION=`npm show @pxblue/react-themes version`
 NPM_BETA_VERSION=`npm show @pxblue/react-themes@beta version`
 NPM_ALPHA_VERSION=`npm show @pxblue/react-themes@alpha version`
+
+# Parse the branch from the -b flag
+while getopts b: flag
+do
+    case "${flag}" in
+        b) branch=${OPTARG};;
+    esac
+done
 
 if grep -q "alpha" <<< "$MASTER_VERSION";
 then
@@ -26,6 +35,14 @@ then
         echo "Beta version is already published."
     fi
 else
+    # If this is not the master branch, do not do any 'latest' publications
+    if ! [ $branch == "master" ];
+    then
+        echo "This is not the master branch - skipping publishing."
+        exit 0;
+    fi
+
+    # If this is the master branch (or running locally), allow publishing a latest package
     if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
     then
         echo "Publishing new latest";
