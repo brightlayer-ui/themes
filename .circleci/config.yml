@@ -39,7 +39,7 @@ jobs:
                     name: Publish @pxblue/angular-themes
                     command:  |
                         cd angular
-                        ./scripts/publish.sh
+                        bash ./scripts/publish.sh
                 # yarn publish:package
 
             # -   run:
