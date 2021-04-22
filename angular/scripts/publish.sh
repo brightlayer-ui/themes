@@ -25,7 +25,7 @@ then
     fi
 else
     if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
-    then          
+    then
         echo "Publishing new latest"; 
         npm publish
     else
