@@ -24,10 +24,10 @@ then
 else
     # if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
     # then
-    echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
-    echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-    cat ~/.npmrc
-    npm whoami              
+    # echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
+    # echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+    # cat ~/.npmrc
+    # npm whoami              
     echo "Publishing new latest"; 
     npm publish
     # else
