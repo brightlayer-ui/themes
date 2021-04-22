@@ -38,22 +38,22 @@ jobs:
                     name: Publish @pxblue/angular-themes
                     command:  |
                         cd angular
-                        yarn publish:package
+                        yarn publish:package -b $CIRCLE_BRANCH
             -   run:
                     name: Publish @pxblue/react-themes
                     command:  |
                         cd react
-                        yarn publish:package
+                        yarn publish:package -b $CIRCLE_BRANCH
             -   run:
                     name: Publish @pxblue/react-native-themes
                     command:  |
                         cd react-native
-                        yarn publish:package
+                        yarn publish:package -b $CIRCLE_BRANCH
             -   run:
                     name: Publish @pxblue/storybook-themes
                     command:  |
                         cd storybook
-                        yarn publish:package
+                        yarn publish:package -b $CIRCLE_BRANCH
 workflows:
     version: 2
     themes:
@@ -66,3 +66,4 @@ workflows:
                       branches:
                           only:
                               - master
+                              - dev
