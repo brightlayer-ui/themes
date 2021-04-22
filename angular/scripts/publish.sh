@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 MASTER_VERSION=`node -p "require('./package.json').version"`
 NPM_LATEST_VERSION=`npm show @pxblue/angular-themes version`
 NPM_BETA_VERSION=`npm show @pxblue/angular-themes@beta version`
@@ -22,15 +24,11 @@ then
         echo "Beta version is already published."
     fi
 else
-    # if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
-    # then
-    # echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
-    # echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-    # cat ~/.npmrc
-    # npm whoami              
-    echo "Publishing new latest"; 
-    npm publish
-    # else
-        # echo "Latest version is already published."
-    # fi
+    if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+    then          
+        echo "Publishing new latest"; 
+        npm publish
+    else
+        echo "Latest version is already published."
+    fi
 fi

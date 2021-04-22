@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 cd dist
 
 MASTER_VERSION=`node -p "require('./package.json').version"`

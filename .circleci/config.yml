@@ -5,30 +5,30 @@ jobs:
             -   image: circleci/node:12.9.1-browsers
         steps:
             - checkout
-            # - run:
-            #       name: Prettier Check
-            #       command: |
-            #           yarn install
-            #           yarn prettier:check
-            # - run:
-            #       name: Build All
-            #       command: yarn build:all
-            # - run:
-            #       name: Verify Artifacts
-            #       command: yarn test
-            # -   persist_to_workspace:
-            #         root: .
-            #         paths:
-            #             - react/dist
-            #             - react-native/dist
+            - run:
+                  name: Prettier Check
+                  command: |
+                      yarn install
+                      yarn prettier:check
+            - run:
+                  name: Build All
+                  command: yarn build:all
+            - run:
+                  name: Verify Artifacts
+                  command: yarn test
+            -   persist_to_workspace:
+                    root: .
+                    paths:
+                        - react/dist
+                        - react-native/dist
 
     publish:
         docker:
             -   image: circleci/node:12.9.1-browsers
         steps:
             - checkout
-            # -   attach_workspace:
-            #         at: .
+            -   attach_workspace:
+                    at: .
             -   run:
                     name: Authenticate with registry
                     command: |
@@ -39,24 +39,26 @@ jobs:
                     name: Publish @pxblue/angular-themes
                     command:  |
                         cd angular
-                        bash ./scripts/publish.sh
-                # yarn publish:package
-
-            # -   run:
-            #         name: Publish @pxblue/react-themes
-            #         command:  |
-            #             cd react
-            #             yarn publish:package
-            # -   run:
-            #         name: Publish @pxblue/react-native-themes
-            #         command:  |
-            #             cd react-native
-            #             yarn publish:package
-            # -   run:
-            #         name: Publish @pxblue/storybook-themes
-            #         command:  |
-            #             cd storybook
-            #             yarn publish:package
+                        bash ./scripts/publish.sh 
+                    # yarn publish:package does not work... I think this is because it spawns a new shell that can't access the npmrc file
+            -   run:
+                    name: Publish @pxblue/react-themes
+                    command:  |
+                        cd react
+                        bash ./scripts/publish.sh 
+                    # yarn publish:package does not work... I think this is because it spawns a new shell that can't access the npmrc file
+            -   run:
+                    name: Publish @pxblue/react-native-themes
+                    command:  |
+                        cd react-native
+                        bash ./scripts/publish.sh 
+                    # yarn publish:package does not work... I think this is because it spawns a new shell that can't access the npmrc file
+            -   run:
+                    name: Publish @pxblue/storybook-themes
+                    command:  |
+                        cd storybook
+                        bash ./scripts/publish.sh 
+                    # yarn publish:package does not work... I think this is because it spawns a new shell that can't access the npmrc file
 workflows:
     version: 2
     themes:
@@ -65,7 +67,7 @@ workflows:
             - publish:
                   requires:
                       - build
-                #   filters:
-                #       branches:
-                #           only:
-                #               - master
+                  filters:
+                      branches:
+                          only:
+                              - master
