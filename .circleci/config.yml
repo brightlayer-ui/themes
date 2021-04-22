@@ -32,8 +32,8 @@ jobs:
             -   run:
                     name: Authenticate with registry
                     command: |
-                        echo "//registry.npmjs.org/:_authToken=some-bogus-token"
-                        echo "//registry.npmjs.org/:_authToken=some-bogus-token" > ~/.npmrc
+                        echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
+                        echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
                         cat ~/.npmrc
             -   run:
                     name: Publish @pxblue/angular-themes
