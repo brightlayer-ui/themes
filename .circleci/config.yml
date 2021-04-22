@@ -34,6 +34,7 @@ jobs:
                     command: |
                         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
                         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+                        cat ~/.npmrc
             -   run:
                     name: Publish @pxblue/angular-themes
                     command:  |
