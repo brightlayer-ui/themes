@@ -16,19 +16,19 @@ jobs:
             # - run:
             #       name: Verify Artifacts
             #       command: yarn test
-            -   persist_to_workspace:
-                    root: .
-                    paths:
-                        - react/dist
-                        - react-native/dist
+            # -   persist_to_workspace:
+            #         root: .
+            #         paths:
+            #             - react/dist
+            #             - react-native/dist
 
     publish:
         docker:
             -   image: circleci/node:12.9.1-browsers
         steps:
             - checkout
-            -   attach_workspace:
-                    at: .
+            # -   attach_workspace:
+            #         at: .
             -   run:
                     name: Authenticate with registry
                     command: |
