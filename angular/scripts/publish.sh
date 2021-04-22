@@ -26,7 +26,7 @@ then
 else
     if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
     then
-        echo "Publishing new latest"; 
+        echo "Publishing new latest";
         npm publish
     else
         echo "Latest version is already published."
