@@ -5,17 +5,17 @@ jobs:
             -   image: circleci/node:12.9.1-browsers
         steps:
             - checkout
-            - run:
-                  name: Prettier Check
-                  command: |
-                      yarn install
-                      yarn prettier:check
-            - run:
-                  name: Build All
-                  command: yarn build:all
-            - run:
-                  name: Verify Artifacts
-                  command: yarn test
+            # - run:
+            #       name: Prettier Check
+            #       command: |
+            #           yarn install
+            #           yarn prettier:check
+            # - run:
+            #       name: Build All
+            #       command: yarn build:all
+            # - run:
+            #       name: Verify Artifacts
+            #       command: yarn test
             -   persist_to_workspace:
                     root: .
                     paths:
@@ -31,27 +31,29 @@ jobs:
                     at: .
             -   run:
                     name: Authenticate with registry
-                    command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+                    command: |
+                        echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
+                        echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
             -   run:
                     name: Publish @pxblue/angular-themes
                     command:  |
                         cd angular
                         yarn publish:package
-            -   run:
-                    name: Publish @pxblue/react-themes
-                    command:  |
-                        cd react
-                        yarn publish:package
-            -   run:
-                    name: Publish @pxblue/react-native-themes
-                    command:  |
-                        cd react-native
-                        yarn publish:package
-            -   run:
-                    name: Publish @pxblue/storybook-themes
-                    command:  |
-                        cd storybook
-                        yarn publish:package
+            # -   run:
+            #         name: Publish @pxblue/react-themes
+            #         command:  |
+            #             cd react
+            #             yarn publish:package
+            # -   run:
+            #         name: Publish @pxblue/react-native-themes
+            #         command:  |
+            #             cd react-native
+            #             yarn publish:package
+            # -   run:
+            #         name: Publish @pxblue/storybook-themes
+            #         command:  |
+            #             cd storybook
+            #             yarn publish:package
 workflows:
     version: 2
     themes:
@@ -60,7 +62,7 @@ workflows:
             - publish:
                   requires:
                       - build
-                  filters:
-                      branches:
-                          only:
-                              - master
+                #   filters:
+                #       branches:
+                #           only:
+                #               - master

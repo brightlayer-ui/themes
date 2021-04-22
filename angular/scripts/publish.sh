@@ -22,11 +22,11 @@ then
         echo "Beta version is already published."
     fi
 else
-    if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
-    then
+    # if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+    # then
         echo "Publishing new latest";
         npm publish
-    else
-        echo "Latest version is already published."
-    fi
+    # else
+        # echo "Latest version is already published."
+    # fi
 fi
