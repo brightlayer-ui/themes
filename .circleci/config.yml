@@ -36,26 +36,22 @@ jobs:
                     name: Publish @pxblue/angular-themes
                     command:  |
                         cd angular
-                        bash ./scripts/publish.sh 
-                    # yarn publish:package does not work... I think this is because it spawns a new shell that can't access the npmrc file
+                        npm run publish:package
             -   run:
                     name: Publish @pxblue/react-themes
                     command:  |
                         cd react
-                        bash ./scripts/publish.sh 
-                    # yarn publish:package does not work... I think this is because it spawns a new shell that can't access the npmrc file
+                        npm run publish:package
             -   run:
                     name: Publish @pxblue/react-native-themes
                     command:  |
                         cd react-native
-                        bash ./scripts/publish.sh 
-                    # yarn publish:package does not work... I think this is because it spawns a new shell that can't access the npmrc file
+                        npm run publish:package
             -   run:
                     name: Publish @pxblue/storybook-themes
                     command:  |
                         cd storybook
-                        bash ./scripts/publish.sh 
-                    # yarn publish:package does not work... I think this is because it spawns a new shell that can't access the npmrc file
+                        npm run publish:package
 workflows:
     version: 2
     themes:
