@@ -11,7 +11,7 @@
         "link:themes": "bash ./scripts/linkThemes.sh",
         "test": "bash ./scripts/buildTest.sh",
         "prettier": "prettier \"**/**.{css,scss,html,md}\" --write",
-        "publish:package": "bash ./scripts/publish.sh",
+        "publish:package": "set npm_config_yes=true && npx -p @pxblue/publish pxb-publish",
         "precommit": "yarn initialize && yarn install:dependencies && yarn prettier && yarn test"
     },
     "repository": {

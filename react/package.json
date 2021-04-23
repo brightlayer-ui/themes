@@ -13,7 +13,7 @@
         "build": "yarn && bash ./scripts/build.sh",
         "link:themes": "bash ./scripts/linkThemes.sh",
         "test": "bash ./scripts/buildTest.sh",
-        "publish:package": "bash ./scripts/publish.sh"
+        "publish:package": "cd dist && set npm_config_yes=true && npx -p @pxblue/publish pxb-publish"
     },
     "repository": {
         "type": "git",
