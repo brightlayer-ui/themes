@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.1.0 (April 28, 2021)
+
+### Added
+
+-   Added support for `<pxb-user-menu>` bottomsheet overlay.
+
 ## v6.0.3 (April 8, 2021)
 
 ### Fixed
