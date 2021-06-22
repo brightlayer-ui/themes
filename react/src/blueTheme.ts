@@ -73,16 +73,16 @@ export const blueTheme: ThemeOptions = {
         MuiAppBar: {
             colorDefault: {
                 color: ThemeColors.text.primary,
-                backgroundColor: PXBColors.white[50],
+                backgroundColor: ThemeColors.background.paper,
             },
             colorSecondary: {
-                color: PXBColors.white[50],
+                color: ThemeColors.background.paper,
                 backgroundColor: ThemeColors.primary.dark,
                 '& .MuiInputBase-root': {
-                    color: PXBColors.white[50],
+                    color: ThemeColors.background.paper,
                 },
                 '& .MuiSelect-icon': {
-                    color: PXBColors.white[50],
+                    color: ThemeColors.background.paper,
                 },
             },
         },
@@ -121,7 +121,7 @@ export const blueTheme: ThemeOptions = {
                 textTransform: 'none',
             },
             contained: {
-                backgroundColor: PXBColors.white[50],
+                backgroundColor: ThemeColors.background.paper,
                 color: ThemeColors.text.primary,
                 '&$disableElevation:not($containedPrimary):not($containedSecondary)': {
                     backgroundColor: PXBColors.white[500],
@@ -138,7 +138,7 @@ export const blueTheme: ThemeOptions = {
                 '&$disabled': {
                     backgroundColor: ThemeColors.background.paper,
                     border: `1px solid ${Color(PXBColors.black[500]).alpha(0.12).string()}`,
-                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
+                    color: Color(ThemeColors.text.primary).alpha(0.3).string(),
                 },
             },
             containedPrimary: {
@@ -170,14 +170,14 @@ export const blueTheme: ThemeOptions = {
                 },
                 '&$disabled': {
                     backgroundColor: ThemeColors.background.paper,
-                    borderColor: Color(PXBColors.black[500]).alpha(0.12).string(),
-                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
+                    borderColor: Color(BlackBorder).alpha(0.12).string(),
+                    color: Color(ThemeColors.text.primary).alpha(0.3).string(),
                 },
             },
             outlinedPrimary: {
                 borderColor: ThemeColors.primary.main,
                 '&$disabled': {
-                    borderColor: Color(PXBColors.black[500]).alpha(0.12).string(),
+                    borderColor: Color(BlackBorder).alpha(0.12).string(),
                 },
                 '&:hover': {
                     backgroundColor: Color(ThemeColors.primary.main).alpha(0.05).string(),
@@ -186,7 +186,7 @@ export const blueTheme: ThemeOptions = {
             outlinedSecondary: {
                 borderColor: ThemeColors.secondary.main,
                 '&$disabled': {
-                    borderColor: Color(PXBColors.black[500]).alpha(0.12).string(),
+                    borderColor: Color(BlackBorder).alpha(0.12).string(),
                 },
                 '&:hover': {
                     backgroundColor: Color(ThemeColors.secondary.main).alpha(0.05).string(),
@@ -263,7 +263,7 @@ export const blueTheme: ThemeOptions = {
                 },
                 '&$disabled': {
                     opacity: 1,
-                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
+                    color: Color(ThemeColors.text.primary).alpha(0.3).string(),
                     '& $avatar': {
                         opacity: 0.5,
                     },
@@ -374,8 +374,8 @@ export const blueTheme: ThemeOptions = {
                 '&$disabled': {
                     opacity: 1,
                     backgroundColor: ThemeColors.background.paper,
-                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
-                    borderColor: Color(PXBColors.black[500]).alpha(0.12).string(),
+                    color: ThemeColors.action.disabled,
+                    borderColor: Color(BlackBorder).alpha(0.12).string(),
                 },
             },
             outlinedSecondary: {
@@ -386,8 +386,8 @@ export const blueTheme: ThemeOptions = {
                 '&$disabled': {
                     opacity: 1,
                     backgroundColor: ThemeColors.background.paper,
-                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
-                    borderColor: Color(PXBColors.black[500]).alpha(0.12).string(),
+                    color: ThemeColors.action.disabled,
+                    borderColor: Color(BlackBorder).alpha(0.12).string(),
                 },
             },
             icon: {
@@ -407,15 +407,15 @@ export const blueTheme: ThemeOptions = {
         MuiFab: {
             root: {
                 textTransform: 'none',
-                backgroundColor: PXBColors.white[50],
+                backgroundColor: ThemeColors.background.paper,
                 color: ThemeColors.text.primary,
                 '&:hover': {
                     backgroundColor: Color(PXBColors.black[500]).alpha(0.05).string(),
                 },
                 '&$disabled': {
                     backgroundColor: ThemeColors.background.paper,
-                    border: `1px solid ${Color(PXBColors.black[500]).alpha(0.12).string()}`,
-                    color: Color(PXBColors.black[500]).alpha(0.3).string(),
+                    border: `1px solid ${Color(BlackBorder).alpha(0.12).string()}`,
+                    color: ThemeColors.action.disabled,
                 },
             },
             primary: {
@@ -572,17 +572,48 @@ export const blueTheme: ThemeOptions = {
                 '&$checked + $track': {
                     opacity: 0.38,
                 },
+                '&$checked': {
+                    color: ThemeColors.secondary.main,
+                    '&$disabled': {
+                        color: '#80C3F8',
+                    },
+                    '&$disabled + $track': {
+                        opacity: 0.24,
+                        backgroundColor: ThemeColors.secondary.main,
+                    },
+                },
             },
             colorPrimary: {
+                '&$disabled': {
+                    color: ThemeColors.background.paper,
+                },
+                '&$disabled + $track': {
+                    backgroundColor: PXBColors.black[100],
+                },
                 '&$checked': {
                     color: ThemeColors.primary.main,
+                    '&$disabled': {
+                        color: '#7FBCDF',
+                    },
+                    '&$disabled + $track': {
+                        opacity: 1,
+                        backgroundColor: '#CFE6F3',
+                    },
+                },
+            },
+            colorSecondary: {
+                '&$disabled': {
+                    color: ThemeColors.background.paper,
+                },
+                '&$disabled + $track': {
+                    backgroundColor: PXBColors.black[100],
                 },
             },
             track: {
                 backgroundColor: PXBColors.black[100],
-                opacity: 1,
+                opacity: 0.38,
             },
-            checked: {},
+            disabled: {},
         },
 
         // TABLE OVERRIDES
@@ -603,9 +634,11 @@ export const blueTheme: ThemeOptions = {
                     backgroundColor: Color('#FBFBFB').mix(Color(PXBColors.black[50]), 0.5).string(),
                 },
                 '&:nth-of-type(odd):not($selected)': {
-                    backgroundColor: PXBColors.white[50],
+                    backgroundColor: ThemeColors.background.paper,
                     '&$hover:hover': {
-                        backgroundColor: Color(PXBColors.white[50]).mix(Color(PXBColors.black[50]), 0.5).string(),
+                        backgroundColor: Color(ThemeColors.background.paper)
+                            .mix(Color(PXBColors.black[50]), 0.5)
+                            .string(),
                     },
                 },
                 '&$selected': {
@@ -666,7 +699,7 @@ export const blueTheme: ThemeOptions = {
         },
         MuiTabs: {
             indicator: {
-                backgroundColor: PXBColors.white[50],
+                backgroundColor: ThemeColors.background.paper,
             },
         },
 
@@ -697,7 +730,7 @@ export const blueTheme: ThemeOptions = {
                 },
                 '&:not($disabled):hover:before': {
                     borderBottomWidth: 1,
-                    borderBottomColor: PXBColors.black[500],
+                    borderBottomColor: BlackBorder,
                 },
                 '&$disabled:before': {
                     borderBottomColor: ThemeColors.divider,
@@ -759,7 +792,7 @@ export const blueTheme: ThemeOptions = {
                     borderColor: ThemeColors.error.main,
                 },
                 '&$error:hover:not($focused) $notchedOutline': {
-                    borderColor: PXBColors.red[900],
+                    borderColor: ThemeColors.error.dark,
                 },
                 '&$disabled $notchedOutline': {
                     borderColor: ThemeColors.divider,
