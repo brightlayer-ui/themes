@@ -724,6 +724,10 @@ export const blueDarkTheme: ThemeOptions = {
                     color: PXBColors.black[300],
                     opacity: 0.36,
                 },
+                '&:-webkit-autofill': {
+                    '-webkit-box-shadow': `0 0 0 100px ${ThemeColors.background.paper} inset`,
+                    '-webkit-text-fill-color': ThemeColors.text.primary,
+                },
             },
             adornedStart: {},
             adornedEnd: {},
@@ -779,6 +783,11 @@ export const blueDarkTheme: ThemeOptions = {
                     pointerEvents: 'none',
                 },
             },
+            input: {
+                '&:-webkit-autofill': {
+                    '-webkit-box-shadow': `0 0 0 100px ${PXBColors.black[800]} inset`,
+                },
+            },
             underline: {
                 '&:before': {
                     borderBottomColor: ThemeColors.divider,
@@ -830,6 +839,11 @@ export const blueDarkTheme: ThemeOptions = {
                 },
                 '&$colorSecondary$focused $notchedOutline': {
                     borderColor: ThemeColors.secondary.dark,
+                },
+            },
+            input: {
+                '&:-webkit-autofill': {
+                    '-webkit-box-shadow': `0 0 0 100px ${ThemeColors.background.paper} inset`,
                 },
             },
             colorSecondary: {},

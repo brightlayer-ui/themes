@@ -682,6 +682,9 @@ export const blueTheme: ThemeOptions = {
                     color: PXBColors.black[100],
                     opacity: 1,
                 },
+                '&:-webkit-autofill': {
+                    '-webkit-box-shadow': `0 0 0 30px ${ThemeColors.background.paper} inset`,
+                },
             },
             adornedStart: {},
             adornedEnd: {},
@@ -722,6 +725,11 @@ export const blueTheme: ThemeOptions = {
                     color: Color(ThemeColors.text.primary).alpha(0.3).string(),
                     backgroundColor: PXBColors.white[100],
                     pointerEvents: 'none',
+                },
+            },
+            input: {
+                '&:-webkit-autofill': {
+                    '-webkit-box-shadow': `0 0 0 30px ${ThemeColors.background.default} inset`,
                 },
             },
             underline: {
