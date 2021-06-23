@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.1.1 (Unpublished)
+
+### Fixed
+
+-   Fixed a few color issues in the `<pxb-drawer-header>` ([#184](https://github.com/pxblue/themes/issues/184)) and `<pxb-drawer-nav-item>` ([#186](https://github.com/pxblue/themes/issues/186)).
+
 ## v6.1.0 (May 28, 2021)
 
 ### Added
