@@ -619,17 +619,16 @@ export const blueDarkTheme: ThemeOptions = {
                 '&$checked': {
                     color: ThemeColors.secondary.main,
                     '&$disabled': {
-                        color: '#4F7491',
+                        color: Color(ThemeColors.secondary.main).mix(Color(ThemeColors.background.paper), 0.5).string(),
                     },
                     '&$disabled + $track': {
-                        opacity: 0.24,
                         backgroundColor: ThemeColors.secondary.main,
                     },
                 },
             },
             colorPrimary: {
                 '&$disabled': {
-                    color: '#8E9294',
+                    color: Color(PXBColors.white[50]).mix(Color(ThemeColors.background.paper), 0.5).string(),
                 },
                 '&$disabled + $track': {
                     backgroundColor: PXBColors.black[300],
@@ -637,17 +636,19 @@ export const blueDarkTheme: ThemeOptions = {
                 '&$checked': {
                     color: ThemeColors.primary.main,
                     '&$disabled': {
-                        color: '#4E7083',
+                        color: Color(ThemeColors.primary.main).mix(Color(ThemeColors.background.paper), 0.5).string(),
                     },
                     '&$disabled + $track': {
-                        opacity: 1,
-                        backgroundColor: '#364B57',
+                        opacity: 0.38,
+                        backgroundColor: Color(ThemeColors.primary.main)
+                            .mix(Color(ThemeColors.background.paper), 0.5)
+                            .string(),
                     },
                 },
             },
             colorSecondary: {
                 '&$disabled': {
-                    color: '#8E9294',
+                    color: Color(PXBColors.white[50]).mix(Color(ThemeColors.background.paper), 0.5).string(),
                 },
                 '&$disabled + $track': {
                     backgroundColor: PXBColors.black[300],
@@ -657,7 +658,6 @@ export const blueDarkTheme: ThemeOptions = {
                 backgroundColor: PXBColors.black[300],
                 opacity: 0.38,
             },
-            checked: {},
         },
 
         // TABLE OVERRIDES

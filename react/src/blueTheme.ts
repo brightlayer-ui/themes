@@ -34,7 +34,7 @@ const ThemeColors = {
     text: {
         primary: PXBColors.black[500],
         secondary: PXBColors.gray[500],
-        // disabled: Color(PXBColors.black[300]).alpha(0.32).string(),
+        // disabled: Color(PXBColors.black[500]).alpha(0.3).string(),
         hint: PXBColors.gray[500],
     },
     action: {
@@ -575,10 +575,9 @@ export const blueTheme: ThemeOptions = {
                 '&$checked': {
                     color: ThemeColors.secondary.main,
                     '&$disabled': {
-                        color: '#80C3F8',
+                        color: Color(ThemeColors.secondary.main).mix(Color(ThemeColors.background.paper), 0.5).string(),
                     },
                     '&$disabled + $track': {
-                        opacity: 0.24,
                         backgroundColor: ThemeColors.secondary.main,
                     },
                 },
@@ -593,11 +592,13 @@ export const blueTheme: ThemeOptions = {
                 '&$checked': {
                     color: ThemeColors.primary.main,
                     '&$disabled': {
-                        color: '#7FBCDF',
+                        color: Color(ThemeColors.primary.main).mix(Color(ThemeColors.background.paper), 0.5).string(),
                     },
                     '&$disabled + $track': {
-                        opacity: 1,
-                        backgroundColor: '#CFE6F3',
+                        opacity: 0.38,
+                        backgroundColor: Color(ThemeColors.primary.main)
+                            .mix(Color(ThemeColors.background.paper), 0.5)
+                            .string(),
                     },
                 },
             },
