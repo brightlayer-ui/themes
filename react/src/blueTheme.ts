@@ -613,7 +613,6 @@ export const blueTheme: ThemeOptions = {
                 backgroundColor: PXBColors.black[100],
                 opacity: 0.38,
             },
-            disabled: {},
         },
 
         // TABLE OVERRIDES
@@ -716,7 +715,7 @@ export const blueTheme: ThemeOptions = {
                     opacity: 1,
                 },
                 '&:-webkit-autofill': {
-                    '-webkit-box-shadow': `0 0 0 30px ${ThemeColors.background.paper} inset`,
+                    '-webkit-box-shadow': `0 0 0 30px ${PXBColors.white[50]} inset`,
                 },
             },
             adornedStart: {},

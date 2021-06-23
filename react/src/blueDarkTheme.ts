@@ -538,7 +538,7 @@ export const blueDarkTheme: ThemeOptions = {
                     color: ThemeColors.primary.dark,
                 },
                 '& .MuiButton-textSecondary': {
-                    color: ThemeColors.info.dark,
+                    color: PXBColors.lightBlue[500],
                 },
             },
         },
@@ -876,7 +876,7 @@ export const blueDarkTheme: ThemeOptions = {
             },
             input: {
                 '&:-webkit-autofill': {
-                    '-webkit-box-shadow': `0 0 0 100px ${ThemeColors.background.paper} inset`,
+                    '-webkit-box-shadow': `0 0 0 100px ${PXBColors.black[900]} inset`,
                 },
             },
             colorSecondary: {},
