@@ -1,4 +1,10 @@
-# Change Log
+# Changelog
+
+## v6.0.1 (Not Published Yet)
+
+### Changed
+
+-   Light theme shadow base color changed back to pure black (`#000000`).
 
 ## v6.0.0 (March 29, 2021)
 
