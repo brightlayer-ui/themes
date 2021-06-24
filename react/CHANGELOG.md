@@ -1,17 +1,12 @@
 # Changelog
 
-## v6.0.1 (Not Published Yet)
-
-### Changed
-
--   Light theme shadow base color changed back to pure black (`#000000`).
-
 ## v6.1.0 (June 28, 2021)
 
 ### Changed
 
 -   Update auto-fill styles for MUI `<TextInput>`.
 -   Update styles for disabled MUI `<Switch>`.
+-   Light theme shadow base color changed back to pure black (`#000000`).
 
 ## v6.0.0 (March 29, 2021)
 
