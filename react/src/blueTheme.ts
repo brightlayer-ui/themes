@@ -8,7 +8,6 @@
 
 import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import { typography, createSimpleLightPalette as createSimplePalette } from './shared';
-import shadows from './shadow';
 import * as PXBColors from '@pxblue/colors';
 import Color from 'color';
 
@@ -67,7 +66,6 @@ export const blueTheme: ThemeOptions = {
         text: ThemeColors.text,
         action: ThemeColors.action,
     },
-    shadows: shadows,
     overrides: {
         // APP BAR OVERRIDES
         MuiAppBar: {
