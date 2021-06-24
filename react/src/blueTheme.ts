@@ -629,9 +629,9 @@ export const blueTheme: ThemeOptions = {
         },
         MuiTableRow: {
             root: {
-                backgroundColor: '#FBFBFB', // possible new shade of white
+                backgroundColor: PXBColors.white[100],
                 '&$hover:hover': {
-                    backgroundColor: Color('#FBFBFB').mix(Color(PXBColors.black[50]), 0.5).string(),
+                    backgroundColor: Color(PXBColors.white[100]).mix(Color(PXBColors.black[50]), 0.5).string(),
                 },
                 '&:nth-of-type(odd):not($selected)': {
                     backgroundColor: ThemeColors.background.paper,
