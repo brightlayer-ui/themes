@@ -2,7 +2,7 @@
     "name": "@pxblue/react-themes",
     "author": "PX Blue <pxblue@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "6.0.0",
+    "version": "6.1.0",
     "description": "React themes for PX Blue applications",
     "main": "index.js",
     "scripts": {
