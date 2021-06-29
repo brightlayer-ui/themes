@@ -92,6 +92,10 @@
             text: map-get($pxb-white, 50),
             background: map-get($primary, 500),
             backgroundHover: map-get($primary, 300),
+            disabled: (
+                text: map-get($foreground, disabled),
+                background: map-get($background, disabled-button),
+            ),
         ),
     );
     $buttonAccent: (
@@ -108,6 +112,10 @@
             text: map-get($pxb-white, 50),
             background: map-get($accent, 500),
             backgroundHover: map-get($accent, 300),
+            disabled: (
+                text: map-get($foreground, disabled),
+                background: map-get($background, disabled-button),
+            ),
         ),
     );
     $buttonWarn: (
@@ -124,6 +132,10 @@
             text: map-get($pxb-white, 50),
             background: map-get($warn, 500),
             backgroundHover: map-get($pxb-red, 300),
+            disabled: (
+                text: map-get($foreground, disabled),
+                background: map-get($background, disabled-button),
+            ),
         ),
     );
     $buttonDefault: (
@@ -140,6 +152,10 @@
             text: map-get($pxb-white, 50),
             background: map-get($pxb-black, 500),
             backgroundHover: map-get($pxb-black, 300),
+            disabled: (
+                text: map-get($foreground, disabled),
+                background: map-get($background, disabled-button),
+            ),
         ),
         toggle: (
             border: map-get($pxb-black, 200),
