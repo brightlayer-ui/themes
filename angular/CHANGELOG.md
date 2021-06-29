@@ -8,7 +8,7 @@
 
 ### Changed
 
--   Changed `mat-button` styles for disabled `primary`, `accent`, and `warn` variants. 
+-   Changed `mat-button` styles for disabled `primary`, `accent`, and `warn` variants.
 
 ## v6.1.0 (May 28, 2021)
 
