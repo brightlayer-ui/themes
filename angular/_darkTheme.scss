@@ -93,8 +93,8 @@
             background: map-get($primary, 500),
             backgroundHover: map-get($primary, 300),
             disabled: (
-                text: map-get($foreground, disabled),
-                background: map-get($background, disabled-button),
+                text: map-get($pxb-black, 400),
+                background: rgba(map-get($pxb-black, 200), 0.24),
             ),
         ),
     );
@@ -113,8 +113,8 @@
             background: map-get($accent, 500),
             backgroundHover: map-get($accent, 300),
             disabled: (
-                text: map-get($foreground, disabled),
-                background: map-get($background, disabled-button),
+                text: map-get($pxb-black, 400),
+                background: rgba(map-get($pxb-black, 200), 0.24),
             ),
         ),
     );
@@ -133,8 +133,8 @@
             background: map-get($warn, 500),
             backgroundHover: map-get($pxb-red, 300),
             disabled: (
-                text: map-get($foreground, disabled),
-                background: map-get($background, disabled-button),
+                text: map-get($pxb-black, 400),
+                background: rgba(map-get($pxb-black, 200), 0.24),
             ),
         ),
     );
@@ -153,8 +153,8 @@
             background: map-get($pxb-black, 500),
             backgroundHover: map-get($pxb-black, 300),
             disabled: (
-                text: map-get($foreground, disabled),
-                background: map-get($background, disabled-button),
+                text: map-get($pxb-black, 400),
+                background: rgba(map-get($pxb-black, 200), 0.24),
             ),
         ),
         toggle: (
@@ -172,8 +172,12 @@
         ),
     );
     @include pxb-mat-buttons($buttonPrimary, $buttonAccent, $buttonWarn, $buttonDefault);
-    .mat-icon-button.mat-button-disabled.mat-button-disabled {
+    .mat-icon-button.mat-button-disabled {
         color: map-get($foreground, disabled);
+    }
+    .mat-stroked-button.mat-button-disabled {
+        color: rgba(map-get($pxb-black, 300), 0.36);
+        border-color: rgba(map-get($pxb-black, 300), 0.36);
     }
 
     /* Tabs */
