@@ -216,7 +216,6 @@
     .mat-stroked-button,
     .mat-raised-button {
         &.mat-button-disabled {
-            //    background-color: map-get($pxb-white, 50) !important;
             color: map-get($foreground, disabled);
             border: solid 1px map-get($foreground, divider);
         }
