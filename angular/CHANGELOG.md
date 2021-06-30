@@ -1,6 +1,6 @@
 # Changelog
 
-## v6.1.1 (Unpublished)
+## v6.1.1 (June 30, 2021)
 
 ### Fixed
 
