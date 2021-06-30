@@ -175,7 +175,8 @@
     .mat-icon-button.mat-button-disabled {
         color: map-get($foreground, disabled);
     }
-    .mat-stroked-button, .mat-button {
+    .mat-stroked-button,
+    .mat-button {
         &.mat-button-disabled.mat-button-disabled {
             color: rgba(map-get($pxb-black, 300), 0.36);
             border-color: rgba(map-get($pxb-black, 300), 0.36);
