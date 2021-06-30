@@ -6,6 +6,10 @@
 
 -   Fixed a few color issues in the `<pxb-drawer-header>` ([#184](https://github.com/pxblue/themes/issues/184)) and `<pxb-drawer-nav-item>` ([#186](https://github.com/pxblue/themes/issues/186)).
 
+### Changed
+
+-   Changed `mat-button` styles for disabled `primary`, `accent`, and `warn` variants.
+
 ## v6.1.0 (May 28, 2021)
 
 ### Added

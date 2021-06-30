@@ -89,6 +89,11 @@
     &:hover:not(.mat-button-disabled) {
         background-color: map-deep-get($palette, fill, backgroundHover);
     }
+    &.mat-button-disabled {
+        color: map-deep-get($palette, fill, disabled, text);
+        background-color: map-deep-get($palette, fill, disabled, background);
+        border: none;
+    }
 }
 @mixin filled-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
     &.mat-primary {
