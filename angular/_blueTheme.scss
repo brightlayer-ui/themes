@@ -133,6 +133,10 @@
             text: map-get($pxb-white, 50),
             background: map-get($primary, 500),
             backgroundHover: map-get($primary, 300),
+            disabled: (
+                text: map-get($primary, 200),
+                background: map-get($primary, 50),
+            ),
         ),
     );
     $buttonAccent: (
@@ -149,6 +153,10 @@
             text: map-get($pxb-white, 50),
             background: map-get($accent, 500),
             backgroundHover: map-get($accent, 300),
+            disabled: (
+                text: map-get($accent, 200),
+                background: map-get($accent, 50),
+            ),
         ),
     );
     $buttonWarn: (
@@ -165,6 +173,10 @@
             text: map-get($pxb-white, 50),
             background: map-get($warn, 500),
             backgroundHover: map-get($warn, 300),
+            disabled: (
+                text: map-get($warn, 200),
+                background: map-get($warn, 50),
+            ),
         ),
     );
     $buttonDefault: (
@@ -181,6 +193,10 @@
             text: map-get($pxb-black, 500),
             background: map-get($pxb-white, 50),
             backgroundHover: rgba(66, 78, 84, 0.05),
+            disabled: (
+                text: map-get($foreground, disabled),
+                background: map-get($background, disabled-button),
+            ),
         ),
         toggle: (
             border: map-get($pxb-gray, 100),
@@ -200,7 +216,6 @@
     .mat-stroked-button,
     .mat-raised-button {
         &.mat-button-disabled {
-            background-color: map-get($pxb-white, 50) !important;
             color: map-get($foreground, disabled);
             border: solid 1px map-get($foreground, divider);
         }
@@ -326,6 +341,9 @@
         .pxb-drawer-nav-item-active .pxb-info-list-item .mat-list-item-content, /*Normal NavItem*/
         .pxb-drawer-nav-item-active .pxb-info-list-item .pxb-info-list-item-icon-wrapper {
             color: map-get($primary, 500);
+        }
+        .pxb-info-list-item .mat-list-item-content .mat-list-icon {
+            color: map-get($foreground, text);
         }
     }
 

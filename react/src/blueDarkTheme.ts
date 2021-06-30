@@ -83,7 +83,7 @@ export const blueDarkTheme: ThemeOptions = {
             },
             colorSecondary: {
                 color: ThemeColors.text.primary,
-                backgroundColor: PXBColors.black[900],
+                backgroundColor: ThemeColors.background.paper,
             },
         },
 
@@ -155,7 +155,7 @@ export const blueDarkTheme: ThemeOptions = {
                 },
                 '&$disabled': {
                     borderColor: Color(PXBColors.black[200]).alpha(0.36).string(),
-                    color: Color(PXBColors.black[300]).alpha(0.36).string(),
+                    color: ThemeColors.action.disabled,
                 },
             },
             outlinedPrimary: {
@@ -173,7 +173,7 @@ export const blueDarkTheme: ThemeOptions = {
                 },
                 '&$disabled': {
                     borderColor: Color(PXBColors.black[200]).alpha(0.36).string(),
-                    color: Color(PXBColors.black[300]).alpha(0.36).string(),
+                    color: ThemeColors.action.disabled,
                 },
             },
             contained: {
@@ -183,7 +183,7 @@ export const blueDarkTheme: ThemeOptions = {
                     backgroundColor: PXBColors.black[400],
                 },
                 '&$disabled': {
-                    backgroundColor: Color(PXBColors.black[200]).alpha(0.24).string(),
+                    backgroundColor: ThemeColors.action.disabledBackground,
                     color: PXBColors.black[400],
                 },
             },
@@ -209,10 +209,10 @@ export const blueDarkTheme: ThemeOptions = {
             },
             text: {
                 '&$disabled': {
-                    color: Color(PXBColors.black[300]).alpha(0.36).string(),
+                    color: ThemeColors.action.disabled,
                 },
                 '&:hover': {
-                    backgroundColor: Color(PXBColors.black[50]).alpha(0.1).string(),
+                    backgroundColor: ThemeColors.action.hover,
                 },
             },
             textPrimary: {
@@ -614,19 +614,50 @@ export const blueDarkTheme: ThemeOptions = {
             switchBase: {
                 color: ThemeColors.text.primary,
                 '&$checked + $track': {
-                    opacity: 0.5,
+                    opacity: 0.38,
+                },
+                '&$checked': {
+                    color: ThemeColors.secondary.main,
+                    '&$disabled': {
+                        color: Color(ThemeColors.secondary.main).mix(Color(ThemeColors.background.paper), 0.5).string(),
+                    },
+                    '&$disabled + $track': {
+                        backgroundColor: ThemeColors.secondary.main,
+                    },
                 },
             },
             colorPrimary: {
+                '&$disabled': {
+                    color: Color(PXBColors.white[50]).mix(Color(ThemeColors.background.paper), 0.5).string(),
+                },
+                '&$disabled + $track': {
+                    backgroundColor: PXBColors.black[300],
+                },
                 '&$checked': {
                     color: ThemeColors.primary.main,
+                    '&$disabled': {
+                        color: Color(ThemeColors.primary.main).mix(Color(ThemeColors.background.paper), 0.5).string(),
+                    },
+                    '&$disabled + $track': {
+                        opacity: 0.38,
+                        backgroundColor: Color(ThemeColors.primary.main)
+                            .mix(Color(ThemeColors.background.paper), 0.5)
+                            .string(),
+                    },
+                },
+            },
+            colorSecondary: {
+                '&$disabled': {
+                    color: Color(PXBColors.white[50]).mix(Color(ThemeColors.background.paper), 0.5).string(),
+                },
+                '&$disabled + $track': {
+                    backgroundColor: PXBColors.black[300],
                 },
             },
             track: {
                 backgroundColor: PXBColors.black[300],
-                opacity: 0.36,
+                opacity: 0.38,
             },
-            checked: {},
         },
 
         // TABLE OVERRIDES
@@ -645,19 +676,21 @@ export const blueDarkTheme: ThemeOptions = {
                 color: ThemeColors.text.primary,
                 backgroundColor: PXBColors.darkBlack[300],
                 '&$hover:hover': {
-                    backgroundColor: Color(PXBColors.darkBlack[300]).mix(Color(PXBColors.black[500]), 0.5).string(),
+                    backgroundColor: Color(PXBColors.darkBlack[300]).mix(Color(MediumBlackBackground), 0.5).string(),
                 },
                 '&:nth-of-type(odd):not($selected)': {
-                    backgroundColor: PXBColors.black[900],
+                    backgroundColor: ThemeColors.background.paper,
                     '&$hover:hover': {
-                        backgroundColor: Color(PXBColors.black[900]).mix(Color(PXBColors.black[500]), 0.5).string(),
+                        backgroundColor: Color(ThemeColors.background.paper)
+                            .mix(Color(MediumBlackBackground), 0.5)
+                            .string(),
                     },
                 },
                 '&$selected': {
                     backgroundColor: Color(ThemeColors.primary.dark).alpha(0.2).string(),
                     '&$hover:hover': {
                         backgroundColor: Color(ThemeColors.primary.dark)
-                            .mix(Color(PXBColors.black[500]), 0.5)
+                            .mix(Color(MediumBlackBackground), 0.5)
                             .alpha(0.2)
                             .string(),
                     },
@@ -724,6 +757,10 @@ export const blueDarkTheme: ThemeOptions = {
                     color: PXBColors.black[300],
                     opacity: 0.36,
                 },
+                '&:-webkit-autofill': {
+                    '-webkit-box-shadow': `0 0 0 100px ${ThemeColors.background.paper} inset`,
+                    '-webkit-text-fill-color': ThemeColors.text.primary,
+                },
             },
             adornedStart: {},
             adornedEnd: {},
@@ -779,6 +816,11 @@ export const blueDarkTheme: ThemeOptions = {
                     pointerEvents: 'none',
                 },
             },
+            input: {
+                '&:-webkit-autofill': {
+                    '-webkit-box-shadow': `0 0 0 100px ${PXBColors.black[800]} inset`,
+                },
+            },
             underline: {
                 '&:before': {
                     borderBottomColor: ThemeColors.divider,
@@ -830,6 +872,11 @@ export const blueDarkTheme: ThemeOptions = {
                 },
                 '&$colorSecondary$focused $notchedOutline': {
                     borderColor: ThemeColors.secondary.dark,
+                },
+            },
+            input: {
+                '&:-webkit-autofill': {
+                    '-webkit-box-shadow': `0 0 0 100px ${PXBColors.black[900]} inset`,
                 },
             },
             colorSecondary: {},
