@@ -1,0 +1,16 @@
+[submodule "react"]
+	path = react
+	url = https://github.com/pxblue/react-themes
+	branch = master
+[submodule "angular"]
+	path = angular
+	url = https://github.com/pxblue/angular-themes
+	branch = master
+[submodule "react-native"]
+	path = react-native
+	url = https://github.com/pxblue/react-native-themes
+	branch = master
+[submodule "storybook"]
+	path = storybook
+	url = https://github.com/pxblue/storybook-themes
+	branch = master
